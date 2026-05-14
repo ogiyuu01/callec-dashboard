@@ -1,6 +1,38 @@
 /* Dashboard JS — tab切替 + JSON読込 + Chart.js描画 */
 const DATA_DIR = "data";
 
+// === Chart.js global dark theme ===
+if (typeof Chart !== "undefined") {
+  Chart.defaults.font.family = "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
+  Chart.defaults.font.size = 11;
+  Chart.defaults.color = "#a8b0bd";
+  Chart.defaults.borderColor = "#232936";
+  Chart.defaults.plugins.legend.labels.boxWidth = 10;
+  Chart.defaults.plugins.legend.labels.boxHeight = 10;
+  Chart.defaults.plugins.legend.labels.padding = 14;
+  Chart.defaults.plugins.legend.labels.usePointStyle = true;
+  Chart.defaults.plugins.tooltip.backgroundColor = "rgba(17,20,26,0.95)";
+  Chart.defaults.plugins.tooltip.titleColor = "#e8ecf1";
+  Chart.defaults.plugins.tooltip.bodyColor = "#a8b0bd";
+  Chart.defaults.plugins.tooltip.borderColor = "#2e3645";
+  Chart.defaults.plugins.tooltip.borderWidth = 1;
+  Chart.defaults.plugins.tooltip.padding = 12;
+  Chart.defaults.plugins.tooltip.cornerRadius = 8;
+  Chart.defaults.plugins.tooltip.displayColors = true;
+  Chart.defaults.plugins.tooltip.usePointStyle = true;
+  Chart.defaults.elements.line.borderWidth = 2;
+  Chart.defaults.elements.line.tension = 0.3;
+  Chart.defaults.elements.point.radius = 0;
+  Chart.defaults.elements.point.hoverRadius = 6;
+  Chart.defaults.elements.point.hoverBorderWidth = 2;
+  Chart.defaults.scale.grid.color = "rgba(35,41,54,0.6)";
+  Chart.defaults.scale.grid.drawTicks = false;
+  Chart.defaults.scale.ticks.padding = 8;
+}
+
+// 高級感のあるチャート配色
+const CHART_PALETTE = ["#c8a96a", "#4ade80", "#60a5fa", "#f87171", "#a78bfa", "#fbbf24", "#34d399", "#fb7185"];
+
 const yen = v => "¥" + Math.round(v).toLocaleString("ja-JP");
 const num = v => Math.round(v).toLocaleString("ja-JP");
 const pct = (v, d=2) => (v == null) ? "—" : (v * 100).toFixed(d) + "%";
@@ -53,8 +85,8 @@ function renderWeeklyTrend(data) {
     data: {
       labels: data.weeks.map(w => w.week),
       datasets: [
-        { label: "売上 (¥)", data: data.weeks.map(w => w.sales), borderColor: "#1a1a1a", yAxisID: "y", tension: 0.2 },
-        { label: "注文数", data: data.weeks.map(w => w.orders), borderColor: "#2e7d32", yAxisID: "y2", tension: 0.2 },
+        { label: "売上 (¥)", data: data.weeks.map(w => w.sales), borderColor: CHART_PALETTE[0], backgroundColor: "rgba(200,169,106,0.08)", yAxisID: "y", fill: true },
+        { label: "注文数", data: data.weeks.map(w => w.orders), borderColor: CHART_PALETTE[1], yAxisID: "y2" },
       ],
     },
     options: {
@@ -93,8 +125,8 @@ function renderItemsTrend(data) {
     data: {
       labels: data.weeks.map(w => w.week),
       datasets: [
-        { label: "items/session", data: data.weeks.map(w => w.items_per_session), borderColor: "#1565c0", tension: 0.2 },
-        { label: "CVR (%)", data: data.weeks.map(w => w.cvr * 100), borderColor: "#c62828", tension: 0.2, yAxisID: "y2" },
+        { label: "items/session", data: data.weeks.map(w => w.items_per_session), borderColor: CHART_PALETTE[2], backgroundColor: "rgba(96,165,250,0.08)", fill: true },
+        { label: "CVR (%)", data: data.weeks.map(w => w.cvr * 100), borderColor: CHART_PALETTE[3], yAxisID: "y2" },
       ],
     },
     options: {
@@ -126,13 +158,12 @@ function renderChannels(data) {
 
 function renderChannelTrend(data) {
   if (!data || !data.trend) return;
-  const colors = ["#1a1a1a", "#1565c0", "#2e7d32", "#c62828", "#6a1b9a", "#ef6c00", "#00838f", "#5d4037"];
   new Chart(document.getElementById("chart-channel-trend"), {
     type: "line",
     data: {
       labels: data.trend.weeks,
       datasets: data.trend.series.map((s, i) => ({
-        label: s.channel, data: s.sessions, borderColor: colors[i % colors.length], tension: 0.2,
+        label: s.channel, data: s.sessions, borderColor: CHART_PALETTE[i % CHART_PALETTE.length],
       })),
     },
     options: { scales: { y: { beginAtZero: true } } },
