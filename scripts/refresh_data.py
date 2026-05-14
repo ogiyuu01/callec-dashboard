@@ -296,6 +296,130 @@ def q(client: bigquery.Client, sql: str) -> list[dict]:
     return [dict(r) for r in client.query(sql).result()]
 
 
+def build_daily_series(client: bigquery.Client) -> dict:
+    """直近28日の日次 KPI を返す（sparkline 用）。"""
+    today = date.today()
+    end = today - timedelta(days=1)
+    start = end - timedelta(days=27)
+    sql = f"""
+    SELECT
+      event_date,
+      COUNT(*) AS sessions,
+      SUM(item_views) AS item_views,
+      SUM(atcs) AS atcs,
+      SUM(purchases) AS orders,
+      CAST(SUM(revenue) AS INT64) AS sales,
+      SAFE_DIVIDE(SUM(purchases), COUNT(*)) AS cvr,
+      SAFE_DIVIDE(SUM(revenue), NULLIF(SUM(purchases),0)) AS aov,
+      SAFE_DIVIDE(SUM(item_views), COUNT(*)) AS items_per_session
+    FROM `{PROJECT}.{DATASET}.sessions_clean`
+    WHERE event_date BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+    GROUP BY event_date
+    ORDER BY event_date
+    """
+    rows = q(client, sql)
+    days = [{
+        "date": r["event_date"],
+        "sessions": int(r.get("sessions") or 0),
+        "item_views": int(r.get("item_views") or 0),
+        "atcs": int(r.get("atcs") or 0),
+        "orders": int(r.get("orders") or 0),
+        "sales": int(r.get("sales") or 0),
+        "cvr": float(r.get("cvr") or 0),
+        "aov": float(r.get("aov") or 0),
+        "items_per_session": float(r.get("items_per_session") or 0),
+    } for r in rows]
+    return {"days": days, "start_date": start.isoformat(), "end_date": end.isoformat()}
+
+
+def build_products_top5(client: bigquery.Client) -> dict:
+    """直近7日の購入金額 TOP5 商品。"""
+    today = date.today()
+    end = today - timedelta(days=1)
+    start = end - timedelta(days=6)
+    sql = f"""
+    SELECT
+      it.item_name AS name,
+      SUM(it.quantity) AS qty,
+      CAST(SUM(it.item_revenue) AS INT64) AS revenue
+    FROM `{PROJECT}.{DATASET}.events_*`,
+      UNNEST(items) AS it
+    WHERE _TABLE_SUFFIX BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+      AND event_name = 'purchase'
+      AND it.item_name IS NOT NULL
+    GROUP BY name
+    ORDER BY revenue DESC
+    LIMIT 5
+    """
+    rows = q(client, sql)
+    return {
+        "period": {"start": start.isoformat(), "end": end.isoformat()},
+        "items": [{
+            "name": r["name"],
+            "qty": int(r["qty"] or 0),
+            "revenue": int(r["revenue"] or 0),
+        } for r in rows],
+    }
+
+
+def build_anomalies(daily: dict) -> dict:
+    """直近14日内で「異常な日」を検出する。
+    各日について、直前 7 日移動平均との比 ±50% 以上、または特定の品質劣化日を拾う。"""
+    days = daily.get("days", [])
+    if len(days) < 14:
+        return {"events": []}
+
+    events = []
+    METRICS = [
+        ("sessions", "セッション"),
+        ("orders", "注文"),
+        ("sales", "売上"),
+    ]
+    # focus on last 14 days
+    recent = days[-14:]
+    for i, d in enumerate(recent):
+        idx_in_full = len(days) - 14 + i
+        if idx_in_full < 7:
+            continue
+        baseline = days[idx_in_full - 7: idx_in_full]
+        for key, label in METRICS:
+            base_avg = sum((b.get(key) or 0) for b in baseline) / 7
+            cur = d.get(key) or 0
+            if base_avg < 50:  # too small to compare
+                continue
+            delta_pct = (cur - base_avg) / base_avg * 100
+            if abs(delta_pct) >= 50:
+                direction = "up" if delta_pct > 0 else "down"
+                events.append({
+                    "date": d["date"],
+                    "metric": label,
+                    "value": cur,
+                    "baseline_avg": int(base_avg),
+                    "delta_pct": round(delta_pct, 0),
+                    "direction": direction,
+                })
+
+    # newest first, cap
+    events.sort(key=lambda e: e["date"], reverse=True)
+    events = events[:12]
+
+    # Format for display
+    formatted = []
+    for e in events:
+        sign = "+" if e["delta_pct"] >= 0 else ""
+        ymd = e["date"]
+        date_short = f"{ymd[4:6]}/{ymd[6:8]}"
+        desc = f"{e['metric']} が {e['value']:,} ({sign}{int(e['delta_pct'])}%・7日平均比)"
+        formatted.append({
+            "date": date_short,
+            "iso_date": ymd,
+            "desc": desc,
+            "direction": e["direction"],
+            "delta_text": f"{sign}{int(e['delta_pct'])}%",
+        })
+    return {"events": formatted}
+
+
 def build_summary(client: bigquery.Client) -> dict:
     today = date.today()
     last_end = today - timedelta(days=1)
@@ -582,8 +706,13 @@ def main() -> int:
     client = bigquery.Client(project=PROJECT)
 
     summary = build_summary(client)
+    daily = build_daily_series(client)
+    summary["daily"] = daily.get("days", [])
+    summary["anomalies"] = build_anomalies(daily).get("events", [])
     write_json("summary.json", summary)
-    write_json("funnel.json", build_funnel(client))
+    funnel_data = build_funnel(client)
+    funnel_data["products_top5"] = build_products_top5(client).get("items", [])
+    write_json("funnel.json", funnel_data)
     write_json("channels.json", build_channels(client))
     write_json("utm_health.json", build_utm_health(client))
     write_json("releases.json", build_releases())

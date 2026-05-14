@@ -65,19 +65,78 @@ document.querySelectorAll(".tab, .nav-item").forEach(btn => {
   btn.addEventListener("click", () => activateTab(btn.dataset.tab));
 });
 
+function sparklineSVG(values) {
+  if (!values || values.length < 2) return "";
+  const w = 100, h = 28, pad = 1;
+  const min = Math.min.apply(null, values);
+  const max = Math.max.apply(null, values);
+  const range = (max - min) || 1;
+  const step = (w - pad * 2) / (values.length - 1);
+  const pts = values.map((v, i) => {
+    const x = pad + i * step;
+    const y = h - pad - ((v - min) / range) * (h - pad * 2);
+    return x.toFixed(1) + "," + y.toFixed(1);
+  });
+  const linePath = "M" + pts.join(" L");
+  const areaPath = linePath + " L" + (pad + (values.length - 1) * step).toFixed(1) + "," + (h - pad) + " L" + pad + "," + (h - pad) + " Z";
+  return '<svg class="sparkline" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none">' +
+    '<defs><linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4b87a" stop-opacity="0.35"/><stop offset="100%" stop-color="#d4b87a" stop-opacity="0"/></linearGradient></defs>' +
+    '<path class="area" d="' + areaPath + '"/>' +
+    '<path class="line" d="' + linePath + '"/>' +
+    '</svg>';
+}
+
 function renderKpis(data) {
   if (!data || !data.last_7d) return;
   const last7 = data.last_7d, prev7 = data.prev_7d || {}, yoy = data.yoy || {};
+  const days = data.daily || [];
+  const series = (key) => days.map(d => +d[key] || 0);
+
   const kpis = [
-    { label: "売上 (直近7日)", value: yen(last7.sales), delta: delta(last7.sales, prev7.sales), sub: "YoY " + delta(last7.sales, yoy.sales).txt },
-    { label: "注文数", value: num(last7.orders), delta: delta(last7.orders, prev7.orders), sub: "YoY " + delta(last7.orders, yoy.orders).txt },
-    { label: "セッション", value: num(last7.sessions), delta: delta(last7.sessions, prev7.sessions), sub: "YoY " + delta(last7.sessions, yoy.sessions).txt },
-    { label: "CVR", value: pct(last7.cvr, 2), delta: delta(last7.cvr, prev7.cvr), sub: "YoY " + delta(last7.cvr, yoy.cvr).txt },
-    { label: "AOV", value: yen(last7.aov), delta: delta(last7.aov, prev7.aov), sub: "YoY " + delta(last7.aov, yoy.aov).txt },
-    { label: "items/session", value: last7.items_per_session != null ? last7.items_per_session.toFixed(2) : "—", delta: delta(last7.items_per_session, prev7.items_per_session), sub: "YoY " + delta(last7.items_per_session, yoy.items_per_session).txt },
+    { label: "売上 (直近7日)", value: yen(last7.sales), delta: delta(last7.sales, prev7.sales), sub: "YoY " + delta(last7.sales, yoy.sales).txt, spark: series("sales") },
+    { label: "注文数", value: num(last7.orders), delta: delta(last7.orders, prev7.orders), sub: "YoY " + delta(last7.orders, yoy.orders).txt, spark: series("orders") },
+    { label: "セッション", value: num(last7.sessions), delta: delta(last7.sessions, prev7.sessions), sub: "YoY " + delta(last7.sessions, yoy.sessions).txt, spark: series("sessions") },
+    { label: "CVR", value: pct(last7.cvr, 2), delta: delta(last7.cvr, prev7.cvr), sub: "YoY " + delta(last7.cvr, yoy.cvr).txt, spark: series("cvr") },
+    { label: "AOV", value: yen(last7.aov), delta: delta(last7.aov, prev7.aov), sub: "YoY " + delta(last7.aov, yoy.aov).txt, spark: series("aov") },
+    { label: "items/session", value: last7.items_per_session != null ? last7.items_per_session.toFixed(2) : "—", delta: delta(last7.items_per_session, prev7.items_per_session), sub: "YoY " + delta(last7.items_per_session, yoy.items_per_session).txt, spark: series("items_per_session") },
   ];
   document.getElementById("exec-kpis").innerHTML = kpis.map(k =>
-    '<div class="kpi"><div class="label">' + k.label + '</div><div class="value">' + k.value + '</div><div class="delta ' + k.delta.cls + '">WoW ' + k.delta.txt + '</div><div class="sub">' + k.sub + '</div></div>'
+    '<div class="kpi"><div class="label">' + k.label + '</div><div class="value">' + k.value + '</div><div class="delta ' + k.delta.cls + '">WoW ' + k.delta.txt + '</div><div class="sub">' + k.sub + '</div>' + sparklineSVG(k.spark) + '</div>'
+  ).join("");
+}
+
+function renderAnomalies(data) {
+  const el = document.getElementById("anomaly-list");
+  if (!el) return;
+  const events = (data && data.anomalies) || [];
+  if (events.length === 0) {
+    el.innerHTML = '<div class="anomaly-empty">直近14日に大きな変動はありません。</div>';
+    return;
+  }
+  el.innerHTML = events.map(e =>
+    '<div class="anomaly-row">' +
+      '<div class="date">' + e.date + '</div>' +
+      '<div class="desc">' + e.desc + '</div>' +
+      '<div class="delta ' + e.direction + '">' + e.delta_text + '</div>' +
+    '</div>'
+  ).join("");
+}
+
+function renderProductsTop5(data) {
+  const el = document.getElementById("products-top5");
+  if (!el) return;
+  const items = (data && data.products_top5) || [];
+  if (items.length === 0) {
+    el.innerHTML = '<div class="anomaly-empty">商品データがまだ蓄積されていません。</div>';
+    return;
+  }
+  el.innerHTML = items.map((p, i) =>
+    '<div class="product-row">' +
+      '<div class="rank">' + (i + 1) + '</div>' +
+      '<div class="name">' + (p.name || '—') + '</div>' +
+      '<div class="qty">' + (p.qty || 0) + '点</div>' +
+      '<div class="rev">' + yen(p.revenue || 0) + '</div>' +
+    '</div>'
   ).join("");
 }
 
@@ -328,6 +387,8 @@ function renderArchiveMonthly(data) {
   renderReleases(releases);
   renderArchive(archive);
   renderArchiveMonthly(monthly);
+  renderAnomalies(summary);
+  renderProductsTop5(funnel);
 
   // === Scroll-reveal: gentle fade-up-blur as elements enter the viewport ===
   const candidates = document.querySelectorAll(".card, .kpi, .archive-card, .archive-month-card");

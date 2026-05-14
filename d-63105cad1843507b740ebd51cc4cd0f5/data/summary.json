@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-14 15:11 JST",
+  "last_updated": "2026-05-14 15:28 JST",
   "last_7d": {
     "sessions": 8168,
     "item_views": 9407,
@@ -152,5 +152,224 @@
       "メルマガ配信時にURLに utm を手で書かない（Shopify Email 自動UTMに任せる）",
       "LINE 配信時は ?utm_source=line&utm_medium=line&utm_campaign=日付_内容 を必ず付ける"
     ]
-  }
+  },
+  "daily": [
+    {
+      "date": "20260427",
+      "sessions": 935,
+      "item_views": 1030,
+      "atcs": 21,
+      "orders": 3,
+      "sales": 31350,
+      "cvr": 0.0032085561497326204,
+      "aov": 10450.0,
+      "items_per_session": 1.1016042780748663
+    },
+    {
+      "date": "20260428",
+      "sessions": 788,
+      "item_views": 1018,
+      "atcs": 22,
+      "orders": 2,
+      "sales": 28600,
+      "cvr": 0.0025380710659898475,
+      "aov": 14300.0,
+      "items_per_session": 1.2918781725888324
+    },
+    {
+      "date": "20260429",
+      "sessions": 960,
+      "item_views": 1202,
+      "atcs": 44,
+      "orders": 9,
+      "sales": 146300,
+      "cvr": 0.009375,
+      "aov": 16255.555555555555,
+      "items_per_session": 1.2520833333333334
+    },
+    {
+      "date": "20260430",
+      "sessions": 737,
+      "item_views": 979,
+      "atcs": 19,
+      "orders": 3,
+      "sales": 87450,
+      "cvr": 0.004070556309362279,
+      "aov": 29150.0,
+      "items_per_session": 1.328358208955224
+    },
+    {
+      "date": "20260501",
+      "sessions": 1771,
+      "item_views": 1619,
+      "atcs": 18,
+      "orders": 3,
+      "sales": 45650,
+      "cvr": 0.0016939582156973462,
+      "aov": 15216.666666666666,
+      "items_per_session": 0.9141727837380011
+    },
+    {
+      "date": "20260502",
+      "sessions": 980,
+      "item_views": 1034,
+      "atcs": 17,
+      "orders": 4,
+      "sales": 79420,
+      "cvr": 0.004081632653061225,
+      "aov": 19855.0,
+      "items_per_session": 1.0551020408163265
+    },
+    {
+      "date": "20260503",
+      "sessions": 1044,
+      "item_views": 1170,
+      "atcs": 19,
+      "orders": 2,
+      "sales": 48730,
+      "cvr": 0.0019157088122605363,
+      "aov": 24365.0,
+      "items_per_session": 1.1206896551724137
+    },
+    {
+      "date": "20260504",
+      "sessions": 1201,
+      "item_views": 1806,
+      "atcs": 34,
+      "orders": 3,
+      "sales": 48840,
+      "cvr": 0.002497918401332223,
+      "aov": 16280.0,
+      "items_per_session": 1.5037468776019984
+    },
+    {
+      "date": "20260505",
+      "sessions": 1220,
+      "item_views": 1719,
+      "atcs": 47,
+      "orders": 11,
+      "sales": 194260,
+      "cvr": 0.009016393442622951,
+      "aov": 17660.0,
+      "items_per_session": 1.409016393442623
+    },
+    {
+      "date": "20260506",
+      "sessions": 1058,
+      "item_views": 1529,
+      "atcs": 35,
+      "orders": 6,
+      "sales": 138600,
+      "cvr": 0.005671077504725898,
+      "aov": 23100.0,
+      "items_per_session": 1.445179584120983
+    },
+    {
+      "date": "20260507",
+      "sessions": 777,
+      "item_views": 1007,
+      "atcs": 14,
+      "orders": 5,
+      "sales": 96800,
+      "cvr": 0.006435006435006435,
+      "aov": 19360.0,
+      "items_per_session": 1.296010296010296
+    },
+    {
+      "date": "20260508",
+      "sessions": 755,
+      "item_views": 914,
+      "atcs": 9,
+      "orders": 2,
+      "sales": 28600,
+      "cvr": 0.0026490066225165563,
+      "aov": 14300.0,
+      "items_per_session": 1.2105960264900661
+    },
+    {
+      "date": "20260509",
+      "sessions": 2815,
+      "item_views": 2487,
+      "atcs": 70,
+      "orders": 11,
+      "sales": 235070,
+      "cvr": 0.003907637655417406,
+      "aov": 21370.0,
+      "items_per_session": 0.8834813499111901
+    },
+    {
+      "date": "20260510",
+      "sessions": 1228,
+      "item_views": 1412,
+      "atcs": 23,
+      "orders": 6,
+      "sales": 96250,
+      "cvr": 0.004885993485342019,
+      "aov": 16041.666666666666,
+      "items_per_session": 1.1498371335504887
+    },
+    {
+      "date": "20260511",
+      "sessions": 1001,
+      "item_views": 1344,
+      "atcs": 45,
+      "orders": 5,
+      "sales": 139920,
+      "cvr": 0.004995004995004995,
+      "aov": 27984.0,
+      "items_per_session": 1.3426573426573427
+    },
+    {
+      "date": "20260512",
+      "sessions": 772,
+      "item_views": 1149,
+      "atcs": 36,
+      "orders": 4,
+      "sales": 84920,
+      "cvr": 0.0051813471502590676,
+      "aov": 21230.0,
+      "items_per_session": 1.488341968911917
+    },
+    {
+      "date": "20260513",
+      "sessions": 820,
+      "item_views": 1094,
+      "atcs": 29,
+      "orders": 5,
+      "sales": 123420,
+      "cvr": 0.006097560975609756,
+      "aov": 24684.0,
+      "items_per_session": 1.3341463414634147
+    }
+  ],
+  "anomalies": [
+    {
+      "date": "05/09",
+      "iso_date": "20260509",
+      "desc": "セッション が 2,815 (+180%・7日平均比)",
+      "direction": "up",
+      "delta_text": "+180%"
+    },
+    {
+      "date": "05/09",
+      "iso_date": "20260509",
+      "desc": "売上 が 235,070 (+159%・7日平均比)",
+      "direction": "up",
+      "delta_text": "+159%"
+    },
+    {
+      "date": "05/08",
+      "iso_date": "20260508",
+      "desc": "売上 が 28,600 (-69%・7日平均比)",
+      "direction": "down",
+      "delta_text": "-69%"
+    },
+    {
+      "date": "05/05",
+      "iso_date": "20260505",
+      "desc": "売上 が 194,260 (+180%・7日平均比)",
+      "direction": "up",
+      "delta_text": "+180%"
+    }
+  ]
 }
