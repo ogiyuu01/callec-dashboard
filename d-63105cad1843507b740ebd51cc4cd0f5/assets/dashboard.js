@@ -53,13 +53,16 @@ async function load(file) {
   } catch { return null; }
 }
 
-document.querySelectorAll(".tab").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-    btn.classList.add("active");
-    document.getElementById("page-" + btn.dataset.tab).classList.add("active");
-  });
+function activateTab(tabName) {
+  document.querySelectorAll(".tab, .nav-item").forEach(t => t.classList.remove("active"));
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.querySelectorAll('[data-tab="' + tabName + '"]').forEach(t => t.classList.add("active"));
+  const page = document.getElementById("page-" + tabName);
+  if (page) page.classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+document.querySelectorAll(".tab, .nav-item").forEach(btn => {
+  btn.addEventListener("click", () => activateTab(btn.dataset.tab));
 });
 
 function renderKpis(data) {
@@ -251,17 +254,66 @@ function renderArchive(data) {
   document.getElementById("archive-list").innerHTML = html;
 }
 
+function monthLabelJa(m) {
+  if (!m || m.length < 7) return m;
+  const y = m.substring(0, 4);
+  const mm = parseInt(m.substring(5, 7), 10);
+  return y + "年" + mm + "月度";
+}
+
+function renderArchiveMonthly(data) {
+  const el = document.getElementById("archive-monthly-list");
+  if (!el) return;
+  if (!data || !data.months || data.months.length === 0) {
+    el.innerHTML = '<p style="color:var(--text-muted)">月次データがまだありません。来月以降に蓄積されます。</p>';
+    return;
+  }
+  el.innerHTML = data.months.map(m => {
+    const k = m.kpis || {};
+    const prev = m.prev || {};
+    const yoy = m.yoy || {};
+    const mom = (prev.sales) ? ((k.sales - prev.sales) / prev.sales * 100) : null;
+    const yoyP = (yoy.sales) ? ((k.sales - yoy.sales) / yoy.sales * 100) : null;
+    const momBadge = mom !== null
+      ? '<span class="badge ' + (mom >= 0 ? 'up' : 'down') + '">前月比 ' + (mom >= 0 ? '+' : '') + mom.toFixed(0) + '%</span>'
+      : '';
+    const yoyBadge = yoyP !== null
+      ? '<span class="badge ' + (yoyP >= 0 ? 'up' : 'down') + '">前年同月比 ' + (yoyP >= 0 ? '+' : '') + yoyP.toFixed(0) + '%</span>'
+      : '';
+    const narrativeHtml = (m.narrative && m.narrative.lines)
+      ? '<div class="month-narrative">' + m.narrative.lines.map(l => '<div>' + l + '</div>').join('') + '</div>'
+      : '';
+    return '<div class="archive-month-card">' +
+      '<div class="archive-month-head">' +
+        '<div class="month-title">' + monthLabelJa(m.month) + '</div>' +
+        '<div class="month-sub">' + m.month + '</div>' +
+      '</div>' +
+      '<div class="compare">' + momBadge + ' ' + yoyBadge + '</div>' +
+      '<div class="month-kpis">' +
+        '<div><span class="lab">売上</span><span class="val">' + yen(k.sales || 0) + '</span></div>' +
+        '<div><span class="lab">注文</span><span class="val">' + num(k.orders || 0) + '</span></div>' +
+        '<div><span class="lab">セッション</span><span class="val">' + num(k.sessions || 0) + '</span></div>' +
+        '<div><span class="lab">CVR</span><span class="val">' + ((k.cvr || 0) * 100).toFixed(2) + '%</span></div>' +
+      '</div>' +
+      narrativeHtml +
+    '</div>';
+  }).join("");
+}
+
 (async () => {
-  const [summary, funnel, channels, releases, utm, archive] = await Promise.all([
+  const [summary, funnel, channels, releases, utm, archive, monthly] = await Promise.all([
     load("summary.json"),
     load("funnel.json"),
     load("channels.json"),
     load("releases.json"),
     load("utm_health.json"),
     load("archive.json"),
+    load("archive_monthly.json"),
   ]);
   if (summary && summary.last_updated) {
     document.getElementById("last-updated").textContent = summary.last_updated;
+    const side = document.getElementById("last-updated-side");
+    if (side) side.textContent = summary.last_updated;
   }
   renderNarrative(summary);
   renderKpis(summary);
@@ -275,4 +327,5 @@ function renderArchive(data) {
   renderUtmHealth(utm);
   renderReleases(releases);
   renderArchive(archive);
+  renderArchiveMonthly(monthly);
 })();

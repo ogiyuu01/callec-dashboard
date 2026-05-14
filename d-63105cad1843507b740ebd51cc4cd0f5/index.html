@@ -11,6 +11,27 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-dot">●</span> CALL&amp;RESPONSE
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">概況</div>
+    <button class="nav-item active" data-tab="exec">📊 今週のサマリ</button>
+    <button class="nav-item" data-tab="funnel">🛒 ファネル</button>
+    <button class="nav-item" data-tab="channel">📣 チャネル</button>
+    <button class="nav-item" data-tab="release">🚀 リリース</button>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">履歴</div>
+    <button class="nav-item" data-tab="archive">📅 週次履歴</button>
+    <button class="nav-item" data-tab="archive-monthly">🗓️ 月次履歴</button>
+  </div>
+  <div class="sidebar-footer">
+    最終更新: <strong id="last-updated-side">—</strong>
+  </div>
+</aside>
+
 <header>
   <div class="container header-inner">
     <h1>CALL&amp;RESPONSE Dashboard</h1>
@@ -20,12 +41,13 @@
   </div>
 </header>
 
-<nav class="tabs container">
-  <button class="tab active" data-tab="exec">📊 今週のサマリ</button>
+<nav class="tabs container mobile-only">
+  <button class="tab active" data-tab="exec">📊 サマリ</button>
   <button class="tab" data-tab="funnel">🛒 ファネル</button>
   <button class="tab" data-tab="channel">📣 チャネル</button>
   <button class="tab" data-tab="release">🚀 リリース</button>
-  <button class="tab" data-tab="archive">📚 履歴</button>
+  <button class="tab" data-tab="archive">📅 週次</button>
+  <button class="tab" data-tab="archive-monthly">🗓️ 月次</button>
 </nav>
 
 <main class="container">
@@ -85,9 +107,15 @@
   </section>
 
   <section class="page" id="page-archive">
-    <h2>履歴</h2>
+    <h2>週次履歴</h2>
     <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">毎週月曜にその週のスナップショットを自動保存しています（最大52週分）。</p>
     <div id="archive-list"></div>
+  </section>
+
+  <section class="page" id="page-archive-monthly">
+    <h2>月次履歴</h2>
+    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">2026年4月度以降の月次スナップショット。前月比・前年同月比つき。</p>
+    <div id="archive-monthly-list"></div>
   </section>
 </main>
 

@@ -127,16 +127,16 @@
       "pdp_reach": 22.22222222222222
     },
     {
-      "path": "/collections/tailored-jacket",
-      "sessions": 34,
-      "pdp_reached": 4,
-      "pdp_reach": 11.764705882352942
-    },
-    {
       "path": "/collections/online_ranking",
       "sessions": 34,
       "pdp_reached": 7,
       "pdp_reach": 20.58823529411765
+    },
+    {
+      "path": "/collections/tailored-jacket",
+      "sessions": 34,
+      "pdp_reached": 4,
+      "pdp_reach": 11.764705882352942
     },
     {
       "path": "/collections/tops",

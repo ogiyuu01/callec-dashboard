@@ -89,41 +89,207 @@ def make_narrative(last7: dict, prev7: dict, yoy: dict) -> dict:
     return {"lines": lines, "actions": actions}
 
 
-def update_archive(summary: dict) -> None:
-    """毎週月曜の "確定スナップショット" を archive.json に追記する。
-    実装: 直近の完了週 (週末=日曜終わり) を ISO 週ラベルで保存。同一週は上書き。"""
-    archive_path = DATA_DIR / "archive.json"
-    existing = []
-    if archive_path.exists():
+def build_weekly_archive_from_csv() -> list[dict]:
+    """weekly_kpi.csv の 2026-W14 以降を週次アーカイブエントリに変換する。
+    各週で前週比・前年同週比を計算し、簡易ナラティブを生成。"""
+    entries: list[dict] = []
+    if not WEEKLY_KPI.exists():
+        return entries
+
+    with WEEKLY_KPI.open(encoding="utf-8-sig", newline="") as f:
+        rows = list(csv.DictReader(f))
+
+    by_week = {r["week"]: r for r in rows if r.get("week")}
+
+    for w_label, r in sorted(by_week.items()):
+        if not w_label or "-W" not in w_label:
+            continue
         try:
-            existing = json.loads(archive_path.read_text(encoding="utf-8")).get("weeks", [])
+            y, wk = w_label.split("-W")
+            monday = date.fromisocalendar(int(y), int(wk), 1)
         except Exception:
-            existing = []
+            continue
+        if monday < date(2026, 3, 30):  # 2026-W14 = 2026-03-30 start
+            continue
 
+        sessions = int(r.get("sessions", 0) or 0)
+        orders = int(r.get("orders", 0) or 0)
+        sales = int(r.get("sales", 0) or 0)
+        cvr = float(r.get("cvr", 0) or 0)
+        aov = float(r.get("aov", 0) or 0)
+
+        # prev week
+        try:
+            prev_monday = monday - timedelta(days=7)
+            py, pwk, _ = prev_monday.isocalendar()
+            prev = by_week.get(f"{py}-W{pwk:02d}")
+        except Exception:
+            prev = None
+
+        # YoY same week
+        try:
+            yoy_year = int(y) - 1
+            yoy = by_week.get(f"{yoy_year}-W{wk}")
+        except Exception:
+            yoy = None
+
+        # narrative
+        lines = []
+        if prev and int(prev.get("sales", 0) or 0):
+            wow_pct = (sales - int(prev["sales"])) / int(prev["sales"]) * 100
+            arrow = "📈" if wow_pct >= 5 else "📉" if wow_pct <= -5 else "→"
+            lines.append(f"{arrow} 売上 {yen(sales)}（先週比 {wow_pct:+.0f}%）")
+        else:
+            lines.append(f"📊 売上 {yen(sales)}")
+
+        if yoy and int(yoy.get("sales", 0) or 0):
+            yoy_pct = (sales - int(yoy["sales"])) / int(yoy["sales"]) * 100
+            sign = "✅" if yoy_pct >= 0 else "⚠️"
+            lines.append(f"{sign} 前年同週比 {yoy_pct:+.0f}%（前年 {yen(int(yoy['sales']))}）")
+
+        lines.append(f"   注文 {orders} 件・CVR {cvr*100:.2f}%・AOV {yen(aov)}")
+
+        # closure caveat for 2025-W19/W20 (would never hit this block since we filter to 2026+ but safe)
+        if w_label in ("2025-W19", "2025-W20"):
+            lines.append("⚠️ 2025-05-07〜05-15 は閉店期間。数値は通常状態ではありません。")
+
+        entries.append({
+            "week": w_label,
+            "start_date": monday.isoformat(),
+            "end_date": (monday + timedelta(days=6)).isoformat(),
+            "kpis": {
+                "sessions": sessions, "orders": orders, "sales": sales,
+                "cvr": cvr, "aov": aov,
+                "items_per_session": None,  # weekly_kpi.csv にない
+            },
+            "prev": {"sessions": int(prev.get("sessions", 0) or 0), "orders": int(prev.get("orders", 0) or 0), "sales": int(prev.get("sales", 0) or 0)} if prev else {},
+            "yoy":  {"sessions": int(yoy.get("sessions", 0) or 0),  "orders": int(yoy.get("orders", 0) or 0),  "sales": int(yoy.get("sales", 0) or 0)}  if yoy  else {},
+            "narrative": {"lines": lines},
+            "captured_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        })
+
+    entries.sort(key=lambda e: e["week"], reverse=True)
+    return entries
+
+
+def update_archive(summary: dict) -> None:
+    """週次アーカイブ archive.json を生成する。
+    1. weekly_kpi.csv ベースで 2026-W14 以降の確定週を全件展開
+    2. 現在進行中の週は live BQ summary を上書き保存
+    """
+    weekly_entries = build_weekly_archive_from_csv()
+
+    # 現在進行中（=今週）のエントリは live summary 由来で上書き
     today = date.today()
-    last_monday = today - timedelta(days=today.weekday() + 7)
-    last_sunday = last_monday + timedelta(days=6)
-    iso_y, iso_w, _ = last_monday.isocalendar()
-    week_label = f"{iso_y}-W{iso_w:02d}"
+    cur_monday = today - timedelta(days=today.weekday())
+    iso_y, iso_w, _ = cur_monday.isocalendar()
+    cur_label = f"{iso_y}-W{iso_w:02d}"
+    cur_sunday = cur_monday + timedelta(days=6)
 
-    entry = {
-        "week": week_label,
-        "start_date": last_monday.isoformat(),
-        "end_date": last_sunday.isoformat(),
+    live_entry = {
+        "week": cur_label,
+        "start_date": cur_monday.isoformat(),
+        "end_date": cur_sunday.isoformat(),
         "kpis": summary.get("last_7d", {}),
         "yoy": summary.get("yoy", {}),
         "prev": summary.get("prev_7d", {}),
         "narrative": summary.get("narrative", {}),
         "captured_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "live": True,
     }
 
-    weeks = [w for w in existing if w.get("week") != week_label]
-    weeks.append(entry)
-    weeks.sort(key=lambda w: w.get("week", ""), reverse=True)
-    weeks = weeks[:52]  # 最大52週分
+    # 重複排除
+    weekly_entries = [e for e in weekly_entries if e.get("week") != cur_label]
+    weekly_entries.append(live_entry)
+    weekly_entries.sort(key=lambda w: w.get("week", ""), reverse=True)
+    weekly_entries = weekly_entries[:60]  # 最大60週
 
-    archive_path.write_text(json.dumps({"weeks": weeks}, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"  archive: {week_label} ({len(weeks)} weeks stored)")
+    archive_path = DATA_DIR / "archive.json"
+    archive_path.write_text(json.dumps({"weeks": weekly_entries}, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"  weekly archive: {len(weekly_entries)} weeks (from 2026-W14, live={cur_label})")
+
+
+def build_monthly_archive() -> None:
+    """weekly_kpi.csv を月単位に集計し、2026-04 以降の月次アーカイブを生成する。"""
+    if not WEEKLY_KPI.exists():
+        print("  monthly archive skipped (weekly_kpi.csv missing)")
+        return
+
+    from collections import defaultdict
+    months: dict[str, dict] = defaultdict(lambda: {"sessions": 0, "orders": 0, "sales": 0})
+    with WEEKLY_KPI.open(encoding="utf-8-sig", newline="") as f:
+        for r in csv.DictReader(f):
+            week = r.get("week", "")
+            if not week or "-W" not in week:
+                continue
+            try:
+                year, wk = week.split("-W")
+                monday = date.fromisocalendar(int(year), int(wk), 1)
+            except Exception:
+                continue
+            if monday < date(2025, 4, 1):  # 前年同月比較のため2025-04も含める
+                continue
+            month_label = monday.strftime("%Y-%m")
+            months[month_label]["sessions"] += int(r.get("sessions", 0) or 0)
+            months[month_label]["orders"]   += int(r.get("orders", 0) or 0)
+            months[month_label]["sales"]    += int(r.get("sales", 0) or 0)
+
+    sorted_months = sorted(months.keys())
+    entries: list[dict] = []
+    for i, m in enumerate(sorted_months):
+        if m < "2026-04":
+            continue  # 表示は2026-04以降のみ
+        v = months[m]
+        sessions = v["sessions"]
+        orders = v["orders"]
+        sales = v["sales"]
+        cvr = orders / sessions if sessions else 0
+        aov = sales / orders if orders else 0
+
+        # MoM
+        prev_m_idx = sorted_months.index(m) - 1
+        prev = months[sorted_months[prev_m_idx]] if prev_m_idx >= 0 else None
+        # YoY
+        try:
+            yoy_year = int(m[:4]) - 1
+            yoy_label = f"{yoy_year}-{m[5:]}"
+            yoy = months.get(yoy_label)
+        except Exception:
+            yoy = None
+
+        narrative_lines = []
+        arrow = "📈"
+        if prev and prev["sales"]:
+            mom_pct = (sales - prev["sales"]) / prev["sales"] * 100
+            arrow = "📈" if mom_pct >= 5 else "📉" if mom_pct <= -5 else "→"
+            narrative_lines.append(f"{arrow} 売上 {yen(sales)}（前月比 {mom_pct:+.0f}%）")
+        else:
+            narrative_lines.append(f"📊 売上 {yen(sales)}")
+
+        if yoy and yoy["sales"]:
+            yoy_pct = (sales - yoy["sales"]) / yoy["sales"] * 100
+            sign = "✅" if yoy_pct >= 0 else "⚠️"
+            narrative_lines.append(f"{sign} 前年同月比 {yoy_pct:+.0f}%（前年 {yen(yoy['sales'])}）")
+
+        narrative_lines.append(f"   注文 {orders} 件・CVR {cvr*100:.2f}%・AOV {yen(aov)}")
+
+        # 閉店期間注意（2025-05 は閉店週を含むため）
+        if m == "2025-05":
+            narrative_lines.append("⚠️ 2025-05-07〜05-15 は閉店期間。月次数値は通常状態ではありません。")
+
+        entries.append({
+            "month": m,
+            "kpis": {"sessions": sessions, "orders": orders, "sales": sales, "cvr": cvr, "aov": aov},
+            "prev": {"sessions": prev["sessions"], "orders": prev["orders"], "sales": prev["sales"]} if prev else {},
+            "yoy":  {"sessions": yoy["sessions"],  "orders": yoy["orders"],  "sales": yoy["sales"]}  if yoy  else {},
+            "narrative": {"lines": narrative_lines},
+            "captured_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        })
+
+    entries.sort(key=lambda e: e["month"], reverse=True)
+    out = DATA_DIR / "archive_monthly.json"
+    out.write_text(json.dumps({"months": entries}, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"  monthly archive: {len(entries)} months (from 2026-04)")
 
 
 def q(client: bigquery.Client, sql: str) -> list[dict]:
@@ -422,6 +588,7 @@ def main() -> int:
     write_json("utm_health.json", build_utm_health(client))
     write_json("releases.json", build_releases())
     update_archive(summary)
+    build_monthly_archive()
     print("refresh complete")
     return 0
 
