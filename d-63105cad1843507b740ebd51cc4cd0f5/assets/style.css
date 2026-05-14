@@ -652,10 +652,30 @@ footer {
 /* ============================================================
    Layout (sidebar shifts content on desktop)
    ============================================================ */
-@media (min-width: 900px) {
-  .sidebar { display: flex; }
+@media (min-width: 980px) {
+  body {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    grid-template-rows: auto;
+    column-gap: 32px;
+    padding: 24px 24px 0 24px;
+    align-items: start;
+  }
+  .sidebar {
+    display: flex;
+    position: sticky;
+    top: 24px;
+    left: auto;
+    width: 100%;
+    height: calc(100vh - 48px);
+    margin: 0;
+  }
+  .content-area { min-width: 0; position: relative; }
   .tabs.mobile-only { display: none; }
-  body { padding-left: 288px; }  /* sidebar 24 + 240 = 264, +24 gap */
+  main { padding-top: 24px; padding-bottom: 80px; }
+}
+@media (max-width: 979px) {
+  .content-area { display: contents; }  /* let children flow normally */
 }
 @media (max-width: 899px) {
   .sidebar { display: none !important; }
