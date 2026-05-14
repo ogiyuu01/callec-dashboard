@@ -21,15 +21,18 @@
 </header>
 
 <nav class="tabs container">
-  <button class="tab active" data-tab="exec">📊 サマリ</button>
+  <button class="tab active" data-tab="exec">📊 今週のサマリ</button>
   <button class="tab" data-tab="funnel">🛒 ファネル</button>
   <button class="tab" data-tab="channel">📣 チャネル</button>
   <button class="tab" data-tab="release">🚀 リリース</button>
+  <button class="tab" data-tab="archive">📚 履歴</button>
 </nav>
 
 <main class="container">
   <section class="page active" id="page-exec">
-    <h2>エグゼクティブサマリ</h2>
+    <h2>今週のサマリ</h2>
+    <div class="card narrative-card" id="narrative-summary"></div>
+    <div class="card narrative-card" id="narrative-actions"></div>
     <div class="kpi-grid" id="exec-kpis"></div>
     <div class="card">
       <h3>週次トレンド（直近12週）</h3>
@@ -79,6 +82,12 @@
       <h3>稼働中・過去リリース一覧</h3>
       <table class="data-table" id="table-releases"></table>
     </div>
+  </section>
+
+  <section class="page" id="page-archive">
+    <h2>履歴</h2>
+    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">毎週月曜にその週のスナップショットを自動保存しています（最大52週分）。</p>
+    <div id="archive-list"></div>
   </section>
 </main>
 

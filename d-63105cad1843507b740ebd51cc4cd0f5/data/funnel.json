@@ -21,7 +21,68 @@
       "count": 38
     }
   ],
-  "weeks": [],
+  "weeks": [
+    {
+      "week": "2026-W07",
+      "items_per_session": 0,
+      "cvr": 0.0038
+    },
+    {
+      "week": "2026-W08",
+      "items_per_session": 0,
+      "cvr": 0.0036
+    },
+    {
+      "week": "2026-W09",
+      "items_per_session": 0,
+      "cvr": 0.0045
+    },
+    {
+      "week": "2026-W10",
+      "items_per_session": 0,
+      "cvr": 0.0024
+    },
+    {
+      "week": "2026-W11",
+      "items_per_session": 0,
+      "cvr": 0.0067
+    },
+    {
+      "week": "2026-W12",
+      "items_per_session": 0,
+      "cvr": 0.0045
+    },
+    {
+      "week": "2026-W13",
+      "items_per_session": 0,
+      "cvr": 0.0036
+    },
+    {
+      "week": "2026-W14",
+      "items_per_session": 0,
+      "cvr": 0.005
+    },
+    {
+      "week": "2026-W15",
+      "items_per_session": 0,
+      "cvr": 0.005
+    },
+    {
+      "week": "2026-W16",
+      "items_per_session": 0,
+      "cvr": 0.0038
+    },
+    {
+      "week": "2026-W17",
+      "items_per_session": 0,
+      "cvr": 0.0055
+    },
+    {
+      "week": "2026-W18",
+      "items_per_session": 0,
+      "cvr": 0.0035
+    }
+  ],
   "collections": [
     {
       "path": "/collections/5月6日販売開始",
@@ -66,16 +127,16 @@
       "pdp_reach": 22.22222222222222
     },
     {
-      "path": "/collections/online_ranking",
-      "sessions": 34,
-      "pdp_reached": 7,
-      "pdp_reach": 20.58823529411765
-    },
-    {
       "path": "/collections/tailored-jacket",
       "sessions": 34,
       "pdp_reached": 4,
       "pdp_reach": 11.764705882352942
+    },
+    {
+      "path": "/collections/online_ranking",
+      "sessions": 34,
+      "pdp_reached": 7,
+      "pdp_reach": 20.58823529411765
     },
     {
       "path": "/collections/tops",

@@ -348,3 +348,127 @@ footer {
   }
   #funnel-bars .step .name { font-size: 0.78rem; }
 }
+
+/* ============================================================
+   Narrative summary & action list (非分析者向け)
+   ============================================================ */
+.narrative-card {
+  background: linear-gradient(180deg, rgba(200,169,106,0.06) 0%, var(--bg-2) 100%);
+  border-left: 3px solid var(--accent);
+}
+.narrative-lines {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+.narrative-lines.compact {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin-top: 8px;
+}
+.narrative-line {
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
+}
+.narrative-line:last-child { border-bottom: none; }
+.action-list {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+.action-list li {
+  padding: 4px 0;
+}
+.action-list li::marker {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ============================================================
+   Archive cards (履歴ページ)
+   ============================================================ */
+.archive-card {
+  background: linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+.archive-card::before {
+  content: "";
+  position: absolute; top: 0; left: 0; bottom: 0; width: 3px;
+  background: var(--accent);
+  opacity: 0.5;
+}
+.archive-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 14px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap; gap: 8px;
+}
+.archive-head strong {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem; color: var(--text);
+  letter-spacing: 0.04em;
+}
+.archive-period {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-family: 'JetBrains Mono', monospace;
+  margin-left: 8px;
+}
+.archive-badges {
+  display: inline-flex; gap: 6px;
+}
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+}
+.badge.up   { background: var(--green-soft); color: var(--green); }
+.badge.down { background: var(--red-soft);   color: var(--red); }
+
+.archive-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.archive-kpis > div {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.archive-kpis .lab {
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.archive-kpis .val {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+}
+.archive-meta {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: 10px;
+  text-align: right;
+}
+
+@media (max-width: 720px) {
+  .archive-kpis { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .archive-kpis .val { font-size: 0.9rem; }
+  .narrative-lines { font-size: 0.88rem; }
+}

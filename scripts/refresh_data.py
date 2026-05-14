@@ -37,6 +37,95 @@ def write_json(name: str, payload: dict) -> None:
     print(f"  wrote {p.relative_to(ROOT)}")
 
 
+def yen(v): return "¥" + f"{int(round(v or 0)):,}"
+def num(v): return f"{int(round(v or 0)):,}"
+def pct(v, d=2): return "—" if v is None else f"{v*100:.{d}f}%"
+
+
+def make_narrative(last7: dict, prev7: dict, yoy: dict) -> dict:
+    """非分析者向けの平易な日本語サマリを生成する。"""
+    lines = []
+    actions = []
+
+    sales = last7.get("sales") or 0
+    p_sales = prev7.get("sales") or 0
+    sales_wow = (sales - p_sales) / p_sales * 100 if p_sales else 0
+
+    orders = last7.get("orders") or 0
+    p_orders = prev7.get("orders") or 0
+
+    cvr = last7.get("cvr") or 0
+    y_cvr = yoy.get("cvr") or 0
+    cvr_yoy = (cvr - y_cvr) / y_cvr * 100 if y_cvr else 0
+
+    items = last7.get("items_per_session") or 0
+
+    # 1. 売上サマリ
+    arrow = "📈" if sales_wow >= 5 else "📉" if sales_wow <= -5 else "→"
+    lines.append(f"{arrow} 今週の売上 {yen(sales)}（先週より {sales_wow:+.0f}%）")
+    lines.append(f"   注文は {orders} 件 / 先週は {p_orders} 件")
+
+    # 2. CVR 状態
+    if cvr_yoy < -20:
+        lines.append(f"⚠️ 買ってくれる人の割合（CVR）が前年より大きく低下しています（{cvr*100:.2f}% vs 前年 {y_cvr*100:.2f}%）")
+    elif cvr_yoy > 5:
+        lines.append(f"✅ 買ってくれる人の割合（CVR）は前年より改善しています（{cvr*100:.2f}%）")
+    else:
+        lines.append(f"📊 買ってくれる人の割合（CVR）は前年並みです（{cvr*100:.2f}%）")
+
+    # 3. items/session
+    if items < 1.2:
+        lines.append(f"🔴 1セッションあたりの商品閲覧数 {items:.2f} は低めです。商品ページにたどり着けていない人が多い状態です。")
+    elif items < 1.4:
+        lines.append(f"🟡 1セッションあたりの商品閲覧数 {items:.2f} は平均的。R001 反映でこれを 1.40 以上に上げるのが目標です。")
+    else:
+        lines.append(f"🟢 1セッションあたりの商品閲覧数 {items:.2f} は良好です。")
+
+    # アクション
+    actions.append("R001（コレクションページ改善）を本番に反映する")
+    actions.append("メルマガ配信時にURLに utm を手で書かない（Shopify Email 自動UTMに任せる）")
+    actions.append("LINE 配信時は ?utm_source=line&utm_medium=line&utm_campaign=日付_内容 を必ず付ける")
+
+    return {"lines": lines, "actions": actions}
+
+
+def update_archive(summary: dict) -> None:
+    """毎週月曜の "確定スナップショット" を archive.json に追記する。
+    実装: 直近の完了週 (週末=日曜終わり) を ISO 週ラベルで保存。同一週は上書き。"""
+    archive_path = DATA_DIR / "archive.json"
+    existing = []
+    if archive_path.exists():
+        try:
+            existing = json.loads(archive_path.read_text(encoding="utf-8")).get("weeks", [])
+        except Exception:
+            existing = []
+
+    today = date.today()
+    last_monday = today - timedelta(days=today.weekday() + 7)
+    last_sunday = last_monday + timedelta(days=6)
+    iso_y, iso_w, _ = last_monday.isocalendar()
+    week_label = f"{iso_y}-W{iso_w:02d}"
+
+    entry = {
+        "week": week_label,
+        "start_date": last_monday.isoformat(),
+        "end_date": last_sunday.isoformat(),
+        "kpis": summary.get("last_7d", {}),
+        "yoy": summary.get("yoy", {}),
+        "prev": summary.get("prev_7d", {}),
+        "narrative": summary.get("narrative", {}),
+        "captured_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+    }
+
+    weeks = [w for w in existing if w.get("week") != week_label]
+    weeks.append(entry)
+    weeks.sort(key=lambda w: w.get("week", ""), reverse=True)
+    weeks = weeks[:52]  # 最大52週分
+
+    archive_path.write_text(json.dumps({"weeks": weeks}, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"  archive: {week_label} ({len(weeks)} weeks stored)")
+
+
 def q(client: bigquery.Client, sql: str) -> list[dict]:
     return [dict(r) for r in client.query(sql).result()]
 
@@ -133,6 +222,8 @@ def build_summary(client: bigquery.Client) -> dict:
             "note": "前年同期 0.91%。回復目標は 0.7% 以上",
         })
 
+    narrative = make_narrative(last_7d, prev_7d, yoy)
+
     return {
         "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M JST"),
         "last_7d": last_7d,
@@ -140,6 +231,7 @@ def build_summary(client: bigquery.Client) -> dict:
         "yoy": yoy,
         "weeks": weeks,
         "signals": signals,
+        "narrative": narrative,
     }
 
 
@@ -323,11 +415,13 @@ def main() -> int:
     print(f"Output: {DATA_DIR}")
     client = bigquery.Client(project=PROJECT)
 
-    write_json("summary.json", build_summary(client))
+    summary = build_summary(client)
+    write_json("summary.json", summary)
     write_json("funnel.json", build_funnel(client))
     write_json("channels.json", build_channels(client))
     write_json("utm_health.json", build_utm_health(client))
     write_json("releases.json", build_releases())
+    update_archive(summary)
     print("refresh complete")
     return 0
 

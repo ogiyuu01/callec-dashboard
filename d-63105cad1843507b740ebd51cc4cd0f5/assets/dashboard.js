@@ -194,17 +194,76 @@ function renderReleases(data) {
     }).join("") + '</tbody>';
 }
 
+function renderNarrative(summary) {
+  if (!summary || !summary.narrative) return;
+  const n = summary.narrative;
+  const sumEl = document.getElementById("narrative-summary");
+  if (sumEl) {
+    sumEl.innerHTML = '<h3>今週の状況</h3>' +
+      '<div class="narrative-lines">' +
+      (n.lines || []).map(l => '<div class="narrative-line">' + l + '</div>').join("") +
+      '</div>';
+  }
+  const actEl = document.getElementById("narrative-actions");
+  if (actEl && n.actions && n.actions.length) {
+    actEl.innerHTML = '<h3>📌 今やるべきこと</h3>' +
+      '<ol class="action-list">' +
+      n.actions.map(a => '<li>' + a + '</li>').join("") +
+      '</ol>';
+  }
+}
+
+function renderArchive(data) {
+  if (!data || !data.weeks) {
+    document.getElementById("archive-list").innerHTML = '<p style="color:var(--text-muted)">まだ履歴がありません。来週月曜から自動保存されます。</p>';
+    return;
+  }
+  const html = data.weeks.map(w => {
+    const k = w.kpis || {};
+    const prev = w.prev || {};
+    const yoy = w.yoy || {};
+    const sales = k.sales || 0;
+    const orders = k.orders || 0;
+    const cvr = k.cvr || 0;
+    const items = k.items_per_session || 0;
+    const wow = prev.sales ? ((sales - prev.sales) / prev.sales * 100).toFixed(0) : null;
+    const yoyDelta = yoy.sales ? ((sales - yoy.sales) / yoy.sales * 100).toFixed(0) : null;
+    const wowBadge = wow !== null ? '<span class="badge ' + (wow >= 0 ? 'up' : 'down') + '">先週比 ' + (wow >= 0 ? '+' : '') + wow + '%</span>' : '';
+    const yoyBadge = yoyDelta !== null ? '<span class="badge ' + (yoyDelta >= 0 ? 'up' : 'down') + '">前年比 ' + (yoyDelta >= 0 ? '+' : '') + yoyDelta + '%</span>' : '';
+    const narrativeHtml = (w.narrative && w.narrative.lines)
+      ? '<div class="narrative-lines compact">' + w.narrative.lines.map(l => '<div class="narrative-line">' + l + '</div>').join('') + '</div>'
+      : '';
+    return '<div class="archive-card">' +
+      '<div class="archive-head">' +
+        '<div><strong>' + w.week + '</strong> <span class="archive-period">(' + w.start_date + ' 〜 ' + w.end_date + ')</span></div>' +
+        '<div class="archive-badges">' + wowBadge + ' ' + yoyBadge + '</div>' +
+      '</div>' +
+      '<div class="archive-kpis">' +
+        '<div><span class="lab">売上</span><span class="val">' + yen(sales) + '</span></div>' +
+        '<div><span class="lab">注文</span><span class="val">' + num(orders) + '</span></div>' +
+        '<div><span class="lab">CVR</span><span class="val">' + pct(cvr) + '</span></div>' +
+        '<div><span class="lab">items/session</span><span class="val">' + items.toFixed(2) + '</span></div>' +
+      '</div>' +
+      narrativeHtml +
+      '<div class="archive-meta">保存日時: ' + (w.captured_at || '—') + '</div>' +
+    '</div>';
+  }).join("");
+  document.getElementById("archive-list").innerHTML = html;
+}
+
 (async () => {
-  const [summary, funnel, channels, releases, utm] = await Promise.all([
+  const [summary, funnel, channels, releases, utm, archive] = await Promise.all([
     load("summary.json"),
     load("funnel.json"),
     load("channels.json"),
     load("releases.json"),
     load("utm_health.json"),
+    load("archive.json"),
   ]);
   if (summary && summary.last_updated) {
     document.getElementById("last-updated").textContent = summary.last_updated;
   }
+  renderNarrative(summary);
   renderKpis(summary);
   renderWeeklyTrend(summary);
   renderSignals(summary);
@@ -215,4 +274,5 @@ function renderReleases(data) {
   renderChannelTrend(channels);
   renderUtmHealth(utm);
   renderReleases(releases);
+  renderArchive(archive);
 })();
