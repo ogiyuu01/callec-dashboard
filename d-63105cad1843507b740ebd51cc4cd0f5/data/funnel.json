@@ -1,0 +1,148 @@
+{
+  "steps": [
+    {
+      "name": "Sessions",
+      "count": 8168
+    },
+    {
+      "name": "view_item",
+      "count": 9407
+    },
+    {
+      "name": "add_to_cart",
+      "count": 226
+    },
+    {
+      "name": "begin_checkout",
+      "count": 71
+    },
+    {
+      "name": "purchase",
+      "count": 38
+    }
+  ],
+  "weeks": [
+    {
+      "week": "2026-W07",
+      "items_per_session": 0,
+      "cvr": 0.0038
+    },
+    {
+      "week": "2026-W08",
+      "items_per_session": 0,
+      "cvr": 0.0036
+    },
+    {
+      "week": "2026-W09",
+      "items_per_session": 0,
+      "cvr": 0.0045
+    },
+    {
+      "week": "2026-W10",
+      "items_per_session": 0,
+      "cvr": 0.0024
+    },
+    {
+      "week": "2026-W11",
+      "items_per_session": 0,
+      "cvr": 0.0067
+    },
+    {
+      "week": "2026-W12",
+      "items_per_session": 0,
+      "cvr": 0.0045
+    },
+    {
+      "week": "2026-W13",
+      "items_per_session": 0,
+      "cvr": 0.0036
+    },
+    {
+      "week": "2026-W14",
+      "items_per_session": 0,
+      "cvr": 0.005
+    },
+    {
+      "week": "2026-W15",
+      "items_per_session": 0,
+      "cvr": 0.005
+    },
+    {
+      "week": "2026-W16",
+      "items_per_session": 0,
+      "cvr": 0.0038
+    },
+    {
+      "week": "2026-W17",
+      "items_per_session": 0,
+      "cvr": 0.0055
+    },
+    {
+      "week": "2026-W18",
+      "items_per_session": 0,
+      "cvr": 0.0035
+    }
+  ],
+  "collections": [
+    {
+      "path": "/collections/5月6日販売開始",
+      "sessions": 1969,
+      "pdp_reached": 566,
+      "pdp_reach": 28.745556119857795
+    },
+    {
+      "path": "/collections/all",
+      "sessions": 342,
+      "pdp_reached": 132,
+      "pdp_reach": 38.59649122807018
+    },
+    {
+      "path": "/collections/setup",
+      "sessions": 88,
+      "pdp_reached": 37,
+      "pdp_reach": 42.04545454545455
+    },
+    {
+      "path": "/collections/4月22日販売開始",
+      "sessions": 62,
+      "pdp_reached": 29,
+      "pdp_reach": 46.774193548387096
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 57,
+      "pdp_reached": 10,
+      "pdp_reach": 17.54385964912281
+    },
+    {
+      "path": "/collections/pants",
+      "sessions": 55,
+      "pdp_reached": 14,
+      "pdp_reach": 25.454545454545453
+    },
+    {
+      "path": "/collections/new",
+      "sessions": 45,
+      "pdp_reached": 10,
+      "pdp_reach": 22.22222222222222
+    },
+    {
+      "path": "/collections/online_ranking",
+      "sessions": 34,
+      "pdp_reached": 7,
+      "pdp_reach": 20.58823529411765
+    },
+    {
+      "path": "/collections/tailored-jacket",
+      "sessions": 34,
+      "pdp_reached": 4,
+      "pdp_reach": 11.764705882352942
+    },
+    {
+      "path": "/collections/tops",
+      "sessions": 32,
+      "pdp_reached": 7,
+      "pdp_reach": 21.875
+    }
+  ]
+}

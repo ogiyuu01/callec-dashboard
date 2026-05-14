@@ -1,0 +1,53 @@
+name: Refresh dashboard data
+
+on:
+  schedule:
+    # 毎日 09:00 JST (= 00:00 UTC)
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # 手動実行も可能
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dashboard repo
+        uses: actions/checkout@v4
+
+      - name: Checkout sibling shopify-ec-automation repo (release_log.csv / weekly_kpi.csv)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/shopify-ec-automation
+          token: ${{ secrets.SIBLING_REPO_TOKEN }}
+          path: ../shopify-ec-automation
+        continue-on-error: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install google-cloud-bigquery
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Refresh data
+        run: python3 scripts/refresh_data.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add d-*/data/*.json
+          if git diff --staged --quiet; then
+            echo "no changes"
+          else
+            git commit -m "chore(data): refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi

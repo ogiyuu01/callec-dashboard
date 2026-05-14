@@ -1,0 +1,109 @@
+{
+  "channels": [
+    {
+      "channel": "Direct",
+      "sessions": 3494,
+      "orders": 10,
+      "sales": 167200,
+      "cvr": 0.0028620492272467086
+    },
+    {
+      "channel": "Paid Search",
+      "sessions": 1647,
+      "orders": 11,
+      "sales": 287870,
+      "cvr": 0.006678809957498482
+    },
+    {
+      "channel": "Organic Search",
+      "sessions": 1381,
+      "orders": 12,
+      "sales": 235290,
+      "cvr": 0.008689355539464157
+    },
+    {
+      "channel": "Other",
+      "sessions": 529,
+      "orders": 1,
+      "sales": 27720,
+      "cvr": 0.001890359168241966
+    },
+    {
+      "channel": "Referral",
+      "sessions": 411,
+      "orders": 1,
+      "sales": 24200,
+      "cvr": 0.0024330900243309003
+    },
+    {
+      "channel": "LINE",
+      "sessions": 360,
+      "orders": 2,
+      "sales": 36300,
+      "cvr": 0.005555555555555556
+    },
+    {
+      "channel": "Email",
+      "sessions": 277,
+      "orders": 1,
+      "sales": 26400,
+      "cvr": 0.0036101083032490976
+    },
+    {
+      "channel": "Social",
+      "sessions": 69,
+      "orders": 0,
+      "sales": 0,
+      "cvr": 0.0
+    }
+  ],
+  "trend": {
+    "weeks": [
+      "2026-W18",
+      "2026-W19",
+      "2026-W20"
+    ],
+    "series": [
+      {
+        "channel": "Direct",
+        "sessions": [
+          2514,
+          3680,
+          816
+        ]
+      },
+      {
+        "channel": "Paid Search",
+        "sessions": [
+          1814,
+          1993,
+          573
+        ]
+      },
+      {
+        "channel": "Organic Search",
+        "sessions": [
+          1553,
+          1754,
+          534
+        ]
+      },
+      {
+        "channel": "Referral",
+        "sessions": [
+          519,
+          495,
+          159
+        ]
+      },
+      {
+        "channel": "Other",
+        "sessions": [
+          358,
+          470,
+          244
+        ]
+      }
+    ]
+  }
+}

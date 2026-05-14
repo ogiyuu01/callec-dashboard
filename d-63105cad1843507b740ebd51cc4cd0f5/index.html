@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CALL&RESPONSE Dashboard</title>
+<link rel="stylesheet" href="assets/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <h1>CALL&amp;RESPONSE Dashboard</h1>
+    <div class="meta">
+      <span>最終更新: <strong id="last-updated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs container">
+  <button class="tab active" data-tab="exec">📊 サマリ</button>
+  <button class="tab" data-tab="funnel">🛒 ファネル</button>
+  <button class="tab" data-tab="channel">📣 チャネル</button>
+  <button class="tab" data-tab="release">🚀 リリース</button>
+</nav>
+
+<main class="container">
+  <section class="page active" id="page-exec">
+    <h2>エグゼクティブサマリ</h2>
+    <div class="kpi-grid" id="exec-kpis"></div>
+    <div class="card">
+      <h3>週次トレンド（直近12週）</h3>
+      <canvas id="chart-weekly-trend"></canvas>
+    </div>
+    <div class="card">
+      <h3>判定シグナル</h3>
+      <div id="exec-signals"></div>
+    </div>
+  </section>
+
+  <section class="page" id="page-funnel">
+    <h2>ファネル詳細</h2>
+    <div class="card">
+      <h3>5段ファネル（直近7日）</h3>
+      <div id="funnel-bars"></div>
+    </div>
+    <div class="card">
+      <h3>items/session 推移（過去）</h3>
+      <canvas id="chart-items-trend"></canvas>
+    </div>
+    <div class="card">
+      <h3>コレクション着地 → PDP到達率</h3>
+      <table class="data-table" id="table-collections"></table>
+    </div>
+  </section>
+
+  <section class="page" id="page-channel">
+    <h2>チャネル別パフォーマンス</h2>
+    <div class="card">
+      <h3>チャネル別KPI（直近7日）</h3>
+      <table class="data-table" id="table-channels"></table>
+    </div>
+    <div class="card">
+      <h3>Channel別 sessions 推移</h3>
+      <canvas id="chart-channel-trend"></canvas>
+    </div>
+    <div class="card">
+      <h3>計測ヘルス（utm 破損検知）</h3>
+      <div id="utm-health"></div>
+    </div>
+  </section>
+
+  <section class="page" id="page-release">
+    <h2>リリース効果</h2>
+    <div class="card">
+      <h3>稼働中・過去リリース一覧</h3>
+      <table class="data-table" id="table-releases"></table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>data refresh: GitHub Actions (daily) · BigQuery sessions_clean · GA4 Property 320051621</span>
+  </div>
+</footer>
+
+<script src="assets/dashboard.js"></script>
+</body>
+</html>

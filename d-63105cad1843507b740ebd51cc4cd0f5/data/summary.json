@@ -1,0 +1,143 @@
+{
+  "last_updated": "2026-05-14 14:18 JST",
+  "last_7d": {
+    "sessions": 8168,
+    "item_views": 9407,
+    "orders": 38,
+    "sales": 804980,
+    "cvr": 0.00465230166503428,
+    "aov": 21183.684210526317,
+    "items_per_session": 1.1516895200783546
+  },
+  "prev_7d": {
+    "sessions": 8011,
+    "item_views": 9856,
+    "orders": 32,
+    "sales": 642950,
+    "cvr": 0.0039945075521158405,
+    "aov": 20092.1875,
+    "items_per_session": 1.230308326051679
+  },
+  "yoy": {
+    "sessions": 4926,
+    "orders": 40,
+    "sales": 645948,
+    "cvr": 0.0081,
+    "aov": 16148.0,
+    "items_per_session": 0
+  },
+  "weeks": [
+    {
+      "week": "2026-W07",
+      "sessions": 6561,
+      "orders": 25,
+      "sales": 455069,
+      "cvr": 0.0038,
+      "items_per_session": null
+    },
+    {
+      "week": "2026-W08",
+      "sessions": 7434,
+      "orders": 27,
+      "sales": 705869,
+      "cvr": 0.0036,
+      "items_per_session": null
+    },
+    {
+      "week": "2026-W09",
+      "sessions": 5148,
+      "orders": 23,
+      "sales": 438130,
+      "cvr": 0.0045,
+      "items_per_session": null
+    },
+    {
+      "week": "2026-W10",
+      "sessions": 8354,
+      "orders": 20,
+      "sales": 505449,
+      "cvr": 0.0024,
+      "items_per_session": null
+    },
+    {
+      "week": "2026-W11",
+      "sessions": 6963,
+      "orders": 47,
+      "sales": 1189430,
+      "cvr": 0.0067,
+      "items_per_session": null
+    },
+    {
+      "week": "2026-W12",
+      "sessions": 7749,
+      "orders": 35,
+      "sales": 610060,
+      "cvr": 0.0045,
+      "items_per_session": null
+    },
+    {
+      "week": "2026-W13",
+      "sessions": 10515,
+      "orders": 38,
+      "sales": 594880,
+      "cvr": 0.0036,
+      "items_per_session": null
+    },
+    {
+      "week": "2026-W14",
+      "sessions": 8172,
+      "orders": 41,
+      "sales": 976910,
+      "cvr": 0.005,
+      "items_per_session": null
+    },
+    {
+      "week": "2026-W15",
+      "sessions": 8371,
+      "orders": 42,
+      "sales": 846120,
+      "cvr": 0.005,
+      "items_per_session": null
+    },
+    {
+      "week": "2026-W16",
+      "sessions": 9240,
+      "orders": 35,
+      "sales": 643939,
+      "cvr": 0.0038,
+      "items_per_session": null
+    },
+    {
+      "week": "2026-W17",
+      "sessions": 7754,
+      "orders": 43,
+      "sales": 844470,
+      "cvr": 0.0055,
+      "items_per_session": null
+    },
+    {
+      "week": "2026-W18",
+      "sessions": 7327,
+      "orders": 26,
+      "sales": 467499,
+      "cvr": 0.0035,
+      "items_per_session": null
+    }
+  ],
+  "signals": [
+    {
+      "level": "red",
+      "metric": "items/session",
+      "value": "1.15",
+      "target": "≥ 1.40 (R001目標)",
+      "note": "R001 反映後の改善を測る最重要指標"
+    },
+    {
+      "level": "red",
+      "metric": "CVR",
+      "value": "0.47%",
+      "target": "≥ 0.70%",
+      "note": "前年同期 0.91%。回復目標は 0.7% 以上"
+    }
+  ]
+}

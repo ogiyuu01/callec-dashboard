@@ -1,0 +1,15 @@
+{
+  "releases": [
+    {
+      "release_id": "R001",
+      "deployed_at": "",
+      "type": "theme",
+      "target": "本番テーマ(live 152152768702)",
+      "summary": "コレクションページの商品カード情報密度向上+ファーストビュー改善(販売開始日告知バナーの縮小・商品見え優先)",
+      "hypothesis_metric": "collection_to_pdp_rate",
+      "expected_lift_pct": "33",
+      "eval_window_days": "21",
+      "decision": "DRAFT"
+    }
+  ]
+}
