@@ -1,37 +1,37 @@
 /* Dashboard JS — tab切替 + JSON読込 + Chart.js描画 */
 const DATA_DIR = "data";
 
-// === Chart.js global dark theme ===
+// === Chart.js global theme (Editorial Luxury · Deep Espresso) ===
 if (typeof Chart !== "undefined") {
-  Chart.defaults.font.family = "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
+  Chart.defaults.font.family = "'Plus Jakarta Sans', 'Noto Sans JP', sans-serif";
   Chart.defaults.font.size = 11;
-  Chart.defaults.color = "#a8b0bd";
-  Chart.defaults.borderColor = "#232936";
+  Chart.defaults.color = "#c4b8a9";
+  Chart.defaults.borderColor = "rgba(244,237,226,0.06)";
   Chart.defaults.plugins.legend.labels.boxWidth = 10;
   Chart.defaults.plugins.legend.labels.boxHeight = 10;
   Chart.defaults.plugins.legend.labels.padding = 14;
   Chart.defaults.plugins.legend.labels.usePointStyle = true;
-  Chart.defaults.plugins.tooltip.backgroundColor = "rgba(17,20,26,0.95)";
-  Chart.defaults.plugins.tooltip.titleColor = "#e8ecf1";
-  Chart.defaults.plugins.tooltip.bodyColor = "#a8b0bd";
-  Chart.defaults.plugins.tooltip.borderColor = "#2e3645";
+  Chart.defaults.plugins.tooltip.backgroundColor = "rgba(20,16,13,0.96)";
+  Chart.defaults.plugins.tooltip.titleColor = "#f4ede2";
+  Chart.defaults.plugins.tooltip.bodyColor = "#c4b8a9";
+  Chart.defaults.plugins.tooltip.borderColor = "rgba(244,237,226,0.12)";
   Chart.defaults.plugins.tooltip.borderWidth = 1;
-  Chart.defaults.plugins.tooltip.padding = 12;
-  Chart.defaults.plugins.tooltip.cornerRadius = 8;
+  Chart.defaults.plugins.tooltip.padding = 14;
+  Chart.defaults.plugins.tooltip.cornerRadius = 12;
   Chart.defaults.plugins.tooltip.displayColors = true;
   Chart.defaults.plugins.tooltip.usePointStyle = true;
-  Chart.defaults.elements.line.borderWidth = 2;
-  Chart.defaults.elements.line.tension = 0.3;
+  Chart.defaults.elements.line.borderWidth = 1.5;
+  Chart.defaults.elements.line.tension = 0.4;
   Chart.defaults.elements.point.radius = 0;
   Chart.defaults.elements.point.hoverRadius = 6;
   Chart.defaults.elements.point.hoverBorderWidth = 2;
-  Chart.defaults.scale.grid.color = "rgba(35,41,54,0.6)";
+  Chart.defaults.scale.grid.color = "rgba(244,237,226,0.05)";
   Chart.defaults.scale.grid.drawTicks = false;
-  Chart.defaults.scale.ticks.padding = 8;
+  Chart.defaults.scale.ticks.padding = 10;
 }
 
-// 高級感のあるチャート配色
-const CHART_PALETTE = ["#c8a96a", "#4ade80", "#60a5fa", "#f87171", "#a78bfa", "#fbbf24", "#34d399", "#fb7185"];
+// Editorial luxury palette
+const CHART_PALETTE = ["#d4b87a", "#95c891", "#a99dd6", "#e6b855", "#d68d8d", "#7fb8c9", "#b8a99a", "#8a7a6c"];
 
 const yen = v => "¥" + Math.round(v).toLocaleString("ja-JP");
 const num = v => Math.round(v).toLocaleString("ja-JP");
@@ -328,4 +328,31 @@ function renderArchiveMonthly(data) {
   renderReleases(releases);
   renderArchive(archive);
   renderArchiveMonthly(monthly);
+
+  // === Scroll-reveal: gentle fade-up-blur as elements enter the viewport ===
+  const candidates = document.querySelectorAll(".card, .kpi, .archive-card, .archive-month-card");
+  candidates.forEach(el => el.classList.add("reveal"));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+  candidates.forEach(el => io.observe(el));
+
+  // Re-trigger reveal animations when switching tabs
+  document.querySelectorAll(".tab, .nav-item").forEach(btn => {
+    btn.addEventListener("click", () => {
+      requestAnimationFrame(() => {
+        const targetPage = document.querySelector(".page.active");
+        if (!targetPage) return;
+        targetPage.querySelectorAll(".reveal").forEach((el, i) => {
+          el.classList.remove("in");
+          setTimeout(() => el.classList.add("in"), 40 + i * 30);
+        });
+      });
+    });
+  });
 })();

@@ -6,29 +6,33 @@
 <title>CALL&RESPONSE Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,30..100&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
+
 <aside class="sidebar">
-  <div class="sidebar-brand">
-    <span class="brand-dot">●</span> CALL&amp;RESPONSE
-  </div>
-  <div class="sidebar-section">
-    <div class="sidebar-label">概況</div>
-    <button class="nav-item active" data-tab="exec">📊 今週のサマリ</button>
-    <button class="nav-item" data-tab="funnel">🛒 ファネル</button>
-    <button class="nav-item" data-tab="channel">📣 チャネル</button>
-    <button class="nav-item" data-tab="release">🚀 リリース</button>
-  </div>
-  <div class="sidebar-section">
-    <div class="sidebar-label">履歴</div>
-    <button class="nav-item" data-tab="archive">📅 週次履歴</button>
-    <button class="nav-item" data-tab="archive-monthly">🗓️ 月次履歴</button>
-  </div>
-  <div class="sidebar-footer">
-    最終更新: <strong id="last-updated-side">—</strong>
+  <div class="sidebar-inner">
+    <div class="sidebar-brand">
+      <span class="brand-dot">—</span> CALL&amp;RESPONSE
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">概況</div>
+      <button class="nav-item active" data-tab="exec">今週のサマリ</button>
+      <button class="nav-item" data-tab="funnel">ファネル</button>
+      <button class="nav-item" data-tab="channel">チャネル</button>
+      <button class="nav-item" data-tab="release">リリース</button>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">履歴</div>
+      <button class="nav-item" data-tab="archive">週次履歴</button>
+      <button class="nav-item" data-tab="archive-monthly">月次履歴</button>
+    </div>
+    <div class="sidebar-footer">
+      最終更新: <strong id="last-updated-side">—</strong>
+    </div>
   </div>
 </aside>
 
@@ -52,6 +56,7 @@
 
 <main class="container">
   <section class="page active" id="page-exec">
+    <span class="eyebrow">Weekly Pulse</span>
     <h2>今週のサマリ</h2>
     <div class="card narrative-card" id="narrative-summary"></div>
     <div class="card narrative-card" id="narrative-actions"></div>
@@ -67,7 +72,8 @@
   </section>
 
   <section class="page" id="page-funnel">
-    <h2>ファネル詳細</h2>
+    <span class="eyebrow">Funnel</span>
+    <h2>離脱ポイントを見る</h2>
     <div class="card">
       <h3>5段ファネル（直近7日）</h3>
       <div id="funnel-bars"></div>
@@ -83,7 +89,8 @@
   </section>
 
   <section class="page" id="page-channel">
-    <h2>チャネル別パフォーマンス</h2>
+    <span class="eyebrow">Acquisition</span>
+    <h2>どこから来てる？</h2>
     <div class="card">
       <h3>チャネル別KPI（直近7日）</h3>
       <table class="data-table" id="table-channels"></table>
@@ -99,7 +106,8 @@
   </section>
 
   <section class="page" id="page-release">
-    <h2>リリース効果</h2>
+    <span class="eyebrow">Experiments</span>
+    <h2>進行中の改善</h2>
     <div class="card">
       <h3>稼働中・過去リリース一覧</h3>
       <table class="data-table" id="table-releases"></table>
@@ -107,13 +115,15 @@
   </section>
 
   <section class="page" id="page-archive">
-    <h2>週次履歴</h2>
+    <span class="eyebrow">Archive · Weekly</span>
+    <h2>週次の積み重ね</h2>
     <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">毎週月曜にその週のスナップショットを自動保存しています（最大52週分）。</p>
     <div id="archive-list"></div>
   </section>
 
   <section class="page" id="page-archive-monthly">
-    <h2>月次履歴</h2>
+    <span class="eyebrow">Archive · Monthly</span>
+    <h2>月度の振り返り</h2>
     <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">2026年4月度以降の月次スナップショット。前月比・前年同月比つき。</p>
     <div id="archive-monthly-list"></div>
   </section>
