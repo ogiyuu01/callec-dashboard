@@ -1,39 +1,4 @@
 {
-  "current": {
-    "week": "2026-W20",
-    "theme": "新テーマ切替後の効果検証と動線改善",
-    "topic_slug": "post_theme_switch_followup",
-    "set_at": "2026-05-15",
-    "tasks": {
-      "owner": [
-        "Pre30 vs Post の KPI 週次モニタリング",
-        "カート→決済の壊れ箇所を Clarity replay で特定",
-        "R001 評価期間(21日)の判定準備"
-      ],
-      "nakamura": [
-        "新作Tシャツ・サマーベロアハーフパンツの記事 1本作成",
-        "Klaviyo カート離脱フロー設計開始",
-        "メルマガで「夏でもだらしなく見えないTシャツ」テーマ配信"
-      ],
-      "ichikawa": [
-        "LINE 配信: 新テーマ刷新後の動線テスト",
-        "Instagram Reels: 夏向け軽量素材アイテム 2-4本",
-        "LINE 友だち追加後ステップの初期設計"
-      ]
-    }
-  },
-  "history": [
-    {
-      "week": "2026-W19",
-      "theme": "新テーマ切替の本番反映",
-      "topic_slug": "theme_switch",
-      "set_at": "2026-05-12",
-      "result_summary": "テーマ #154305790142 を live 化。R001(コレクション PDP 誘導) + CVR セクション一式が稼働開始。",
-      "kpi_lift": {
-        "atc_rate": "+80%",
-        "cvr": "+69%",
-        "items_per_session": "+17%"
-      }
-    }
-  ]
+  "current": {},
+  "history": []
 }
