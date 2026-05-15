@@ -1,0 +1,151 @@
+{
+  "_meta": {
+    "source_sheet_id": "1nTe9DK5CTYxbXCq9nHbydVltNBwe00iG7z7U3jLkpbQ",
+    "source_sheet_title": "CALL EC_2026年度年間計画",
+    "source_tabs": [
+      "12M",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "fetched_at": "2026-05-15T18:25:31",
+    "note": "12M タブから年間サマリ、各月タブ (1〜12) から着地見込みを取得。シート側を正、読込専用。"
+  },
+  "year": 2026,
+  "annual": {
+    "target": 23200000,
+    "actual": 12638891,
+    "prev_year": 19823927
+  },
+  "months": {
+    "2026-01": {
+      "target": 4000000,
+      "actual": 3653591,
+      "prev_year": 2973137,
+      "daily_avg_actual": 117858,
+      "landing_forecast": 3653591,
+      "days_elapsed": 31,
+      "days_remaining": 0,
+      "daily_required_to_target": 0
+    },
+    "2026-02": {
+      "target": 4000000,
+      "actual": 2075900,
+      "prev_year": 2219200,
+      "daily_avg_actual": 74139,
+      "landing_forecast": 2075900,
+      "days_elapsed": 28,
+      "days_remaining": 0,
+      "daily_required_to_target": 0
+    },
+    "2026-03": {
+      "target": 4000000,
+      "actual": 3366800,
+      "prev_year": 5418600,
+      "daily_avg_actual": 108606,
+      "landing_forecast": 3366800,
+      "days_elapsed": 31,
+      "days_remaining": 0,
+      "daily_required_to_target": 0
+    },
+    "2026-04": {
+      "target": 5600000,
+      "actual": 3361600,
+      "prev_year": 5574100,
+      "daily_avg_actual": 112053,
+      "landing_forecast": 3361600,
+      "days_elapsed": 30,
+      "days_remaining": 0,
+      "daily_required_to_target": 0
+    },
+    "2026-05": {
+      "target": 5600000,
+      "actual": 181000,
+      "prev_year": 3638890,
+      "daily_avg_actual": 60333,
+      "landing_forecast": 1870333,
+      "days_elapsed": 3,
+      "days_remaining": 28,
+      "daily_required_to_target": 193536
+    },
+    "2026-06": {
+      "target": 0,
+      "actual": 0,
+      "prev_year": 0,
+      "daily_avg_actual": 0,
+      "landing_forecast": 0,
+      "days_elapsed": 0,
+      "days_remaining": 30,
+      "daily_required_to_target": 0
+    },
+    "2026-07": {
+      "target": 0,
+      "actual": 0,
+      "prev_year": 0,
+      "daily_avg_actual": 0,
+      "landing_forecast": 0,
+      "days_elapsed": 0,
+      "days_remaining": 31,
+      "daily_required_to_target": 0
+    },
+    "2026-08": {
+      "target": 0,
+      "actual": 0,
+      "prev_year": 0,
+      "daily_avg_actual": 0,
+      "landing_forecast": 0,
+      "days_elapsed": 0,
+      "days_remaining": 31,
+      "daily_required_to_target": 0
+    },
+    "2026-09": {
+      "target": 0,
+      "actual": 0,
+      "prev_year": 0,
+      "daily_avg_actual": 0,
+      "landing_forecast": 0,
+      "days_elapsed": 0,
+      "days_remaining": 30,
+      "daily_required_to_target": 0
+    },
+    "2026-10": {
+      "target": 0,
+      "actual": 0,
+      "prev_year": 0,
+      "daily_avg_actual": 0,
+      "landing_forecast": 0,
+      "days_elapsed": 0,
+      "days_remaining": 31,
+      "daily_required_to_target": 0
+    },
+    "2026-11": {
+      "target": 0,
+      "actual": 0,
+      "prev_year": 0,
+      "daily_avg_actual": 0,
+      "landing_forecast": 0,
+      "days_elapsed": 0,
+      "days_remaining": 30,
+      "daily_required_to_target": 0
+    },
+    "2026-12": {
+      "target": 0,
+      "actual": 0,
+      "prev_year": 0,
+      "daily_avg_actual": 0,
+      "landing_forecast": 0,
+      "days_elapsed": 0,
+      "days_remaining": 31,
+      "daily_required_to_target": 0
+    }
+  }
+}

@@ -16,7 +16,7 @@ jobs:
       - name: Checkout dashboard repo
         uses: actions/checkout@v4
 
-      - name: Checkout sibling shopify-ec-automation repo (release_log.csv / weekly_kpi.csv)
+      - name: Checkout sibling shopify-ec-automation repo (optional - release_log.csv / weekly_kpi.csv)
         uses: actions/checkout@v4
         with:
           repository: ${{ github.repository_owner }}/shopify-ec-automation
@@ -30,17 +30,21 @@ jobs:
           python-version: '3.11'
 
       - name: Install deps
-        run: pip install google-cloud-bigquery
+        run: pip install google-cloud-bigquery gspread google-auth
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
 
+      - name: Sync budget from Google Sheets
+        run: python3 scripts/sync_budget.py
+        continue-on-error: true
+
       - name: Refresh data
         run: python3 scripts/refresh_data.py
 
-      - name: Commit & push if changed
+      - name: Commit & push dashboard data if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

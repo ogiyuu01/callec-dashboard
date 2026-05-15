@@ -29,7 +29,9 @@ DATASET = "analytics_320051621"
 SIBLING = ROOT.parent / "shopify-ec-automation"
 RELEASE_LOG = SIBLING / "data" / "release_log.csv"
 WEEKLY_KPI = SIBLING / "data" / "weekly_kpi.csv"
-MONTHLY_TARGET = SIBLING / "data" / "monthly_target.json"
+MONTHLY_TARGET = SIBLING / "data" / "monthly_target.json"  # 旧フォーマット (deprecated)
+BUDGET_JSON_LOCAL = DATA_DIR / "budget.json"  # dashboard 自前 (sync_budget.py が書く)
+BUDGET_JSON_SIBLING = SIBLING / "data" / "budget.json"  # sibling 側 (ローカル開発用)
 SHOPIFY_METRICS = SIBLING / "data" / "shopify_metrics.json"
 REPORTS_DIR = SIBLING / "outputs" / "reports"
 WEEKLY_THEMES = SIBLING / "data" / "weekly_themes.json"
@@ -874,17 +876,32 @@ def build_goal_progress(client: bigquery.Client) -> dict:
     days_passed = today.day
     days_remaining = days_in_month - days_passed
 
-    # 月次目標読み込み
-    targets = {}
-    if MONTHLY_TARGET.exists():
+    # 月次目標読み込み: budget.json (dashboard 自前 → sibling) → 旧 monthly_target.json → デフォルト
+    sales_target = 0
+    orders_target = 200
+    note = ""
+    for budget_path in (BUDGET_JSON_LOCAL, BUDGET_JSON_SIBLING):
+        if not budget_path.exists():
+            continue
+        try:
+            budget = json.loads(budget_path.read_text(encoding="utf-8"))
+            month_data = (budget.get("months") or {}).get(cur_month_str, {})
+            sales_target = int(month_data.get("target") or 0)
+            if sales_target:
+                break
+        except Exception:
+            continue
+    if not sales_target and MONTHLY_TARGET.exists():
         try:
             targets = json.loads(MONTHLY_TARGET.read_text(encoding="utf-8"))
+            cur_target = (targets.get("targets") or {}).get(cur_month_str, {})
+            sales_target = int(cur_target.get("sales") or targets.get("default_monthly_target") or 4000000)
+            orders_target = int(cur_target.get("orders") or targets.get("default_orders_target") or 200)
+            note = cur_target.get("note", "")
         except Exception:
-            targets = {}
-    cur_target = (targets.get("targets") or {}).get(cur_month_str, {})
-    sales_target = int(cur_target.get("sales") or targets.get("default_monthly_target") or 4000000)
-    orders_target = int(cur_target.get("orders") or targets.get("default_orders_target") or 200)
-    note = cur_target.get("note", "")
+            pass
+    if not sales_target:
+        sales_target = 4000000
 
     # MTD 実績（BQ）
     sql = f"""
