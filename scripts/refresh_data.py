@@ -362,54 +362,44 @@ def build_products(client: bigquery.Client) -> dict:
     rows = q(client, sql)
 
     def classify(v, a, b):
-        if v < 30: return ("low_traffic", "流入弱（露出強化）")
+        if v < 30: return ("流入弱", "露出を増やす：特集ページ・LINE・Instagram で見せる")
         atc_rate = (a / v) if v else 0
         buy_rate = (b / v) if v else 0
         atc_to_buy = (b / a) if a else 0
         if v >= 80 and atc_rate < 0.01:
-            return ("pv_high_atc_low", "PV高・カート低（訴求改善）")
+            return ("PV高・カート低", "訴求改善：写真・コピー・商品魅力の言語化")
         if atc_rate >= 0.025 and atc_to_buy < 0.25 and a >= 4:
-            return ("atc_high_buy_low", "カート高・購入低（不安解消）")
+            return ("カート高・購入低", "不安解消：サイズ・配送・返品・在庫表示")
         if buy_rate >= 0.01 and v >= 50:
-            return ("healthy", "順調")
-        return ("watch", "様子見")
+            return ("順調", "現状維持：露出継続")
+        return ("経過観察", "もう少しデータを溜める")
 
-    items = []
+    products = []
     for r in rows:
         v = int(r.get("views") or 0)
         a = int(r.get("atcs") or 0)
         b = int(r.get("buys") or 0)
-        state_id, state_label = classify(v, a, b)
-        items.append({
+        state, advice = classify(v, a, b)
+        products.append({
             "name": r.get("name") or "—",
             "sku": r.get("sku") or "",
             "price": int(r.get("price") or 0),
             "views": v, "atcs": a, "buys": b,
             "revenue": int(r.get("revenue") or 0),
-            "atc_rate": round((a / v) * 100, 2) if v else 0,
-            "buy_rate": round((b / v) * 100, 2) if v else 0,
+            "atc_per_view": round((a / v) * 100, 2) if v else 0,
+            "buy_per_view": round((b / v) * 100, 2) if v else 0,
             "atc_to_buy": round((b / a) * 100, 1) if a else 0,
-            "state": state_id,
-            "state_label": state_label,
+            "state": state,
+            "advice": advice,
         })
 
     from collections import Counter
-    state_count = Counter([i["state"] for i in items])
-    summary = [
-        {"state": s, "label": {
-            "pv_high_atc_low": "PV高・カート低",
-            "atc_high_buy_low": "カート高・購入低",
-            "healthy": "順調",
-            "low_traffic": "流入弱",
-            "watch": "様子見"
-        }[s], "count": state_count.get(s, 0)}
-        for s in ["pv_high_atc_low", "atc_high_buy_low", "healthy", "low_traffic", "watch"]
-    ]
+    state_counts = dict(Counter([p["state"] for p in products]))
 
     return {
         "period": {"start": start.isoformat(), "end": end.isoformat()},
-        "items": items,
-        "state_summary": summary,
+        "products": products,
+        "state_counts": state_counts,
     }
 
 
