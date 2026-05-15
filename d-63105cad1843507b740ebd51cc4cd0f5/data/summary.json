@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-15 15:58 JST",
+  "last_updated": "2026-05-15 16:06 JST",
   "last_7d": {
     "sessions": 8075,
     "item_views": 9276,
@@ -148,9 +148,11 @@
       "🔴 1セッションあたりの商品閲覧数 1.15 は低めです。商品ページにたどり着けていない人が多い状態です。"
     ],
     "actions": [
-      "R001（コレクションページ改善）を本番に反映する",
-      "メルマガ配信時にURLに utm を手で書かない（Shopify Email 自動UTMに任せる）",
-      "LINE 配信時は ?utm_source=line&utm_medium=line&utm_campaign=日付_内容 を必ず付ける"
+      "items/session 1.15 が低水準。コレクションページの PDP 誘導施策を進める",
+      "月末着地予測 89% (未達)。残り日 1日あたり ¥149,893 の売上が必要",
+      "PDP改修候補が 112 商品。上位5商品の写真/コピー/サイズ訴求を改善",
+      "未反映の DRAFT リリースが 1 件。理由整理 or 反映判断を進める",
+      "CVR 0.54% は新規獲得を増やす段階ではない。CRO に集中"
     ]
   },
   "daily": [
@@ -389,5 +391,36 @@
       "direction": "up",
       "delta_text": "+180%"
     }
-  ]
+  ],
+  "goal": {
+    "month": "2026-05",
+    "days_in_month": 31,
+    "days_passed": 15,
+    "days_remaining": 16,
+    "target": {
+      "sales": 4000000,
+      "orders": 200,
+      "note": "テーマ切替後の改善織込みで前月比+19%"
+    },
+    "actual": {
+      "sales": 1601710,
+      "orders": 78
+    },
+    "projected": {
+      "sales": 3546643,
+      "orders": 172
+    },
+    "progress": {
+      "sales_pct": 40.0,
+      "orders_pct": 39.0,
+      "projected_sales_pct": 88.7,
+      "projected_orders_pct": 86.0
+    },
+    "remaining": {
+      "sales": 2398290,
+      "orders": 122,
+      "daily_needed_sales": 149893,
+      "daily_needed_orders": 7.625
+    }
+  }
 }

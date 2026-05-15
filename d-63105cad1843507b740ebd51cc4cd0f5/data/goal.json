@@ -1,0 +1,31 @@
+{
+  "month": "2026-05",
+  "days_in_month": 31,
+  "days_passed": 15,
+  "days_remaining": 16,
+  "target": {
+    "sales": 4000000,
+    "orders": 200,
+    "note": "テーマ切替後の改善織込みで前月比+19%"
+  },
+  "actual": {
+    "sales": 1601710,
+    "orders": 78
+  },
+  "projected": {
+    "sales": 3546643,
+    "orders": 172
+  },
+  "progress": {
+    "sales_pct": 40.0,
+    "orders_pct": 39.0,
+    "projected_sales_pct": 88.7,
+    "projected_orders_pct": 86.0
+  },
+  "remaining": {
+    "sales": 2398290,
+    "orders": 122,
+    "daily_needed_sales": 149893,
+    "daily_needed_orders": 7.625
+  }
+}

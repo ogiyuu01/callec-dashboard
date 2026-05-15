@@ -492,8 +492,160 @@ function renderProductTable() {
     '</tr></thead><tbody>' + rows + '</tbody>';
 }
 
+function renderGoal(data) {
+  const el = document.getElementById("goal-card");
+  if (!el || !data) return;
+  const g = data;
+  const sp = g.progress.sales_pct || 0;
+  const pp = g.progress.projected_sales_pct || 0;
+  const projColor = pp >= 100 ? "good" : pp >= 90 ? "neutral" : "warn";
+  el.innerHTML =
+    '<h3>月次目標 ' + g.month + '</h3>' +
+    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:14px;">' +
+      '<div><div style="font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.16em;">目標売上</div><div style="font-family:\'Fraunces\',serif;font-size:1.4rem;">' + yen(g.target.sales) + '</div></div>' +
+      '<div><div style="font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.16em;">MTD 実績</div><div style="font-family:\'Fraunces\',serif;font-size:1.4rem;">' + yen(g.actual.sales) + ' <span style="font-size:0.85rem;color:var(--text-soft);">(' + sp + '%)</span></div></div>' +
+      '<div><div style="font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.16em;">月末予測</div><div style="font-family:\'Fraunces\',serif;font-size:1.4rem;">' + yen(g.projected.sales) + ' <span class="signal ' + (projColor==="good"?"green":projColor==="warn"?"yellow":"") + '">' + pp + '%</span></div></div>' +
+    '</div>' +
+    '<div class="progress-bar"><div class="progress-fill" style="width:' + Math.min(sp, 100) + '%"></div></div>' +
+    '<div style="display:flex;justify-content:space-between;margin-top:8px;font-size:0.78rem;color:var(--text-muted);font-family:\'JetBrains Mono\',monospace;">' +
+      '<span>残り ' + g.days_remaining + '日 · 1日あたり ' + yen(g.remaining.daily_needed_sales) + ' 必要</span>' +
+      '<span>注文: ' + g.actual.orders + ' / ' + g.target.orders + ' (' + g.progress.orders_pct + '%)</span>' +
+    '</div>' +
+    (g.target.note ? '<p style="color:var(--text-muted);font-size:0.82rem;margin-top:10px;">' + g.target.note + '</p>' : '');
+}
+
+function renderDynamicActions(actions) {
+  const el = document.getElementById("dynamic-actions-card");
+  if (!el || !actions || !actions.length) return;
+  el.innerHTML = '<h3>📌 今やるべきこと（自動生成）</h3>' +
+    '<ol class="action-list">' + actions.map(a => '<li>' + a + '</li>').join("") + '</ol>';
+}
+
+function renderCustomerSegments(data) {
+  const el = document.getElementById("customer-segments");
+  if (!el || !data) return;
+  const segs = data.segments || {};
+  const order = ["new","returning"];
+  const labels = {"new":"新規","returning":"リピート"};
+  const items = order.map(k => segs[k] ? Object.assign({key:k}, segs[k]) : null).filter(Boolean);
+  if (!items.length) {
+    el.innerHTML = '<p style="color:var(--text-muted);">セグメントデータが取得できませんでした</p>';
+    return;
+  }
+  el.innerHTML =
+    '<table class="data-table"><thead><tr><th>セグメント</th><th class="num">セッション</th><th class="num">ATC率</th><th class="num">CVR</th><th class="num">注文</th><th class="num">売上</th><th class="num">構成比</th></tr></thead><tbody>' +
+    items.map(it =>
+      '<tr><td>' + labels[it.key] + '</td>' +
+      '<td class="num">' + num(it.sessions) + '</td>' +
+      '<td class="num">' + it.atc_rate + '%</td>' +
+      '<td class="num">' + it.cvr + '%</td>' +
+      '<td class="num">' + num(it.orders) + '</td>' +
+      '<td class="num">' + yen(it.sales) + '</td>' +
+      '<td class="num">' + it.sales_share + '%</td></tr>'
+    ).join("") + '</tbody></table>' +
+    (items.length === 1 && items[0].key === "new" ? '<p style="color:var(--text-muted);font-size:0.82rem;margin-top:10px;">⚠️ BQ蓄積期間が短く(2026-04-27以降)、リピート判定の精度が低い状態です。蓄積が進むと精度が上がります。</p>' : '');
+}
+
+function renderChannelFunnel(data) {
+  const el = document.getElementById("table-channel-funnel");
+  if (!el || !data) return;
+  const rows = data.channels || [];
+  el.innerHTML =
+    '<thead><tr><th>チャネル</th><th class="num">sess</th><th class="num">PDP到達%</th><th class="num">ATC%</th><th class="num">CVR%</th></tr></thead><tbody>' +
+    rows.map(r => '<tr>' +
+      '<td>' + r.channel + '</td>' +
+      '<td class="num">' + num(r.sessions) + '</td>' +
+      '<td class="num">' + r.pdp_rate + '%</td>' +
+      '<td class="num">' + r.atc_rate + '%</td>' +
+      '<td class="num">' + r.cvr + '%</td>' +
+    '</tr>').join("") + '</tbody>';
+}
+
+let _reportsData = null;
+let _reportsFilter = "all";
+let _reportsQuery = "";
+function renderReports(data) {
+  _reportsData = data;
+  const filtersEl = document.getElementById("report-filters");
+  if (filtersEl && data && data.reports) {
+    const cats = ["all"].concat(Array.from(new Set(data.reports.map(r => r.category))));
+    filtersEl.innerHTML = cats.map(c =>
+      '<button class="state-chip ' + (c === _reportsFilter ? "active" : "") + '" data-cat="' + c + '">' + (c === "all" ? "全て" : c) + '</button>'
+    ).join("");
+    filtersEl.querySelectorAll(".state-chip").forEach(btn => {
+      btn.addEventListener("click", () => {
+        _reportsFilter = btn.dataset.cat;
+        filtersEl.querySelectorAll(".state-chip").forEach(b => b.classList.toggle("active", b===btn));
+        renderReportsList();
+      });
+    });
+  }
+  const searchEl = document.getElementById("report-search");
+  if (searchEl && !searchEl._wired) {
+    searchEl.addEventListener("input", () => { _reportsQuery = searchEl.value.toLowerCase(); renderReportsList(); });
+    searchEl._wired = true;
+  }
+  renderReportsList();
+  const closeBtn = document.getElementById("report-close");
+  if (closeBtn) closeBtn.addEventListener("click", () => {
+    document.getElementById("report-viewer").style.display = "none";
+  });
+}
+function renderReportsList() {
+  const el = document.getElementById("reports-list");
+  if (!el || !_reportsData) return;
+  const list = (_reportsData.reports || []).filter(r => {
+    if (_reportsFilter !== "all" && r.category !== _reportsFilter) return false;
+    if (_reportsQuery && !((r.title||"").toLowerCase().includes(_reportsQuery) || (r.body||"").toLowerCase().includes(_reportsQuery))) return false;
+    return true;
+  });
+  el.innerHTML = list.length ? list.map(r =>
+    '<div class="report-item" data-file="' + r.filename + '">' +
+      '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;">' +
+        '<strong>' + r.title + '</strong>' +
+        '<span style="font-family:\'JetBrains Mono\',monospace;font-size:0.7rem;color:var(--text-muted);">' + r.modified_at + ' · ' + r.category + '</span>' +
+      '</div>' +
+      '<p style="color:var(--text-soft);font-size:0.82rem;margin:6px 0 0;">' + (r.preview || "").replace(/\n/g, " ").substring(0, 140) + '...</p>' +
+    '</div>'
+  ).join("") : '<p style="color:var(--text-muted);">該当レポートなし</p>';
+  el.querySelectorAll(".report-item").forEach(item => {
+    item.addEventListener("click", () => {
+      const file = item.dataset.file;
+      const r = (_reportsData.reports || []).find(x => x.filename === file);
+      if (!r) return;
+      const viewer = document.getElementById("report-viewer");
+      const title = document.getElementById("report-viewer-title");
+      const body = document.getElementById("report-body");
+      title.textContent = r.title;
+      body.innerHTML = (typeof marked !== "undefined") ? marked.parse(r.body || "") : ('<pre>' + (r.body || "") + '</pre>');
+      viewer.style.display = "block";
+      viewer.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+}
+
+function setupRoleToggle() {
+  const toggle = document.getElementById("role-toggle");
+  if (!toggle) return;
+  const map = {"theme-tasks-owner":"owner","theme-tasks-nakamura":"nakamura","theme-tasks-ichikawa":"ichikawa"};
+  Object.entries(map).forEach(([id, role]) => {
+    const card = document.getElementById(id) ? document.getElementById(id).closest(".card") : null;
+    if (card) card.dataset.roleSection = role;
+  });
+  toggle.querySelectorAll(".role-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      toggle.querySelectorAll(".role-btn").forEach(b => b.classList.toggle("active", b===btn));
+      const role = btn.dataset.role;
+      document.querySelectorAll("[data-role-section]").forEach(el => {
+        const target = el.dataset.roleSection;
+        el.style.display = (role === "all" || target === role) ? "" : "none";
+      });
+    });
+  });
+}
+
 (async () => {
-  const [summary, funnel, channels, releases, utm, archive, monthly, themes, products] = await Promise.all([
+  const [summary, funnel, channels, releases, utm, archive, monthly, themes, products, goal, customers, channelFunnel, reports] = await Promise.all([
     load("summary.json"),
     load("funnel.json"),
     load("channels.json"),
@@ -503,6 +655,10 @@ function renderProductTable() {
     load("archive_monthly.json"),
     load("themes.json"),
     load("products.json"),
+    load("goal.json"),
+    load("customers.json"),
+    load("channel_funnel.json"),
+    load("reports.json"),
   ]);
   if (summary && summary.last_updated) {
     document.getElementById("last-updated").textContent = summary.last_updated;
@@ -511,6 +667,12 @@ function renderProductTable() {
   }
   renderTheme(themes);
   renderProducts(products);
+  renderGoal(goal);
+  renderDynamicActions(summary && summary.narrative ? summary.narrative.actions : null);
+  renderCustomerSegments(customers);
+  renderChannelFunnel(channelFunnel);
+  renderReports(reports);
+  setupRoleToggle();
   renderNarrative(summary);
   renderKpis(summary);
   renderWeeklyTrend(summary);

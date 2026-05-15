@@ -29,6 +29,8 @@ DATASET = "analytics_320051621"
 SIBLING = ROOT.parent / "shopify-ec-automation"
 RELEASE_LOG = SIBLING / "data" / "release_log.csv"
 WEEKLY_KPI = SIBLING / "data" / "weekly_kpi.csv"
+MONTHLY_TARGET = SIBLING / "data" / "monthly_target.json"
+REPORTS_DIR = SIBLING / "outputs" / "reports"
 WEEKLY_THEMES = SIBLING / "data" / "weekly_themes.json"
 
 
@@ -862,6 +864,240 @@ def build_releases() -> dict:
     return {"releases": releases}
 
 
+def build_goal_progress(client: bigquery.Client) -> dict:
+    """月次目標と進捗・着地予測を返す（roadmap基準）。"""
+    today = date.today()
+    cur_month_str = today.strftime("%Y-%m")
+    month_start = today.replace(day=1)
+    days_in_month = (month_start.replace(month=month_start.month % 12 + 1, day=1) - timedelta(days=1)).day if month_start.month < 12 else 31
+    days_passed = today.day
+    days_remaining = days_in_month - days_passed
+
+    # 月次目標読み込み
+    targets = {}
+    if MONTHLY_TARGET.exists():
+        try:
+            targets = json.loads(MONTHLY_TARGET.read_text(encoding="utf-8"))
+        except Exception:
+            targets = {}
+    cur_target = (targets.get("targets") or {}).get(cur_month_str, {})
+    sales_target = int(cur_target.get("sales") or targets.get("default_monthly_target") or 4000000)
+    orders_target = int(cur_target.get("orders") or targets.get("default_orders_target") or 200)
+    note = cur_target.get("note", "")
+
+    # MTD 実績（BQ）
+    sql = f"""
+    SELECT COUNT(*) AS sessions,
+           SUM(purchases) AS orders,
+           CAST(SUM(revenue) AS INT64) AS sales
+    FROM `{PROJECT}.{DATASET}.sessions_clean`
+    WHERE event_date BETWEEN '{month_start.strftime("%Y%m%d")}' AND '{(today - timedelta(days=1)).strftime("%Y%m%d")}'
+    """
+    rows = list(client.query(sql).result())
+    actual = dict(rows[0]) if rows else {"sessions": 0, "orders": 0, "sales": 0}
+    mtd_sales = int(actual.get("sales") or 0)
+    mtd_orders = int(actual.get("orders") or 0)
+
+    # 着地予測（線形外挿）
+    pace_days = max(days_passed - 1, 1)  # 昨日まで
+    daily_pace_sales = mtd_sales / pace_days if pace_days else 0
+    daily_pace_orders = mtd_orders / pace_days if pace_days else 0
+    projected_sales = int(daily_pace_sales * days_in_month)
+    projected_orders = int(daily_pace_orders * days_in_month)
+
+    return {
+        "month": cur_month_str,
+        "days_in_month": days_in_month,
+        "days_passed": days_passed,
+        "days_remaining": days_remaining,
+        "target": {"sales": sales_target, "orders": orders_target, "note": note},
+        "actual": {"sales": mtd_sales, "orders": mtd_orders},
+        "projected": {"sales": projected_sales, "orders": projected_orders},
+        "progress": {
+            "sales_pct": round(mtd_sales / sales_target * 100, 1) if sales_target else 0,
+            "orders_pct": round(mtd_orders / orders_target * 100, 1) if orders_target else 0,
+            "projected_sales_pct": round(projected_sales / sales_target * 100, 1) if sales_target else 0,
+            "projected_orders_pct": round(projected_orders / orders_target * 100, 1) if orders_target else 0,
+        },
+        "remaining": {
+            "sales": max(sales_target - mtd_sales, 0),
+            "orders": max(orders_target - mtd_orders, 0),
+            "daily_needed_sales": int((sales_target - mtd_sales) / days_remaining) if days_remaining > 0 else 0,
+            "daily_needed_orders": (orders_target - mtd_orders) / days_remaining if days_remaining > 0 else 0,
+        },
+    }
+
+
+def build_customer_segments(client: bigquery.Client) -> dict:
+    """新規 vs リピート の直近30日比較 + 推移。"""
+    today = date.today()
+    end = today - timedelta(days=1)
+    start = end - timedelta(days=29)
+
+    sql = f"""
+    SELECT
+      CASE WHEN user_pseudo_id IN (
+        SELECT DISTINCT user_pseudo_id FROM `{PROJECT}.{DATASET}.sessions_clean`
+        WHERE event_date < '{start.strftime("%Y%m%d")}'
+      ) THEN 'returning' ELSE 'new' END AS seg,
+      COUNT(*) AS sessions,
+      SUM(IF(atcs>0,1,0)) AS atc_sessions,
+      SUM(IF(purchases>0,1,0)) AS buyer_sessions,
+      SUM(purchases) AS orders,
+      CAST(SUM(revenue) AS INT64) AS sales
+    FROM `{PROJECT}.{DATASET}.sessions_clean`
+    WHERE event_date BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+    GROUP BY seg
+    """
+    segments = {}
+    try:
+        for r in client.query(sql).result():
+            d = dict(r)
+            s = d["seg"]
+            sess = int(d.get("sessions") or 0)
+            segments[s] = {
+                "sessions": sess,
+                "atc_rate": round((d.get("atc_sessions") or 0) / sess * 100, 2) if sess else 0,
+                "cvr": round((d.get("buyer_sessions") or 0) / sess * 100, 3) if sess else 0,
+                "orders": int(d.get("orders") or 0),
+                "sales": int(d.get("sales") or 0),
+            }
+    except Exception as e:
+        return {"period": {"start": start.isoformat(), "end": end.isoformat()}, "segments": {}, "error": str(e)}
+
+    total_sales = sum(s["sales"] for s in segments.values()) or 1
+    for s in segments.values():
+        s["sales_share"] = round(s["sales"] / total_sales * 100, 1)
+    return {"period": {"start": start.isoformat(), "end": end.isoformat(), "days": 30}, "segments": segments}
+
+
+def build_channel_funnel(client: bigquery.Client) -> dict:
+    """チャネル別ファネル分解（直近14日）。各チャネルでどこで詰まっているか。"""
+    today = date.today()
+    end = today - timedelta(days=1)
+    start = end - timedelta(days=13)
+
+    case_channel = """
+      CASE
+        WHEN source = '(direct)' THEN 'Direct'
+        WHEN medium = 'cpc' THEN 'Paid Search'
+        WHEN medium = 'organic' THEN 'Organic Search'
+        WHEN medium = 'email' THEN 'Email'
+        WHEN medium = 'social' THEN 'Social'
+        WHEN medium = 'referral' THEN 'Referral'
+        WHEN medium = 'line' THEN 'LINE'
+        ELSE 'Other'
+      END AS channel
+    """
+    sql = f"""
+    SELECT {case_channel},
+      COUNT(*) AS sessions,
+      SUM(IF(item_views>0,1,0)) AS pdp,
+      SUM(IF(atcs>0,1,0)) AS atc,
+      SUM(IF(checkouts>0,1,0)) AS co,
+      SUM(IF(purchases>0,1,0)) AS buy
+    FROM `{PROJECT}.{DATASET}.sessions_clean`
+    WHERE event_date BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+    GROUP BY channel
+    HAVING sessions >= 50
+    ORDER BY sessions DESC
+    """
+    rows = []
+    for r in client.query(sql).result():
+        d = dict(r)
+        sess = int(d.get("sessions") or 0)
+        pdp = int(d.get("pdp") or 0)
+        atc = int(d.get("atc") or 0)
+        co = int(d.get("co") or 0)
+        buy = int(d.get("buy") or 0)
+        rows.append({
+            "channel": d["channel"],
+            "sessions": sess,
+            "pdp": pdp, "atc": atc, "co": co, "buy": buy,
+            "pdp_rate": round(pdp/sess*100, 1) if sess else 0,
+            "atc_rate": round(atc/sess*100, 2) if sess else 0,
+            "cvr": round(buy/sess*100, 3) if sess else 0,
+        })
+    return {"period": {"start": start.isoformat(), "end": end.isoformat()}, "channels": rows}
+
+
+def build_dynamic_actions(summary: dict, goal: dict, products: dict, releases: list) -> list[str]:
+    """状況から「今やるべきこと」を動的生成する。"""
+    actions = []
+    # 1. items/session が低い場合
+    last7 = (summary or {}).get("last_7d") or {}
+    ips = last7.get("items_per_session") or 0
+    if ips and ips < 1.2:
+        actions.append(f"items/session {ips:.2f} が低水準。コレクションページの PDP 誘導施策を進める")
+    # 2. 目標達成ペース
+    proj_pct = ((goal or {}).get("progress") or {}).get("projected_sales_pct") or 0
+    if proj_pct and proj_pct < 90:
+        rem_daily = ((goal or {}).get("remaining") or {}).get("daily_needed_sales") or 0
+        actions.append(f"月末着地予測 {proj_pct:.0f}% (未達)。残り日 1日あたり ¥{rem_daily:,} の売上が必要")
+    elif proj_pct and proj_pct >= 110:
+        actions.append(f"月末着地予測 {proj_pct:.0f}% (上振れ)。来月目標を上方修正検討")
+    # 3. PDP改修候補が多い
+    state_counts = (products or {}).get("state_counts") or {}
+    pdp_fix = state_counts.get("PV高・カート低") or 0
+    if pdp_fix >= 10:
+        actions.append(f"PDP改修候補が {pdp_fix} 商品。上位5商品の写真/コピー/サイズ訴求を改善")
+    cart_fix = state_counts.get("カート高・購入低") or 0
+    if cart_fix >= 3:
+        actions.append(f"カート高購入低が {cart_fix} 商品。配送・返品・サイズ不安の解消を CTA 周辺に追加")
+    # 4. 進行中 DRAFT リリース
+    drafts = [r for r in (releases or []) if r.get("decision") == "DRAFT" and not r.get("deployed_at")]
+    if drafts:
+        actions.append(f"未反映の DRAFT リリースが {len(drafts)} 件。理由整理 or 反映判断を進める")
+    # 5. CVR 0.7% 未満なら集客抑制
+    cvr = (last7.get("cvr") or 0) * 100
+    if cvr and cvr < 0.7:
+        actions.append(f"CVR {cvr:.2f}% は新規獲得を増やす段階ではない。CRO に集中")
+    # フォールバック
+    if not actions:
+        actions.append("特に異常なし。週次テーマに沿った通常運用を継続")
+    return actions[:6]
+
+
+def build_reports_index() -> dict:
+    """outputs/reports/*.md を一覧として返す。"""
+    items = []
+    if REPORTS_DIR.exists():
+        for p in sorted(REPORTS_DIR.glob("*.md")):
+            text = p.read_text(encoding="utf-8")
+            title = ""
+            for line in text.splitlines():
+                if line.startswith("# "):
+                    title = line[2:].strip()
+                    break
+            # tag 推定
+            name = p.name.lower()
+            if name.startswith("monthly"):
+                category = "月次"
+            elif name.startswith("summary"):
+                category = "月次"
+            elif name.startswith("baseline"):
+                category = "分析"
+            elif name.startswith("exec"):
+                category = "経営"
+            elif name.startswith("findings"):
+                category = "分析"
+            elif "post_deployment" in name or "release" in name:
+                category = "施策"
+            else:
+                category = "その他"
+            items.append({
+                "filename": p.name,
+                "title": title or p.stem,
+                "category": category,
+                "size_bytes": p.stat().st_size,
+                "modified_at": datetime.fromtimestamp(p.stat().st_mtime).strftime("%Y-%m-%d %H:%M"),
+                "preview": text[:280],
+                "body": text,
+            })
+    items.sort(key=lambda x: x["modified_at"], reverse=True)
+    return {"reports": items, "count": len(items)}
+
+
 def main() -> int:
     print(f"Token: {TOKEN}")
     print(f"Output: {DATA_DIR}")
@@ -875,19 +1111,41 @@ def main() -> int:
         write_json("themes.json", {"current": {}, "history": []})
 
     # ---- Build products (商品別ファネル + 状態分類) ----
-    write_json("products.json", build_products(client))
+    products_data = build_products(client)
+    write_json("products.json", products_data)
 
     summary = build_summary(client)
     daily = build_daily_series(client)
     summary["daily"] = daily.get("days", [])
     summary["anomalies"] = build_anomalies(daily).get("events", [])
+
+    # ---- Goal progress (月次目標 + 着地予測) ----
+    goal = build_goal_progress(client)
+    summary["goal"] = goal
+    write_json("goal.json", goal)
+
+    # ---- Customer segments ----
+    write_json("customers.json", build_customer_segments(client))
+
+    # ---- Channel funnel ----
+    write_json("channel_funnel.json", build_channel_funnel(client))
+
+    # ---- Reports index ----
+    write_json("reports.json", build_reports_index())
+
+    # ---- Dynamic actions (replace hardcoded narrative.actions) ----
+    releases_payload = build_releases()
+    summary["narrative"]["actions"] = build_dynamic_actions(
+        summary, goal, products_data, releases_payload.get("releases", [])
+    )
+
     write_json("summary.json", summary)
     funnel_data = build_funnel(client)
     funnel_data["products_top5"] = build_products_top5(client).get("items", [])
     write_json("funnel.json", funnel_data)
     write_json("channels.json", build_channels(client))
     write_json("utm_health.json", build_utm_health(client))
-    write_json("releases.json", build_releases())
+    write_json("releases.json", releases_payload)
     update_archive(summary)
     build_monthly_archive()
     print("refresh complete")

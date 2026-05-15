@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,30..100&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -19,9 +20,19 @@
       <span class="brand-dot">—</span> CALL&amp;RESPONSE
     </div>
     <div class="sidebar-section">
+      <div class="sidebar-label">役割</div>
+      <div class="role-toggle" id="role-toggle">
+        <button class="role-btn active" data-role="all">全員</button>
+        <button class="role-btn" data-role="owner">私</button>
+        <button class="role-btn" data-role="nakamura">中村</button>
+        <button class="role-btn" data-role="ichikawa">市川</button>
+      </div>
+    </div>
+    <div class="sidebar-section">
       <div class="sidebar-label">運用</div>
       <button class="nav-item active" data-tab="today">🏠 Today</button>
       <button class="nav-item" data-tab="products">🎯 商品</button>
+      <button class="nav-item" data-tab="customers">👥 顧客</button>
     </div>
     <div class="sidebar-section">
       <div class="sidebar-label">概況</div>
@@ -34,6 +45,7 @@
       <div class="sidebar-label">履歴</div>
       <button class="nav-item" data-tab="archive">週次履歴</button>
       <button class="nav-item" data-tab="archive-monthly">月次履歴</button>
+      <button class="nav-item" data-tab="reports">📑 レポート</button>
     </div>
     <div class="sidebar-footer">
       最終更新: <strong id="last-updated-side">—</strong>
@@ -60,12 +72,16 @@
   <button class="tab" data-tab="release">🚀 リリース</button>
   <button class="tab" data-tab="archive">📅 週次</button>
   <button class="tab" data-tab="archive-monthly">🗓️ 月次</button>
+  <button class="tab" data-tab="customers">👥 顧客</button>
+  <button class="tab" data-tab="reports">📑 レポート</button>
 </nav>
 
 <main class="container">
   <section class="page active" id="page-today">
     <span class="eyebrow">This Week · Theme</span>
     <h2 id="today-theme-title">今週のテーマ</h2>
+    <div class="card" id="goal-card"></div>
+    <div class="card narrative-card" id="dynamic-actions-card"></div>
     <div class="card narrative-card" id="theme-card"></div>
     <div class="card">
       <h3>👤 あなた（オーナー）の今週タスク</h3>
@@ -181,6 +197,38 @@
     <h2>月度の振り返り</h2>
     <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">2026年4月度以降の月次スナップショット。前月比・前年同月比つき。</p>
     <div id="archive-monthly-list"></div>
+  </section>
+
+  <section class="page" id="page-customers">
+    <span class="eyebrow">Customers</span>
+    <h2>顧客セグメント</h2>
+    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">直近30日のセッションを新規/リピートに分類して比較。</p>
+    <div class="card">
+      <h3>新規 vs リピート（30日）</h3>
+      <div id="customer-segments"></div>
+    </div>
+    <div class="card">
+      <h3>チャネル別ファネル分解（直近14日）</h3>
+      <table class="data-table" id="table-channel-funnel"></table>
+    </div>
+  </section>
+
+  <section class="page" id="page-reports">
+    <span class="eyebrow">Reports</span>
+    <h2>過去レポート一覧</h2>
+    <div class="card">
+      <h3>検索・絞り込み</h3>
+      <div class="report-toolbar">
+        <input type="search" id="report-search" placeholder="タイトル・本文で検索..." />
+        <div class="report-filters" id="report-filters"></div>
+      </div>
+      <div id="reports-list"></div>
+    </div>
+    <div class="card" id="report-viewer" style="display:none;">
+      <h3 id="report-viewer-title">—</h3>
+      <button class="state-chip" id="report-close" style="margin-bottom:14px;">× 閉じる</button>
+      <div id="report-body" class="report-body"></div>
+    </div>
   </section>
 </main>
 

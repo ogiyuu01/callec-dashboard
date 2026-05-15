@@ -13,19 +13,19 @@
       "sessions": 26
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260422",
-      "sessions": 19
-    },
-    {
       "source": "new&utm_medium=email&utm_campaign=20260415_syouhin_3",
       "sessions": 19
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260513_blog",
-      "sessions": 18
+      "source": "lp&utm_medium=email&utm_campaign=20260422",
+      "sessions": 19
     },
     {
       "source": "lp&utm_medium=email&utm_campaign=20260305_tokusyu",
+      "sessions": 18
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260513_blog",
       "sessions": 18
     },
     {
@@ -57,19 +57,19 @@
       "sessions": 5
     },
     {
-      "source": "new&utm_medium=email&utm_campaign=20260509_syouhin_4",
-      "sessions": 5
-    },
-    {
       "source": "lp&utm_medium=email&utm_campaign=20260401",
       "sessions": 5
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260415",
+      "source": "new&utm_medium=email&utm_campaign=20260509_syouhin_4",
+      "sessions": 5
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20251120_ranking_3",
       "sessions": 4
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20251222",
+      "source": "new&utm_medium=email&utm_campaign=20260509_syouhin_5",
       "sessions": 4
     },
     {
@@ -85,27 +85,27 @@
       "sessions": 4
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20251120_ranking_3",
+      "source": "lp&utm_medium=email&utm_campaign=20260415",
       "sessions": 4
     },
     {
-      "source": "new&utm_medium=email&utm_campaign=20260509_syouhin_5",
+      "source": "lp&utm_medium=email&utm_campaign=20251222",
       "sessions": 4
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260316_blog",
+      "sessions": 3
+    },
+    {
+      "source": "new&utm_medium=email&utm_campaign=20250930_syouhin_3",
+      "sessions": 3
     },
     {
       "source": "lp&utm_medium=email&utm_campaign=20260323_blog",
       "sessions": 3
     },
     {
-      "source": "new&utm_medium=email&utm_campaign=20260509_syouhin_3",
-      "sessions": 3
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20250916",
-      "sessions": 3
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260316_blog",
+      "source": "new&utm_medium=email&utm_campaign=20251006_syouhin_3",
       "sessions": 3
     },
     {
@@ -117,7 +117,11 @@
       "sessions": 3
     },
     {
-      "source": "new&utm_medium=email&utm_campaign=20250930_syouhin_3",
+      "source": "new&utm_medium=email&utm_campaign=20260509_syouhin_3",
+      "sessions": 3
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20250916",
       "sessions": 3
     },
     {
@@ -129,15 +133,11 @@
       "sessions": 3
     },
     {
-      "source": "new&utm_medium=email&utm_campaign=20251006_syouhin_3",
-      "sessions": 3
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20251030_ranking_7",
+      "source": "lp&utm_medium=email&utm_campaign=20260202",
       "sessions": 2
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260216_ranking_4",
+      "source": "lp&utm_medium=email&utm_campaign=20250628",
       "sessions": 2
     },
     {
@@ -145,11 +145,19 @@
       "sessions": 2
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20250920_ranking_10",
+      "source": "lp&utm_medium=email&utm_campaign=20251030_ranking_7",
       "sessions": 2
     },
     {
-      "source": "new&utm_medium=email&utm_campaign=20251224_syouhin_2",
+      "source": "lp&utm_medium=email&utm_campaign=20260325",
+      "sessions": 2
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20250812",
+      "sessions": 2
+    },
+    {
+      "source": "new&utm_medium=email&utm_campaign=20260218_syouhin_6",
       "sessions": 2
     },
     {
@@ -165,27 +173,11 @@
       "sessions": 2
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260202",
-      "sessions": 2
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20250628",
-      "sessions": 2
-    },
-    {
       "source": "lp&utm_medium=email&utm_campaign=20260223_ranking_3",
       "sessions": 2
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20250812",
-      "sessions": 2
-    },
-    {
-      "source": "new&utm_medium=email&utm_campaign=20260218_syouhin_6",
-      "sessions": 2
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260325",
+      "source": "lp&utm_medium=email&utm_campaign=20250920_ranking_10",
       "sessions": 2
     },
     {
@@ -193,27 +185,39 @@
       "sessions": 2
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20251110",
+      "source": "new&utm_medium=email&utm_campaign=20251224_syouhin_2",
+      "sessions": 2
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260216_ranking_4",
+      "sessions": 2
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260218",
       "sessions": 1
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20251030_ranking_3",
+      "source": "lp&utm_medium=email&utm_campaign=20260302",
       "sessions": 1
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260119",
+      "source": "new&utm_medium=email&utm_campaign=20260311_syouhin_5",
       "sessions": 1
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20251224",
+      "source": "lp&utm_medium=email&utm_campaign=20251023",
       "sessions": 1
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20251124_syouhin_2",
+      "source": "lp&utm_medium=email&utm_campaign=20260119_ranking_2",
       "sessions": 1
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260114",
+      "source": "new&utm_medium=email&utm_campaign=20251217_syouhin_2",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260204",
       "sessions": 1
     },
     {
@@ -265,6 +269,30 @@
       "sessions": 1
     },
     {
+      "source": "lp&utm_medium=email&utm_campaign=20251124_syouhin_2",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260114",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20251110",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20251030_ranking_3",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260119",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20251224",
+      "sessions": 1
+    },
+    {
       "source": "new&utm_medium=email&utm_campaign=20260422_syouhin_1",
       "sessions": 1
     },
@@ -274,34 +302,6 @@
     },
     {
       "source": "lp&utm_medium=email&utm_campaign=20260311",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260218",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260302",
-      "sessions": 1
-    },
-    {
-      "source": "new&utm_medium=email&utm_campaign=20260311_syouhin_5",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20251023",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260119_ranking_2",
-      "sessions": 1
-    },
-    {
-      "source": "new&utm_medium=email&utm_campaign=20251217_syouhin_2",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260204",
       "sessions": 1
     }
   ],
@@ -335,19 +335,27 @@
       "users": 4
     },
     {
-      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155885273278",
-      "users": 4
-    },
-    {
       "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155886485694",
       "users": 4
     },
     {
-      "campaign": "【{last name}様におすすめ】特集＆今週の売れ筋ランキングTOP10_156411101374",
+      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155885273278",
+      "users": 4
+    },
+    {
+      "campaign": "アミュプラザ鹿児島店および長崎ココウォーク店 店舗移設のご案内_155939406014",
+      "users": 3
+    },
+    {
+      "campaign": "CALL&RESPONSE ELM店 本日グランドオープン_157450698942",
       "users": 3
     },
     {
       "campaign": "CALL&RESPONSE ELM店 新規オープンのご案内_157450633406",
+      "users": 3
+    },
+    {
+      "campaign": "【{last name}様におすすめ】特集＆今週の売れ筋ランキングTOP10_156411101374",
       "users": 3
     },
     {
@@ -357,18 +365,6 @@
     {
       "campaign": "【{last name}様におすすめ】2026年4月の厳選アイテム特集！_158253482174",
       "users": 3
-    },
-    {
-      "campaign": "CALL&RESPONSE ELM店 本日グランドオープン_157450698942",
-      "users": 3
-    },
-    {
-      "campaign": "アミュプラザ鹿児島店および長崎ココウォーク店 店舗移設のご案内_155939406014",
-      "users": 3
-    },
-    {
-      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155862466750",
-      "users": 2
     },
     {
       "campaign": "【予約開始！】今年もやります、ETO EDITION_155446706366",
@@ -384,6 +380,10 @@
     },
     {
       "campaign": "【{last name}様におすすめ】特集＆今週の売れ筋ランキングTOP10_156461891774",
+      "users": 2
+    },
+    {
+      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155862466750",
       "users": 2
     }
   ]
