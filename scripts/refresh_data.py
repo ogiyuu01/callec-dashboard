@@ -32,7 +32,8 @@ WEEKLY_KPI = SIBLING / "data" / "weekly_kpi.csv"
 MONTHLY_TARGET = SIBLING / "data" / "monthly_target.json"  # 旧フォーマット (deprecated)
 BUDGET_JSON_LOCAL = DATA_DIR / "budget.json"  # dashboard 自前 (sync_budget.py が書く)
 BUDGET_JSON_SIBLING = SIBLING / "data" / "budget.json"  # sibling 側 (ローカル開発用)
-SHOPIFY_METRICS = SIBLING / "data" / "shopify_metrics.json"
+SHOPIFY_METRICS_LOCAL = DATA_DIR / "shopify_metrics.json"  # dashboard 自前 (常駐)
+SHOPIFY_METRICS_SIBLING = SIBLING / "data" / "shopify_metrics.json"  # sibling (ローカル開発)
 REPORTS_DIR = SIBLING / "outputs" / "reports"
 WEEKLY_THEMES = SIBLING / "data" / "weekly_themes.json"
 
@@ -1130,15 +1131,19 @@ def main() -> int:
 
     # ---- Build products (商品別ファネル + 状態分類) ----
     products_data = build_products(client)
-    # Shopify実購入データをマージ（GA4 attribution と Shopify 実売を併記）
-    if SHOPIFY_METRICS.exists():
+    # Shopify実購入データをマージ (dashboard 自前 → sibling の順でフォールバック)
+    for shopify_path in (SHOPIFY_METRICS_LOCAL, SHOPIFY_METRICS_SIBLING):
+        if not shopify_path.exists():
+            continue
         try:
-            shopify = json.loads(SHOPIFY_METRICS.read_text(encoding="utf-8"))
+            shopify = json.loads(shopify_path.read_text(encoding="utf-8"))
             products_data["shopify_top_28d"] = shopify.get("top_products_28d", [])
             products_data["shopify_customers_28d"] = shopify.get("customers_28d", {})
             products_data["shopify_meta"] = shopify.get("_meta", {})
+            print(f"  loaded shopify_metrics from {shopify_path.name}")
+            break
         except Exception as e:
-            print(f"  shopify_metrics load failed: {e}")
+            print(f"  shopify_metrics load failed ({shopify_path}): {e}")
     write_json("products.json", products_data)
 
     summary = build_summary(client)
