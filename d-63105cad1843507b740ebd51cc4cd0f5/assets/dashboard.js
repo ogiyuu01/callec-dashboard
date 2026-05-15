@@ -359,8 +359,141 @@ function renderArchiveMonthly(data) {
   }).join("");
 }
 
+function renderTheme(data) {
+  if (!data) return;
+  const cur = data.current || {};
+  const tasks = cur.tasks || {};
+
+  const titleEl = document.getElementById("today-theme-title");
+  if (titleEl && cur.week) titleEl.textContent = "今週のテーマ — " + cur.week;
+
+  const card = document.getElementById("theme-card");
+  if (card) {
+    card.innerHTML =
+      '<div class="theme-meta">' +
+        '<span class="pill">' + (cur.week || "—") + '</span>' +
+        (cur.topic_slug ? '<span class="pill">' + cur.topic_slug + '</span>' : '') +
+      '</div>' +
+      '<div class="theme-headline">' + (cur.theme || '(まだテーマが設定されていません)') + '</div>' +
+      '<div class="theme-set-at">設定日: ' + (cur.set_at || '—') + '</div>';
+  }
+
+  const ownerEl = document.getElementById("theme-tasks-owner");
+  const nakaEl = document.getElementById("theme-tasks-nakamura");
+  const ichiEl = document.getElementById("theme-tasks-ichikawa");
+  const renderTasks = (el, arr) => {
+    if (!el) return;
+    if (!arr || !arr.length) {
+      el.innerHTML = '<li style="color:var(--text-muted);">タスクが設定されていません</li>';
+    } else {
+      el.innerHTML = arr.map(t => '<li>' + t + '</li>').join("");
+    }
+  };
+  renderTasks(ownerEl, tasks.owner);
+  renderTasks(nakaEl, tasks.nakamura);
+  renderTasks(ichiEl, tasks.ichikawa);
+
+  const hist = document.getElementById("theme-history");
+  if (hist) {
+    const items = (data.history || []).slice(0, 12);
+    if (!items.length) {
+      hist.innerHTML = '<p style="color:var(--text-muted);">過去のテーマがまだありません。</p>';
+    } else {
+      hist.innerHTML = items.map(h =>
+        '<div class="history-row">' +
+          '<div class="wk">' + (h.week || '—') + '</div>' +
+          '<div><strong>' + (h.theme || '—') + '</strong>' +
+            (h.result_summary ? '<div class="summary">' + h.result_summary + '</div>' : '') +
+          '</div>' +
+          '<div class="summary">' + (h.set_at || '') + '</div>' +
+        '</div>'
+      ).join("");
+    }
+  }
+}
+
+let _allProducts = [];
+let _currentStateFilter = "all";
+
+function renderProducts(data) {
+  if (!data) return;
+  _allProducts = data.products || [];
+  const counts = data.state_counts || {};
+  const stateOrder = ["順調", "PV高・カート低", "カート高・購入低", "経過観察", "流入弱"];
+  const stateColor = {
+    "順調": "good",
+    "PV高・カート低": "warn",
+    "カート高・購入低": "warn",
+    "経過観察": "neutral",
+    "流入弱": "muted",
+  };
+
+  const sumEl = document.getElementById("product-state-summary");
+  if (sumEl) {
+    sumEl.innerHTML = stateOrder.map(s =>
+      '<div class="state-card ' + (stateColor[s] || 'neutral') + '">' +
+        '<div class="count">' + (counts[s] || 0) + '</div>' +
+        '<span class="label">' + s + '</span>' +
+      '</div>'
+    ).join("");
+  }
+
+  const filterEl = document.getElementById("product-state-filter");
+  if (filterEl) {
+    const chips = ["all"].concat(stateOrder);
+    filterEl.innerHTML = chips.map(s =>
+      '<button class="state-chip ' + (s === _currentStateFilter ? 'active' : '') + '" data-state="' + s + '">' +
+        (s === "all" ? "すべて (" + _allProducts.length + ")" : s + " (" + (counts[s] || 0) + ")") +
+      '</button>'
+    ).join("");
+    filterEl.querySelectorAll(".state-chip").forEach(btn => {
+      btn.addEventListener("click", () => {
+        _currentStateFilter = btn.dataset.state;
+        renderProductTable();
+      });
+    });
+  }
+
+  renderProductTable();
+}
+
+function renderProductTable() {
+  const tbl = document.getElementById("table-products");
+  if (!tbl) return;
+  const stateColor = {
+    "順調": "good",
+    "PV高・カート低": "warn",
+    "カート高・購入低": "warn",
+    "経過観察": "neutral",
+    "流入弱": "muted",
+  };
+  const filtered = _currentStateFilter === "all"
+    ? _allProducts
+    : _allProducts.filter(p => p.state === _currentStateFilter);
+  const rows = filtered.map(p =>
+    '<tr>' +
+      '<td><span class="state-badge ' + (stateColor[p.state] || 'neutral') + '">' + p.state + '</span></td>' +
+      '<td>' + (p.name || '—') + '</td>' +
+      '<td class="num">' + num(p.views) + '</td>' +
+      '<td class="num">' + num(p.atcs) + '</td>' +
+      '<td class="num">' + num(p.buys) + '</td>' +
+      '<td class="num">' + (p.atc_per_view || 0).toFixed(1) + '%</td>' +
+      '<td class="num">' + (p.buy_per_view || 0).toFixed(1) + '%</td>' +
+      '<td class="num">' + yen(p.revenue || 0) + '</td>' +
+      '<td class="advice">' + (p.advice || '') + '</td>' +
+    '</tr>'
+  ).join("");
+  tbl.innerHTML =
+    '<thead><tr>' +
+      '<th>状態</th><th>商品名</th>' +
+      '<th class="num">PV</th><th class="num">ATC</th><th class="num">購入</th>' +
+      '<th class="num">ATC/V</th><th class="num">買/V</th>' +
+      '<th class="num">売上</th><th>推奨アクション</th>' +
+    '</tr></thead><tbody>' + rows + '</tbody>';
+}
+
 (async () => {
-  const [summary, funnel, channels, releases, utm, archive, monthly] = await Promise.all([
+  const [summary, funnel, channels, releases, utm, archive, monthly, themes, products] = await Promise.all([
     load("summary.json"),
     load("funnel.json"),
     load("channels.json"),
@@ -368,12 +501,16 @@ function renderArchiveMonthly(data) {
     load("utm_health.json"),
     load("archive.json"),
     load("archive_monthly.json"),
+    load("themes.json"),
+    load("products.json"),
   ]);
   if (summary && summary.last_updated) {
     document.getElementById("last-updated").textContent = summary.last_updated;
     const side = document.getElementById("last-updated-side");
     if (side) side.textContent = summary.last_updated;
   }
+  renderTheme(themes);
+  renderProducts(products);
   renderNarrative(summary);
   renderKpis(summary);
   renderWeeklyTrend(summary);
@@ -390,8 +527,8 @@ function renderArchiveMonthly(data) {
   renderAnomalies(summary);
   renderProductsTop5(funnel);
 
-  // === Scroll-reveal: gentle fade-up-blur as elements enter the viewport ===
-  const candidates = document.querySelectorAll(".card, .kpi, .archive-card, .archive-month-card");
+  // Scroll reveal
+  const candidates = document.querySelectorAll(".card, .kpi, .archive-card, .archive-month-card, .state-card");
   candidates.forEach(el => el.classList.add("reveal"));
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -403,7 +540,6 @@ function renderArchiveMonthly(data) {
   }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
   candidates.forEach(el => io.observe(el));
 
-  // Re-trigger reveal animations when switching tabs
   document.querySelectorAll(".tab, .nav-item").forEach(btn => {
     btn.addEventListener("click", () => {
       requestAnimationFrame(() => {

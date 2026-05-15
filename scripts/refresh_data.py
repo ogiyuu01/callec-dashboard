@@ -29,6 +29,7 @@ DATASET = "analytics_320051621"
 SIBLING = ROOT.parent / "shopify-ec-automation"
 RELEASE_LOG = SIBLING / "data" / "release_log.csv"
 WEEKLY_KPI = SIBLING / "data" / "weekly_kpi.csv"
+WEEKLY_THEMES = SIBLING / "data" / "weekly_themes.json"
 
 
 def write_json(name: str, payload: dict) -> None:
@@ -330,6 +331,86 @@ def build_daily_series(client: bigquery.Client) -> dict:
         "items_per_session": float(r.get("items_per_session") or 0),
     } for r in rows]
     return {"days": days, "start_date": start.isoformat(), "end_date": end.isoformat()}
+
+
+def build_products(client: bigquery.Client) -> dict:
+    """商品別ファネル + 状態分類 (roadmap Phase 0)。
+    直近28日（BQ蓄積範囲）で view→atc→buy を集計。
+    """
+    today = date.today()
+    end = today - timedelta(days=1)
+    start = end - timedelta(days=27)
+    sql = f"""
+    SELECT
+      it.item_name AS name,
+      it.item_id AS sku,
+      COUNTIF(event_name='view_item') AS views,
+      COUNTIF(event_name='add_to_cart') AS atcs,
+      COUNTIF(event_name='purchase') AS buys,
+      CAST(SUM(IF(event_name='purchase', it.item_revenue, 0)) AS INT64) AS revenue,
+      CAST(AVG(IF(event_name='view_item', it.price, NULL)) AS INT64) AS price
+    FROM `{PROJECT}.{DATASET}.events_*`,
+      UNNEST(items) AS it
+    WHERE _TABLE_SUFFIX BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+      AND event_name IN ('view_item','add_to_cart','purchase')
+      AND it.item_name IS NOT NULL
+    GROUP BY name, sku
+    HAVING views >= 1
+    ORDER BY views DESC
+    LIMIT 100
+    """
+    rows = q(client, sql)
+
+    def classify(v, a, b):
+        if v < 30: return ("low_traffic", "流入弱（露出強化）")
+        atc_rate = (a / v) if v else 0
+        buy_rate = (b / v) if v else 0
+        atc_to_buy = (b / a) if a else 0
+        if v >= 80 and atc_rate < 0.01:
+            return ("pv_high_atc_low", "PV高・カート低（訴求改善）")
+        if atc_rate >= 0.025 and atc_to_buy < 0.25 and a >= 4:
+            return ("atc_high_buy_low", "カート高・購入低（不安解消）")
+        if buy_rate >= 0.01 and v >= 50:
+            return ("healthy", "順調")
+        return ("watch", "様子見")
+
+    items = []
+    for r in rows:
+        v = int(r.get("views") or 0)
+        a = int(r.get("atcs") or 0)
+        b = int(r.get("buys") or 0)
+        state_id, state_label = classify(v, a, b)
+        items.append({
+            "name": r.get("name") or "—",
+            "sku": r.get("sku") or "",
+            "price": int(r.get("price") or 0),
+            "views": v, "atcs": a, "buys": b,
+            "revenue": int(r.get("revenue") or 0),
+            "atc_rate": round((a / v) * 100, 2) if v else 0,
+            "buy_rate": round((b / v) * 100, 2) if v else 0,
+            "atc_to_buy": round((b / a) * 100, 1) if a else 0,
+            "state": state_id,
+            "state_label": state_label,
+        })
+
+    from collections import Counter
+    state_count = Counter([i["state"] for i in items])
+    summary = [
+        {"state": s, "label": {
+            "pv_high_atc_low": "PV高・カート低",
+            "atc_high_buy_low": "カート高・購入低",
+            "healthy": "順調",
+            "low_traffic": "流入弱",
+            "watch": "様子見"
+        }[s], "count": state_count.get(s, 0)}
+        for s in ["pv_high_atc_low", "atc_high_buy_low", "healthy", "low_traffic", "watch"]
+    ]
+
+    return {
+        "period": {"start": start.isoformat(), "end": end.isoformat()},
+        "items": items,
+        "state_summary": summary,
+    }
 
 
 def build_products_top5(client: bigquery.Client) -> dict:
@@ -681,6 +762,97 @@ def build_utm_health(client: bigquery.Client) -> dict:
     return {"broken": broken, "shopify_email_campaigns": se}
 
 
+def build_products(client: bigquery.Client) -> dict:
+    """商品別ファネル (view → atc → buy) を取得し、状態分類する。
+
+    状態分類（apparel_ec_operation_roadmap.md より）:
+    - PV高・カート低: views ≥ 中央値 AND atc/view < 1.5%
+    - カート高・購入低: atc/view ≥ 2% AND buy/atc < 30%
+    - 順調: その他で buy/view ≥ 1%
+    - 流入弱: views < 中央値 AND atc/view 不問
+    - 在庫情報は Shopify 連携後に追加（現状未連携のため除外）
+
+    観測窓: 直近14日（5/1-5/14 等）。BQに事前に蓄積されている日付のみ。
+    """
+    today = date.today()
+    end = today - timedelta(days=1)
+    start = end - timedelta(days=13)
+    sql = f"""
+    SELECT
+      it.item_name AS name,
+      it.item_id AS sku,
+      COUNTIF(event_name='view_item') AS views,
+      COUNTIF(event_name='add_to_cart') AS atcs,
+      COUNTIF(event_name='purchase') AS buys,
+      CAST(SUM(IF(event_name='purchase', it.item_revenue, 0)) AS INT64) AS revenue,
+      ROUND(SAFE_DIVIDE(COUNTIF(event_name='add_to_cart'), NULLIF(COUNTIF(event_name='view_item'),0))*100, 2) AS atc_per_view,
+      ROUND(SAFE_DIVIDE(COUNTIF(event_name='purchase'), NULLIF(COUNTIF(event_name='view_item'),0))*100, 2) AS buy_per_view,
+      ROUND(SAFE_DIVIDE(COUNTIF(event_name='purchase'), NULLIF(COUNTIF(event_name='add_to_cart'),0))*100, 2) AS buy_per_atc
+    FROM `{PROJECT}.{DATASET}.events_*`,
+      UNNEST(items) AS it
+    WHERE _TABLE_SUFFIX BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+      AND event_name IN ('view_item','add_to_cart','purchase')
+      AND it.item_name IS NOT NULL
+    GROUP BY name, sku
+    HAVING views >= 10
+    ORDER BY revenue DESC
+    """
+    rows = [dict(r) for r in client.query(sql).result()]
+    if not rows:
+        return {"period": {"start": start.isoformat(), "end": end.isoformat()}, "products": []}
+
+    # 中央値計算
+    views_list = sorted([int(r["views"] or 0) for r in rows])
+    median_views = views_list[len(views_list)//2] if views_list else 0
+
+    def classify(r: dict) -> dict:
+        v = int(r["views"] or 0)
+        a = int(r["atcs"] or 0)
+        b = int(r["buys"] or 0)
+        atc_per_view = float(r["atc_per_view"] or 0)  # %
+        buy_per_view = float(r["buy_per_view"] or 0)
+        buy_per_atc = float(r["buy_per_atc"] or 0)
+
+        if v < median_views and v < 50:
+            return {"state": "流入弱", "color": "muted", "advice": "露出強化（特集・LINE・Instagram）"}
+        if atc_per_view < 1.5 and v >= median_views:
+            return {"state": "PV高・カート低", "color": "warn", "advice": "写真・コピー・訴求改善（PDP改修候補）"}
+        if atc_per_view >= 2.0 and buy_per_atc < 30 and a >= 3:
+            return {"state": "カート高・購入低", "color": "warn", "advice": "サイズ・配送・返品の不安解消（CTA周辺改善）"}
+        if buy_per_view >= 1.0:
+            return {"state": "順調", "color": "good", "advice": "現状維持 + 在庫確認"}
+        return {"state": "経過観察", "color": "neutral", "advice": "追加データ蓄積待ち"}
+
+    products = []
+    for r in rows:
+        cls = classify(r)
+        products.append({
+            "name": r["name"] or "—",
+            "sku": r["sku"] or "—",
+            "views": int(r["views"] or 0),
+            "atcs": int(r["atcs"] or 0),
+            "buys": int(r["buys"] or 0),
+            "revenue": int(r["revenue"] or 0),
+            "atc_per_view": float(r["atc_per_view"] or 0),
+            "buy_per_view": float(r["buy_per_view"] or 0),
+            "buy_per_atc": float(r["buy_per_atc"] or 0),
+            "state": cls["state"],
+            "state_color": cls["color"],
+            "advice": cls["advice"],
+        })
+
+    # 状態別集計
+    from collections import Counter
+    state_counts = dict(Counter(p["state"] for p in products))
+
+    return {
+        "period": {"start": start.isoformat(), "end": end.isoformat()},
+        "median_views": median_views,
+        "state_counts": state_counts,
+        "products": products,
+    }
+
+
 def build_releases() -> dict:
     releases = []
     if RELEASE_LOG.exists():
@@ -704,6 +876,16 @@ def main() -> int:
     print(f"Token: {TOKEN}")
     print(f"Output: {DATA_DIR}")
     client = bigquery.Client(project=PROJECT)
+
+    # ---- Sync weekly themes ----
+    if WEEKLY_THEMES.exists():
+        themes_payload = json.loads(WEEKLY_THEMES.read_text(encoding="utf-8"))
+        write_json("themes.json", themes_payload)
+    else:
+        write_json("themes.json", {"current": {}, "history": []})
+
+    # ---- Build products (商品別ファネル + 状態分類) ----
+    write_json("products.json", build_products(client))
 
     summary = build_summary(client)
     daily = build_daily_series(client)

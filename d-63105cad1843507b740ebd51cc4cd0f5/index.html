@@ -19,8 +19,13 @@
       <span class="brand-dot">—</span> CALL&amp;RESPONSE
     </div>
     <div class="sidebar-section">
+      <div class="sidebar-label">運用</div>
+      <button class="nav-item active" data-tab="today">🏠 Today</button>
+      <button class="nav-item" data-tab="products">🎯 商品</button>
+    </div>
+    <div class="sidebar-section">
       <div class="sidebar-label">概況</div>
-      <button class="nav-item active" data-tab="exec">今週のサマリ</button>
+      <button class="nav-item" data-tab="exec">今週のサマリ</button>
       <button class="nav-item" data-tab="funnel">ファネル</button>
       <button class="nav-item" data-tab="channel">チャネル</button>
       <button class="nav-item" data-tab="release">リリース</button>
@@ -47,7 +52,9 @@
 </header>
 
 <nav class="tabs container mobile-only">
-  <button class="tab active" data-tab="exec">📊 サマリ</button>
+  <button class="tab active" data-tab="today">🏠 Today</button>
+  <button class="tab" data-tab="products">🎯 商品</button>
+  <button class="tab" data-tab="exec">📊 サマリ</button>
   <button class="tab" data-tab="funnel">🛒 ファネル</button>
   <button class="tab" data-tab="channel">📣 チャネル</button>
   <button class="tab" data-tab="release">🚀 リリース</button>
@@ -56,7 +63,46 @@
 </nav>
 
 <main class="container">
-  <section class="page active" id="page-exec">
+  <section class="page active" id="page-today">
+    <span class="eyebrow">This Week · Theme</span>
+    <h2 id="today-theme-title">今週のテーマ</h2>
+    <div class="card narrative-card" id="theme-card"></div>
+    <div class="card">
+      <h3>👤 あなた（オーナー）の今週タスク</h3>
+      <ul class="action-list" id="theme-tasks-owner"></ul>
+    </div>
+    <div class="card">
+      <h3>📰 中村さんの今週タスク</h3>
+      <ul class="action-list" id="theme-tasks-nakamura"></ul>
+    </div>
+    <div class="card">
+      <h3>📱 市川さんの今週タスク</h3>
+      <ul class="action-list" id="theme-tasks-ichikawa"></ul>
+    </div>
+    <div class="card">
+      <h3>過去のテーマ</h3>
+      <div id="theme-history"></div>
+    </div>
+  </section>
+
+  <section class="page" id="page-products">
+    <span class="eyebrow">Products · Funnel & State</span>
+    <h2>商品別 ファネルと状態分類</h2>
+    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">直近14日の view → ATC → 購入 を商品単位で集計し、ロードマップの5状態分類に自動振り分けします。</p>
+    <div class="card">
+      <h3>状態別 サマリ</h3>
+      <div class="state-summary" id="product-state-summary"></div>
+    </div>
+    <div class="card">
+      <h3>商品一覧（状態フィルタ）</h3>
+      <div class="state-filter" id="product-state-filter"></div>
+      <div style="overflow-x:auto;">
+        <table class="data-table" id="table-products"></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="page-exec">
     <span class="eyebrow">Weekly Pulse</span>
     <h2>今週のサマリ</h2>
     <div class="card narrative-card" id="narrative-summary"></div>
