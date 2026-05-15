@@ -546,6 +546,46 @@ function renderCustomerSegments(data) {
     (items.length === 1 && items[0].key === "new" ? '<p style="color:var(--text-muted);font-size:0.82rem;margin-top:10px;">⚠️ BQ蓄積期間が短く(2026-04-27以降)、リピート判定の精度が低い状態です。蓄積が進むと精度が上がります。</p>' : '');
 }
 
+function renderShopifyTop(products) {
+  const meta = products && products.shopify_meta;
+  const tops = (products && products.shopify_top_28d) || [];
+  const metaEl = document.getElementById("shopify-top-meta");
+  if (metaEl) metaEl.textContent = meta ? ("source: " + (meta.source||"") + " · 取得: " + (meta.fetched_at||"") + " · " + (meta.period_days||0) + "日") : "Shopifyデータ未取得";
+  const t = document.getElementById("shopify-top-table");
+  if (!t) return;
+  if (!tops.length) {
+    t.innerHTML = '<tbody><tr><td style="color:var(--text-muted);padding:14px;">Shopify連携データなし。data/shopify_metrics.json を更新してください</td></tr></tbody>';
+    return;
+  }
+  t.innerHTML =
+    '<thead><tr><th class="num">順位</th><th>商品</th><th class="num">注文</th><th class="num">売上(税抜)</th></tr></thead><tbody>' +
+    tops.map((p, i) => '<tr>' +
+      '<td class="num">' + (i+1) + '</td>' +
+      '<td style="max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="' + p.name + '">' + p.name + '</td>' +
+      '<td class="num">' + num(p.orders) + '</td>' +
+      '<td class="num">' + yen(p.gross_sales) + '</td>' +
+    '</tr>').join("") + '</tbody>';
+}
+
+function renderShopifyCustomers(products) {
+  const c = products && products.shopify_customers_28d;
+  const el = document.getElementById("shopify-customer-card");
+  if (!el) return;
+  if (!c) {
+    el.innerHTML = '<p style="color:var(--text-muted);">Shopify連携データなし</p>';
+    return;
+  }
+  const rate = (c.returning_customer_rate || 0) * 100;
+  const newC = c.new_customers || (c.total_customers - c.returning_customers);
+  el.innerHTML =
+    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;">' +
+      '<div><div style="font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.16em;">総顧客数</div><div style="font-family:\'Fraunces\',serif;font-size:1.8rem;">' + num(c.total_customers) + '</div></div>' +
+      '<div><div style="font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.16em;">新規</div><div style="font-family:\'Fraunces\',serif;font-size:1.8rem;">' + num(newC) + '</div></div>' +
+      '<div><div style="font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.16em;">リピート</div><div style="font-family:\'Fraunces\',serif;font-size:1.8rem;">' + num(c.returning_customers) + '</div></div>' +
+      '<div><div style="font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.16em;">リピート率</div><div style="font-family:\'Fraunces\',serif;font-size:1.8rem;color:var(--accent);">' + rate.toFixed(1) + '%</div></div>' +
+    '</div>';
+}
+
 function renderChannelFunnel(data) {
   const el = document.getElementById("table-channel-funnel");
   if (!el || !data) return;
@@ -667,6 +707,8 @@ function setupRoleToggle() {
   }
   renderTheme(themes);
   renderProducts(products);
+  renderShopifyTop(products);
+  renderShopifyCustomers(products);
   renderGoal(goal);
   renderDynamicActions(summary && summary.narrative ? summary.narrative.actions : null);
   renderCustomerSegments(customers);

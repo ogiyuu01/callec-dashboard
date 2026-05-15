@@ -30,6 +30,7 @@ SIBLING = ROOT.parent / "shopify-ec-automation"
 RELEASE_LOG = SIBLING / "data" / "release_log.csv"
 WEEKLY_KPI = SIBLING / "data" / "weekly_kpi.csv"
 MONTHLY_TARGET = SIBLING / "data" / "monthly_target.json"
+SHOPIFY_METRICS = SIBLING / "data" / "shopify_metrics.json"
 REPORTS_DIR = SIBLING / "outputs" / "reports"
 WEEKLY_THEMES = SIBLING / "data" / "weekly_themes.json"
 
@@ -1112,6 +1113,15 @@ def main() -> int:
 
     # ---- Build products (商品別ファネル + 状態分類) ----
     products_data = build_products(client)
+    # Shopify実購入データをマージ（GA4 attribution と Shopify 実売を併記）
+    if SHOPIFY_METRICS.exists():
+        try:
+            shopify = json.loads(SHOPIFY_METRICS.read_text(encoding="utf-8"))
+            products_data["shopify_top_28d"] = shopify.get("top_products_28d", [])
+            products_data["shopify_customers_28d"] = shopify.get("customers_28d", {})
+            products_data["shopify_meta"] = shopify.get("_meta", {})
+        except Exception as e:
+            print(f"  shopify_metrics load failed: {e}")
     write_json("products.json", products_data)
 
     summary = build_summary(client)

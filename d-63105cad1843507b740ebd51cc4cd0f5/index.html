@@ -104,6 +104,11 @@
   <section class="page" id="page-products">
     <span class="eyebrow">Products · Funnel & State</span>
     <h2>商品別 ファネルと状態分類</h2>
+    <div class="card">
+      <h3>Shopify実購入 TOP30（直近28日・実売ベース）</h3>
+      <p style="color:var(--text-muted);font-size:0.78rem;margin-bottom:14px;" id="shopify-top-meta">—</p>
+      <table class="data-table" id="shopify-top-table"></table>
+    </div>
     <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">直近14日の view → ATC → 購入 を商品単位で集計し、ロードマップの5状態分類に自動振り分けします。</p>
     <div class="card">
       <h3>状態別 サマリ</h3>
@@ -204,7 +209,11 @@
     <h2>顧客セグメント</h2>
     <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">直近30日のセッションを新規/リピートに分類して比較。</p>
     <div class="card">
-      <h3>新規 vs リピート（30日）</h3>
+      <h3>Shopify実購入の顧客（直近28日・実購入ベース）</h3>
+      <div id="shopify-customer-card"></div>
+    </div>
+    <div class="card">
+      <h3>新規 vs リピート - GA4（参考・蓄積期間短く精度低）</h3>
       <div id="customer-segments"></div>
     </div>
     <div class="card">
