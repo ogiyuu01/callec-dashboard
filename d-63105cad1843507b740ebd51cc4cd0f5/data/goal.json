@@ -4,7 +4,7 @@
   "days_passed": 15,
   "days_remaining": 16,
   "target": {
-    "sales": 4000000,
+    "sales": 5600000,
     "orders": 200,
     "note": ""
   },
@@ -17,15 +17,15 @@
     "orders": 172
   },
   "progress": {
-    "sales_pct": 40.0,
+    "sales_pct": 28.6,
     "orders_pct": 39.0,
-    "projected_sales_pct": 88.7,
+    "projected_sales_pct": 63.3,
     "projected_orders_pct": 86.0
   },
   "remaining": {
-    "sales": 2398290,
+    "sales": 3998290,
     "orders": 122,
-    "daily_needed_sales": 149893,
+    "daily_needed_sales": 249893,
     "daily_needed_orders": 7.625
   }
 }
