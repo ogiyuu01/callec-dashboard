@@ -2,56 +2,56 @@
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 3497,
-      "orders": 12,
-      "sales": 232430,
-      "cvr": 0.0034315127251930227
+      "sessions": 3933,
+      "orders": 15,
+      "sales": 302830,
+      "cvr": 0.0038138825324180014
     },
     {
       "channel": "Paid Search",
-      "sessions": 1535,
-      "orders": 10,
-      "sales": 286220,
-      "cvr": 0.006514657980456026
+      "sessions": 1533,
+      "orders": 12,
+      "sales": 331980,
+      "cvr": 0.007827788649706457
     },
     {
       "channel": "Organic Search",
-      "sessions": 1355,
+      "sessions": 1345,
       "orders": 14,
-      "sales": 257730,
-      "cvr": 0.010332103321033211
+      "sales": 269170,
+      "cvr": 0.010408921933085501
     },
     {
       "channel": "Other",
-      "sessions": 517,
-      "orders": 2,
-      "sales": 65120,
-      "cvr": 0.0038684719535783366
+      "sessions": 512,
+      "orders": 3,
+      "sales": 91520,
+      "cvr": 0.005859375
     },
     {
       "channel": "Referral",
-      "sessions": 436,
+      "sessions": 427,
       "orders": 1,
       "sales": 24200,
-      "cvr": 0.0022935779816513763
+      "cvr": 0.00234192037470726
     },
     {
       "channel": "LINE",
-      "sessions": 360,
-      "orders": 3,
-      "sales": 72490,
-      "cvr": 0.008333333333333333
+      "sessions": 387,
+      "orders": 2,
+      "sales": 54890,
+      "cvr": 0.00516795865633075
     },
     {
       "channel": "Email",
-      "sessions": 305,
-      "orders": 2,
-      "sales": 11220,
-      "cvr": 0.006557377049180328
+      "sessions": 316,
+      "orders": 3,
+      "sales": 16940,
+      "cvr": 0.00949367088607595
     },
     {
       "channel": "Social",
-      "sessions": 70,
+      "sessions": 71,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
@@ -69,7 +69,7 @@
         "sessions": [
           2514,
           3680,
-          1014
+          1663
         ]
       },
       {
@@ -77,7 +77,7 @@
         "sessions": [
           1814,
           1993,
-          727
+          956
         ]
       },
       {
@@ -85,7 +85,7 @@
         "sessions": [
           1553,
           1754,
-          692
+          851
         ]
       },
       {
@@ -93,7 +93,7 @@
         "sessions": [
           519,
           495,
-          232
+          296
         ]
       },
       {
@@ -101,7 +101,7 @@
         "sessions": [
           358,
           470,
-          278
+          308
         ]
       }
     ]
