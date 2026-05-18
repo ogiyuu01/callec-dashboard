@@ -2,88 +2,71 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6612
+      "count": 6353
     },
     {
       "name": "view_item",
-      "count": 8507
+      "count": 8653
     },
     {
       "name": "add_to_cart",
-      "count": 301
+      "count": 325
     },
     {
       "name": "begin_checkout",
-      "count": 99
+      "count": 93
     },
     {
       "name": "purchase",
-      "count": 50
+      "count": 55
     }
   ],
   "weeks": [],
   "collections": [
     {
       "path": "/collections/5月6日販売開始",
-      "sessions": 962,
-      "pdp_reached": 313,
-      "pdp_reach": 32.53638253638254
+      "sessions": 825,
+      "pdp_reached": 266,
+      "pdp_reach": 32.24242424242424
     },
     {
       "path": "/collections/all",
-      "sessions": 321,
-      "pdp_reached": 127,
-      "pdp_reach": 39.56386292834891
+      "sessions": 318,
+      "pdp_reached": 130,
+      "pdp_reach": 40.880503144654085
     },
     {
       "path": "/collections/setup",
-      "sessions": 84,
-      "pdp_reached": 37,
-      "pdp_reach": 44.04761904761905
+      "sessions": 79,
+      "pdp_reached": 35,
+      "pdp_reach": 44.30379746835443
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 69,
-      "pdp_reached": 10,
-      "pdp_reach": 14.492753623188406
+      "sessions": 68,
+      "pdp_reached": 12,
+      "pdp_reach": 17.647058823529413
     },
     {
-      "path": "/collections/pants",
+      "path": "/collections/new",
       "sessions": 50,
       "pdp_reached": 16,
       "pdp_reach": 32.0
     },
     {
-      "path": "/collections/new",
-      "sessions": 50,
-      "pdp_reached": 17,
-      "pdp_reach": 34.0
+      "path": "/collections/pants",
+      "sessions": 48,
+      "pdp_reached": 19,
+      "pdp_reach": 39.583333333333336
     },
     {
       "path": "/collections/tailored-jacket",
-      "sessions": 42,
+      "sessions": 39,
       "pdp_reached": 4,
-      "pdp_reach": 9.523809523809524
-    },
-    {
-      "path": "/collections/golf",
-      "sessions": 34,
-      "pdp_reached": 11,
-      "pdp_reach": 32.35294117647059
-    },
-    {
-      "path": "/collections/online_ranking",
-      "sessions": 30,
-      "pdp_reached": 9,
-      "pdp_reach": 30.0
+      "pdp_reach": 10.256410256410257
     }
   ],
   "products_top5": [
-    {
-      "name": "無重力リュック(第5世代)",
-      "qty": 3,
-      "revenue": 82500
-    },
     {
       "name": "無地半袖Tシャツ",
       "qty": 12,
@@ -100,9 +83,14 @@
       "revenue": 53460
     },
     {
-      "name": "シアサッカー長袖シャツ(CALLテープ)",
+      "name": "ストレッチストライプ/半袖シャツ",
+      "qty": 4,
+      "revenue": 52800
+    },
+    {
+      "name": "KOKAGE/テーパードパンツ",
       "qty": 3,
-      "revenue": 36300
+      "revenue": 41250
     }
   ]
 }

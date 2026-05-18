@@ -2,56 +2,56 @@
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 2448,
-      "orders": 17,
-      "sales": 401610,
-      "cvr": 0.006944444444444444
+      "sessions": 2311,
+      "orders": 21,
+      "sales": 554950,
+      "cvr": 0.009086975335352661
     },
     {
       "channel": "Paid Search",
-      "sessions": 1528,
+      "sessions": 1495,
       "orders": 12,
       "sales": 309870,
-      "cvr": 0.007853403141361256
+      "cvr": 0.008026755852842809
     },
     {
       "channel": "Organic Search",
-      "sessions": 1281,
-      "orders": 14,
-      "sales": 231990,
-      "cvr": 0.01092896174863388
+      "sessions": 1275,
+      "orders": 13,
+      "sales": 236940,
+      "cvr": 0.01019607843137255
     },
     {
       "channel": "Referral",
-      "sessions": 427,
+      "sessions": 425,
       "orders": 1,
       "sales": 24200,
-      "cvr": 0.00234192037470726
+      "cvr": 0.002352941176470588
     },
     {
       "channel": "Other",
-      "sessions": 402,
-      "orders": 2,
-      "sales": 63800,
-      "cvr": 0.004975124378109453
+      "sessions": 373,
+      "orders": 3,
+      "sales": 82500,
+      "cvr": 0.00804289544235925
     },
     {
       "channel": "Email",
-      "sessions": 258,
-      "orders": 3,
-      "sales": 16940,
-      "cvr": 0.011627906976744186
+      "sessions": 243,
+      "orders": 4,
+      "sales": 58740,
+      "cvr": 0.01646090534979424
     },
     {
       "channel": "LINE",
-      "sessions": 193,
+      "sessions": 159,
       "orders": 1,
       "sales": 36190,
-      "cvr": 0.0051813471502590676
+      "cvr": 0.006289308176100629
     },
     {
       "channel": "Social",
-      "sessions": 75,
+      "sessions": 72,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
@@ -69,7 +69,7 @@
         "sessions": [
           2514,
           3680,
-          1988
+          2311
         ]
       },
       {
@@ -77,7 +77,7 @@
         "sessions": [
           1814,
           1993,
-          1203
+          1495
         ]
       },
       {
@@ -85,7 +85,7 @@
         "sessions": [
           1553,
           1754,
-          1039
+          1275
         ]
       },
       {
@@ -93,7 +93,7 @@
         "sessions": [
           519,
           495,
-          364
+          425
         ]
       },
       {
@@ -101,7 +101,7 @@
         "sessions": [
           358,
           470,
-          340
+          373
         ]
       }
     ]
