@@ -1,16 +1,16 @@
 {
   "period": {
-    "start": "2026-04-18",
-    "end": "2026-05-17",
+    "start": "2026-04-19",
+    "end": "2026-05-18",
     "days": 30
   },
   "segments": {
     "new": {
-      "sessions": 22622,
-      "atc_rate": 1.6,
-      "cvr": 0.553,
-      "orders": 125,
-      "sales": 2609310,
+      "sessions": 23604,
+      "atc_rate": 1.61,
+      "cvr": 0.559,
+      "orders": 132,
+      "sales": 2748680,
       "sales_share": 100.0
     }
   }
