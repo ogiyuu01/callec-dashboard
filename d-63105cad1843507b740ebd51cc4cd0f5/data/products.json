@@ -2883,37 +2883,9 @@
       "advice": "露出強化（特集・LINE・Instagram）"
     },
     {
-      "name": "デニムパイル/ロングパンツ",
-      "sku": "shopify_ZZ_8457626026174_45336462557374",
-      "views": 23,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "プリント半袖Tシャツ(アート/JAZZウッドベース)",
-      "sku": "shopify_ZZ_8619948114110_45609807708350",
-      "views": 59,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "PV高・カート低",
-      "state_color": "warn",
-      "advice": "写真・コピー・訴求改善（PDP改修候補）"
-    },
-    {
-      "name": "モダール/長袖プルオーバー",
-      "sku": "shopify_ZZ_8524332204222_45214813814974",
-      "views": 12,
+      "name": "無重力シューズ",
+      "sku": "shopify_ZZ_8457631400126_44979165823166",
+      "views": 24,
       "atcs": 0,
       "buys": 0,
       "revenue": 0,
@@ -2939,37 +2911,23 @@
       "advice": "露出強化（特集・LINE・Instagram）"
     },
     {
+      "name": "ストレッチデニム/シャツジャケット",
+      "sku": "shopify_ZZ_8457625010366_44979122340030",
+      "views": 21,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
       "name": "ワッペンジャケット(CALL CLUB TEAM)",
       "sku": "shopify_ZZ_8524331843774_45203832275134",
       "views": 13,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "マルーデコットン/長袖Tシャツ",
-      "sku": "shopify_ZZ_8457629958334_44979154878654",
-      "views": 29,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "トビキリ/タックパンツ",
-      "sku": "shopify_ZZ_8524332859582_45203837157566",
-      "views": 14,
       "atcs": 0,
       "buys": 0,
       "revenue": 0,
@@ -2995,92 +2953,8 @@
       "advice": "露出強化（特集・LINE・Instagram）"
     },
     {
-      "name": "SPEED WIND/プリントパーカー(ジオメトリック/ブルドッグ)",
-      "sku": "shopify_ZZ_8619946672318_45609833791678",
-      "views": 10,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "無地長袖Tシャツ",
-      "sku": "shopify_ZZ_8457631465662_44979166445758",
-      "views": 26,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "マルーデコットン/サファリジャケット",
-      "sku": "shopify_ZZ_8457629761726_44979153862846",
-      "views": 13,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "ストレッチツイル/グログランジャケット",
-      "sku": "shopify_ZZ_8457624551614_44979119521982",
-      "views": 14,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "無重力シューズ",
-      "sku": "shopify_ZZ_8457631400126_44979165823166",
-      "views": 24,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "フクレジャガード/プルパーカー",
-      "sku": "shopify_ZZ_8457627959486_44979141705918",
-      "views": 10,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "ストレッチデニム/シャツジャケット",
-      "sku": "shopify_ZZ_8457625010366_44979122340030",
+      "name": "半袖Tシャツ(カモフラ)",
+      "sku": "shopify_ZZ_8619948703934_45609846309054",
       "views": 21,
       "atcs": 0,
       "buys": 0,
@@ -3093,9 +2967,23 @@
       "advice": "露出強化（特集・LINE・Instagram）"
     },
     {
-      "name": "TOBIKIRI STRIPE/長袖比翼シャツ",
-      "sku": "shopify_ZZ_8619945263294_45609804169406",
-      "views": 33,
+      "name": "モダール/ロングパンツ",
+      "sku": "shopify_ZZ_8524332761278_45203836895422",
+      "views": 11,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "ノビルプレミアム/アジャスターパンツ",
+      "sku": "shopify_ZZ_8457627402430_44979138003134",
+      "views": 27,
       "atcs": 0,
       "buys": 0,
       "revenue": 0,
@@ -3121,9 +3009,23 @@
       "advice": "露出強化（特集・LINE・Instagram）"
     },
     {
-      "name": "SPEEDWIND/ジョガーパンツ",
-      "sku": "shopify_ZZ_8457622094014_44979107627198",
-      "views": 40,
+      "name": "TOBIKIRI STRIPE/長袖比翼シャツ",
+      "sku": "shopify_ZZ_8619945263294_45609804169406",
+      "views": 33,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "プリント半袖Tシャツ(アート/JAZZウッドベース)",
+      "sku": "shopify_ZZ_8619948114110_45609807708350",
+      "views": 59,
       "atcs": 0,
       "buys": 0,
       "revenue": 0,
@@ -3135,9 +3037,9 @@
       "advice": "写真・コピー・訴求改善（PDP改修候補）"
     },
     {
-      "name": "ノビルプレミアム/アジャスターパンツ",
-      "sku": "shopify_ZZ_8457627402430_44979138003134",
-      "views": 27,
+      "name": "SPEEDWIND/長袖ラインZIPパーカー",
+      "sku": "shopify_ZZ_8457622421694_44979109527742",
+      "views": 16,
       "atcs": 0,
       "buys": 0,
       "revenue": 0,
@@ -3149,37 +3051,9 @@
       "advice": "露出強化（特集・LINE・Instagram）"
     },
     {
-      "name": "ソフトツイル/ノーカラージャケット",
-      "sku": "shopify_ZZ_8457625665726_44979126337726",
-      "views": 14,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "ソフトツイル/センタープリーツパンツ",
-      "sku": "shopify_ZZ_8457625600190_44979126010046",
-      "views": 11,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "マルーデコットン/ロングパンツ",
-      "sku": "shopify_ZZ_8457629892798_44979154583742",
-      "views": 12,
+      "name": "マルーデコットン/サファリジャケット",
+      "sku": "shopify_ZZ_8457629761726_44979153862846",
+      "views": 13,
       "atcs": 0,
       "buys": 0,
       "revenue": 0,
@@ -3205,218 +3079,22 @@
       "advice": "露出強化（特集・LINE・Instagram）"
     },
     {
-      "name": "ノビルプレミアム/MA-1ブルゾン",
-      "sku": "shopify_ZZ_8457627336894_44979137478846",
-      "views": 14,
+      "name": "SPEEDWIND/ジョガーパンツ",
+      "sku": "shopify_ZZ_8457622094014_44979107627198",
+      "views": 40,
       "atcs": 0,
       "buys": 0,
       "revenue": 0,
       "atc_per_view": 0.0,
       "buy_per_view": 0.0,
       "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
+      "state": "PV高・カート低",
+      "state_color": "warn",
+      "advice": "写真・コピー・訴求改善（PDP改修候補）"
     },
     {
-      "name": "KOKAGE/アロハシャツ(ペンギン)",
-      "sku": "shopify_ZZ_8619947589822_45609839820990",
-      "views": 13,
-      "atcs": 1,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 7.69,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "メランジクルー半袖Tシャツ",
-      "sku": "shopify_ZZ_8619948245182_45609844113598",
-      "views": 11,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "サイセンタク/JQニット(ラクガキドッグ)",
-      "sku": "shopify_ZZ_8524333613246_45214820434110",
-      "views": 13,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "TOBIKIRI STRIPE/ジョガーパンツ",
-      "sku": "shopify_ZZ_8619945787582_45609829204158",
-      "views": 10,
-      "atcs": 1,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 10.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "後ろジャガードニット半袖プルオーバー",
-      "sku": "shopify_ZZ_8619948736702_45609846472894",
-      "views": 11,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "半袖Tシャツ(カモフラ)",
-      "sku": "shopify_ZZ_8619948703934_45609846309054",
-      "views": 21,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "SPEEDWIND/長袖ラインZIPパーカー",
-      "sku": "shopify_ZZ_8457622421694_44979109527742",
-      "views": 16,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "ストレッチデニムジョガーパンツ",
-      "sku": "shopify_ZZ_8619947425982_45609839132862",
-      "views": 10,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
-      "sku": "shopify_ZZ_8619947262142_45609806823614",
-      "views": 10,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "SPEEDWIND/長袖プルオーバー",
-      "sku": "shopify_ZZ_8457622356158_44979109298366",
-      "views": 13,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "後ろジャガードニット半袖プルオーバー",
-      "sku": "shopify_ZZ_8619948736702_45609846440126",
-      "views": 16,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "マルーデコットン/バックストライプ長袖プルオーバー",
-      "sku": "shopify_ZZ_8457629794494_44979154059454",
-      "views": 20,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "デニムパイルテーラードジャケット",
-      "sku": "shopify_ZZ_8619944935614_45609825894590",
-      "views": 18,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "サイセンタク/ニットパーカー(ヘリンボーン)",
-      "sku": "shopify_ZZ_8524334006462_45203838435518",
-      "views": 21,
-      "atcs": 0,
-      "buys": 0,
-      "revenue": 0,
-      "atc_per_view": 0.0,
-      "buy_per_view": 0.0,
-      "buy_per_atc": 0.0,
-      "state": "流入弱",
-      "state_color": "muted",
-      "advice": "露出強化（特集・LINE・Instagram）"
-    },
-    {
-      "name": "ストレッチデニム/MA1ブルゾン(裏起毛)",
-      "sku": "shopify_ZZ_8524333187262_45203837485246",
+      "name": "マルーデコットン/ロングパンツ",
+      "sku": "shopify_ZZ_8457629892798_44979154583742",
       "views": 12,
       "atcs": 0,
       "buys": 0,
@@ -3429,9 +3107,9 @@
       "advice": "露出強化（特集・LINE・Instagram）"
     },
     {
-      "name": "モダール/ロングパンツ",
-      "sku": "shopify_ZZ_8524332761278_45203836895422",
-      "views": 11,
+      "name": "SPEED WIND/プリントパーカー(ジオメトリック/ブルドッグ)",
+      "sku": "shopify_ZZ_8619946672318_45609833791678",
+      "views": 10,
       "atcs": 0,
       "buys": 0,
       "revenue": 0,
@@ -3469,171 +3147,393 @@
       "state": "流入弱",
       "state_color": "muted",
       "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "無地長袖Tシャツ",
+      "sku": "shopify_ZZ_8457631465662_44979166445758",
+      "views": 26,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "KOKAGE/アロハシャツ(ペンギン)",
+      "sku": "shopify_ZZ_8619947589822_45609839820990",
+      "views": 13,
+      "atcs": 1,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 7.69,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "フクレジャガード/プルパーカー",
+      "sku": "shopify_ZZ_8457627959486_44979141705918",
+      "views": 10,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "SPEEDWIND/長袖プルオーバー",
+      "sku": "shopify_ZZ_8457622356158_44979109298366",
+      "views": 13,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "モダール/長袖プルオーバー",
+      "sku": "shopify_ZZ_8524332204222_45214813814974",
+      "views": 12,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "デニムパイルテーラードジャケット",
+      "sku": "shopify_ZZ_8619944935614_45609825894590",
+      "views": 18,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "ソフトツイル/センタープリーツパンツ",
+      "sku": "shopify_ZZ_8457625600190_44979126010046",
+      "views": 11,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "トビキリ/タックパンツ",
+      "sku": "shopify_ZZ_8524332859582_45203837157566",
+      "views": 14,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "ノビルプレミアム/MA-1ブルゾン",
+      "sku": "shopify_ZZ_8457627336894_44979137478846",
+      "views": 14,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "サイセンタク/ニットパーカー(ヘリンボーン)",
+      "sku": "shopify_ZZ_8524334006462_45203838435518",
+      "views": 21,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "ソフトツイル/ノーカラージャケット",
+      "sku": "shopify_ZZ_8457625665726_44979126337726",
+      "views": 14,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "マルーデコットン/バックストライプ長袖プルオーバー",
+      "sku": "shopify_ZZ_8457629794494_44979154059454",
+      "views": 20,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "マルーデコットン/長袖Tシャツ",
+      "sku": "shopify_ZZ_8457629958334_44979154878654",
+      "views": 29,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "サイセンタク/JQニット(ラクガキドッグ)",
+      "sku": "shopify_ZZ_8524333613246_45214820434110",
+      "views": 13,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "ストレッチデニム/MA1ブルゾン(裏起毛)",
+      "sku": "shopify_ZZ_8524333187262_45203837485246",
+      "views": 12,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "ストレッチツイル/グログランジャケット",
+      "sku": "shopify_ZZ_8457624551614_44979119521982",
+      "views": 14,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "後ろジャガードニット半袖プルオーバー",
+      "sku": "shopify_ZZ_8619948736702_45609846472894",
+      "views": 11,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "デニムパイル/ロングパンツ",
+      "sku": "shopify_ZZ_8457626026174_45336462557374",
+      "views": 23,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "ストレッチデニムジョガーパンツ",
+      "sku": "shopify_ZZ_8619947425982_45609839132862",
+      "views": 10,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "TOBIKIRI STRIPE/ジョガーパンツ",
+      "sku": "shopify_ZZ_8619945787582_45609829204158",
+      "views": 10,
+      "atcs": 1,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 10.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "メランジクルー半袖Tシャツ",
+      "sku": "shopify_ZZ_8619948245182_45609844113598",
+      "views": 11,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
+      "sku": "shopify_ZZ_8619947262142_45609806823614",
+      "views": 10,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
+    },
+    {
+      "name": "後ろジャガードニット半袖プルオーバー",
+      "sku": "shopify_ZZ_8619948736702_45609846440126",
+      "views": 16,
+      "atcs": 0,
+      "buys": 0,
+      "revenue": 0,
+      "atc_per_view": 0.0,
+      "buy_per_view": 0.0,
+      "buy_per_atc": 0.0,
+      "state": "流入弱",
+      "state_color": "muted",
+      "advice": "露出強化（特集・LINE・Instagram）"
     }
   ],
   "shopify_top_28d": [
     {
       "name": "無重力リュック(第5世代)",
-      "gross_sales": 250000,
-      "orders": 10
+      "gross_sales": 247500,
+      "orders": 9
     },
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 160000,
-      "orders": 16
-    },
-    {
-      "name": "KOKAGE/テーラードジャケット",
-      "gross_sales": 102000,
-      "orders": 6
-    },
-    {
-      "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "gross_sales": 95000,
-      "orders": 18
-    },
-    {
-      "name": "ノビル360°/長袖シャツ",
-      "gross_sales": 77000,
-      "orders": 6
-    },
-    {
-      "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 75600,
-      "orders": 9
+      "gross_sales": 236500,
+      "orders": 43
     },
     {
       "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 75000,
-      "orders": 5
+      "gross_sales": 137500,
+      "orders": 10
     },
     {
-      "name": "TOBIKIRI STRIPE/テーパードパンツ",
-      "gross_sales": 67500,
-      "orders": 4
+      "name": "KOKAGE/テーラードジャケット",
+      "gross_sales": 130900,
+      "orders": 7
     },
     {
-      "name": "スマートウォレット",
-      "gross_sales": 66000,
-      "orders": 6
-    },
-    {
-      "name": "KOKAGE/タックカーディガン",
-      "gross_sales": 65000,
-      "orders": 5
-    },
-    {
-      "name": "ハイストレッチジョガーパンツ",
-      "gross_sales": 59000,
-      "orders": 5
-    },
-    {
-      "name": "シアサッカー長袖シャツ(CALLテープ)",
-      "gross_sales": 55000,
-      "orders": 3
-    },
-    {
-      "name": "TOBIKIRI STRIPE/ハーフカーゴパンツ",
-      "gross_sales": 50000,
-      "orders": 4
-    },
-    {
-      "name": "KOKAGE/アロハシャツ(フレンチブル)",
-      "gross_sales": 48000,
-      "orders": 4
-    },
-    {
-      "name": "TOBIKIRI STRIPE/ジョガーパンツ",
-      "gross_sales": 48000,
-      "orders": 3
-    },
-    {
-      "name": "KOKAGE/アロハシャツ(ペンギン)",
-      "gross_sales": 48000,
-      "orders": 3
-    },
-    {
-      "name": "ストレッチストライプ/長袖シャツ",
-      "gross_sales": 48000,
-      "orders": 2
+      "name": "メランジクルー半袖Tシャツ",
+      "gross_sales": 118800,
+      "orders": 20
     },
     {
       "name": "TOBIKIRI STRIPE/切り替え五部袖プルオーバー",
-      "gross_sales": 47500,
-      "orders": 5
-    },
-    {
-      "name": "プリント半袖Tシャツ(フレンチブル)",
-      "gross_sales": 45000,
+      "gross_sales": 94050,
       "orders": 9
     },
     {
-      "name": "プリント半袖Tシャツ(アート/パンダ)",
-      "gross_sales": 45000,
-      "orders": 8
+      "name": "プリント半袖Tシャツ(アート/ウルフ)",
+      "gross_sales": 82500,
+      "orders": 15
     },
     {
-      "name": "KOKAGE/オーバー半袖プルオーバー",
-      "gross_sales": 45000,
-      "orders": 5
-    },
-    {
-      "name": "プリント長袖Tシャツ(ジオメトリック/クジラ)",
-      "gross_sales": 43200,
-      "orders": 7
-    },
-    {
-      "name": "NOBIRU360°PREMIUM/刺繍半袖プルオーバー",
-      "gross_sales": 42000,
-      "orders": 3
-    },
-    {
-      "name": "プリント半袖Tシャツ(アート/カエル)",
-      "gross_sales": 40000,
-      "orders": 7
-    },
-    {
-      "name": "メランジVネック長袖Tシャツ",
-      "gross_sales": 39000,
-      "orders": 3
-    },
-    {
-      "name": "ソフトツイル刺繍半袖シャツ",
-      "gross_sales": 38750,
-      "orders": 3
-    },
-    {
-      "name": "メランジVネック半袖Tシャツ",
-      "gross_sales": 37800,
+      "name": "TOBIKIRI STRIPE/ジョガーパンツ",
+      "gross_sales": 79200,
       "orders": 6
     },
     {
-      "name": "KOKAGE/ジョガーパンツ",
-      "gross_sales": 37500,
-      "orders": 3
+      "name": "KOKAGE/オーバー半袖プルオーバー",
+      "gross_sales": 79200,
+      "orders": 8
     },
     {
-      "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
-      "gross_sales": 36000,
-      "orders": 2
-    },
-    {
-      "name": "ハイストレッチモックネック半袖プルオーバー",
-      "gross_sales": 36000,
-      "orders": 5
+      "name": "KOKAGE/アロハシャツ(ペンギン)",
+      "gross_sales": 79200,
+      "orders": 6
     }
   ],
   "shopify_customers_28d": {
-    "total_customers": 173,
-    "returning_customers": 55,
-    "returning_customer_rate": 0.3179,
-    "new_customers": 118
+    "total_customers": 185,
+    "returning_customers": 7,
+    "returning_customer_rate": 0.03783783783783784,
+    "new_customers": 178
   },
   "shopify_meta": {
-    "source": "Shopify Admin API (ShopifyQL via MCP)",
-    "fetched_at": "2026-05-15 16:30",
+    "source": "Shopify Admin API (Client Credentials Grant)",
+    "fetched_at": "2026-05-21 17:41 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
-    "note": "Shopify実購入データ。GA4のecommerce_purchaseとは集計差あり(税・割引・キャンセル等)。Shopify Admin APIトークンを.envに設定すればGitHub Actionsで自動更新可能。"
+    "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   }
 }
