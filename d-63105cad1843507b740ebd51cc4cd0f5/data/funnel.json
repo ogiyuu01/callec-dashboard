@@ -2,90 +2,90 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6397
+      "count": 6368
     },
     {
       "name": "view_item",
-      "count": 8356
+      "count": 8360
     },
     {
       "name": "add_to_cart",
-      "count": 302
+      "count": 306
     },
     {
       "name": "begin_checkout",
-      "count": 82
+      "count": 96
     },
     {
       "name": "purchase",
-      "count": 55
+      "count": 57
     }
   ],
   "weeks": [],
   "collections": [
     {
       "path": "/collections/5月6日販売開始",
-      "sessions": 695,
-      "pdp_reached": 222,
-      "pdp_reach": 31.942446043165468
+      "sessions": 653,
+      "pdp_reached": 208,
+      "pdp_reach": 31.852986217457886
     },
     {
       "path": "/collections/all",
-      "sessions": 362,
-      "pdp_reached": 145,
-      "pdp_reach": 40.05524861878453
+      "sessions": 337,
+      "pdp_reached": 134,
+      "pdp_reach": 39.76261127596439
     },
     {
       "path": "/collections/setup",
-      "sessions": 91,
-      "pdp_reached": 34,
-      "pdp_reach": 37.362637362637365
+      "sessions": 85,
+      "pdp_reached": 32,
+      "pdp_reach": 37.64705882352941
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 65,
-      "pdp_reached": 12,
-      "pdp_reach": 18.46153846153846
+      "sessions": 61,
+      "pdp_reached": 14,
+      "pdp_reach": 22.950819672131146
     },
     {
       "path": "/collections/new",
       "sessions": 55,
-      "pdp_reached": 18,
-      "pdp_reach": 32.72727272727273
+      "pdp_reached": 16,
+      "pdp_reach": 29.09090909090909
     },
     {
       "path": "/collections/pants",
       "sessions": 45,
-      "pdp_reached": 18,
-      "pdp_reach": 40.0
+      "pdp_reached": 17,
+      "pdp_reach": 37.77777777777778
     },
     {
       "path": "/collections/tailored-jacket",
-      "sessions": 37,
+      "sessions": 36,
       "pdp_reached": 3,
-      "pdp_reach": 8.108108108108109
+      "pdp_reach": 8.333333333333334
     }
   ],
   "products_top5": [
+    {
+      "name": "無地半袖Tシャツ",
+      "qty": 13,
+      "revenue": 71500
+    },
+    {
+      "name": "ストレッチストライプ/半袖シャツ",
+      "qty": 5,
+      "revenue": 66000
+    },
     {
       "name": "KOKAGE/テーラードジャケット",
       "qty": 3,
       "revenue": 56100
     },
     {
-      "name": "無地半袖Tシャツ",
-      "qty": 10,
+      "name": "KOKAGE/テーパードパンツ",
+      "qty": 4,
       "revenue": 55000
-    },
-    {
-      "name": "TOBIKIRI STRIPE/ジョガーパンツ",
-      "qty": 4,
-      "revenue": 52800
-    },
-    {
-      "name": "ストレッチストライプ/半袖シャツ",
-      "qty": 4,
-      "revenue": 52800
     },
     {
       "name": "KOKAGE/アロハシャツ(ペンギン)",
