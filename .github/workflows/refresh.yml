@@ -44,6 +44,12 @@ jobs:
       - name: Refresh data
         run: python3 scripts/refresh_data.py
 
+      - name: Refresh Klaviyo flow data
+        env:
+          KLAVIYO_PRIVATE_API_KEY: ${{ secrets.KLAVIYO_PRIVATE_API_KEY }}
+        run: python3 scripts/refresh_klaviyo.py
+        continue-on-error: true
+
       - name: Commit & push dashboard data if changed
         run: |
           git config user.name "github-actions[bot]"

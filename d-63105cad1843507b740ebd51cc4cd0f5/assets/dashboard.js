@@ -256,6 +256,100 @@ function renderReleases(data) {
     }).join("") + '</tbody>';
 }
 
+function escapeHtml(s) {
+  if (s == null) return "";
+  return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+}
+
+function renderKlaviyo(data) {
+  const tableRev = document.getElementById("table-klaviyo-revenue");
+  const tableEng = document.getElementById("table-klaviyo-engagement");
+  const alertsCard = document.getElementById("klaviyo-alerts-card");
+  const alertsEl = document.getElementById("klaviyo-alerts");
+  const metaEl = document.getElementById("klaviyo-meta");
+  if (!tableRev || !tableEng) return;
+
+  if (!data || data.error) {
+    const msg = data && data.error ? data.error : "Klaviyo データが利用不可です";
+    tableRev.innerHTML = '<tbody><tr><td colspan="6" style="text-align:center;color:var(--text-muted);">' + msg + '</td></tr></tbody>';
+    tableEng.innerHTML = "";
+    if (metaEl) metaEl.textContent = msg;
+    return;
+  }
+
+  if (!data.flows || data.flows.length === 0) {
+    tableRev.innerHTML = '<tbody><tr><td colspan="6" style="text-align:center;color:var(--text-muted);">Live flow がありません</td></tr></tbody>';
+    tableEng.innerHTML = "";
+    if (metaEl) metaEl.textContent = "Klaviyo Live flow なし。F1 Welcome を Live 化すると自動表示されます。";
+    return;
+  }
+
+  const dot = (level) => {
+    if (level === "red") return "🔴";
+    if (level === "yellow") return "🟡";
+    if (level === "green") return "🟢";
+    return "";
+  };
+  const fmtPct = (v) => v == null ? "—" : `${dot(v >= -5 ? "green" : v >= -20 ? "yellow" : "red")} ${v >= 0 ? "+" : ""}${v.toFixed(1)}%`;
+  const fmtYen = (v) => "¥" + Math.round(v || 0).toLocaleString("ja-JP");
+  const fmtPctRate = (v, d=1) => v == null ? "—" : (v * 100).toFixed(d) + "%";
+
+  let revRows = '<thead><tr><th>Flow</th><th>直近7日</th><th>WoW</th><th>直近30日</th><th>MoM</th><th>直近365日</th></tr></thead><tbody>';
+  data.flows.forEach(f => {
+    revRows += '<tr>'
+      + '<td><strong>' + escapeHtml(f.name) + '</strong><br><span style="color:var(--text-muted);font-size:0.75em;">' + f.flow_id + '</span></td>'
+      + '<td style="text-align:right;">' + fmtYen(f.current_7d.rev) + '</td>'
+      + '<td>' + fmtPct(f.wow_pct) + '</td>'
+      + '<td style="text-align:right;">' + fmtYen(f.current_30d.rev) + '</td>'
+      + '<td>' + fmtPct(f.mom_pct) + '</td>'
+      + '<td style="text-align:right;">' + fmtYen(f.annual.rev) + '</td>'
+      + '</tr>';
+  });
+  if (data.totals) {
+    revRows += '<tr style="background:rgba(244,237,226,0.04);">'
+      + '<td><strong>合計</strong></td>'
+      + '<td style="text-align:right;"><strong>' + fmtYen(data.totals.rev_7d) + '</strong></td>'
+      + '<td><strong>' + fmtPct(data.totals.wow_pct) + '</strong></td>'
+      + '<td style="text-align:right;"><strong>' + fmtYen(data.totals.rev_30d) + '</strong></td>'
+      + '<td><strong>' + fmtPct(data.totals.mom_pct) + '</strong></td>'
+      + '<td style="text-align:right;"><strong>' + fmtYen(data.totals.rev_365d) + '</strong></td>'
+      + '</tr>';
+  }
+  revRows += '</tbody>';
+  tableRev.innerHTML = revRows;
+
+  let engRows = '<thead><tr><th>Flow</th><th>配信</th><th>開封率</th><th>クリック率</th><th>購入率</th><th>売上/受信者</th></tr></thead><tbody>';
+  data.flows.forEach(f => {
+    const c30 = f.current_30d;
+    engRows += '<tr>'
+      + '<td><strong>' + escapeHtml(f.name) + '</strong></td>'
+      + '<td style="text-align:right;">' + Math.round(c30.recipients).toLocaleString("ja-JP") + '</td>'
+      + '<td>' + dot(f.open_alert) + ' ' + fmtPctRate(c30.open_rate) + '</td>'
+      + '<td>' + fmtPctRate(c30.click_rate) + '</td>'
+      + '<td>' + fmtPctRate(c30.conv_rate, 2) + '</td>'
+      + '<td style="text-align:right;">' + fmtYen(f.rpr_30d) + '</td>'
+      + '</tr>';
+  });
+  engRows += '</tbody>';
+  tableEng.innerHTML = engRows;
+
+  if (data.alerts && data.alerts.length > 0) {
+    alertsCard.style.display = "";
+    alertsEl.innerHTML = data.alerts.map(a => {
+      const icon = a.level === "red" ? "🔴" : a.level === "yellow" ? "🟡" : "ℹ️";
+      return '<div style="padding:8px 0;border-bottom:1px solid rgba(244,237,226,0.06);">'
+        + icon + ' <strong>' + escapeHtml(a.flow) + '</strong>: ' + escapeHtml(a.msg)
+        + '</div>';
+    }).join("");
+  } else {
+    alertsCard.style.display = "none";
+  }
+
+  if (metaEl) {
+    metaEl.innerHTML = 'Live flow: <strong>' + data.flows.length + '</strong> 件 / 合計売上 (直近30日): <strong>' + fmtYen(data.totals.rev_30d) + '</strong> / アラート: <strong>' + (data.alerts ? data.alerts.length : 0) + '</strong> 件<br>更新: ' + (data.last_updated || '—');
+  }
+}
+
 function renderNarrative(summary) {
   if (!summary || !summary.narrative) return;
   const n = summary.narrative;
@@ -685,7 +779,7 @@ function setupRoleToggle() {
 }
 
 (async () => {
-  const [summary, funnel, channels, releases, utm, archive, monthly, themes, products, goal, customers, channelFunnel, reports] = await Promise.all([
+  const [summary, funnel, channels, releases, utm, archive, monthly, themes, products, goal, customers, channelFunnel, reports, klaviyo] = await Promise.all([
     load("summary.json"),
     load("funnel.json"),
     load("channels.json"),
@@ -699,6 +793,7 @@ function setupRoleToggle() {
     load("customers.json"),
     load("channel_funnel.json"),
     load("reports.json"),
+    load("klaviyo.json"),
   ]);
   if (summary && summary.last_updated) {
     document.getElementById("last-updated").textContent = summary.last_updated;
@@ -726,6 +821,7 @@ function setupRoleToggle() {
   renderChannelTrend(channels);
   renderUtmHealth(utm);
   renderReleases(releases);
+  renderKlaviyo(klaviyo);
   renderArchive(archive);
   renderArchiveMonthly(monthly);
   renderAnomalies(summary);

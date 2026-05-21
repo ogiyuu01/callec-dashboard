@@ -81,6 +81,7 @@ git push -u origin main
 |---|---|
 | `GCP_SA_KEY` | BigQuery 読み取り権限のあるサービスアカウント JSON 全文 |
 | `SIBLING_REPO_TOKEN` | （任意）shopify-ec-automation リポ参照用 Personal Access Token |
+| `KLAVIYO_PRIVATE_API_KEY` | （任意）Klaviyo Private API Key (`pk_...`)。📧 Klaviyo タブ表示用。未設定時は skip |
 
 ### 5. GCP サービスアカウント作成手順（GCP_SA_KEY 用）
 

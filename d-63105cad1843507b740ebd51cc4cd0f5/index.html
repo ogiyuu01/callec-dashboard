@@ -39,6 +39,7 @@
       <button class="nav-item" data-tab="exec">今週のサマリ</button>
       <button class="nav-item" data-tab="funnel">ファネル</button>
       <button class="nav-item" data-tab="channel">チャネル</button>
+      <button class="nav-item" data-tab="klaviyo">📧 Klaviyo</button>
       <button class="nav-item" data-tab="release">リリース</button>
     </div>
     <div class="sidebar-section">
@@ -69,6 +70,7 @@
   <button class="tab" data-tab="exec">📊 サマリ</button>
   <button class="tab" data-tab="funnel">🛒 ファネル</button>
   <button class="tab" data-tab="channel">📣 チャネル</button>
+  <button class="tab" data-tab="klaviyo">📧 Klaviyo</button>
   <button class="tab" data-tab="release">🚀 リリース</button>
   <button class="tab" data-tab="archive">📅 週次</button>
   <button class="tab" data-tab="archive-monthly">🗓️ 月次</button>
@@ -178,6 +180,33 @@
     <div class="card">
       <h3>計測ヘルス（utm 破損検知）</h3>
       <div id="utm-health"></div>
+    </div>
+  </section>
+
+  <section class="page" id="page-klaviyo">
+    <span class="eyebrow">Email Marketing · Klaviyo</span>
+    <h2>Klaviyo Flow 別 売上</h2>
+    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">Klaviyo Live flow から自動取得 (毎日 09:00 JST 更新)。売上は Placed Order metric の 5 日 attribution 基準。</p>
+
+    <div class="card" id="klaviyo-alerts-card" style="display:none;">
+      <h3>⚠️ アラート</h3>
+      <div id="klaviyo-alerts"></div>
+    </div>
+
+    <div class="card">
+      <h3>売上トレンド (WoW / MoM)</h3>
+      <table class="data-table" id="table-klaviyo-revenue"></table>
+    </div>
+
+    <div class="card">
+      <h3>Engagement (直近 30 日)</h3>
+      <p style="color:var(--text-muted);font-size:0.8rem;">開封率: 🟢 ≥25% / 🟡 15-25% / 🔴 <15% (業界下限)</p>
+      <table class="data-table" id="table-klaviyo-engagement"></table>
+    </div>
+
+    <div class="card">
+      <h3>flow 状態</h3>
+      <p style="color:var(--text-muted);font-size:0.85rem;" id="klaviyo-meta">—</p>
     </div>
   </section>
 
