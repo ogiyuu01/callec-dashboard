@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-05-21 17:45 JST",
+    "generated_at": "2026-05-21 17:51 JST",
     "sources": [
       "Shopify",
       "GA4",
@@ -9,16 +9,8 @@
     ],
     "version": 1
   },
-  "last_updated": "2026-05-21 17:45 JST",
-  "alerts": [
-    {
-      "level": "critical",
-      "title": "UTM 破損 sessions",
-      "value": "53src / 253 sessions",
-      "target": "≤30 sessions",
-      "source": "GA4"
-    }
-  ],
+  "last_updated": "2026-05-21 17:51 JST",
+  "alerts": [],
   "scorecard": {
     "overall_score": 88,
     "pillars": [
@@ -104,29 +96,29 @@
       "source": "GA4",
       "status": "green",
       "last_run": "2026-05-21 17:44",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "lag_hours": 0.1,
+      "note": "0.1h前 (今朝以降)"
     },
     {
       "source": "Shopify",
       "status": "green",
       "last_run": "2026-05-21 17:45",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "lag_hours": 0.1,
+      "note": "0.1h前 (今朝以降)"
     },
     {
       "source": "GDrive",
       "status": "green",
       "last_run": "2026-05-21 17:43",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "lag_hours": 0.1,
+      "note": "0.1h前 (今朝以降)"
     },
     {
       "source": "Klaviyo",
       "status": "green",
       "last_run": "2026-05-21 17:45",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "lag_hours": 0.1,
+      "note": "0.1h前 (今朝以降)"
     }
   ],
   "signals": [
@@ -164,13 +156,6 @@
       "target": "≥25% (alert <15%)",
       "status": "green",
       "source": "Klaviyo"
-    },
-    {
-      "metric": "UTM 破損 sessions",
-      "value": "53src / 253 sessions",
-      "target": "≤30 sessions",
-      "status": "red",
-      "source": "GA4"
     },
     {
       "metric": "改善対象 SKU (PV高ATC低)",

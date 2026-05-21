@@ -310,16 +310,6 @@ def build_for(d: Path) -> dict:
         "status": "green" if avg_open >= 0.25 else ("yellow" if avg_open >= 0.15 else "red"),
         "source": "Klaviyo",
     })
-    # UTM 破損
-    broken = utm.get("broken") or []
-    broken_sessions = sum((b.get("sessions") or 0) for b in broken)
-    signals.append({
-        "metric": "UTM 破損 sessions",
-        "value": f"{len(broken)}src / {broken_sessions} sessions",
-        "target": "≤30 sessions",
-        "status": "green" if broken_sessions <= 30 else ("yellow" if broken_sessions <= 100 else "red"),
-        "source": "GA4",
-    })
     # 改善対象 SKU (PV高・カート低のみ — traffic はあるが conversion 悪い、実 actionable な改善余地)
     # 「流入弱」は long-tail として除外（ECで普通に発生する、即時アクションしにくい）
     state_counts = products.get("state_counts") or {}

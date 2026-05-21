@@ -232,20 +232,6 @@ function renderChannelTrend(data) {
   });
 }
 
-function renderUtmHealth(data) {
-  if (!data) return;
-  const broken = data.broken || [];
-  const status = broken.length === 0 ? "ok" : "ng";
-  const sym = broken.length === 0 ? "✅" : "🔴";
-  const total = broken.reduce((a, b) => a + (b.sessions || 0), 0);
-  const head = '<p class="' + status + '">' + sym + ' 破損 utm セッション数: <strong>' + total + '</strong> (' + broken.length + ' パターン)</p>';
-  const list = broken.slice(0, 10).map(b => '<li><code>' + b.source + '</code> — ' + b.sessions + ' sess</li>').join("");
-  const seCount = (data.shopify_email_campaigns || []).length;
-  document.getElementById("utm-health").innerHTML =
-    head + (broken.length ? '<ul>' + list + '</ul>' : '') +
-    '<p>Shopify Email 自動UTM 着信キャンペーン数: <strong>' + seCount + '</strong></p>';
-}
-
 function renderReleases(data) {
   if (!data || !data.releases) return;
   document.getElementById("table-releases").innerHTML =
@@ -970,12 +956,11 @@ function renderPM(pm, budget) {
 }
 
 (async () => {
-  const [summary, funnel, channels, releases, utm, archive, monthly, themes, products, goal, customers, channelFunnel, reports, klaviyo, pm, budget] = await Promise.all([
+  const [summary, funnel, channels, releases, archive, monthly, themes, products, goal, customers, channelFunnel, reports, klaviyo, pm, budget] = await Promise.all([
     load("summary.json"),
     load("funnel.json"),
     load("channels.json"),
     load("releases.json"),
-    load("utm_health.json"),
     load("archive.json"),
     load("archive_monthly.json"),
     load("themes.json"),
@@ -1012,7 +997,6 @@ function renderPM(pm, budget) {
   renderCollections(funnel);
   renderChannels(channels);
   renderChannelTrend(channels);
-  renderUtmHealth(utm);
   renderReleases(releases);
   renderKlaviyo(klaviyo);
   renderArchive(archive);
