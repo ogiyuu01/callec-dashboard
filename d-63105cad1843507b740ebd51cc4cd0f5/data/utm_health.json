@@ -29,11 +29,11 @@
       "sessions": 8
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260302",
+      "source": "lp&utm_medium=email&utm_campaign=20260509",
       "sessions": 5
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260509",
+      "source": "lp&utm_medium=email&utm_campaign=20260302",
       "sessions": 5
     },
     {
@@ -61,11 +61,15 @@
       "sessions": 4
     },
     {
-      "source": "new&utm_medium=email&utm_campaign=20260415_syouhin_3",
+      "source": "new&utm_medium=email&utm_campaign=20260422_syouhin_2",
       "sessions": 3
     },
     {
-      "source": "new&utm_medium=email&utm_campaign=20260422_syouhin_2",
+      "source": "lp&utm_medium=email&utm_campaign=20260415",
+      "sessions": 3
+    },
+    {
+      "source": "new&utm_medium=email&utm_campaign=20260415_syouhin_3",
       "sessions": 3
     },
     {
@@ -85,15 +89,19 @@
       "sessions": 3
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260415",
-      "sessions": 3
-    },
-    {
       "source": "lp&utm_medium=email&utm_campaign=20260408",
       "sessions": 2
     },
     {
       "source": "lp&utm_medium=email&utm_campaign=20260304",
+      "sessions": 2
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20251030_ranking_7",
+      "sessions": 2
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20251224",
       "sessions": 2
     },
     {
@@ -109,24 +117,8 @@
       "sessions": 2
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20251030_ranking_7",
-      "sessions": 2
-    },
-    {
       "source": "lp&utm_medium=email&utm_campaign=20250916",
       "sessions": 2
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20251224",
-      "sessions": 2
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260302_ranking_6",
-      "sessions": 1
-    },
-    {
-      "source": "new&utm_medium=email&utm_campaign=20260401_syouhin_4",
-      "sessions": 1
     },
     {
       "source": "lp&utm_medium=email&utm_campaign=20260223_ranking_4",
@@ -138,6 +130,26 @@
     },
     {
       "source": "lp&utm_medium=email&utm_campaign=20250603",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260216_ranking_4",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260302_ranking_6",
+      "sessions": 1
+    },
+    {
+      "source": "new&utm_medium=email&utm_campaign=20260401_syouhin_4",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20251021",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260216_ranking_3",
       "sessions": 1
     },
     {
@@ -199,18 +211,6 @@
     {
       "source": "lp&utm_medium=email&utm_campaign=20251030_ranking_9",
       "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20251021",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260216_ranking_3",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260216_ranking_4",
-      "sessions": 1
     }
   ],
   "shopify_email_campaigns": [
@@ -227,16 +227,20 @@
       "users": 9
     },
     {
-      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155886616766",
+      "campaign": "5月の服装、もう迷わない。気温差に負けない【時期別】正解リスト_158701486270",
       "users": 6
     },
     {
-      "campaign": "5月の服装、もう迷わない。気温差に負けない【時期別】正解リスト_158701486270",
+      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155886616766",
       "users": 6
     },
     {
       "campaign": "【{last name}様におすすめ】スタッフが教える「失敗しない」春のMIXスタイル_158357455038",
       "users": 5
+    },
+    {
+      "campaign": "【{last name}様におすすめ】特集＆今週の売れ筋ランキングTOP10_156411101374",
+      "users": 4
     },
     {
       "campaign": "【{last name}様におすすめ】2026年4月の厳選アイテム特集！_158253482174",
@@ -247,8 +251,8 @@
       "users": 4
     },
     {
-      "campaign": "【{last name}様におすすめ】特集＆今週の売れ筋ランキングTOP10_156411101374",
-      "users": 4
+      "campaign": "【ゴルフ】その服装、練習場でも大丈夫？「だらしなさ」を卒業して手に入れた、大人の余裕。_159073501374",
+      "users": 3
     },
     {
       "campaign": "【衝撃！】仕事相手の85%は、あなたの「シワ」を見ている。_158676222142",
@@ -256,10 +260,6 @@
     },
     {
       "campaign": "アミュプラザ鹿児島店および長崎ココウォーク店 店舗移設のご案内_155939406014",
-      "users": 3
-    },
-    {
-      "campaign": "【ゴルフ】その服装、練習場でも大丈夫？「だらしなさ」を卒業して手に入れた、大人の余裕。_159073501374",
       "users": 3
     },
     {
@@ -275,23 +275,23 @@
       "users": 2
     },
     {
-      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155861647550",
+      "campaign": "CALL&RESPONSE mint神戸店 本日グランドオープン_157999857854",
       "users": 1
     },
     {
-      "campaign": "【新企画】CALLユーザーにインタビューしてみました！_156639592638",
+      "campaign": "【2月23日(月)まで】バレンタインギフトキャンペーン開催！_156934176958",
       "users": 1
     },
     {
-      "campaign": "CALL&RESPONSE ELM店 新規オープンのご案内_157450633406",
+      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155832746174",
       "users": 1
     },
     {
-      "campaign": "【体型カバーしたい人へ】バックベルトでスッキリ見える大人の冬コート_155114012862",
+      "campaign": "CALL&RESPONSE ELM店 本日グランドオープン_157450698942",
       "users": 1
     },
     {
-      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155862368446",
+      "campaign": "【先行販売開始】ついに第4世代「無重力リュック」が登場！_150216278206",
       "users": 1
     }
   ]
