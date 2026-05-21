@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-05-21 17:34 JST",
+    "generated_at": "2026-05-21 17:37 JST",
     "sources": [
       "Shopify",
       "GA4",
@@ -9,7 +9,7 @@
     ],
     "version": 1
   },
-  "last_updated": "2026-05-21 17:34 JST",
+  "last_updated": "2026-05-21 17:37 JST",
   "alerts": [
     {
       "level": "critical",
@@ -24,17 +24,10 @@
       "value": "145.1h前 (>48h)",
       "target": "<26h",
       "source": "Shopify"
-    },
-    {
-      "level": "critical",
-      "title": "GDrive データ未取得",
-      "value": "未取得",
-      "target": "<26h",
-      "source": "GDrive"
     }
   ],
   "scorecard": {
-    "overall_score": 80,
+    "overall_score": 84,
     "pillars": [
       {
         "name": "着地予測",
@@ -59,9 +52,9 @@
       },
       {
         "name": "データ鮮度",
-        "status": "yellow",
-        "score": 60,
-        "note": "4ソース平均 60/100",
+        "status": "green",
+        "score": 80,
+        "note": "4ソース平均 80/100",
         "weight": 20
       }
     ]
@@ -118,8 +111,8 @@
       "source": "GA4",
       "status": "green",
       "last_run": "2026-05-21 17:32",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "lag_hours": 0.1,
+      "note": "0.1h前 (今朝以降)"
     },
     {
       "source": "Shopify",
@@ -130,17 +123,17 @@
     },
     {
       "source": "GDrive",
-      "status": "red",
-      "last_run": "—",
-      "lag_hours": null,
-      "note": "未取得"
+      "status": "green",
+      "last_run": "2026-05-21 17:32",
+      "lag_hours": 0.1,
+      "note": "0.1h前 (今朝以降)"
     },
     {
       "source": "Klaviyo",
       "status": "green",
       "last_run": "2026-05-21 17:34",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "lag_hours": 0.1,
+      "note": "0.1h前 (今朝以降)"
     }
   ],
   "signals": [
@@ -210,6 +203,14 @@
       "type": "alert",
       "title": "{'level': 'red', 'flow': 'レビューリクエスト', 'kind': 'wow_drop', 'value': -100.0, 'msg': '売上 WoW -100.0% (前週比 -20% 以下) — リスト健全性 / 件名変更 / 配信時刻を確認'}",
       "level": "warning"
+    },
+    {
+      "ts": "2026-05-21 17:32",
+      "ts_iso": "2026-05-21T17:32:14+09:00",
+      "source": "GDrive",
+      "type": "sync",
+      "title": "年間計画シート fetched",
+      "level": "info"
     },
     {
       "ts": "2026-05-21 17:32",

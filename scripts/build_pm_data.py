@@ -39,6 +39,14 @@ def parse_ts(s: str | None):
     if not s:
         return None
     s = s.strip()
+    # ISO 8601 with offset (e.g. "2026-05-21T17:32:14+09:00")
+    try:
+        dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=JST)
+        return dt.astimezone(JST)
+    except ValueError:
+        pass
     for fmt in ("%Y-%m-%d %H:%M JST", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%d %H:%M", "%Y-%m-%d"):
         try:
             dt = datetime.strptime(s.replace("Z", ""), fmt)
