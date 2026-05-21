@@ -29,11 +29,11 @@
       "sessions": 8
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260509",
+      "source": "lp&utm_medium=email&utm_campaign=20260513_blog",
       "sessions": 5
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260302",
+      "source": "lp&utm_medium=email&utm_campaign=20260509",
       "sessions": 5
     },
     {
@@ -41,19 +41,15 @@
       "sessions": 5
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260513_blog",
+      "source": "lp&utm_medium=email&utm_campaign=20260302",
       "sessions": 5
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260316_blog",
-      "sessions": 4
     },
     {
       "source": "new&utm_medium=email&utm_campaign=20260509_syouhin_1",
       "sessions": 4
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20251222",
+      "source": "lp&utm_medium=email&utm_campaign=20260316_blog",
       "sessions": 4
     },
     {
@@ -61,27 +57,11 @@
       "sessions": 4
     },
     {
-      "source": "new&utm_medium=email&utm_campaign=20260422_syouhin_2",
-      "sessions": 3
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260415",
-      "sessions": 3
-    },
-    {
-      "source": "new&utm_medium=email&utm_campaign=20260415_syouhin_3",
-      "sessions": 3
+      "source": "lp&utm_medium=email&utm_campaign=20251222",
+      "sessions": 4
     },
     {
       "source": "new&utm_medium=email&utm_campaign=20251020_syouhin_1",
-      "sessions": 3
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260406_blog",
-      "sessions": 3
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260204",
       "sessions": 3
     },
     {
@@ -89,15 +69,27 @@
       "sessions": 3
     },
     {
+      "source": "lp&utm_medium=email&utm_campaign=20260406_blog",
+      "sessions": 3
+    },
+    {
+      "source": "new&utm_medium=email&utm_campaign=20260422_syouhin_2",
+      "sessions": 3
+    },
+    {
+      "source": "new&utm_medium=email&utm_campaign=20260415_syouhin_3",
+      "sessions": 3
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260204",
+      "sessions": 3
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260415",
+      "sessions": 3
+    },
+    {
       "source": "lp&utm_medium=email&utm_campaign=20260408",
-      "sessions": 2
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260304",
-      "sessions": 2
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20251030_ranking_7",
       "sessions": 2
     },
     {
@@ -105,7 +97,11 @@
       "sessions": 2
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260202",
+      "source": "lp&utm_medium=email&utm_campaign=20251030_ranking_7",
+      "sessions": 2
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20250916",
       "sessions": 2
     },
     {
@@ -117,31 +113,19 @@
       "sessions": 2
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20250916",
+      "source": "lp&utm_medium=email&utm_campaign=20260202",
       "sessions": 2
     },
     {
-      "source": "lp&utm_medium=email&utm_campaign=20260223_ranking_4",
+      "source": "lp&utm_medium=email&utm_campaign=20260304",
+      "sessions": 2
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20250628",
       "sessions": 1
     },
     {
-      "source": "new&utm_medium=email&utm_campaign=20260114_syouhin_2",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20250603",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260216_ranking_4",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260302_ranking_6",
-      "sessions": 1
-    },
-    {
-      "source": "new&utm_medium=email&utm_campaign=20260401_syouhin_4",
+      "source": "new&utm_medium=email&utm_campaign=20251224_syouhin_2",
       "sessions": 1
     },
     {
@@ -150,34 +134,6 @@
     },
     {
       "source": "lp&utm_medium=email&utm_campaign=20260216_ranking_3",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20251023_ranking_1",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20260209",
-      "sessions": 1
-    },
-    {
-      "source": "new&utm_medium=email&utm_campaign=20251006_syouhin_6",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20251212",
-      "sessions": 1
-    },
-    {
-      "source": "new&utm_medium=email&utm_campaign=20250828_syouhin_1",
-      "sessions": 1
-    },
-    {
-      "source": "lp&utm_medium=email&utm_campaign=20250628",
-      "sessions": 1
-    },
-    {
-      "source": "new&utm_medium=email&utm_campaign=20251224_syouhin_2",
       "sessions": 1
     },
     {
@@ -211,6 +167,50 @@
     {
       "source": "lp&utm_medium=email&utm_campaign=20251030_ranking_9",
       "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260216_ranking_4",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260302_ranking_6",
+      "sessions": 1
+    },
+    {
+      "source": "new&utm_medium=email&utm_campaign=20260401_syouhin_4",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20251023_ranking_1",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260209",
+      "sessions": 1
+    },
+    {
+      "source": "new&utm_medium=email&utm_campaign=20251006_syouhin_6",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20251212",
+      "sessions": 1
+    },
+    {
+      "source": "new&utm_medium=email&utm_campaign=20250828_syouhin_1",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20260223_ranking_4",
+      "sessions": 1
+    },
+    {
+      "source": "new&utm_medium=email&utm_campaign=20260114_syouhin_2",
+      "sessions": 1
+    },
+    {
+      "source": "lp&utm_medium=email&utm_campaign=20250603",
+      "sessions": 1
     }
   ],
   "shopify_email_campaigns": [
@@ -243,11 +243,11 @@
       "users": 4
     },
     {
-      "campaign": "【{last name}様におすすめ】2026年4月の厳選アイテム特集！_158253482174",
+      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155885273278",
       "users": 4
     },
     {
-      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155885273278",
+      "campaign": "【{last name}様におすすめ】2026年4月の厳選アイテム特集！_158253482174",
       "users": 4
     },
     {
@@ -275,7 +275,11 @@
       "users": 2
     },
     {
-      "campaign": "CALL&RESPONSE mint神戸店 本日グランドオープン_157999857854",
+      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155832746174",
+      "users": 1
+    },
+    {
+      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155862368446",
       "users": 1
     },
     {
@@ -283,15 +287,11 @@
       "users": 1
     },
     {
-      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155832746174",
+      "campaign": "【新作販売開始】春の新作アイテムを一足先にチェック！_155861647550",
       "users": 1
     },
     {
-      "campaign": "CALL&RESPONSE ELM店 本日グランドオープン_157450698942",
-      "users": 1
-    },
-    {
-      "campaign": "【先行販売開始】ついに第4世代「無重力リュック」が登場！_150216278206",
+      "campaign": "【新企画】CALLユーザーにインタビューしてみました！_156639592638",
       "users": 1
     }
   ]

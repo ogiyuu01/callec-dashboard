@@ -1,47 +1,71 @@
 {
   "_meta": {
-    "source": "Shopify Admin API (ShopifyQL via MCP)",
-    "fetched_at": "2026-05-15 16:30",
+    "source": "Shopify Admin API (Client Credentials Grant)",
+    "fetched_at": "2026-05-21 17:41 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
-    "note": "Shopify実購入データ。GA4のecommerce_purchaseとは集計差あり(税・割引・キャンセル等)。Shopify Admin APIトークンを.envに設定すればGitHub Actionsで自動更新可能。"
+    "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 173,
-    "returning_customers": 55,
-    "returning_customer_rate": 0.3179,
-    "new_customers": 118
+    "total_customers": 185,
+    "returning_customers": 7,
+    "returning_customer_rate": 0.03783783783783784,
+    "new_customers": 178
   },
   "top_products_28d": [
-    {"name": "無重力リュック(第5世代)", "gross_sales": 250000, "orders": 10},
-    {"name": "無地半袖Tシャツ", "gross_sales": 160000, "orders": 16},
-    {"name": "KOKAGE/テーラードジャケット", "gross_sales": 102000, "orders": 6},
-    {"name": "プリント半袖Tシャツ(アート/ウルフ)", "gross_sales": 95000, "orders": 18},
-    {"name": "ノビル360°/長袖シャツ", "gross_sales": 77000, "orders": 6},
-    {"name": "メランジクルー半袖Tシャツ", "gross_sales": 75600, "orders": 9},
-    {"name": "KOKAGE/テーパードパンツ", "gross_sales": 75000, "orders": 5},
-    {"name": "TOBIKIRI STRIPE/テーパードパンツ", "gross_sales": 67500, "orders": 4},
-    {"name": "スマートウォレット", "gross_sales": 66000, "orders": 6},
-    {"name": "KOKAGE/タックカーディガン", "gross_sales": 65000, "orders": 5},
-    {"name": "ハイストレッチジョガーパンツ", "gross_sales": 59000, "orders": 5},
-    {"name": "シアサッカー長袖シャツ(CALLテープ)", "gross_sales": 55000, "orders": 3},
-    {"name": "TOBIKIRI STRIPE/ハーフカーゴパンツ", "gross_sales": 50000, "orders": 4},
-    {"name": "KOKAGE/アロハシャツ(フレンチブル)", "gross_sales": 48000, "orders": 4},
-    {"name": "TOBIKIRI STRIPE/ジョガーパンツ", "gross_sales": 48000, "orders": 3},
-    {"name": "KOKAGE/アロハシャツ(ペンギン)", "gross_sales": 48000, "orders": 3},
-    {"name": "ストレッチストライプ/長袖シャツ", "gross_sales": 48000, "orders": 2},
-    {"name": "TOBIKIRI STRIPE/切り替え五部袖プルオーバー", "gross_sales": 47500, "orders": 5},
-    {"name": "プリント半袖Tシャツ(フレンチブル)", "gross_sales": 45000, "orders": 9},
-    {"name": "プリント半袖Tシャツ(アート/パンダ)", "gross_sales": 45000, "orders": 8},
-    {"name": "KOKAGE/オーバー半袖プルオーバー", "gross_sales": 45000, "orders": 5},
-    {"name": "プリント長袖Tシャツ(ジオメトリック/クジラ)", "gross_sales": 43200, "orders": 7},
-    {"name": "NOBIRU360°PREMIUM/刺繍半袖プルオーバー", "gross_sales": 42000, "orders": 3},
-    {"name": "プリント半袖Tシャツ(アート/カエル)", "gross_sales": 40000, "orders": 7},
-    {"name": "メランジVネック長袖Tシャツ", "gross_sales": 39000, "orders": 3},
-    {"name": "ソフトツイル刺繍半袖シャツ", "gross_sales": 38750, "orders": 3},
-    {"name": "メランジVネック半袖Tシャツ", "gross_sales": 37800, "orders": 6},
-    {"name": "KOKAGE/ジョガーパンツ", "gross_sales": 37500, "orders": 3},
-    {"name": "NOBIRU360°PREMIUM/アジャスターパンツ", "gross_sales": 36000, "orders": 2},
-    {"name": "ハイストレッチモックネック半袖プルオーバー", "gross_sales": 36000, "orders": 5}
-  ]
+    {
+      "name": "無重力リュック(第5世代)",
+      "gross_sales": 247500,
+      "orders": 9
+    },
+    {
+      "name": "無地半袖Tシャツ",
+      "gross_sales": 236500,
+      "orders": 43
+    },
+    {
+      "name": "KOKAGE/テーパードパンツ",
+      "gross_sales": 137500,
+      "orders": 10
+    },
+    {
+      "name": "KOKAGE/テーラードジャケット",
+      "gross_sales": 130900,
+      "orders": 7
+    },
+    {
+      "name": "メランジクルー半袖Tシャツ",
+      "gross_sales": 118800,
+      "orders": 20
+    },
+    {
+      "name": "TOBIKIRI STRIPE/切り替え五部袖プルオーバー",
+      "gross_sales": 94050,
+      "orders": 9
+    },
+    {
+      "name": "プリント半袖Tシャツ(アート/ウルフ)",
+      "gross_sales": 82500,
+      "orders": 15
+    },
+    {
+      "name": "TOBIKIRI STRIPE/ジョガーパンツ",
+      "gross_sales": 79200,
+      "orders": 6
+    },
+    {
+      "name": "KOKAGE/オーバー半袖プルオーバー",
+      "gross_sales": 79200,
+      "orders": 8
+    },
+    {
+      "name": "KOKAGE/アロハシャツ(ペンギン)",
+      "gross_sales": 79200,
+      "orders": 6
+    }
+  ],
+  "totals_28d": {
+    "orders": 193,
+    "sales": 3909840
+  }
 }

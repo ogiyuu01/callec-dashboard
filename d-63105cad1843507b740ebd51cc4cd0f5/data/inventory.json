@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "source": "Shopify Admin API InventoryLevel",
+    "fetched_at": "2026-05-21 17:41 JST",
+    "shop_domain": "r0ehyb-1a.myshopify.com"
+  },
+  "oos_count": 0,
+  "low_stock_count": 0,
+  "low_stock_threshold": 5,
+  "items_oos": [],
+  "items_low": []
+}
