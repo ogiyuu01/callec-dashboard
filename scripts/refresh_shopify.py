@@ -79,7 +79,7 @@ CUSTOMERS_28D_QUERY = """
     edges { node {
       id name createdAt
       totalPriceSet { shopMoney { amount } }
-      customer { id }
+      customer { id numberOfOrders }
       lineItems(first: 30) {
         edges { node {
           title quantity
@@ -110,15 +110,14 @@ def fetch_customers_28d(token: str, since_iso: str) -> dict:
     q = CUSTOMERS_28D_QUERY % since_iso
     res = gql(token, q)
     orders = [e["node"] for e in (res.get("data", {}).get("orders", {}).get("edges") or [])]
-    customers_ids = set()
-    customer_orders_count: dict[str, int] = {}
+    customer_lifetime_orders: dict[str, int] = {}  # customer_id -> Customer.numberOfOrders (lifetime)
     total_sales = 0.0
     product_agg: dict[str, dict] = {}
     for o in orders:
-        cid = (o.get("customer") or {}).get("id")
-        if cid:
-            customers_ids.add(cid)
-            customer_orders_count[cid] = customer_orders_count.get(cid, 0) + 1
+        c = o.get("customer") or {}
+        cid = c.get("id")
+        if cid and cid not in customer_lifetime_orders:
+            customer_lifetime_orders[cid] = int(c.get("numberOfOrders") or 1)
         try:
             total_sales += float((o.get("totalPriceSet") or {}).get("shopMoney", {}).get("amount") or 0)
         except (ValueError, TypeError):
@@ -134,8 +133,9 @@ def fetch_customers_28d(token: str, since_iso: str) -> dict:
             row = product_agg.setdefault(title, {"name": title, "gross_sales": 0.0, "orders": 0})
             row["gross_sales"] += unit * qty
             row["orders"] += qty
-    total_customers = len(customers_ids)
-    returning = sum(1 for n in customer_orders_count.values() if n >= 2)
+    total_customers = len(customer_lifetime_orders)
+    # Returning = customer.numberOfOrders >= 2 (lifetime, Shopify 標準定義)
+    returning = sum(1 for n in customer_lifetime_orders.values() if n >= 2)
     new_c = total_customers - returning
     top_products = sorted(product_agg.values(), key=lambda x: x["gross_sales"], reverse=True)[:10]
     return {
