@@ -778,8 +778,199 @@ function setupRoleToggle() {
   });
 }
 
+// ====================================================================
+// PM Dashboard (Project Manager · 4-source: Shopify/GA4/GDrive/Klaviyo)
+// ====================================================================
+function pmDot(status) {
+  return '<span class="pm-dot pm-dot-' + (status || "gray") + '" title="' + (status || "") + '"></span>';
+}
+
+function renderPMAlertBar(alerts) {
+  const bar = document.getElementById("pm-alert-bar");
+  if (!bar) return;
+  if (!alerts || !alerts.length) {
+    bar.style.display = "none";
+    return;
+  }
+  bar.style.display = "flex";
+  bar.innerHTML = alerts.map(a =>
+    '<div class="pm-alert pm-alert-' + (a.level || "warning") + '">' +
+      '<strong>🔴 ' + a.title + '</strong>' +
+      ' <span class="pm-alert-val">' + a.value + '</span>' +
+      ' <span class="pm-alert-tgt">tgt ' + a.target + '</span>' +
+      ' <span class="pm-alert-src">[' + a.source + ']</span>' +
+    '</div>'
+  ).join("");
+}
+
+function renderPMOverall(score) {
+  const el = document.getElementById("pm-overall");
+  if (!el) return;
+  const status = score >= 75 ? "green" : (score >= 50 ? "yellow" : "red");
+  el.innerHTML =
+    '<div class="pm-overall-score pm-' + status + '">' + score + '</div>' +
+    '<div class="pm-overall-label">健全性スコア / 100<br><small>4 pillar 加重平均</small></div>';
+}
+
+function renderPMPillars(pillars) {
+  const el = document.getElementById("pm-pillars");
+  if (!el || !pillars) return;
+  el.innerHTML = pillars.map(p =>
+    '<div class="pm-pillar pm-pillar-' + (p.status || "gray") + '">' +
+      '<div class="pm-pillar-head">' +
+        pmDot(p.status) +
+        '<span class="pm-pillar-name">' + p.name + '</span>' +
+        '<span class="pm-pillar-weight">w=' + p.weight + '%</span>' +
+      '</div>' +
+      '<div class="pm-pillar-score">' + p.score + '<small>/100</small></div>' +
+      '<div class="pm-pillar-note">' + p.note + '</div>' +
+    '</div>'
+  ).join("");
+}
+
+function renderPMKpis(kpis) {
+  const el = document.getElementById("pm-kpis");
+  if (!el || !kpis) return;
+  el.innerHTML = kpis.map(k => {
+    const prog = Math.min(100, Math.max(0, k.progress || 0));
+    return (
+      '<div class="pm-kpi-card pm-kpi-' + (k.status || "gray") + '">' +
+        '<div class="pm-kpi-head">' +
+          pmDot(k.status) +
+          '<span class="pm-kpi-label">' + k.label + '</span>' +
+        '</div>' +
+        '<div class="pm-kpi-value">' + k.value + '</div>' +
+        '<div class="pm-kpi-sub">' + (k.sub || "—") + '</div>' +
+        '<div class="pm-kpi-bar"><div class="pm-kpi-bar-fill pm-' + (k.status || "gray") + '" style="width:' + prog + '%"></div></div>' +
+        '<div class="pm-kpi-foot"><span class="pm-kpi-src">[' + k.source + ']</span>' +
+          (k.target_meta ? '<span class="pm-kpi-meta"> · ' + k.target_meta + '</span>' : '') +
+        '</div>' +
+      '</div>'
+    );
+  }).join("");
+}
+
+function renderPMPipeline(rows) {
+  const el = document.getElementById("table-pm-pipeline");
+  if (!el || !rows) return;
+  el.innerHTML =
+    '<thead><tr><th>ソース</th><th>状態</th><th>最終取得</th><th>遅延</th></tr></thead>' +
+    '<tbody>' + rows.map(r =>
+      '<tr>' +
+        '<td><strong>' + r.source + '</strong></td>' +
+        '<td>' + pmDot(r.status) + ' ' + (r.status || "—") + '</td>' +
+        '<td style="font-family:JetBrains Mono,monospace;font-size:0.78rem;">' + r.last_run + '</td>' +
+        '<td>' + (r.lag_hours != null ? r.lag_hours.toFixed(1) + 'h' : '—') + '</td>' +
+      '</tr>'
+    ).join("") + '</tbody>';
+}
+
+function renderPMSignals(signals) {
+  const el = document.getElementById("table-pm-signals");
+  if (!el || !signals) return;
+  el.innerHTML =
+    '<thead><tr><th>指標</th><th>値</th><th>目標</th><th>出所</th></tr></thead>' +
+    '<tbody>' + signals.map(s =>
+      '<tr>' +
+        '<td>' + pmDot(s.status) + ' ' + s.metric + '</td>' +
+        '<td><strong>' + s.value + '</strong></td>' +
+        '<td style="color:var(--text-muted);font-size:0.78rem;">' + s.target + '</td>' +
+        '<td style="color:var(--text-muted);font-size:0.75rem;">[' + s.source + ']</td>' +
+      '</tr>'
+    ).join("") + '</tbody>';
+}
+
+function renderPMActivity(activity) {
+  const el = document.getElementById("pm-activity");
+  const filters = document.getElementById("pm-activity-filters");
+  if (!el || !activity) return;
+
+  const sources = ["all"].concat(Array.from(new Set(activity.map(a => a.source))));
+  if (filters) {
+    filters.innerHTML = sources.map((s, i) =>
+      '<button class="pm-filter-btn' + (i === 0 ? ' active' : '') + '" data-pm-filter="' + s + '">' + (s === "all" ? "全て" : s) + '</button>'
+    ).join("");
+    filters.querySelectorAll(".pm-filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        filters.querySelectorAll(".pm-filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const f = btn.dataset.pmFilter;
+        el.querySelectorAll(".pm-activity-item").forEach(it => {
+          it.style.display = (f === "all" || it.dataset.source === f) ? "" : "none";
+        });
+      });
+    });
+  }
+
+  el.innerHTML = activity.map(a => {
+    const lvl = a.level === "critical" ? "🔴" : (a.level === "warning" ? "🟡" : "·");
+    return (
+      '<div class="pm-activity-item pm-activity-' + (a.level || "info") + '" data-source="' + a.source + '">' +
+        '<span class="pm-activity-ts">' + a.ts + '</span>' +
+        '<span class="pm-activity-src pm-src-' + a.source.toLowerCase() + '">' + a.source + '</span>' +
+        '<span class="pm-activity-lvl">' + lvl + '</span>' +
+        '<span class="pm-activity-title">' + a.title + '</span>' +
+      '</div>'
+    );
+  }).join("");
+}
+
+function renderPMBudget(budget) {
+  const ctx = document.getElementById("chart-pm-budget");
+  const meta = document.getElementById("pm-budget-meta");
+  if (!ctx || !budget || !budget.months) return;
+  const labels = Object.keys(budget.months).sort();
+  const target = labels.map(m => (budget.months[m].target || 0));
+  const actual = labels.map(m => (budget.months[m].actual || 0));
+  const forecast = labels.map(m => (budget.months[m].landing_forecast || 0));
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: labels.map(m => m.slice(5)),
+      datasets: [
+        { label: "目標", data: target, borderColor: "#d4b87a", backgroundColor: "rgba(212,184,122,0.08)", fill: true, tension: 0.35 },
+        { label: "実績", data: actual, borderColor: "#95c891", backgroundColor: "rgba(149,200,145,0.08)", fill: true, tension: 0.35 },
+        { label: "着地予測", data: forecast, borderColor: "#a99dd6", borderDash: [4, 4], tension: 0.35 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: "bottom" } },
+      scales: { y: { ticks: { callback: v => "¥" + (v/1000000).toFixed(1) + "M" } } }
+    }
+  });
+  if (meta) {
+    const annual = budget.annual || {};
+    meta.textContent =
+      "年間目標 ¥" + (annual.target || 0).toLocaleString() +
+      " / 実績 ¥" + (annual.actual || 0).toLocaleString() +
+      " / 前年 ¥" + (annual.prev_year || 0).toLocaleString() +
+      " · source sheet: " + ((budget._meta || {}).source_sheet_title || "—");
+  }
+}
+
+function renderPM(pm, budget) {
+  if (!pm) {
+    const m = document.getElementById("pm-meta");
+    if (m) m.textContent = "pm.json が未生成です (scripts/build_pm_data.py を実行してください)";
+    return;
+  }
+  const meta = document.getElementById("pm-meta");
+  if (meta && pm._meta) {
+    meta.textContent = "Shopify + GA4 + GDrive + Klaviyo · 生成: " + (pm._meta.generated_at || "—");
+  }
+  renderPMAlertBar(pm.alerts);
+  renderPMOverall(pm.scorecard ? pm.scorecard.overall_score : 0);
+  renderPMPillars(pm.scorecard ? pm.scorecard.pillars : []);
+  renderPMKpis(pm.kpis);
+  renderPMPipeline(pm.pipeline_health);
+  renderPMSignals(pm.signals);
+  renderPMActivity(pm.activity);
+  renderPMBudget(budget);
+}
+
 (async () => {
-  const [summary, funnel, channels, releases, utm, archive, monthly, themes, products, goal, customers, channelFunnel, reports, klaviyo] = await Promise.all([
+  const [summary, funnel, channels, releases, utm, archive, monthly, themes, products, goal, customers, channelFunnel, reports, klaviyo, pm, budget] = await Promise.all([
     load("summary.json"),
     load("funnel.json"),
     load("channels.json"),
@@ -794,6 +985,8 @@ function setupRoleToggle() {
     load("channel_funnel.json"),
     load("reports.json"),
     load("klaviyo.json"),
+    load("pm.json"),
+    load("budget.json"),
   ]);
   if (summary && summary.last_updated) {
     document.getElementById("last-updated").textContent = summary.last_updated;
@@ -826,6 +1019,7 @@ function setupRoleToggle() {
   renderArchiveMonthly(monthly);
   renderAnomalies(summary);
   renderProductsTop5(funnel);
+  renderPM(pm, budget);
 
   // Scroll reveal
   const candidates = document.querySelectorAll(".card, .kpi, .archive-card, .archive-month-card, .state-card");

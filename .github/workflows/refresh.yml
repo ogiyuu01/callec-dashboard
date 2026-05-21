@@ -50,6 +50,18 @@ jobs:
         run: python3 scripts/refresh_klaviyo.py
         continue-on-error: true
 
+      - name: Refresh Shopify Admin metrics + inventory (Client Credentials Grant)
+        env:
+          SHOPIFY_SHOP_DOMAIN: ${{ secrets.SHOPIFY_SHOP_DOMAIN }}
+          SHOPIFY_CLIENT_ID: ${{ secrets.SHOPIFY_CLIENT_ID }}
+          SHOPIFY_CLIENT_SECRET: ${{ secrets.SHOPIFY_CLIENT_SECRET }}
+        run: python3 scripts/refresh_shopify.py
+        continue-on-error: true
+
+      - name: Build PM dashboard data (pm.json — 4ソース統合 scorecard/alerts/signals/activity)
+        run: python3 scripts/build_pm_data.py
+        continue-on-error: true
+
       - name: Commit & push dashboard data if changed
         run: |
           git config user.name "github-actions[bot]"

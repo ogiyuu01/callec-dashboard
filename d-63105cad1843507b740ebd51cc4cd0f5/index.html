@@ -29,8 +29,12 @@
       </div>
     </div>
     <div class="sidebar-section">
+      <div class="sidebar-label">PM</div>
+      <button class="nav-item active" data-tab="pm">📊 PM ホーム</button>
+    </div>
+    <div class="sidebar-section">
       <div class="sidebar-label">運用</div>
-      <button class="nav-item active" data-tab="today">🏠 Today</button>
+      <button class="nav-item" data-tab="today">🏠 Today</button>
       <button class="nav-item" data-tab="products">🎯 商品</button>
       <button class="nav-item" data-tab="customers">👥 顧客</button>
     </div>
@@ -65,7 +69,8 @@
 </header>
 
 <nav class="tabs container mobile-only">
-  <button class="tab active" data-tab="today">🏠 Today</button>
+  <button class="tab active" data-tab="pm">📊 PM</button>
+  <button class="tab" data-tab="today">🏠 Today</button>
   <button class="tab" data-tab="products">🎯 商品</button>
   <button class="tab" data-tab="exec">📊 サマリ</button>
   <button class="tab" data-tab="funnel">🛒 ファネル</button>
@@ -79,7 +84,53 @@
 </nav>
 
 <main class="container">
-  <section class="page active" id="page-today">
+
+  <section class="page active" id="page-pm">
+    <div class="pm-alert-bar" id="pm-alert-bar"></div>
+    <span class="eyebrow">Project Manager · Strategic View</span>
+    <h2>📊 PM ホーム</h2>
+    <p class="pm-sub" id="pm-meta">Shopify + GA4 + GDrive + Klaviyo の4ソース統合ビュー</p>
+
+    <div class="card pm-scorecard-card">
+      <h3>🎯 健全性スコアカード</h3>
+      <div class="pm-overall" id="pm-overall"></div>
+      <div class="pm-pillars" id="pm-pillars"></div>
+    </div>
+
+    <div class="card">
+      <h3>🏆 月次着地 KPI（Strategic）</h3>
+      <p class="pm-section-note">5指標 — Shopify / GDrive / GA4 / Klaviyo</p>
+      <div class="pm-kpi-grid" id="pm-kpis"></div>
+    </div>
+
+    <div class="card">
+      <h3>📈 予算 vs 実績（12ヶ月 · GDrive 年間計画シート）</h3>
+      <canvas id="chart-pm-budget" height="120"></canvas>
+      <p class="pm-section-note" id="pm-budget-meta">—</p>
+    </div>
+
+    <div class="pm-row-2col">
+      <div class="card">
+        <h3>🔧 データパイプライン鮮度（Tactical）</h3>
+        <p class="pm-section-note">4ソース取得タイムスタンプを信号機表示。緑=26h以内 / 黄=72h以内 / 赤=72h超</p>
+        <table class="data-table" id="table-pm-pipeline"></table>
+      </div>
+      <div class="card">
+        <h3>📡 ビジネスシグナル（Tactical）</h3>
+        <p class="pm-section-note">EC PM 必須シグナル — CVR/AOV/Cart Abandonment/UTM 健全性 等</p>
+        <table class="data-table" id="table-pm-signals"></table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📜 アクティビティフィード（Operational）</h3>
+      <p class="pm-section-note">直近の4ソースイベントを時系列で表示（最新40件）</p>
+      <div class="pm-activity-filters" id="pm-activity-filters"></div>
+      <div class="pm-activity" id="pm-activity"></div>
+    </div>
+  </section>
+
+  <section class="page" id="page-today">
     <span class="eyebrow">This Week · Theme</span>
     <h2 id="today-theme-title">今週のテーマ</h2>
     <div class="card" id="goal-card"></div>

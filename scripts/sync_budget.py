@@ -18,7 +18,9 @@ import argparse
 import json
 import os
 import re
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
+
+JST = timezone(timedelta(hours=9))
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -166,7 +168,7 @@ def build_budget(credentials_path: str | None, year: int = 2026) -> dict:
             "source_sheet_id": SHEET_ID,
             "source_sheet_title": "CALL EC_2026年度年間計画",
             "source_tabs": [MONTHLY_SUMMARY_TAB] + MONTH_TAB_NAMES,
-            "fetched_at": datetime.now().isoformat(timespec="seconds"),
+            "fetched_at": datetime.now(JST).isoformat(timespec="seconds"),
             "note": "12M タブから年間サマリ、各月タブ (1〜12) から着地見込みを取得。シート側を正、読込専用。",
         },
         "year": year,

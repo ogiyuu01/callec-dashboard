@@ -82,6 +82,9 @@ git push -u origin main
 | `GCP_SA_KEY` | BigQuery 読み取り権限のあるサービスアカウント JSON 全文 |
 | `SIBLING_REPO_TOKEN` | （任意）shopify-ec-automation リポ参照用 Personal Access Token |
 | `KLAVIYO_PRIVATE_API_KEY` | （任意）Klaviyo Private API Key (`pk_...`)。📧 Klaviyo タブ表示用。未設定時は skip |
+| `SHOPIFY_SHOP_DOMAIN` | （任意）`r0ehyb-1a.myshopify.com` 等。Shopify metrics + inventory.json 自動更新用。未設定時は skip |
+| `SHOPIFY_CLIENT_ID` | （任意）Shopify Custom App の Client ID（line-harness Worker と同じ Custom App を共用可）|
+| `SHOPIFY_CLIENT_SECRET` | （任意）Shopify Custom App の Client Secret |
 
 ### 5. GCP サービスアカウント作成手順（GCP_SA_KEY 用）
 

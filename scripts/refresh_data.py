@@ -11,11 +11,18 @@ import json
 import os
 import sys
 import csv
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import unquote
 
 from google.cloud import bigquery
+
+JST = timezone(timedelta(hours=9))
+
+
+def now_jst() -> datetime:
+    """Always returns JST time. GH Actions runs in UTC by default."""
+    return datetime.now(JST)
 
 ROOT = Path(__file__).resolve().parent.parent
 TOKEN = (ROOT / ".token").read_text().strip()
@@ -172,7 +179,7 @@ def build_weekly_archive_from_csv() -> list[dict]:
             "prev": {"sessions": int(prev.get("sessions", 0) or 0), "orders": int(prev.get("orders", 0) or 0), "sales": int(prev.get("sales", 0) or 0)} if prev else {},
             "yoy":  {"sessions": int(yoy.get("sessions", 0) or 0),  "orders": int(yoy.get("orders", 0) or 0),  "sales": int(yoy.get("sales", 0) or 0)}  if yoy  else {},
             "narrative": {"lines": lines},
-            "captured_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            "captured_at": now_jst().strftime("%Y-%m-%d %H:%M"),
         })
 
     entries.sort(key=lambda e: e["week"], reverse=True)
@@ -201,7 +208,7 @@ def update_archive(summary: dict) -> None:
         "yoy": summary.get("yoy", {}),
         "prev": summary.get("prev_7d", {}),
         "narrative": summary.get("narrative", {}),
-        "captured_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "captured_at": now_jst().strftime("%Y-%m-%d %H:%M"),
         "live": True,
     }
 
@@ -290,7 +297,7 @@ def build_monthly_archive() -> None:
             "prev": {"sessions": prev["sessions"], "orders": prev["orders"], "sales": prev["sales"]} if prev else {},
             "yoy":  {"sessions": yoy["sessions"],  "orders": yoy["orders"],  "sales": yoy["sales"]}  if yoy  else {},
             "narrative": {"lines": narrative_lines},
-            "captured_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            "captured_at": now_jst().strftime("%Y-%m-%d %H:%M"),
         })
 
     entries.sort(key=lambda e: e["month"], reverse=True)
@@ -592,7 +599,7 @@ def build_summary(client: bigquery.Client) -> dict:
     narrative = make_narrative(last_7d, prev_7d, yoy)
 
     return {
-        "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M JST"),
+        "last_updated": now_jst().strftime("%Y-%m-%d %H:%M JST"),
         "last_7d": last_7d,
         "prev_7d": prev_7d,
         "yoy": yoy,
