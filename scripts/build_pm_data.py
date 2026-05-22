@@ -89,6 +89,7 @@ def build_for(d: Path) -> dict:
     goal = load(d, "goal.json") or {}
     budget = load(d, "budget.json") or {}
     klaviyo = load(d, "klaviyo.json") or {}
+    line_link = load(d, "line_link.json") or {}
 
     # ---------- pipeline_health ----------
     ga4_dt = parse_ts(summary.get("last_updated"))
@@ -155,6 +156,15 @@ def build_for(d: Path) -> dict:
     for f in (klaviyo.get("flows") or []):
         klaviyo_30d += (f.get("current_30d") or {}).get("rev", 0) or 0
 
+    # LINE 連動率 (linked LINE accounts / Shopify customers, 28d)
+    # データソース: line_link.json (line-customer-link App Proxy → Supabase 集計)
+    line_total = line_link.get("total_customers_28d")
+    line_linked = line_link.get("linked_customers_28d")
+    line_rate = line_link.get("link_rate")
+    if line_rate is None and line_total:
+        line_rate = (line_linked or 0) / line_total
+    line_ready = line_total is not None and line_linked is not None
+
     def status_for(progress_pct, green=80, yellow=60):
         if progress_pct >= green:
             return "green"
@@ -207,6 +217,21 @@ def build_for(d: Path) -> dict:
             "status": "green" if klaviyo_30d > 150000 else ("yellow" if klaviyo_30d > 80000 else "red"),
             "source": "Klaviyo",
             "target_meta": "目安 月¥150k+",
+        },
+        {
+            "label": "LINE連動率 (28日)",
+            "value": f"{line_rate*100:.1f}%" if line_ready else "未計測",
+            "sub": (
+                f"{line_linked}/{line_total} 顧客が連動 · 目標 ≥30%"
+                if line_ready else "line_link.json 未生成 (R002 計測パイプ未接続)"
+            ),
+            "progress": round((line_rate or 0) * 100 / 30 * 100, 1) if line_ready else 0,
+            "status": (
+                ("green" if (line_rate or 0) >= 0.30 else ("yellow" if (line_rate or 0) >= 0.15 else "red"))
+                if line_ready else "red"
+            ),
+            "source": "LINE Customer Link",
+            "target_meta": "R002 目標 ≥30%",
         },
     ]
 
@@ -320,6 +345,18 @@ def build_for(d: Path) -> dict:
         "target": "≤60 green / ≤120 yellow (PDP/コピー改善優先)",
         "status": "green" if improve_target <= 60 else ("yellow" if improve_target <= 120 else "red"),
         "source": "GA4 funnel × Shopify products",
+    })
+
+    # LINE 連動率 (R002 ロードマップ目標)
+    signals.append({
+        "metric": "LINE連動率 (28d)",
+        "value": f"{line_rate*100:.1f}%" if line_ready else "未計測",
+        "target": "≥30% (R002目標)",
+        "status": (
+            ("green" if (line_rate or 0) >= 0.30 else ("yellow" if (line_rate or 0) >= 0.15 else "red"))
+            if line_ready else "red"
+        ),
+        "source": "LINE Customer Link" if line_ready else "line_link.json 未生成",
     })
 
     # 真の在庫切れ (Shopify InventoryLevel.available — scripts/refresh_shopify_inventory.py が生成)

@@ -55,7 +55,7 @@ callec-dashboard/
 ### 2. ローカルから push
 
 ```bash
-cd /Users/oogiyuuhei/Desktop/shopify-callec/callec-dashboard
+cd /Users/oogiyuuhei/Desktop/shopify-callec/dashboard/callec-dashboard
 git init
 git add .
 git commit -m "feat: initial dashboard"
@@ -108,7 +108,7 @@ git push -u origin main
 
 ```bash
 # データ更新（ADC認証必須）
-cd /Users/oogiyuuhei/Desktop/shopify-callec/callec-dashboard
+cd /Users/oogiyuuhei/Desktop/shopify-callec/dashboard/callec-dashboard
 python3 scripts/refresh_data.py
 
 # ブラウザでプレビュー

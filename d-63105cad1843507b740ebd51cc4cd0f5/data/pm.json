@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-05-22 12:29 JST",
+    "generated_at": "2026-05-22 17:54 JST",
     "sources": [
       "Shopify",
       "GA4",
@@ -9,8 +9,16 @@
     ],
     "version": 1
   },
-  "last_updated": "2026-05-22 12:29 JST",
-  "alerts": [],
+  "last_updated": "2026-05-22 17:54 JST",
+  "alerts": [
+    {
+      "level": "critical",
+      "title": "LINE連動率 (28d)",
+      "value": "未計測",
+      "target": "≥30% (R002目標)",
+      "source": "line_link.json 未生成"
+    }
+  ],
   "scorecard": {
     "overall_score": 88,
     "pillars": [
@@ -89,6 +97,15 @@
       "status": "green",
       "source": "Klaviyo",
       "target_meta": "目安 月¥150k+"
+    },
+    {
+      "label": "LINE連動率 (28日)",
+      "value": "未計測",
+      "sub": "line_link.json 未生成 (R002 計測パイプ未接続)",
+      "progress": 0,
+      "status": "red",
+      "source": "LINE Customer Link",
+      "target_meta": "R002 目標 ≥30%"
     }
   ],
   "pipeline_health": [
@@ -96,29 +113,29 @@
       "source": "GA4",
       "status": "green",
       "last_run": "2026-05-22 12:27",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "lag_hours": 5.5,
+      "note": "5.5h前 (今朝以降)"
     },
     {
       "source": "Shopify",
       "status": "green",
       "last_run": "2026-05-22 12:29",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "lag_hours": 5.4,
+      "note": "5.4h前 (今朝以降)"
     },
     {
       "source": "GDrive",
       "status": "green",
       "last_run": "2026-05-22 12:27",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "lag_hours": 5.5,
+      "note": "5.5h前 (今朝以降)"
     },
     {
       "source": "Klaviyo",
       "status": "green",
       "last_run": "2026-05-22 12:29",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "lag_hours": 5.4,
+      "note": "5.4h前 (今朝以降)"
     }
   ],
   "signals": [
@@ -163,6 +180,13 @@
       "target": "≤60 green / ≤120 yellow (PDP/コピー改善優先)",
       "status": "yellow",
       "source": "GA4 funnel × Shopify products"
+    },
+    {
+      "metric": "LINE連動率 (28d)",
+      "value": "未計測",
+      "target": "≥30% (R002目標)",
+      "status": "red",
+      "source": "line_link.json 未生成"
     },
     {
       "metric": "在庫切れ SKU (真値)",
