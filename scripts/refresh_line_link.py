@@ -35,6 +35,8 @@ def fetch_stats(worker_url: str, api_key: str, days: int) -> dict:
         headers={
             "Authorization": f"Bearer {api_key}",
             "accept": "application/json",
+            # Cloudflare blocks default Python-urllib UA with error 1010
+            "User-Agent": "callec-dashboard-refresh/1.0",
         },
         method="GET",
     )
