@@ -2,56 +2,56 @@
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 2270,
+      "sessions": 2276,
       "orders": 26,
-      "sales": 636570,
-      "cvr": 0.01145374449339207
+      "sales": 594330,
+      "cvr": 0.011423550087873463
     },
     {
       "channel": "Paid Search",
-      "sessions": 1524,
-      "orders": 10,
-      "sales": 216700,
-      "cvr": 0.006561679790026247
+      "sessions": 1694,
+      "orders": 13,
+      "sales": 256630,
+      "cvr": 0.007674144037780401
     },
     {
       "channel": "Organic Search",
-      "sessions": 1330,
-      "orders": 13,
-      "sales": 212190,
-      "cvr": 0.009774436090225564
+      "sessions": 1450,
+      "orders": 11,
+      "sales": 191070,
+      "cvr": 0.007586206896551724
     },
     {
       "channel": "Referral",
-      "sessions": 516,
+      "sessions": 816,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
     },
     {
       "channel": "Other",
-      "sessions": 321,
+      "sessions": 353,
       "orders": 3,
-      "sales": 82500,
-      "cvr": 0.009345794392523364
+      "sales": 57750,
+      "cvr": 0.0084985835694051
     },
     {
       "channel": "Email",
-      "sessions": 212,
-      "orders": 4,
-      "sales": 58740,
-      "cvr": 0.018867924528301886
+      "sessions": 191,
+      "orders": 2,
+      "sales": 47520,
+      "cvr": 0.010471204188481676
     },
     {
       "channel": "LINE",
-      "sessions": 123,
-      "orders": 1,
-      "sales": 36190,
-      "cvr": 0.008130081300813009
+      "sessions": 114,
+      "orders": 0,
+      "sales": 0,
+      "cvr": 0.0
     },
     {
       "channel": "Social",
-      "sessions": 72,
+      "sessions": 65,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
@@ -71,7 +71,7 @@
           2514,
           3680,
           2311,
-          775
+          979
         ]
       },
       {
@@ -80,7 +80,7 @@
           1814,
           1993,
           1495,
-          602
+          926
         ]
       },
       {
@@ -89,7 +89,7 @@
           1553,
           1754,
           1275,
-          589
+          867
         ]
       },
       {
@@ -98,7 +98,7 @@
           519,
           495,
           425,
-          250
+          623
         ]
       },
       {
@@ -107,7 +107,7 @@
           358,
           470,
           373,
-          192
+          258
         ]
       }
     ]

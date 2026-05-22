@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-05-21 17:45 JST",
+    "fetched_at": "2026-05-22 10:26 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 185,
+    "total_customers": 186,
     "returning_customers": 67,
-    "returning_customer_rate": 0.3621621621621622,
-    "new_customers": 118
+    "returning_customer_rate": 0.3602150537634409,
+    "new_customers": 119
   },
   "top_products_28d": [
     {
@@ -39,14 +39,19 @@
       "orders": 20
     },
     {
-      "name": "TOBIKIRI STRIPE/切り替え五部袖プルオーバー",
-      "gross_sales": 94050,
+      "name": "プリント半袖Tシャツ(アート/ウルフ)",
+      "gross_sales": 99000,
+      "orders": 18
+    },
+    {
+      "name": "KOKAGE/オーバー半袖プルオーバー",
+      "gross_sales": 89100,
       "orders": 9
     },
     {
-      "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "gross_sales": 82500,
-      "orders": 15
+      "name": "TOBIKIRI STRIPE/切り替え五部袖プルオーバー",
+      "gross_sales": 83600,
+      "orders": 8
     },
     {
       "name": "TOBIKIRI STRIPE/ジョガーパンツ",
@@ -54,18 +59,13 @@
       "orders": 6
     },
     {
-      "name": "KOKAGE/オーバー半袖プルオーバー",
-      "gross_sales": 79200,
-      "orders": 8
-    },
-    {
-      "name": "KOKAGE/アロハシャツ(ペンギン)",
+      "name": "KOKAGE/切り替えハーフパンツ",
       "gross_sales": 79200,
       "orders": 6
     }
   ],
   "totals_28d": {
-    "orders": 193,
-    "sales": 3909840
+    "orders": 194,
+    "sales": 3924470
   }
 }
