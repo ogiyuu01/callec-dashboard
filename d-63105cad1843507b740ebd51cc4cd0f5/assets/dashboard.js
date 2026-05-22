@@ -442,7 +442,6 @@ function renderArchiveMonthly(data) {
 function renderTheme(data) {
   if (!data) return;
   const cur = data.current || {};
-  const tasks = cur.tasks || {};
 
   const titleEl = document.getElementById("today-theme-title");
   if (titleEl && cur.week) titleEl.textContent = "今週のテーマ — " + cur.week;
@@ -457,21 +456,6 @@ function renderTheme(data) {
       '<div class="theme-headline">' + (cur.theme || '(まだテーマが設定されていません)') + '</div>' +
       '<div class="theme-set-at">設定日: ' + (cur.set_at || '—') + '</div>';
   }
-
-  const ownerEl = document.getElementById("theme-tasks-owner");
-  const nakaEl = document.getElementById("theme-tasks-nakamura");
-  const ichiEl = document.getElementById("theme-tasks-ichikawa");
-  const renderTasks = (el, arr) => {
-    if (!el) return;
-    if (!arr || !arr.length) {
-      el.innerHTML = '<li style="color:var(--text-muted);">タスクが設定されていません</li>';
-    } else {
-      el.innerHTML = arr.map(t => '<li>' + t + '</li>').join("");
-    }
-  };
-  renderTasks(ownerEl, tasks.owner);
-  renderTasks(nakaEl, tasks.nakamura);
-  renderTasks(ichiEl, tasks.ichikawa);
 
   const hist = document.getElementById("theme-history");
   if (hist) {
@@ -744,26 +728,6 @@ function renderReportsList() {
   });
 }
 
-function setupRoleToggle() {
-  const toggle = document.getElementById("role-toggle");
-  if (!toggle) return;
-  const map = {"theme-tasks-owner":"owner","theme-tasks-nakamura":"nakamura","theme-tasks-ichikawa":"ichikawa"};
-  Object.entries(map).forEach(([id, role]) => {
-    const card = document.getElementById(id) ? document.getElementById(id).closest(".card") : null;
-    if (card) card.dataset.roleSection = role;
-  });
-  toggle.querySelectorAll(".role-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      toggle.querySelectorAll(".role-btn").forEach(b => b.classList.toggle("active", b===btn));
-      const role = btn.dataset.role;
-      document.querySelectorAll("[data-role-section]").forEach(el => {
-        const target = el.dataset.roleSection;
-        el.style.display = (role === "all" || target === role) ? "" : "none";
-      });
-    });
-  });
-}
-
 // ====================================================================
 // PM Dashboard (Project Manager · 4-source: Shopify/GA4/GDrive/Klaviyo)
 // ====================================================================
@@ -987,7 +951,6 @@ function renderPM(pm, budget) {
   renderCustomerSegments(customers);
   renderChannelFunnel(channelFunnel);
   renderReports(reports);
-  setupRoleToggle();
   renderNarrative(summary);
   renderKpis(summary);
   renderWeeklyTrend(summary);
