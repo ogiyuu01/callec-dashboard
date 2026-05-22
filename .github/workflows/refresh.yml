@@ -58,6 +58,13 @@ jobs:
         run: python3 scripts/refresh_shopify.py
         continue-on-error: true
 
+      - name: Refresh LINE link rate (line-harness Worker)
+        env:
+          LINE_HARNESS_API_KEY: ${{ secrets.LINE_HARNESS_API_KEY }}
+          LINE_HARNESS_WORKER_URL: ${{ secrets.LINE_HARNESS_WORKER_URL }}
+        run: python3 scripts/refresh_line_link.py
+        continue-on-error: true
+
       - name: Build PM dashboard data (pm.json — 4ソース統合 scorecard/alerts/signals/activity)
         run: python3 scripts/build_pm_data.py
         continue-on-error: true
