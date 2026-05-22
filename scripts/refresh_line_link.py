@@ -23,7 +23,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 JST = timezone(timedelta(hours=9))
-DEFAULT_WORKER_URL = "https://line-crm-worker.line-crm-api.workers.dev"
+DEFAULT_WORKER_URL = "https://line-crm-worker.call-and-response.workers.dev"
 DEFAULT_DAYS = 28
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -48,8 +48,8 @@ def main() -> int:
         print("LINE_HARNESS_API_KEY unset — skip (KPI will show 未計測)", file=sys.stderr)
         return 0
 
-    worker_url = os.environ.get("LINE_HARNESS_WORKER_URL", DEFAULT_WORKER_URL)
-    days = int(os.environ.get("LINE_LINK_DAYS", DEFAULT_DAYS))
+    worker_url = os.environ.get("LINE_HARNESS_WORKER_URL") or DEFAULT_WORKER_URL
+    days = int(os.environ.get("LINE_LINK_DAYS") or DEFAULT_DAYS)
 
     output_dirs = sorted(ROOT.glob("d-*"))
     if not output_dirs:
