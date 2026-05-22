@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-05-22 12:29 JST",
+    "fetched_at": "2026-05-22 18:15 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 186,
-    "returning_customers": 67,
-    "returning_customer_rate": 0.3602150537634409,
-    "new_customers": 119
+    "total_customers": 189,
+    "returning_customers": 68,
+    "returning_customer_rate": 0.35978835978835977,
+    "new_customers": 121
   },
   "top_products_28d": [
     {
@@ -25,8 +25,8 @@
     },
     {
       "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 137500,
-      "orders": 10
+      "gross_sales": 151250,
+      "orders": 11
     },
     {
       "name": "KOKAGE/テーラードジャケット",
@@ -40,8 +40,8 @@
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "gross_sales": 99000,
-      "orders": 18
+      "gross_sales": 110000,
+      "orders": 20
     },
     {
       "name": "KOKAGE/オーバー半袖プルオーバー",
@@ -54,18 +54,18 @@
       "orders": 8
     },
     {
-      "name": "TOBIKIRI STRIPE/ジョガーパンツ",
-      "gross_sales": 79200,
+      "name": "KOKAGE/ジョガーパンツ",
+      "gross_sales": 82500,
       "orders": 6
     },
     {
-      "name": "KOKAGE/切り替えハーフパンツ",
+      "name": "TOBIKIRI STRIPE/ジョガーパンツ",
       "gross_sales": 79200,
       "orders": 6
     }
   ],
   "totals_28d": {
-    "orders": 194,
-    "sales": 3924470
+    "orders": 197,
+    "sales": 3983100
   }
 }
