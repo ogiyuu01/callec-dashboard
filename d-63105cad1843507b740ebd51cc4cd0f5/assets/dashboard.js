@@ -899,7 +899,32 @@ function renderPMBudget(budget) {
   }
 }
 
-function renderPM(pm, budget) {
+function renderPMWeeklyTrend(summary) {
+  const ctx = document.getElementById("chart-pm-weekly");
+  if (!ctx || !summary || !summary.weeks || !summary.weeks.length) return;
+  const weeks = summary.weeks;
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: weeks.map(w => (w.week || "").slice(5)),
+      datasets: [
+        { label: "売上 (¥)", data: weeks.map(w => w.sales || 0), borderColor: "#d4b87a", backgroundColor: "rgba(212,184,122,0.08)", fill: true, tension: 0.35, yAxisID: "y" },
+        { label: "注文数", data: weeks.map(w => w.orders || 0), borderColor: "#95c891", tension: 0.35, yAxisID: "y1" },
+        { label: "sessions", data: weeks.map(w => w.sessions || 0), borderColor: "#a99dd6", tension: 0.35, yAxisID: "y1", borderDash: [4, 4] },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: "bottom" } },
+      scales: {
+        y: { position: "left", ticks: { callback: v => "¥" + (v/1000).toFixed(0) + "k" } },
+        y1: { position: "right", grid: { display: false } }
+      }
+    }
+  });
+}
+
+function renderPM(pm, budget, summary) {
   if (!pm) {
     const m = document.getElementById("pm-meta");
     if (m) m.textContent = "pm.json が未生成です (scripts/build_pm_data.py を実行してください)";
@@ -917,22 +942,18 @@ function renderPM(pm, budget) {
   renderPMSignals(pm.signals);
   renderPMActivity(pm.activity);
   renderPMBudget(budget);
+  renderPMWeeklyTrend(summary);
 }
 
 (async () => {
-  const [summary, funnel, channels, releases, archive, monthly, themes, products, goal, customers, channelFunnel, reports, klaviyo, pm, budget] = await Promise.all([
+  const [summary, funnel, channels, archive, monthly, products, channelFunnel, klaviyo, pm, budget] = await Promise.all([
     load("summary.json"),
     load("funnel.json"),
     load("channels.json"),
-    load("releases.json"),
     load("archive.json"),
     load("archive_monthly.json"),
-    load("themes.json"),
     load("products.json"),
-    load("goal.json"),
-    load("customers.json"),
     load("channel_funnel.json"),
-    load("reports.json"),
     load("klaviyo.json"),
     load("pm.json"),
     load("budget.json"),
@@ -942,31 +963,20 @@ function renderPM(pm, budget) {
     const side = document.getElementById("last-updated-side");
     if (side) side.textContent = summary.last_updated;
   }
-  renderTheme(themes);
   renderProducts(products);
   renderShopifyTop(products);
   renderShopifyCustomers(products);
-  renderGoal(goal);
-  renderDynamicActions(summary && summary.narrative ? summary.narrative.actions : null);
-  renderCustomerSegments(customers);
   renderChannelFunnel(channelFunnel);
-  renderReports(reports);
-  renderNarrative(summary);
-  renderKpis(summary);
-  renderWeeklyTrend(summary);
-  renderSignals(summary);
   renderFunnel(funnel);
   renderItemsTrend(funnel);
   renderCollections(funnel);
   renderChannels(channels);
   renderChannelTrend(channels);
-  renderReleases(releases);
   renderKlaviyo(klaviyo);
   renderArchive(archive);
   renderArchiveMonthly(monthly);
-  renderAnomalies(summary);
   renderProductsTop5(funnel);
-  renderPM(pm, budget);
+  renderPM(pm, budget, summary);
 
   // Scroll reveal
   const candidates = document.querySelectorAll(".card, .kpi, .archive-card, .archive-month-card, .state-card");

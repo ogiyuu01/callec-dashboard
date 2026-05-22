@@ -24,24 +24,17 @@
       <button class="nav-item active" data-tab="pm">📊 PM ホーム</button>
     </div>
     <div class="sidebar-section">
-      <div class="sidebar-label">運用</div>
-      <button class="nav-item" data-tab="today">🏠 Today</button>
+      <div class="sidebar-label">ドリルダウン</div>
       <button class="nav-item" data-tab="products">🎯 商品</button>
       <button class="nav-item" data-tab="customers">👥 顧客</button>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">概況</div>
-      <button class="nav-item" data-tab="exec">今週のサマリ</button>
-      <button class="nav-item" data-tab="funnel">ファネル</button>
-      <button class="nav-item" data-tab="channel">チャネル</button>
+      <button class="nav-item" data-tab="funnel">🛒 ファネル</button>
+      <button class="nav-item" data-tab="channel">📣 チャネル</button>
       <button class="nav-item" data-tab="klaviyo">📧 Klaviyo</button>
-      <button class="nav-item" data-tab="release">リリース</button>
     </div>
     <div class="sidebar-section">
       <div class="sidebar-label">履歴</div>
       <button class="nav-item" data-tab="archive">週次履歴</button>
       <button class="nav-item" data-tab="archive-monthly">月次履歴</button>
-      <button class="nav-item" data-tab="reports">📑 レポート</button>
     </div>
     <div class="sidebar-footer">
       最終更新: <strong id="last-updated-side">—</strong>
@@ -61,17 +54,13 @@
 
 <nav class="tabs container mobile-only">
   <button class="tab active" data-tab="pm">📊 PM</button>
-  <button class="tab" data-tab="today">🏠 Today</button>
   <button class="tab" data-tab="products">🎯 商品</button>
-  <button class="tab" data-tab="exec">📊 サマリ</button>
+  <button class="tab" data-tab="customers">👥 顧客</button>
   <button class="tab" data-tab="funnel">🛒 ファネル</button>
   <button class="tab" data-tab="channel">📣 チャネル</button>
   <button class="tab" data-tab="klaviyo">📧 Klaviyo</button>
-  <button class="tab" data-tab="release">🚀 リリース</button>
   <button class="tab" data-tab="archive">📅 週次</button>
   <button class="tab" data-tab="archive-monthly">🗓️ 月次</button>
-  <button class="tab" data-tab="customers">👥 顧客</button>
-  <button class="tab" data-tab="reports">📑 レポート</button>
 </nav>
 
 <main class="container">
@@ -100,6 +89,12 @@
       <p class="pm-section-note" id="pm-budget-meta">—</p>
     </div>
 
+    <div class="card">
+      <h3>📉 週次トレンド（直近12週）</h3>
+      <canvas id="chart-pm-weekly" height="120"></canvas>
+      <p class="pm-section-note">GA4 sessions / Shopify orders / 売上の推移</p>
+    </div>
+
     <div class="pm-row-2col">
       <div class="card">
         <h3>🔧 データパイプライン鮮度（Tactical）</h3>
@@ -118,18 +113,6 @@
       <p class="pm-section-note">直近の4ソースイベントを時系列で表示（最新40件）</p>
       <div class="pm-activity-filters" id="pm-activity-filters"></div>
       <div class="pm-activity" id="pm-activity"></div>
-    </div>
-  </section>
-
-  <section class="page" id="page-today">
-    <span class="eyebrow">This Week · Theme</span>
-    <h2 id="today-theme-title">今週のテーマ</h2>
-    <div class="card" id="goal-card"></div>
-    <div class="card narrative-card" id="dynamic-actions-card"></div>
-    <div class="card narrative-card" id="theme-card"></div>
-    <div class="card">
-      <h3>過去のテーマ</h3>
-      <div id="theme-history"></div>
     </div>
   </section>
 
@@ -152,26 +135,6 @@
       <div style="overflow-x:auto;">
         <table class="data-table" id="table-products"></table>
       </div>
-    </div>
-  </section>
-
-  <section class="page" id="page-exec">
-    <span class="eyebrow">Weekly Pulse</span>
-    <h2>今週のサマリ</h2>
-    <div class="card narrative-card" id="narrative-summary"></div>
-    <div class="card narrative-card" id="narrative-actions"></div>
-    <div class="kpi-grid" id="exec-kpis"></div>
-    <div class="card">
-      <h3>週次トレンド（直近12週）</h3>
-      <canvas id="chart-weekly-trend"></canvas>
-    </div>
-    <div class="card">
-      <h3>判定シグナル</h3>
-      <div id="exec-signals"></div>
-    </div>
-    <div class="card">
-      <h3>異常検知ログ（直近14日）</h3>
-      <div id="anomaly-list" class="anomaly-list"></div>
     </div>
   </section>
 
@@ -236,15 +199,6 @@
     </div>
   </section>
 
-  <section class="page" id="page-release">
-    <span class="eyebrow">Experiments</span>
-    <h2>進行中の改善</h2>
-    <div class="card">
-      <h3>稼働中・過去リリース一覧</h3>
-      <table class="data-table" id="table-releases"></table>
-    </div>
-  </section>
-
   <section class="page" id="page-archive">
     <span class="eyebrow">Archive · Weekly</span>
     <h2>週次の積み重ね</h2>
@@ -260,38 +214,16 @@
   </section>
 
   <section class="page" id="page-customers">
-    <span class="eyebrow">Customers</span>
-    <h2>顧客セグメント</h2>
-    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">直近30日のセッションを新規/リピートに分類して比較。</p>
+    <span class="eyebrow">Customers · Shopify</span>
+    <h2>顧客（Shopify実購入）</h2>
+    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">Shopify Admin API の実購入データ（28日）。</p>
     <div class="card">
-      <h3>Shopify実購入の顧客（直近28日・実購入ベース）</h3>
+      <h3>Shopify実購入の顧客（直近28日）</h3>
       <div id="shopify-customer-card"></div>
-    </div>
-    <div class="card">
-      <h3>新規 vs リピート - GA4（参考・蓄積期間短く精度低）</h3>
-      <div id="customer-segments"></div>
     </div>
     <div class="card">
       <h3>チャネル別ファネル分解（直近14日）</h3>
       <table class="data-table" id="table-channel-funnel"></table>
-    </div>
-  </section>
-
-  <section class="page" id="page-reports">
-    <span class="eyebrow">Reports</span>
-    <h2>過去レポート一覧</h2>
-    <div class="card">
-      <h3>検索・絞り込み</h3>
-      <div class="report-toolbar">
-        <input type="search" id="report-search" placeholder="タイトル・本文で検索..." />
-        <div class="report-filters" id="report-filters"></div>
-      </div>
-      <div id="reports-list"></div>
-    </div>
-    <div class="card" id="report-viewer" style="display:none;">
-      <h3 id="report-viewer-title">—</h3>
-      <button class="state-chip" id="report-close" style="margin-bottom:14px;">× 閉じる</button>
-      <div id="report-body" class="report-body"></div>
     </div>
   </section>
 </main>

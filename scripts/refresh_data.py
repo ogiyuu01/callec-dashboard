@@ -1129,13 +1129,6 @@ def main() -> int:
     print(f"Output: {DATA_DIR}")
     client = bigquery.Client(project=PROJECT)
 
-    # ---- Sync weekly themes ----
-    if WEEKLY_THEMES.exists():
-        themes_payload = json.loads(WEEKLY_THEMES.read_text(encoding="utf-8"))
-        write_json("themes.json", themes_payload)
-    else:
-        write_json("themes.json", {"current": {}, "history": []})
-
     # ---- Build products (商品別ファネル + 状態分類) ----
     products_data = build_products(client)
     # Shopify実購入データをマージ (dashboard 自前 → sibling の順でフォールバック)
@@ -1163,28 +1156,14 @@ def main() -> int:
     summary["goal"] = goal
     write_json("goal.json", goal)
 
-    # ---- Customer segments ----
-    write_json("customers.json", build_customer_segments(client))
-
     # ---- Channel funnel ----
     write_json("channel_funnel.json", build_channel_funnel(client))
-
-    # ---- Reports index ----
-    write_json("reports.json", build_reports_index())
-
-    # ---- Dynamic actions (replace hardcoded narrative.actions) ----
-    releases_payload = build_releases()
-    summary["narrative"]["actions"] = build_dynamic_actions(
-        summary, goal, products_data, releases_payload.get("releases", [])
-    )
 
     write_json("summary.json", summary)
     funnel_data = build_funnel(client)
     funnel_data["products_top5"] = build_products_top5(client).get("items", [])
     write_json("funnel.json", funnel_data)
     write_json("channels.json", build_channels(client))
-    write_json("utm_health.json", build_utm_health(client))
-    write_json("releases.json", releases_payload)
     update_archive(summary)
     build_monthly_archive()
     print("refresh complete")
