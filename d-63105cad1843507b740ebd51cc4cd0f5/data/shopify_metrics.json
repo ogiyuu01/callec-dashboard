@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-05-22 18:23 JST",
+    "fetched_at": "2026-05-23 09:03 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 189,
-    "returning_customers": 68,
-    "returning_customer_rate": 0.35978835978835977,
-    "new_customers": 121
+    "total_customers": 185,
+    "returning_customers": 67,
+    "returning_customer_rate": 0.3621621621621622,
+    "new_customers": 118
   },
   "top_products_28d": [
     {
@@ -20,13 +20,13 @@
     },
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 236500,
-      "orders": 43
+      "gross_sales": 220000,
+      "orders": 40
     },
     {
       "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 151250,
-      "orders": 11
+      "gross_sales": 165000,
+      "orders": 12
     },
     {
       "name": "KOKAGE/テーラードジャケット",
@@ -35,8 +35,8 @@
     },
     {
       "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 118800,
-      "orders": 20
+      "gross_sales": 124740,
+      "orders": 21
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
@@ -45,8 +45,8 @@
     },
     {
       "name": "KOKAGE/オーバー半袖プルオーバー",
-      "gross_sales": 89100,
-      "orders": 9
+      "gross_sales": 99000,
+      "orders": 10
     },
     {
       "name": "TOBIKIRI STRIPE/切り替え五部袖プルオーバー",
@@ -59,13 +59,13 @@
       "orders": 6
     },
     {
-      "name": "TOBIKIRI STRIPE/ジョガーパンツ",
+      "name": "KOKAGE/切り替えハーフパンツ",
       "gross_sales": 79200,
       "orders": 6
     }
   ],
   "totals_28d": {
-    "orders": 197,
-    "sales": 3983100
+    "orders": 192,
+    "sales": 3906320
   }
 }
