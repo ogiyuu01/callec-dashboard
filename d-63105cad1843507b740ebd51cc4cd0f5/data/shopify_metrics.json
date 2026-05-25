@@ -1,27 +1,27 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-05-25 09:03 JST",
+    "fetched_at": "2026-05-25 12:37 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 190,
-    "returning_customers": 68,
-    "returning_customer_rate": 0.35789473684210527,
-    "new_customers": 122
+    "total_customers": 193,
+    "returning_customers": 69,
+    "returning_customer_rate": 0.35751295336787564,
+    "new_customers": 124
   },
   "top_products_28d": [
     {
       "name": "無重力リュック(第5世代)",
-      "gross_sales": 247500,
-      "orders": 9
+      "gross_sales": 275000,
+      "orders": 10
     },
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 209000,
-      "orders": 38
+      "gross_sales": 220000,
+      "orders": 40
     },
     {
       "name": "KOKAGE/テーラードジャケット",
@@ -54,18 +54,18 @@
       "orders": 9
     },
     {
-      "name": "KOKAGE/ジョガーパンツ",
-      "gross_sales": 82500,
-      "orders": 6
+      "name": "無地長袖Tシャツ",
+      "gross_sales": 83160,
+      "orders": 14
     },
     {
-      "name": "KOKAGE/切り替えハーフパンツ",
-      "gross_sales": 79200,
+      "name": "KOKAGE/ジョガーパンツ",
+      "gross_sales": 82500,
       "orders": 6
     }
   ],
   "totals_28d": {
-    "orders": 199,
-    "sales": 4116090
+    "orders": 202,
+    "sales": 4187810
   }
 }

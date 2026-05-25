@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-05-25 09:03 JST",
+  "last_updated": "2026-05-25 12:37 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
       "name": "レビューリクエスト",
       "current_7d": {
         "recipients": 70.0,
-        "opens": 33.0,
+        "opens": 34.0,
         "clicks": 4.0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.4714285714285714,
+        "open_rate": 0.4857142857142857,
         "click_rate": 0.05714285714285714,
         "conv_rate": 0.0
       },
@@ -26,11 +26,11 @@
       },
       "current_30d": {
         "recipients": 339.0,
-        "opens": 197.0,
+        "opens": 198.0,
         "clicks": 23.0,
         "convs": 4.0,
         "rev": 86900.0,
-        "open_rate": 0.5811209439528023,
+        "open_rate": 0.584070796460177,
         "click_rate": 0.06784660766961652,
         "conv_rate": 0.011799410029498525
       },
@@ -46,11 +46,11 @@
       },
       "annual": {
         "recipients": 816.0,
-        "opens": 468.0,
+        "opens": 469.0,
         "clicks": 67.0,
         "convs": 4.0,
         "rev": 86900.0,
-        "open_rate": 0.5735294117647058,
+        "open_rate": 0.5747549019607843,
         "click_rate": 0.0821078431372549,
         "conv_rate": 0.004901960784313725
       },
@@ -67,11 +67,11 @@
       "current_7d": {
         "recipients": 65.0,
         "opens": 17.0,
-        "clicks": 2.0,
+        "clicks": 3.0,
         "convs": 2.0,
         "rev": 40920.0,
         "open_rate": 0.26153846153846155,
-        "click_rate": 0.03076923076923077,
+        "click_rate": 0.046153846153846156,
         "conv_rate": 0.03076923076923077
       },
       "previous_7d": {
@@ -87,11 +87,11 @@
       "current_30d": {
         "recipients": 322.0,
         "opens": 87.0,
-        "clicks": 15.0,
+        "clicks": 16.0,
         "convs": 5.0,
         "rev": 90860.0,
         "open_rate": 0.2701863354037267,
-        "click_rate": 0.046583850931677016,
+        "click_rate": 0.049689440993788817,
         "conv_rate": 0.015527950310559006
       },
       "previous_30d": {
@@ -107,11 +107,11 @@
       "annual": {
         "recipients": 922.0,
         "opens": 245.0,
-        "clicks": 40.0,
+        "clicks": 41.0,
         "convs": 18.0,
         "rev": 304370.0,
         "open_rate": 0.26572668112798264,
-        "click_rate": 0.04338394793926247,
+        "click_rate": 0.044468546637744036,
         "conv_rate": 0.019522776572668113
       },
       "wow_pct": 615.3846153846155,
