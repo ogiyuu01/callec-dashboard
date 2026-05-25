@@ -2,19 +2,19 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 9126
+      "count": 9340
     },
     {
       "name": "view_item",
-      "count": 8633
+      "count": 8613
     },
     {
       "name": "add_to_cart",
-      "count": 241
+      "count": 257
     },
     {
       "name": "begin_checkout",
-      "count": 71
+      "count": 82
     },
     {
       "name": "purchase",
@@ -25,51 +25,57 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 346,
-      "pdp_reached": 129,
-      "pdp_reach": 37.283236994219656
+      "sessions": 348,
+      "pdp_reached": 125,
+      "pdp_reach": 35.91954022988506
     },
     {
       "path": "/collections/5月6日販売開始",
-      "sessions": 181,
-      "pdp_reached": 77,
-      "pdp_reach": 42.5414364640884
+      "sessions": 119,
+      "pdp_reached": 49,
+      "pdp_reach": 41.1764705882353
     },
     {
       "path": "/collections/onayami-260501-collection",
-      "sessions": 91,
-      "pdp_reached": 19,
-      "pdp_reach": 20.87912087912088
+      "sessions": 104,
+      "pdp_reached": 21,
+      "pdp_reach": 20.192307692307693
     },
     {
       "path": "/collections/setup",
       "sessions": 70,
-      "pdp_reached": 26,
-      "pdp_reach": 37.142857142857146
+      "pdp_reached": 25,
+      "pdp_reach": 35.714285714285715
     },
     {
       "path": "/collections/new",
-      "sessions": 62,
-      "pdp_reached": 16,
-      "pdp_reach": 25.806451612903224
+      "sessions": 59,
+      "pdp_reached": 17,
+      "pdp_reach": 28.8135593220339
     },
     {
       "path": "/collections/pants",
-      "sessions": 55,
-      "pdp_reached": 13,
-      "pdp_reach": 23.636363636363637
+      "sessions": 52,
+      "pdp_reached": 7,
+      "pdp_reach": 13.461538461538462
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 49,
+      "sessions": 44,
       "pdp_reached": 11,
-      "pdp_reach": 22.448979591836736
+      "pdp_reach": 25.0
     },
     {
       "path": "/collections/online_ranking",
-      "sessions": 35,
+      "sessions": 39,
+      "pdp_reached": 11,
+      "pdp_reach": 28.205128205128204
+    },
+    {
+      "path": "/collections/golf",
+      "sessions": 31,
       "pdp_reached": 9,
-      "pdp_reach": 25.714285714285715
+      "pdp_reach": 29.032258064516128
     }
   ],
   "products_top5": [
@@ -80,13 +86,13 @@
     },
     {
       "name": "無地半袖Tシャツ",
-      "qty": 10,
-      "revenue": 55000
+      "qty": 11,
+      "revenue": 60500
     },
     {
-      "name": "TOBIKIRI STRIPE/切り替え五部袖プルオーバー",
-      "qty": 5,
-      "revenue": 52250
+      "name": "KOKAGE/テーラードジャケット",
+      "qty": 3,
+      "revenue": 56100
     },
     {
       "name": "KOKAGE/オーバー半袖プルオーバー",
@@ -94,9 +100,9 @@
       "revenue": 49500
     },
     {
-      "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
-      "qty": 2,
-      "revenue": 39600
+      "name": "NOBIRU360°PREMIUM/刺繍半袖プルオーバー",
+      "qty": 3,
+      "revenue": 46200
     }
   ]
 }
