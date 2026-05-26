@@ -32,8 +32,24 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 PROJECT = "gen-lang-client-0015689236"
 DATASET = "analytics_320051621"
 
-# 隣接の作業リポジトリから CSV を読む
-SIBLING = ROOT.parent / "shopify-ec-automation"
+# 隣接の作業リポジトリから CSV を読む。
+# GH Actions では workspace 内 (ROOT / "shopify-ec-automation")、
+# ローカル開発では ROOT.parent / "shopify-ec-automation" もしくは
+# shopify-inhouse/shopify-ec-automation のいずれかに配置されている。
+def _resolve_sibling() -> Path:
+    candidates = [
+        ROOT / "shopify-ec-automation",                       # GH Actions (path: shopify-ec-automation)
+        ROOT.parent / "shopify-ec-automation",                # ローカル: dashboard/ の隣
+        ROOT.parent.parent / "shopify-inhouse" / "shopify-ec-automation",  # ローカル: shopify-inhouse/ 配下
+    ]
+    for c in candidates:
+        if (c / "data" / "weekly_kpi.csv").exists():
+            return c
+    # 見つからなくても従来挙動に合わせて先頭を返す（後段は .exists() で分岐）
+    return candidates[0]
+
+
+SIBLING = _resolve_sibling()
 RELEASE_LOG = SIBLING / "data" / "release_log.csv"
 WEEKLY_KPI = SIBLING / "data" / "weekly_kpi.csv"
 MONTHLY_TARGET = SIBLING / "data" / "monthly_target.json"  # 旧フォーマット (deprecated)
@@ -104,7 +120,7 @@ def make_narrative(last7: dict, prev7: dict, yoy: dict) -> dict:
 
 
 def build_weekly_archive_from_csv() -> list[dict]:
-    """weekly_kpi.csv の 2026-W14 以降を週次アーカイブエントリに変換する。
+    """weekly_kpi.csv の 2026-W10 (= 2026-03-02 週) 以降を週次アーカイブエントリに変換する。
     各週で前週比・前年同週比を計算し、簡易ナラティブを生成。"""
     entries: list[dict] = []
     if not WEEKLY_KPI.exists():
@@ -123,7 +139,7 @@ def build_weekly_archive_from_csv() -> list[dict]:
             monday = date.fromisocalendar(int(y), int(wk), 1)
         except Exception:
             continue
-        if monday < date(2026, 3, 30):  # 2026-W14 = 2026-03-30 start
+        if monday < date(2026, 3, 2):  # 2026-W10 = 2026-03-02 start (3月分から表示)
             continue
 
         sessions = int(r.get("sessions", 0) or 0)
@@ -220,11 +236,11 @@ def update_archive(summary: dict) -> None:
 
     archive_path = DATA_DIR / "archive.json"
     archive_path.write_text(json.dumps({"weeks": weekly_entries}, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"  weekly archive: {len(weekly_entries)} weeks (from 2026-W14, live={cur_label})")
+    print(f"  weekly archive: {len(weekly_entries)} weeks (from 2026-W10, live={cur_label})")
 
 
 def build_monthly_archive() -> None:
-    """weekly_kpi.csv を月単位に集計し、2026-04 以降の月次アーカイブを生成する。"""
+    """weekly_kpi.csv を月単位に集計し、2026-03 以降の月次アーカイブを生成する。"""
     if not WEEKLY_KPI.exists():
         print("  monthly archive skipped (weekly_kpi.csv missing)")
         return
@@ -241,7 +257,7 @@ def build_monthly_archive() -> None:
                 monday = date.fromisocalendar(int(year), int(wk), 1)
             except Exception:
                 continue
-            if monday < date(2025, 4, 1):  # 前年同月比較のため2025-04も含める
+            if monday < date(2025, 3, 1):  # 前年同月比較のため2025-03も含める
                 continue
             month_label = monday.strftime("%Y-%m")
             months[month_label]["sessions"] += int(r.get("sessions", 0) or 0)
@@ -251,8 +267,8 @@ def build_monthly_archive() -> None:
     sorted_months = sorted(months.keys())
     entries: list[dict] = []
     for i, m in enumerate(sorted_months):
-        if m < "2026-04":
-            continue  # 表示は2026-04以降のみ
+        if m < "2026-03":
+            continue  # 表示は2026-03以降のみ
         v = months[m]
         sessions = v["sessions"]
         orders = v["orders"]
@@ -303,7 +319,7 @@ def build_monthly_archive() -> None:
     entries.sort(key=lambda e: e["month"], reverse=True)
     out = DATA_DIR / "archive_monthly.json"
     out.write_text(json.dumps({"months": entries}, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"  monthly archive: {len(entries)} months (from 2026-04)")
+    print(f"  monthly archive: {len(entries)} months (from 2026-03)")
 
 
 def q(client: bigquery.Client, sql: str) -> list[dict]:

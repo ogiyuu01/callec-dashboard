@@ -21,7 +21,7 @@ jobs:
         with:
           repository: ${{ github.repository_owner }}/shopify-ec-automation
           token: ${{ secrets.SIBLING_REPO_TOKEN }}
-          path: ../shopify-ec-automation
+          path: shopify-ec-automation
         continue-on-error: true
 
       - name: Set up Python
