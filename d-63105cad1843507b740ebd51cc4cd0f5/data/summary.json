@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-26 11:10 JST",
+  "last_updated": "2026-05-26 11:32 JST",
   "last_7d": {
     "sessions": 9332,
     "item_views": 8516,
@@ -27,14 +27,6 @@
     "items_per_session": 0
   },
   "weeks": [
-    {
-      "week": "2026-W09",
-      "sessions": 5148,
-      "orders": 23,
-      "sales": 438130,
-      "cvr": 0.0045,
-      "items_per_session": null
-    },
     {
       "week": "2026-W10",
       "sessions": 8354,
@@ -121,6 +113,14 @@
       "orders": 55,
       "sales": 1303390,
       "cvr": 0.0083,
+      "items_per_session": null
+    },
+    {
+      "week": "2026-W21",
+      "sessions": 9340,
+      "orders": 46,
+      "sales": 952820,
+      "cvr": 0.0049,
       "items_per_session": null
     }
   ],

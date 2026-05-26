@@ -23,11 +23,6 @@
   ],
   "weeks": [
     {
-      "week": "2026-W09",
-      "items_per_session": 0,
-      "cvr": 0.0045
-    },
-    {
       "week": "2026-W10",
       "items_per_session": 0,
       "cvr": 0.0024
@@ -81,6 +76,11 @@
       "week": "2026-W20",
       "items_per_session": 0,
       "cvr": 0.0083
+    },
+    {
+      "week": "2026-W21",
+      "items_per_session": 0,
+      "cvr": 0.0049
     }
   ],
   "collections": [
@@ -151,13 +151,13 @@
       "revenue": 56100
     },
     {
-      "name": "無地半袖Tシャツ",
-      "qty": 10,
+      "name": "無重力リュック(第5世代)",
+      "qty": 2,
       "revenue": 55000
     },
     {
-      "name": "無重力リュック(第5世代)",
-      "qty": 2,
+      "name": "無地半袖Tシャツ",
+      "qty": 10,
       "revenue": 55000
     },
     {
