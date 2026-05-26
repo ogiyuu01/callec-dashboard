@@ -51,7 +51,24 @@ def _resolve_sibling() -> Path:
 
 
 SIBLING = _resolve_sibling()
-RELEASE_LOG = SIBLING / "data" / "release_log.csv"
+def _find_data_file(name: str) -> Path:
+    """SIBLING がvendored dashboard 内を指していて見つからない場合に、
+    shopify-ec-automation の正規パスを探索する fallback."""
+    primary = SIBLING / "data" / name
+    if primary.exists():
+        return primary
+    for c in (
+        ROOT.parent.parent / "shopify-inhouse" / "shopify-ec-automation" / "data" / name,
+        ROOT.parent / "shopify-ec-automation" / "data" / name,
+        ROOT / "shopify-ec-automation" / "data" / name,
+    ):
+        if c.exists():
+            return c
+    return primary  # 不在のまま返す (exists() で False になる)
+
+
+RELEASE_LOG = _find_data_file("release_log.csv")
+KPI_SNAPSHOTS = _find_data_file("kpi_snapshots.csv")
 WEEKLY_KPI = SIBLING / "data" / "weekly_kpi.csv"
 MONTHLY_TARGET = SIBLING / "data" / "monthly_target.json"  # 旧フォーマット (deprecated)
 BUDGET_JSON_LOCAL = DATA_DIR / "budget.json"  # dashboard 自前 (sync_budget.py が書く)
@@ -148,6 +165,12 @@ def build_weekly_archive_from_csv() -> list[dict]:
         sales = int(r.get("sales", 0) or 0)
         cvr = float(r.get("cvr", 0) or 0)
         aov = float(r.get("aov", 0) or 0)
+        # CSV にある率から逆算 (atcs/checkouts/カゴ落ち率)。item_views は CSV にないので None
+        atcs_rate = float(r.get("add_to_cart_rate", 0) or 0)
+        ckout_rate = float(r.get("checkout_rate", 0) or 0)
+        atcs = int(round(sessions * atcs_rate)) if sessions else 0
+        checkouts = int(round(atcs * ckout_rate)) if atcs else 0
+        cart_abandon = (atcs - orders) / atcs if atcs else 0
 
         # prev week
         try:
@@ -191,7 +214,10 @@ def build_weekly_archive_from_csv() -> list[dict]:
             "kpis": {
                 "sessions": sessions, "orders": orders, "sales": sales,
                 "cvr": cvr, "aov": aov,
-                "items_per_session": None,  # weekly_kpi.csv にない
+                "item_views": None,  # CSV にない (28日以内なら update_archive で BQ から付与)
+                "atcs": atcs, "checkouts": checkouts,
+                "cart_abandonment_rate": cart_abandon,
+                "items_per_session": None,
             },
             "prev": {"sessions": int(prev.get("sessions", 0) or 0), "orders": int(prev.get("orders", 0) or 0), "sales": int(prev.get("sales", 0) or 0)} if prev else {},
             "yoy":  {"sessions": int(yoy.get("sessions", 0) or 0),  "orders": int(yoy.get("orders", 0) or 0),  "sales": int(yoy.get("sales", 0) or 0)}  if yoy  else {},
@@ -219,34 +245,77 @@ def update_archive(summary: dict, client: "bigquery.Client | None" = None) -> No
     cur_sunday = cur_monday + timedelta(days=6)
     last_day = today - timedelta(days=1)  # BQ にあるのは昨日まで
 
-    live_kpis = summary.get("last_7d", {})  # フォールバック
-    if client is not None and last_day >= cur_monday:
+    def _query_week_kpis(start_d: date, end_d: date) -> dict | None:
+        if client is None:
+            return None
         try:
             sql = f"""
             SELECT COUNT(*) AS sessions,
                    SUM(item_views) AS item_views,
+                   SUM(atcs) AS atcs,
+                   SUM(checkouts) AS checkouts,
                    SUM(purchases) AS orders,
                    CAST(SUM(revenue) AS INT64) AS sales,
                    SAFE_DIVIDE(SUM(purchases), COUNT(*)) AS cvr,
                    SAFE_DIVIDE(SUM(revenue), NULLIF(SUM(purchases),0)) AS aov,
                    SAFE_DIVIDE(SUM(item_views), COUNT(*)) AS items_per_session
             FROM `{PROJECT}.{DATASET}.sessions_clean`
-            WHERE event_date BETWEEN '{cur_monday.strftime("%Y%m%d")}' AND '{last_day.strftime("%Y%m%d")}'
+            WHERE event_date BETWEEN '{start_d.strftime("%Y%m%d")}' AND '{end_d.strftime("%Y%m%d")}'
             """
             r = list(client.query(sql).result())
-            if r:
-                row = dict(r[0])
-                live_kpis = {
-                    "sessions": int(row.get("sessions") or 0),
-                    "item_views": int(row.get("item_views") or 0),
-                    "orders": int(row.get("orders") or 0),
-                    "sales": int(row.get("sales") or 0),
-                    "cvr": float(row.get("cvr") or 0),
-                    "aov": float(row.get("aov") or 0),
-                    "items_per_session": float(row.get("items_per_session") or 0),
-                }
+            if not r:
+                return None
+            row = dict(r[0])
+            atcs = int(row.get("atcs") or 0)
+            orders = int(row.get("orders") or 0)
+            return {
+                "sessions": int(row.get("sessions") or 0),
+                "item_views": int(row.get("item_views") or 0),
+                "atcs": atcs,
+                "checkouts": int(row.get("checkouts") or 0),
+                "orders": orders,
+                "sales": int(row.get("sales") or 0),
+                "cvr": float(row.get("cvr") or 0),
+                "aov": float(row.get("aov") or 0),
+                "cart_abandonment_rate": (atcs - orders) / atcs if atcs else 0,
+                "items_per_session": float(row.get("items_per_session") or 0),
+            }
         except Exception as exc:
-            print(f"  warn: live week-to-date query failed: {exc}")
+            print(f"  warn: BQ kpis query {start_d}〜{end_d} failed: {exc}")
+            return None
+
+    # 直近28日以内の閉じた週は BQ から item_views/atcs/checkouts を上書き取得
+    bq_cutoff = today - timedelta(days=28)
+    for e in weekly_entries:
+        try:
+            we = date.fromisoformat(e["end_date"])
+            ws = date.fromisoformat(e["start_date"])
+        except Exception:
+            continue
+        if we < bq_cutoff:
+            continue
+        end_q = min(we, last_day)
+        if end_q < ws:
+            continue
+        bq_kpis = _query_week_kpis(ws, end_q)
+        if not bq_kpis:
+            continue
+        # CSVに無い項目だけBQから入れる (sales/orders/cvr/aov は CSV 値を尊重)
+        for k in ("item_views", "items_per_session"):
+            e["kpis"][k] = bq_kpis.get(k)
+        # atcs/checkouts/cart_abandonment_rate も BQ の方が正確なら上書き
+        if bq_kpis.get("atcs"):
+            e["kpis"]["atcs"] = bq_kpis["atcs"]
+            e["kpis"]["checkouts"] = bq_kpis["checkouts"]
+            csv_orders = e["kpis"].get("orders", 0)
+            e["kpis"]["cart_abandonment_rate"] = (bq_kpis["atcs"] - csv_orders) / bq_kpis["atcs"]
+
+    # live (今週) は BQ から week-to-date を取得
+    live_kpis = summary.get("last_7d", {})  # フォールバック
+    if last_day >= cur_monday:
+        bq = _query_week_kpis(cur_monday, last_day)
+        if bq:
+            live_kpis = bq
 
     live_entry = {
         "week": cur_label,
@@ -255,7 +324,7 @@ def update_archive(summary: dict, client: "bigquery.Client | None" = None) -> No
         "kpis": live_kpis,
         "yoy": summary.get("yoy", {}),
         "prev": summary.get("prev_7d", {}),
-        "narrative": summary.get("narrative", {}),
+        # narrative は週途中で rolling 7d と week-to-date が混ざるため省略
         "captured_at": now_jst().strftime("%Y-%m-%d %H:%M"),
         "live": True,
         "live_through": last_day.isoformat(),  # 週途中の場合 何日までのデータか
@@ -931,6 +1000,168 @@ def build_releases() -> dict:
     return {"releases": releases}
 
 
+def _metric_from_snapshot(metric: str, snap: dict) -> float | None:
+    """hypothesis_metric 名から kpi_snapshots.csv の該当列を抽出。
+    snapshot 列に直接対応しない metric (collection_to_pdp_rate / view_to_atc_rate) は None を返し、
+    後段の BQ 計算 (_compute_metric_via_bq) に委ねる。"""
+    if not snap:
+        return None
+    key_map = {
+        "atc_to_checkout_rate": "checkout_rate",
+        "items_per_session": "items_per_session",
+        "cvr": "cvr",
+    }
+    col = key_map.get(metric)
+    if not col:
+        return None
+    try:
+        return float(snap.get(col) or 0)
+    except (ValueError, TypeError):
+        return None
+
+
+def _compute_metric_via_bq(client: "bigquery.Client | None", metric: str, start: date, end: date) -> float | None:
+    """snapshot に列がない metric を BQ から直接計算する。失敗時は None。"""
+    if not client or not metric:
+        return None
+    s, e = start.strftime("%Y%m%d"), end.strftime("%Y%m%d")
+    if metric == "collection_to_pdp_rate":
+        sql = f"""
+        WITH sess AS (
+          SELECT
+            CONCAT(user_pseudo_id, CAST((SELECT value.int_value FROM UNNEST(event_params) WHERE key='ga_session_id') AS STRING)) AS sess_id,
+            MIN(IF(event_name='session_start', (SELECT value.string_value FROM UNNEST(event_params) WHERE key='page_location'), NULL)) AS landing,
+            COUNTIF(event_name='view_item') AS item_views
+          FROM `{PROJECT}.{DATASET}.events_*`
+          WHERE _TABLE_SUFFIX BETWEEN '{s}' AND '{e}'
+          GROUP BY sess_id
+        )
+        SELECT SAFE_DIVIDE(COUNTIF(item_views > 0), COUNT(*)) AS rate
+        FROM sess WHERE REGEXP_CONTAINS(landing, r'/collections/')
+        """
+    elif metric == "view_to_atc_rate":
+        sql = f"""
+        SELECT SAFE_DIVIDE(COUNTIF(event_name='add_to_cart'), COUNTIF(event_name='view_item')) AS rate
+        FROM `{PROJECT}.{DATASET}.events_*`
+        WHERE _TABLE_SUFFIX BETWEEN '{s}' AND '{e}'
+        """
+    else:
+        return None
+    try:
+        rows = list(client.query(sql).result())
+        return float(rows[0].rate) if rows and rows[0].rate is not None else None
+    except Exception as ex:
+        print(f"  monitoring BQ query failed for {metric}: {ex}")
+        return None
+
+
+def _parse_decision_rule(rule: str) -> dict:
+    """'GREEN: rate>=38% / RED: rate<=27%' から閾値辞書を抽出。失敗時は空辞書。"""
+    import re
+    result = {}
+    for color in ("GREEN", "YELLOW", "RED"):
+        m = re.search(rf"{color}[^/]*?(?:rate)?\s*([<>]=?)\s*(\d+(?:\.\d+)?)\s*%", rule)
+        if m:
+            result[color] = {"op": m.group(1), "value": float(m.group(2)) / 100.0}
+    return result
+
+
+def _verdict_color(rate: float | None, rule_dict: dict) -> str:
+    if rate is None or not rule_dict:
+        return "UNKNOWN"
+    g = rule_dict.get("GREEN")
+    r = rule_dict.get("RED")
+    if g and ((g["op"] == ">=" and rate >= g["value"]) or (g["op"] == ">" and rate > g["value"])):
+        return "GREEN"
+    if r and ((r["op"] == "<=" and rate <= r["value"]) or (r["op"] == "<" and rate < r["value"])):
+        return "RED"
+    return "YELLOW"
+
+
+def build_monitoring(client: "bigquery.Client | None" = None) -> dict:
+    """release_log.csv の MONITORING 行 + kpi_snapshots.csv から監視ビューを構築。
+    snapshot に列がない metric (collection_to_pdp_rate / view_to_atc_rate) は BQ で直接計算。"""
+    if not RELEASE_LOG.exists():
+        return {"releases": [], "_meta": {"generated_at": now_jst().isoformat(timespec="seconds")}}
+
+    snapshots = []
+    if KPI_SNAPSHOTS.exists():
+        with KPI_SNAPSHOTS.open(encoding="utf-8-sig", newline="") as f:
+            snapshots = list(csv.DictReader(f))
+
+    today = date.today()
+    out = []
+    with RELEASE_LOG.open(encoding="utf-8-sig", newline="") as f:
+        for r in csv.DictReader(f):
+            rid = (r.get("release_id") or "").strip()
+            deployed_at = (r.get("deployed_at") or "").strip()
+            decision = (r.get("decision") or "DRAFT").strip()
+            if not rid or not deployed_at:
+                continue
+            try:
+                d = datetime.fromisoformat(deployed_at).date()
+            except ValueError:
+                continue
+
+            elapsed = (today - d).days
+            eval_window = int(r.get("eval_window_days") or 14)
+            metric = (r.get("hypothesis_metric") or "").strip()
+            rule_str = (r.get("decision_rule") or "").strip()
+            rule_dict = _parse_decision_rule(rule_str)
+
+            rel_snaps = [s for s in snapshots if s.get("release_id") == rid]
+            before = next((s for s in rel_snaps if s.get("trigger") == "release_before"), None)
+            after_list = [s for s in rel_snaps if s.get("trigger") == "release_after"]
+            after = max(after_list, key=lambda s: s.get("taken_at", ""), default=None)
+
+            before_rate = _metric_from_snapshot(metric, before) if before else None
+            after_rate = _metric_from_snapshot(metric, after) if after else None
+
+            # BQ 直撃 fallback (snapshot 列なし metric 用)
+            if before_rate is None and metric in ("collection_to_pdp_rate", "view_to_atc_rate"):
+                before_start = d - timedelta(days=int(r.get("eval_window_days") or 7))
+                before_end = d - timedelta(days=1)
+                before_rate = _compute_metric_via_bq(client, metric, before_start, before_end)
+            if after_rate is None and metric in ("collection_to_pdp_rate", "view_to_atc_rate"):
+                if elapsed >= 1:
+                    after_start = d
+                    after_end = min(today - timedelta(days=1), d + timedelta(days=elapsed - 1))
+                    after_rate = _compute_metric_via_bq(client, metric, after_start, after_end)
+            lift_pct = None
+            if before_rate and after_rate and before_rate > 0:
+                lift_pct = round((after_rate - before_rate) / before_rate * 100, 1)
+
+            verdict = _verdict_color(after_rate, rule_dict)
+
+            out.append({
+                "release_id": rid,
+                "deployed_at": deployed_at,
+                "days_elapsed": elapsed,
+                "eval_window_days": eval_window,
+                "progress_pct": min(100, round(elapsed / eval_window * 100)) if eval_window else 0,
+                "hypothesis_metric": metric,
+                "expected_lift_pct": r.get("expected_lift_pct") or "",
+                "decision_rule": rule_str,
+                "decision": decision,
+                "verdict": verdict,
+                "before_rate": before_rate,
+                "after_rate": after_rate,
+                "after_window": after.get("window") if after else "",
+                "after_taken_at": after.get("taken_at") if after else "",
+                "lift_pct": lift_pct,
+                "summary": (r.get("summary") or "")[:200],
+                "notes": (r.get("notes") or "")[:400],
+            })
+    return {
+        "releases": out,
+        "_meta": {
+            "generated_at": now_jst().isoformat(timespec="seconds"),
+            "source": "release_log.csv + kpi_snapshots.csv",
+            "note": "collection_to_pdp_rate / view_to_atc_rate は snapshot 列直接対応がないため代理列または欠損。完全値は BQ 直撃 by snapshot_kpi.py を参照",
+        },
+    }
+
+
 def build_goal_progress(client: bigquery.Client) -> dict:
     """月次目標と進捗・着地予測を返す（roadmap基準）。"""
     today = date.today()
@@ -1220,6 +1451,7 @@ def main() -> int:
     funnel_data["products_top5"] = build_products_top5(client).get("items", [])
     write_json("funnel.json", funnel_data)
     write_json("channels.json", build_channels(client))
+    write_json("monitoring.json", build_monitoring(client))
     update_archive(summary, client)
     build_monthly_archive()
     print("refresh complete")

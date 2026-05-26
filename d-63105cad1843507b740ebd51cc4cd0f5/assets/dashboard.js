@@ -360,6 +360,8 @@ function renderArchive(data) {
     document.getElementById("archive-list").innerHTML = '<p style="color:var(--text-muted)">まだ履歴がありません。来週月曜から自動保存されます。</p>';
     return;
   }
+  const numOrDash = (v) => (v === null || v === undefined) ? '—' : num(v);
+  const pctOrDash = (v) => (v === null || v === undefined) ? '—' : pct(v);
   const html = data.weeks.map(w => {
     const k = w.kpis || {};
     const prev = w.prev || {};
@@ -367,24 +369,38 @@ function renderArchive(data) {
     const sales = k.sales || 0;
     const orders = k.orders || 0;
     const cvr = k.cvr || 0;
-    const items = k.items_per_session || 0;
+    const items = k.items_per_session;
+    const sessions = k.sessions || 0;
+    const itemViews = k.item_views;
+    const atcs = k.atcs;
+    const checkouts = k.checkouts;
+    const cartAb = k.cart_abandonment_rate;
     const wow = prev.sales ? ((sales - prev.sales) / prev.sales * 100).toFixed(0) : null;
     const yoyDelta = yoy.sales ? ((sales - yoy.sales) / yoy.sales * 100).toFixed(0) : null;
     const wowBadge = wow !== null ? '<span class="badge ' + (wow >= 0 ? 'up' : 'down') + '">先週比 ' + (wow >= 0 ? '+' : '') + wow + '%</span>' : '';
     const yoyBadge = yoyDelta !== null ? '<span class="badge ' + (yoyDelta >= 0 ? 'up' : 'down') + '">前年比 ' + (yoyDelta >= 0 ? '+' : '') + yoyDelta + '%</span>' : '';
+    const liveBadge = w.live ? '<span class="badge live">LIVE' + (w.live_through ? ' / ' + w.live_through + ' 時点' : '') + '</span>' : '';
     const narrativeHtml = (w.narrative && w.narrative.lines)
       ? '<div class="narrative-lines compact">' + w.narrative.lines.map(l => '<div class="narrative-line">' + l + '</div>').join('') + '</div>'
       : '';
+    const itemsStr = (items === null || items === undefined) ? '—' : Number(items).toFixed(2);
     return '<div class="archive-card">' +
       '<div class="archive-head">' +
         '<div><strong>' + w.week + '</strong> <span class="archive-period">(' + w.start_date + ' 〜 ' + w.end_date + ')</span></div>' +
-        '<div class="archive-badges">' + wowBadge + ' ' + yoyBadge + '</div>' +
+        '<div class="archive-badges">' + liveBadge + ' ' + wowBadge + ' ' + yoyBadge + '</div>' +
       '</div>' +
       '<div class="archive-kpis">' +
         '<div><span class="lab">売上</span><span class="val">' + yen(sales) + '</span></div>' +
-        '<div><span class="lab">注文</span><span class="val">' + num(orders) + '</span></div>' +
         '<div><span class="lab">CVR</span><span class="val">' + pct(cvr) + '</span></div>' +
-        '<div><span class="lab">items/session</span><span class="val">' + items.toFixed(2) + '</span></div>' +
+        '<div><span class="lab">items/session</span><span class="val">' + itemsStr + '</span></div>' +
+      '</div>' +
+      '<div class="archive-funnel">' +
+        '<div><span class="lab">セッション</span><span class="val">' + num(sessions) + '</span></div>' +
+        '<div><span class="lab">商品閲覧</span><span class="val">' + numOrDash(itemViews) + '</span></div>' +
+        '<div><span class="lab">カート追加</span><span class="val">' + numOrDash(atcs) + '</span></div>' +
+        '<div><span class="lab">支払い開始</span><span class="val">' + numOrDash(checkouts) + '</span></div>' +
+        '<div><span class="lab">購入</span><span class="val">' + num(orders) + '</span></div>' +
+        '<div><span class="lab">カゴ落ち率</span><span class="val">' + pctOrDash(cartAb) + '</span></div>' +
       '</div>' +
       narrativeHtml +
       '<div class="archive-meta">保存日時: ' + (w.captured_at || '—') + '</div>' +
@@ -945,8 +961,124 @@ function renderPM(pm, budget, summary) {
   renderPMWeeklyTrend(summary);
 }
 
+function renderMonitoring(data) {
+  const root = document.getElementById("monitoring-cards");
+  const meta = document.getElementById("monitoring-meta");
+  if (!root) return;
+  if (!data || !data.releases || !data.releases.length) {
+    root.innerHTML = '<p style="color:var(--text-muted)">monitoring.json が空または未生成です。</p>';
+    return;
+  }
+  if (meta && data._meta) {
+    meta.textContent = `生成: ${data._meta.generated_at || "—"} / ソース: ${data._meta.source || "—"}`;
+  }
+  const verdictBadge = {
+    GREEN: { label: "🟢 達成", color: "#22c55e" },
+    YELLOW: { label: "🟡 途中", color: "#eab308" },
+    RED: { label: "🔴 危険", color: "#ef4444" },
+    UNKNOWN: { label: "⚪ 判定不可", color: "#9ca3af" },
+  };
+  const decisionBadge = {
+    DRAFT: "📝 反映前",
+    MONITORING: "👁 監視中",
+    GREEN: "✅ 確定:成功",
+    YELLOW: "⚠️ 確定:微妙",
+    RED: "🚫 確定:失敗",
+  };
+  const fmt = (v) => v == null ? "—" : `${(v * 100).toFixed(2)}%`;
+  const liftFmt = (v) => v == null ? "—" : (v > 0 ? `+${v}%` : `${v}%`);
+  const liftColor = (v) => v == null ? "#9ca3af" : (v > 0 ? "#22c55e" : (v < 0 ? "#ef4444" : "#9ca3af"));
+
+  // ルール文字列から GREEN/RED 閾値を抽出 ("GREEN: rate>=38% / RED: rate<=27%")
+  const parseRule = (rule) => {
+    const out = { green: null, red: null };
+    const g = rule && rule.match(/GREEN[^/]*?([<>]=?)\s*(\d+(?:\.\d+)?)\s*%/i);
+    const r = rule && rule.match(/RED[^/]*?([<>]=?)\s*(\d+(?:\.\d+)?)\s*%/i);
+    if (g) out.green = parseFloat(g[2]);
+    if (r) out.red = parseFloat(r[2]);
+    return out;
+  };
+
+  // 閾値スケールバー (RED閾値〜GREEN閾値の間にAfter値をプロット)
+  const buildScale = (afterPct, thresholds) => {
+    if (afterPct == null || thresholds.red == null || thresholds.green == null) return "";
+    const lo = Math.min(thresholds.red, thresholds.green);
+    const hi = Math.max(thresholds.red, thresholds.green);
+    const margin = (hi - lo) * 0.3;
+    const min = Math.max(0, lo - margin);
+    const max = hi + margin;
+    const pos = Math.min(100, Math.max(0, ((afterPct - min) / (max - min)) * 100));
+    const redEnd = ((thresholds.red - min) / (max - min)) * 100;
+    const greenStart = ((thresholds.green - min) / (max - min)) * 100;
+    return `
+      <div class="threshold-scale">
+        <div class="scale-track">
+          <div class="scale-red" style="width:${redEnd}%"></div>
+          <div class="scale-yellow" style="left:${redEnd}%;width:${greenStart - redEnd}%"></div>
+          <div class="scale-green" style="left:${greenStart}%;width:${100 - greenStart}%"></div>
+          <div class="scale-marker" style="left:${pos}%" title="現在値 ${afterPct.toFixed(2)}%"></div>
+        </div>
+        <div class="scale-labels">
+          <span style="color:#ef4444">RED ≤ ${thresholds.red}%</span>
+          <span style="color:#eab308">YELLOW</span>
+          <span style="color:#22c55e">GREEN ≥ ${thresholds.green}%</span>
+        </div>
+      </div>
+    `;
+  };
+
+  // hypothesis_metric を日本語化
+  const metricLabel = {
+    collection_to_pdp_rate: "コレクション着地 → PDP到達率",
+    atc_to_checkout_rate: "カート → チェックアウト率",
+    view_to_atc_rate: "商品ページ → カート投入率",
+    items_per_session: "セッション当たり商品閲覧数",
+    cvr: "コンバージョン率 (CVR)",
+    line_link_rate: "LINE連携率",
+    subscriber_to_first_purchase_7d: "メール購読→初回購入率(7日)",
+  };
+
+  root.innerHTML = data.releases.map(r => {
+    const v = verdictBadge[r.verdict] || verdictBadge.UNKNOWN;
+    const dec = decisionBadge[r.decision] || r.decision;
+    const thresholds = parseRule(r.decision_rule);
+    const afterPct = r.after_rate != null ? r.after_rate * 100 : null;
+    const scale = buildScale(afterPct, thresholds);
+    const metricJp = metricLabel[r.hypothesis_metric] || r.hypothesis_metric || "—";
+    const expLift = r.expected_lift_pct ? `期待リフト +${r.expected_lift_pct}%` : "";
+    return `
+      <div class="monitoring-card" style="border-left:4px solid ${v.color}">
+        <div class="monitoring-card-header">
+          <div>
+            <div class="monitoring-card-id">${r.release_id}</div>
+            <div class="monitoring-card-metric">${metricJp}</div>
+            <div class="monitoring-card-metric-raw">${r.hypothesis_metric || ""}</div>
+          </div>
+          <div class="monitoring-card-badges">
+            <span class="monitoring-badge" style="background:${v.color}22;color:${v.color}">${v.label}</span>
+            <span class="monitoring-badge monitoring-badge-dec">${dec}</span>
+          </div>
+        </div>
+        <div class="monitoring-card-progress">
+          <div class="progress-bar"><div class="progress-fill" style="width:${r.progress_pct}%;background:${v.color}"></div></div>
+          <div class="progress-text">${r.days_elapsed} / ${r.eval_window_days} 日経過 (${r.progress_pct}%) · 反映 ${r.deployed_at}${expLift ? " · " + expLift : ""}</div>
+        </div>
+        <div class="monitoring-card-numbers">
+          <div class="num-block"><div class="num-label">Before</div><div class="num-value">${fmt(r.before_rate)}</div></div>
+          <div class="num-arrow">→</div>
+          <div class="num-block"><div class="num-label">After (${r.after_window || "—"})</div><div class="num-value">${fmt(r.after_rate)}</div></div>
+          <div class="num-block"><div class="num-label">Lift</div><div class="num-value" style="color:${liftColor(r.lift_pct)}">${liftFmt(r.lift_pct)}</div></div>
+        </div>
+        ${scale}
+        <div class="monitoring-summary">${r.summary || ""}</div>
+        ${r.notes ? `<details class="monitoring-card-details"><summary>運用メモ</summary><div class="monitoring-notes">${r.notes}</div></details>` : ""}
+      </div>
+    `;
+  }).join("");
+}
+
 (async () => {
-  const [summary, funnel, channels, archive, monthly, products, channelFunnel, klaviyo, pm, budget] = await Promise.all([
+  const [summary, funnel, channels, archive, monthly, products, channelFunnel, klaviyo, pm, budget, monitoring] = await Promise.all([
     load("summary.json"),
     load("funnel.json"),
     load("channels.json"),
@@ -957,6 +1089,7 @@ function renderPM(pm, budget, summary) {
     load("klaviyo.json"),
     load("pm.json"),
     load("budget.json"),
+    load("monitoring.json"),
   ]);
   if (summary && summary.last_updated) {
     document.getElementById("last-updated").textContent = summary.last_updated;
@@ -977,6 +1110,7 @@ function renderPM(pm, budget, summary) {
   renderArchiveMonthly(monthly);
   renderProductsTop5(funnel);
   renderPM(pm, budget, summary);
+  renderMonitoring(monitoring);
 
   // Scroll reveal
   const candidates = document.querySelectorAll(".card, .kpi, .archive-card, .archive-month-card, .state-card");
