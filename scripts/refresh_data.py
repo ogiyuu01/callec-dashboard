@@ -58,6 +58,7 @@ def _find_data_file(name: str) -> Path:
     if primary.exists():
         return primary
     for c in (
+        ROOT / "data" / name,                                 # dashboard repo ルート data/ vendor (CI で sibling 不在時の last resort)
         ROOT.parent.parent / "shopify-inhouse" / "shopify-ec-automation" / "data" / name,
         ROOT.parent / "shopify-ec-automation" / "data" / name,
         ROOT / "shopify-ec-automation" / "data" / name,
