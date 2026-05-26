@@ -203,30 +203,62 @@ def build_weekly_archive_from_csv() -> list[dict]:
     return entries
 
 
-def update_archive(summary: dict) -> None:
+def update_archive(summary: dict, client: "bigquery.Client | None" = None) -> None:
     """週次アーカイブ archive.json を生成する。
-    1. weekly_kpi.csv ベースで 2026-W14 以降の確定週を全件展開
-    2. 現在進行中の週は live BQ summary を上書き保存
+    1. weekly_kpi.csv ベースで 2026-W10 以降の確定週を全件展開
+    2. 現在進行中の週は ISO週の月曜〜昨日を BQ から再集計して live 表示
+       (summary.last_7d は rolling 7d なので週初の表示と合わない)
     """
     weekly_entries = build_weekly_archive_from_csv()
 
-    # 現在進行中（=今週）のエントリは live summary 由来で上書き
+    # 現在進行中（=今週）のエントリは BQ から week-to-date を取得
     today = date.today()
     cur_monday = today - timedelta(days=today.weekday())
     iso_y, iso_w, _ = cur_monday.isocalendar()
     cur_label = f"{iso_y}-W{iso_w:02d}"
     cur_sunday = cur_monday + timedelta(days=6)
+    last_day = today - timedelta(days=1)  # BQ にあるのは昨日まで
+
+    live_kpis = summary.get("last_7d", {})  # フォールバック
+    if client is not None and last_day >= cur_monday:
+        try:
+            sql = f"""
+            SELECT COUNT(*) AS sessions,
+                   SUM(item_views) AS item_views,
+                   SUM(purchases) AS orders,
+                   CAST(SUM(revenue) AS INT64) AS sales,
+                   SAFE_DIVIDE(SUM(purchases), COUNT(*)) AS cvr,
+                   SAFE_DIVIDE(SUM(revenue), NULLIF(SUM(purchases),0)) AS aov,
+                   SAFE_DIVIDE(SUM(item_views), COUNT(*)) AS items_per_session
+            FROM `{PROJECT}.{DATASET}.sessions_clean`
+            WHERE event_date BETWEEN '{cur_monday.strftime("%Y%m%d")}' AND '{last_day.strftime("%Y%m%d")}'
+            """
+            r = list(client.query(sql).result())
+            if r:
+                row = dict(r[0])
+                live_kpis = {
+                    "sessions": int(row.get("sessions") or 0),
+                    "item_views": int(row.get("item_views") or 0),
+                    "orders": int(row.get("orders") or 0),
+                    "sales": int(row.get("sales") or 0),
+                    "cvr": float(row.get("cvr") or 0),
+                    "aov": float(row.get("aov") or 0),
+                    "items_per_session": float(row.get("items_per_session") or 0),
+                }
+        except Exception as exc:
+            print(f"  warn: live week-to-date query failed: {exc}")
 
     live_entry = {
         "week": cur_label,
         "start_date": cur_monday.isoformat(),
         "end_date": cur_sunday.isoformat(),
-        "kpis": summary.get("last_7d", {}),
+        "kpis": live_kpis,
         "yoy": summary.get("yoy", {}),
         "prev": summary.get("prev_7d", {}),
         "narrative": summary.get("narrative", {}),
         "captured_at": now_jst().strftime("%Y-%m-%d %H:%M"),
         "live": True,
+        "live_through": last_day.isoformat(),  # 週途中の場合 何日までのデータか
     }
 
     # 重複排除
@@ -1188,7 +1220,7 @@ def main() -> int:
     funnel_data["products_top5"] = build_products_top5(client).get("items", [])
     write_json("funnel.json", funnel_data)
     write_json("channels.json", build_channels(client))
-    update_archive(summary)
+    update_archive(summary, client)
     build_monthly_archive()
     print("refresh complete")
     return 0
