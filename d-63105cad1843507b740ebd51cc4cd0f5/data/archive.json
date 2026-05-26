@@ -14,13 +14,12 @@
         "items_per_session": 0.9125589369909987
       },
       "yoy": {
-        "sessions": 0,
-        "item_views": 0,
-        "orders": 0,
-        "sales": 0,
-        "cvr": 0.0,
-        "aov": 0.0,
-        "items_per_session": 0.0
+        "sessions": 6875,
+        "orders": 26,
+        "sales": 571637,
+        "cvr": 0.0038,
+        "aov": 21986.0,
+        "items_per_session": 0
       },
       "prev": {
         "sessions": 6334,
@@ -35,7 +34,7 @@
         "lines": [
           "📉 今週の売上 ¥917,180（先週より -30%）",
           "   注文は 44 件 / 先週は 57 件",
-          "📊 買ってくれる人の割合（CVR）は前年並みです（0.47%）",
+          "✅ 買ってくれる人の割合（CVR）は前年より改善しています（0.47%）",
           "🔴 1セッションあたりの商品閲覧数 0.91 は低めです。商品ページにたどり着けていない人が多い状態です。"
         ],
         "actions": [
@@ -44,8 +43,348 @@
           "LINE 配信時は ?utm_source=line&utm_medium=line&utm_campaign=日付_内容 を必ず付ける"
         ]
       },
-      "captured_at": "2026-05-26 10:53",
+      "captured_at": "2026-05-26 11:10",
       "live": true
+    },
+    {
+      "week": "2026-W20",
+      "start_date": "2026-05-11",
+      "end_date": "2026-05-17",
+      "kpis": {
+        "sessions": 6614,
+        "orders": 55,
+        "sales": 1303390,
+        "cvr": 0.0083,
+        "aov": 23698.0,
+        "items_per_session": null
+      },
+      "prev": {
+        "sessions": 9054,
+        "orders": 44,
+        "sales": 838420
+      },
+      "yoy": {
+        "sessions": 6631,
+        "orders": 0,
+        "sales": 0
+      },
+      "narrative": {
+        "lines": [
+          "📈 売上 ¥1,303,390（先週比 +55%）",
+          "   注文 55 件・CVR 0.83%・AOV ¥23,698"
+        ]
+      },
+      "captured_at": "2026-05-26 11:10"
+    },
+    {
+      "week": "2026-W19",
+      "start_date": "2026-05-04",
+      "end_date": "2026-05-10",
+      "kpis": {
+        "sessions": 9054,
+        "orders": 44,
+        "sales": 838420,
+        "cvr": 0.0049,
+        "aov": 19055.0,
+        "items_per_session": null
+      },
+      "prev": {
+        "sessions": 7327,
+        "orders": 26,
+        "sales": 467499
+      },
+      "yoy": {
+        "sessions": 4926,
+        "orders": 40,
+        "sales": 645948
+      },
+      "narrative": {
+        "lines": [
+          "📈 売上 ¥838,420（先週比 +79%）",
+          "✅ 前年同週比 +30%（前年 ¥645,948）",
+          "   注文 44 件・CVR 0.49%・AOV ¥19,055"
+        ]
+      },
+      "captured_at": "2026-05-26 11:10"
+    },
+    {
+      "week": "2026-W18",
+      "start_date": "2026-04-27",
+      "end_date": "2026-05-03",
+      "kpis": {
+        "sessions": 7327,
+        "orders": 26,
+        "sales": 467499,
+        "cvr": 0.0035,
+        "aov": 17980.0,
+        "items_per_session": null
+      },
+      "prev": {
+        "sessions": 7754,
+        "orders": 43,
+        "sales": 844470
+      },
+      "yoy": {
+        "sessions": 8789,
+        "orders": 80,
+        "sales": 1350389
+      },
+      "narrative": {
+        "lines": [
+          "📉 売上 ¥467,499（先週比 -45%）",
+          "⚠️ 前年同週比 -65%（前年 ¥1,350,389）",
+          "   注文 26 件・CVR 0.35%・AOV ¥17,980"
+        ]
+      },
+      "captured_at": "2026-05-26 11:10"
+    },
+    {
+      "week": "2026-W17",
+      "start_date": "2026-04-20",
+      "end_date": "2026-04-26",
+      "kpis": {
+        "sessions": 7754,
+        "orders": 43,
+        "sales": 844470,
+        "cvr": 0.0055,
+        "aov": 19638.0,
+        "items_per_session": null
+      },
+      "prev": {
+        "sessions": 9240,
+        "orders": 35,
+        "sales": 643939
+      },
+      "yoy": {
+        "sessions": 7729,
+        "orders": 55,
+        "sales": 1244347
+      },
+      "narrative": {
+        "lines": [
+          "📈 売上 ¥844,470（先週比 +31%）",
+          "⚠️ 前年同週比 -32%（前年 ¥1,244,347）",
+          "   注文 43 件・CVR 0.55%・AOV ¥19,638"
+        ]
+      },
+      "captured_at": "2026-05-26 11:10"
+    },
+    {
+      "week": "2026-W16",
+      "start_date": "2026-04-13",
+      "end_date": "2026-04-19",
+      "kpis": {
+        "sessions": 9240,
+        "orders": 35,
+        "sales": 643939,
+        "cvr": 0.0038,
+        "aov": 18398.0,
+        "items_per_session": null
+      },
+      "prev": {
+        "sessions": 8371,
+        "orders": 42,
+        "sales": 846120
+      },
+      "yoy": {
+        "sessions": 7061,
+        "orders": 45,
+        "sales": 938547
+      },
+      "narrative": {
+        "lines": [
+          "📉 売上 ¥643,939（先週比 -24%）",
+          "⚠️ 前年同週比 -31%（前年 ¥938,547）",
+          "   注文 35 件・CVR 0.38%・AOV ¥18,398"
+        ]
+      },
+      "captured_at": "2026-05-26 11:10"
+    },
+    {
+      "week": "2026-W15",
+      "start_date": "2026-04-06",
+      "end_date": "2026-04-12",
+      "kpis": {
+        "sessions": 8371,
+        "orders": 42,
+        "sales": 846120,
+        "cvr": 0.005,
+        "aov": 20145.0,
+        "items_per_session": null
+      },
+      "prev": {
+        "sessions": 8172,
+        "orders": 41,
+        "sales": 976910
+      },
+      "yoy": {
+        "sessions": 7266,
+        "orders": 38,
+        "sales": 888910
+      },
+      "narrative": {
+        "lines": [
+          "📉 売上 ¥846,120（先週比 -13%）",
+          "⚠️ 前年同週比 -5%（前年 ¥888,910）",
+          "   注文 42 件・CVR 0.50%・AOV ¥20,145"
+        ]
+      },
+      "captured_at": "2026-05-26 11:10"
+    },
+    {
+      "week": "2026-W14",
+      "start_date": "2026-03-30",
+      "end_date": "2026-04-05",
+      "kpis": {
+        "sessions": 8172,
+        "orders": 41,
+        "sales": 976910,
+        "cvr": 0.005,
+        "aov": 23827.0,
+        "items_per_session": null
+      },
+      "prev": {
+        "sessions": 10515,
+        "orders": 38,
+        "sales": 594880
+      },
+      "yoy": {
+        "sessions": 8728,
+        "orders": 115,
+        "sales": 2490054
+      },
+      "narrative": {
+        "lines": [
+          "📈 売上 ¥976,910（先週比 +64%）",
+          "⚠️ 前年同週比 -61%（前年 ¥2,490,054）",
+          "   注文 41 件・CVR 0.50%・AOV ¥23,827"
+        ]
+      },
+      "captured_at": "2026-05-26 11:10"
+    },
+    {
+      "week": "2026-W13",
+      "start_date": "2026-03-23",
+      "end_date": "2026-03-29",
+      "kpis": {
+        "sessions": 10515,
+        "orders": 38,
+        "sales": 594880,
+        "cvr": 0.0036,
+        "aov": 15654.0,
+        "items_per_session": null
+      },
+      "prev": {
+        "sessions": 7749,
+        "orders": 35,
+        "sales": 610060
+      },
+      "yoy": {
+        "sessions": 8108,
+        "orders": 96,
+        "sales": 2040537
+      },
+      "narrative": {
+        "lines": [
+          "→ 売上 ¥594,880（先週比 -2%）",
+          "⚠️ 前年同週比 -71%（前年 ¥2,040,537）",
+          "   注文 38 件・CVR 0.36%・AOV ¥15,654"
+        ]
+      },
+      "captured_at": "2026-05-26 11:10"
+    },
+    {
+      "week": "2026-W12",
+      "start_date": "2026-03-16",
+      "end_date": "2026-03-22",
+      "kpis": {
+        "sessions": 7749,
+        "orders": 35,
+        "sales": 610060,
+        "cvr": 0.0045,
+        "aov": 17430.0,
+        "items_per_session": null
+      },
+      "prev": {
+        "sessions": 6963,
+        "orders": 47,
+        "sales": 1189430
+      },
+      "yoy": {
+        "sessions": 7460,
+        "orders": 52,
+        "sales": 932324
+      },
+      "narrative": {
+        "lines": [
+          "📉 売上 ¥610,060（先週比 -49%）",
+          "⚠️ 前年同週比 -35%（前年 ¥932,324）",
+          "   注文 35 件・CVR 0.45%・AOV ¥17,430"
+        ]
+      },
+      "captured_at": "2026-05-26 11:10"
+    },
+    {
+      "week": "2026-W11",
+      "start_date": "2026-03-09",
+      "end_date": "2026-03-15",
+      "kpis": {
+        "sessions": 6963,
+        "orders": 47,
+        "sales": 1189430,
+        "cvr": 0.0067,
+        "aov": 25307.0,
+        "items_per_session": null
+      },
+      "prev": {
+        "sessions": 8354,
+        "orders": 20,
+        "sales": 505449
+      },
+      "yoy": {
+        "sessions": 6327,
+        "orders": 38,
+        "sales": 819656
+      },
+      "narrative": {
+        "lines": [
+          "📈 売上 ¥1,189,430（先週比 +135%）",
+          "✅ 前年同週比 +45%（前年 ¥819,656）",
+          "   注文 47 件・CVR 0.67%・AOV ¥25,307"
+        ]
+      },
+      "captured_at": "2026-05-26 11:10"
+    },
+    {
+      "week": "2026-W10",
+      "start_date": "2026-03-02",
+      "end_date": "2026-03-08",
+      "kpis": {
+        "sessions": 8354,
+        "orders": 20,
+        "sales": 505449,
+        "cvr": 0.0024,
+        "aov": 25272.0,
+        "items_per_session": null
+      },
+      "prev": {
+        "sessions": 5148,
+        "orders": 23,
+        "sales": 438130
+      },
+      "yoy": {
+        "sessions": 6506,
+        "orders": 28,
+        "sales": 613817
+      },
+      "narrative": {
+        "lines": [
+          "📈 売上 ¥505,449（先週比 +15%）",
+          "⚠️ 前年同週比 -18%（前年 ¥613,817）",
+          "   注文 20 件・CVR 0.24%・AOV ¥25,272"
+        ]
+      },
+      "captured_at": "2026-05-26 11:10"
     }
   ]
 }
