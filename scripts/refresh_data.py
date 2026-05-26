@@ -32,20 +32,21 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 PROJECT = "gen-lang-client-0015689236"
 DATASET = "analytics_320051621"
 
-# 隣接の作業リポジトリから CSV を読む。
-# GH Actions では workspace 内 (ROOT / "shopify-ec-automation")、
-# ローカル開発では ROOT.parent / "shopify-ec-automation" もしくは
-# shopify-inhouse/shopify-ec-automation のいずれかに配置されている。
+# CSV ソースを解決する。
+# 1. ダッシュボード repo 直下 data/weekly_kpi.csv (vendor 同梱、GH Actions の正規ソース)
+# 2. ローカル開発: shopify-inhouse/shopify-ec-automation 配下
+# 3. 旧 path: ROOT.parent / shopify-ec-automation
+# 4. 旧 path: ROOT / shopify-ec-automation (GH Actions の旧 checkout 互換)
 def _resolve_sibling() -> Path:
     candidates = [
-        ROOT / "shopify-ec-automation",                       # GH Actions (path: shopify-ec-automation)
+        ROOT,                                                 # vendor 同梱 (data/weekly_kpi.csv)
+        ROOT.parent.parent / "shopify-inhouse" / "shopify-ec-automation",  # ローカル
         ROOT.parent / "shopify-ec-automation",                # ローカル: dashboard/ の隣
-        ROOT.parent.parent / "shopify-inhouse" / "shopify-ec-automation",  # ローカル: shopify-inhouse/ 配下
+        ROOT / "shopify-ec-automation",                       # GH Actions 旧 checkout 互換
     ]
     for c in candidates:
         if (c / "data" / "weekly_kpi.csv").exists():
             return c
-    # 見つからなくても従来挙動に合わせて先頭を返す（後段は .exists() で分岐）
     return candidates[0]
 
 
@@ -246,7 +247,7 @@ def build_monthly_archive() -> None:
         return
 
     from collections import defaultdict
-    months: dict[str, dict] = defaultdict(lambda: {"sessions": 0, "orders": 0, "sales": 0})
+    months: dict[str, dict] = defaultdict(lambda: {"sessions": 0.0, "orders": 0.0, "sales": 0.0})
     with WEEKLY_KPI.open(encoding="utf-8-sig", newline="") as f:
         for r in csv.DictReader(f):
             week = r.get("week", "")
@@ -259,10 +260,16 @@ def build_monthly_archive() -> None:
                 continue
             if monday < date(2025, 3, 1):  # 前年同月比較のため2025-03も含める
                 continue
-            month_label = monday.strftime("%Y-%m")
-            months[month_label]["sessions"] += int(r.get("sessions", 0) or 0)
-            months[month_label]["orders"]   += int(r.get("orders", 0) or 0)
-            months[month_label]["sales"]    += int(r.get("sales", 0) or 0)
+            sessions = int(r.get("sessions", 0) or 0)
+            orders   = int(r.get("orders", 0) or 0)
+            sales    = int(r.get("sales", 0) or 0)
+            # 月跨ぎ週は1日均等(=1/7ずつ)で各月に按分し、境界月の片寄りを防ぐ
+            for day_offset in range(7):
+                d = monday + timedelta(days=day_offset)
+                month_label = d.strftime("%Y-%m")
+                months[month_label]["sessions"] += sessions / 7.0
+                months[month_label]["orders"]   += orders / 7.0
+                months[month_label]["sales"]    += sales / 7.0
 
     sorted_months = sorted(months.keys())
     entries: list[dict] = []
@@ -270,9 +277,10 @@ def build_monthly_archive() -> None:
         if m < "2026-03":
             continue  # 表示は2026-03以降のみ
         v = months[m]
-        sessions = v["sessions"]
-        orders = v["orders"]
-        sales = v["sales"]
+        # 1/7 按分で float 蓄積 → 表示・保存時に四捨五入
+        sessions = int(round(v["sessions"]))
+        orders = int(round(v["orders"]))
+        sales = int(round(v["sales"]))
         cvr = orders / sessions if sessions else 0
         aov = sales / orders if orders else 0
 
@@ -310,8 +318,8 @@ def build_monthly_archive() -> None:
         entries.append({
             "month": m,
             "kpis": {"sessions": sessions, "orders": orders, "sales": sales, "cvr": cvr, "aov": aov},
-            "prev": {"sessions": prev["sessions"], "orders": prev["orders"], "sales": prev["sales"]} if prev else {},
-            "yoy":  {"sessions": yoy["sessions"],  "orders": yoy["orders"],  "sales": yoy["sales"]}  if yoy  else {},
+            "prev": {"sessions": int(round(prev["sessions"])), "orders": int(round(prev["orders"])), "sales": int(round(prev["sales"]))} if prev else {},
+            "yoy":  {"sessions": int(round(yoy["sessions"])),  "orders": int(round(yoy["orders"])),  "sales": int(round(yoy["sales"]))}  if yoy  else {},
             "narrative": {"lines": narrative_lines},
             "captured_at": now_jst().strftime("%Y-%m-%d %H:%M"),
         })

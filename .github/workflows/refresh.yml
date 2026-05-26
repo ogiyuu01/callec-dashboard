@@ -16,13 +16,8 @@ jobs:
       - name: Checkout dashboard repo
         uses: actions/checkout@v4
 
-      - name: Checkout sibling shopify-ec-automation repo (optional - release_log.csv / weekly_kpi.csv)
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ github.repository_owner }}/shopify-ec-automation
-          token: ${{ secrets.SIBLING_REPO_TOKEN }}
-          path: shopify-ec-automation
-        continue-on-error: true
+      # 2026-05-26: weekly_kpi.csv は data/weekly_kpi.csv に vendor 同梱したため
+      # sibling repo の checkout は不要 (旧 step は SIBLING_REPO_TOKEN 未設定で fail していた)
 
       - name: Set up Python
         uses: actions/setup-python@v5
