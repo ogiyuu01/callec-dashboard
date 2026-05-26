@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-26 09:03 JST",
+  "last_updated": "2026-05-26 10:54 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -67,11 +67,11 @@
       "current_7d": {
         "recipients": 67.0,
         "opens": 18.0,
-        "clicks": 3.0,
+        "clicks": 4.0,
         "convs": 2.0,
         "rev": 38830.0,
         "open_rate": 0.26865671641791045,
-        "click_rate": 0.04477611940298507,
+        "click_rate": 0.05970149253731343,
         "conv_rate": 0.029850746268656716
       },
       "previous_7d": {
@@ -87,11 +87,11 @@
       "current_30d": {
         "recipients": 327.0,
         "opens": 88.0,
-        "clicks": 17.0,
+        "clicks": 18.0,
         "convs": 6.0,
         "rev": 106810.0,
         "open_rate": 0.2691131498470948,
-        "click_rate": 0.05198776758409786,
+        "click_rate": 0.05504587155963303,
         "conv_rate": 0.01834862385321101
       },
       "previous_30d": {
@@ -107,11 +107,11 @@
       "annual": {
         "recipients": 931.0,
         "opens": 247.0,
-        "clicks": 42.0,
+        "clicks": 43.0,
         "convs": 19.0,
         "rev": 320320.0,
         "open_rate": 0.2653061224489796,
-        "click_rate": 0.045112781954887216,
+        "click_rate": 0.04618689581095596,
         "conv_rate": 0.02040816326530612
       },
       "wow_pct": 63.42592592592593,
