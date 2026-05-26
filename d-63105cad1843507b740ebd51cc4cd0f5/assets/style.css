@@ -1314,3 +1314,18 @@ footer {
   color: var(--text-muted); font-size: 0.74rem; line-height: 1.5;
   white-space: pre-wrap;
 }
+
+/* Monitoring text-readable additions */
+.monitoring-metric-explain {
+  font-size: 0.74rem; color: var(--text-muted); margin-top: 4px; line-height: 1.4;
+  font-style: italic;
+}
+.monitoring-interpret {
+  padding: 12px 14px; border-radius: 6px; margin: 12px 0;
+  font-size: 0.84rem; line-height: 1.6; color: var(--text-soft);
+}
+.monitoring-plain100 {
+  text-align: center; font-size: 0.78rem; color: var(--text-muted);
+  margin: -6px 0 4px;
+}
+.monitoring-plain100 strong { color: var(--text-soft); font-size: 0.92rem; }

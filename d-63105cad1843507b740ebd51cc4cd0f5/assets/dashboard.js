@@ -1027,7 +1027,7 @@ function renderMonitoring(data) {
     `;
   };
 
-  // hypothesis_metric を日本語化
+  // hypothesis_metric を日本語化 + プレーン説明
   const metricLabel = {
     collection_to_pdp_rate: "コレクション着地 → PDP到達率",
     atc_to_checkout_rate: "カート → チェックアウト率",
@@ -1037,6 +1037,41 @@ function renderMonitoring(data) {
     line_link_rate: "LINE連携率",
     subscriber_to_first_purchase_7d: "メール購読→初回購入率(7日)",
   };
+  const metricPlain = {
+    collection_to_pdp_rate: "コレクションページに来た100人のうち、何人が商品ページまで進んだか",
+    atc_to_checkout_rate: "カートに入れた100人のうち、何人がレジまで進んだか",
+    view_to_atc_rate: "商品ページを見た100人のうち、何人がカートに入れたか",
+    line_link_rate: "注文した顧客のうち、LINE連携を完了した割合",
+    subscriber_to_first_purchase_7d: "メール購読後7日以内に初回購入した割合",
+  };
+
+  // 100人換算で数値を平易表現
+  const ratePerHundred = (v) => v == null ? null : Math.round(v * 100 * 10) / 10;
+
+  // 状況を平易な日本語で説明
+  const interpret = (r, thresholds) => {
+    if (r.verdict === "UNKNOWN") {
+      return "📊 まだデータ不足で判定できません。スナップショット取得を待ち中。";
+    }
+    const afterPct = r.after_rate != null ? r.after_rate * 100 : null;
+    const lift = r.lift_pct;
+    const remaining = r.eval_window_days - r.days_elapsed;
+    const remainingTxt = remaining > 0 ? `残り${remaining}日` : "評価期間満了";
+
+    if (r.verdict === "GREEN") {
+      return `🎉 目標達成！ GREEN ${thresholds.green}% を上回る ${afterPct.toFixed(1)}% を記録。${remainingTxt}で確定見込。`;
+    }
+    if (r.verdict === "RED") {
+      const gap = afterPct != null && thresholds.red != null ? (thresholds.red - afterPct).toFixed(1) : "?";
+      return `⚠️ 危険水準。RED 閾値 ${thresholds.red}% より ${gap}pt 下回っています。要因分析・ロールバック検討を。`;
+    }
+    if (r.verdict === "YELLOW") {
+      const toGreen = afterPct != null && thresholds.green != null ? (thresholds.green - afterPct).toFixed(1) : "?";
+      const liftTxt = lift == null ? "" : (lift > 5 ? `Before比 +${lift}% で順調に改善中。` : lift > 0 ? `Before比 +${lift}% で微改善。` : lift < -5 ? `Before比 ${lift}% で悪化傾向。` : `Before比ほぼ横ばい。`);
+      return `${liftTxt}GREEN まで残り ${toGreen}pt、${remainingTxt}で結果が決まります。`;
+    }
+    return "";
+  };
 
   root.innerHTML = data.releases.map(r => {
     const v = verdictBadge[r.verdict] || verdictBadge.UNKNOWN;
@@ -1045,33 +1080,50 @@ function renderMonitoring(data) {
     const afterPct = r.after_rate != null ? r.after_rate * 100 : null;
     const scale = buildScale(afterPct, thresholds);
     const metricJp = metricLabel[r.hypothesis_metric] || r.hypothesis_metric || "—";
+    const metricExp = metricPlain[r.hypothesis_metric] || "";
     const expLift = r.expected_lift_pct ? `期待リフト +${r.expected_lift_pct}%` : "";
+    const interpretText = interpret(r, thresholds);
+    const bp = ratePerHundred(r.before_rate);
+    const ap = ratePerHundred(r.after_rate);
+    const plain100 = (bp != null && ap != null && r.hypothesis_metric in metricPlain)
+      ? `100人中: <strong>${bp}人</strong> → <strong>${ap}人</strong>`
+      : "";
     return `
       <div class="monitoring-card" style="border-left:4px solid ${v.color}">
         <div class="monitoring-card-header">
           <div>
             <div class="monitoring-card-id">${r.release_id}</div>
             <div class="monitoring-card-metric">${metricJp}</div>
-            <div class="monitoring-card-metric-raw">${r.hypothesis_metric || ""}</div>
+            ${metricExp ? `<div class="monitoring-metric-explain">${metricExp}</div>` : ""}
           </div>
           <div class="monitoring-card-badges">
             <span class="monitoring-badge" style="background:${v.color}22;color:${v.color}">${v.label}</span>
             <span class="monitoring-badge monitoring-badge-dec">${dec}</span>
           </div>
         </div>
+
+        ${interpretText ? `<div class="monitoring-interpret" style="background:${v.color}11;border-left:3px solid ${v.color}">${interpretText}</div>` : ""}
+
         <div class="monitoring-card-progress">
           <div class="progress-bar"><div class="progress-fill" style="width:${r.progress_pct}%;background:${v.color}"></div></div>
-          <div class="progress-text">${r.days_elapsed} / ${r.eval_window_days} 日経過 (${r.progress_pct}%) · 反映 ${r.deployed_at}${expLift ? " · " + expLift : ""}</div>
+          <div class="progress-text">${r.deployed_at} 反映 · ${r.days_elapsed}日経過 / 評価期間 ${r.eval_window_days}日${expLift ? " · " + expLift : ""}</div>
         </div>
+
         <div class="monitoring-card-numbers">
-          <div class="num-block"><div class="num-label">Before</div><div class="num-value">${fmt(r.before_rate)}</div></div>
+          <div class="num-block"><div class="num-label">反映前</div><div class="num-value">${fmt(r.before_rate)}</div></div>
           <div class="num-arrow">→</div>
-          <div class="num-block"><div class="num-label">After (${r.after_window || "—"})</div><div class="num-value">${fmt(r.after_rate)}</div></div>
-          <div class="num-block"><div class="num-label">Lift</div><div class="num-value" style="color:${liftColor(r.lift_pct)}">${liftFmt(r.lift_pct)}</div></div>
+          <div class="num-block"><div class="num-label">反映後 (${r.after_window || "—"})</div><div class="num-value">${fmt(r.after_rate)}</div></div>
+          <div class="num-block"><div class="num-label">変化</div><div class="num-value" style="color:${liftColor(r.lift_pct)}">${liftFmt(r.lift_pct)}</div></div>
         </div>
+        ${plain100 ? `<div class="monitoring-plain100">${plain100}</div>` : ""}
+
         ${scale}
-        <div class="monitoring-summary">${r.summary || ""}</div>
-        ${r.notes ? `<details class="monitoring-card-details"><summary>運用メモ</summary><div class="monitoring-notes">${r.notes}</div></details>` : ""}
+
+        <details class="monitoring-card-details" open>
+          <summary>このリリースで何を変えたか</summary>
+          <div class="monitoring-summary">${r.summary || "—"}</div>
+        </details>
+        ${r.notes ? `<details class="monitoring-card-details"><summary>運用メモ・補足情報</summary><div class="monitoring-notes">${r.notes}</div></details>` : ""}
       </div>
     `;
   }).join("");

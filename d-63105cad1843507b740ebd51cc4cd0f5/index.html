@@ -25,6 +25,7 @@
     </div>
     <div class="sidebar-section">
       <div class="sidebar-label">ドリルダウン</div>
+      <button class="nav-item" data-tab="monitoring">🔬 モニタリング</button>
       <button class="nav-item" data-tab="products">🎯 商品</button>
       <button class="nav-item" data-tab="customers">👥 顧客</button>
       <button class="nav-item" data-tab="funnel">🛒 ファネル</button>
@@ -54,6 +55,7 @@
 
 <nav class="tabs container mobile-only">
   <button class="tab active" data-tab="pm">📊 PM</button>
+  <button class="tab" data-tab="monitoring">🔬 モニタ</button>
   <button class="tab" data-tab="products">🎯 商品</button>
   <button class="tab" data-tab="customers">👥 顧客</button>
   <button class="tab" data-tab="funnel">🛒 ファネル</button>
@@ -113,6 +115,17 @@
       <p class="pm-section-note">直近の4ソースイベントを時系列で表示（最新40件）</p>
       <div class="pm-activity-filters" id="pm-activity-filters"></div>
       <div class="pm-activity" id="pm-activity"></div>
+    </div>
+  </section>
+
+  <section class="page" id="page-monitoring">
+    <span class="eyebrow">Release Monitoring · Hypothesis Tracking</span>
+    <h2>🔬 モニタリング</h2>
+    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">本番反映済みリリースの仮説指標と判定状況。Before/After は eval_window_days と同じ長さで自動算出 (BQ 直撃)。</p>
+    <div class="card">
+      <h3>リリース一覧</h3>
+      <p style="color:var(--text-muted);font-size:0.78rem;margin-bottom:14px;" id="monitoring-meta">—</p>
+      <div id="monitoring-cards" class="monitoring-grid"></div>
     </div>
   </section>
 
