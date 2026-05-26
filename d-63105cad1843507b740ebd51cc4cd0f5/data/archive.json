@@ -7,10 +7,13 @@
       "kpis": {
         "sessions": 974,
         "item_views": 1060,
+        "atcs": 27,
+        "checkouts": 9,
         "orders": 5,
         "sales": 103730,
         "cvr": 0.00513347022587269,
         "aov": 20746.0,
+        "cart_abandonment_rate": 0.8148148148148148,
         "items_per_session": 1.0882956878850103
       },
       "yoy": {
@@ -30,20 +33,7 @@
         "aov": 22856.842105263157,
         "items_per_session": 1.338964319545311
       },
-      "narrative": {
-        "lines": [
-          "📉 今週の売上 ¥917,180（先週より -30%）",
-          "   注文は 44 件 / 先週は 57 件",
-          "✅ 買ってくれる人の割合（CVR）は前年より改善しています（0.47%）",
-          "🔴 1セッションあたりの商品閲覧数 0.91 は低めです。商品ページにたどり着けていない人が多い状態です。"
-        ],
-        "actions": [
-          "R001（コレクションページ改善）を本番に反映する",
-          "メルマガ配信時にURLに utm を手で書かない（Shopify Email 自動UTMに任せる）",
-          "LINE 配信時は ?utm_source=line&utm_medium=line&utm_campaign=日付_内容 を必ず付ける"
-        ]
-      },
-      "captured_at": "2026-05-26 11:55",
+      "captured_at": "2026-05-26 12:03",
       "live": true,
       "live_through": "2026-05-25"
     },
@@ -57,7 +47,11 @@
         "sales": 952820,
         "cvr": 0.0049,
         "aov": 20713.0,
-        "items_per_session": null
+        "item_views": 8615,
+        "atcs": 257,
+        "checkouts": 82,
+        "cart_abandonment_rate": 0.8210116731517509,
+        "items_per_session": 0.9223768736616702
       },
       "prev": {
         "sessions": 6614,
@@ -76,7 +70,7 @@
           "   注文 46 件・CVR 0.49%・AOV ¥20,713"
         ]
       },
-      "captured_at": "2026-05-26 11:55"
+      "captured_at": "2026-05-26 12:03"
     },
     {
       "week": "2026-W20",
@@ -88,7 +82,11 @@
         "sales": 1303390,
         "cvr": 0.0083,
         "aov": 23698.0,
-        "items_per_session": null
+        "item_views": 8666,
+        "atcs": 325,
+        "checkouts": 93,
+        "cart_abandonment_rate": 0.8307692307692308,
+        "items_per_session": 1.364079962222572
       },
       "prev": {
         "sessions": 9054,
@@ -106,7 +104,7 @@
           "   注文 55 件・CVR 0.83%・AOV ¥23,698"
         ]
       },
-      "captured_at": "2026-05-26 11:55"
+      "captured_at": "2026-05-26 12:03"
     },
     {
       "week": "2026-W19",
@@ -118,7 +116,11 @@
         "sales": 838420,
         "cvr": 0.0049,
         "aov": 19055.0,
-        "items_per_session": null
+        "item_views": 10874,
+        "atcs": 232,
+        "checkouts": 96,
+        "cart_abandonment_rate": 0.8103448275862069,
+        "items_per_session": 1.2010161254694058
       },
       "prev": {
         "sessions": 7327,
@@ -137,7 +139,7 @@
           "   注文 44 件・CVR 0.49%・AOV ¥19,055"
         ]
       },
-      "captured_at": "2026-05-26 11:55"
+      "captured_at": "2026-05-26 12:03"
     },
     {
       "week": "2026-W18",
@@ -149,7 +151,11 @@
         "sales": 467499,
         "cvr": 0.0035,
         "aov": 17980.0,
-        "items_per_session": null
+        "item_views": 8052,
+        "atcs": 160,
+        "checkouts": 44,
+        "cart_abandonment_rate": 0.8375,
+        "items_per_session": 1.116008316008316
       },
       "prev": {
         "sessions": 7754,
@@ -168,7 +174,7 @@
           "   注文 26 件・CVR 0.35%・AOV ¥17,980"
         ]
       },
-      "captured_at": "2026-05-26 11:55"
+      "captured_at": "2026-05-26 12:03"
     },
     {
       "week": "2026-W17",
@@ -180,6 +186,10 @@
         "sales": 844470,
         "cvr": 0.0055,
         "aov": 19638.0,
+        "item_views": null,
+        "atcs": 216,
+        "checkouts": 72,
+        "cart_abandonment_rate": 0.8009259259259259,
         "items_per_session": null
       },
       "prev": {
@@ -199,7 +209,7 @@
           "   注文 43 件・CVR 0.55%・AOV ¥19,638"
         ]
       },
-      "captured_at": "2026-05-26 11:55"
+      "captured_at": "2026-05-26 12:03"
     },
     {
       "week": "2026-W16",
@@ -211,6 +221,10 @@
         "sales": 643939,
         "cvr": 0.0038,
         "aov": 18398.0,
+        "item_views": null,
+        "atcs": 205,
+        "checkouts": 63,
+        "cart_abandonment_rate": 0.8292682926829268,
         "items_per_session": null
       },
       "prev": {
@@ -230,7 +244,7 @@
           "   注文 35 件・CVR 0.38%・AOV ¥18,398"
         ]
       },
-      "captured_at": "2026-05-26 11:55"
+      "captured_at": "2026-05-26 12:03"
     },
     {
       "week": "2026-W15",
@@ -242,6 +256,10 @@
         "sales": 846120,
         "cvr": 0.005,
         "aov": 20145.0,
+        "item_views": null,
+        "atcs": 259,
+        "checkouts": 78,
+        "cart_abandonment_rate": 0.8378378378378378,
         "items_per_session": null
       },
       "prev": {
@@ -261,7 +279,7 @@
           "   注文 42 件・CVR 0.50%・AOV ¥20,145"
         ]
       },
-      "captured_at": "2026-05-26 11:55"
+      "captured_at": "2026-05-26 12:03"
     },
     {
       "week": "2026-W14",
@@ -273,6 +291,10 @@
         "sales": 976910,
         "cvr": 0.005,
         "aov": 23827.0,
+        "item_views": null,
+        "atcs": 243,
+        "checkouts": 80,
+        "cart_abandonment_rate": 0.831275720164609,
         "items_per_session": null
       },
       "prev": {
@@ -292,7 +314,7 @@
           "   注文 41 件・CVR 0.50%・AOV ¥23,827"
         ]
       },
-      "captured_at": "2026-05-26 11:55"
+      "captured_at": "2026-05-26 12:03"
     },
     {
       "week": "2026-W13",
@@ -304,6 +326,10 @@
         "sales": 594880,
         "cvr": 0.0036,
         "aov": 15654.0,
+        "item_views": null,
+        "atcs": 200,
+        "checkouts": 62,
+        "cart_abandonment_rate": 0.81,
         "items_per_session": null
       },
       "prev": {
@@ -323,7 +349,7 @@
           "   注文 38 件・CVR 0.36%・AOV ¥15,654"
         ]
       },
-      "captured_at": "2026-05-26 11:55"
+      "captured_at": "2026-05-26 12:03"
     },
     {
       "week": "2026-W12",
@@ -335,6 +361,10 @@
         "sales": 610060,
         "cvr": 0.0045,
         "aov": 17430.0,
+        "item_views": null,
+        "atcs": 178,
+        "checkouts": 73,
+        "cart_abandonment_rate": 0.8033707865168539,
         "items_per_session": null
       },
       "prev": {
@@ -354,7 +384,7 @@
           "   注文 35 件・CVR 0.45%・AOV ¥17,430"
         ]
       },
-      "captured_at": "2026-05-26 11:55"
+      "captured_at": "2026-05-26 12:03"
     },
     {
       "week": "2026-W11",
@@ -366,6 +396,10 @@
         "sales": 1189430,
         "cvr": 0.0067,
         "aov": 25307.0,
+        "item_views": null,
+        "atcs": 214,
+        "checkouts": 109,
+        "cart_abandonment_rate": 0.780373831775701,
         "items_per_session": null
       },
       "prev": {
@@ -385,7 +419,7 @@
           "   注文 47 件・CVR 0.67%・AOV ¥25,307"
         ]
       },
-      "captured_at": "2026-05-26 11:55"
+      "captured_at": "2026-05-26 12:03"
     },
     {
       "week": "2026-W10",
@@ -397,6 +431,10 @@
         "sales": 505449,
         "cvr": 0.0024,
         "aov": 25272.0,
+        "item_views": null,
+        "atcs": 151,
+        "checkouts": 58,
+        "cart_abandonment_rate": 0.8675496688741722,
         "items_per_session": null
       },
       "prev": {
@@ -416,7 +454,7 @@
           "   注文 20 件・CVR 0.24%・AOV ¥25,272"
         ]
       },
-      "captured_at": "2026-05-26 11:55"
+      "captured_at": "2026-05-26 12:03"
     }
   ]
 }
