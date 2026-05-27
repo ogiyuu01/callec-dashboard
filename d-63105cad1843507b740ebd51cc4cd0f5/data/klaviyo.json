@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-26 12:29 JST",
+  "last_updated": "2026-05-27 09:03 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -25,23 +25,23 @@
         "conv_rate": 0.0
       },
       "current_30d": {
-        "recipients": 340.0,
-        "opens": 198.0,
-        "clicks": 23.0,
+        "recipients": 321.0,
+        "opens": 188.0,
+        "clicks": 22.0,
         "convs": 4.0,
         "rev": 86900.0,
-        "open_rate": 0.5823529411764706,
-        "click_rate": 0.06764705882352941,
-        "conv_rate": 0.011764705882352941
+        "open_rate": 0.5856697819314641,
+        "click_rate": 0.06853582554517133,
+        "conv_rate": 0.012461059190031152
       },
       "previous_30d": {
-        "recipients": 339.0,
-        "opens": 204.0,
+        "recipients": 352.0,
+        "opens": 210.0,
         "clicks": 25.0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.6017699115044248,
-        "click_rate": 0.07374631268436578,
+        "open_rate": 0.5965909090909091,
+        "click_rate": 0.07102272727272728,
         "conv_rate": 0.0
       },
       "annual": {
@@ -59,67 +59,67 @@
       "open_alert": "green",
       "wow_alert": "neutral",
       "mom_alert": "neutral",
-      "rpr_30d": 255.58823529411765
+      "rpr_30d": 270.7165109034268
     },
     {
       "flow_id": "SufE4T",
       "name": "カゴ落ちメール",
       "current_7d": {
-        "recipients": 67.0,
-        "opens": 18.0,
-        "clicks": 4.0,
+        "recipients": 68.0,
+        "opens": 19.0,
+        "clicks": 5.0,
         "convs": 2.0,
         "rev": 38830.0,
-        "open_rate": 0.26865671641791045,
-        "click_rate": 0.05970149253731343,
-        "conv_rate": 0.029850746268656716
+        "open_rate": 0.27941176470588236,
+        "click_rate": 0.07352941176470588,
+        "conv_rate": 0.029411764705882353
       },
       "previous_7d": {
-        "recipients": 109.0,
-        "opens": 35.0,
-        "clicks": 8.0,
+        "recipients": 114.0,
+        "opens": 31.0,
+        "clicks": 6.0,
         "convs": 2.0,
         "rev": 23760.0,
-        "open_rate": 0.3211009174311927,
-        "click_rate": 0.07339449541284404,
-        "conv_rate": 0.01834862385321101
+        "open_rate": 0.2719298245614035,
+        "click_rate": 0.05263157894736842,
+        "conv_rate": 0.017543859649122806
       },
       "current_30d": {
-        "recipients": 327.0,
-        "opens": 88.0,
-        "clicks": 18.0,
-        "convs": 6.0,
-        "rev": 106810.0,
-        "open_rate": 0.2691131498470948,
-        "click_rate": 0.05504587155963303,
-        "conv_rate": 0.01834862385321101
+        "recipients": 331.0,
+        "opens": 87.0,
+        "clicks": 19.0,
+        "convs": 5.0,
+        "rev": 90310.0,
+        "open_rate": 0.2628398791540785,
+        "click_rate": 0.05740181268882175,
+        "conv_rate": 0.015105740181268883
       },
       "previous_30d": {
-        "recipients": 372.0,
-        "opens": 94.0,
+        "recipients": 359.0,
+        "opens": 95.0,
         "clicks": 8.0,
-        "convs": 8.0,
-        "rev": 151470.0,
-        "open_rate": 0.25268817204301075,
-        "click_rate": 0.021505376344086023,
-        "conv_rate": 0.021505376344086023
+        "convs": 9.0,
+        "rev": 167970.0,
+        "open_rate": 0.2646239554317549,
+        "click_rate": 0.022284122562674095,
+        "conv_rate": 0.025069637883008356
       },
       "annual": {
-        "recipients": 931.0,
-        "opens": 247.0,
-        "clicks": 43.0,
+        "recipients": 948.0,
+        "opens": 250.0,
+        "clicks": 44.0,
         "convs": 19.0,
         "rev": 320320.0,
-        "open_rate": 0.2653061224489796,
-        "click_rate": 0.04618689581095596,
-        "conv_rate": 0.02040816326530612
+        "open_rate": 0.26371308016877637,
+        "click_rate": 0.046413502109704644,
+        "conv_rate": 0.020042194092827006
       },
       "wow_pct": 63.42592592592593,
-      "mom_pct": -29.484386347131448,
+      "mom_pct": -46.234446627373934,
       "open_alert": "green",
       "wow_alert": "green",
       "mom_alert": "red",
-      "rpr_30d": 326.6360856269113
+      "rpr_30d": 272.8398791540786
     },
     {
       "flow_id": "VLMvyW",
@@ -145,23 +145,23 @@
         "conv_rate": 0.0
       },
       "current_30d": {
-        "recipients": 4.0,
-        "opens": 4.0,
+        "recipients": 3.0,
+        "opens": 3.0,
         "clicks": 1.0,
         "convs": 0,
         "rev": 0.0,
         "open_rate": 1.0,
-        "click_rate": 0.25,
+        "click_rate": 0.3333333333333333,
         "conv_rate": 0.0
       },
       "previous_30d": {
-        "recipients": 9.0,
-        "opens": 7.0,
+        "recipients": 10.0,
+        "opens": 8.0,
         "clicks": 2.0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.7777777777777778,
-        "click_rate": 0.2222222222222222,
+        "open_rate": 0.8,
+        "click_rate": 0.2,
         "conv_rate": 0.0
       },
       "annual": {
@@ -185,11 +185,11 @@
   "totals": {
     "rev_7d": 38830.0,
     "rev_7d_prev": 23760.0,
-    "rev_30d": 193710.0,
-    "rev_30d_prev": 151470.0,
+    "rev_30d": 177210.0,
+    "rev_30d_prev": 167970.0,
     "rev_365d": 407220.0,
     "wow_pct": 63.42592592592593,
-    "mom_pct": 27.886710239651418,
+    "mom_pct": 5.50098231827112,
     "wow_alert": "green",
     "mom_alert": "green"
   },
