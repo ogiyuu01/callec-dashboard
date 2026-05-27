@@ -961,7 +961,7 @@ function renderPM(pm, budget, summary) {
   renderPMWeeklyTrend(summary);
 }
 
-function renderMonitoring(data) {
+function renderMonitoring(data, summary) {
   const root = document.getElementById("monitoring-cards");
   const meta = document.getElementById("monitoring-meta");
   if (!root) return;
@@ -972,6 +972,22 @@ function renderMonitoring(data) {
   if (meta && data._meta) {
     meta.textContent = `生成: ${data._meta.generated_at || "—"} / ソース: ${data._meta.source || "—"}`;
   }
+
+  // 売上インパクト推定の基準: 直近7日の売上
+  const weeklySalesBase = (summary && summary.last_7d && summary.last_7d.sales) || 0;
+  const monthlySalesBase = weeklySalesBase * (30 / 7);
+  const fmtYen = (n) => {
+    if (n == null || isNaN(n)) return "—";
+    const sign = n > 0 ? "+" : (n < 0 ? "-" : "");
+    return `${sign}¥${Math.abs(Math.round(n)).toLocaleString('ja-JP')}`;
+  };
+  const revImpact = (liftPct) => {
+    if (liftPct == null || isNaN(liftPct) || !weeklySalesBase) return null;
+    return {
+      weekly: weeklySalesBase * (liftPct / 100),
+      monthly: monthlySalesBase * (liftPct / 100),
+    };
+  };
   const verdictBadge = {
     GREEN: { label: "🟢 達成", color: "#22c55e" },
     YELLOW: { label: "🟡 途中", color: "#eab308" },
@@ -1117,6 +1133,43 @@ function renderMonitoring(data) {
         </div>
         ${plain100 ? `<div class="monitoring-plain100">${plain100}</div>` : ""}
 
+        ${(() => {
+          const actual = revImpact(r.lift_pct);
+          const expLiftNum = r.expected_lift_pct ? parseFloat(r.expected_lift_pct) : null;
+          const expected = revImpact(expLiftNum);
+          if (!actual && !expected) {
+            return weeklySalesBase ? `
+              <div class="monitoring-revenue-impact">
+                <div class="rev-impact-label">💰 売上インパクト</div>
+                <div class="rev-impact-empty">計測待ち（lift未確定）</div>
+              </div>` : "";
+          }
+          const actualColor = !actual ? "var(--text-muted)" : (actual.weekly > 0 ? "#22c55e" : actual.weekly < 0 ? "#ef4444" : "var(--text-muted)");
+          return `
+            <div class="monitoring-revenue-impact">
+              <div class="rev-impact-label">💰 売上インパクト <span class="rev-impact-sub">(現在の差が続いた場合の推定)</span></div>
+              <div class="rev-impact-grid">
+                <div class="rev-impact-row">
+                  <div class="rev-impact-key">実測ベース</div>
+                  <div class="rev-impact-vals">
+                    <span>週次 <strong style="color:${actualColor}">${actual ? fmtYen(actual.weekly) : "—"}</strong></span>
+                    <span>月次 <strong style="color:${actualColor}">${actual ? fmtYen(actual.monthly) : "—"}</strong></span>
+                  </div>
+                </div>
+                ${expected ? `
+                <div class="rev-impact-row rev-impact-expected">
+                  <div class="rev-impact-key">期待値</div>
+                  <div class="rev-impact-vals">
+                    <span>週次 <strong>${fmtYen(expected.weekly)}</strong></span>
+                    <span>月次 <strong>${fmtYen(expected.monthly)}</strong></span>
+                  </div>
+                </div>` : ""}
+              </div>
+              <div class="rev-impact-note">基準: 直近7日売上 ¥${weeklySalesBase.toLocaleString('ja-JP')} × lift。他ステージは不変と仮定した線形推定。</div>
+            </div>
+          `;
+        })()}
+
         ${scale}
 
         <details class="monitoring-card-details" open>
@@ -1162,7 +1215,7 @@ function renderMonitoring(data) {
   renderArchiveMonthly(monthly);
   renderProductsTop5(funnel);
   renderPM(pm, budget, summary);
-  renderMonitoring(monitoring);
+  renderMonitoring(monitoring, summary);
 
   // Scroll reveal
   const candidates = document.querySelectorAll(".card, .kpi, .archive-card, .archive-month-card, .state-card");
