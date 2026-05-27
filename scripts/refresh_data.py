@@ -70,6 +70,7 @@ def _find_data_file(name: str) -> Path:
 
 RELEASE_LOG = _find_data_file("release_log.csv")
 KPI_SNAPSHOTS = _find_data_file("kpi_snapshots.csv")
+LINE_LINK_METRICS = _find_data_file("line_link_metrics.csv")
 WEEKLY_KPI = SIBLING / "data" / "weekly_kpi.csv"
 MONTHLY_TARGET = SIBLING / "data" / "monthly_target.json"  # 旧フォーマット (deprecated)
 BUDGET_JSON_LOCAL = DATA_DIR / "budget.json"  # dashboard 自前 (sync_budget.py が書く)
@@ -1001,6 +1002,33 @@ def build_releases() -> dict:
     return {"releases": releases}
 
 
+def _latest_line_link_row(release_id: str) -> dict | None:
+    """line_link_metrics.csv から該当 release_id の最新行を返す。
+    旧ヘッダ(9列 total_customers 含む)/新writer(8列)が混在する可能性があるため、
+    field 数から判別して line_link_rate の位置を解決する。"""
+    if not LINE_LINK_METRICS.exists():
+        return None
+    cols_new = ["taken_at", "release_id", "days", "ordered_customers",
+                "linked_ordered_customers", "total_linked_customers",
+                "line_link_rate", "memo"]
+    cols_old = ["taken_at", "release_id", "days", "total_customers",
+                "ordered_customers", "linked_ordered_customers",
+                "total_linked_customers", "line_link_rate", "memo"]
+    rows = []
+    with LINE_LINK_METRICS.open(encoding="utf-8-sig", newline="") as f:
+        reader = csv.reader(f)
+        for i, raw in enumerate(reader):
+            if i == 0 or not raw:
+                continue  # skip header
+            cols = cols_old if len(raw) >= 9 else cols_new
+            row = dict(zip(cols, raw + [""] * (len(cols) - len(raw))))
+            if (row.get("release_id") or "").strip() == release_id:
+                rows.append(row)
+    if not rows:
+        return None
+    return max(rows, key=lambda r: r.get("taken_at", ""))
+
+
 def _metric_from_snapshot(metric: str, snap: dict) -> float | None:
     """hypothesis_metric 名から kpi_snapshots.csv の該当列を抽出。
     snapshot 列に直接対応しない metric (collection_to_pdp_rate / view_to_atc_rate) は None を返し、
@@ -1128,11 +1156,32 @@ def build_monitoring(client: "bigquery.Client | None" = None) -> dict:
                     after_start = d
                     after_end = min(today - timedelta(days=1), d + timedelta(days=elapsed - 1))
                     after_rate = _compute_metric_via_bq(client, metric, after_start, after_end)
+
+            # line_link_rate は kpi_snapshots に列がないため line_link_metrics.csv を参照
+            line_link_row = None
+            if metric == "line_link_rate":
+                line_link_row = _latest_line_link_row(rid)
+                if line_link_row is not None:
+                    if before_rate is None:
+                        before_rate = 0.0  # decision_rule で baseline=0% 宣言済
+                    try:
+                        after_rate = float(line_link_row.get("line_link_rate") or 0)
+                    except (ValueError, TypeError):
+                        after_rate = None
+
             lift_pct = None
             if before_rate and after_rate and before_rate > 0:
                 lift_pct = round((after_rate - before_rate) / before_rate * 100, 1)
 
             verdict = _verdict_color(after_rate, rule_dict)
+
+            after_window = after.get("window") if after else ""
+            after_taken_at = after.get("taken_at") if after else ""
+            if line_link_row is not None:
+                days_val = (line_link_row.get("days") or "").strip()
+                if days_val:
+                    after_window = f"{days_val}d"
+                after_taken_at = line_link_row.get("taken_at") or after_taken_at
 
             out.append({
                 "release_id": rid,
@@ -1147,8 +1196,8 @@ def build_monitoring(client: "bigquery.Client | None" = None) -> dict:
                 "verdict": verdict,
                 "before_rate": before_rate,
                 "after_rate": after_rate,
-                "after_window": after.get("window") if after else "",
-                "after_taken_at": after.get("taken_at") if after else "",
+                "after_window": after_window,
+                "after_taken_at": after_taken_at,
                 "lift_pct": lift_pct,
                 "summary": (r.get("summary") or "")[:200],
                 "notes": (r.get("notes") or "")[:400],
