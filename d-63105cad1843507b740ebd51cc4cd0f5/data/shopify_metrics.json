@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-05-27 09:03 JST",
+    "fetched_at": "2026-05-27 12:37 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 197,
+    "total_customers": 199,
     "returning_customers": 70,
-    "returning_customer_rate": 0.3553299492385787,
-    "new_customers": 127
+    "returning_customer_rate": 0.35175879396984927,
+    "new_customers": 129
   },
   "top_products_28d": [
     {
@@ -40,8 +40,8 @@
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "gross_sales": 121000,
-      "orders": 22
+      "gross_sales": 126500,
+      "orders": 23
     },
     {
       "name": "KOKAGE/オーバー半袖プルオーバー",
@@ -65,7 +65,7 @@
     }
   ],
   "totals_28d": {
-    "orders": 206,
-    "sales": 4314200
+    "orders": 208,
+    "sales": 4344230
   }
 }

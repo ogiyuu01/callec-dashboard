@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8497
+      "count": 9224
     },
     {
       "name": "view_item",
-      "count": 7484
+      "count": 8366
     },
     {
       "name": "add_to_cart",
-      "count": 226
+      "count": 270
     },
     {
       "name": "begin_checkout",
-      "count": 84
+      "count": 91
     },
     {
       "name": "purchase",
-      "count": 42
+      "count": 46
     }
   ],
   "weeks": [
@@ -86,51 +86,57 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 263,
-      "pdp_reached": 96,
-      "pdp_reach": 36.50190114068441
+      "sessions": 288,
+      "pdp_reached": 104,
+      "pdp_reach": 36.111111111111114
     },
     {
       "path": "/collections/onayami-260501-collection",
-      "sessions": 110,
-      "pdp_reached": 21,
-      "pdp_reach": 19.09090909090909
+      "sessions": 112,
+      "pdp_reached": 22,
+      "pdp_reach": 19.642857142857142
     },
     {
       "path": "/collections/5月6日販売開始",
-      "sessions": 82,
-      "pdp_reached": 34,
-      "pdp_reach": 41.46341463414634
+      "sessions": 87,
+      "pdp_reached": 36,
+      "pdp_reach": 41.37931034482759
     },
     {
       "path": "/collections/new",
-      "sessions": 49,
-      "pdp_reached": 17,
-      "pdp_reach": 34.69387755102041
-    },
-    {
-      "path": "/collections/pants",
-      "sessions": 45,
-      "pdp_reached": 3,
-      "pdp_reach": 6.666666666666667
+      "sessions": 57,
+      "pdp_reached": 20,
+      "pdp_reach": 35.08771929824562
     },
     {
       "path": "/collections/setup",
-      "sessions": 44,
-      "pdp_reached": 17,
-      "pdp_reach": 38.63636363636363
+      "sessions": 56,
+      "pdp_reached": 23,
+      "pdp_reach": 41.07142857142857
+    },
+    {
+      "path": "/collections/pants",
+      "sessions": 50,
+      "pdp_reached": 4,
+      "pdp_reach": 8.0
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 39,
-      "pdp_reached": 10,
-      "pdp_reach": 25.641025641025642
+      "sessions": 42,
+      "pdp_reached": 11,
+      "pdp_reach": 26.19047619047619
     },
     {
       "path": "/collections/online_ranking",
       "sessions": 35,
       "pdp_reached": 11,
       "pdp_reach": 31.428571428571427
+    },
+    {
+      "path": "/collections/golf",
+      "sessions": 31,
+      "pdp_reached": 8,
+      "pdp_reach": 25.806451612903224
     }
   ],
   "products_top5": [
@@ -145,13 +151,13 @@
       "revenue": 56100
     },
     {
-      "name": "無重力リュック(第5世代)",
-      "qty": 2,
+      "name": "無地半袖Tシャツ",
+      "qty": 10,
       "revenue": 55000
     },
     {
-      "name": "無地半袖Tシャツ",
-      "qty": 10,
+      "name": "無重力リュック(第5世代)",
+      "qty": 2,
       "revenue": 55000
     },
     {
