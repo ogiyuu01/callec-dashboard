@@ -17,7 +17,9 @@
       "after_taken_at": "2026-05-26 11:06",
       "lift_pct": 0.3,
       "summary": "コレクションページの商品カード情報密度向上+ファーストビュー改善(販売開始日告知バナーの縮小・商品見え優先)",
-      "notes": "2026-W19時点コレクション着地のPDP到達率29.7%。5月6日販売開始(1927sess/28.4%)とshortsleeve-t-shirts-2(62sess/16.1%)とtailored-jacket(38sess/10.5%)が特に低い。R002と段分離で併走 (R001=collection→PDP, R002=ATC→checkout) [2026-05-26 +14d 中間測定: collection_to_pdp_rate 29.71%→32.00% +7.7% lift 🟡 (GREEN 38%未達/RED 27%圏外) BQ直接計測 by snapshot_kpi.py BQ移行版 S010 補完]"
+      "notes": "2026-W19時点コレクション着地のPDP到達率29.7%。5月6日販売開始(1927sess/28.4%)とshortsleeve-t-shirts-2(62sess/16.1%)とtailored-jacket(38sess/10.5%)が特に低い。R002と段分離で併走 (R001=collection→PDP, R002=ATC→checkout) [2026-05-26 +14d 中間測定: collection_to_pdp_rate 29.71%→32.00% +7.7% lift 🟡 (GREEN 38%未達/RED 27%圏外) BQ直接計測 by snapshot_kpi.py BQ移行版 S010 補完]",
+      "before_counts": null,
+      "after_counts": null
     },
     {
       "release_id": "R002",
@@ -36,7 +38,19 @@
       "after_taken_at": "2026-05-26 11:06",
       "lift_pct": 30.1,
       "summary": "カート短縮3点: featured-product/rich-text 削除 + gift-note textarea 削除 + mobile compact CSS (thead非表示/画像縮小/cart-title&trustタイト化/支払いアイコン非表示)",
-      "notes": "SP checkout y=906→825 (FV内19px margin) / docHeight 2599→2200 (-15%)。PCはmobile-only CSSのため未改善 (R003案件)。R001と段分離で併走 (主指標 atc_to_checkout_rate のみで判定、総 CVR は判定対象外)。test theme #154495615166 (R002_cart_test_20260519) は検証履歴保持"
+      "notes": "SP checkout y=906→825 (FV内19px margin) / docHeight 2599→2200 (-15%)。PCはmobile-only CSSのため未改善 (R003案件)。R001と段分離で併走 (主指標 atc_to_checkout_rate のみで判定、総 CVR は判定対象外)。test theme #154495615166 (R002_cart_test_20260519) は検証履歴保持",
+      "before_counts": {
+        "num": 90,
+        "den": 315,
+        "num_label": "チェックアウト",
+        "den_label": "カート投入"
+      },
+      "after_counts": {
+        "num": 84,
+        "den": 226,
+        "num_label": "チェックアウト",
+        "den_label": "カート投入"
+      }
     },
     {
       "release_id": "R003",
@@ -55,7 +69,9 @@
       "after_taken_at": "2026-05-26 11:16",
       "lift_pct": 2.8,
       "summary": "PDP CRO bundle (案II rollback後): 案III 関連商品折りたたみタブ(同シリーズ名 prefix マッチ) + 案V ソーシャルプルーフ表示(直近24h ATC数) + 付帯: ハンバーガーメニュー chevron 再設計(site-nav.css)",
-      "notes": "案II (Sticky ATC バリアント内蔵) は value drop 互換性問題で 2026-05-19 17:18 rollback。元の単一 combined select に戻した。案IV(サイズチャート)は既存モーダルがあるためスキップ。案III は同シリーズ名 (商品タイトル / 前半) prefix マッチ。案V は BQ直近24h ATC>=3 で表示。期待 view→ATC 3.71%→4.3% (+15%)。出典: pdp_cro_research_20260519.md。本番 push: 2026-05-20 (R003 7d baseline: sessions=6074 cvr=0.91% items/sess=1.376)。付帯改修としてハンバーガーメニュー +/- アイコンを chevron > / 90°rotate ∨ に再設計 (site-nav.c"
+      "notes": "案II (Sticky ATC バリアント内蔵) は value drop 互換性問題で 2026-05-19 17:18 rollback。元の単一 combined select に戻した。案IV(サイズチャート)は既存モーダルがあるためスキップ。案III は同シリーズ名 (商品タイトル / 前半) prefix マッチ。案V は BQ直近24h ATC>=3 で表示。期待 view→ATC 3.71%→4.3% (+15%)。出典: pdp_cro_research_20260519.md。本番 push: 2026-05-20 (R003 7d baseline: sessions=6074 cvr=0.91% items/sess=1.376)。付帯改修としてハンバーガーメニュー +/- アイコンを chevron > / 90°rotate ∨ に再設計 (site-nav.c",
+      "before_counts": null,
+      "after_counts": null
     },
     {
       "release_id": "R004_line_link",
@@ -74,7 +90,14 @@
       "after_taken_at": "2026-05-27 09:15",
       "lift_pct": null,
       "summary": "LINE-Shopify連携機能投入: ヘッダーモバイルドロワーにLINE連携CTA(連携済表示分岐含む) + ログイン後/apps/line-linkへ自動戻りJS + 注文確認メールにLINE連携バナー(Shopify Admin手動) + App Proxy経由LIFF連携(iOS Universal Link自動起動+HMAC署名トークン+冪等metafield書込)",
-      "notes": "新規CRM施策。R003と段分離で併走(R003=view_to_atc_rate, R004=line_link_rate でKPI重複なし)。注文確認メールLiquidはyuuhei-o@call-response.biz がShopify Admin Settings→Notifications→Order confirmationで手動挿入済。Worker依存: D1テーブル shopify_customer_links + Shopify customer metafield line.line_user_id (definition登録済) + LINE Login channel 2001304757 (CALL&RESPONSEプロバイダー、Bot Link aggressive→Messaging API channel 1660712897と同userId)。期待値は新"
+      "notes": "新規CRM施策。R003と段分離で併走(R003=view_to_atc_rate, R004=line_link_rate でKPI重複なし)。注文確認メールLiquidはyuuhei-o@call-response.biz がShopify Admin Settings→Notifications→Order confirmationで手動挿入済。Worker依存: D1テーブル shopify_customer_links + Shopify customer metafield line.line_user_id (definition登録済) + LINE Login channel 2001304757 (CALL&RESPONSEプロバイダー、Bot Link aggressive→Messaging API channel 1660712897と同userId)。期待値は新",
+      "before_counts": null,
+      "after_counts": {
+        "num": 4,
+        "den": 43,
+        "num_label": "LINE連携完了顧客",
+        "den_label": "注文完了顧客"
+      }
     }
   ],
   "_meta": {

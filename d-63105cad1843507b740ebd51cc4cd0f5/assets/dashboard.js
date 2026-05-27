@@ -1125,13 +1125,34 @@ function renderMonitoring(data, summary) {
           <div class="progress-text">${r.deployed_at} 反映 · ${r.days_elapsed}日経過 / 評価期間 ${r.eval_window_days}日${expLift ? " · " + expLift : ""}</div>
         </div>
 
-        <div class="monitoring-card-numbers">
-          <div class="num-block"><div class="num-label">反映前</div><div class="num-value">${fmt(r.before_rate)}</div></div>
-          <div class="num-arrow">→</div>
-          <div class="num-block"><div class="num-label">反映後 (${r.after_window || "—"})</div><div class="num-value">${fmt(r.after_rate)}</div></div>
-          <div class="num-block"><div class="num-label">変化</div><div class="num-value" style="color:${liftColor(r.lift_pct)}">${liftFmt(r.lift_pct)}</div></div>
-        </div>
-        ${plain100 ? `<div class="monitoring-plain100">${plain100}</div>` : ""}
+        ${(() => {
+          const fmtCount = (c) => c ? `<div class="num-counts">${c.num.toLocaleString('ja-JP')} / ${c.den.toLocaleString('ja-JP')}</div>` : "";
+          const labelSource = r.after_counts || r.before_counts;
+          const countsCaption = labelSource
+            ? `<div class="monitoring-counts-caption">実数の意味: <strong>${labelSource.num_label}</strong> / <strong>${labelSource.den_label}</strong></div>`
+            : "";
+          return `
+            <div class="monitoring-card-numbers">
+              <div class="num-block">
+                <div class="num-label">反映前</div>
+                <div class="num-value">${fmt(r.before_rate)}</div>
+                ${fmtCount(r.before_counts)}
+              </div>
+              <div class="num-arrow">→</div>
+              <div class="num-block">
+                <div class="num-label">反映後 (${r.after_window || "—"})</div>
+                <div class="num-value">${fmt(r.after_rate)}</div>
+                ${fmtCount(r.after_counts)}
+              </div>
+              <div class="num-block">
+                <div class="num-label">変化</div>
+                <div class="num-value" style="color:${liftColor(r.lift_pct)}">${liftFmt(r.lift_pct)}</div>
+              </div>
+            </div>
+            ${countsCaption}
+          `;
+        })()}
+        ${plain100 && !(r.after_counts || r.before_counts) ? `<div class="monitoring-plain100">${plain100}</div>` : ""}
 
         ${(() => {
           const actual = revImpact(r.lift_pct);

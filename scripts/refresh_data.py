@@ -1049,10 +1049,49 @@ def _metric_from_snapshot(metric: str, snap: dict) -> float | None:
         return None
 
 
-def _compute_metric_via_bq(client: "bigquery.Client | None", metric: str, start: date, end: date) -> float | None:
-    """snapshot に列がない metric を BQ から直接計算する。失敗時は None。"""
-    if not client or not metric:
+# metric → (num列, den列, num日本語, den日本語)
+_SNAPSHOT_COUNT_COLS = {
+    "atc_to_checkout_rate": ("checkouts", "add_to_carts", "チェックアウト", "カート投入"),
+    "view_to_atc_rate": ("add_to_carts", "item_views", "カート投入", "商品閲覧"),
+    "items_per_session": ("item_views", "sessions", "商品閲覧", "セッション"),
+    "cvr": ("orders", "sessions", "注文", "セッション"),
+}
+
+
+def _counts_from_snapshot(metric: str, snap: dict) -> dict | None:
+    """snapshot から分子/分母の絶対値を抽出。対応外 metric は None。"""
+    if not snap or metric not in _SNAPSHOT_COUNT_COLS:
         return None
+    num_col, den_col, num_label, den_label = _SNAPSHOT_COUNT_COLS[metric]
+    try:
+        num = int(float(snap.get(num_col) or 0))
+        den = int(float(snap.get(den_col) or 0))
+    except (ValueError, TypeError):
+        return None
+    if den <= 0:
+        return None
+    return {"num": num, "den": den, "num_label": num_label, "den_label": den_label}
+
+
+def _compute_metric_via_bq(client: "bigquery.Client | None", metric: str, start: date, end: date) -> float | None:
+    """後方互換: rate のみを返す。"""
+    rate, _ = _compute_metric_via_bq_with_counts(client, metric, start, end)
+    return rate
+
+
+# BQ 計算 metric の分子/分母ラベル
+_BQ_COUNT_LABELS = {
+    "collection_to_pdp_rate": ("PDP到達セッション", "コレクション着地セッション"),
+    "view_to_atc_rate": ("カート投入", "商品閲覧"),
+}
+
+
+def _compute_metric_via_bq_with_counts(
+    client: "bigquery.Client | None", metric: str, start: date, end: date
+) -> tuple[float | None, dict | None]:
+    """snapshot に列がない metric を BQ から直接計算し、rate と分子/分母 counts を返す。"""
+    if not client or not metric:
+        return None, None
     s, e = start.strftime("%Y%m%d"), end.strftime("%Y%m%d")
     if metric == "collection_to_pdp_rate":
         sql = f"""
@@ -1065,23 +1104,31 @@ def _compute_metric_via_bq(client: "bigquery.Client | None", metric: str, start:
           WHERE _TABLE_SUFFIX BETWEEN '{s}' AND '{e}'
           GROUP BY sess_id
         )
-        SELECT SAFE_DIVIDE(COUNTIF(item_views > 0), COUNT(*)) AS rate
+        SELECT COUNTIF(item_views > 0) AS num, COUNT(*) AS den,
+               SAFE_DIVIDE(COUNTIF(item_views > 0), COUNT(*)) AS rate
         FROM sess WHERE REGEXP_CONTAINS(landing, r'/collections/')
         """
     elif metric == "view_to_atc_rate":
         sql = f"""
-        SELECT SAFE_DIVIDE(COUNTIF(event_name='add_to_cart'), COUNTIF(event_name='view_item')) AS rate
+        SELECT COUNTIF(event_name='add_to_cart') AS num,
+               COUNTIF(event_name='view_item') AS den,
+               SAFE_DIVIDE(COUNTIF(event_name='add_to_cart'), COUNTIF(event_name='view_item')) AS rate
         FROM `{PROJECT}.{DATASET}.events_*`
         WHERE _TABLE_SUFFIX BETWEEN '{s}' AND '{e}'
         """
     else:
-        return None
+        return None, None
     try:
         rows = list(client.query(sql).result())
-        return float(rows[0].rate) if rows and rows[0].rate is not None else None
+        if not rows or rows[0].rate is None:
+            return None, None
+        num_label, den_label = _BQ_COUNT_LABELS.get(metric, ("分子", "分母"))
+        counts = {"num": int(rows[0].num or 0), "den": int(rows[0].den or 0),
+                  "num_label": num_label, "den_label": den_label}
+        return float(rows[0].rate), counts
     except Exception as ex:
         print(f"  monitoring BQ query failed for {metric}: {ex}")
-        return None
+        return None, None
 
 
 def _parse_decision_rule(rule: str) -> dict:
@@ -1145,17 +1192,19 @@ def build_monitoring(client: "bigquery.Client | None" = None) -> dict:
 
             before_rate = _metric_from_snapshot(metric, before) if before else None
             after_rate = _metric_from_snapshot(metric, after) if after else None
+            before_counts = _counts_from_snapshot(metric, before) if before else None
+            after_counts = _counts_from_snapshot(metric, after) if after else None
 
             # BQ 直撃 fallback (snapshot 列なし metric 用)
             if before_rate is None and metric in ("collection_to_pdp_rate", "view_to_atc_rate"):
                 before_start = d - timedelta(days=int(r.get("eval_window_days") or 7))
                 before_end = d - timedelta(days=1)
-                before_rate = _compute_metric_via_bq(client, metric, before_start, before_end)
+                before_rate, before_counts = _compute_metric_via_bq_with_counts(client, metric, before_start, before_end)
             if after_rate is None and metric in ("collection_to_pdp_rate", "view_to_atc_rate"):
                 if elapsed >= 1:
                     after_start = d
                     after_end = min(today - timedelta(days=1), d + timedelta(days=elapsed - 1))
-                    after_rate = _compute_metric_via_bq(client, metric, after_start, after_end)
+                    after_rate, after_counts = _compute_metric_via_bq_with_counts(client, metric, after_start, after_end)
 
             # line_link_rate は kpi_snapshots に列がないため line_link_metrics.csv を参照
             line_link_row = None
@@ -1166,6 +1215,12 @@ def build_monitoring(client: "bigquery.Client | None" = None) -> dict:
                         before_rate = 0.0  # decision_rule で baseline=0% 宣言済
                     try:
                         after_rate = float(line_link_row.get("line_link_rate") or 0)
+                        num = int(float(line_link_row.get("linked_ordered_customers") or 0))
+                        den = int(float(line_link_row.get("ordered_customers") or 0))
+                        if den > 0:
+                            after_counts = {"num": num, "den": den,
+                                            "num_label": "LINE連携完了顧客",
+                                            "den_label": "注文完了顧客"}
                     except (ValueError, TypeError):
                         after_rate = None
 
@@ -1196,6 +1251,8 @@ def build_monitoring(client: "bigquery.Client | None" = None) -> dict:
                 "verdict": verdict,
                 "before_rate": before_rate,
                 "after_rate": after_rate,
+                "before_counts": before_counts,
+                "after_counts": after_counts,
                 "after_window": after_window,
                 "after_taken_at": after_taken_at,
                 "lift_pct": lift_pct,
