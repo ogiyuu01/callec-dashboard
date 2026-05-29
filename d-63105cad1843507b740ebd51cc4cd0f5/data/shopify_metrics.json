@@ -1,22 +1,22 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-05-28 11:56 JST",
+    "fetched_at": "2026-05-29 09:02 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
     "total_customers": 195,
-    "returning_customers": 73,
-    "returning_customer_rate": 0.37435897435897436,
-    "new_customers": 122
+    "returning_customers": 72,
+    "returning_customer_rate": 0.36923076923076925,
+    "new_customers": 123
   },
   "top_products_28d": [
     {
       "name": "無重力リュック(第5世代)",
-      "gross_sales": 247500,
-      "orders": 9
+      "gross_sales": 220000,
+      "orders": 8
     },
     {
       "name": "無地半袖Tシャツ",
@@ -49,14 +49,14 @@
       "orders": 11
     },
     {
+      "name": "無地長袖Tシャツ",
+      "gross_sales": 95040,
+      "orders": 16
+    },
+    {
       "name": "TOBIKIRI STRIPE/切り替え五部袖プルオーバー",
       "gross_sales": 94050,
       "orders": 9
-    },
-    {
-      "name": "無地長袖Tシャツ",
-      "gross_sales": 89100,
-      "orders": 15
     },
     {
       "name": "KOKAGE/ジョガーパンツ",
@@ -66,6 +66,6 @@
   ],
   "totals_28d": {
     "orders": 204,
-    "sales": 4292750
+    "sales": 4271080
   }
 }

@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8433
+      "count": 8034
     },
     {
       "name": "view_item",
-      "count": 7260
+      "count": 7533
     },
     {
       "name": "add_to_cart",
-      "count": 236
+      "count": 252
     },
     {
       "name": "begin_checkout",
-      "count": 70
+      "count": 72
     },
     {
       "name": "purchase",
-      "count": 37
+      "count": 35
     }
   ],
   "weeks": [
@@ -86,51 +86,51 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 228,
-      "pdp_reached": 80,
-      "pdp_reach": 35.08771929824562
+      "sessions": 221,
+      "pdp_reached": 87,
+      "pdp_reach": 39.366515837104075
     },
     {
       "path": "/collections/onayami-260501-collection",
-      "sessions": 112,
-      "pdp_reached": 22,
-      "pdp_reach": 19.642857142857142
+      "sessions": 114,
+      "pdp_reached": 23,
+      "pdp_reach": 20.17543859649123
     },
     {
       "path": "/collections/5月6日販売開始",
-      "sessions": 80,
-      "pdp_reached": 32,
-      "pdp_reach": 40.0
+      "sessions": 71,
+      "pdp_reached": 26,
+      "pdp_reach": 36.61971830985915
     },
     {
       "path": "/collections/new",
-      "sessions": 53,
-      "pdp_reached": 20,
-      "pdp_reach": 37.735849056603776
+      "sessions": 58,
+      "pdp_reached": 21,
+      "pdp_reach": 36.206896551724135
     },
     {
       "path": "/collections/pants",
-      "sessions": 47,
-      "pdp_reached": 4,
-      "pdp_reach": 8.51063829787234
+      "sessions": 51,
+      "pdp_reached": 6,
+      "pdp_reach": 11.764705882352942
     },
     {
       "path": "/collections/setup",
-      "sessions": 45,
-      "pdp_reached": 16,
-      "pdp_reach": 35.55555555555556
+      "sessions": 47,
+      "pdp_reached": 15,
+      "pdp_reach": 31.914893617021278
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 37,
-      "pdp_reached": 9,
-      "pdp_reach": 24.324324324324323
+      "sessions": 36,
+      "pdp_reached": 10,
+      "pdp_reach": 27.77777777777778
     },
     {
       "path": "/collections/online_ranking",
-      "sessions": 34,
-      "pdp_reached": 11,
-      "pdp_reach": 32.35294117647059
+      "sessions": 32,
+      "pdp_reached": 10,
+      "pdp_reach": 31.25
     }
   ],
   "products_top5": [
@@ -140,14 +140,14 @@
       "revenue": 55000
     },
     {
-      "name": "KOKAGE/テーパードパンツ",
-      "qty": 4,
-      "revenue": 55000
-    },
-    {
       "name": "NOBIRU360°PREMIUM/刺繍半袖プルオーバー",
       "qty": 3,
       "revenue": 46200
+    },
+    {
+      "name": "KOKAGE/テーパードパンツ",
+      "qty": 3,
+      "revenue": 41250
     },
     {
       "name": "KOKAGE/ジョガーパンツ",
