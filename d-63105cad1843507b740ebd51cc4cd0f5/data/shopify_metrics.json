@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-05-29 09:02 JST",
+    "fetched_at": "2026-05-29 12:00 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 195,
-    "returning_customers": 72,
-    "returning_customer_rate": 0.36923076923076925,
-    "new_customers": 123
+    "total_customers": 197,
+    "returning_customers": 73,
+    "returning_customer_rate": 0.37055837563451777,
+    "new_customers": 124
   },
   "top_products_28d": [
     {
@@ -35,8 +35,8 @@
     },
     {
       "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 136620,
-      "orders": 23
+      "gross_sales": 148500,
+      "orders": 25
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
@@ -65,7 +65,7 @@
     }
   ],
   "totals_28d": {
-    "orders": 204,
-    "sales": 4271080
+    "orders": 206,
+    "sales": 4324430
   }
 }

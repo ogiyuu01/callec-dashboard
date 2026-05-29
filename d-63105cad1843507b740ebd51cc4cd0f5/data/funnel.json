@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8034
+      "count": 8839
     },
     {
       "name": "view_item",
-      "count": 7533
+      "count": 8645
     },
     {
       "name": "add_to_cart",
-      "count": 252
+      "count": 281
     },
     {
       "name": "begin_checkout",
-      "count": 72
+      "count": 78
     },
     {
       "name": "purchase",
-      "count": 35
+      "count": 40
     }
   ],
   "weeks": [
@@ -86,9 +86,9 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 221,
-      "pdp_reached": 87,
-      "pdp_reach": 39.366515837104075
+      "sessions": 246,
+      "pdp_reached": 94,
+      "pdp_reach": 38.21138211382114
     },
     {
       "path": "/collections/onayami-260501-collection",
@@ -98,39 +98,45 @@
     },
     {
       "path": "/collections/5月6日販売開始",
-      "sessions": 71,
+      "sessions": 76,
       "pdp_reached": 26,
-      "pdp_reach": 36.61971830985915
+      "pdp_reach": 34.21052631578947
     },
     {
       "path": "/collections/new",
-      "sessions": 58,
-      "pdp_reached": 21,
-      "pdp_reach": 36.206896551724135
+      "sessions": 67,
+      "pdp_reached": 22,
+      "pdp_reach": 32.83582089552239
     },
     {
       "path": "/collections/pants",
-      "sessions": 51,
-      "pdp_reached": 6,
-      "pdp_reach": 11.764705882352942
+      "sessions": 58,
+      "pdp_reached": 7,
+      "pdp_reach": 12.068965517241379
     },
     {
       "path": "/collections/setup",
-      "sessions": 47,
-      "pdp_reached": 15,
-      "pdp_reach": 31.914893617021278
+      "sessions": 52,
+      "pdp_reached": 16,
+      "pdp_reach": 30.76923076923077
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 36,
+      "sessions": 38,
       "pdp_reached": 10,
-      "pdp_reach": 27.77777777777778
+      "pdp_reach": 26.31578947368421
     },
     {
       "path": "/collections/online_ranking",
-      "sessions": 32,
-      "pdp_reached": 10,
-      "pdp_reach": 31.25
+      "sessions": 38,
+      "pdp_reached": 11,
+      "pdp_reach": 28.94736842105263
+    },
+    {
+      "path": "/collections/golf",
+      "sessions": 34,
+      "pdp_reached": 11,
+      "pdp_reach": 32.35294117647059
     }
   ],
   "products_top5": [
@@ -155,9 +161,9 @@
       "revenue": 41250
     },
     {
-      "name": "KOKAGE/テーラードジャケット",
-      "qty": 2,
-      "revenue": 37400
+      "name": "ストレッチデニムジョガーパンツ",
+      "qty": 3,
+      "revenue": 39600
     }
   ]
 }
