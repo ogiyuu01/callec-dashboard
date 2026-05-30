@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 5931
+      "count": 7894
     },
     {
       "name": "view_item",
-      "count": 7065
+      "count": 8230
     },
     {
       "name": "add_to_cart",
-      "count": 232
+      "count": 275
     },
     {
       "name": "begin_checkout",
-      "count": 65
+      "count": 84
     },
     {
       "name": "purchase",
-      "count": 35
+      "count": 40
     }
   ],
   "weeks": [
@@ -86,57 +86,57 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 204,
-      "pdp_reached": 79,
-      "pdp_reach": 38.72549019607843
+      "sessions": 225,
+      "pdp_reached": 90,
+      "pdp_reach": 40.0
     },
     {
       "path": "/collections/pants",
-      "sessions": 50,
-      "pdp_reached": 7,
-      "pdp_reach": 14.0
-    },
-    {
-      "path": "/collections/new",
-      "sessions": 47,
-      "pdp_reached": 14,
-      "pdp_reach": 29.78723404255319
-    },
-    {
-      "path": "/collections/onayami-260501-collection",
-      "sessions": 46,
-      "pdp_reached": 5,
-      "pdp_reach": 10.869565217391305
-    },
-    {
-      "path": "/collections/setup",
-      "sessions": 44,
-      "pdp_reached": 15,
-      "pdp_reach": 34.09090909090909
+      "sessions": 59,
+      "pdp_reached": 9,
+      "pdp_reach": 15.254237288135593
     },
     {
       "path": "/collections/5月6日販売開始",
-      "sessions": 43,
-      "pdp_reached": 14,
-      "pdp_reach": 32.55813953488372
+      "sessions": 57,
+      "pdp_reached": 17,
+      "pdp_reach": 29.82456140350877
     },
     {
-      "path": "/collections/online_ranking",
-      "sessions": 31,
-      "pdp_reached": 8,
-      "pdp_reach": 25.806451612903224
+      "path": "/collections/setup",
+      "sessions": 54,
+      "pdp_reached": 20,
+      "pdp_reach": 37.03703703703704
+    },
+    {
+      "path": "/collections/new",
+      "sessions": 54,
+      "pdp_reached": 17,
+      "pdp_reach": 31.48148148148148
+    },
+    {
+      "path": "/collections/onayami-260501-collection",
+      "sessions": 47,
+      "pdp_reached": 5,
+      "pdp_reach": 10.638297872340425
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 31,
-      "pdp_reached": 7,
-      "pdp_reach": 22.580645161290324
+      "sessions": 35,
+      "pdp_reached": 8,
+      "pdp_reach": 22.857142857142858
+    },
+    {
+      "path": "/collections/online_ranking",
+      "sessions": 34,
+      "pdp_reached": 8,
+      "pdp_reach": 23.529411764705884
     },
     {
       "path": "/collections/golf",
-      "sessions": 31,
-      "pdp_reached": 10,
-      "pdp_reach": 32.25806451612903
+      "sessions": 32,
+      "pdp_reached": 11,
+      "pdp_reach": 34.375
     }
   ],
   "products_top5": [
@@ -161,9 +161,9 @@
       "revenue": 37400
     },
     {
-      "name": "NOBIRU360°PREMIUM/半袖ポロシャツ",
-      "qty": 2,
-      "revenue": 30800
+      "name": "メランジクルー半袖Tシャツ",
+      "qty": 6,
+      "revenue": 35640
     }
   ]
 }
