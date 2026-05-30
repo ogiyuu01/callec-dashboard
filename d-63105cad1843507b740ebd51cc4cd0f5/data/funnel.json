@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8839
+      "count": 5931
     },
     {
       "name": "view_item",
-      "count": 8645
+      "count": 7065
     },
     {
       "name": "add_to_cart",
-      "count": 281
+      "count": 232
     },
     {
       "name": "begin_checkout",
-      "count": 78
+      "count": 65
     },
     {
       "name": "purchase",
-      "count": 40
+      "count": 35
     }
   ],
   "weeks": [
@@ -86,57 +86,57 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 246,
-      "pdp_reached": 94,
-      "pdp_reach": 38.21138211382114
-    },
-    {
-      "path": "/collections/onayami-260501-collection",
-      "sessions": 114,
-      "pdp_reached": 23,
-      "pdp_reach": 20.17543859649123
-    },
-    {
-      "path": "/collections/5月6日販売開始",
-      "sessions": 76,
-      "pdp_reached": 26,
-      "pdp_reach": 34.21052631578947
-    },
-    {
-      "path": "/collections/new",
-      "sessions": 67,
-      "pdp_reached": 22,
-      "pdp_reach": 32.83582089552239
+      "sessions": 204,
+      "pdp_reached": 79,
+      "pdp_reach": 38.72549019607843
     },
     {
       "path": "/collections/pants",
-      "sessions": 58,
+      "sessions": 50,
       "pdp_reached": 7,
-      "pdp_reach": 12.068965517241379
+      "pdp_reach": 14.0
+    },
+    {
+      "path": "/collections/new",
+      "sessions": 47,
+      "pdp_reached": 14,
+      "pdp_reach": 29.78723404255319
+    },
+    {
+      "path": "/collections/onayami-260501-collection",
+      "sessions": 46,
+      "pdp_reached": 5,
+      "pdp_reach": 10.869565217391305
     },
     {
       "path": "/collections/setup",
-      "sessions": 52,
-      "pdp_reached": 16,
-      "pdp_reach": 30.76923076923077
+      "sessions": 44,
+      "pdp_reached": 15,
+      "pdp_reach": 34.09090909090909
     },
     {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 38,
-      "pdp_reached": 10,
-      "pdp_reach": 26.31578947368421
+      "path": "/collections/5月6日販売開始",
+      "sessions": 43,
+      "pdp_reached": 14,
+      "pdp_reach": 32.55813953488372
     },
     {
       "path": "/collections/online_ranking",
-      "sessions": 38,
-      "pdp_reached": 11,
-      "pdp_reach": 28.94736842105263
+      "sessions": 31,
+      "pdp_reached": 8,
+      "pdp_reach": 25.806451612903224
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 31,
+      "pdp_reached": 7,
+      "pdp_reach": 22.580645161290324
     },
     {
       "path": "/collections/golf",
-      "sessions": 34,
-      "pdp_reached": 11,
-      "pdp_reach": 32.35294117647059
+      "sessions": 31,
+      "pdp_reached": 10,
+      "pdp_reach": 32.25806451612903
     }
   ],
   "products_top5": [
@@ -151,19 +151,19 @@
       "revenue": 46200
     },
     {
-      "name": "KOKAGE/テーパードパンツ",
-      "qty": 3,
-      "revenue": 41250
-    },
-    {
-      "name": "KOKAGE/ジョガーパンツ",
-      "qty": 3,
-      "revenue": 41250
-    },
-    {
       "name": "ストレッチデニムジョガーパンツ",
       "qty": 3,
       "revenue": 39600
+    },
+    {
+      "name": "KOKAGE/テーラードジャケット",
+      "qty": 2,
+      "revenue": 37400
+    },
+    {
+      "name": "NOBIRU360°PREMIUM/半袖ポロシャツ",
+      "qty": 2,
+      "revenue": 30800
     }
   ]
 }
