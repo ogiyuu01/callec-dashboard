@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7894
+      "count": 6527
     },
     {
       "name": "view_item",
-      "count": 8230
+      "count": 6907
     },
     {
       "name": "add_to_cart",
-      "count": 275
+      "count": 243
     },
     {
       "name": "begin_checkout",
-      "count": 84
+      "count": 77
     },
     {
       "name": "purchase",
-      "count": 40
+      "count": 35
     }
   ],
   "weeks": [
@@ -86,57 +86,33 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 225,
-      "pdp_reached": 90,
-      "pdp_reach": 40.0
-    },
-    {
-      "path": "/collections/pants",
-      "sessions": 59,
-      "pdp_reached": 9,
-      "pdp_reach": 15.254237288135593
-    },
-    {
-      "path": "/collections/5月6日販売開始",
-      "sessions": 57,
-      "pdp_reached": 17,
-      "pdp_reach": 29.82456140350877
+      "sessions": 192,
+      "pdp_reached": 80,
+      "pdp_reach": 41.666666666666664
     },
     {
       "path": "/collections/setup",
-      "sessions": 54,
-      "pdp_reached": 20,
-      "pdp_reach": 37.03703703703704
+      "sessions": 51,
+      "pdp_reached": 19,
+      "pdp_reach": 37.254901960784316
+    },
+    {
+      "path": "/collections/5月6日販売開始",
+      "sessions": 47,
+      "pdp_reached": 14,
+      "pdp_reach": 29.78723404255319
     },
     {
       "path": "/collections/new",
-      "sessions": 54,
-      "pdp_reached": 17,
-      "pdp_reach": 31.48148148148148
+      "sessions": 46,
+      "pdp_reached": 15,
+      "pdp_reach": 32.608695652173914
     },
     {
-      "path": "/collections/onayami-260501-collection",
-      "sessions": 47,
-      "pdp_reached": 5,
-      "pdp_reach": 10.638297872340425
-    },
-    {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 35,
-      "pdp_reached": 8,
-      "pdp_reach": 22.857142857142858
-    },
-    {
-      "path": "/collections/online_ranking",
-      "sessions": 34,
-      "pdp_reached": 8,
-      "pdp_reach": 23.529411764705884
-    },
-    {
-      "path": "/collections/golf",
-      "sessions": 32,
-      "pdp_reached": 11,
-      "pdp_reach": 34.375
+      "path": "/collections/pants",
+      "sessions": 44,
+      "pdp_reached": 7,
+      "pdp_reach": 15.909090909090908
     }
   ],
   "products_top5": [
