@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-05-31 09:03 JST",
+    "fetched_at": "2026-05-31 12:37 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 200,
-    "returning_customers": 73,
-    "returning_customer_rate": 0.365,
-    "new_customers": 127
+    "total_customers": 204,
+    "returning_customers": 76,
+    "returning_customer_rate": 0.37254901960784315,
+    "new_customers": 128
   },
   "top_products_28d": [
     {
@@ -34,19 +34,24 @@
       "orders": 13
     },
     {
-      "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "gross_sales": 148500,
+      "name": "メランジクルー半袖Tシャツ",
+      "gross_sales": 160380,
       "orders": 27
     },
     {
-      "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 142560,
-      "orders": 24
+      "name": "プリント半袖Tシャツ(アート/ウルフ)",
+      "gross_sales": 154000,
+      "orders": 28
     },
     {
       "name": "KOKAGE/オーバー半袖プルオーバー",
       "gross_sales": 108900,
       "orders": 11
+    },
+    {
+      "name": "KOKAGE/ジョガーパンツ",
+      "gross_sales": 96250,
+      "orders": 7
     },
     {
       "name": "無地長袖Tシャツ",
@@ -57,15 +62,10 @@
       "name": "KOKAGE/タックパンツ",
       "gross_sales": 92400,
       "orders": 6
-    },
-    {
-      "name": "ストレッチストライプ/半袖シャツ",
-      "gross_sales": 92400,
-      "orders": 7
     }
   ],
   "totals_28d": {
-    "orders": 210,
-    "sales": 4381960
+    "orders": 214,
+    "sales": 4466660
   }
 }
