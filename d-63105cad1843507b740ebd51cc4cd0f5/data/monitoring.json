@@ -3,9 +3,9 @@
     {
       "release_id": "R001",
       "deployed_at": "2026-05-12",
-      "days_elapsed": 19,
+      "days_elapsed": 20,
       "eval_window_days": 21,
-      "progress_pct": 90,
+      "progress_pct": 95,
       "hypothesis_metric": "collection_to_pdp_rate",
       "expected_lift_pct": "33",
       "decision_rule": "GREEN: rate>=38% / RED: rate<=27% (※R002併走に伴い items/session 副指標は判定から除外)",
@@ -34,9 +34,9 @@
     {
       "release_id": "R002",
       "deployed_at": "2026-05-19",
-      "days_elapsed": 12,
+      "days_elapsed": 13,
       "eval_window_days": 14,
-      "progress_pct": 86,
+      "progress_pct": 93,
       "hypothesis_metric": "atc_to_checkout_rate",
       "expected_lift_pct": "40",
       "decision_rule": "GREEN: rate>=40% / YELLOW: 30-39% / RED: rate<=27%",
@@ -65,9 +65,9 @@
     {
       "release_id": "R003",
       "deployed_at": "2026-05-20",
-      "days_elapsed": 11,
+      "days_elapsed": 12,
       "eval_window_days": 14,
-      "progress_pct": 79,
+      "progress_pct": 86,
       "hypothesis_metric": "view_to_atc_rate",
       "expected_lift_pct": "15",
       "decision_rule": "GREEN: rate>=4.3% / YELLOW: 3.9-4.2% / RED: rate<=3.5% (ベースライン 3.71%)",
@@ -96,9 +96,9 @@
     {
       "release_id": "R004_line_link",
       "deployed_at": "2026-05-20",
-      "days_elapsed": 11,
+      "days_elapsed": 12,
       "eval_window_days": 14,
-      "progress_pct": 79,
+      "progress_pct": 86,
       "hypothesis_metric": "line_link_rate",
       "expected_lift_pct": "",
       "decision_rule": "GREEN: line_link_rate>=10% / YELLOW: 5-10% / RED: rate<5% (baseline=0%、line_link_rate=14日間のLINE連携完了顧客数/同期間の注文完了顧客数)",
@@ -116,7 +116,7 @@
     }
   ],
   "_meta": {
-    "generated_at": "2026-05-31T12:36:14+09:00",
+    "generated_at": "2026-06-01T09:02:18+09:00",
     "source": "release_log.csv + kpi_snapshots.csv",
     "note": "collection_to_pdp_rate / view_to_atc_rate は snapshot 列直接対応がないため代理列または欠損。完全値は BQ 直撃 by snapshot_kpi.py を参照"
   }

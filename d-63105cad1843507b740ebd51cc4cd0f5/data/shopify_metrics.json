@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-05-31 12:37 JST",
+    "fetched_at": "2026-06-01 09:03 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 204,
-    "returning_customers": 76,
-    "returning_customer_rate": 0.37254901960784315,
-    "new_customers": 128
+    "total_customers": 210,
+    "returning_customers": 79,
+    "returning_customer_rate": 0.3761904761904762,
+    "new_customers": 131
   },
   "top_products_28d": [
     {
@@ -35,37 +35,37 @@
     },
     {
       "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 160380,
-      "orders": 27
+      "gross_sales": 172260,
+      "orders": 29
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "gross_sales": 154000,
-      "orders": 28
+      "gross_sales": 165000,
+      "orders": 30
     },
     {
       "name": "KOKAGE/オーバー半袖プルオーバー",
-      "gross_sales": 108900,
-      "orders": 11
+      "gross_sales": 118800,
+      "orders": 12
     },
     {
       "name": "KOKAGE/ジョガーパンツ",
-      "gross_sales": 96250,
-      "orders": 7
+      "gross_sales": 110000,
+      "orders": 8
+    },
+    {
+      "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
+      "gross_sales": 99000,
+      "orders": 5
     },
     {
       "name": "無地長袖Tシャツ",
       "gross_sales": 95040,
       "orders": 16
-    },
-    {
-      "name": "KOKAGE/タックパンツ",
-      "gross_sales": 92400,
-      "orders": 6
     }
   ],
   "totals_28d": {
-    "orders": 214,
-    "sales": 4466660
+    "orders": 221,
+    "sales": 4637380
   }
 }
