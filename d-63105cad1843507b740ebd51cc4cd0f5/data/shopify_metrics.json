@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-02 09:03 JST",
+    "fetched_at": "2026-06-02 12:29 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 211,
+    "total_customers": 213,
     "returning_customers": 79,
-    "returning_customer_rate": 0.3744075829383886,
-    "new_customers": 132
+    "returning_customer_rate": 0.37089201877934275,
+    "new_customers": 134
   },
   "top_products_28d": [
     {
@@ -24,19 +24,19 @@
       "orders": 8
     },
     {
-      "name": "KOKAGE/テーラードジャケット",
-      "gross_sales": 187000,
-      "orders": 10
+      "name": "KOKAGE/テーパードパンツ",
+      "gross_sales": 206250,
+      "orders": 15
     },
     {
       "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 184140,
-      "orders": 31
+      "gross_sales": 190080,
+      "orders": 32
     },
     {
-      "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 178750,
-      "orders": 13
+      "name": "KOKAGE/テーラードジャケット",
+      "gross_sales": 187000,
+      "orders": 10
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
@@ -45,8 +45,8 @@
     },
     {
       "name": "KOKAGE/オーバー半袖プルオーバー",
-      "gross_sales": 118800,
-      "orders": 12
+      "gross_sales": 128700,
+      "orders": 13
     },
     {
       "name": "KOKAGE/ジョガーパンツ",
@@ -65,7 +65,7 @@
     }
   ],
   "totals_28d": {
-    "orders": 222,
-    "sales": 4667410
+    "orders": 224,
+    "sales": 4710750
   }
 }
