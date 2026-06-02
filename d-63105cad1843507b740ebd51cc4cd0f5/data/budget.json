@@ -17,14 +17,14 @@
       "11",
       "12"
     ],
-    "fetched_at": "2026-06-02T12:42:43+09:00",
+    "fetched_at": "2026-06-02T13:28:10+09:00",
     "note": "12M タブから年間サマリ、各月タブ (1〜12) から着地見込みを取得。シート側を正、読込専用。"
   },
   "year": 2026,
   "annual": {
-    "target": 23200000,
-    "actual": 15826991,
-    "prev_year": 19823927
+    "target": 31200000,
+    "actual": 16705791,
+    "prev_year": 27439577
   },
   "months": {
     "2026-01": {
@@ -69,23 +69,23 @@
     },
     "2026-05": {
       "target": 5600000,
-      "actual": 3369100,
+      "actual": 4247900,
       "prev_year": 3638890,
-      "daily_avg_actual": 140379,
-      "landing_forecast": 4351754,
-      "days_elapsed": 24,
-      "days_remaining": 7,
-      "daily_required_to_target": 318700
+      "daily_avg_actual": 137029,
+      "landing_forecast": 4247900,
+      "days_elapsed": 31,
+      "days_remaining": 0,
+      "daily_required_to_target": 0
     },
     "2026-06": {
-      "target": 0,
+      "target": 8000000,
       "actual": 0,
-      "prev_year": 0,
+      "prev_year": 7615650,
       "daily_avg_actual": 0,
       "landing_forecast": 0,
       "days_elapsed": 0,
       "days_remaining": 30,
-      "daily_required_to_target": 0
+      "daily_required_to_target": 266667
     },
     "2026-07": {
       "target": 0,

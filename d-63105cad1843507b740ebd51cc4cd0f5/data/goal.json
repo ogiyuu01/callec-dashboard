@@ -4,7 +4,7 @@
   "days_passed": 2,
   "days_remaining": 28,
   "target": {
-    "sales": 4000000,
+    "sales": 8000000,
     "orders": 200,
     "note": ""
   },
@@ -23,9 +23,9 @@
     "projected_orders_pct": 0.0
   },
   "remaining": {
-    "sales": 4000000,
+    "sales": 8000000,
     "orders": 200,
-    "daily_needed_sales": 142857,
+    "daily_needed_sales": 285714,
     "daily_needed_orders": 7.142857142857143
   }
 }
