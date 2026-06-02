@@ -1,22 +1,22 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-01 12:52 JST",
+    "fetched_at": "2026-06-02 09:03 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 210,
+    "total_customers": 211,
     "returning_customers": 79,
-    "returning_customer_rate": 0.3761904761904762,
-    "new_customers": 131
+    "returning_customer_rate": 0.3744075829383886,
+    "new_customers": 132
   },
   "top_products_28d": [
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 225500,
-      "orders": 41
+      "gross_sales": 236500,
+      "orders": 43
     },
     {
       "name": "無重力リュック(第5世代)",
@@ -29,14 +29,14 @@
       "orders": 10
     },
     {
+      "name": "メランジクルー半袖Tシャツ",
+      "gross_sales": 184140,
+      "orders": 31
+    },
+    {
       "name": "KOKAGE/テーパードパンツ",
       "gross_sales": 178750,
       "orders": 13
-    },
-    {
-      "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 172260,
-      "orders": 29
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
@@ -54,18 +54,18 @@
       "orders": 8
     },
     {
-      "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
-      "gross_sales": 99000,
-      "orders": 5
-    },
-    {
       "name": "無地長袖Tシャツ",
       "gross_sales": 95040,
       "orders": 16
+    },
+    {
+      "name": "KOKAGE/タックパンツ",
+      "gross_sales": 92400,
+      "orders": 6
     }
   ],
   "totals_28d": {
-    "orders": 221,
-    "sales": 4637380
+    "orders": 222,
+    "sales": 4667410
   }
 }

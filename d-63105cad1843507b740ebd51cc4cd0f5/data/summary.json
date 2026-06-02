@@ -1,29 +1,29 @@
 {
-  "last_updated": "2026-06-01 12:50 JST",
+  "last_updated": "2026-06-02 09:01 JST",
   "last_7d": {
-    "sessions": 8999,
-    "item_views": 8119,
-    "orders": 43,
-    "sales": 887810,
-    "cvr": 0.004778308700966774,
-    "aov": 20646.74418604651,
-    "items_per_session": 0.9022113568174241
+    "sessions": 8025,
+    "item_views": 7050,
+    "orders": 38,
+    "sales": 784080,
+    "cvr": 0.004735202492211838,
+    "aov": 20633.684210526317,
+    "items_per_session": 0.8785046728971962
   },
   "prev_7d": {
-    "sessions": 9340,
-    "item_views": 8615,
-    "orders": 46,
-    "sales": 952820,
-    "cvr": 0.004925053533190578,
-    "aov": 20713.478260869564,
-    "items_per_session": 0.9223768736616702
+    "sessions": 9332,
+    "item_views": 8525,
+    "orders": 44,
+    "sales": 917180,
+    "cvr": 0.004714959279897128,
+    "aov": 20845.0,
+    "items_per_session": 0.9135233604800685
   },
   "yoy": {
-    "sessions": 6875,
-    "orders": 26,
-    "sales": 571637,
-    "cvr": 0.0038,
-    "aov": 21986.0,
+    "sessions": 7418,
+    "orders": 22,
+    "sales": 487058,
+    "cvr": 0.003,
+    "aov": 22139.0,
     "items_per_session": 0
   },
   "weeks": [
@@ -128,24 +128,24 @@
     {
       "level": "red",
       "metric": "items/session",
-      "value": "0.90",
+      "value": "0.88",
       "target": "≥ 1.40 (R001目標)",
       "note": "R001 反映後の改善を測る最重要指標"
     },
     {
       "level": "red",
       "metric": "CVR",
-      "value": "0.48%",
+      "value": "0.47%",
       "target": "≥ 0.70%",
       "note": "前年同期 0.91%。回復目標は 0.7% 以上"
     }
   ],
   "narrative": {
     "lines": [
-      "📉 今週の売上 ¥887,810（先週より -7%）",
-      "   注文は 43 件 / 先週は 46 件",
-      "✅ 買ってくれる人の割合（CVR）は前年より改善しています（0.48%）",
-      "🔴 1セッションあたりの商品閲覧数 0.90 は低めです。商品ページにたどり着けていない人が多い状態です。"
+      "📉 今週の売上 ¥784,080（先週より -15%）",
+      "   注文は 38 件 / 先週は 44 件",
+      "✅ 買ってくれる人の割合（CVR）は前年より改善しています（0.47%）",
+      "🔴 1セッションあたりの商品閲覧数 0.88 は低めです。商品ページにたどり着けていない人が多い状態です。"
     ],
     "actions": [
       "R001（コレクションページ改善）を本番に反映する",
@@ -154,17 +154,6 @@
     ]
   },
   "daily": [
-    {
-      "date": "20260504",
-      "sessions": 1201,
-      "item_views": 1806,
-      "atcs": 34,
-      "orders": 3,
-      "sales": 48840,
-      "cvr": 0.002497918401332223,
-      "aov": 16280.0,
-      "items_per_session": 1.5037468776019984
-    },
     {
       "date": "20260505",
       "sessions": 1220,
@@ -510,8 +499,8 @@
   "goal": {
     "month": "2026-06",
     "days_in_month": 30,
-    "days_passed": 1,
-    "days_remaining": 29,
+    "days_passed": 2,
+    "days_remaining": 28,
     "target": {
       "sales": 4000000,
       "orders": 200,
@@ -534,8 +523,8 @@
     "remaining": {
       "sales": 4000000,
       "orders": 200,
-      "daily_needed_sales": 137931,
-      "daily_needed_orders": 6.896551724137931
+      "daily_needed_sales": 142857,
+      "daily_needed_orders": 7.142857142857143
     }
   }
 }
