@@ -1,22 +1,22 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-02 13:30 JST",
+    "fetched_at": "2026-06-03 09:04 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 213,
-    "returning_customers": 79,
-    "returning_customer_rate": 0.37089201877934275,
-    "new_customers": 134
+    "total_customers": 202,
+    "returning_customers": 78,
+    "returning_customer_rate": 0.38613861386138615,
+    "new_customers": 124
   },
   "top_products_28d": [
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 236500,
-      "orders": 43
+      "gross_sales": 231000,
+      "orders": 42
     },
     {
       "name": "無重力リュック(第5世代)",
@@ -40,13 +40,8 @@
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "gross_sales": 165000,
-      "orders": 30
-    },
-    {
-      "name": "KOKAGE/オーバー半袖プルオーバー",
-      "gross_sales": 128700,
-      "orders": 13
+      "gross_sales": 159500,
+      "orders": 29
     },
     {
       "name": "KOKAGE/ジョガーパンツ",
@@ -54,18 +49,23 @@
       "orders": 8
     },
     {
-      "name": "無地長袖Tシャツ",
-      "gross_sales": 95040,
-      "orders": 16
+      "name": "KOKAGE/オーバー半袖プルオーバー",
+      "gross_sales": 108900,
+      "orders": 11
     },
     {
       "name": "KOKAGE/タックパンツ",
       "gross_sales": 92400,
       "orders": 6
+    },
+    {
+      "name": "ストレッチストライプ/半袖シャツ",
+      "gross_sales": 92400,
+      "orders": 7
     }
   ],
   "totals_28d": {
-    "orders": 224,
-    "sales": 4710750
+    "orders": 214,
+    "sales": 4517590
   }
 }

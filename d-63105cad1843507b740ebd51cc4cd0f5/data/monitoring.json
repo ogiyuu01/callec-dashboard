@@ -3,7 +3,7 @@
     {
       "release_id": "R001",
       "deployed_at": "2026-05-12",
-      "days_elapsed": 21,
+      "days_elapsed": 22,
       "eval_window_days": 21,
       "progress_pct": 100,
       "hypothesis_metric": "collection_to_pdp_rate",
@@ -34,7 +34,7 @@
     {
       "release_id": "R002",
       "deployed_at": "2026-05-19",
-      "days_elapsed": 14,
+      "days_elapsed": 15,
       "eval_window_days": 14,
       "progress_pct": 100,
       "hypothesis_metric": "atc_to_checkout_rate",
@@ -65,9 +65,9 @@
     {
       "release_id": "R003",
       "deployed_at": "2026-05-20",
-      "days_elapsed": 13,
+      "days_elapsed": 14,
       "eval_window_days": 14,
-      "progress_pct": 93,
+      "progress_pct": 100,
       "hypothesis_metric": "view_to_atc_rate",
       "expected_lift_pct": "15",
       "decision_rule": "GREEN: rate>=4.3% / YELLOW: 3.9-4.2% / RED: rate<=3.5% (ベースライン 3.71%)",
@@ -96,9 +96,9 @@
     {
       "release_id": "R004_line_link",
       "deployed_at": "2026-05-20",
-      "days_elapsed": 13,
+      "days_elapsed": 14,
       "eval_window_days": 14,
-      "progress_pct": 93,
+      "progress_pct": 100,
       "hypothesis_metric": "line_link_rate",
       "expected_lift_pct": "",
       "decision_rule": "GREEN: line_link_rate>=10% / YELLOW: 5-10% / RED: rate<5% (baseline=0%、line_link_rate=14日間のLINE連携完了顧客数/同期間の注文完了顧客数)",
@@ -116,7 +116,7 @@
     }
   ],
   "_meta": {
-    "generated_at": "2026-06-02T13:29:10+09:00",
+    "generated_at": "2026-06-03T09:02:47+09:00",
     "source": "release_log.csv + kpi_snapshots.csv",
     "note": "collection_to_pdp_rate / view_to_atc_rate は snapshot 列直接対応がないため代理列または欠損。完全値は BQ 直撃 by snapshot_kpi.py を参照"
   }

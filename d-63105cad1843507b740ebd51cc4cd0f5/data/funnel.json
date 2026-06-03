@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8025
+      "count": 7298
     },
     {
       "name": "view_item",
-      "count": 7050
+      "count": 6165
     },
     {
       "name": "add_to_cart",
-      "count": 246
+      "count": 202
     },
     {
       "name": "begin_checkout",
-      "count": 73
+      "count": 66
     },
     {
       "name": "purchase",
-      "count": 38
+      "count": 34
     }
   ],
   "weeks": [
@@ -86,39 +86,33 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 170,
-      "pdp_reached": 78,
-      "pdp_reach": 45.88235294117647
+      "sessions": 145,
+      "pdp_reached": 70,
+      "pdp_reach": 48.275862068965516
     },
     {
       "path": "/collections/new",
-      "sessions": 62,
-      "pdp_reached": 18,
-      "pdp_reach": 29.032258064516128
-    },
-    {
-      "path": "/collections/setup",
-      "sessions": 53,
-      "pdp_reached": 20,
-      "pdp_reach": 37.735849056603776
+      "sessions": 54,
+      "pdp_reached": 15,
+      "pdp_reach": 27.77777777777778
     },
     {
       "path": "/collections/pants",
-      "sessions": 48,
-      "pdp_reached": 10,
-      "pdp_reach": 20.833333333333332
+      "sessions": 43,
+      "pdp_reached": 9,
+      "pdp_reach": 20.930232558139537
+    },
+    {
+      "path": "/collections/setup",
+      "sessions": 41,
+      "pdp_reached": 15,
+      "pdp_reach": 36.58536585365854
     },
     {
       "path": "/collections/5月6日販売開始",
-      "sessions": 40,
-      "pdp_reached": 12,
-      "pdp_reach": 30.0
-    },
-    {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 31,
+      "sessions": 35,
       "pdp_reached": 10,
-      "pdp_reach": 32.25806451612903
+      "pdp_reach": 28.571428571428573
     }
   ],
   "products_top5": [

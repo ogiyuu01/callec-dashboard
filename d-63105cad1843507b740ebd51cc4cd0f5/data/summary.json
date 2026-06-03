@@ -1,22 +1,22 @@
 {
-  "last_updated": "2026-06-02 13:28 JST",
+  "last_updated": "2026-06-03 09:01 JST",
   "last_7d": {
-    "sessions": 8025,
-    "item_views": 7050,
-    "orders": 38,
-    "sales": 784080,
-    "cvr": 0.004735202492211838,
-    "aov": 20633.684210526317,
-    "items_per_session": 0.8785046728971962
+    "sessions": 7298,
+    "item_views": 6165,
+    "orders": 34,
+    "sales": 707080,
+    "cvr": 0.004658810633050151,
+    "aov": 20796.470588235294,
+    "items_per_session": 0.8447519868457112
   },
   "prev_7d": {
-    "sessions": 9332,
-    "item_views": 8525,
-    "orders": 44,
-    "sales": 917180,
-    "cvr": 0.004714959279897128,
-    "aov": 20845.0,
-    "items_per_session": 0.9135233604800685
+    "sessions": 9224,
+    "item_views": 8378,
+    "orders": 46,
+    "sales": 944680,
+    "cvr": 0.004986990459670425,
+    "aov": 20536.521739130436,
+    "items_per_session": 0.9082827406764961
   },
   "yoy": {
     "sessions": 7418,
@@ -128,7 +128,7 @@
     {
       "level": "red",
       "metric": "items/session",
-      "value": "0.88",
+      "value": "0.84",
       "target": "≥ 1.40 (R001目標)",
       "note": "R001 反映後の改善を測る最重要指標"
     },
@@ -142,10 +142,10 @@
   ],
   "narrative": {
     "lines": [
-      "📉 今週の売上 ¥784,080（先週より -15%）",
-      "   注文は 38 件 / 先週は 44 件",
+      "📉 今週の売上 ¥707,080（先週より -25%）",
+      "   注文は 34 件 / 先週は 46 件",
       "✅ 買ってくれる人の割合（CVR）は前年より改善しています（0.47%）",
-      "🔴 1セッションあたりの商品閲覧数 0.88 は低めです。商品ページにたどり着けていない人が多い状態です。"
+      "🔴 1セッションあたりの商品閲覧数 0.84 は低めです。商品ページにたどり着けていない人が多い状態です。"
     ],
     "actions": [
       "R001（コレクションページ改善）を本番に反映する",
@@ -154,17 +154,6 @@
     ]
   },
   "daily": [
-    {
-      "date": "20260505",
-      "sessions": 1220,
-      "item_views": 1719,
-      "atcs": 47,
-      "orders": 11,
-      "sales": 194260,
-      "cvr": 0.009016393442622951,
-      "aov": 17660.0,
-      "items_per_session": 1.409016393442623
-    },
     {
       "date": "20260506",
       "sessions": 1058,
@@ -499,8 +488,8 @@
   "goal": {
     "month": "2026-06",
     "days_in_month": 30,
-    "days_passed": 2,
-    "days_remaining": 28,
+    "days_passed": 3,
+    "days_remaining": 27,
     "target": {
       "sales": 8000000,
       "orders": 200,
@@ -523,8 +512,8 @@
     "remaining": {
       "sales": 8000000,
       "orders": 200,
-      "daily_needed_sales": 285714,
-      "daily_needed_orders": 7.142857142857143
+      "daily_needed_sales": 296296,
+      "daily_needed_orders": 7.407407407407407
     }
   }
 }
