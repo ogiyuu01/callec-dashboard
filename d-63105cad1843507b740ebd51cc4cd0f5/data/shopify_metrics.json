@@ -1,15 +1,15 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-03 09:04 JST",
+    "fetched_at": "2026-06-03 12:54 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 202,
-    "returning_customers": 78,
-    "returning_customer_rate": 0.38613861386138615,
+    "total_customers": 203,
+    "returning_customers": 79,
+    "returning_customer_rate": 0.3891625615763547,
     "new_customers": 124
   },
   "top_products_28d": [
@@ -65,7 +65,7 @@
     }
   ],
   "totals_28d": {
-    "orders": 214,
-    "sales": 4517590
+    "orders": 215,
+    "sales": 4546190
   }
 }
