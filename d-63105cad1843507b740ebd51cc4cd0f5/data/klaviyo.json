@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-03 12:54 JST",
+  "last_updated": "2026-06-04 09:03 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -25,24 +25,24 @@
         "conv_rate": 0.0
       },
       "current_30d": {
-        "recipients": 326.0,
-        "opens": 192.0,
-        "clicks": 27.0,
-        "convs": 4.0,
-        "rev": 86900.0,
-        "open_rate": 0.588957055214724,
-        "click_rate": 0.08282208588957055,
-        "conv_rate": 0.012269938650306749
+        "recipients": 320.0,
+        "opens": 190.0,
+        "clicks": 24.0,
+        "convs": 3.0,
+        "rev": 76120.0,
+        "open_rate": 0.59375,
+        "click_rate": 0.075,
+        "conv_rate": 0.009375
       },
       "previous_30d": {
-        "recipients": 359.0,
-        "opens": 220.0,
-        "clicks": 28.0,
-        "convs": 0,
-        "rev": 0.0,
-        "open_rate": 0.6128133704735376,
-        "click_rate": 0.07799442896935933,
-        "conv_rate": 0.0
+        "recipients": 349.0,
+        "opens": 214.0,
+        "clicks": 31.0,
+        "convs": 1.0,
+        "rev": 10780.0,
+        "open_rate": 0.6131805157593123,
+        "click_rate": 0.08882521489971347,
+        "conv_rate": 0.0028653295128939827
       },
       "annual": {
         "recipients": 911.0,
@@ -55,71 +55,71 @@
         "conv_rate": 0.0043907793633369925
       },
       "wow_pct": null,
-      "mom_pct": null,
+      "mom_pct": 606.1224489795918,
       "open_alert": "green",
       "wow_alert": "neutral",
-      "mom_alert": "neutral",
-      "rpr_30d": 266.5644171779141
+      "mom_alert": "green",
+      "rpr_30d": 237.875
     },
     {
       "flow_id": "SufE4T",
       "name": "カゴ落ちメール",
       "current_7d": {
-        "recipients": 110.0,
-        "opens": 27.0,
+        "recipients": 113.0,
+        "opens": 28.0,
         "clicks": 6.0,
         "convs": 2.0,
         "rev": 40260.0,
-        "open_rate": 0.24545454545454545,
-        "click_rate": 0.05454545454545454,
-        "conv_rate": 0.01818181818181818
+        "open_rate": 0.24778761061946902,
+        "click_rate": 0.05309734513274336,
+        "conv_rate": 0.017699115044247787
       },
       "previous_7d": {
-        "recipients": 55.0,
+        "recipients": 60.0,
         "opens": 19.0,
-        "clicks": 5.0,
-        "convs": 3.0,
-        "rev": 64130.0,
-        "open_rate": 0.34545454545454546,
-        "click_rate": 0.09090909090909091,
-        "conv_rate": 0.05454545454545454
+        "clicks": 4.0,
+        "convs": 2.0,
+        "rev": 41250.0,
+        "open_rate": 0.31666666666666665,
+        "click_rate": 0.06666666666666667,
+        "conv_rate": 0.03333333333333333
       },
       "current_30d": {
-        "recipients": 378.0,
-        "opens": 93.0,
+        "recipients": 387.0,
+        "opens": 95.0,
         "clicks": 22.0,
         "convs": 8.0,
         "rev": 155870.0,
-        "open_rate": 0.24603174603174602,
-        "click_rate": 0.0582010582010582,
-        "conv_rate": 0.021164021164021163
+        "open_rate": 0.2454780361757106,
+        "click_rate": 0.056847545219638244,
+        "conv_rate": 0.020671834625323
       },
       "previous_30d": {
-        "recipients": 317.0,
-        "opens": 100.0,
+        "recipients": 307.0,
+        "opens": 99.0,
         "clicks": 9.0,
         "convs": 7.0,
         "rev": 128480.0,
-        "open_rate": 0.31545741324921134,
-        "click_rate": 0.028391167192429023,
-        "conv_rate": 0.022082018927444796
+        "open_rate": 0.32247557003257327,
+        "click_rate": 0.029315960912052116,
+        "conv_rate": 0.02280130293159609
       },
       "annual": {
-        "recipients": 1045.0,
-        "opens": 265.0,
+        "recipients": 1064.0,
+        "opens": 267.0,
         "clicks": 48.0,
         "convs": 22.0,
         "rev": 385880.0,
-        "open_rate": 0.2535885167464115,
-        "click_rate": 0.045933014354066985,
-        "conv_rate": 0.021052631578947368
+        "open_rate": 0.25093984962406013,
+        "click_rate": 0.045112781954887216,
+        "conv_rate": 0.020676691729323307
       },
-      "wow_pct": -37.22126929674099,
+      "wow_pct": -2.4,
       "mom_pct": 21.31849315068493,
       "open_alert": "yellow",
-      "wow_alert": "red",
+      "wow_alert": "green",
       "mom_alert": "green",
-      "rpr_30d": 412.35449735449737
+      "rpr_30d": 402.76485788113695
     },
     {
       "flow_id": "VLMvyW",
@@ -184,24 +184,16 @@
   ],
   "totals": {
     "rev_7d": 40260.0,
-    "rev_7d_prev": 64130.0,
-    "rev_30d": 242770.0,
-    "rev_30d_prev": 128480.0,
+    "rev_7d_prev": 41250.0,
+    "rev_30d": 231990.0,
+    "rev_30d_prev": 139260.0,
     "rev_365d": 472780.0,
-    "wow_pct": -37.22126929674099,
-    "mom_pct": 88.9554794520548,
-    "wow_alert": "red",
+    "wow_pct": -2.4,
+    "mom_pct": 66.58767772511848,
+    "wow_alert": "green",
     "mom_alert": "green"
   },
-  "alerts": [
-    {
-      "level": "red",
-      "flow": "カゴ落ちメール",
-      "kind": "wow_drop",
-      "value": -37.22126929674099,
-      "msg": "売上 WoW -37.2% (前週比 -20% 以下) — リスト健全性 / 件名変更 / 配信時刻を確認"
-    }
-  ],
+  "alerts": [],
   "legend": {
     "open_rate": {
       "green": ">=0.25",
