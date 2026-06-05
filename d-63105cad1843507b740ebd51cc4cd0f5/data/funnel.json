@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7364
+      "count": 8130
     },
     {
       "name": "view_item",
-      "count": 5907
+      "count": 6567
     },
     {
       "name": "add_to_cart",
-      "count": 194
+      "count": 214
     },
     {
       "name": "begin_checkout",
-      "count": 59
+      "count": 62
     },
     {
       "name": "purchase",
-      "count": 32
+      "count": 35
     }
   ],
   "weeks": [
@@ -86,39 +86,45 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 165,
-      "pdp_reached": 73,
-      "pdp_reach": 44.24242424242424
+      "sessions": 191,
+      "pdp_reached": 78,
+      "pdp_reach": 40.83769633507853
     },
     {
       "path": "/collections/online_ranking",
-      "sessions": 86,
-      "pdp_reached": 20,
-      "pdp_reach": 23.25581395348837
+      "sessions": 100,
+      "pdp_reached": 22,
+      "pdp_reach": 22.0
     },
     {
       "path": "/collections/new",
-      "sessions": 66,
-      "pdp_reached": 18,
-      "pdp_reach": 27.272727272727273
+      "sessions": 77,
+      "pdp_reached": 23,
+      "pdp_reach": 29.87012987012987
     },
     {
       "path": "/collections/setup",
-      "sessions": 41,
-      "pdp_reached": 16,
-      "pdp_reach": 39.02439024390244
+      "sessions": 55,
+      "pdp_reached": 22,
+      "pdp_reach": 40.0
+    },
+    {
+      "path": "/collections/tailored-jacket",
+      "sessions": 40,
+      "pdp_reached": 4,
+      "pdp_reach": 10.0
     },
     {
       "path": "/collections/pants",
-      "sessions": 36,
+      "sessions": 39,
       "pdp_reached": 8,
-      "pdp_reach": 22.22222222222222
+      "pdp_reach": 20.512820512820515
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 31,
+      "sessions": 34,
       "pdp_reached": 9,
-      "pdp_reach": 29.032258064516128
+      "pdp_reach": 26.470588235294116
     }
   ],
   "products_top5": [
@@ -133,6 +139,11 @@
       "revenue": 55000
     },
     {
+      "name": "無地半袖Tシャツ",
+      "qty": 9,
+      "revenue": 49500
+    },
+    {
       "name": "メランジクルー半袖Tシャツ",
       "qty": 8,
       "revenue": 47520
@@ -141,11 +152,6 @@
       "name": "KOKAGE/テーパードパンツ",
       "qty": 3,
       "revenue": 41250
-    },
-    {
-      "name": "TOBIKIRI STRIPE/ジョガーパンツ",
-      "qty": 3,
-      "revenue": 39600
     }
   ]
 }

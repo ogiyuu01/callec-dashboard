@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-06-05 09:03 JST",
+  "last_updated": "2026-06-05 12:35 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
       "name": "レビューリクエスト",
       "current_7d": {
         "recipients": 108.0,
-        "opens": 64.0,
-        "clicks": 14.0,
+        "opens": 66.0,
+        "clicks": 15.0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.5925925925925926,
-        "click_rate": 0.12962962962962962,
+        "open_rate": 0.6111111111111112,
+        "click_rate": 0.1388888888888889,
         "conv_rate": 0.0
       },
       "previous_7d": {
@@ -26,12 +26,12 @@
       },
       "current_30d": {
         "recipients": 374.0,
-        "opens": 218.0,
-        "clicks": 30.0,
+        "opens": 220.0,
+        "clicks": 31.0,
         "convs": 3.0,
         "rev": 76120.0,
-        "open_rate": 0.5828877005347594,
-        "click_rate": 0.08021390374331551,
+        "open_rate": 0.5882352941176471,
+        "click_rate": 0.08288770053475936,
         "conv_rate": 0.008021390374331552
       },
       "previous_30d": {
@@ -46,12 +46,12 @@
       },
       "annual": {
         "recipients": 965.0,
-        "opens": 548.0,
-        "clicks": 85.0,
+        "opens": 549.0,
+        "clicks": 86.0,
         "convs": 4.0,
         "rev": 86900.0,
-        "open_rate": 0.5678756476683938,
-        "click_rate": 0.08808290155440414,
+        "open_rate": 0.5689119170984456,
+        "click_rate": 0.08911917098445596,
         "conv_rate": 0.004145077720207254
       },
       "wow_pct": null,
