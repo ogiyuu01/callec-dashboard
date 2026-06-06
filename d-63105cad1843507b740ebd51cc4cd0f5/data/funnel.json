@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8130
+      "count": 6167
     },
     {
       "name": "view_item",
-      "count": 6567
+      "count": 5384
     },
     {
       "name": "add_to_cart",
-      "count": 214
+      "count": 171
     },
     {
       "name": "begin_checkout",
-      "count": 62
+      "count": 43
     },
     {
       "name": "purchase",
-      "count": 35
+      "count": 30
     }
   ],
   "weeks": [
@@ -86,45 +86,45 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 191,
-      "pdp_reached": 78,
-      "pdp_reach": 40.83769633507853
+      "sessions": 170,
+      "pdp_reached": 67,
+      "pdp_reach": 39.411764705882355
     },
     {
       "path": "/collections/online_ranking",
-      "sessions": 100,
+      "sessions": 97,
       "pdp_reached": 22,
-      "pdp_reach": 22.0
+      "pdp_reach": 22.68041237113402
     },
     {
       "path": "/collections/new",
-      "sessions": 77,
-      "pdp_reached": 23,
-      "pdp_reach": 29.87012987012987
+      "sessions": 70,
+      "pdp_reached": 20,
+      "pdp_reach": 28.571428571428573
     },
     {
       "path": "/collections/setup",
-      "sessions": 55,
-      "pdp_reached": 22,
-      "pdp_reach": 40.0
+      "sessions": 45,
+      "pdp_reached": 17,
+      "pdp_reach": 37.77777777777778
     },
     {
       "path": "/collections/tailored-jacket",
-      "sessions": 40,
-      "pdp_reached": 4,
-      "pdp_reach": 10.0
+      "sessions": 39,
+      "pdp_reached": 3,
+      "pdp_reach": 7.6923076923076925
     },
     {
       "path": "/collections/pants",
-      "sessions": 39,
-      "pdp_reached": 8,
-      "pdp_reach": 20.512820512820515
+      "sessions": 30,
+      "pdp_reached": 6,
+      "pdp_reach": 20.0
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 34,
-      "pdp_reached": 9,
-      "pdp_reach": 26.470588235294116
+      "sessions": 30,
+      "pdp_reached": 8,
+      "pdp_reach": 26.666666666666668
     }
   ],
   "products_top5": [
@@ -134,24 +134,24 @@
       "revenue": 59400
     },
     {
-      "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "qty": 10,
-      "revenue": 55000
-    },
-    {
       "name": "無地半袖Tシャツ",
       "qty": 9,
       "revenue": 49500
     },
     {
-      "name": "メランジクルー半袖Tシャツ",
-      "qty": 8,
-      "revenue": 47520
+      "name": "プリント半袖Tシャツ(アート/ウルフ)",
+      "qty": 9,
+      "revenue": 49500
     },
     {
       "name": "KOKAGE/テーパードパンツ",
       "qty": 3,
       "revenue": 41250
+    },
+    {
+      "name": "メランジクルー半袖Tシャツ",
+      "qty": 6,
+      "revenue": 35640
     }
   ]
 }

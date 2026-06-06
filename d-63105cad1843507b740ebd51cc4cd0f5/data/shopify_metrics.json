@@ -1,32 +1,32 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-05 12:35 JST",
+    "fetched_at": "2026-06-06 09:02 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 198,
-    "returning_customers": 79,
-    "returning_customer_rate": 0.398989898989899,
-    "new_customers": 119
+    "total_customers": 202,
+    "returning_customers": 78,
+    "returning_customer_rate": 0.38613861386138615,
+    "new_customers": 124
   },
   "top_products_28d": [
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 253000,
-      "orders": 46
-    },
-    {
-      "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 206250,
-      "orders": 15
+      "gross_sales": 231000,
+      "orders": 42
     },
     {
       "name": "メランジクルー半袖Tシャツ",
       "gross_sales": 196020,
       "orders": 33
+    },
+    {
+      "name": "KOKAGE/テーパードパンツ",
+      "gross_sales": 192500,
+      "orders": 14
     },
     {
       "name": "無重力リュック(第5世代)",
@@ -35,8 +35,8 @@
     },
     {
       "name": "KOKAGE/テーラードジャケット",
-      "gross_sales": 187000,
-      "orders": 10
+      "gross_sales": 168300,
+      "orders": 9
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
@@ -65,7 +65,7 @@
     }
   ],
   "totals_28d": {
-    "orders": 213,
-    "sales": 4452580
+    "orders": 218,
+    "sales": 4535850
   }
 }
