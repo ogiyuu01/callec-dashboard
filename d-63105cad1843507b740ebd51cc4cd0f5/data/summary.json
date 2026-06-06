@@ -1,13 +1,13 @@
 {
-  "last_updated": "2026-06-06 09:00 JST",
+  "last_updated": "2026-06-06 11:54 JST",
   "last_7d": {
-    "sessions": 6167,
-    "item_views": 5384,
-    "orders": 30,
-    "sales": 627220,
-    "cvr": 0.004864601913410086,
-    "aov": 20907.333333333332,
-    "items_per_session": 0.8730338900599968
+    "sessions": 7994,
+    "item_views": 6656,
+    "orders": 41,
+    "sales": 795300,
+    "cvr": 0.0051288466349762325,
+    "aov": 19397.560975609755,
+    "items_per_session": 0.8326244683512635
   },
   "prev_7d": {
     "sessions": 7894,
@@ -128,24 +128,24 @@
     {
       "level": "red",
       "metric": "items/session",
-      "value": "0.87",
+      "value": "0.83",
       "target": "≥ 1.40 (R001目標)",
       "note": "R001 反映後の改善を測る最重要指標"
     },
     {
-      "level": "red",
+      "level": "yellow",
       "metric": "CVR",
-      "value": "0.49%",
+      "value": "0.51%",
       "target": "≥ 0.70%",
       "note": "前年同期 0.91%。回復目標は 0.7% 以上"
     }
   ],
   "narrative": {
     "lines": [
-      "📉 今週の売上 ¥627,220（先週より -29%）",
-      "   注文は 30 件 / 先週は 40 件",
-      "✅ 買ってくれる人の割合（CVR）は前年より改善しています（0.49%）",
-      "🔴 1セッションあたりの商品閲覧数 0.87 は低めです。商品ページにたどり着けていない人が多い状態です。"
+      "📉 今週の売上 ¥795,300（先週より -10%）",
+      "   注文は 41 件 / 先週は 40 件",
+      "✅ 買ってくれる人の割合（CVR）は前年より改善しています（0.51%）",
+      "🔴 1セッションあたりの商品閲覧数 0.83 は低めです。商品ページにたどり着けていない人が多い状態です。"
     ],
     "actions": [
       "R001（コレクションページ改善）を本番に反映する",
@@ -432,13 +432,24 @@
     {
       "date": "20260604",
       "sessions": 766,
-      "item_views": 646,
+      "item_views": 648,
       "atcs": 20,
       "orders": 3,
       "sales": 50380,
       "cvr": 0.0039164490861618795,
       "aov": 16793.333333333332,
-      "items_per_session": 0.8433420365535248
+      "items_per_session": 0.8459530026109661
+    },
+    {
+      "date": "20260605",
+      "sessions": 1827,
+      "item_views": 1270,
+      "atcs": 49,
+      "orders": 11,
+      "sales": 168080,
+      "cvr": 0.0060207991242474,
+      "aov": 15280.0,
+      "items_per_session": 0.6951286261631089
     }
   ],
   "anomalies": [
@@ -496,24 +507,24 @@
       "note": ""
     },
     "actual": {
-      "sales": 208890,
-      "orders": 11
+      "sales": 376970,
+      "orders": 22
     },
     "projected": {
-      "sales": 1253340,
-      "orders": 66
+      "sales": 2261820,
+      "orders": 132
     },
     "progress": {
-      "sales_pct": 2.6,
-      "orders_pct": 5.5,
-      "projected_sales_pct": 15.7,
-      "projected_orders_pct": 33.0
+      "sales_pct": 4.7,
+      "orders_pct": 11.0,
+      "projected_sales_pct": 28.3,
+      "projected_orders_pct": 66.0
     },
     "remaining": {
-      "sales": 7791110,
-      "orders": 189,
-      "daily_needed_sales": 324629,
-      "daily_needed_orders": 7.875
+      "sales": 7623030,
+      "orders": 178,
+      "daily_needed_sales": 317626,
+      "daily_needed_orders": 7.416666666666667
     }
   }
 }
