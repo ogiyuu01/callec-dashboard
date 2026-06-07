@@ -2,56 +2,56 @@
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 2259,
-      "orders": 11,
-      "sales": 193050,
-      "cvr": 0.004869411243913236
+      "sessions": 2663,
+      "orders": 12,
+      "sales": 206800,
+      "cvr": 0.004506196019526849
     },
     {
       "channel": "Organic Search",
-      "sessions": 1021,
+      "sessions": 1205,
       "orders": 10,
       "sales": 205260,
-      "cvr": 0.009794319294809012
+      "cvr": 0.008298755186721992
     },
     {
       "channel": "Paid Search",
-      "sessions": 941,
+      "sessions": 1158,
       "orders": 10,
       "sales": 206800,
-      "cvr": 0.010626992561105207
+      "cvr": 0.008635578583765112
     },
     {
       "channel": "Referral",
-      "sessions": 511,
+      "sessions": 610,
       "orders": 1,
       "sales": 5500,
-      "cvr": 0.0019569471624266144
+      "cvr": 0.001639344262295082
     },
     {
       "channel": "Other",
-      "sessions": 351,
+      "sessions": 419,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
     },
     {
       "channel": "LINE",
-      "sessions": 155,
+      "sessions": 186,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
     },
     {
       "channel": "Email",
-      "sessions": 140,
+      "sessions": 150,
       "orders": 1,
       "sales": 31240,
-      "cvr": 0.007142857142857143
+      "cvr": 0.006666666666666667
     },
     {
       "channel": "Social",
-      "sessions": 48,
+      "sessions": 59,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
@@ -75,7 +75,7 @@
           2311,
           3473,
           3059,
-          1925
+          2329
         ]
       },
       {
@@ -86,7 +86,7 @@
           1495,
           1686,
           1442,
-          700
+          917
         ]
       },
       {
@@ -97,7 +97,7 @@
           1275,
           1708,
           1635,
-          718
+          902
         ]
       },
       {
@@ -108,7 +108,7 @@
           425,
           1495,
           2076,
-          370
+          469
         ]
       },
       {
@@ -119,7 +119,7 @@
           373,
           434,
           359,
-          322
+          390
         ]
       }
     ]

@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 5426
+      "count": 6450
     },
     {
       "name": "view_item",
-      "count": 5267
+      "count": 6520
     },
     {
       "name": "add_to_cart",
-      "count": 182
+      "count": 223
     },
     {
       "name": "begin_checkout",
-      "count": 41
+      "count": 45
     },
     {
       "name": "purchase",
-      "count": 33
+      "count": 34
     }
   ],
   "weeks": [
@@ -86,33 +86,39 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 154,
-      "pdp_reached": 55,
-      "pdp_reach": 35.714285714285715
+      "sessions": 177,
+      "pdp_reached": 69,
+      "pdp_reach": 38.983050847457626
     },
     {
       "path": "/collections/online_ranking",
-      "sessions": 97,
-      "pdp_reached": 25,
-      "pdp_reach": 25.77319587628866
+      "sessions": 105,
+      "pdp_reached": 26,
+      "pdp_reach": 24.761904761904763
     },
     {
       "path": "/collections/new",
-      "sessions": 70,
-      "pdp_reached": 18,
-      "pdp_reach": 25.714285714285715
-    },
-    {
-      "path": "/collections/setup",
-      "sessions": 45,
-      "pdp_reached": 16,
-      "pdp_reach": 35.55555555555556
+      "sessions": 75,
+      "pdp_reached": 20,
+      "pdp_reach": 26.666666666666668
     },
     {
       "path": "/collections/tailored-jacket",
-      "sessions": 44,
-      "pdp_reached": 3,
-      "pdp_reach": 6.818181818181818
+      "sessions": 58,
+      "pdp_reached": 4,
+      "pdp_reach": 6.896551724137931
+    },
+    {
+      "path": "/collections/setup",
+      "sessions": 53,
+      "pdp_reached": 16,
+      "pdp_reach": 30.18867924528302
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 31,
+      "pdp_reached": 11,
+      "pdp_reach": 35.483870967741936
     }
   ],
   "products_top5": [
@@ -132,14 +138,14 @@
       "revenue": 41580
     },
     {
+      "name": "KOKAGE/テーパードパンツ",
+      "qty": 3,
+      "revenue": 41250
+    },
+    {
       "name": "ボーダージャカード半袖ニットプルオーバー",
       "qty": 4,
       "revenue": 39600
-    },
-    {
-      "name": "SAISENTAKU/ルームハーフパンツ",
-      "qty": 3,
-      "revenue": 34650
     }
   ]
 }
