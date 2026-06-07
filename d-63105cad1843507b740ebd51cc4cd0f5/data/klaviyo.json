@@ -1,125 +1,125 @@
 {
-  "last_updated": "2026-06-06 11:56 JST",
+  "last_updated": "2026-06-07 09:03 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
       "name": "レビューリクエスト",
       "current_7d": {
-        "recipients": 110.0,
-        "opens": 70.0,
-        "clicks": 13.0,
+        "recipients": 102.0,
+        "opens": 67.0,
+        "clicks": 11.0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.6363636363636364,
-        "click_rate": 0.11818181818181818,
+        "open_rate": 0.6568627450980392,
+        "click_rate": 0.10784313725490197,
         "conv_rate": 0.0
       },
       "previous_7d": {
-        "recipients": 79.0,
-        "opens": 50.0,
-        "clicks": 9.0,
+        "recipients": 81.0,
+        "opens": 52.0,
+        "clicks": 10.0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.6329113924050633,
-        "click_rate": 0.11392405063291139,
+        "open_rate": 0.6419753086419753,
+        "click_rate": 0.12345679012345678,
         "conv_rate": 0.0
       },
       "current_30d": {
-        "recipients": 385.0,
-        "opens": 231.0,
-        "clicks": 31.0,
+        "recipients": 351.0,
+        "opens": 213.0,
+        "clicks": 28.0,
         "convs": 3.0,
         "rev": 76120.0,
-        "open_rate": 0.6,
-        "click_rate": 0.08051948051948052,
-        "conv_rate": 0.007792207792207792
+        "open_rate": 0.6068376068376068,
+        "click_rate": 0.07977207977207977,
+        "conv_rate": 0.008547008547008548
       },
       "previous_30d": {
-        "recipients": 323.0,
-        "opens": 201.0,
-        "clicks": 29.0,
+        "recipients": 362.0,
+        "opens": 223.0,
+        "clicks": 32.0,
         "convs": 1.0,
         "rev": 10780.0,
-        "open_rate": 0.6222910216718266,
-        "click_rate": 0.08978328173374613,
-        "conv_rate": 0.0030959752321981426
+        "open_rate": 0.6160220994475138,
+        "click_rate": 0.08839779005524862,
+        "conv_rate": 0.0027624309392265192
       },
       "annual": {
-        "recipients": 976.0,
-        "opens": 558.0,
+        "recipients": 981.0,
+        "opens": 560.0,
         "clicks": 86.0,
         "convs": 4.0,
         "rev": 86900.0,
-        "open_rate": 0.5717213114754098,
-        "click_rate": 0.08811475409836066,
-        "conv_rate": 0.004098360655737705
+        "open_rate": 0.5708460754332314,
+        "click_rate": 0.08766564729867482,
+        "conv_rate": 0.004077471967380225
       },
       "wow_pct": null,
       "mom_pct": 606.1224489795918,
       "open_alert": "green",
       "wow_alert": "neutral",
       "mom_alert": "green",
-      "rpr_30d": 197.71428571428572
+      "rpr_30d": 216.86609686609685
     },
     {
       "flow_id": "SufE4T",
       "name": "カゴ落ちメール",
       "current_7d": {
-        "recipients": 131.0,
+        "recipients": 132.0,
         "opens": 31.0,
-        "clicks": 6.0,
-        "convs": 1.0,
-        "rev": 27500.0,
-        "open_rate": 0.2366412213740458,
-        "click_rate": 0.04580152671755725,
-        "conv_rate": 0.007633587786259542
+        "clicks": 5.0,
+        "convs": 0,
+        "rev": 0.0,
+        "open_rate": 0.23484848484848486,
+        "click_rate": 0.03787878787878788,
+        "conv_rate": 0.0
       },
       "previous_7d": {
-        "recipients": 69.0,
-        "opens": 19.0,
-        "clicks": 5.0,
-        "convs": 3.0,
-        "rev": 54010.0,
-        "open_rate": 0.2753623188405797,
-        "click_rate": 0.07246376811594203,
-        "conv_rate": 0.043478260869565216
+        "recipients": 75.0,
+        "opens": 21.0,
+        "clicks": 6.0,
+        "convs": 4.0,
+        "rev": 81510.0,
+        "open_rate": 0.28,
+        "click_rate": 0.08,
+        "conv_rate": 0.05333333333333334
       },
       "current_30d": {
-        "recipients": 401.0,
-        "opens": 96.0,
+        "recipients": 406.0,
+        "opens": 97.0,
         "clicks": 23.0,
         "convs": 8.0,
         "rev": 155870.0,
-        "open_rate": 0.23940149625935161,
-        "click_rate": 0.057356608478802994,
-        "conv_rate": 0.0199501246882793
+        "open_rate": 0.23891625615763548,
+        "click_rate": 0.05665024630541872,
+        "conv_rate": 0.019704433497536946
       },
       "previous_30d": {
         "recipients": 291.0,
-        "opens": 95.0,
-        "clicks": 8.0,
+        "opens": 92.0,
+        "clicks": 7.0,
         "convs": 6.0,
         "rev": 111540.0,
-        "open_rate": 0.32646048109965636,
-        "click_rate": 0.027491408934707903,
+        "open_rate": 0.3161512027491409,
+        "click_rate": 0.024054982817869417,
         "conv_rate": 0.020618556701030927
       },
       "annual": {
-        "recipients": 1102.0,
-        "opens": 271.0,
+        "recipients": 1119.0,
+        "opens": 274.0,
         "clicks": 50.0,
         "convs": 22.0,
         "rev": 385880.0,
-        "open_rate": 0.24591651542649728,
-        "click_rate": 0.045372050816696916,
-        "conv_rate": 0.019963702359346643
+        "open_rate": 0.2448614834673816,
+        "click_rate": 0.044682752457551385,
+        "conv_rate": 0.01966041108132261
       },
-      "wow_pct": -49.08350305498982,
+      "wow_pct": -100.0,
       "mom_pct": 39.743589743589745,
       "open_alert": "yellow",
       "wow_alert": "red",
       "mom_alert": "green",
-      "rpr_30d": 388.70324189526184
+      "rpr_30d": 383.9162561576355
     },
     {
       "flow_id": "VLMvyW",
@@ -183,12 +183,12 @@
     }
   ],
   "totals": {
-    "rev_7d": 27500.0,
-    "rev_7d_prev": 54010.0,
+    "rev_7d": 0.0,
+    "rev_7d_prev": 81510.0,
     "rev_30d": 231990.0,
     "rev_30d_prev": 122320.0,
     "rev_365d": 472780.0,
-    "wow_pct": -49.08350305498982,
+    "wow_pct": -100.0,
     "mom_pct": 89.65827338129496,
     "wow_alert": "red",
     "mom_alert": "green"
@@ -198,8 +198,8 @@
       "level": "red",
       "flow": "カゴ落ちメール",
       "kind": "wow_drop",
-      "value": -49.08350305498982,
-      "msg": "売上 WoW -49.1% (前週比 -20% 以下) — リスト健全性 / 件名変更 / 配信時刻を確認"
+      "value": -100.0,
+      "msg": "売上 WoW -100.0% (前週比 -20% 以下) — リスト健全性 / 件名変更 / 配信時刻を確認"
     }
   ],
   "legend": {

@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7994
+      "count": 5426
     },
     {
       "name": "view_item",
-      "count": 6656
+      "count": 5267
     },
     {
       "name": "add_to_cart",
-      "count": 220
+      "count": 182
     },
     {
       "name": "begin_checkout",
-      "count": 59
+      "count": 41
     },
     {
       "name": "purchase",
-      "count": 41
+      "count": 33
     }
   ],
   "weeks": [
@@ -86,62 +86,45 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 189,
-      "pdp_reached": 73,
-      "pdp_reach": 38.62433862433863
+      "sessions": 154,
+      "pdp_reached": 55,
+      "pdp_reach": 35.714285714285715
     },
     {
       "path": "/collections/online_ranking",
-      "sessions": 109,
-      "pdp_reached": 28,
-      "pdp_reach": 25.68807339449541
+      "sessions": 97,
+      "pdp_reached": 25,
+      "pdp_reach": 25.77319587628866
     },
     {
       "path": "/collections/new",
-      "sessions": 84,
-      "pdp_reached": 22,
-      "pdp_reach": 26.19047619047619
+      "sessions": 70,
+      "pdp_reached": 18,
+      "pdp_reach": 25.714285714285715
     },
     {
       "path": "/collections/setup",
-      "sessions": 52,
-      "pdp_reached": 19,
-      "pdp_reach": 36.53846153846154
+      "sessions": 45,
+      "pdp_reached": 16,
+      "pdp_reach": 35.55555555555556
     },
     {
       "path": "/collections/tailored-jacket",
-      "sessions": 48,
+      "sessions": 44,
       "pdp_reached": 3,
-      "pdp_reach": 6.25
-    },
-    {
-      "path": "/collections/pants",
-      "sessions": 36,
-      "pdp_reached": 7,
-      "pdp_reach": 19.444444444444443
-    },
-    {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 35,
-      "pdp_reached": 12,
-      "pdp_reach": 34.285714285714285
+      "pdp_reach": 6.818181818181818
     }
   ],
   "products_top5": [
-    {
-      "name": "無地半袖Tシャツ",
-      "qty": 11,
-      "revenue": 60500
-    },
     {
       "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
       "qty": 3,
       "revenue": 59400
     },
     {
-      "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "qty": 10,
-      "revenue": 55000
+      "name": "無地半袖Tシャツ",
+      "qty": 8,
+      "revenue": 44000
     },
     {
       "name": "メランジクルー半袖Tシャツ",
@@ -149,9 +132,14 @@
       "revenue": 41580
     },
     {
-      "name": "KOKAGE/テーパードパンツ",
+      "name": "ボーダージャカード半袖ニットプルオーバー",
+      "qty": 4,
+      "revenue": 39600
+    },
+    {
+      "name": "SAISENTAKU/ルームハーフパンツ",
       "qty": 3,
-      "revenue": 41250
+      "revenue": 34650
     }
   ]
 }
