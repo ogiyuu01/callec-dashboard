@@ -1,22 +1,22 @@
 {
-  "last_updated": "2026-06-08 09:01 JST",
+  "last_updated": "2026-06-08 12:03 JST",
   "last_7d": {
-    "sessions": 5364,
-    "item_views": 5173,
-    "orders": 23,
-    "sales": 390720,
-    "cvr": 0.004287844891871738,
-    "aov": 16987.82608695652,
-    "items_per_session": 0.9643922445935869
+    "sessions": 6207,
+    "item_views": 6605,
+    "orders": 33,
+    "sales": 576950,
+    "cvr": 0.005316578057032383,
+    "aov": 17483.333333333332,
+    "items_per_session": 1.06412115353633
   },
   "prev_7d": {
-    "sessions": 8999,
-    "item_views": 8119,
+    "sessions": 7337,
+    "item_views": 8035,
     "orders": 43,
     "sales": 887810,
-    "cvr": 0.004778308700966774,
+    "cvr": 0.005860706010631048,
     "aov": 20646.74418604651,
-    "items_per_session": 0.9022113568174241
+    "items_per_session": 1.09513425105629
   },
   "yoy": {
     "sessions": 7418,
@@ -128,24 +128,24 @@
     {
       "level": "red",
       "metric": "items/session",
-      "value": "0.96",
+      "value": "1.06",
       "target": "≥ 1.40 (R001目標)",
       "note": "R001 反映後の改善を測る最重要指標"
     },
     {
-      "level": "red",
+      "level": "yellow",
       "metric": "CVR",
-      "value": "0.43%",
+      "value": "0.53%",
       "target": "≥ 0.70%",
       "note": "前年同期 0.91%。回復目標は 0.7% 以上"
     }
   ],
   "narrative": {
     "lines": [
-      "📉 今週の売上 ¥390,720（先週より -56%）",
-      "   注文は 23 件 / 先週は 43 件",
-      "✅ 買ってくれる人の割合（CVR）は前年より改善しています（0.43%）",
-      "🔴 1セッションあたりの商品閲覧数 0.96 は低めです。商品ページにたどり着けていない人が多い状態です。"
+      "📉 今週の売上 ¥576,950（先週より -35%）",
+      "   注文は 33 件 / 先週は 43 件",
+      "✅ 買ってくれる人の割合（CVR）は前年より改善しています（0.53%）",
+      "🔴 1セッションあたりの商品閲覧数 1.06 は低めです。商品ページにたどり着けていない人が多い状態です。"
     ],
     "actions": [
       "R001（コレクションページ改善）を本番に反映する",
@@ -153,28 +153,32 @@
       "LINE 配信時は ?utm_source=line&utm_medium=line&utm_campaign=日付_内容 を必ず付ける"
     ]
   },
+  "spam": {
+    "excluded_sessions_7d": 294,
+    "pattern": "t.co / sunpark"
+  },
   "daily": [
     {
       "date": "20260511",
-      "sessions": 1001,
+      "sessions": 1000,
       "item_views": 1344,
       "atcs": 45,
       "orders": 5,
       "sales": 139920,
-      "cvr": 0.004995004995004995,
+      "cvr": 0.005,
       "aov": 27984.0,
-      "items_per_session": 1.3426573426573427
+      "items_per_session": 1.344
     },
     {
       "date": "20260512",
-      "sessions": 772,
+      "sessions": 771,
       "item_views": 1149,
       "atcs": 36,
       "orders": 4,
       "sales": 84920,
-      "cvr": 0.0051813471502590676,
+      "cvr": 0.005188067444876783,
       "aov": 21230.0,
-      "items_per_session": 1.488341968911917
+      "items_per_session": 1.490272373540856
     },
     {
       "date": "20260513",
@@ -200,25 +204,25 @@
     },
     {
       "date": "20260515",
-      "sessions": 1204,
+      "sessions": 1200,
       "item_views": 1155,
       "atcs": 46,
       "orders": 8,
       "sales": 170720,
-      "cvr": 0.006644518272425249,
+      "cvr": 0.006666666666666667,
       "aov": 21340.0,
-      "items_per_session": 0.9593023255813954
+      "items_per_session": 0.9625
     },
     {
       "date": "20260516",
-      "sessions": 903,
+      "sessions": 902,
       "item_views": 1487,
       "atcs": 75,
       "orders": 11,
       "sales": 228140,
-      "cvr": 0.012181616832779624,
+      "cvr": 0.012195121951219513,
       "aov": 20740.0,
-      "items_per_session": 1.6467331118493909
+      "items_per_session": 1.6485587583148558
     },
     {
       "date": "20260517",
@@ -233,223 +237,223 @@
     },
     {
       "date": "20260518",
-      "sessions": 982,
+      "sessions": 981,
       "item_views": 1159,
       "atcs": 35,
       "orders": 7,
       "sales": 139370,
-      "cvr": 0.007128309572301426,
+      "cvr": 0.007135575942915392,
       "aov": 19910.0,
-      "items_per_session": 1.180244399185336
+      "items_per_session": 1.18144750254842
     },
     {
       "date": "20260519",
-      "sessions": 835,
-      "item_views": 1032,
+      "sessions": 830,
+      "item_views": 1029,
       "atcs": 23,
       "orders": 2,
       "sales": 49500,
-      "cvr": 0.0023952095808383233,
+      "cvr": 0.0024096385542168677,
       "aov": 24750.0,
-      "items_per_session": 1.2359281437125749
+      "items_per_session": 1.2397590361445783
     },
     {
       "date": "20260520",
-      "sessions": 791,
-      "item_views": 1106,
+      "sessions": 788,
+      "item_views": 1104,
       "atcs": 34,
       "orders": 9,
       "sales": 128040,
-      "cvr": 0.011378002528445006,
+      "cvr": 0.011421319796954314,
       "aov": 14226.666666666666,
-      "items_per_session": 1.3982300884955752
+      "items_per_session": 1.401015228426396
     },
     {
       "date": "20260521",
-      "sessions": 1275,
-      "item_views": 873,
+      "sessions": 951,
+      "item_views": 872,
       "atcs": 21,
       "orders": 7,
       "sales": 116490,
-      "cvr": 0.005490196078431373,
+      "cvr": 0.007360672975814932,
       "aov": 16641.428571428572,
-      "items_per_session": 0.6847058823529412
+      "items_per_session": 0.9169295478443743
     },
     {
       "date": "20260522",
-      "sessions": 2908,
-      "item_views": 1580,
+      "sessions": 2534,
+      "item_views": 1569,
       "atcs": 49,
       "orders": 5,
       "sales": 108240,
-      "cvr": 0.0017193947730398899,
+      "cvr": 0.001973164956590371,
       "aov": 21648.0,
-      "items_per_session": 0.5433287482806052
+      "items_per_session": 0.6191791633780585
     },
     {
       "date": "20260523",
-      "sessions": 1367,
-      "item_views": 1323,
+      "sessions": 1189,
+      "item_views": 1311,
       "atcs": 32,
       "orders": 5,
       "sales": 97680,
-      "cvr": 0.0036576444769568397,
+      "cvr": 0.004205214465937763,
       "aov": 19536.0,
-      "items_per_session": 0.9678127286027798
+      "items_per_session": 1.1026072329688814
     },
     {
       "date": "20260524",
-      "sessions": 1182,
-      "item_views": 1542,
+      "sessions": 1043,
+      "item_views": 1532,
       "atcs": 63,
       "orders": 11,
       "sales": 313500,
-      "cvr": 0.009306260575296108,
+      "cvr": 0.010546500479386385,
       "aov": 28500.0,
-      "items_per_session": 1.3045685279187818
+      "items_per_session": 1.4688398849472675
     },
     {
       "date": "20260525",
-      "sessions": 974,
+      "sessions": 870,
       "item_views": 1069,
       "atcs": 27,
       "orders": 5,
       "sales": 103730,
-      "cvr": 0.00513347022587269,
+      "cvr": 0.005747126436781609,
       "aov": 20746.0,
-      "items_per_session": 1.0975359342915811
+      "items_per_session": 1.228735632183908
     },
     {
       "date": "20260526",
-      "sessions": 727,
-      "item_views": 885,
+      "sessions": 668,
+      "item_views": 883,
       "atcs": 44,
       "orders": 4,
       "sales": 77000,
-      "cvr": 0.005502063273727648,
+      "cvr": 0.005988023952095809,
       "aov": 19250.0,
-      "items_per_session": 1.2173314993122422
+      "items_per_session": 1.3218562874251496
     },
     {
       "date": "20260527",
-      "sessions": 876,
-      "item_views": 1145,
+      "sessions": 824,
+      "item_views": 1143,
       "atcs": 37,
       "orders": 5,
       "sales": 83930,
-      "cvr": 0.005707762557077625,
+      "cvr": 0.006067961165048544,
       "aov": 16786.0,
-      "items_per_session": 1.3070776255707763
+      "items_per_session": 1.3871359223300972
     },
     {
       "date": "20260528",
-      "sessions": 805,
-      "item_views": 1101,
+      "sessions": 738,
+      "item_views": 1099,
       "atcs": 29,
       "orders": 5,
       "sales": 106040,
-      "cvr": 0.006211180124223602,
+      "cvr": 0.006775067750677507,
       "aov": 21208.0,
-      "items_per_session": 1.3677018633540372
+      "items_per_session": 1.489159891598916
     },
     {
       "date": "20260529",
-      "sessions": 1963,
+      "sessions": 1917,
       "item_views": 1183,
       "atcs": 43,
       "orders": 5,
       "sales": 98780,
-      "cvr": 0.0025471217524197657,
+      "cvr": 0.0026082420448617634,
       "aov": 19756.0,
-      "items_per_session": 0.6026490066225165
+      "items_per_session": 0.6171100678142931
     },
     {
       "date": "20260530",
-      "sessions": 2568,
-      "item_views": 1389,
-      "atcs": 38,
+      "sessions": 1325,
+      "item_views": 1315,
+      "atcs": 37,
       "orders": 8,
       "sales": 153450,
-      "cvr": 0.003115264797507788,
+      "cvr": 0.0060377358490566035,
       "aov": 19181.25,
-      "items_per_session": 0.5408878504672897
+      "items_per_session": 0.9924528301886792
     },
     {
       "date": "20260531",
-      "sessions": 1086,
-      "item_views": 1347,
+      "sessions": 995,
+      "item_views": 1343,
       "atcs": 55,
       "orders": 11,
       "sales": 264880,
-      "cvr": 0.010128913443830571,
+      "cvr": 0.011055276381909548,
       "aov": 24080.0,
-      "items_per_session": 1.2403314917127073
+      "items_per_session": 1.3497487437185929
     },
     {
       "date": "20260602",
-      "sessions": 879,
-      "item_views": 942,
+      "sessions": 835,
+      "item_views": 939,
       "atcs": 28,
       "orders": 4,
       "sales": 70290,
-      "cvr": 0.004550625711035267,
+      "cvr": 0.004790419161676647,
       "aov": 17572.5,
-      "items_per_session": 1.0716723549488054
+      "items_per_session": 1.1245508982035928
     },
     {
       "date": "20260603",
-      "sessions": 868,
+      "sessions": 845,
       "item_views": 1060,
       "atcs": 30,
       "orders": 4,
       "sales": 88220,
-      "cvr": 0.004608294930875576,
+      "cvr": 0.004733727810650888,
       "aov": 22055.0,
-      "items_per_session": 1.2211981566820276
+      "items_per_session": 1.2544378698224852
     },
     {
       "date": "20260604",
-      "sessions": 766,
+      "sessions": 691,
       "item_views": 648,
       "atcs": 20,
       "orders": 3,
       "sales": 50380,
-      "cvr": 0.0039164490861618795,
+      "cvr": 0.004341534008683068,
       "aov": 16793.333333333332,
-      "items_per_session": 0.8459530026109661
+      "items_per_session": 0.9377713458755427
     },
     {
       "date": "20260605",
-      "sessions": 1827,
-      "item_views": 1271,
+      "sessions": 1786,
+      "item_views": 1270,
       "atcs": 49,
       "orders": 11,
       "sales": 168080,
-      "cvr": 0.0060207991242474,
+      "cvr": 0.006159014557670772,
       "aov": 15280.0,
-      "items_per_session": 0.6956759715380405
+      "items_per_session": 0.7110862262038073
     },
     {
       "date": "20260606",
-      "sessions": 1024,
-      "item_views": 1271,
+      "sessions": 979,
+      "item_views": 1266,
       "atcs": 44,
       "orders": 1,
       "sales": 13750,
-      "cvr": 0.0009765625,
+      "cvr": 0.0010214504596527069,
       "aov": 13750.0,
-      "items_per_session": 1.2412109375
+      "items_per_session": 1.2931562819203268
     },
     {
       "date": "20260607",
-      "sessions": 1137,
+      "sessions": 1071,
       "item_views": 1422,
       "atcs": 48,
       "orders": 10,
       "sales": 186230,
-      "cvr": 0.008795074758135445,
+      "cvr": 0.009337068160597572,
       "aov": 18623.0,
-      "items_per_session": 1.2506596306068603
+      "items_per_session": 1.3277310924369747
     }
   ],
   "anomalies": [
@@ -468,6 +472,13 @@
       "delta_text": "-89%"
     },
     {
+      "date": "06/05",
+      "iso_date": "20260605",
+      "desc": "セッション が 1,786 (+70%・7日平均比)",
+      "direction": "up",
+      "delta_text": "+70%"
+    },
+    {
       "date": "06/04",
       "iso_date": "20260604",
       "desc": "売上 が 50,380 (-59%・7日平均比)",
@@ -482,18 +493,11 @@
       "delta_text": "+98%"
     },
     {
-      "date": "05/30",
-      "iso_date": "20260530",
-      "desc": "セッション が 2,568 (+128%・7日平均比)",
-      "direction": "up",
-      "delta_text": "+128%"
-    },
-    {
       "date": "05/29",
       "iso_date": "20260529",
-      "desc": "セッション が 1,963 (+55%・7日平均比)",
+      "desc": "セッション が 1,917 (+71%・7日平均比)",
       "direction": "up",
-      "delta_text": "+55%"
+      "delta_text": "+71%"
     },
     {
       "date": "05/24",

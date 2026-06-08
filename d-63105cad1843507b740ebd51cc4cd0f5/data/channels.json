@@ -22,18 +22,18 @@
       "cvr": 0.00864304235090752
     },
     {
-      "channel": "Referral",
-      "sessions": 607,
-      "orders": 1,
-      "sales": 5500,
-      "cvr": 0.0016474464579901153
-    },
-    {
       "channel": "Other",
-      "sessions": 472,
+      "sessions": 463,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
+    },
+    {
+      "channel": "Referral",
+      "sessions": 322,
+      "orders": 1,
+      "sales": 5500,
+      "cvr": 0.003105590062111801
     },
     {
       "channel": "LINE",
@@ -103,23 +103,23 @@
       {
         "channel": "Referral",
         "sessions": [
-          519,
-          495,
-          425,
-          1495,
-          2076,
-          607
+          512,
+          483,
+          421,
+          479,
+          423,
+          322
         ]
       },
       {
         "channel": "Other",
         "sessions": [
           358,
-          470,
-          373,
-          434,
-          359,
-          472
+          460,
+          370,
+          426,
+          350,
+          463
         ]
       }
     ]

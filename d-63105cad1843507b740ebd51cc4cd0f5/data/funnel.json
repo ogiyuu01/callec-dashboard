@@ -2,11 +2,11 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6501
+      "count": 6207
     },
     {
       "name": "view_item",
-      "count": 6614
+      "count": 6605
     },
     {
       "name": "add_to_cart",

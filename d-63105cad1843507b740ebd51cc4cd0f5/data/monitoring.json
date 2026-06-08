@@ -116,7 +116,7 @@
     }
   ],
   "_meta": {
-    "generated_at": "2026-06-08T09:02:17+09:00",
+    "generated_at": "2026-06-08T12:03:42+09:00",
     "source": "release_log.csv + kpi_snapshots.csv",
     "note": "collection_to_pdp_rate / view_to_atc_rate は snapshot 列直接対応がないため代理列または欠損。完全値は BQ 直撃 by snapshot_kpi.py を参照"
   }
