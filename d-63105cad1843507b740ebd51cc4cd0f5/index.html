@@ -80,6 +80,12 @@
     </div>
 
     <div class="card">
+      <h3>🌳 売上KPIツリー（直近7日 WoW）</h3>
+      <p class="pm-section-note">売上 = セッション数 × CVR × 客単価。各因子の前期間比と売上への貢献度。</p>
+      <div id="kpi-tree"></div>
+    </div>
+
+    <div class="card">
       <h3>🏆 月次着地 KPI（Strategic）</h3>
       <p class="pm-section-note">6指標 — Shopify / GDrive / GA4 / Klaviyo / LINE</p>
       <div class="pm-kpi-grid" id="pm-kpis"></div>
@@ -233,6 +239,12 @@
     <div class="card">
       <h3>Shopify実購入の顧客（直近28日）</h3>
       <div id="shopify-customer-card"></div>
+    </div>
+    <div class="card">
+      <h3>2回目転換率（28日コホート）</h3>
+      <p style="color:var(--text-muted);font-size:0.8rem;margin-bottom:16px;">直近28日に初回購入した顧客のうち、2回目購入に至った割合。コホート分析の最大課題レバー（基準22.5%）。</p>
+      <div id="cohort-card"></div>
+      <table class="data-table" id="table-cohort-category" style="margin-top:16px;"></table>
     </div>
     <div class="card">
       <h3>チャネル別ファネル分解（直近14日）</h3>

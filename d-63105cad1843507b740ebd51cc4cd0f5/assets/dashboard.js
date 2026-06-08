@@ -666,6 +666,75 @@ function renderShopifyCustomers(products) {
     '</div>';
 }
 
+function renderCohort(metrics) {
+  const card = document.getElementById("cohort-card");
+  const tbl = document.getElementById("table-cohort-category");
+  const c = metrics && metrics.cohort_28d;
+  if (!card) return;
+  if (!c || !c.first_time_buyers) {
+    card.innerHTML = '<p style="color:var(--text-muted);">コホートデータなし（Shopify注文履歴の取得待ち）</p>';
+    if (tbl) tbl.innerHTML = "";
+    return;
+  }
+  const rate = (c.second_purchase_rate || 0) * 100;
+  const rateColor = rate >= 25 ? "var(--green)" : rate >= 20 ? "var(--yellow)" : "var(--red)";
+  card.innerHTML =
+    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;">' +
+      '<div><div style="font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.16em;">初回購入顧客</div><div style="font-family:\'Fraunces\',serif;font-size:1.8rem;">' + num(c.first_time_buyers) + '</div></div>' +
+      '<div><div style="font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.16em;">2回目到達</div><div style="font-family:\'Fraunces\',serif;font-size:1.8rem;">' + num(c.second_purchase_buyers) + '</div></div>' +
+      '<div><div style="font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.16em;">2回目転換率</div><div style="font-family:\'Fraunces\',serif;font-size:1.8rem;color:' + rateColor + ';">' + rate.toFixed(1) + '%</div></div>' +
+    '</div>';
+  if (tbl) {
+    const rows = c.by_category || [];
+    if (!rows.length) { tbl.innerHTML = ""; return; }
+    tbl.innerHTML =
+      '<thead><tr><th>カテゴリ</th><th class="num">初回</th><th class="num">2回目到達</th><th class="num">カテゴリ別リピート率</th></tr></thead><tbody>' +
+      rows.map(r => '<tr>' +
+        '<td>' + (r.category || "—") + '</td>' +
+        '<td class="num">' + num(r.first_buyers) + '</td>' +
+        '<td class="num">' + num(r.repeat_buyers) + '</td>' +
+        '<td class="num">' + ((r.repeat_rate || 0) * 100).toFixed(1) + '%</td>' +
+      '</tr>').join("") + '</tbody>';
+  }
+}
+
+function renderKpiTree(summary) {
+  const el = document.getElementById("kpi-tree");
+  if (!el || !summary || !summary.last_7d) return;
+  const cur = summary.last_7d, prev = summary.prev_7d || {};
+  const dSales = delta(cur.sales, prev.sales);
+  // 売上変化への貢献度: 各因子の前期間比(%)の絶対値で大小を相対判定。
+  const factors = [
+    { key: "sessions", label: "セッション数", cur: cur.sessions, base: prev.sessions, fmt: num },
+    { key: "cvr", label: "CVR", cur: cur.cvr, base: prev.cvr, fmt: v => pct(v, 2) },
+    { key: "aov", label: "客単価", cur: cur.aov, base: prev.aov, fmt: yen },
+  ].map(f => {
+    const d = delta(f.cur, f.base);
+    const mag = Math.abs(parseFloat(d.txt)) || 0;
+    return { ...f, d, mag };
+  });
+  const maxMag = Math.max.apply(null, factors.map(f => f.mag)) || 1;
+  const contribLabel = (f) => {
+    const ratio = f.mag / maxMag;
+    const dir = f.d.cls === "up" ? "増加" : f.d.cls === "down" ? "減少" : "横ばい";
+    if (f.d.cls === "flat") return { txt: "影響 小", cls: "flat" };
+    const size = ratio >= 0.66 ? "大" : ratio >= 0.33 ? "中" : "小";
+    return { txt: "売上" + dir + "への貢献 " + size, cls: f.d.cls };
+  };
+  let html = '<div class="kpi-tree-root" style="font-family:\'JetBrains Mono\',monospace;font-size:0.9rem;line-height:2;">';
+  html += '<div style="font-size:1.05rem;margin-bottom:6px;">売上 <span class="delta ' + dSales.cls + '">' + dSales.txt + '</span> <span style="color:var(--text-muted);font-size:0.8rem;">' + yen(cur.sales) + '</span></div>';
+  factors.forEach((f, i) => {
+    const branch = i === factors.length - 1 ? "└─" : "├─";
+    const cl = contribLabel(f);
+    html += '<div style="padding-left:8px;">' + branch + ' ' + f.label +
+      ' <span class="delta ' + f.d.cls + '">' + f.d.txt + '</span>' +
+      ' <span style="color:var(--text-soft);font-size:0.8rem;">' + f.fmt(f.cur) + '</span>' +
+      ' <span style="color:var(--text-muted);font-size:0.78rem;">' + cl.txt + '</span></div>';
+  });
+  html += '</div>';
+  el.innerHTML = html;
+}
+
 function renderChannelFunnel(data) {
   const el = document.getElementById("table-channel-funnel");
   if (!el || !data) return;
@@ -1204,7 +1273,7 @@ function renderMonitoring(data, summary) {
 }
 
 (async () => {
-  const [summary, funnel, channels, archive, monthly, products, channelFunnel, klaviyo, pm, budget, monitoring] = await Promise.all([
+  const [summary, funnel, channels, archive, monthly, products, channelFunnel, klaviyo, pm, budget, monitoring, shopifyMetrics] = await Promise.all([
     load("summary.json"),
     load("funnel.json"),
     load("channels.json"),
@@ -1216,6 +1285,7 @@ function renderMonitoring(data, summary) {
     load("pm.json"),
     load("budget.json"),
     load("monitoring.json"),
+    load("shopify_metrics.json"),
   ]);
   if (summary && summary.last_updated) {
     document.getElementById("last-updated").textContent = summary.last_updated;
@@ -1225,6 +1295,8 @@ function renderMonitoring(data, summary) {
   renderProducts(products);
   renderShopifyTop(products);
   renderShopifyCustomers(products);
+  renderCohort(shopifyMetrics);
+  renderKpiTree(summary);
   renderChannelFunnel(channelFunnel);
   renderFunnel(funnel);
   renderItemsTrend(funnel);

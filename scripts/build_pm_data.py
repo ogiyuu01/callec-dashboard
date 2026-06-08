@@ -372,6 +372,18 @@ def build_for(d: Path) -> dict:
             "source": "Shopify InventoryLevel",
         })
 
+    # 2回目転換率（コホート分析の結論: 1次→2次転換が最大の課題レバー。基準 22.5%）
+    cohort = (shopify.get("cohort_28d") or {})
+    if cohort.get("first_time_buyers"):
+        spr = cohort.get("second_purchase_rate") or 0
+        signals.append({
+            "metric": "2回目転換率 (28日コホート)",
+            "value": f"{spr*100:.1f}%",
+            "target": "≥25% green / ≥20% yellow (基準22.5%)",
+            "status": "green" if spr >= 0.25 else ("yellow" if spr >= 0.20 else "red"),
+            "source": "Shopify 注文履歴コホート",
+        })
+
     # ---------- Alert Bar (CRITICAL/HIGH only) ----------
     alerts = []
     for s in signals:

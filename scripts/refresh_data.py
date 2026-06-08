@@ -32,6 +32,16 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 PROJECT = "gen-lang-client-0015689236"
 DATASET = "analytics_320051621"
 
+# スパム参照元の除外（レポート標準フォーマット準拠）。
+# t.co / sunpark 由来のセッションは全 KPI（セッション・CVR・チャネル・商品）の分母から除外する。
+# 除外件数は utm_health.json の excluded_spam_sessions に併記し、実数を残す。
+SPAM_SOURCE_REGEX = r"(?i)(t\.co|sunpark)"
+# sessions_clean 用（source 列）/ events_* 用（traffic_source.source）の WHERE 断片。
+SPAM_FILTER_SESSIONS = f"AND NOT REGEXP_CONTAINS(IFNULL(source, ''), r'{SPAM_SOURCE_REGEX}')"
+SPAM_FILTER_EVENTS = (
+    f"AND NOT REGEXP_CONTAINS(IFNULL(traffic_source.source, ''), r'{SPAM_SOURCE_REGEX}')"
+)
+
 # CSV ソースを解決する。
 # 1. ダッシュボード repo 直下 data/weekly_kpi.csv (vendor 同梱、GH Actions の正規ソース)
 # 2. ローカル開発: shopify-inhouse/shopify-ec-automation 配下
@@ -455,6 +465,7 @@ def build_daily_series(client: bigquery.Client) -> dict:
       SAFE_DIVIDE(SUM(item_views), COUNT(*)) AS items_per_session
     FROM `{PROJECT}.{DATASET}.sessions_clean`
     WHERE event_date BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+      {SPAM_FILTER_SESSIONS}
     GROUP BY event_date
     ORDER BY event_date
     """
@@ -494,6 +505,7 @@ def build_products(client: bigquery.Client) -> dict:
     WHERE _TABLE_SUFFIX BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
       AND event_name IN ('view_item','add_to_cart','purchase')
       AND it.item_name IS NOT NULL
+      {SPAM_FILTER_EVENTS}
     GROUP BY name, sku
     HAVING views >= 1
     ORDER BY views DESC
@@ -558,6 +570,7 @@ def build_products_top5(client: bigquery.Client) -> dict:
     WHERE _TABLE_SUFFIX BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
       AND event_name = 'purchase'
       AND it.item_name IS NOT NULL
+      {SPAM_FILTER_EVENTS}
     GROUP BY name
     ORDER BY revenue DESC
     LIMIT 5
@@ -652,6 +665,7 @@ def build_summary(client: bigquery.Client) -> dict:
           SAFE_DIVIDE(SUM(item_views), COUNT(*)) AS items_per_session
         FROM `{PROJECT}.{DATASET}.sessions_clean`
         WHERE event_date BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+          {SPAM_FILTER_SESSIONS}
         """
         rows = q(client, sql)
         if not rows:
@@ -725,6 +739,18 @@ def build_summary(client: bigquery.Client) -> dict:
 
     narrative = make_narrative(last_7d, prev_7d, yoy)
 
+    # スパム除外（t.co / sunpark）で last_7d 窓から落としたセッション数を併記し実数を残す。
+    sql_spam = f"""
+    SELECT COUNT(*) AS spam_sessions
+    FROM `{PROJECT}.{DATASET}.sessions_clean`
+    WHERE event_date BETWEEN '{last_start.strftime("%Y%m%d")}' AND '{last_end.strftime("%Y%m%d")}'
+      AND REGEXP_CONTAINS(IFNULL(source, ''), r'{SPAM_SOURCE_REGEX}')
+    """
+    try:
+        spam_excluded = int((q(client, sql_spam)[0] or {}).get("spam_sessions") or 0)
+    except Exception:
+        spam_excluded = 0
+
     return {
         "last_updated": now_jst().strftime("%Y-%m-%d %H:%M JST"),
         "last_7d": last_7d,
@@ -733,6 +759,10 @@ def build_summary(client: bigquery.Client) -> dict:
         "weeks": weeks,
         "signals": signals,
         "narrative": narrative,
+        "spam": {
+            "excluded_sessions_7d": spam_excluded,
+            "pattern": "t.co / sunpark",
+        },
     }
 
 
@@ -751,6 +781,7 @@ def build_funnel(client: bigquery.Client) -> dict:
       SUM(purchases) AS purchases
     FROM `{PROJECT}.{DATASET}.sessions_clean`
     WHERE event_date BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+      {SPAM_FILTER_SESSIONS}
     """
     f = q(client, sql)[0]
     steps = [
@@ -779,6 +810,7 @@ def build_funnel(client: bigquery.Client) -> dict:
     FROM `{PROJECT}.{DATASET}.sessions_clean`
     WHERE event_date BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
       AND landing_page LIKE '%/collections/%'
+      {SPAM_FILTER_SESSIONS}
     GROUP BY path
     HAVING sessions >= 30
     ORDER BY sessions DESC
@@ -825,6 +857,7 @@ def build_channels(client: bigquery.Client) -> dict:
       SAFE_DIVIDE(SUM(purchases), COUNT(*)) AS cvr
     FROM `{PROJECT}.{DATASET}.sessions_clean`
     WHERE event_date BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+      {SPAM_FILTER_SESSIONS}
     GROUP BY channel
     ORDER BY sessions DESC
     """
@@ -845,6 +878,7 @@ def build_channels(client: bigquery.Client) -> dict:
       COUNT(*) AS sessions
     FROM `{PROJECT}.{DATASET}.sessions_clean`
     WHERE event_date BETWEEN '{start_trend.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+      {SPAM_FILTER_SESSIONS}
     GROUP BY week, channel
     """
     raw = q(client, sql_trend)
@@ -923,6 +957,7 @@ def build_products(client: bigquery.Client) -> dict:
     WHERE _TABLE_SUFFIX BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
       AND event_name IN ('view_item','add_to_cart','purchase')
       AND it.item_name IS NOT NULL
+      {SPAM_FILTER_EVENTS}
     GROUP BY name, sku
     HAVING views >= 10
     ORDER BY revenue DESC
@@ -1367,6 +1402,7 @@ def build_customer_segments(client: bigquery.Client) -> dict:
       CAST(SUM(revenue) AS INT64) AS sales
     FROM `{PROJECT}.{DATASET}.sessions_clean`
     WHERE event_date BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+      {SPAM_FILTER_SESSIONS}
     GROUP BY seg
     """
     segments = {}
@@ -1418,6 +1454,7 @@ def build_channel_funnel(client: bigquery.Client) -> dict:
       SUM(IF(purchases>0,1,0)) AS buy
     FROM `{PROJECT}.{DATASET}.sessions_clean`
     WHERE event_date BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+      {SPAM_FILTER_SESSIONS}
     GROUP BY channel
     HAVING sessions >= 50
     ORDER BY sessions DESC

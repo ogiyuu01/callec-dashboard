@@ -36,6 +36,10 @@ CID = os.environ.get("SHOPIFY_CLIENT_ID", "").strip()
 CSEC = os.environ.get("SHOPIFY_CLIENT_SECRET", "").strip()
 API_VERSION = os.environ.get("SHOPIFY_API_VERSION", "2025-01").strip()
 LOW_STOCK_THRESHOLD = int(os.environ.get("SHOPIFY_LOW_STOCK", "5"))
+# コホート分析の遡及期間。28日窓で初回購入した顧客が2回目に至ったかを判定するため、
+# 十分に遡って各顧客の注文履歴を取り切る必要がある（既定90日）。
+COHORT_LOOKBACK_DAYS = int(os.environ.get("SHOPIFY_COHORT_LOOKBACK", "90"))
+COHORT_WINDOW_DAYS = int(os.environ.get("SHOPIFY_COHORT_WINDOW", "28"))
 
 
 def warn(msg):
@@ -153,6 +157,129 @@ def fetch_customers_28d(token: str, since_iso: str) -> dict:
     }
 
 
+COHORT_QUERY = """
+query($cursor: String) {
+  orders(first: 250, after: $cursor, query: "created_at:>=%s", sortKey: CREATED_AT) {
+    edges { node {
+      id createdAt
+      customer { id numberOfOrders }
+      lineItems(first: 10) { edges { node {
+        product {
+          productType
+          collections(first: 1) { edges { node { title handle } } }
+        }
+      } } }
+    } }
+    pageInfo { hasNextPage endCursor }
+  }
+}
+"""
+
+
+def _parse_iso(s: str | None) -> datetime | None:
+    if not s:
+        return None
+    try:
+        return datetime.fromisoformat(s.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def _order_category(order: dict) -> str:
+    """注文の代表カテゴリ。先頭 lineItem の productType、無ければ先頭 collection title。"""
+    for le in (order.get("lineItems", {}).get("edges") or []):
+        prod = (le.get("node") or {}).get("product") or {}
+        ptype = (prod.get("productType") or "").strip()
+        if ptype:
+            return ptype
+        colls = (prod.get("collections") or {}).get("edges") or []
+        if colls:
+            title = ((colls[0].get("node") or {}).get("title") or "").strip()
+            if title:
+                return title
+    return "未分類"
+
+
+def fetch_cohort(token: str, now: datetime) -> dict:
+    """28日窓の初回購入コホートの2回目転換率＋カテゴリ別リピート率を算出する。
+
+    定義:
+      - 初回購入顧客 = 直近 COHORT_WINDOW_DAYS 日に「初回注文」した顧客
+        （遡及プル内で全注文を取り切れている＝len(orders) >= numberOfOrders の顧客に限定）。
+      - 2回目転換率 = 初回購入顧客のうち lifetime 注文数が2以上に達した割合。
+      - カテゴリ別リピート率 = カテゴリ内の初回購入顧客に対する2回目到達顧客の割合。
+        カテゴリは各顧客の「初回注文」の代表カテゴリで割り当てる。
+    注意: Shopify 注文プルは遡及 COHORT_LOOKBACK_DAYS 日。それ以前から購入歴がある顧客は
+          captured_all=False となり初回コホートから除外される（古い顧客の混入を防ぐ）。
+    """
+    since = (now - timedelta(days=COHORT_LOOKBACK_DAYS)).strftime("%Y-%m-%dT%H:%M:%S%z")
+    window_start = now - timedelta(days=COHORT_WINDOW_DAYS)
+
+    # 顧客ごとに (プル内注文日リスト, lifetime注文数, 初回注文オブジェクト) を集める。
+    by_customer: dict[str, dict] = {}
+    cursor = None
+    pages = 0
+    while True:
+        res = gql(token, COHORT_QUERY % since, {"cursor": cursor})
+        orders_node = (res.get("data") or {}).get("orders") or {}
+        for e in orders_node.get("edges") or []:
+            o = e["node"]
+            cid = (o.get("customer") or {}).get("id")
+            if not cid:
+                continue
+            dt = _parse_iso(o.get("createdAt"))
+            if dt is None:
+                continue
+            rec = by_customer.setdefault(
+                cid,
+                {"lifetime": int((o.get("customer") or {}).get("numberOfOrders") or 1),
+                 "orders": []},
+            )
+            rec["orders"].append((dt, o))
+        pi = orders_node.get("pageInfo") or {}
+        if not pi.get("hasNextPage"):
+            break
+        cursor = pi.get("endCursor")
+        pages += 1
+        if pages > 20:
+            warn("cohort pagination cap hit (20 pages = 5000 orders)")
+            break
+
+    first_time = 0
+    second_purchase = 0
+    cats: dict[str, dict] = {}
+    for rec in by_customer.values():
+        co = sorted(rec["orders"], key=lambda x: x[0])
+        first_dt, first_order = co[0]
+        captured_all = len(co) >= rec["lifetime"]
+        is_new_cohort = first_dt >= window_start and captured_all
+        if not is_new_cohort:
+            continue
+        first_time += 1
+        category = _order_category(first_order)
+        cat = cats.setdefault(category, {"category": category, "first_buyers": 0, "repeat_buyers": 0})
+        cat["first_buyers"] += 1
+        if rec["lifetime"] >= 2:
+            second_purchase += 1
+            cat["repeat_buyers"] += 1
+
+    by_category = []
+    for c in sorted(cats.values(), key=lambda x: -x["first_buyers"]):
+        c["repeat_rate"] = round(c["repeat_buyers"] / c["first_buyers"], 4) if c["first_buyers"] else 0
+        by_category.append(c)
+
+    return {
+        "cohort_28d": {
+            "window_days": COHORT_WINDOW_DAYS,
+            "lookback_days": COHORT_LOOKBACK_DAYS,
+            "first_time_buyers": first_time,
+            "second_purchase_buyers": second_purchase,
+            "second_purchase_rate": round(second_purchase / first_time, 4) if first_time else 0,
+            "by_category": by_category,
+        }
+    }
+
+
 def fetch_inventory(token: str) -> dict:
     """Fetch variants with inventory <= LOW_STOCK_THRESHOLD. OOS = inventory_quantity <= 0."""
     items: list[dict] = []
@@ -221,6 +348,13 @@ def main():
         warn(f"customers_28d fetch failed: {e}")
         metrics = None
 
+    # コホート（2回目転換率・カテゴリ別リピート率）。失敗しても metrics は出す。
+    cohort = None
+    try:
+        cohort = fetch_cohort(token, now)
+    except Exception as e:
+        warn(f"cohort fetch failed: {e}")
+
     # inventory.json
     try:
         inv = fetch_inventory(token)
@@ -239,6 +373,7 @@ def main():
                     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。",
                 },
                 **metrics,
+                **(cohort or {}),
             }
             (d / "shopify_metrics.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
             print(f"[refresh_shopify] wrote {d}/shopify_metrics.json (customers={metrics['customers_28d']['total_customers']}, returning_rate={metrics['customers_28d']['returning_customer_rate']*100:.1f}%)")
