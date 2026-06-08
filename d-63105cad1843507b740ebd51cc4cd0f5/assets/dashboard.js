@@ -738,6 +738,8 @@ function renderKpiTree(summary, funnel, channels, shopifyMetrics, lineLink, klav
   const interval = crm.avg_purchase_interval_days != null ? crm.avg_purchase_interval_days + "日" : null;
   const ltv = crm.ltv_1y != null ? yen(crm.ltv_1y) : null;
   const newOrders7 = crm.new_orders_7d, repeatOrders7 = crm.repeat_orders_7d;
+  const freeShip = crm.free_ship_rate_7d != null ? (crm.free_ship_rate_7d * 100).toFixed(1) + "%" : null;
+  const freeShipNote = crm.free_ship_threshold ? "¥" + num(crm.free_ship_threshold) + "以上・7日" : "7日";
 
   // --- 購入点数（売上系内訳） ---
   const units = cur.units, pUnits = prev.units;
@@ -774,7 +776,7 @@ function renderKpiTree(summary, funnel, channels, shopifyMetrics, lineLink, klav
         "平均購入点数 " + (avgQty != null ? V(avgQty.toFixed(2)) + WoW(avgQty, pAvgQty) : NA),
         "セット購入率 " + NA + NOTE("取引単位集計が必要"),
         "クロスセル率 " + NA + NOTE("レコメンド連携が必要"),
-        "送料無料ライン到達率 " + NA + NOTE("送料無料閾値の設定が必要"),
+        "送料無料ライン到達率 " + (freeShip ? V(freeShip) + NOTE(freeShipNote) : NA),
       ],
     },
     {

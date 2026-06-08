@@ -42,6 +42,8 @@ COHORT_LOOKBACK_DAYS = int(os.environ.get("SHOPIFY_COHORT_LOOKBACK", "365"))
 # 成熟期間（既定30日）。初回購入から最低この日数を経た顧客のみコホート対象とし、
 # 初回直後の顧客を母数に含めない（過小評価を防ぐ）。
 COHORT_MATURITY_DAYS = int(os.environ.get("SHOPIFY_COHORT_MATURITY", "30"))
+# 送料無料ライン（この金額以上で送料無料）。到達率＝直近7日の注文のうち閾値以上の割合。
+FREE_SHIP_THRESHOLD = int(os.environ.get("SHOPIFY_FREE_SHIP_THRESHOLD", "15000"))
 
 
 def warn(msg):
@@ -313,14 +315,20 @@ def fetch_cohort(token: str, now: datetime) -> dict:
     win7 = now - timedelta(days=7)
     new_orders_7d = 0
     repeat_orders_7d = 0
+    orders_7d = 0
+    free_ship_reached_7d = 0
     for rec in by_customer.values():
         co = sorted(rec["orders"], key=lambda x: x[0])
-        for idx, (dt, _a, _o) in enumerate(co):
+        for idx, (dt, amt, _o) in enumerate(co):
             if dt >= win7:
                 if idx == 0:
                     new_orders_7d += 1
                 else:
                     repeat_orders_7d += 1
+                orders_7d += 1
+                if amt >= FREE_SHIP_THRESHOLD:
+                    free_ship_reached_7d += 1
+    free_ship_rate_7d = round(free_ship_reached_7d / orders_7d, 4) if orders_7d else None
 
     return {
         "cohort": {
@@ -338,6 +346,8 @@ def fetch_cohort(token: str, now: datetime) -> dict:
             "ltv_1y": ltv_1y,
             "new_orders_7d": new_orders_7d,
             "repeat_orders_7d": repeat_orders_7d,
+            "free_ship_threshold": FREE_SHIP_THRESHOLD,
+            "free_ship_rate_7d": free_ship_rate_7d,
         },
     }
 
