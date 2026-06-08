@@ -261,11 +261,6 @@ def fetch_cohort(token: str, now: datetime) -> dict:
         "cohort_members": 0,
         "repeat_via_pull": 0,            # プル内注文数>=2 で2回目判定した数
         "repeat_via_lifetime_only": 0,   # プルは1件だが numberOfOrders>=2 で補完判定した数
-        # カテゴリ源の切り分け（未分類の原因特定用・一時計測）
-        "cat_src_producttype": 0,
-        "cat_src_collection": 0,
-        "cat_src_none": 0,
-        "cat_samples": [],               # 先頭lineItemの生 productType / collection を最大8件
     }
     for rec in by_customer.values():
         co = sorted(rec["orders"], key=lambda x: x[0])
@@ -282,22 +277,6 @@ def fetch_cohort(token: str, now: datetime) -> dict:
         orders_in_pull = len(co)
         is_repeat = orders_in_pull >= 2 or rec["lifetime"] >= 2
         category = _order_category(first_order)
-        # 一時診断: 何由来でカテゴリが付いた/付かなかったか
-        _le = (first_order.get("lineItems", {}).get("edges") or [])
-        _prod = (_le[0].get("node") or {}).get("product") or {} if _le else {}
-        _pt = (_prod.get("productType") or "").strip()
-        _coll = ""
-        _ce = (_prod.get("collections") or {}).get("edges") or []
-        if _ce:
-            _coll = ((_ce[0].get("node") or {}).get("title") or "").strip()
-        if _pt:
-            diag["cat_src_producttype"] += 1
-        elif _coll:
-            diag["cat_src_collection"] += 1
-        else:
-            diag["cat_src_none"] += 1
-        if len(diag["cat_samples"]) < 8:
-            diag["cat_samples"].append({"productType": _pt, "collection": _coll, "has_product": bool(_prod)})
         cat = cats.setdefault(category, {"category": category, "first_buyers": 0, "repeat_buyers": 0})
         cat["first_buyers"] += 1
         if is_repeat:
@@ -387,16 +366,6 @@ def main():
     except Exception as e:
         warn(f"token fetch failed: {e}")
         sys.exit(0)
-
-    # 一時診断: CIで使われているアプリ名と付与スコープを特定する（read_products有無の確定用）。
-    try:
-        ai = gql(token, "{ currentAppInstallation { app { title } accessScopes { handle } } }")
-        node = (ai.get("data") or {}).get("currentAppInstallation") or {}
-        app_title = (node.get("app") or {}).get("title")
-        scopes = sorted(s.get("handle") for s in (node.get("accessScopes") or []))
-        print(f"[refresh_shopify] APP='{app_title}' read_products={'read_products' in scopes} scopes={scopes}")
-    except Exception as e:
-        warn(f"app-identity probe failed: {e}")
 
     # shopify_metrics.json
     try:

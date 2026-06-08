@@ -686,10 +686,12 @@ function renderCohort(metrics) {
     '</div>';
   if (tbl) {
     const rows = c.by_category || [];
-    if (!rows.length) { tbl.innerHTML = ""; return; }
+    // カテゴリが「未分類」だけ（商品カテゴリ未連携）の場合はテーブルを出さない。
+    const meaningful = rows.filter(r => r.category && r.category !== "未分類");
+    if (!meaningful.length) { tbl.innerHTML = ""; return; }
     tbl.innerHTML =
       '<thead><tr><th>カテゴリ</th><th class="num">初回</th><th class="num">2回目到達</th><th class="num">カテゴリ別リピート率</th></tr></thead><tbody>' +
-      rows.map(r => '<tr>' +
+      meaningful.map(r => '<tr>' +
         '<td>' + (r.category || "—") + '</td>' +
         '<td class="num">' + num(r.first_buyers) + '</td>' +
         '<td class="num">' + num(r.repeat_buyers) + '</td>' +
