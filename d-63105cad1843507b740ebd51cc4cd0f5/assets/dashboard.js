@@ -700,40 +700,109 @@ function renderCohort(metrics) {
   }
 }
 
-function renderKpiTree(summary) {
+function renderKpiTree(summary, funnel, channels, shopifyMetrics, lineLink, klaviyo, products) {
   const el = document.getElementById("kpi-tree");
   if (!el || !summary || !summary.last_7d) return;
   const cur = summary.last_7d, prev = summary.prev_7d || {};
+
+  // --- 表示ヘルパー ---
+  const V = v => '<span style="color:var(--accent);">' + v + '</span>';
+  const NA = '<span style="color:var(--text-muted);font-size:0.78rem;">未計測</span>';
+  const NOTE = t => ' <span style="color:var(--text-muted);font-size:0.74rem;">' + t + '</span>';
+  const WoW = (c, b) => { const d = delta(c, b); return ' <span class="delta ' + d.cls + '">WoW ' + d.txt + '</span>'; };
+  const rate = (n, dn) => dn ? (n / dn * 100).toFixed(1) + '%' : '—';
+
+  // --- ファネル各段 ---
+  const st = {};
+  (funnel && funnel.steps || []).forEach(s => { st[s.name] = s.count || 0; });
+  const fSess = st["Sessions"] || cur.sessions || 0;
+  const fView = st["view_item"] || cur.item_views || 0;
+  const fAtc = st["add_to_cart"] || 0;
+  const fCo = st["begin_checkout"] || 0;
+  const fBuy = st["purchase"] || 0;
+
+  // --- チャネル別流入（上位） ---
+  const chans = (channels && channels.channels || []).slice().sort((a, b) => b.sessions - a.sessions);
+  const chanInline = chans.slice(0, 4).map(c => c.channel + " " + num(c.sessions)).join("・") || "—";
+
+  // --- 商品別販売数（GA4購入 上位 / 28日） ---
+  const prods = (products && products.products || []).slice().filter(p => (p.buys || 0) > 0).sort((a, b) => b.buys - a.buys);
+  const prodInline = prods.slice(0, 3).map(p => (p.name || "—").slice(0, 10) + " " + num(p.buys)).join("・") || "—";
+
+  // --- CRM ソース ---
+  const c28 = (shopifyMetrics && shopifyMetrics.customers_28d) || {};
+  const repeatRate = c28.returning_customer_rate != null ? (c28.returning_customer_rate * 100).toFixed(1) + "%" : null;
+  const linkRate = (lineLink && lineLink.link_rate != null) ? (lineLink.link_rate * 100).toFixed(1) + "%" : null;
+  const mailRev = (klaviyo && klaviyo.totals && klaviyo.totals.rev_30d != null) ? klaviyo.totals.rev_30d : null;
+
+  // --- ツリー構造 ---
+  const branches = [
+    {
+      line: "セッション数 " + V(num(cur.sessions)) + WoW(cur.sessions, prev.sessions),
+      children: [
+        "新規流入数 " + NA,
+        "リピート流入数 " + NA,
+        "チャネル別流入数 " + NOTE(chanInline),
+        "商品ページ閲覧数 " + V(num(cur.item_views)) + WoW(cur.item_views, prev.item_views),
+      ],
+    },
+    {
+      line: "CVR " + V(pct(cur.cvr, 2)) + WoW(cur.cvr, prev.cvr),
+      children: [
+        "商品ページ閲覧率 " + V(rate(fView, fSess)) + NOTE("PDP閲覧/セッション"),
+        "カート投入率 " + V(rate(fAtc, fView)) + NOTE("ATC/PDP閲覧"),
+        "チェックアウト開始率 " + V(rate(fCo, fAtc)) + NOTE("開始/ATC"),
+        "チェックアウト完了率 " + V(rate(fBuy, fCo)) + NOTE("購入/開始"),
+        "カゴ落ち率 " + V(fAtc ? (100 - fBuy / fAtc * 100).toFixed(1) + "%" : "—") + NOTE("1-購入/ATC"),
+      ],
+    },
+    {
+      line: "客単価 " + V(yen(cur.aov)) + WoW(cur.aov, prev.aov),
+      children: [
+        "平均商品単価 " + NA,
+        "平均購入点数 " + NA,
+        "セット購入率 " + NA,
+        "クロスセル率 " + NA,
+        "送料無料ライン到達率 " + NA,
+      ],
+    },
+    {
+      line: "注文件数 " + V(num(cur.orders)) + WoW(cur.orders, prev.orders),
+      children: [
+        "新規注文件数 " + NA,
+        "リピート注文件数 " + NA,
+        "商品別販売数 " + NOTE(prodInline + "（28日）"),
+        "カテゴリ別販売数 " + NA + NOTE("read_products未連携"),
+      ],
+    },
+    {
+      line: "CRM",
+      children: [
+        "リピート率 " + (repeatRate ? V(repeatRate) + NOTE("28日") : NA),
+        "LTV " + NA,
+        "購入間隔 " + NA,
+        "LINE連携率 " + (linkRate ? V(linkRate) + NOTE("28日") : NA),
+        "メール登録者数 " + NA,
+        "配信経由売上 " + (mailRev != null ? V(yen(mailRev)) + NOTE("Email/30日") : NA),
+      ],
+    },
+  ];
+
   const dSales = delta(cur.sales, prev.sales);
-  // 売上変化への貢献度: 各因子の前期間比(%)の絶対値で大小を相対判定。
-  const factors = [
-    { key: "sessions", label: "セッション数", cur: cur.sessions, base: prev.sessions, fmt: num },
-    { key: "cvr", label: "CVR", cur: cur.cvr, base: prev.cvr, fmt: v => pct(v, 2) },
-    { key: "aov", label: "客単価", cur: cur.aov, base: prev.aov, fmt: yen },
-  ].map(f => {
-    const d = delta(f.cur, f.base);
-    const mag = Math.abs(parseFloat(d.txt)) || 0;
-    return { ...f, d, mag };
-  });
-  const maxMag = Math.max.apply(null, factors.map(f => f.mag)) || 1;
-  const contribLabel = (f) => {
-    const ratio = f.mag / maxMag;
-    const dir = f.d.cls === "up" ? "増加" : f.d.cls === "down" ? "減少" : "横ばい";
-    if (f.d.cls === "flat") return { txt: "影響 小", cls: "flat" };
-    const size = ratio >= 0.66 ? "大" : ratio >= 0.33 ? "中" : "小";
-    return { txt: "売上" + dir + "への貢献 " + size, cls: f.d.cls };
-  };
-  let html = '<div class="kpi-tree-root" style="font-family:\'JetBrains Mono\',monospace;font-size:0.9rem;line-height:2;">';
-  html += '<div style="font-size:1.05rem;margin-bottom:6px;">売上 <span class="delta ' + dSales.cls + '">' + dSales.txt + '</span> <span style="color:var(--text-muted);font-size:0.8rem;">' + yen(cur.sales) + '</span></div>';
-  factors.forEach((f, i) => {
-    const branch = i === factors.length - 1 ? "└─" : "├─";
-    const cl = contribLabel(f);
-    html += '<div style="padding-left:8px;">' + branch + ' ' + f.label +
-      ' <span class="delta ' + f.d.cls + '">' + f.d.txt + '</span>' +
-      ' <span style="color:var(--text-soft);font-size:0.8rem;">' + f.fmt(f.cur) + '</span>' +
-      ' <span style="color:var(--text-muted);font-size:0.78rem;">' + cl.txt + '</span></div>';
+  let html = '<div style="font-family:\'JetBrains Mono\',monospace;font-size:0.84rem;line-height:1.95;white-space:pre-wrap;">';
+  html += '<div style="font-size:1.0rem;margin-bottom:4px;">KGI：EC売上 ' + V(yen(cur.sales)) + ' <span class="delta ' + dSales.cls + '">WoW ' + dSales.txt + '</span></div>';
+  branches.forEach((b, i) => {
+    const last = i === branches.length - 1;
+    const pipe = last ? "　　" : "│　";
+    html += '<div>' + (last ? "└─ " : "├─ ") + b.line + '</div>';
+    (b.children || []).forEach((c, j) => {
+      const lastc = j === b.children.length - 1;
+      html += '<div>' + pipe + (lastc ? "└─ " : "├─ ") + c + '</div>';
+    });
+    if (!last) html += '<div>│</div>';
   });
   html += '</div>';
+  html += '<p class="pm-section-note" style="margin-top:10px;">売上=セッション×CVR×客単価。WoW=前週比。未計測はデータ未連携（GA4新規/既存・客単価内訳・LTV等）。</p>';
   el.innerHTML = html;
 }
 
@@ -1451,7 +1520,7 @@ function renderMonitoring(data, summary) {
 }
 
 (async () => {
-  const [summary, funnel, channels, archive, monthly, products, channelFunnel, klaviyo, pm, budget, monitoring, shopifyMetrics] = await Promise.all([
+  const [summary, funnel, channels, archive, monthly, products, channelFunnel, klaviyo, pm, budget, monitoring, shopifyMetrics, lineLink] = await Promise.all([
     load("summary.json"),
     load("funnel.json"),
     load("channels.json"),
@@ -1464,6 +1533,7 @@ function renderMonitoring(data, summary) {
     load("budget.json"),
     load("monitoring.json"),
     load("shopify_metrics.json"),
+    load("line_link.json"),
   ]);
   if (summary && summary.last_updated) {
     document.getElementById("last-updated").textContent = summary.last_updated;
@@ -1474,7 +1544,7 @@ function renderMonitoring(data, summary) {
   renderShopifyTop(products);
   renderShopifyCustomers(products);
   renderCohort(shopifyMetrics);
-  renderKpiTree(summary);
+  renderKpiTree(summary, funnel, channels, shopifyMetrics, lineLink, klaviyo, products);
   renderKpiDetail(summary);
   renderChannelFunnel(channelFunnel);
   renderFunnel(funnel);
