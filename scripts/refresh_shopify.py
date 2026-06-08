@@ -251,41 +251,41 @@ def fetch_cohort(token: str, now: datetime) -> dict:
     first_time = 0
     second_purchase = 0
     cats: dict[str, dict] = {}
-    # 診断: 各顧客がどの条件で除外/採用されたかを集計し、7.8%がバイアスか実態かを切り分ける。
+    # 2回目判定はプル内の実注文数を主とし、numberOfOrders(生涯)で補完する。
+    # numberOfOrders はキャンセル/アーカイブ等も数え orders クエリ返却と不一致になりうるため、
+    # これを「全注文を取り切れたか」の判定に使うとリピート顧客を不当に除外してしまう（バイアス源）。
     diag = {
         "customers_total": len(by_customer),
         "excluded_too_recent": 0,        # 初回が成熟期間内(直近30日)で除外
         "excluded_before_lookback": 0,   # 初回がプル開始より前で除外
-        "excluded_not_captured": 0,      # len(orders) < lifetime で除外（リピート顧客落ちの主因候補）
-        "excluded_not_captured_repeat": 0,  # うち lifetime>=2（＝本来2回目到達者なのに落ちた数）
         "cohort_members": 0,
+        "repeat_via_pull": 0,            # プル内注文数>=2 で2回目判定した数
+        "repeat_via_lifetime_only": 0,   # プルは1件だが numberOfOrders>=2 で補完判定した数
     }
     for rec in by_customer.values():
         co = sorted(rec["orders"], key=lambda x: x[0])
         first_dt, first_order = co[0]
-        captured_all = len(co) >= rec["lifetime"]
-        in_window = lookback_start <= first_dt <= mature_end
-        if not captured_all:
-            diag["excluded_not_captured"] += 1
-            if rec["lifetime"] >= 2:
-                diag["excluded_not_captured_repeat"] += 1
-            continue
         if first_dt > mature_end:
             diag["excluded_too_recent"] += 1
             continue
         if first_dt < lookback_start:
             diag["excluded_before_lookback"] += 1
             continue
-        if not in_window:
-            continue
         diag["cohort_members"] += 1
         first_time += 1
+        # 2回目到達: 実プル注文>=2 を主、numberOfOrders>=2 を補完。
+        orders_in_pull = len(co)
+        is_repeat = orders_in_pull >= 2 or rec["lifetime"] >= 2
         category = _order_category(first_order)
         cat = cats.setdefault(category, {"category": category, "first_buyers": 0, "repeat_buyers": 0})
         cat["first_buyers"] += 1
-        if rec["lifetime"] >= 2:
+        if is_repeat:
             second_purchase += 1
             cat["repeat_buyers"] += 1
+            if orders_in_pull >= 2:
+                diag["repeat_via_pull"] += 1
+            else:
+                diag["repeat_via_lifetime_only"] += 1
 
     by_category = []
     for c in sorted(cats.values(), key=lambda x: -x["first_buyers"]):
