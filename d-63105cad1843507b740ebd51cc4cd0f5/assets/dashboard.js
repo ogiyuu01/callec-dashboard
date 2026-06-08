@@ -737,6 +737,182 @@ function renderKpiTree(summary) {
   el.innerHTML = html;
 }
 
+// ===== KPI詳細（期間指定） =====
+let _kpiDaily = [];
+let _kpiChart = null;
+const _kpiState = { preset: "7d", from: null, to: null, metric: "sales", cmp: "prev" };
+const KPI_PRESETS = [
+  { key: "today", label: "最新日" },
+  { key: "yesterday", label: "前日" },
+  { key: "7d", label: "直近7日" },
+  { key: "14d", label: "直近14日" },
+  { key: "28d", label: "直近28日" },
+  { key: "month", label: "今月(MTD)" },
+  { key: "custom", label: "カスタム" },
+];
+const KPI_METRICS = [
+  { key: "sales", label: "売上", field: "sales", fmt: yen },
+  { key: "orders", label: "注文数", field: "orders", fmt: num },
+  { key: "sessions", label: "セッション", field: "sessions", fmt: num },
+  { key: "cvr", label: "CVR", field: "cvr", fmt: v => pct(v, 2) },
+  { key: "aov", label: "客単価", field: "aov", fmt: yen },
+  { key: "ips", label: "items/session", field: "items_per_session", fmt: v => (v || 0).toFixed(2) },
+];
+
+function _kpiPday(s) { return new Date(+s.slice(0, 4), +s.slice(4, 6) - 1, +s.slice(6, 8)); }
+function _kpiFmtDate(s) { return s.slice(4, 6) + "/" + s.slice(6, 8); }
+
+function _kpiAgg(rows) {
+  const s = k => rows.reduce((a, r) => a + (+r[k] || 0), 0);
+  const sales = s("sales"), orders = s("orders"), sessions = s("sessions"), views = s("item_views");
+  return {
+    sales, orders, sessions,
+    cvr: sessions ? orders / sessions : 0,
+    aov: orders ? sales / orders : 0,
+    ips: sessions ? views / sessions : 0,
+  };
+}
+
+function _kpiIndexRange() {
+  const n = _kpiDaily.length;
+  const st = _kpiState;
+  if (st.preset === "today") return [n - 1, n];
+  if (st.preset === "yesterday") return [n - 2, n - 1];
+  if (st.preset === "7d") return [Math.max(0, n - 7), n];
+  if (st.preset === "14d") return [Math.max(0, n - 14), n];
+  if (st.preset === "28d") return [0, n];
+  if (st.preset === "month") {
+    const last = _kpiDaily[n - 1].date.slice(0, 6);
+    let i0 = n - 1;
+    while (i0 > 0 && _kpiDaily[i0 - 1].date.slice(0, 6) === last) i0--;
+    return [i0, n];
+  }
+  if (st.preset === "custom" && st.from && st.to) {
+    const f = st.from.replace(/-/g, ""), t = st.to.replace(/-/g, "");
+    let i0 = -1, i1 = -1;
+    _kpiDaily.forEach((r, i) => {
+      if (r.date >= f && r.date <= t) { if (i0 < 0) i0 = i; i1 = i + 1; }
+    });
+    if (i0 < 0) return [n, n];
+    return [i0, i1];
+  }
+  return [Math.max(0, n - 7), n];
+}
+
+function renderKpiDetail(summary) {
+  _kpiDaily = ((summary && summary.daily) || []).slice().sort((a, b) => a.date.localeCompare(b.date));
+  const presetsEl = document.getElementById("kpi-presets");
+  if (!presetsEl || !_kpiDaily.length) {
+    if (presetsEl) presetsEl.innerHTML = '<span style="color:var(--text-muted);">日次データなし</span>';
+    return;
+  }
+  const minD = _kpiDaily[0].date, maxD = _kpiDaily[_kpiDaily.length - 1].date;
+  const toISO = s => s.slice(0, 4) + "-" + s.slice(4, 6) + "-" + s.slice(6, 8);
+  const fromInput = document.getElementById("kpi-from"), toInput = document.getElementById("kpi-to");
+  if (fromInput && !fromInput.value) {
+    fromInput.min = toISO(minD); fromInput.max = toISO(maxD); fromInput.value = toISO(_kpiDaily[Math.max(0, _kpiDaily.length - 7)].date);
+    toInput.min = toISO(minD); toInput.max = toISO(maxD); toInput.value = toISO(maxD);
+  }
+
+  presetsEl.innerHTML = KPI_PRESETS.map(p =>
+    '<button class="state-chip ' + (p.key === _kpiState.preset ? "active" : "") + '" data-kpi-preset="' + p.key + '">' + p.label + '</button>'
+  ).join("");
+  presetsEl.querySelectorAll("[data-kpi-preset]").forEach(b =>
+    b.addEventListener("click", () => { _kpiState.preset = b.dataset.kpiPreset; _kpiUpdate(); }));
+
+  const cmpEl = document.getElementById("kpi-cmp");
+  cmpEl.innerHTML = [["prev", "前期間比"], ["none", "なし"]].map(([k, l]) =>
+    '<button class="state-chip ' + (k === _kpiState.cmp ? "active" : "") + '" data-kpi-cmp="' + k + '">' + l + '</button>'
+  ).join("");
+  cmpEl.querySelectorAll("[data-kpi-cmp]").forEach(b =>
+    b.addEventListener("click", () => { _kpiState.cmp = b.dataset.kpiCmp; _kpiUpdate(); }));
+
+  const metEl = document.getElementById("kpi-metric-sel");
+  metEl.innerHTML = KPI_METRICS.map(m =>
+    '<button class="state-chip ' + (m.key === _kpiState.metric ? "active" : "") + '" data-kpi-metric="' + m.key + '">' + m.label + '</button>'
+  ).join("");
+  metEl.querySelectorAll("[data-kpi-metric]").forEach(b =>
+    b.addEventListener("click", () => { _kpiState.metric = b.dataset.kpiMetric; _kpiUpdate(); }));
+
+  const applyBtn = document.getElementById("kpi-apply");
+  if (applyBtn) applyBtn.addEventListener("click", () => {
+    _kpiState.preset = "custom";
+    _kpiState.from = document.getElementById("kpi-from").value;
+    _kpiState.to = document.getElementById("kpi-to").value;
+    _kpiUpdate();
+  });
+
+  _kpiUpdate();
+}
+
+function _kpiUpdate() {
+  // active states
+  document.querySelectorAll("[data-kpi-preset]").forEach(b => b.classList.toggle("active", b.dataset.kpiPreset === _kpiState.preset));
+  document.querySelectorAll("[data-kpi-cmp]").forEach(b => b.classList.toggle("active", b.dataset.kpiCmp === _kpiState.cmp));
+  document.querySelectorAll("[data-kpi-metric]").forEach(b => b.classList.toggle("active", b.dataset.kpiMetric === _kpiState.metric));
+
+  if (_kpiState.preset === "custom" && (!_kpiState.from || !_kpiState.to)) {
+    _kpiState.from = document.getElementById("kpi-from").value;
+    _kpiState.to = document.getElementById("kpi-to").value;
+  }
+  const [i0, i1] = _kpiIndexRange();
+  const rows = _kpiDaily.slice(i0, i1);
+  const len = i1 - i0;
+  const prevRows = _kpiDaily.slice(Math.max(0, i0 - len), i0);
+  const note = document.getElementById("kpi-range-note");
+
+  if (!rows.length) {
+    if (note) note.textContent = "選択範囲にデータがありません（日次データ範囲: " + _kpiFmtDate(_kpiDaily[0].date) + "〜" + _kpiFmtDate(_kpiDaily[_kpiDaily.length - 1].date) + "）";
+    document.getElementById("kpi-detail-cards").innerHTML = "";
+    document.getElementById("table-kpi-detail").innerHTML = "";
+    if (_kpiChart) { _kpiChart.destroy(); _kpiChart = null; }
+    return;
+  }
+
+  const agg = _kpiAgg(rows);
+  const showCmp = _kpiState.cmp === "prev" && prevRows.length === len && len > 0;
+  const pagg = showCmp ? _kpiAgg(prevRows) : null;
+  if (note) {
+    note.textContent = "対象 " + _kpiFmtDate(rows[0].date) + "〜" + _kpiFmtDate(rows[rows.length - 1].date) +
+      "（" + len + "日）" + (showCmp ? " / 比較 " + _kpiFmtDate(prevRows[0].date) + "〜" + _kpiFmtDate(prevRows[prevRows.length - 1].date) : " / 比較なし");
+  }
+
+  // cards
+  document.getElementById("kpi-detail-cards").innerHTML = KPI_METRICS.map(m => {
+    const cur = agg[m.key];
+    const d = (showCmp && pagg) ? delta(cur, pagg[m.key]) : { txt: "—", cls: "flat" };
+    return '<div class="kpi"><div class="label">' + m.label + '</div><div class="value">' + m.fmt(cur) +
+      '</div><div class="delta ' + d.cls + '">前期間 ' + d.txt + '</div></div>';
+  }).join("");
+
+  // chart
+  const met = KPI_METRICS.find(m => m.key === _kpiState.metric);
+  const labels = rows.map(r => _kpiFmtDate(r.date));
+  const series = rows.map(r => +r[met.field] || 0);
+  const ctx = document.getElementById("chart-kpi-detail");
+  if (ctx) {
+    if (_kpiChart) _kpiChart.destroy();
+    _kpiChart = new Chart(ctx, {
+      type: "line",
+      data: { labels, datasets: [{ label: met.label, data: series, borderColor: "#d4b87a", backgroundColor: "rgba(212,184,122,0.08)", fill: true, tension: 0.3, pointRadius: rows.length > 31 ? 0 : 2 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } } },
+    });
+  }
+
+  // table
+  document.getElementById("table-kpi-detail").innerHTML =
+    '<thead><tr><th>日付</th><th class="num">売上</th><th class="num">注文</th><th class="num">セッション</th><th class="num">CVR</th><th class="num">客単価</th></tr></thead><tbody>' +
+    rows.slice().reverse().map(r => '<tr>' +
+      '<td>' + _kpiFmtDate(r.date) + '</td>' +
+      '<td class="num">' + yen(r.sales) + '</td>' +
+      '<td class="num">' + num(r.orders) + '</td>' +
+      '<td class="num">' + num(r.sessions) + '</td>' +
+      '<td class="num">' + pct(r.cvr, 2) + '</td>' +
+      '<td class="num">' + yen(r.aov) + '</td>' +
+    '</tr>').join("") + '</tbody>';
+}
+
 function renderChannelFunnel(data) {
   const el = document.getElementById("table-channel-funnel");
   if (!el || !data) return;
@@ -1299,6 +1475,7 @@ function renderMonitoring(data, summary) {
   renderShopifyCustomers(products);
   renderCohort(shopifyMetrics);
   renderKpiTree(summary);
+  renderKpiDetail(summary);
   renderChannelFunnel(channelFunnel);
   renderFunnel(funnel);
   renderItemsTrend(funnel);

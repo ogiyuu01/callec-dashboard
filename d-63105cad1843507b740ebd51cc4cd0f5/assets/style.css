@@ -938,6 +938,20 @@ footer {
   transition: all 0.3s var(--ease);
 }
 .state-chip:hover { color: var(--text); border-color: var(--hairline-strong); }
+
+/* KPI詳細 期間コントロール */
+.kpi-controls { display: flex; flex-direction: column; gap: 14px; }
+.kpi-ctl-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.kpi-ctl-label {
+  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.16em;
+  color: var(--text-muted); min-width: 64px;
+}
+.kpi-presets, .kpi-cmp, .kpi-metric-sel { display: flex; flex-wrap: wrap; gap: 8px; }
+.kpi-date {
+  background: transparent; border: 1px solid var(--hairline); border-radius: 10px;
+  padding: 6px 10px; font-size: 0.78rem; font-family: inherit; color: var(--text);
+  color-scheme: dark;
+}
 .state-chip.active {
   background: rgba(212,184,122,0.08);
   color: var(--accent);

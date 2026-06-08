@@ -22,6 +22,7 @@
     <div class="sidebar-section">
       <div class="sidebar-label">PM</div>
       <button class="nav-item active" data-tab="pm">📊 PM ホーム</button>
+      <button class="nav-item" data-tab="kpi">📈 KPI詳細（期間指定）</button>
     </div>
     <div class="sidebar-section">
       <div class="sidebar-label">ドリルダウン</div>
@@ -55,6 +56,7 @@
 
 <nav class="tabs container mobile-only">
   <button class="tab active" data-tab="pm">📊 PM</button>
+  <button class="tab" data-tab="kpi">📈 KPI詳細</button>
   <button class="tab" data-tab="monitoring">🔬 モニタ</button>
   <button class="tab" data-tab="products">🎯 商品</button>
   <button class="tab" data-tab="customers">👥 顧客</button>
@@ -121,6 +123,46 @@
       <p class="pm-section-note">直近の4ソースイベントを時系列で表示（最新40件）</p>
       <div class="pm-activity-filters" id="pm-activity-filters"></div>
       <div class="pm-activity" id="pm-activity"></div>
+    </div>
+  </section>
+
+  <section class="page" id="page-kpi">
+    <span class="eyebrow">KPI Detail · Custom Period</span>
+    <h2>📈 KPI詳細（期間指定）</h2>
+    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">期間を指定してKPIを集計（GA4×Shopify日次・スパム除外後）。比較は同じ長さの直前期間。日次データの範囲内で集計します。</p>
+
+    <div class="card">
+      <div class="kpi-controls" id="kpi-controls">
+        <div class="kpi-ctl-row">
+          <span class="kpi-ctl-label">期間</span>
+          <div class="kpi-presets" id="kpi-presets"></div>
+        </div>
+        <div class="kpi-ctl-row" id="kpi-custom-row">
+          <span class="kpi-ctl-label">カスタム</span>
+          <input type="date" id="kpi-from" class="kpi-date"> 〜 <input type="date" id="kpi-to" class="kpi-date">
+          <button class="state-chip" id="kpi-apply">適用</button>
+        </div>
+        <div class="kpi-ctl-row">
+          <span class="kpi-ctl-label">比較</span>
+          <div class="kpi-cmp" id="kpi-cmp"></div>
+        </div>
+      </div>
+      <p class="pm-section-note" id="kpi-range-note">—</p>
+    </div>
+
+    <div class="kpi-grid" id="kpi-detail-cards"></div>
+
+    <div class="card">
+      <div class="kpi-ctl-row" style="margin-bottom:12px;">
+        <span class="kpi-ctl-label">指標</span>
+        <div class="kpi-metric-sel" id="kpi-metric-sel"></div>
+      </div>
+      <canvas id="chart-kpi-detail" height="110"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>日次内訳</h3>
+      <table class="data-table" id="table-kpi-detail"></table>
     </div>
   </section>
 
