@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-08 13:00 JST",
+    "fetched_at": "2026-06-08 13:05 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
@@ -89,7 +89,52 @@
       "excluded_before_lookback": 0,
       "cohort_members": 168,
       "repeat_via_pull": 20,
-      "repeat_via_lifetime_only": 42
+      "repeat_via_lifetime_only": 42,
+      "cat_src_producttype": 0,
+      "cat_src_collection": 0,
+      "cat_src_none": 168,
+      "cat_samples": [
+        {
+          "productType": "",
+          "collection": "",
+          "has_product": false
+        },
+        {
+          "productType": "",
+          "collection": "",
+          "has_product": false
+        },
+        {
+          "productType": "",
+          "collection": "",
+          "has_product": false
+        },
+        {
+          "productType": "",
+          "collection": "",
+          "has_product": false
+        },
+        {
+          "productType": "",
+          "collection": "",
+          "has_product": false
+        },
+        {
+          "productType": "",
+          "collection": "",
+          "has_product": false
+        },
+        {
+          "productType": "",
+          "collection": "",
+          "has_product": false
+        },
+        {
+          "productType": "",
+          "collection": "",
+          "has_product": false
+        }
+      ]
     }
   }
 }
