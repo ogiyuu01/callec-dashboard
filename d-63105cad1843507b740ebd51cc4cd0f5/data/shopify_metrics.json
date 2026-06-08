@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-08 13:05 JST",
+    "fetched_at": "2026-06-08 13:18 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
@@ -72,27 +72,27 @@
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 168,
-    "second_purchase_buyers": 62,
-    "second_purchase_rate": 0.369,
+    "first_time_buyers": 170,
+    "second_purchase_buyers": 63,
+    "second_purchase_rate": 0.3706,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 168,
-        "repeat_buyers": 62,
-        "repeat_rate": 0.369
+        "first_buyers": 170,
+        "repeat_buyers": 63,
+        "repeat_rate": 0.3706
       }
     ],
     "diagnostics": {
       "customers_total": 365,
-      "excluded_too_recent": 197,
+      "excluded_too_recent": 195,
       "excluded_before_lookback": 0,
-      "cohort_members": 168,
+      "cohort_members": 170,
       "repeat_via_pull": 20,
-      "repeat_via_lifetime_only": 42,
+      "repeat_via_lifetime_only": 43,
       "cat_src_producttype": 0,
       "cat_src_collection": 0,
-      "cat_src_none": 168,
+      "cat_src_none": 170,
       "cat_samples": [
         {
           "productType": "",
