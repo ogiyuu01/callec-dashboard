@@ -731,17 +731,28 @@ function renderKpiTree(summary, funnel, channels, shopifyMetrics, lineLink, klav
 
   // --- CRM ソース ---
   const c28 = (shopifyMetrics && shopifyMetrics.customers_28d) || {};
+  const crm = (shopifyMetrics && shopifyMetrics.crm) || {};
   const repeatRate = c28.returning_customer_rate != null ? (c28.returning_customer_rate * 100).toFixed(1) + "%" : null;
   const linkRate = (lineLink && lineLink.link_rate != null) ? (lineLink.link_rate * 100).toFixed(1) + "%" : null;
   const mailRev = (klaviyo && klaviyo.totals && klaviyo.totals.rev_30d != null) ? klaviyo.totals.rev_30d : null;
+  const interval = crm.avg_purchase_interval_days != null ? crm.avg_purchase_interval_days + "日" : null;
+  const ltv = crm.ltv_1y != null ? yen(crm.ltv_1y) : null;
+  const newOrders7 = crm.new_orders_7d, repeatOrders7 = crm.repeat_orders_7d;
+
+  // --- 購入点数（売上系内訳） ---
+  const units = cur.units, pUnits = prev.units;
+  const avgItemPrice = units ? cur.sales / units : null;
+  const pAvgItemPrice = pUnits ? prev.sales / pUnits : null;
+  const avgQty = (units && cur.orders) ? units / cur.orders : null;
+  const pAvgQty = (pUnits && prev.orders) ? pUnits / prev.orders : null;
 
   // --- ツリー構造 ---
   const branches = [
     {
       line: "セッション数 " + V(num(cur.sessions)) + WoW(cur.sessions, prev.sessions),
       children: [
-        "新規流入数 " + NA,
-        "リピート流入数 " + NA,
+        "新規流入数 " + (cur.new_sessions != null ? V(num(cur.new_sessions)) + WoW(cur.new_sessions, prev.new_sessions) : NA),
+        "リピート流入数 " + (cur.returning_sessions != null ? V(num(cur.returning_sessions)) + WoW(cur.returning_sessions, prev.returning_sessions) + NOTE("BQ蓄積以降で判定") : NA),
         "チャネル別流入数 " + NOTE(chanInline),
         "商品ページ閲覧数 " + V(num(cur.item_views)) + WoW(cur.item_views, prev.item_views),
       ],
@@ -759,18 +770,18 @@ function renderKpiTree(summary, funnel, channels, shopifyMetrics, lineLink, klav
     {
       line: "客単価 " + V(yen(cur.aov)) + WoW(cur.aov, prev.aov),
       children: [
-        "平均商品単価 " + NA,
-        "平均購入点数 " + NA,
-        "セット購入率 " + NA,
-        "クロスセル率 " + NA,
-        "送料無料ライン到達率 " + NA,
+        "平均商品単価 " + (avgItemPrice != null ? V(yen(avgItemPrice)) + WoW(avgItemPrice, pAvgItemPrice) : NA),
+        "平均購入点数 " + (avgQty != null ? V(avgQty.toFixed(2)) + WoW(avgQty, pAvgQty) : NA),
+        "セット購入率 " + NA + NOTE("取引単位集計が必要"),
+        "クロスセル率 " + NA + NOTE("レコメンド連携が必要"),
+        "送料無料ライン到達率 " + NA + NOTE("送料無料閾値の設定が必要"),
       ],
     },
     {
       line: "注文件数 " + V(num(cur.orders)) + WoW(cur.orders, prev.orders),
       children: [
-        "新規注文件数 " + NA,
-        "リピート注文件数 " + NA,
+        "新規注文件数 " + (newOrders7 != null ? V(num(newOrders7)) + NOTE("7日・Shopify") : NA),
+        "リピート注文件数 " + (repeatOrders7 != null ? V(num(repeatOrders7)) + NOTE("7日・Shopify") : NA),
         "商品別販売数 " + NOTE(prodInline + "（28日）"),
         "カテゴリ別販売数 " + NA + NOTE("read_products未連携"),
       ],
@@ -779,10 +790,10 @@ function renderKpiTree(summary, funnel, channels, shopifyMetrics, lineLink, klav
       line: "CRM",
       children: [
         "リピート率 " + (repeatRate ? V(repeatRate) + NOTE("28日") : NA),
-        "LTV " + NA,
-        "購入間隔 " + NA,
+        "LTV " + (ltv ? V(ltv) + NOTE("1年・顧客あたり累計") : NA),
+        "購入間隔 " + (interval ? V(interval) + NOTE("平均・リピート顧客") : NA),
         "LINE連携率 " + (linkRate ? V(linkRate) + NOTE("28日") : NA),
-        "メール登録者数 " + NA,
+        "メール登録者数 " + NA + NOTE("Klaviyo購読者API未連携"),
         "配信経由売上 " + (mailRev != null ? V(yen(mailRev)) + NOTE("Email/30日") : NA),
       ],
     },

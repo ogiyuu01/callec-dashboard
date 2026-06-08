@@ -164,6 +164,7 @@ query($cursor: String) {
   orders(first: 250, after: $cursor, query: "created_at:>=%s", sortKey: CREATED_AT) {
     edges { node {
       id createdAt
+      totalPriceSet { shopMoney { amount } }
       customer { id numberOfOrders }
       lineItems(first: 10) { edges { node {
         product {
@@ -233,12 +234,16 @@ def fetch_cohort(token: str, now: datetime) -> dict:
             dt = _parse_iso(o.get("createdAt"))
             if dt is None:
                 continue
+            try:
+                amt = float((o.get("totalPriceSet") or {}).get("shopMoney", {}).get("amount") or 0)
+            except (ValueError, TypeError):
+                amt = 0.0
             rec = by_customer.setdefault(
                 cid,
                 {"lifetime": int((o.get("customer") or {}).get("numberOfOrders") or 1),
                  "orders": []},
             )
-            rec["orders"].append((dt, o))
+            rec["orders"].append((dt, amt, o))
         pi = orders_node.get("pageInfo") or {}
         if not pi.get("hasNextPage"):
             break
@@ -264,7 +269,7 @@ def fetch_cohort(token: str, now: datetime) -> dict:
     }
     for rec in by_customer.values():
         co = sorted(rec["orders"], key=lambda x: x[0])
-        first_dt, first_order = co[0]
+        first_dt, _first_amt, first_order = co[0]
         if first_dt > mature_end:
             diag["excluded_too_recent"] += 1
             continue
@@ -292,6 +297,31 @@ def fetch_cohort(token: str, now: datetime) -> dict:
         c["repeat_rate"] = round(c["repeat_buyers"] / c["first_buyers"], 4) if c["first_buyers"] else 0
         by_category.append(c)
 
+    # --- CRM 追加指標（1年プルから算出） ---
+    # 購入間隔: プル内2回以上購入した顧客の、連続注文の平均日数
+    gaps = []
+    total_amount = 0.0
+    for rec in by_customer.values():
+        co = sorted(rec["orders"], key=lambda x: x[0])
+        total_amount += sum(a for (_d, a, _o) in co)
+        for i in range(1, len(co)):
+            gaps.append((co[i][0] - co[i - 1][0]).days)
+    avg_interval = round(sum(gaps) / len(gaps), 1) if gaps else None
+    ltv_1y = round(total_amount / len(by_customer)) if by_customer else None
+
+    # 新規 / リピート注文（直近7日）: その注文より前にプル内注文がある顧客=リピート
+    win7 = now - timedelta(days=7)
+    new_orders_7d = 0
+    repeat_orders_7d = 0
+    for rec in by_customer.values():
+        co = sorted(rec["orders"], key=lambda x: x[0])
+        for idx, (dt, _a, _o) in enumerate(co):
+            if dt >= win7:
+                if idx == 0:
+                    new_orders_7d += 1
+                else:
+                    repeat_orders_7d += 1
+
     return {
         "cohort": {
             "method": "mature",
@@ -302,7 +332,13 @@ def fetch_cohort(token: str, now: datetime) -> dict:
             "second_purchase_rate": round(second_purchase / first_time, 4) if first_time else 0,
             "by_category": by_category,
             "diagnostics": diag,
-        }
+        },
+        "crm": {
+            "avg_purchase_interval_days": avg_interval,
+            "ltv_1y": ltv_1y,
+            "new_orders_7d": new_orders_7d,
+            "repeat_orders_7d": repeat_orders_7d,
+        },
     }
 
 

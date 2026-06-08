@@ -671,7 +671,7 @@ def build_summary(client: bigquery.Client) -> dict:
         if not rows:
             return {}
         r = rows[0]
-        return {
+        out = {
             "sessions": int(r.get("sessions") or 0),
             "item_views": int(r.get("item_views") or 0),
             "orders": int(r.get("orders") or 0),
@@ -680,6 +680,36 @@ def build_summary(client: bigquery.Client) -> dict:
             "aov": float(r.get("aov") or 0),
             "items_per_session": float(r.get("items_per_session") or 0),
         }
+        # 新規 / リピート セッション（初訪問判定はBQ蓄積開始以降の既知ユーザーで近似）
+        try:
+            sql_nr = f"""
+            SELECT seg, COUNT(*) AS c FROM (
+              SELECT CASE WHEN user_pseudo_id IN (
+                SELECT DISTINCT user_pseudo_id FROM `{PROJECT}.{DATASET}.sessions_clean`
+                WHERE event_date < '{start.strftime("%Y%m%d")}' {SPAM_FILTER_SESSIONS}
+              ) THEN 'returning' ELSE 'new' END AS seg
+              FROM `{PROJECT}.{DATASET}.sessions_clean`
+              WHERE event_date BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}' {SPAM_FILTER_SESSIONS}
+            ) GROUP BY seg
+            """
+            nr = {row["seg"]: int(row["c"] or 0) for row in q(client, sql_nr)}
+            out["new_sessions"] = nr.get("new", 0)
+            out["returning_sessions"] = nr.get("returning", 0)
+        except Exception:
+            pass
+        # 購入点数（販売数量）→ 平均商品単価・平均購入点数の算出に使う
+        try:
+            sql_u = f"""
+            SELECT CAST(SUM(it.quantity) AS INT64) AS units
+            FROM `{PROJECT}.{DATASET}.events_*`, UNNEST(items) AS it
+            WHERE _TABLE_SUFFIX BETWEEN '{start.strftime("%Y%m%d")}' AND '{end.strftime("%Y%m%d")}'
+              AND event_name = 'purchase' {SPAM_FILTER_EVENTS}
+            """
+            ur = q(client, sql_u)
+            out["units"] = int((ur[0] or {}).get("units") or 0) if ur else 0
+        except Exception:
+            pass
+        return out
 
     last_7d = kpis(last_start, last_end)
     prev_7d = kpis(prev_start, prev_end)
