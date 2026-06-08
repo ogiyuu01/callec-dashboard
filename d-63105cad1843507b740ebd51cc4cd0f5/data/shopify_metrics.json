@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-08 13:30 JST",
+    "fetched_at": "2026-06-08 14:32 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
@@ -72,69 +72,30 @@
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 170,
+    "first_time_buyers": 171,
     "second_purchase_buyers": 63,
-    "second_purchase_rate": 0.3706,
+    "second_purchase_rate": 0.3684,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 170,
+        "first_buyers": 171,
         "repeat_buyers": 63,
-        "repeat_rate": 0.3706
+        "repeat_rate": 0.3684
       }
     ],
     "diagnostics": {
       "customers_total": 365,
-      "excluded_too_recent": 195,
+      "excluded_too_recent": 194,
       "excluded_before_lookback": 0,
-      "cohort_members": 170,
+      "cohort_members": 171,
       "repeat_via_pull": 20,
-      "repeat_via_lifetime_only": 43,
-      "cat_src_producttype": 0,
-      "cat_src_collection": 0,
-      "cat_src_none": 170,
-      "cat_samples": [
-        {
-          "productType": "",
-          "collection": "",
-          "has_product": false
-        },
-        {
-          "productType": "",
-          "collection": "",
-          "has_product": false
-        },
-        {
-          "productType": "",
-          "collection": "",
-          "has_product": false
-        },
-        {
-          "productType": "",
-          "collection": "",
-          "has_product": false
-        },
-        {
-          "productType": "",
-          "collection": "",
-          "has_product": false
-        },
-        {
-          "productType": "",
-          "collection": "",
-          "has_product": false
-        },
-        {
-          "productType": "",
-          "collection": "",
-          "has_product": false
-        },
-        {
-          "productType": "",
-          "collection": "",
-          "has_product": false
-        }
-      ]
+      "repeat_via_lifetime_only": 43
     }
+  },
+  "crm": {
+    "avg_purchase_interval_days": 14.9,
+    "ltv_1y": 22841,
+    "new_orders_7d": 34,
+    "repeat_orders_7d": 10
   }
 }

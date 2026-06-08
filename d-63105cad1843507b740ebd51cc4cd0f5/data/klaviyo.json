@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-08 13:30 JST",
+  "last_updated": "2026-06-08 14:32 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -66,11 +66,11 @@
       "name": "カゴ落ちメール",
       "current_7d": {
         "recipients": 119.0,
-        "opens": 30.0,
+        "opens": 31.0,
         "clicks": 2.0,
         "convs": 2.0,
         "rev": 35200.0,
-        "open_rate": 0.25210084033613445,
+        "open_rate": 0.2605042016806723,
         "click_rate": 0.01680672268907563,
         "conv_rate": 0.01680672268907563
       },
@@ -86,11 +86,11 @@
       },
       "current_30d": {
         "recipients": 403.0,
-        "opens": 96.0,
+        "opens": 97.0,
         "clicks": 21.0,
         "convs": 9.0,
         "rev": 163350.0,
-        "open_rate": 0.23821339950372208,
+        "open_rate": 0.24069478908188585,
         "click_rate": 0.052109181141439205,
         "conv_rate": 0.022332506203473945
       },
@@ -106,11 +106,11 @@
       },
       "annual": {
         "recipients": 1126.0,
-        "opens": 276.0,
+        "opens": 277.0,
         "clicks": 50.0,
         "convs": 24.0,
         "rev": 421080.0,
-        "open_rate": 0.24511545293072823,
+        "open_rate": 0.24600355239786856,
         "click_rate": 0.04440497335701599,
         "conv_rate": 0.021314387211367674
       },

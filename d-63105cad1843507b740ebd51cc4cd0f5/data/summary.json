@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-08 13:28 JST",
+  "last_updated": "2026-06-08 14:30 JST",
   "last_7d": {
     "sessions": 6207,
     "item_views": 6605,
@@ -7,7 +7,10 @@
     "sales": 576950,
     "cvr": 0.005316578057032383,
     "aov": 17483.333333333332,
-    "items_per_session": 1.06412115353633
+    "items_per_session": 1.06412115353633,
+    "new_sessions": 4116,
+    "returning_sessions": 2091,
+    "units": 69
   },
   "prev_7d": {
     "sessions": 7337,
@@ -16,7 +19,10 @@
     "sales": 887810,
     "cvr": 0.005860706010631048,
     "aov": 20646.74418604651,
-    "items_per_session": 1.09513425105629
+    "items_per_session": 1.09513425105629,
+    "new_sessions": 4910,
+    "returning_sessions": 2427,
+    "units": 91
   },
   "yoy": {
     "sessions": 7418,
