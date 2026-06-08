@@ -36,10 +36,11 @@ CID = os.environ.get("SHOPIFY_CLIENT_ID", "").strip()
 CSEC = os.environ.get("SHOPIFY_CLIENT_SECRET", "").strip()
 API_VERSION = os.environ.get("SHOPIFY_API_VERSION", "2025-01").strip()
 LOW_STOCK_THRESHOLD = int(os.environ.get("SHOPIFY_LOW_STOCK", "5"))
-# コホート分析の遡及期間。28日窓で初回購入した顧客が2回目に至ったかを判定するため、
-# 十分に遡って各顧客の注文履歴を取り切る必要がある（既定90日）。
+# コホート分析の遡及期間（既定90日）。各顧客の全注文履歴を取り切るため十分に遡る。
 COHORT_LOOKBACK_DAYS = int(os.environ.get("SHOPIFY_COHORT_LOOKBACK", "90"))
-COHORT_WINDOW_DAYS = int(os.environ.get("SHOPIFY_COHORT_WINDOW", "28"))
+# 成熟期間（既定30日）。初回購入から最低この日数を経た顧客のみコホート対象とし、
+# 「最終的に2回目に至ったか」を測る（初回直後の顧客を母数に含めない＝過小評価を防ぐ）。
+COHORT_MATURITY_DAYS = int(os.environ.get("SHOPIFY_COHORT_MATURITY", "30"))
 
 
 def warn(msg):
@@ -201,19 +202,20 @@ def _order_category(order: dict) -> str:
 
 
 def fetch_cohort(token: str, now: datetime) -> dict:
-    """28日窓の初回購入コホートの2回目転換率＋カテゴリ別リピート率を算出する。
+    """成熟コホートの2回目転換率＋カテゴリ別リピート率を算出する。
 
-    定義:
-      - 初回購入顧客 = 直近 COHORT_WINDOW_DAYS 日に「初回注文」した顧客
-        （遡及プル内で全注文を取り切れている＝len(orders) >= numberOfOrders の顧客に限定）。
-      - 2回目転換率 = 初回購入顧客のうち lifetime 注文数が2以上に達した割合。
-      - カテゴリ別リピート率 = カテゴリ内の初回購入顧客に対する2回目到達顧客の割合。
+    定義（最終的な2回目転換を測る成熟コホート方式）:
+      - コホート対象 = 「初回注文」が [now-LOOKBACK, now-MATURITY] にある顧客。
+        初回から最低 COHORT_MATURITY_DAYS 経過しており、2回目購入の機会を十分得ている。
+        遡及プル内で全注文を取り切れている（len(orders) >= numberOfOrders）顧客に限定し、
+        プル開始日より前から購入歴がある顧客は除外（初回判定の誤りを防ぐ）。
+      - 2回目転換率 = コホート顧客のうち lifetime 注文数が2以上に達した割合。
+      - カテゴリ別リピート率 = カテゴリ内コホート顧客に対する2回目到達顧客の割合。
         カテゴリは各顧客の「初回注文」の代表カテゴリで割り当てる。
-    注意: Shopify 注文プルは遡及 COHORT_LOOKBACK_DAYS 日。それ以前から購入歴がある顧客は
-          captured_all=False となり初回コホートから除外される（古い顧客の混入を防ぐ）。
     """
     since = (now - timedelta(days=COHORT_LOOKBACK_DAYS)).strftime("%Y-%m-%dT%H:%M:%S%z")
-    window_start = now - timedelta(days=COHORT_WINDOW_DAYS)
+    lookback_start = now - timedelta(days=COHORT_LOOKBACK_DAYS)
+    mature_end = now - timedelta(days=COHORT_MATURITY_DAYS)
 
     # 顧客ごとに (プル内注文日リスト, lifetime注文数, 初回注文オブジェクト) を集める。
     by_customer: dict[str, dict] = {}
@@ -252,8 +254,8 @@ def fetch_cohort(token: str, now: datetime) -> dict:
         co = sorted(rec["orders"], key=lambda x: x[0])
         first_dt, first_order = co[0]
         captured_all = len(co) >= rec["lifetime"]
-        is_new_cohort = first_dt >= window_start and captured_all
-        if not is_new_cohort:
+        is_cohort = (lookback_start <= first_dt <= mature_end) and captured_all
+        if not is_cohort:
             continue
         first_time += 1
         category = _order_category(first_order)
@@ -269,8 +271,9 @@ def fetch_cohort(token: str, now: datetime) -> dict:
         by_category.append(c)
 
     return {
-        "cohort_28d": {
-            "window_days": COHORT_WINDOW_DAYS,
+        "cohort": {
+            "method": "mature",
+            "maturity_days": COHORT_MATURITY_DAYS,
             "lookback_days": COHORT_LOOKBACK_DAYS,
             "first_time_buyers": first_time,
             "second_purchase_buyers": second_purchase,

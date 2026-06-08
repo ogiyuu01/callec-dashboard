@@ -669,7 +669,7 @@ function renderShopifyCustomers(products) {
 function renderCohort(metrics) {
   const card = document.getElementById("cohort-card");
   const tbl = document.getElementById("table-cohort-category");
-  const c = metrics && metrics.cohort_28d;
+  const c = metrics && metrics.cohort;
   if (!card) return;
   if (!c || !c.first_time_buyers) {
     card.innerHTML = '<p style="color:var(--text-muted);">コホートデータなし（Shopify注文履歴の取得待ち）</p>';
