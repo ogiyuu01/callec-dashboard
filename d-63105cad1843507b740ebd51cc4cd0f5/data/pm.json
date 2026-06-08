@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-06-08 14:32 JST",
+    "generated_at": "2026-06-08 14:43 JST",
     "sources": [
       "Shopify",
       "GA4",
@@ -9,7 +9,7 @@
     ],
     "version": 1
   },
-  "last_updated": "2026-06-08 14:32 JST",
+  "last_updated": "2026-06-08 14:43 JST",
   "alerts": [
     {
       "level": "critical",
@@ -126,28 +126,28 @@
     {
       "source": "GA4",
       "status": "green",
-      "last_run": "2026-06-08 14:30",
+      "last_run": "2026-06-08 14:41",
       "lag_hours": 0.0,
       "note": "0.0h前 (今朝以降)"
     },
     {
       "source": "Shopify",
       "status": "green",
-      "last_run": "2026-06-08 14:32",
+      "last_run": "2026-06-08 14:43",
       "lag_hours": 0.0,
       "note": "0.0h前 (今朝以降)"
     },
     {
       "source": "GDrive",
       "status": "green",
-      "last_run": "2026-06-08 14:29",
+      "last_run": "2026-06-08 14:40",
       "lag_hours": 0.1,
       "note": "0.1h前 (今朝以降)"
     },
     {
       "source": "Klaviyo",
       "status": "green",
-      "last_run": "2026-06-08 14:32",
+      "last_run": "2026-06-08 14:43",
       "lag_hours": 0.0,
       "note": "0.0h前 (今朝以降)"
     }
@@ -219,56 +219,56 @@
   ],
   "activity": [
     {
-      "ts": "2026-06-08 14:32",
-      "ts_iso": "2026-06-08T14:32:00+09:00",
+      "ts": "2026-06-08 14:43",
+      "ts_iso": "2026-06-08T14:43:00+09:00",
       "source": "Shopify",
       "type": "snapshot",
       "title": "Shopify 28日メトリクス更新 (Repeat率 38.8%)",
       "level": "info"
     },
     {
-      "ts": "2026-06-08 14:32",
-      "ts_iso": "2026-06-08T14:32:00+09:00",
+      "ts": "2026-06-08 14:43",
+      "ts_iso": "2026-06-08T14:43:00+09:00",
       "source": "Klaviyo",
       "type": "refresh",
       "title": "flows 3 件 (寄与売上 ¥213,070/30d)",
       "level": "info"
     },
     {
-      "ts": "2026-06-08 14:32",
-      "ts_iso": "2026-06-08T14:32:00+09:00",
+      "ts": "2026-06-08 14:43",
+      "ts_iso": "2026-06-08T14:43:00+09:00",
       "source": "Klaviyo",
       "type": "alert",
       "title": "{'level': 'red', 'flow': 'カゴ落ちメール', 'kind': 'wow_drop', 'value': -56.81511470985156, 'msg': '売上 WoW -56.8% (前週比 -20% 以下) — リスト健全性 / 件名変更 / 配信時刻を確認'}",
       "level": "warning"
     },
     {
-      "ts": "2026-06-08 14:30",
-      "ts_iso": "2026-06-08T14:30:00+09:00",
+      "ts": "2026-06-08 14:41",
+      "ts_iso": "2026-06-08T14:41:00+09:00",
       "source": "GA4",
       "type": "snapshot",
       "title": "GA4 weekly snapshot 取得 (sessions 6207)",
       "level": "info"
     },
     {
-      "ts": "2026-06-08 14:30",
-      "ts_iso": "2026-06-08T14:30:00+09:00",
+      "ts": "2026-06-08 14:41",
+      "ts_iso": "2026-06-08T14:41:00+09:00",
       "source": "GA4",
       "type": "signal",
       "title": "items/session=1.06 (tgt ≥ 1.40 (R001目標))",
       "level": "critical"
     },
     {
-      "ts": "2026-06-08 14:30",
-      "ts_iso": "2026-06-08T14:30:00+09:00",
+      "ts": "2026-06-08 14:41",
+      "ts_iso": "2026-06-08T14:41:00+09:00",
       "source": "GA4",
       "type": "signal",
       "title": "CVR=0.53% (tgt ≥ 0.70%)",
       "level": "warning"
     },
     {
-      "ts": "2026-06-08 14:29",
-      "ts_iso": "2026-06-08T14:29:27+09:00",
+      "ts": "2026-06-08 14:40",
+      "ts_iso": "2026-06-08T14:40:45+09:00",
       "source": "GDrive",
       "type": "sync",
       "title": "年間計画シート fetched",
