@@ -388,6 +388,16 @@ def main():
         warn(f"token fetch failed: {e}")
         sys.exit(0)
 
+    # 一時診断: CIで使われているアプリ名と付与スコープを特定する（read_products有無の確定用）。
+    try:
+        ai = gql(token, "{ currentAppInstallation { app { title } accessScopes { handle } } }")
+        node = (ai.get("data") or {}).get("currentAppInstallation") or {}
+        app_title = (node.get("app") or {}).get("title")
+        scopes = sorted(s.get("handle") for s in (node.get("accessScopes") or []))
+        print(f"[refresh_shopify] APP='{app_title}' read_products={'read_products' in scopes} scopes={scopes}")
+    except Exception as e:
+        warn(f"app-identity probe failed: {e}")
+
     # shopify_metrics.json
     try:
         metrics = fetch_customers_28d(token, since_iso)
