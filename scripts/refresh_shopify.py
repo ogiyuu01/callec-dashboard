@@ -36,10 +36,11 @@ CID = os.environ.get("SHOPIFY_CLIENT_ID", "").strip()
 CSEC = os.environ.get("SHOPIFY_CLIENT_SECRET", "").strip()
 API_VERSION = os.environ.get("SHOPIFY_API_VERSION", "2025-01").strip()
 LOW_STOCK_THRESHOLD = int(os.environ.get("SHOPIFY_LOW_STOCK", "5"))
-# コホート分析の遡及期間（既定90日）。各顧客の全注文履歴を取り切るため十分に遡る。
-COHORT_LOOKBACK_DAYS = int(os.environ.get("SHOPIFY_COHORT_LOOKBACK", "90"))
+# コホート分析の遡及期間（既定365日）。各顧客の全注文履歴を取り切り、かつ
+# 過去1年に獲得した顧客に十分な再購入機会を与えて「最終的な2回目転換」を測るため1年遡る。
+COHORT_LOOKBACK_DAYS = int(os.environ.get("SHOPIFY_COHORT_LOOKBACK", "365"))
 # 成熟期間（既定30日）。初回購入から最低この日数を経た顧客のみコホート対象とし、
-# 「最終的に2回目に至ったか」を測る（初回直後の顧客を母数に含めない＝過小評価を防ぐ）。
+# 初回直後の顧客を母数に含めない（過小評価を防ぐ）。
 COHORT_MATURITY_DAYS = int(os.environ.get("SHOPIFY_COHORT_MATURITY", "30"))
 
 
