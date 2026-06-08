@@ -379,8 +379,8 @@ def build_for(d: Path) -> dict:
         signals.append({
             "metric": "2回目転換率 (成熟コホート·API)",
             "value": f"{spr*100:.1f}%",
-            "target": "≥15% green / ≥10% yellow (全期間BQは別系列22.5%)",
-            "status": "green" if spr >= 0.15 else ("yellow" if spr >= 0.10 else "red"),
+            "target": "≥30% green / ≥22.5% yellow (課題ライン22.5%)",
+            "status": "green" if spr >= 0.30 else ("yellow" if spr >= 0.225 else "red"),
             "source": "Shopify 注文履歴コホート(1年)",
         })
 
