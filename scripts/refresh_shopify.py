@@ -251,13 +251,34 @@ def fetch_cohort(token: str, now: datetime) -> dict:
     first_time = 0
     second_purchase = 0
     cats: dict[str, dict] = {}
+    # 診断: 各顧客がどの条件で除外/採用されたかを集計し、7.8%がバイアスか実態かを切り分ける。
+    diag = {
+        "customers_total": len(by_customer),
+        "excluded_too_recent": 0,        # 初回が成熟期間内(直近30日)で除外
+        "excluded_before_lookback": 0,   # 初回がプル開始より前で除外
+        "excluded_not_captured": 0,      # len(orders) < lifetime で除外（リピート顧客落ちの主因候補）
+        "excluded_not_captured_repeat": 0,  # うち lifetime>=2（＝本来2回目到達者なのに落ちた数）
+        "cohort_members": 0,
+    }
     for rec in by_customer.values():
         co = sorted(rec["orders"], key=lambda x: x[0])
         first_dt, first_order = co[0]
         captured_all = len(co) >= rec["lifetime"]
-        is_cohort = (lookback_start <= first_dt <= mature_end) and captured_all
-        if not is_cohort:
+        in_window = lookback_start <= first_dt <= mature_end
+        if not captured_all:
+            diag["excluded_not_captured"] += 1
+            if rec["lifetime"] >= 2:
+                diag["excluded_not_captured_repeat"] += 1
             continue
+        if first_dt > mature_end:
+            diag["excluded_too_recent"] += 1
+            continue
+        if first_dt < lookback_start:
+            diag["excluded_before_lookback"] += 1
+            continue
+        if not in_window:
+            continue
+        diag["cohort_members"] += 1
         first_time += 1
         category = _order_category(first_order)
         cat = cats.setdefault(category, {"category": category, "first_buyers": 0, "repeat_buyers": 0})
@@ -280,6 +301,7 @@ def fetch_cohort(token: str, now: datetime) -> dict:
             "second_purchase_buyers": second_purchase,
             "second_purchase_rate": round(second_purchase / first_time, 4) if first_time else 0,
             "by_category": by_category,
+            "diagnostics": diag,
         }
     }
 
@@ -356,6 +378,10 @@ def main():
     cohort = None
     try:
         cohort = fetch_cohort(token, now)
+        cd = (cohort or {}).get("cohort", {})
+        print(f"[refresh_shopify] cohort: rate={cd.get('second_purchase_rate')} "
+              f"first={cd.get('first_time_buyers')} second={cd.get('second_purchase_buyers')} "
+              f"diag={cd.get('diagnostics')}")
     except Exception as e:
         warn(f"cohort fetch failed: {e}")
 
