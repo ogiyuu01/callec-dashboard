@@ -1,22 +1,22 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-08 14:43 JST",
+    "fetched_at": "2026-06-09 09:03 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
     "total_customers": 196,
-    "returning_customers": 76,
-    "returning_customer_rate": 0.3877551020408163,
-    "new_customers": 120
+    "returning_customers": 78,
+    "returning_customer_rate": 0.3979591836734694,
+    "new_customers": 118
   },
   "top_products_28d": [
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 247500,
-      "orders": 45
+      "gross_sales": 264000,
+      "orders": 48
     },
     {
       "name": "メランジクルー半袖Tシャツ",
@@ -25,8 +25,8 @@
     },
     {
       "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 192500,
-      "orders": 14
+      "gross_sales": 206250,
+      "orders": 15
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
@@ -65,39 +65,39 @@
     }
   ],
   "totals_28d": {
-    "orders": 214,
-    "sales": 4620000
+    "orders": 213,
+    "sales": 4585460
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 171,
-    "second_purchase_buyers": 63,
-    "second_purchase_rate": 0.3684,
+    "first_time_buyers": 176,
+    "second_purchase_buyers": 64,
+    "second_purchase_rate": 0.3636,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 171,
-        "repeat_buyers": 63,
-        "repeat_rate": 0.3684
+        "first_buyers": 176,
+        "repeat_buyers": 64,
+        "repeat_rate": 0.3636
       }
     ],
     "diagnostics": {
-      "customers_total": 365,
-      "excluded_too_recent": 194,
+      "customers_total": 369,
+      "excluded_too_recent": 193,
       "excluded_before_lookback": 0,
-      "cohort_members": 171,
-      "repeat_via_pull": 20,
+      "cohort_members": 176,
+      "repeat_via_pull": 21,
       "repeat_via_lifetime_only": 43
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 14.9,
-    "ltv_1y": 22841,
-    "new_orders_7d": 34,
+    "avg_purchase_interval_days": 14.6,
+    "ltv_1y": 22820,
+    "new_orders_7d": 35,
     "repeat_orders_7d": 10,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.5455
+    "free_ship_rate_7d": 0.5778
   }
 }
