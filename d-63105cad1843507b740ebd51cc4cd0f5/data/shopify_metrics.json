@@ -1,22 +1,22 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-10 09:04 JST",
+    "fetched_at": "2026-06-10 12:33 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 194,
-    "returning_customers": 75,
-    "returning_customer_rate": 0.3865979381443299,
-    "new_customers": 119
+    "total_customers": 196,
+    "returning_customers": 76,
+    "returning_customer_rate": 0.3877551020408163,
+    "new_customers": 120
   },
   "top_products_28d": [
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 258500,
-      "orders": 47
+      "gross_sales": 280500,
+      "orders": 51
     },
     {
       "name": "KOKAGE/テーパードパンツ",
@@ -65,39 +65,39 @@
     }
   ],
   "totals_28d": {
-    "orders": 212,
-    "sales": 4579300
+    "orders": 214,
+    "sales": 4623740
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
     "first_time_buyers": 180,
-    "second_purchase_buyers": 63,
-    "second_purchase_rate": 0.35,
+    "second_purchase_buyers": 62,
+    "second_purchase_rate": 0.3444,
     "by_category": [
       {
         "category": "未分類",
         "first_buyers": 180,
-        "repeat_buyers": 63,
-        "repeat_rate": 0.35
+        "repeat_buyers": 62,
+        "repeat_rate": 0.3444
       }
     ],
     "diagnostics": {
-      "customers_total": 369,
-      "excluded_too_recent": 189,
+      "customers_total": 370,
+      "excluded_too_recent": 190,
       "excluded_before_lookback": 0,
       "cohort_members": 180,
       "repeat_via_pull": 21,
-      "repeat_via_lifetime_only": 42
+      "repeat_via_lifetime_only": 41
     }
   },
   "crm": {
     "avg_purchase_interval_days": 14.8,
-    "ltv_1y": 22911,
-    "new_orders_7d": 37,
+    "ltv_1y": 22917,
+    "new_orders_7d": 38,
     "repeat_orders_7d": 10,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.5745
+    "free_ship_rate_7d": 0.5833
   }
 }
