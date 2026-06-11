@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6048
+      "count": 6877
     },
     {
       "name": "view_item",
-      "count": 6474
+      "count": 7364
     },
     {
       "name": "add_to_cart",
-      "count": 216
+      "count": 243
     },
     {
       "name": "begin_checkout",
-      "count": 52
+      "count": 66
     },
     {
       "name": "purchase",
-      "count": 37
+      "count": 43
     }
   ],
   "weeks": [
@@ -86,63 +86,68 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 169,
-      "pdp_reached": 71,
-      "pdp_reach": 42.01183431952663
+      "sessions": 201,
+      "pdp_reached": 85,
+      "pdp_reach": 42.288557213930346
     },
     {
       "path": "/collections/setup",
-      "sessions": 66,
-      "pdp_reached": 17,
-      "pdp_reach": 25.757575757575758
-    },
-    {
-      "path": "/collections/tailored-jacket",
-      "sessions": 61,
-      "pdp_reached": 2,
-      "pdp_reach": 3.278688524590164
+      "sessions": 76,
+      "pdp_reached": 19,
+      "pdp_reach": 25.0
     },
     {
       "path": "/collections/new",
-      "sessions": 55,
-      "pdp_reached": 14,
-      "pdp_reach": 25.454545454545453
+      "sessions": 71,
+      "pdp_reached": 18,
+      "pdp_reach": 25.35211267605634
+    },
+    {
+      "path": "/collections/tailored-jacket",
+      "sessions": 63,
+      "pdp_reached": 2,
+      "pdp_reach": 3.1746031746031744
     },
     {
       "path": "/collections/online_ranking",
-      "sessions": 54,
-      "pdp_reached": 13,
-      "pdp_reach": 24.074074074074073
+      "sessions": 59,
+      "pdp_reached": 16,
+      "pdp_reach": 27.11864406779661
     },
     {
       "path": "/collections/happy_fathers_day_26",
-      "sessions": 48,
+      "sessions": 52,
       "pdp_reached": 9,
-      "pdp_reach": 18.75
-    },
-    {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 35,
-      "pdp_reached": 8,
-      "pdp_reach": 22.857142857142858
+      "pdp_reach": 17.307692307692307
     },
     {
       "path": "/collections/pants",
-      "sessions": 34,
-      "pdp_reached": 6,
-      "pdp_reach": 17.647058823529413
+      "sessions": 42,
+      "pdp_reached": 9,
+      "pdp_reach": 21.428571428571427
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 36,
+      "pdp_reached": 9,
+      "pdp_reach": 25.0
     }
   ],
   "products_top5": [
+    {
+      "name": "無地半袖Tシャツ",
+      "qty": 17,
+      "revenue": 93500
+    },
     {
       "name": "無重力リュック(第5世代)",
       "qty": 3,
       "revenue": 82500
     },
     {
-      "name": "無地半袖Tシャツ",
-      "qty": 13,
-      "revenue": 71500
+      "name": "メランジクルー半袖Tシャツ",
+      "qty": 7,
+      "revenue": 41580
     },
     {
       "name": "ボーダージャカード半袖ニットプルオーバー",
@@ -150,14 +155,9 @@
       "revenue": 39600
     },
     {
-      "name": "メランジクルー半袖Tシャツ",
-      "qty": 5,
-      "revenue": 29700
-    },
-    {
-      "name": "KOKAGE/テーパードパンツ",
+      "name": "KOKAGE/タックパンツ",
       "qty": 2,
-      "revenue": 27500
+      "revenue": 30800
     }
   ]
 }

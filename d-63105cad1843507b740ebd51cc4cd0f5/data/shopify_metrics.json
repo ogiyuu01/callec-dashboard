@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-11 09:04 JST",
+    "fetched_at": "2026-06-11 12:45 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 199,
+    "total_customers": 201,
     "returning_customers": 78,
-    "returning_customer_rate": 0.39195979899497485,
-    "new_customers": 121
+    "returning_customer_rate": 0.3880597014925373,
+    "new_customers": 123
   },
   "top_products_28d": [
     {
@@ -25,8 +25,8 @@
     },
     {
       "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 196020,
-      "orders": 33
+      "gross_sales": 201960,
+      "orders": 34
     },
     {
       "name": "KOKAGE/テーパードパンツ",
@@ -35,8 +35,8 @@
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "gross_sales": 170500,
-      "orders": 31
+      "gross_sales": 176000,
+      "orders": 32
     },
     {
       "name": "KOKAGE/テーラードジャケット",
@@ -65,8 +65,8 @@
     }
   ],
   "totals_28d": {
-    "orders": 217,
-    "sales": 4645080
+    "orders": 219,
+    "sales": 4678300
   },
   "cohort": {
     "method": "mature",
@@ -84,8 +84,8 @@
       }
     ],
     "diagnostics": {
-      "customers_total": 370,
-      "excluded_too_recent": 192,
+      "customers_total": 371,
+      "excluded_too_recent": 193,
       "excluded_before_lookback": 0,
       "cohort_members": 178,
       "repeat_via_pull": 21,
@@ -94,10 +94,10 @@
   },
   "crm": {
     "avg_purchase_interval_days": 14.3,
-    "ltv_1y": 22952,
-    "new_orders_7d": 39,
+    "ltv_1y": 22933,
+    "new_orders_7d": 41,
     "repeat_orders_7d": 13,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.5577
+    "free_ship_rate_7d": 0.5556
   }
 }

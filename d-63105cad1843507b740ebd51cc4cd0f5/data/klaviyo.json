@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-11 09:04 JST",
+  "last_updated": "2026-06-11 12:45 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -65,14 +65,14 @@
       "flow_id": "SufE4T",
       "name": "カゴ落ちメール",
       "current_7d": {
-        "recipients": 100.0,
-        "opens": 23.0,
+        "recipients": 102.0,
+        "opens": 25.0,
         "clicks": 4.0,
         "convs": 3.0,
         "rev": 71940.0,
-        "open_rate": 0.23,
-        "click_rate": 0.04,
-        "conv_rate": 0.03
+        "open_rate": 0.24509803921568626,
+        "click_rate": 0.0392156862745098,
+        "conv_rate": 0.029411764705882353
       },
       "previous_7d": {
         "recipients": 110.0,
@@ -85,14 +85,14 @@
         "conv_rate": 0.01818181818181818
       },
       "current_30d": {
-        "recipients": 402.0,
-        "opens": 97.0,
+        "recipients": 404.0,
+        "opens": 98.0,
         "clicks": 22.0,
         "convs": 10.0,
         "rev": 200090.0,
-        "open_rate": 0.24129353233830847,
-        "click_rate": 0.05472636815920398,
-        "conv_rate": 0.024875621890547265
+        "open_rate": 0.24257425742574257,
+        "click_rate": 0.054455445544554455,
+        "conv_rate": 0.024752475247524754
       },
       "previous_30d": {
         "recipients": 295.0,
@@ -105,21 +105,21 @@
         "conv_rate": 0.023728813559322035
       },
       "annual": {
-        "recipients": 1157.0,
+        "recipients": 1159.0,
         "opens": 281.0,
         "clicks": 52.0,
         "convs": 25.0,
         "rev": 457820.0,
-        "open_rate": 0.2428694900605013,
-        "click_rate": 0.0449438202247191,
-        "conv_rate": 0.021607605877268798
+        "open_rate": 0.24245038826574633,
+        "click_rate": 0.04486626402070751,
+        "conv_rate": 0.021570319240724764
       },
       "wow_pct": 78.68852459016394,
       "mom_pct": 43.68088467614534,
       "open_alert": "yellow",
       "wow_alert": "green",
       "mom_alert": "green",
-      "rpr_30d": 497.7363184079602
+      "rpr_30d": 495.2722772277228
     },
     {
       "flow_id": "VLMvyW",
