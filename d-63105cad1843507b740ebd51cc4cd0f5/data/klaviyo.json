@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-10 12:33 JST",
+  "last_updated": "2026-06-11 09:04 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -25,24 +25,24 @@
         "conv_rate": 0.0
       },
       "current_30d": {
-        "recipients": 343.0,
-        "opens": 209.0,
+        "recipients": 333.0,
+        "opens": 204.0,
         "clicks": 27.0,
-        "convs": 1.0,
-        "rev": 24420.0,
-        "open_rate": 0.60932944606414,
-        "click_rate": 0.07871720116618076,
-        "conv_rate": 0.0029154518950437317
+        "convs": 0,
+        "rev": 0.0,
+        "open_rate": 0.6126126126126126,
+        "click_rate": 0.08108108108108109,
+        "conv_rate": 0.0
       },
       "previous_30d": {
-        "recipients": 356.0,
-        "opens": 216.0,
+        "recipients": 357.0,
+        "opens": 219.0,
         "clicks": 26.0,
-        "convs": 3.0,
-        "rev": 62480.0,
-        "open_rate": 0.6067415730337079,
-        "click_rate": 0.07303370786516854,
-        "conv_rate": 0.008426966292134831
+        "convs": 4.0,
+        "rev": 86900.0,
+        "open_rate": 0.6134453781512605,
+        "click_rate": 0.07282913165266107,
+        "conv_rate": 0.011204481792717087
       },
       "annual": {
         "recipients": 1008.0,
@@ -55,71 +55,71 @@
         "conv_rate": 0.003968253968253968
       },
       "wow_pct": null,
-      "mom_pct": -60.91549295774647,
+      "mom_pct": -100.0,
       "open_alert": "green",
       "wow_alert": "neutral",
       "mom_alert": "red",
-      "rpr_30d": 71.19533527696792
+      "rpr_30d": 0.0
     },
     {
       "flow_id": "SufE4T",
       "name": "カゴ落ちメール",
       "current_7d": {
-        "recipients": 105.0,
-        "opens": 26.0,
-        "clicks": 3.0,
+        "recipients": 100.0,
+        "opens": 23.0,
+        "clicks": 4.0,
         "convs": 3.0,
         "rev": 71940.0,
-        "open_rate": 0.24761904761904763,
-        "click_rate": 0.02857142857142857,
-        "conv_rate": 0.02857142857142857
+        "open_rate": 0.23,
+        "click_rate": 0.04,
+        "conv_rate": 0.03
       },
       "previous_7d": {
-        "recipients": 105.0,
-        "opens": 29.0,
+        "recipients": 110.0,
+        "opens": 31.0,
         "clicks": 7.0,
         "convs": 2.0,
         "rev": 40260.0,
-        "open_rate": 0.2761904761904762,
-        "click_rate": 0.06666666666666667,
-        "conv_rate": 0.01904761904761905
+        "open_rate": 0.2818181818181818,
+        "click_rate": 0.06363636363636363,
+        "conv_rate": 0.01818181818181818
       },
       "current_30d": {
-        "recipients": 405.0,
-        "opens": 98.0,
+        "recipients": 402.0,
+        "opens": 97.0,
         "clicks": 22.0,
         "convs": 10.0,
         "rev": 200090.0,
-        "open_rate": 0.2419753086419753,
-        "click_rate": 0.05432098765432099,
-        "conv_rate": 0.024691358024691357
+        "open_rate": 0.24129353233830847,
+        "click_rate": 0.05472636815920398,
+        "conv_rate": 0.024875621890547265
       },
       "previous_30d": {
-        "recipients": 290.0,
-        "opens": 89.0,
+        "recipients": 295.0,
+        "opens": 90.0,
         "clicks": 9.0,
         "convs": 7.0,
         "rev": 139260.0,
-        "open_rate": 0.30689655172413793,
-        "click_rate": 0.03103448275862069,
-        "conv_rate": 0.02413793103448276
+        "open_rate": 0.3050847457627119,
+        "click_rate": 0.030508474576271188,
+        "conv_rate": 0.023728813559322035
       },
       "annual": {
-        "recipients": 1145.0,
-        "opens": 280.0,
+        "recipients": 1157.0,
+        "opens": 281.0,
         "clicks": 52.0,
         "convs": 25.0,
         "rev": 457820.0,
-        "open_rate": 0.2445414847161572,
-        "click_rate": 0.045414847161572056,
-        "conv_rate": 0.021834061135371178
+        "open_rate": 0.2428694900605013,
+        "click_rate": 0.0449438202247191,
+        "conv_rate": 0.021607605877268798
       },
       "wow_pct": 78.68852459016394,
       "mom_pct": 43.68088467614534,
       "open_alert": "yellow",
       "wow_alert": "green",
       "mom_alert": "green",
-      "rpr_30d": 494.04938271604937
+      "rpr_30d": 497.7363184079602
     },
     {
       "flow_id": "VLMvyW",
@@ -185,13 +185,13 @@
   "totals": {
     "rev_7d": 71940.0,
     "rev_7d_prev": 40260.0,
-    "rev_30d": 224510.0,
-    "rev_30d_prev": 201740.0,
+    "rev_30d": 200090.0,
+    "rev_30d_prev": 226160.0,
     "rev_365d": 544720.0,
     "wow_pct": 78.68852459016394,
-    "mom_pct": 11.286804798255181,
+    "mom_pct": -11.527237354085603,
     "wow_alert": "green",
-    "mom_alert": "green"
+    "mom_alert": "yellow"
   },
   "alerts": [],
   "legend": {
