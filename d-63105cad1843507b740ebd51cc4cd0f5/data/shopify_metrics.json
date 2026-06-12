@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-12 09:03 JST",
+    "fetched_at": "2026-06-12 12:44 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 201,
+    "total_customers": 202,
     "returning_customers": 77,
-    "returning_customer_rate": 0.38308457711442784,
-    "new_customers": 124
+    "returning_customer_rate": 0.3811881188118812,
+    "new_customers": 125
   },
   "top_products_28d": [
     {
@@ -30,8 +30,8 @@
     },
     {
       "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 184140,
-      "orders": 31
+      "gross_sales": 190080,
+      "orders": 32
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
@@ -44,14 +44,14 @@
       "orders": 7
     },
     {
+      "name": "KOKAGE/オーバー半袖プルオーバー",
+      "gross_sales": 128700,
+      "orders": 13
+    },
+    {
       "name": "KOKAGE/ジョガーパンツ",
       "gross_sales": 123750,
       "orders": 9
-    },
-    {
-      "name": "KOKAGE/オーバー半袖プルオーバー",
-      "gross_sales": 118800,
-      "orders": 12
     },
     {
       "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
@@ -65,8 +65,8 @@
     }
   ],
   "totals_28d": {
-    "orders": 217,
-    "sales": 4618460
+    "orders": 218,
+    "sales": 4634300
   },
   "cohort": {
     "method": "mature",
@@ -84,8 +84,8 @@
       }
     ],
     "diagnostics": {
-      "customers_total": 369,
-      "excluded_too_recent": 197,
+      "customers_total": 370,
+      "excluded_too_recent": 198,
       "excluded_before_lookback": 0,
       "cohort_members": 172,
       "repeat_via_pull": 22,
@@ -94,10 +94,10 @@
   },
   "crm": {
     "avg_purchase_interval_days": 14.5,
-    "ltv_1y": 22967,
-    "new_orders_7d": 47,
-    "repeat_orders_7d": 13,
+    "ltv_1y": 22948,
+    "new_orders_7d": 45,
+    "repeat_orders_7d": 11,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.5833
+    "free_ship_rate_7d": 0.625
   }
 }

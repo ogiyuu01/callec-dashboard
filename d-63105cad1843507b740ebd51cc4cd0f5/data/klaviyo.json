@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-06-12 09:03 JST",
+  "last_updated": "2026-06-12 12:44 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
       "name": "レビューリクエスト",
       "current_7d": {
         "recipients": 100.0,
-        "opens": 51.0,
+        "opens": 52.0,
         "clicks": 1.0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.51,
+        "open_rate": 0.52,
         "click_rate": 0.01,
         "conv_rate": 0.0
       },
@@ -26,11 +26,11 @@
       },
       "current_30d": {
         "recipients": 390.0,
-        "opens": 226.0,
+        "opens": 227.0,
         "clicks": 27.0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.5794871794871795,
+        "open_rate": 0.5820512820512821,
         "click_rate": 0.06923076923076923,
         "conv_rate": 0.0
       },
@@ -46,11 +46,11 @@
       },
       "annual": {
         "recipients": 1065.0,
-        "opens": 591.0,
+        "opens": 592.0,
         "clicks": 87.0,
         "convs": 4.0,
         "rev": 86900.0,
-        "open_rate": 0.5549295774647888,
+        "open_rate": 0.5558685446009389,
         "click_rate": 0.08169014084507042,
         "conv_rate": 0.003755868544600939
       },
@@ -66,11 +66,11 @@
       "name": "カゴ落ちメール",
       "current_7d": {
         "recipients": 102.0,
-        "opens": 28.0,
+        "opens": 29.0,
         "clicks": 5.0,
         "convs": 3.0,
         "rev": 59400.0,
-        "open_rate": 0.27450980392156865,
+        "open_rate": 0.28431372549019607,
         "click_rate": 0.049019607843137254,
         "conv_rate": 0.029411764705882353
       },
@@ -86,11 +86,11 @@
       },
       "current_30d": {
         "recipients": 415.0,
-        "opens": 99.0,
+        "opens": 100.0,
         "clicks": 23.0,
         "convs": 11.0,
         "rev": 224290.0,
-        "open_rate": 0.2385542168674699,
+        "open_rate": 0.24096385542168675,
         "click_rate": 0.05542168674698795,
         "conv_rate": 0.02650602409638554
       },
