@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-13 09:03 JST",
+    "fetched_at": "2026-06-13 12:32 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
@@ -40,8 +40,8 @@
     },
     {
       "name": "KOKAGE/ジョガーパンツ",
-      "gross_sales": 123750,
-      "orders": 9
+      "gross_sales": 137500,
+      "orders": 10
     },
     {
       "name": "KOKAGE/オーバー半袖プルオーバー",
@@ -65,39 +65,39 @@
     }
   ],
   "totals_28d": {
-    "orders": 214,
-    "sales": 4544430
+    "orders": 215,
+    "sales": 4571380
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 174,
-    "second_purchase_buyers": 61,
-    "second_purchase_rate": 0.3506,
+    "first_time_buyers": 175,
+    "second_purchase_buyers": 62,
+    "second_purchase_rate": 0.3543,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 174,
-        "repeat_buyers": 61,
-        "repeat_rate": 0.3506
+        "first_buyers": 175,
+        "repeat_buyers": 62,
+        "repeat_rate": 0.3543
       }
     ],
     "diagnostics": {
       "customers_total": 373,
-      "excluded_too_recent": 199,
+      "excluded_too_recent": 198,
       "excluded_before_lookback": 0,
-      "cohort_members": 174,
+      "cohort_members": 175,
       "repeat_via_pull": 23,
-      "repeat_via_lifetime_only": 38
+      "repeat_via_lifetime_only": 39
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 13.8,
-    "ltv_1y": 22864,
-    "new_orders_7d": 44,
-    "repeat_orders_7d": 11,
+    "avg_purchase_interval_days": 13.7,
+    "ltv_1y": 22867,
+    "new_orders_7d": 43,
+    "repeat_orders_7d": 12,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.6
+    "free_ship_rate_7d": 0.6182
   }
 }
