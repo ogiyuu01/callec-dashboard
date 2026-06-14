@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7171
+      "count": 6192
     },
     {
       "name": "view_item",
-      "count": 7911
+      "count": 6645
     },
     {
       "name": "add_to_cart",
-      "count": 312
+      "count": 268
     },
     {
       "name": "begin_checkout",
-      "count": 75
+      "count": 71
     },
     {
       "name": "purchase",
-      "count": 46
+      "count": 45
     }
   ],
   "weeks": [
@@ -86,21 +86,21 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 220,
-      "pdp_reached": 96,
-      "pdp_reach": 43.63636363636363
+      "sessions": 197,
+      "pdp_reached": 82,
+      "pdp_reach": 41.6243654822335
     },
     {
       "path": "/collections/setup",
-      "sessions": 73,
+      "sessions": 65,
       "pdp_reached": 17,
-      "pdp_reach": 23.28767123287671
+      "pdp_reach": 26.153846153846153
     },
     {
       "path": "/collections/new",
-      "sessions": 69,
-      "pdp_reached": 18,
-      "pdp_reach": 26.08695652173913
+      "sessions": 64,
+      "pdp_reached": 16,
+      "pdp_reach": 25.0
     },
     {
       "path": "/collections/happy_fathers_day_26",
@@ -109,28 +109,22 @@
       "pdp_reach": 19.23076923076923
     },
     {
-      "path": "/collections/tailored-jacket",
-      "sessions": 49,
-      "pdp_reached": 2,
-      "pdp_reach": 4.081632653061225
-    },
-    {
       "path": "/collections/pants",
-      "sessions": 45,
-      "pdp_reached": 9,
-      "pdp_reach": 20.0
+      "sessions": 43,
+      "pdp_reached": 8,
+      "pdp_reach": 18.6046511627907
     },
     {
       "path": "/collections/online_ranking",
-      "sessions": 43,
-      "pdp_reached": 10,
-      "pdp_reach": 23.25581395348837
+      "sessions": 35,
+      "pdp_reached": 9,
+      "pdp_reach": 25.714285714285715
     },
     {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 34,
-      "pdp_reached": 7,
-      "pdp_reach": 20.58823529411765
+      "path": "/collections/tailored-jacket",
+      "sessions": 35,
+      "pdp_reached": 1,
+      "pdp_reach": 2.857142857142857
     }
   ],
   "products_top5": [
