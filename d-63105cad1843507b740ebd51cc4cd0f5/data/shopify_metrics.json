@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-14 09:04 JST",
+    "fetched_at": "2026-06-14 12:50 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 196,
+    "total_customers": 198,
     "returning_customers": 77,
-    "returning_customer_rate": 0.39285714285714285,
-    "new_customers": 119
+    "returning_customer_rate": 0.3888888888888889,
+    "new_customers": 121
   },
   "top_products_28d": [
     {
@@ -45,8 +45,8 @@
     },
     {
       "name": "KOKAGE/オーバー半袖プルオーバー",
-      "gross_sales": 108900,
-      "orders": 11
+      "gross_sales": 118800,
+      "orders": 12
     },
     {
       "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
@@ -65,36 +65,36 @@
     }
   ],
   "totals_28d": {
-    "orders": 212,
-    "sales": 4673570
+    "orders": 214,
+    "sales": 4699750
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 177,
+    "first_time_buyers": 179,
     "second_purchase_buyers": 64,
-    "second_purchase_rate": 0.3616,
+    "second_purchase_rate": 0.3575,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 177,
+        "first_buyers": 179,
         "repeat_buyers": 64,
-        "repeat_rate": 0.3616
+        "repeat_rate": 0.3575
       }
     ],
     "diagnostics": {
-      "customers_total": 379,
+      "customers_total": 381,
       "excluded_too_recent": 202,
       "excluded_before_lookback": 0,
-      "cohort_members": 177,
+      "cohort_members": 179,
       "repeat_via_pull": 24,
       "repeat_via_lifetime_only": 40
     }
   },
   "crm": {
     "avg_purchase_interval_days": 14.1,
-    "ltv_1y": 23285,
+    "ltv_1y": 23231,
     "new_orders_7d": 51,
     "repeat_orders_7d": 13,
     "free_ship_threshold": 15000,

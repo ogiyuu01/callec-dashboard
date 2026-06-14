@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6192
+      "count": 7284
     },
     {
       "name": "view_item",
-      "count": 6645
+      "count": 8028
     },
     {
       "name": "add_to_cart",
-      "count": 268
+      "count": 325
     },
     {
       "name": "begin_checkout",
-      "count": 71
+      "count": 84
     },
     {
       "name": "purchase",
-      "count": 45
+      "count": 55
     }
   ],
   "weeks": [
@@ -86,21 +86,27 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 197,
-      "pdp_reached": 82,
-      "pdp_reach": 41.6243654822335
-    },
-    {
-      "path": "/collections/setup",
-      "sessions": 65,
-      "pdp_reached": 17,
-      "pdp_reach": 26.153846153846153
+      "sessions": 238,
+      "pdp_reached": 98,
+      "pdp_reach": 41.1764705882353
     },
     {
       "path": "/collections/new",
-      "sessions": 64,
-      "pdp_reached": 16,
-      "pdp_reach": 25.0
+      "sessions": 75,
+      "pdp_reached": 17,
+      "pdp_reach": 22.666666666666668
+    },
+    {
+      "path": "/collections/setup",
+      "sessions": 71,
+      "pdp_reached": 18,
+      "pdp_reach": 25.35211267605634
+    },
+    {
+      "path": "/collections/pants",
+      "sessions": 53,
+      "pdp_reached": 8,
+      "pdp_reach": 15.09433962264151
     },
     {
       "path": "/collections/happy_fathers_day_26",
@@ -109,22 +115,34 @@
       "pdp_reach": 19.23076923076923
     },
     {
-      "path": "/collections/pants",
-      "sessions": 43,
-      "pdp_reached": 8,
-      "pdp_reach": 18.6046511627907
-    },
-    {
-      "path": "/collections/online_ranking",
-      "sessions": 35,
-      "pdp_reached": 9,
-      "pdp_reach": 25.714285714285715
+      "path": "/collections/26ss_workitems_2",
+      "sessions": 50,
+      "pdp_reached": 5,
+      "pdp_reach": 10.0
     },
     {
       "path": "/collections/tailored-jacket",
-      "sessions": 35,
-      "pdp_reached": 1,
-      "pdp_reach": 2.857142857142857
+      "sessions": 43,
+      "pdp_reached": 2,
+      "pdp_reach": 4.651162790697675
+    },
+    {
+      "path": "/collections/online_ranking",
+      "sessions": 40,
+      "pdp_reached": 10,
+      "pdp_reach": 25.0
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 37,
+      "pdp_reached": 10,
+      "pdp_reach": 27.027027027027028
+    },
+    {
+      "path": "/collections/tops",
+      "sessions": 30,
+      "pdp_reached": 9,
+      "pdp_reach": 30.0
     }
   ],
   "products_top5": [
@@ -135,23 +153,23 @@
     },
     {
       "name": "無地半袖Tシャツ",
-      "qty": 19,
-      "revenue": 104500
-    },
-    {
-      "name": "メランジクルー半袖Tシャツ",
-      "qty": 8,
-      "revenue": 47520
+      "qty": 20,
+      "revenue": 110000
     },
     {
       "name": "KOKAGE/ジョガーパンツ",
-      "qty": 3,
-      "revenue": 41250
+      "qty": 6,
+      "revenue": 82500
     },
     {
-      "name": "プリント半袖Tシャツ(フレンチブル)",
-      "qty": 6,
-      "revenue": 33000
+      "name": "メランジクルー半袖Tシャツ",
+      "qty": 10,
+      "revenue": 59400
+    },
+    {
+      "name": "トタンリブタンクトップ",
+      "qty": 12,
+      "revenue": 42240
     }
   ]
 }

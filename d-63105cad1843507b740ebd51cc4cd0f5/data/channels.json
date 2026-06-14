@@ -2,59 +2,59 @@
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 2597,
-      "orders": 15,
-      "sales": 263890,
-      "cvr": 0.005775895263765884
+      "sessions": 3040,
+      "orders": 18,
+      "sales": 397540,
+      "cvr": 0.0059210526315789476
     },
     {
       "channel": "Organic Search",
-      "sessions": 1251,
-      "orders": 10,
-      "sales": 161700,
-      "cvr": 0.007993605115907274
+      "sessions": 1515,
+      "orders": 13,
+      "sales": 227480,
+      "cvr": 0.008580858085808581
     },
     {
       "channel": "Paid Search",
-      "sessions": 1119,
-      "orders": 14,
-      "sales": 306680,
-      "cvr": 0.012511170688114389
+      "sessions": 1355,
+      "orders": 16,
+      "sales": 348480,
+      "cvr": 0.011808118081180811
     },
     {
       "channel": "Other",
-      "sessions": 564,
-      "orders": 0,
-      "sales": 0,
-      "cvr": 0.0
+      "sessions": 597,
+      "orders": 1,
+      "sales": 25850,
+      "cvr": 0.0016750418760469012
     },
     {
       "channel": "Referral",
-      "sessions": 333,
+      "sessions": 399,
       "orders": 4,
       "sales": 72600,
-      "cvr": 0.012012012012012012
+      "cvr": 0.010025062656641603
     },
     {
       "channel": "Email",
-      "sessions": 150,
+      "sessions": 164,
       "orders": 1,
       "sales": 33000,
-      "cvr": 0.006666666666666667
+      "cvr": 0.006097560975609756
     },
     {
       "channel": "LINE",
-      "sessions": 114,
+      "sessions": 139,
       "orders": 1,
       "sales": 13750,
-      "cvr": 0.008771929824561403
+      "cvr": 0.007194244604316547
     },
     {
       "channel": "Social",
-      "sessions": 64,
-      "orders": 0,
-      "sales": 0,
-      "cvr": 0.0
+      "sessions": 75,
+      "orders": 1,
+      "sales": 106920,
+      "cvr": 0.013333333333333334
     }
   ],
   "trend": {
@@ -77,7 +77,7 @@
           3473,
           3059,
           3482,
-          2250
+          2693
         ]
       },
       {
@@ -89,7 +89,7 @@
           1686,
           1442,
           1370,
-          879
+          1115
         ]
       },
       {
@@ -101,19 +101,7 @@
           1708,
           1635,
           1447,
-          958
-        ]
-      },
-      {
-        "channel": "Other",
-        "sessions": [
-          358,
-          460,
-          370,
-          426,
-          350,
-          531,
-          484
+          1222
         ]
       },
       {
@@ -125,7 +113,19 @@
           479,
           423,
           377,
-          259
+          325
+        ]
+      },
+      {
+        "channel": "Other",
+        "sessions": [
+          358,
+          460,
+          370,
+          426,
+          350,
+          531,
+          517
         ]
       }
     ]
