@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-15 09:04 JST",
+    "fetched_at": "2026-06-15 13:04 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 195,
-    "returning_customers": 71,
-    "returning_customer_rate": 0.3641025641025641,
-    "new_customers": 124
+    "total_customers": 197,
+    "returning_customers": 72,
+    "returning_customer_rate": 0.36548223350253806,
+    "new_customers": 125
   },
   "top_products_28d": [
     {
@@ -45,8 +45,8 @@
     },
     {
       "name": "KOKAGE/オーバー半袖プルオーバー",
-      "gross_sales": 108900,
-      "orders": 11
+      "gross_sales": 118800,
+      "orders": 12
     },
     {
       "name": "無地長袖Tシャツ",
@@ -65,39 +65,39 @@
     }
   ],
   "totals_28d": {
-    "orders": 212,
-    "sales": 4542560
+    "orders": 215,
+    "sales": 4577320
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 181,
-    "second_purchase_buyers": 65,
-    "second_purchase_rate": 0.3591,
+    "first_time_buyers": 184,
+    "second_purchase_buyers": 66,
+    "second_purchase_rate": 0.3587,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 181,
-        "repeat_buyers": 65,
-        "repeat_rate": 0.3591
+        "first_buyers": 184,
+        "repeat_buyers": 66,
+        "repeat_rate": 0.3587
       }
     ],
     "diagnostics": {
-      "customers_total": 386,
-      "excluded_too_recent": 205,
+      "customers_total": 387,
+      "excluded_too_recent": 203,
       "excluded_before_lookback": 0,
-      "cohort_members": 181,
-      "repeat_via_pull": 22,
-      "repeat_via_lifetime_only": 43
+      "cohort_members": 184,
+      "repeat_via_pull": 24,
+      "repeat_via_lifetime_only": 42
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 13.6,
-    "ltv_1y": 23201,
-    "new_orders_7d": 53,
+    "avg_purchase_interval_days": 13.3,
+    "ltv_1y": 23215,
+    "new_orders_7d": 55,
     "repeat_orders_7d": 12,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.6769
+    "free_ship_rate_7d": 0.6567
   }
 }

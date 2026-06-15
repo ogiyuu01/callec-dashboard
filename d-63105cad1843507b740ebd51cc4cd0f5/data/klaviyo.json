@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-15 09:04 JST",
+  "last_updated": "2026-06-15 13:04 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -68,11 +68,11 @@
         "recipients": 122.0,
         "opens": 34.0,
         "clicks": 7.0,
-        "convs": 2.0,
-        "rev": 131120.0,
+        "convs": 3.0,
+        "rev": 153120.0,
         "open_rate": 0.2786885245901639,
         "click_rate": 0.05737704918032787,
-        "conv_rate": 0.01639344262295082
+        "conv_rate": 0.02459016393442623
       },
       "previous_7d": {
         "recipients": 118.0,
@@ -88,11 +88,11 @@
         "recipients": 431.0,
         "opens": 101.0,
         "clicks": 22.0,
-        "convs": 11.0,
-        "rev": 325490.0,
+        "convs": 12.0,
+        "rev": 347490.0,
         "open_rate": 0.23433874709976799,
         "click_rate": 0.05104408352668213,
-        "conv_rate": 0.025522041763341066
+        "conv_rate": 0.027842227378190254
       },
       "previous_30d": {
         "recipients": 300.0,
@@ -108,18 +108,18 @@
         "recipients": 1246.0,
         "opens": 295.0,
         "clicks": 56.0,
-        "convs": 27.0,
-        "rev": 588940.0,
+        "convs": 28.0,
+        "rev": 610940.0,
         "open_rate": 0.23675762439807382,
         "click_rate": 0.0449438202247191,
-        "conv_rate": 0.021669341894060994
+        "conv_rate": 0.02247191011235955
       },
-      "wow_pct": 36.38443935926773,
-      "mom_pct": 163.4906500445236,
+      "wow_pct": 59.26773455377574,
+      "mom_pct": 181.300089047195,
       "open_alert": "yellow",
       "wow_alert": "green",
       "mom_alert": "green",
-      "rpr_30d": 755.1972157772622
+      "rpr_30d": 806.2412993039443
     },
     {
       "flow_id": "VLMvyW",
@@ -183,13 +183,13 @@
     }
   ],
   "totals": {
-    "rev_7d": 156970.0,
+    "rev_7d": 178970.0,
     "rev_7d_prev": 96140.0,
-    "rev_30d": 351340.0,
+    "rev_30d": 373340.0,
     "rev_30d_prev": 210430.0,
-    "rev_365d": 701690.0,
-    "wow_pct": 63.27231121281465,
-    "mom_pct": 66.96288552012545,
+    "rev_365d": 723690.0,
+    "wow_pct": 86.15560640732265,
+    "mom_pct": 77.4176685833769,
     "wow_alert": "green",
     "mom_alert": "green"
   },

@@ -12,7 +12,7 @@
       "decision": "MONITORING",
       "verdict": "YELLOW",
       "before_rate": 0.31798382078406967,
-      "after_rate": 0.3020911127707244,
+      "after_rate": 0.30060120240480964,
       "before_counts": {
         "num": 1533,
         "den": 4821,
@@ -20,14 +20,14 @@
         "den_label": "コレクション着地セッション"
       },
       "after_counts": {
-        "num": 1618,
-        "den": 5356,
+        "num": 1650,
+        "den": 5489,
         "num_label": "PDP到達セッション",
         "den_label": "コレクション着地セッション"
       },
       "after_window": "14d",
       "after_taken_at": "2026-05-26 11:06",
-      "lift_pct": -5.0,
+      "lift_pct": -5.5,
       "summary": "コレクションページの商品カード情報密度向上+ファーストビュー改善(販売開始日告知バナーの縮小・商品見え優先)",
       "notes": "2026-W19時点コレクション着地のPDP到達率29.7%。5月6日販売開始(1927sess/28.4%)とshortsleeve-t-shirts-2(62sess/16.1%)とtailored-jacket(38sess/10.5%)が特に低い。R002と段分離で併走 (R001=collection→PDP, R002=ATC→checkout) [2026-05-26 +14d 中間測定: collection_to_pdp_rate 29.71%→32.00% +7.7% lift 🟡 (GREEN 38%未達/RED 27%圏外) BQ直接計測 by snapshot_kpi.py BQ移行版 S010 補完]"
     },
@@ -72,9 +72,9 @@
       "expected_lift_pct": "15",
       "decision_rule": "GREEN: rate>=4.3% / YELLOW: 3.9-4.2% / RED: rate<=3.5% (ベースライン 3.71%)",
       "decision": "MONITORING",
-      "verdict": "RED",
+      "verdict": "YELLOW",
       "before_rate": 0.02934065934065934,
-      "after_rate": 0.03499982724665722,
+      "after_rate": 0.03500016525101629,
       "before_counts": {
         "num": 534,
         "den": 18200,
@@ -82,8 +82,8 @@
         "den_label": "商品閲覧"
       },
       "after_counts": {
-        "num": 1013,
-        "den": 28943,
+        "num": 1059,
+        "den": 30257,
         "num_label": "カート投入",
         "den_label": "商品閲覧"
       },
@@ -116,7 +116,7 @@
     }
   ],
   "_meta": {
-    "generated_at": "2026-06-15T09:03:05+09:00",
+    "generated_at": "2026-06-15T13:03:12+09:00",
     "source": "release_log.csv + kpi_snapshots.csv",
     "note": "collection_to_pdp_rate / view_to_atc_rate は snapshot 列直接対応がないため代理列または欠損。完全値は BQ 直撃 by snapshot_kpi.py を参照"
   }
