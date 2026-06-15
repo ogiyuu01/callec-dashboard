@@ -2,59 +2,59 @@
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 3040,
-      "orders": 18,
-      "sales": 397540,
-      "cvr": 0.0059210526315789476
+      "sessions": 2693,
+      "orders": 15,
+      "sales": 359920,
+      "cvr": 0.005569996286669142
     },
     {
       "channel": "Organic Search",
-      "sessions": 1515,
-      "orders": 13,
-      "sales": 227480,
-      "cvr": 0.008580858085808581
+      "sessions": 1222,
+      "orders": 10,
+      "sales": 193160,
+      "cvr": 0.008183306055646482
     },
     {
       "channel": "Paid Search",
-      "sessions": 1355,
-      "orders": 16,
-      "sales": 348480,
-      "cvr": 0.011808118081180811
+      "sessions": 1115,
+      "orders": 13,
+      "sales": 247940,
+      "cvr": 0.011659192825112108
     },
     {
       "channel": "Other",
-      "sessions": 597,
+      "sessions": 517,
       "orders": 1,
       "sales": 25850,
-      "cvr": 0.0016750418760469012
+      "cvr": 0.0019342359767891683
     },
     {
       "channel": "Referral",
-      "sessions": 399,
+      "sessions": 325,
       "orders": 4,
       "sales": 72600,
-      "cvr": 0.010025062656641603
+      "cvr": 0.012307692307692308
     },
     {
       "channel": "Email",
-      "sessions": 164,
+      "sessions": 148,
       "orders": 1,
       "sales": 33000,
-      "cvr": 0.006097560975609756
+      "cvr": 0.006756756756756757
     },
     {
       "channel": "LINE",
-      "sessions": 139,
-      "orders": 1,
-      "sales": 13750,
-      "cvr": 0.007194244604316547
+      "sessions": 124,
+      "orders": 0,
+      "sales": 0,
+      "cvr": 0.0
     },
     {
       "channel": "Social",
-      "sessions": 75,
+      "sessions": 69,
       "orders": 1,
       "sales": 106920,
-      "cvr": 0.013333333333333334
+      "cvr": 0.014492753623188406
     }
   ],
   "trend": {
