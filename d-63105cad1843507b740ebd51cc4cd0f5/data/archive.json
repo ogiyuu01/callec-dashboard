@@ -5,40 +5,40 @@
       "start_date": "2026-06-15",
       "end_date": "2026-06-21",
       "kpis": {
-        "sessions": 7129,
-        "item_views": 7913,
-        "orders": 57,
-        "sales": 1224410,
-        "cvr": 0.007995511291906298,
-        "aov": 21480.877192982458,
-        "items_per_session": 1.1099733482956937,
-        "new_sessions": 4797,
-        "returning_sessions": 2332,
-        "units": 134
+        "sessions": 0,
+        "item_views": 0,
+        "atcs": 0,
+        "checkouts": 0,
+        "orders": 0,
+        "sales": 0,
+        "cvr": 0.0,
+        "aov": 0.0,
+        "cart_abandonment_rate": 0,
+        "items_per_session": 0.0
       },
       "yoy": {
-        "sessions": 8829,
-        "orders": 29,
-        "sales": 569271,
-        "cvr": 0.0033,
-        "aov": 19630.0,
+        "sessions": 8243,
+        "orders": 45,
+        "sales": 790008,
+        "cvr": 0.0055,
+        "aov": 17555.0,
         "items_per_session": 0
       },
       "prev": {
-        "sessions": 7738,
-        "item_views": 7740,
-        "orders": 33,
-        "sales": 576950,
-        "cvr": 0.004264667872835358,
-        "aov": 17483.333333333332,
-        "items_per_session": 1.0002584647195658,
-        "new_sessions": 5023,
-        "returning_sessions": 2715,
-        "units": 69
+        "sessions": 6980,
+        "item_views": 7598,
+        "orders": 38,
+        "sales": 698060,
+        "cvr": 0.0054441260744985676,
+        "aov": 18370.0,
+        "items_per_session": 1.088538681948424,
+        "new_sessions": 4536,
+        "returning_sessions": 2444,
+        "units": 84
       },
-      "captured_at": "2026-06-15 13:03",
+      "captured_at": "2026-06-16 09:02",
       "live": true,
-      "live_through": "2026-06-14"
+      "live_through": "2026-06-15"
     },
     {
       "week": "2026-W21",
@@ -73,7 +73,7 @@
           "   注文 46 件・CVR 0.49%・AOV ¥20,713"
         ]
       },
-      "captured_at": "2026-06-15 13:03"
+      "captured_at": "2026-06-16 09:02"
     },
     {
       "week": "2026-W20",
@@ -107,7 +107,7 @@
           "   注文 55 件・CVR 0.83%・AOV ¥23,698"
         ]
       },
-      "captured_at": "2026-06-15 13:03"
+      "captured_at": "2026-06-16 09:02"
     },
     {
       "week": "2026-W19",
@@ -142,7 +142,7 @@
           "   注文 44 件・CVR 0.49%・AOV ¥19,055"
         ]
       },
-      "captured_at": "2026-06-15 13:03"
+      "captured_at": "2026-06-16 09:02"
     },
     {
       "week": "2026-W18",
@@ -177,7 +177,7 @@
           "   注文 26 件・CVR 0.35%・AOV ¥17,980"
         ]
       },
-      "captured_at": "2026-06-15 13:03"
+      "captured_at": "2026-06-16 09:02"
     },
     {
       "week": "2026-W17",
@@ -212,7 +212,7 @@
           "   注文 43 件・CVR 0.55%・AOV ¥19,638"
         ]
       },
-      "captured_at": "2026-06-15 13:03"
+      "captured_at": "2026-06-16 09:02"
     },
     {
       "week": "2026-W16",
@@ -247,7 +247,7 @@
           "   注文 35 件・CVR 0.38%・AOV ¥18,398"
         ]
       },
-      "captured_at": "2026-06-15 13:03"
+      "captured_at": "2026-06-16 09:02"
     },
     {
       "week": "2026-W15",
@@ -282,7 +282,7 @@
           "   注文 42 件・CVR 0.50%・AOV ¥20,145"
         ]
       },
-      "captured_at": "2026-06-15 13:03"
+      "captured_at": "2026-06-16 09:02"
     },
     {
       "week": "2026-W14",
@@ -317,7 +317,7 @@
           "   注文 41 件・CVR 0.50%・AOV ¥23,827"
         ]
       },
-      "captured_at": "2026-06-15 13:03"
+      "captured_at": "2026-06-16 09:02"
     },
     {
       "week": "2026-W13",
@@ -352,7 +352,7 @@
           "   注文 38 件・CVR 0.36%・AOV ¥15,654"
         ]
       },
-      "captured_at": "2026-06-15 13:03"
+      "captured_at": "2026-06-16 09:02"
     },
     {
       "week": "2026-W12",
@@ -387,7 +387,7 @@
           "   注文 35 件・CVR 0.45%・AOV ¥17,430"
         ]
       },
-      "captured_at": "2026-06-15 13:03"
+      "captured_at": "2026-06-16 09:02"
     },
     {
       "week": "2026-W11",
@@ -422,7 +422,7 @@
           "   注文 47 件・CVR 0.67%・AOV ¥25,307"
         ]
       },
-      "captured_at": "2026-06-15 13:03"
+      "captured_at": "2026-06-16 09:02"
     },
     {
       "week": "2026-W10",
@@ -457,7 +457,7 @@
           "   注文 20 件・CVR 0.24%・AOV ¥25,272"
         ]
       },
-      "captured_at": "2026-06-15 13:03"
+      "captured_at": "2026-06-16 09:02"
     }
   ]
 }

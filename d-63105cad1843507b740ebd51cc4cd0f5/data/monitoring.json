@@ -3,7 +3,7 @@
     {
       "release_id": "R001",
       "deployed_at": "2026-05-12",
-      "days_elapsed": 34,
+      "days_elapsed": 35,
       "eval_window_days": 21,
       "progress_pct": 100,
       "hypothesis_metric": "collection_to_pdp_rate",
@@ -34,7 +34,7 @@
     {
       "release_id": "R002",
       "deployed_at": "2026-05-19",
-      "days_elapsed": 27,
+      "days_elapsed": 28,
       "eval_window_days": 14,
       "progress_pct": 100,
       "hypothesis_metric": "atc_to_checkout_rate",
@@ -65,7 +65,7 @@
     {
       "release_id": "R003",
       "deployed_at": "2026-05-20",
-      "days_elapsed": 26,
+      "days_elapsed": 27,
       "eval_window_days": 14,
       "progress_pct": 100,
       "hypothesis_metric": "view_to_atc_rate",
@@ -96,7 +96,7 @@
     {
       "release_id": "R004_line_link",
       "deployed_at": "2026-05-20",
-      "days_elapsed": 26,
+      "days_elapsed": 27,
       "eval_window_days": 14,
       "progress_pct": 100,
       "hypothesis_metric": "line_link_rate",
@@ -116,7 +116,7 @@
     }
   ],
   "_meta": {
-    "generated_at": "2026-06-15T13:03:12+09:00",
+    "generated_at": "2026-06-16T09:02:45+09:00",
     "source": "release_log.csv + kpi_snapshots.csv",
     "note": "collection_to_pdp_rate / view_to_atc_rate は snapshot 列直接対応がないため代理列または欠損。完全値は BQ 直撃 by snapshot_kpi.py を参照"
   }

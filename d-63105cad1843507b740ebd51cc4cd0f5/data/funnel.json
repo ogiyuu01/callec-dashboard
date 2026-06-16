@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7129
+      "count": 6355
     },
     {
       "name": "view_item",
-      "count": 7913
+      "count": 6916
     },
     {
       "name": "add_to_cart",
-      "count": 323
+      "count": 289
     },
     {
       "name": "begin_checkout",
-      "count": 89
+      "count": 80
     },
     {
       "name": "purchase",
-      "count": 57
+      "count": 52
     }
   ],
   "weeks": [
@@ -86,21 +86,15 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 254,
-      "pdp_reached": 103,
-      "pdp_reach": 40.55118110236221
+      "sessions": 202,
+      "pdp_reached": 74,
+      "pdp_reach": 36.633663366336634
     },
     {
       "path": "/collections/new",
-      "sessions": 75,
-      "pdp_reached": 18,
-      "pdp_reach": 24.0
-    },
-    {
-      "path": "/collections/setup",
-      "sessions": 74,
-      "pdp_reached": 20,
-      "pdp_reach": 27.027027027027028
+      "sessions": 68,
+      "pdp_reached": 17,
+      "pdp_reach": 25.0
     },
     {
       "path": "/collections/26ss_workitems_2",
@@ -109,40 +103,22 @@
       "pdp_reach": 8.620689655172415
     },
     {
-      "path": "/collections/pants",
+      "path": "/collections/setup",
       "sessions": 57,
-      "pdp_reached": 9,
-      "pdp_reach": 15.789473684210526
+      "pdp_reached": 18,
+      "pdp_reach": 31.57894736842105
     },
     {
-      "path": "/collections/happy_fathers_day_26",
-      "sessions": 51,
-      "pdp_reached": 10,
-      "pdp_reach": 19.607843137254903
+      "path": "/collections/pants",
+      "sessions": 43,
+      "pdp_reached": 6,
+      "pdp_reach": 13.953488372093023
     },
     {
       "path": "/collections/tops",
-      "sessions": 35,
-      "pdp_reached": 8,
-      "pdp_reach": 22.857142857142858
-    },
-    {
-      "path": "/collections/tailored-jacket",
-      "sessions": 34,
-      "pdp_reached": 3,
-      "pdp_reach": 8.823529411764707
-    },
-    {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 33,
-      "pdp_reached": 10,
-      "pdp_reach": 30.303030303030305
-    },
-    {
-      "path": "/collections/online_ranking",
-      "sessions": 33,
-      "pdp_reached": 10,
-      "pdp_reach": 30.303030303030305
+      "sessions": 31,
+      "pdp_reached": 7,
+      "pdp_reach": 22.580645161290324
     }
   ],
   "products_top5": [
@@ -153,8 +129,8 @@
     },
     {
       "name": "無地半袖Tシャツ",
-      "qty": 21,
-      "revenue": 115500
+      "qty": 16,
+      "revenue": 88000
     },
     {
       "name": "KOKAGE/ジョガーパンツ",
