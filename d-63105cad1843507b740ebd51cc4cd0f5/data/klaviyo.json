@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-17 09:04 JST",
+  "last_updated": "2026-06-17 12:56 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -65,14 +65,14 @@
       "flow_id": "SufE4T",
       "name": "カゴ落ちメール",
       "current_7d": {
-        "recipients": 129.0,
-        "opens": 30.0,
+        "recipients": 133.0,
+        "opens": 32.0,
         "clicks": 5.0,
         "convs": 2.0,
         "rev": 128920.0,
-        "open_rate": 0.23255813953488372,
-        "click_rate": 0.03875968992248062,
-        "conv_rate": 0.015503875968992248
+        "open_rate": 0.24060150375939848,
+        "click_rate": 0.03759398496240601,
+        "conv_rate": 0.015037593984962405
       },
       "previous_7d": {
         "recipients": 105.0,
@@ -85,14 +85,14 @@
         "conv_rate": 0.0380952380952381
       },
       "current_30d": {
-        "recipients": 417.0,
-        "opens": 96.0,
+        "recipients": 421.0,
+        "opens": 97.0,
         "clicks": 20.0,
         "convs": 12.0,
         "rev": 347490.0,
-        "open_rate": 0.2302158273381295,
-        "click_rate": 0.047961630695443645,
-        "conv_rate": 0.02877697841726619
+        "open_rate": 0.23040380047505937,
+        "click_rate": 0.047505938242280284,
+        "conv_rate": 0.028503562945368172
       },
       "previous_30d": {
         "recipients": 326.0,
@@ -105,21 +105,21 @@
         "conv_rate": 0.018404907975460124
       },
       "annual": {
-        "recipients": 1274.0,
+        "recipients": 1278.0,
         "opens": 296.0,
         "clicks": 56.0,
         "convs": 28.0,
         "rev": 610940.0,
-        "open_rate": 0.23233908948194662,
-        "click_rate": 0.04395604395604396,
-        "conv_rate": 0.02197802197802198
+        "open_rate": 0.23161189358372458,
+        "click_rate": 0.04381846635367762,
+        "conv_rate": 0.02190923317683881
       },
       "wow_pct": 34.09610983981693,
       "mom_pct": 196.61971830985917,
       "open_alert": "yellow",
       "wow_alert": "green",
       "mom_alert": "green",
-      "rpr_30d": 833.3093525179856
+      "rpr_30d": 825.3919239904989
     },
     {
       "flow_id": "VLMvyW",
