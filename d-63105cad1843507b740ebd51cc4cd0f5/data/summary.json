@@ -1,28 +1,28 @@
 {
-  "last_updated": "2026-06-16 12:53 JST",
+  "last_updated": "2026-06-17 09:01 JST",
   "last_7d": {
-    "sessions": 7243,
-    "item_views": 8062,
-    "orders": 59,
-    "sales": 1242120,
-    "cvr": 0.008145795940908463,
-    "aov": 21052.881355932204,
-    "items_per_session": 1.113074692806848,
-    "new_sessions": 4906,
-    "returning_sessions": 2337,
-    "units": 137
+    "sessions": 6495,
+    "item_views": 7184,
+    "orders": 52,
+    "sales": 1104840,
+    "cvr": 0.00800615858352579,
+    "aov": 21246.923076923078,
+    "items_per_session": 1.1060816012317167,
+    "new_sessions": 4352,
+    "returning_sessions": 2143,
+    "units": 124
   },
   "prev_7d": {
-    "sessions": 6980,
-    "item_views": 7598,
-    "orders": 38,
-    "sales": 698060,
-    "cvr": 0.0054441260744985676,
-    "aov": 18370.0,
-    "items_per_session": 1.088538681948424,
-    "new_sessions": 4536,
-    "returning_sessions": 2444,
-    "units": 84
+    "sessions": 6894,
+    "item_views": 7541,
+    "orders": 41,
+    "sales": 765050,
+    "cvr": 0.005947200464171743,
+    "aov": 18659.756097560974,
+    "items_per_session": 1.0938497243980272,
+    "new_sessions": 4493,
+    "returning_sessions": 2401,
+    "units": 90
   },
   "yoy": {
     "sessions": 8243,
@@ -141,16 +141,16 @@
     {
       "level": "green",
       "metric": "CVR",
-      "value": "0.81%",
+      "value": "0.80%",
       "target": "≥ 0.70%",
       "note": "前年同期 0.91%。回復目標は 0.7% 以上"
     }
   ],
   "narrative": {
     "lines": [
-      "📈 今週の売上 ¥1,242,120（先週より +78%）",
-      "   注文は 59 件 / 先週は 38 件",
-      "✅ 買ってくれる人の割合（CVR）は前年より改善しています（0.81%）",
+      "📈 今週の売上 ¥1,104,840（先週より +44%）",
+      "   注文は 52 件 / 先週は 41 件",
+      "✅ 買ってくれる人の割合（CVR）は前年より改善しています（0.80%）",
       "🔴 1セッションあたりの商品閲覧数 1.11 は低めです。商品ページにたどり着けていない人が多い状態です。"
     ],
     "actions": [
@@ -160,21 +160,10 @@
     ]
   },
   "spam": {
-    "excluded_sessions_7d": 576,
+    "excluded_sessions_7d": 518,
     "pattern": "t.co / sunpark"
   },
   "daily": [
-    {
-      "date": "20260519",
-      "sessions": 830,
-      "item_views": 1029,
-      "atcs": 23,
-      "orders": 2,
-      "sales": 49500,
-      "cvr": 0.0024096385542168677,
-      "aov": 24750.0,
-      "items_per_session": 1.2397590361445783
-    },
     {
       "date": "20260520",
       "sessions": 788,
@@ -527,8 +516,8 @@
   "goal": {
     "month": "2026-06",
     "days_in_month": 30,
-    "days_passed": 16,
-    "days_remaining": 14,
+    "days_passed": 17,
+    "days_remaining": 13,
     "target": {
       "sales": 8000000,
       "orders": 200,
@@ -539,20 +528,20 @@
       "orders": 97
     },
     "projected": {
-      "sales": 3880360,
-      "orders": 194
+      "sales": 3637837,
+      "orders": 181
     },
     "progress": {
       "sales_pct": 24.3,
       "orders_pct": 48.5,
-      "projected_sales_pct": 48.5,
-      "projected_orders_pct": 97.0
+      "projected_sales_pct": 45.5,
+      "projected_orders_pct": 90.5
     },
     "remaining": {
       "sales": 6059820,
       "orders": 103,
-      "daily_needed_sales": 432844,
-      "daily_needed_orders": 7.357142857142857
+      "daily_needed_sales": 466140,
+      "daily_needed_orders": 7.923076923076923
     }
   }
 }

@@ -1,22 +1,22 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-16 12:55 JST",
+    "fetched_at": "2026-06-17 09:04 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
     "total_customers": 195,
-    "returning_customers": 69,
-    "returning_customer_rate": 0.35384615384615387,
-    "new_customers": 126
+    "returning_customers": 68,
+    "returning_customer_rate": 0.3487179487179487,
+    "new_customers": 127
   },
   "top_products_28d": [
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 286000,
-      "orders": 52
+      "gross_sales": 275000,
+      "orders": 50
     },
     {
       "name": "無重力リュック(第5世代)",
@@ -66,38 +66,38 @@
   ],
   "totals_28d": {
     "orders": 213,
-    "sales": 4584690
+    "sales": 4567530
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 195,
-    "second_purchase_buyers": 69,
-    "second_purchase_rate": 0.3538,
+    "first_time_buyers": 202,
+    "second_purchase_buyers": 75,
+    "second_purchase_rate": 0.3713,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 195,
-        "repeat_buyers": 69,
-        "repeat_rate": 0.3538
+        "first_buyers": 202,
+        "repeat_buyers": 75,
+        "repeat_rate": 0.3713
       }
     ],
     "diagnostics": {
       "customers_total": 390,
-      "excluded_too_recent": 195,
+      "excluded_too_recent": 188,
       "excluded_before_lookback": 0,
-      "cohort_members": 195,
-      "repeat_via_pull": 24,
-      "repeat_via_lifetime_only": 45
+      "cohort_members": 202,
+      "repeat_via_pull": 23,
+      "repeat_via_lifetime_only": 52
     }
   },
   "crm": {
     "avg_purchase_interval_days": 14.2,
-    "ltv_1y": 23260,
+    "ltv_1y": 23223,
     "new_orders_7d": 54,
-    "repeat_orders_7d": 12,
+    "repeat_orders_7d": 11,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.6667
+    "free_ship_rate_7d": 0.6462
   }
 }
