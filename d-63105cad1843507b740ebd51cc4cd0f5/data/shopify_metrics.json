@@ -1,37 +1,32 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-17 12:56 JST",
+    "fetched_at": "2026-06-18 09:04 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 196,
-    "returning_customers": 68,
-    "returning_customer_rate": 0.3469387755102041,
-    "new_customers": 128
+    "total_customers": 200,
+    "returning_customers": 69,
+    "returning_customer_rate": 0.345,
+    "new_customers": 131
   },
   "top_products_28d": [
-    {
-      "name": "無地半袖Tシャツ",
-      "gross_sales": 275000,
-      "orders": 50
-    },
     {
       "name": "無重力リュック(第5世代)",
       "gross_sales": 275000,
       "orders": 10
     },
     {
+      "name": "無地半袖Tシャツ",
+      "gross_sales": 247500,
+      "orders": 45
+    },
+    {
       "name": "メランジクルー半袖Tシャツ",
       "gross_sales": 196020,
       "orders": 33
-    },
-    {
-      "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 178750,
-      "orders": 13
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
@@ -44,14 +39,14 @@
       "orders": 12
     },
     {
-      "name": "KOKAGE/オーバー半袖プルオーバー",
-      "gross_sales": 108900,
+      "name": "KOKAGE/テーパードパンツ",
+      "gross_sales": 151250,
       "orders": 11
     },
     {
-      "name": "KOKAGE/テーラードジャケット",
-      "gross_sales": 93500,
-      "orders": 5
+      "name": "KOKAGE/オーバー半袖プルオーバー",
+      "gross_sales": 99000,
+      "orders": 10
     },
     {
       "name": "プリント半袖Tシャツ(フレンチブル)",
@@ -62,41 +57,46 @@
       "name": "TOBIKIRI STRIPE/開襟半袖シャツ",
       "gross_sales": 92400,
       "orders": 7
+    },
+    {
+      "name": "無地長袖Tシャツ",
+      "gross_sales": 83160,
+      "orders": 14
     }
   ],
   "totals_28d": {
-    "orders": 214,
-    "sales": 4582710
+    "orders": 213,
+    "sales": 4574570
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 202,
-    "second_purchase_buyers": 76,
-    "second_purchase_rate": 0.3762,
+    "first_time_buyers": 203,
+    "second_purchase_buyers": 77,
+    "second_purchase_rate": 0.3793,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 202,
-        "repeat_buyers": 76,
-        "repeat_rate": 0.3762
+        "first_buyers": 203,
+        "repeat_buyers": 77,
+        "repeat_rate": 0.3793
       }
     ],
     "diagnostics": {
-      "customers_total": 389,
-      "excluded_too_recent": 187,
+      "customers_total": 392,
+      "excluded_too_recent": 189,
       "excluded_before_lookback": 0,
-      "cohort_members": 202,
-      "repeat_via_pull": 23,
+      "cohort_members": 203,
+      "repeat_via_pull": 24,
       "repeat_via_lifetime_only": 53
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 14.2,
-    "ltv_1y": 23272,
-    "new_orders_7d": 53,
-    "repeat_orders_7d": 11,
+    "avg_purchase_interval_days": 15.1,
+    "ltv_1y": 23392,
+    "new_orders_7d": 55,
+    "repeat_orders_7d": 9,
     "free_ship_threshold": 15000,
     "free_ship_rate_7d": 0.6406
   }
