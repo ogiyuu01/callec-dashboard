@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7262
+      "count": 6358
     },
     {
       "name": "view_item",
-      "count": 8238
+      "count": 7102
     },
     {
       "name": "add_to_cart",
-      "count": 343
+      "count": 248
     },
     {
       "name": "begin_checkout",
-      "count": 93
+      "count": 76
     },
     {
       "name": "purchase",
-      "count": 59
+      "count": 50
     }
   ],
   "weeks": [
@@ -86,84 +86,72 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 262,
-      "pdp_reached": 100,
-      "pdp_reach": 38.16793893129771
+      "sessions": 224,
+      "pdp_reached": 87,
+      "pdp_reach": 38.839285714285715
     },
     {
       "path": "/collections/26ss_workitems_2",
-      "sessions": 69,
+      "sessions": 68,
       "pdp_reached": 7,
-      "pdp_reach": 10.144927536231885
+      "pdp_reach": 10.294117647058824
     },
     {
       "path": "/collections/setup",
-      "sessions": 60,
-      "pdp_reached": 20,
-      "pdp_reach": 33.333333333333336
+      "sessions": 49,
+      "pdp_reached": 18,
+      "pdp_reach": 36.734693877551024
     },
     {
       "path": "/collections/new",
-      "sessions": 60,
-      "pdp_reached": 14,
-      "pdp_reach": 23.333333333333332
+      "sessions": 47,
+      "pdp_reached": 10,
+      "pdp_reach": 21.27659574468085
     },
     {
       "path": "/collections/pants",
-      "sessions": 53,
-      "pdp_reached": 6,
-      "pdp_reach": 11.320754716981131
+      "sessions": 45,
+      "pdp_reached": 5,
+      "pdp_reach": 11.11111111111111
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 44,
-      "pdp_reached": 13,
-      "pdp_reach": 29.545454545454547
+      "sessions": 41,
+      "pdp_reached": 12,
+      "pdp_reach": 29.26829268292683
     },
     {
       "path": "/collections/tailored-jacket",
-      "sessions": 37,
+      "sessions": 33,
       "pdp_reached": 3,
-      "pdp_reach": 8.108108108108109
-    },
-    {
-      "path": "/collections/tops",
-      "sessions": 31,
-      "pdp_reached": 9,
-      "pdp_reach": 29.032258064516128
-    },
-    {
-      "path": "/collections/online_ranking",
-      "sessions": 30,
-      "pdp_reached": 5,
-      "pdp_reach": 16.666666666666668
+      "pdp_reach": 9.090909090909092
     }
   ],
   "products_top5": [
     {
       "name": "無重力リュック(第5世代)",
-      "qty": 3,
-      "revenue": 82500
-    },
-    {
-      "name": "無地半袖Tシャツ",
-      "qty": 11,
-      "revenue": 60500
-    },
-    {
-      "name": "KOKAGE/ジョガーパンツ",
-      "qty": 4,
+      "qty": 2,
       "revenue": 55000
     },
     {
-      "name": "ハイストレッチ半袖ポロシャツ",
-      "qty": 5,
-      "revenue": 52250
+      "name": "無地半袖Tシャツ",
+      "qty": 9,
+      "revenue": 49500
+    },
+    {
+      "name": "KOKAGE/ジョガーパンツ",
+      "qty": 3,
+      "revenue": 41250
     },
     {
       "name": "TOBIKIRI STRIPE/ハーフカーゴパンツ",
       "qty": 3,
       "revenue": 41250
+    },
+    {
+      "name": "NOBIRU360°/ジョガーパンツ",
+      "qty": 3,
+      "revenue": 39600
     }
   ]
 }
