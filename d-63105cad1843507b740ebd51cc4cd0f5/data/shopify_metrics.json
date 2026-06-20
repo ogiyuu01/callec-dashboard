@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-19 13:07 JST",
+    "fetched_at": "2026-06-20 09:04 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 201,
-    "returning_customers": 68,
-    "returning_customer_rate": 0.3383084577114428,
-    "new_customers": 133
+    "total_customers": 197,
+    "returning_customers": 66,
+    "returning_customer_rate": 0.3350253807106599,
+    "new_customers": 131
   },
   "top_products_28d": [
     {
@@ -25,23 +25,23 @@
     },
     {
       "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 178200,
-      "orders": 30
+      "gross_sales": 172260,
+      "orders": 29
     },
     {
       "name": "KOKAGE/ジョガーパンツ",
-      "gross_sales": 165000,
-      "orders": 12
-    },
-    {
-      "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 151250,
-      "orders": 11
+      "gross_sales": 137500,
+      "orders": 10
     },
     {
       "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "gross_sales": 148500,
-      "orders": 27
+      "gross_sales": 132000,
+      "orders": 24
+    },
+    {
+      "name": "KOKAGE/テーパードパンツ",
+      "gross_sales": 123750,
+      "orders": 9
     },
     {
       "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
@@ -65,39 +65,39 @@
     }
   ],
   "totals_28d": {
-    "orders": 213,
-    "sales": 4579410
+    "orders": 209,
+    "sales": 4484810
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 192,
-    "second_purchase_buyers": 76,
-    "second_purchase_rate": 0.3958,
+    "first_time_buyers": 198,
+    "second_purchase_buyers": 81,
+    "second_purchase_rate": 0.4091,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 192,
-        "repeat_buyers": 76,
-        "repeat_rate": 0.3958
+        "first_buyers": 198,
+        "repeat_buyers": 81,
+        "repeat_rate": 0.4091
       }
     ],
     "diagnostics": {
-      "customers_total": 387,
-      "excluded_too_recent": 195,
+      "customers_total": 384,
+      "excluded_too_recent": 186,
       "excluded_before_lookback": 0,
-      "cohort_members": 192,
-      "repeat_via_pull": 23,
+      "cohort_members": 198,
+      "repeat_via_pull": 28,
       "repeat_via_lifetime_only": 53
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 15.7,
-    "ltv_1y": 23257,
-    "new_orders_7d": 50,
-    "repeat_orders_7d": 10,
+    "avg_purchase_interval_days": 15.6,
+    "ltv_1y": 23123,
+    "new_orders_7d": 46,
+    "repeat_orders_7d": 9,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.6167
+    "free_ship_rate_7d": 0.6364
   }
 }

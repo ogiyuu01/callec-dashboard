@@ -1,13 +1,13 @@
 {
   "_meta": {
     "source": "line-crm-worker /api/admin/line-link-stats",
-    "fetched_at": "2026-06-19 13:07 JST",
+    "fetched_at": "2026-06-20 09:04 JST",
     "days": 28,
     "shop_domain": null
   },
-  "linked_customers_28d": 5,
-  "total_customers_28d": 194,
+  "linked_customers_28d": 4,
+  "total_customers_28d": 196,
   "total_linked_customers_cumulative": 23,
-  "link_rate": 0.02577319587628866,
-  "since": "2026-05-22 04:07:49"
+  "link_rate": 0.02040816326530612,
+  "since": "2026-05-23 00:04:49"
 }
