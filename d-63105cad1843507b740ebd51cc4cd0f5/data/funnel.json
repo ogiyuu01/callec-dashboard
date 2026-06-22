@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6325
+      "count": 5409
     },
     {
       "name": "view_item",
-      "count": 7574
+      "count": 6267
     },
     {
       "name": "add_to_cart",
-      "count": 228
+      "count": 182
     },
     {
       "name": "begin_checkout",
-      "count": 82
+      "count": 66
     },
     {
       "name": "purchase",
-      "count": 43
+      "count": 31
     }
   ],
   "weeks": [
@@ -86,55 +86,50 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 246,
-      "pdp_reached": 95,
-      "pdp_reach": 38.61788617886179
+      "sessions": 210,
+      "pdp_reached": 82,
+      "pdp_reach": 39.04761904761905
     },
     {
       "path": "/collections/setup",
-      "sessions": 58,
-      "pdp_reached": 20,
-      "pdp_reach": 34.48275862068966
-    },
-    {
-      "path": "/collections/pants",
-      "sessions": 45,
-      "pdp_reached": 8,
-      "pdp_reach": 17.77777777777778
-    },
-    {
-      "path": "/collections/new",
-      "sessions": 42,
-      "pdp_reached": 15,
-      "pdp_reach": 35.714285714285715
+      "sessions": 47,
+      "pdp_reached": 14,
+      "pdp_reach": 29.78723404255319
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 41,
-      "pdp_reached": 13,
-      "pdp_reach": 31.70731707317073
+      "sessions": 36,
+      "pdp_reached": 12,
+      "pdp_reach": 33.333333333333336
+    },
+    {
+      "path": "/collections/pants",
+      "sessions": 36,
+      "pdp_reached": 6,
+      "pdp_reach": 16.666666666666668
+    },
+    {
+      "path": "/collections/new",
+      "sessions": 34,
+      "pdp_reached": 14,
+      "pdp_reach": 41.1764705882353
     },
     {
       "path": "/collections/tailored-jacket",
-      "sessions": 38,
-      "pdp_reached": 3,
-      "pdp_reach": 7.894736842105263
+      "sessions": 33,
+      "pdp_reached": 2,
+      "pdp_reach": 6.0606060606060606
     }
   ],
   "products_top5": [
     {
       "name": "KOKAGE/半袖開襟シャツ",
-      "qty": 4,
-      "revenue": 48400
+      "qty": 3,
+      "revenue": 36300
     },
     {
       "name": "TOBIKIRI STRIPE/ハーフカーゴパンツ",
       "qty": 2,
-      "revenue": 27500
-    },
-    {
-      "name": "無重力リュック(第5世代)",
-      "qty": 1,
       "revenue": 27500
     },
     {
@@ -144,6 +139,11 @@
     },
     {
       "name": "NOBIRU360°/ジョガーパンツ",
+      "qty": 2,
+      "revenue": 26400
+    },
+    {
+      "name": "TOBIKIRI STRIPE/開襟半袖シャツ",
       "qty": 2,
       "revenue": 26400
     }
