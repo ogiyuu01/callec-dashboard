@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-22 09:03 JST",
+  "last_updated": "2026-06-22 13:01 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -8,11 +8,11 @@
         "recipients": 81.0,
         "opens": 46.0,
         "clicks": 9.0,
-        "convs": 0,
-        "rev": 0.0,
+        "convs": 1.0,
+        "rev": 28270.0,
         "open_rate": 0.5679012345679012,
         "click_rate": 0.1111111111111111,
-        "conv_rate": 0.0
+        "conv_rate": 0.012345679012345678
       },
       "previous_7d": {
         "recipients": 99.0,
@@ -28,11 +28,11 @@
         "recipients": 390.0,
         "opens": 223.0,
         "clicks": 33.0,
-        "convs": 2.0,
-        "rev": 42350.0,
+        "convs": 3.0,
+        "rev": 70620.0,
         "open_rate": 0.5717948717948718,
         "click_rate": 0.08461538461538462,
-        "conv_rate": 0.005128205128205128
+        "conv_rate": 0.007692307692307693
       },
       "previous_30d": {
         "recipients": 366.0,
@@ -48,31 +48,31 @@
         "recipients": 1177.0,
         "opens": 651.0,
         "clicks": 97.0,
-        "convs": 6.0,
-        "rev": 129250.0,
+        "convs": 7.0,
+        "rev": 157520.0,
         "open_rate": 0.5531011045029737,
         "click_rate": 0.08241291418861513,
-        "conv_rate": 0.005097706032285472
+        "conv_rate": 0.00594732370433305
       },
-      "wow_pct": -100.0,
-      "mom_pct": -51.26582278481012,
+      "wow_pct": -33.246753246753244,
+      "mom_pct": -18.734177215189874,
       "open_alert": "green",
       "wow_alert": "red",
-      "mom_alert": "red",
-      "rpr_30d": 108.58974358974359
+      "mom_alert": "yellow",
+      "rpr_30d": 181.07692307692307
     },
     {
       "flow_id": "SufE4T",
       "name": "カゴ落ちメール",
       "current_7d": {
-        "recipients": 124.0,
-        "opens": 26.0,
+        "recipients": 125.0,
+        "opens": 27.0,
         "clicks": 2.0,
         "convs": 1.0,
         "rev": 22000.0,
-        "open_rate": 0.20967741935483872,
-        "click_rate": 0.016129032258064516,
-        "conv_rate": 0.008064516129032258
+        "open_rate": 0.216,
+        "click_rate": 0.016,
+        "conv_rate": 0.008
       },
       "previous_7d": {
         "recipients": 110.0,
@@ -85,14 +85,14 @@
         "conv_rate": 0.01818181818181818
       },
       "current_30d": {
-        "recipients": 452.0,
+        "recipients": 453.0,
         "opens": 98.0,
         "clicks": 19.0,
         "convs": 10.0,
         "rev": 306570.0,
-        "open_rate": 0.2168141592920354,
-        "click_rate": 0.0420353982300885,
-        "conv_rate": 0.022123893805309734
+        "open_rate": 0.2163355408388521,
+        "click_rate": 0.04194260485651214,
+        "conv_rate": 0.02207505518763797
       },
       "previous_30d": {
         "recipients": 320.0,
@@ -105,21 +105,21 @@
         "conv_rate": 0.015625
       },
       "annual": {
-        "recipients": 1354.0,
+        "recipients": 1355.0,
         "opens": 306.0,
         "clicks": 57.0,
         "convs": 28.0,
         "rev": 610940.0,
-        "open_rate": 0.2259970457902511,
-        "click_rate": 0.042097488921713444,
-        "conv_rate": 0.0206794682422452
+        "open_rate": 0.22583025830258302,
+        "click_rate": 0.04206642066420664,
+        "conv_rate": 0.020664206642066422
       },
       "wow_pct": -83.22147651006712,
       "mom_pct": 237.409200968523,
       "open_alert": "yellow",
       "wow_alert": "red",
       "mom_alert": "green",
-      "rpr_30d": 678.2522123893805
+      "rpr_30d": 676.7549668874173
     },
     {
       "flow_id": "VLMvyW",
@@ -183,13 +183,13 @@
     }
   ],
   "totals": {
-    "rev_7d": 22000.0,
+    "rev_7d": 50270.0,
     "rev_7d_prev": 173470.0,
-    "rev_30d": 348920.0,
+    "rev_30d": 377190.0,
     "rev_30d_prev": 177760.0,
-    "rev_365d": 740190.0,
-    "wow_pct": -87.31769181991123,
-    "mom_pct": 96.28712871287128,
+    "rev_365d": 768460.0,
+    "wow_pct": -71.02092580849715,
+    "mom_pct": 112.19059405940595,
     "wow_alert": "red",
     "mom_alert": "green"
   },
@@ -198,8 +198,8 @@
       "level": "red",
       "flow": "レビューリクエスト",
       "kind": "wow_drop",
-      "value": -100.0,
-      "msg": "売上 WoW -100.0% (前週比 -20% 以下) — リスト健全性 / 件名変更 / 配信時刻を確認"
+      "value": -33.246753246753244,
+      "msg": "売上 WoW -33.2% (前週比 -20% 以下) — リスト健全性 / 件名変更 / 配信時刻を確認"
     },
     {
       "level": "red",

@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 5409
+      "count": 6368
     },
     {
       "name": "view_item",
-      "count": 6267
+      "count": 7775
     },
     {
       "name": "add_to_cart",
-      "count": 182
+      "count": 216
     },
     {
       "name": "begin_checkout",
-      "count": 66
+      "count": 83
     },
     {
       "name": "purchase",
-      "count": 31
+      "count": 40
     }
   ],
   "weeks": [
@@ -86,39 +86,39 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 210,
-      "pdp_reached": 82,
-      "pdp_reach": 39.04761904761905
+      "sessions": 243,
+      "pdp_reached": 95,
+      "pdp_reach": 39.09465020576132
     },
     {
       "path": "/collections/setup",
-      "sessions": 47,
-      "pdp_reached": 14,
-      "pdp_reach": 29.78723404255319
-    },
-    {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 36,
-      "pdp_reached": 12,
-      "pdp_reach": 33.333333333333336
+      "sessions": 54,
+      "pdp_reached": 17,
+      "pdp_reach": 31.48148148148148
     },
     {
       "path": "/collections/pants",
-      "sessions": 36,
-      "pdp_reached": 6,
-      "pdp_reach": 16.666666666666668
+      "sessions": 48,
+      "pdp_reached": 9,
+      "pdp_reach": 18.75
     },
     {
       "path": "/collections/new",
-      "sessions": 34,
-      "pdp_reached": 14,
-      "pdp_reach": 41.1764705882353
+      "sessions": 43,
+      "pdp_reached": 19,
+      "pdp_reach": 44.18604651162791
     },
     {
       "path": "/collections/tailored-jacket",
-      "sessions": 33,
+      "sessions": 40,
       "pdp_reached": 2,
-      "pdp_reach": 6.0606060606060606
+      "pdp_reach": 5.0
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 38,
+      "pdp_reached": 14,
+      "pdp_reach": 36.8421052631579
     }
   ],
   "products_top5": [
@@ -128,24 +128,24 @@
       "revenue": 36300
     },
     {
-      "name": "TOBIKIRI STRIPE/ハーフカーゴパンツ",
+      "name": "NOBIRU360°PREMIUM/半袖ポロシャツ",
+      "qty": 2,
+      "revenue": 30800
+    },
+    {
+      "name": "ソフトツイル刺繍半袖シャツ",
       "qty": 2,
       "revenue": 27500
     },
     {
-      "name": "撥水ダンプジョガーパンツ",
+      "name": "KOKAGE/テーパードパンツ",
       "qty": 2,
-      "revenue": 26400
+      "revenue": 27500
     },
     {
-      "name": "NOBIRU360°/ジョガーパンツ",
+      "name": "TOBIKIRI STRIPE/ハーフカーゴパンツ",
       "qty": 2,
-      "revenue": 26400
-    },
-    {
-      "name": "TOBIKIRI STRIPE/開襟半袖シャツ",
-      "qty": 2,
-      "revenue": 26400
+      "revenue": 27500
     }
   ]
 }
