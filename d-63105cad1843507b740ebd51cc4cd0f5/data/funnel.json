@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 5496
+      "count": 6081
     },
     {
       "name": "view_item",
-      "count": 6782
+      "count": 7481
     },
     {
       "name": "add_to_cart",
-      "count": 175
+      "count": 190
     },
     {
       "name": "begin_checkout",
-      "count": 71
+      "count": 76
     },
     {
       "name": "purchase",
-      "count": 34
+      "count": 39
     }
   ],
   "weeks": [
@@ -86,33 +86,39 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 216,
-      "pdp_reached": 92,
-      "pdp_reach": 42.592592592592595
+      "sessions": 244,
+      "pdp_reached": 103,
+      "pdp_reach": 42.21311475409836
     },
     {
       "path": "/collections/setup",
-      "sessions": 46,
+      "sessions": 49,
       "pdp_reached": 17,
-      "pdp_reach": 36.95652173913044
+      "pdp_reach": 34.69387755102041
     },
     {
       "path": "/collections/pants",
-      "sessions": 39,
-      "pdp_reached": 9,
-      "pdp_reach": 23.076923076923077
-    },
-    {
-      "path": "/collections/tailored-jacket",
-      "sessions": 35,
-      "pdp_reached": 1,
-      "pdp_reach": 2.857142857142857
+      "sessions": 44,
+      "pdp_reached": 10,
+      "pdp_reach": 22.727272727272727
     },
     {
       "path": "/collections/new",
+      "sessions": 39,
+      "pdp_reached": 21,
+      "pdp_reach": 53.84615384615385
+    },
+    {
+      "path": "/collections/tailored-jacket",
+      "sessions": 37,
+      "pdp_reached": 1,
+      "pdp_reach": 2.7027027027027026
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
       "sessions": 35,
-      "pdp_reached": 19,
-      "pdp_reach": 54.285714285714285
+      "pdp_reached": 14,
+      "pdp_reach": 40.0
     }
   ],
   "products_top5": [
@@ -120,6 +126,11 @@
       "name": "KAITEKI/テーパードパンツ",
       "qty": 3,
       "revenue": 59400
+    },
+    {
+      "name": "ソフトツイル刺繍半袖シャツ",
+      "qty": 3,
+      "revenue": 41250
     },
     {
       "name": "NOBIRU360°PREMIUM/半袖ポロシャツ",
@@ -130,11 +141,6 @@
       "name": "KAITEKI/テーラードジャケット",
       "qty": 1,
       "revenue": 29150
-    },
-    {
-      "name": "KOKAGE/テーパードパンツ",
-      "qty": 2,
-      "revenue": 27500
     },
     {
       "name": "TOBIKIRI STRIPE/ハーフカーゴパンツ",
