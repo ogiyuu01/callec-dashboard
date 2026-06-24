@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6324
+      "count": 5496
     },
     {
       "name": "view_item",
-      "count": 7717
+      "count": 6782
     },
     {
       "name": "add_to_cart",
-      "count": 196
+      "count": 175
     },
     {
       "name": "begin_checkout",
-      "count": 79
+      "count": 71
     },
     {
       "name": "purchase",
-      "count": 38
+      "count": 34
     }
   ],
   "weeks": [
@@ -86,39 +86,33 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 237,
-      "pdp_reached": 99,
-      "pdp_reach": 41.77215189873418
+      "sessions": 216,
+      "pdp_reached": 92,
+      "pdp_reach": 42.592592592592595
     },
     {
       "path": "/collections/setup",
-      "sessions": 56,
-      "pdp_reached": 19,
-      "pdp_reach": 33.92857142857143
+      "sessions": 46,
+      "pdp_reached": 17,
+      "pdp_reach": 36.95652173913044
     },
     {
       "path": "/collections/pants",
-      "sessions": 47,
+      "sessions": 39,
       "pdp_reached": 9,
-      "pdp_reach": 19.148936170212767
-    },
-    {
-      "path": "/collections/new",
-      "sessions": 43,
-      "pdp_reached": 21,
-      "pdp_reach": 48.83720930232558
+      "pdp_reach": 23.076923076923077
     },
     {
       "path": "/collections/tailored-jacket",
-      "sessions": 39,
-      "pdp_reached": 2,
-      "pdp_reach": 5.128205128205129
+      "sessions": 35,
+      "pdp_reached": 1,
+      "pdp_reach": 2.857142857142857
     },
     {
-      "path": "/collections/shortsleeve-t-shirts-2",
+      "path": "/collections/new",
       "sessions": 35,
-      "pdp_reached": 14,
-      "pdp_reach": 40.0
+      "pdp_reached": 19,
+      "pdp_reach": 54.285714285714285
     }
   ],
   "products_top5": [
@@ -138,12 +132,12 @@
       "revenue": 29150
     },
     {
-      "name": "TOBIKIRI STRIPE/ハーフカーゴパンツ",
+      "name": "KOKAGE/テーパードパンツ",
       "qty": 2,
       "revenue": 27500
     },
     {
-      "name": "KOKAGE/テーパードパンツ",
+      "name": "TOBIKIRI STRIPE/ハーフカーゴパンツ",
       "qty": 2,
       "revenue": 27500
     }
