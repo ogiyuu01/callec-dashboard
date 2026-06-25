@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-25 09:03 JST",
+    "fetched_at": "2026-06-25 12:00 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 200,
+    "total_customers": 201,
     "returning_customers": 64,
-    "returning_customer_rate": 0.32,
-    "new_customers": 136
+    "returning_customer_rate": 0.31840796019900497,
+    "new_customers": 137
   },
   "top_products_28d": [
     {
@@ -29,6 +29,11 @@
       "orders": 31
     },
     {
+      "name": "【限定30着】CALL YUKATA",
+      "gross_sales": 148500,
+      "orders": 5
+    },
+    {
       "name": "KOKAGE/ジョガーパンツ",
       "gross_sales": 137500,
       "orders": 10
@@ -42,11 +47,6 @@
       "name": "KOKAGE/テーパードパンツ",
       "gross_sales": 123750,
       "orders": 9
-    },
-    {
-      "name": "【限定30着】CALL YUKATA",
-      "gross_sales": 118800,
-      "orders": 4
     },
     {
       "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
@@ -65,8 +65,8 @@
     }
   ],
   "totals_28d": {
-    "orders": 212,
-    "sales": 4439490
+    "orders": 213,
+    "sales": 4469190
   },
   "cohort": {
     "method": "mature",
@@ -94,7 +94,7 @@
   },
   "crm": {
     "avg_purchase_interval_days": 14.1,
-    "ltv_1y": 22957,
+    "ltv_1y": 23011,
     "new_orders_7d": 44,
     "repeat_orders_7d": 7,
     "free_ship_threshold": 15000,
