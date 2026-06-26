@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8071
+      "count": 7390
     },
     {
       "name": "view_item",
-      "count": 8195
+      "count": 7226
     },
     {
       "name": "add_to_cart",
-      "count": 203
+      "count": 165
     },
     {
       "name": "begin_checkout",
-      "count": 70
+      "count": 57
     },
     {
       "name": "purchase",
-      "count": 39
+      "count": 34
     }
   ],
   "weeks": [
@@ -86,39 +86,33 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 213,
-      "pdp_reached": 86,
-      "pdp_reach": 40.375586854460096
+      "sessions": 180,
+      "pdp_reached": 71,
+      "pdp_reach": 39.44444444444444
     },
     {
       "path": "/collections/setup",
-      "sessions": 49,
-      "pdp_reached": 16,
-      "pdp_reach": 32.6530612244898
+      "sessions": 39,
+      "pdp_reached": 12,
+      "pdp_reach": 30.76923076923077
     },
     {
       "path": "/collections/new",
-      "sessions": 42,
-      "pdp_reached": 20,
-      "pdp_reach": 47.61904761904762
+      "sessions": 38,
+      "pdp_reached": 17,
+      "pdp_reach": 44.73684210526316
     },
     {
       "path": "/collections/pants",
-      "sessions": 37,
+      "sessions": 36,
       "pdp_reached": 9,
-      "pdp_reach": 24.324324324324323
+      "pdp_reach": 25.0
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 35,
-      "pdp_reached": 14,
-      "pdp_reach": 40.0
-    },
-    {
-      "path": "/collections/tailored-jacket",
-      "sessions": 32,
-      "pdp_reached": 1,
-      "pdp_reach": 3.125
+      "sessions": 30,
+      "pdp_reached": 11,
+      "pdp_reach": 36.666666666666664
     }
   ],
   "products_top5": [
@@ -138,14 +132,14 @@
       "revenue": 41250
     },
     {
-      "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
-      "qty": 2,
-      "revenue": 39600
-    },
-    {
       "name": "無地半袖Tシャツ",
       "qty": 6,
       "revenue": 33000
+    },
+    {
+      "name": "KAITEKI/テーラードジャケット",
+      "qty": 1,
+      "revenue": 29150
     }
   ]
 }
