@@ -1,15 +1,15 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-26 09:03 JST",
+    "fetched_at": "2026-06-26 12:30 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 199,
-    "returning_customers": 62,
-    "returning_customer_rate": 0.31155778894472363,
+    "total_customers": 200,
+    "returning_customers": 63,
+    "returning_customer_rate": 0.315,
     "new_customers": 137
   },
   "top_products_28d": [
@@ -30,8 +30,8 @@
     },
     {
       "name": "【限定30着】CALL YUKATA",
-      "gross_sales": 148500,
-      "orders": 5
+      "gross_sales": 178200,
+      "orders": 6
     },
     {
       "name": "KOKAGE/ジョガーパンツ",
@@ -65,39 +65,39 @@
     }
   ],
   "totals_28d": {
-    "orders": 211,
-    "sales": 4428050
+    "orders": 214,
+    "sales": 4492070
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 203,
+    "first_time_buyers": 205,
     "second_purchase_buyers": 79,
-    "second_purchase_rate": 0.3892,
+    "second_purchase_rate": 0.3854,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 203,
+        "first_buyers": 205,
         "repeat_buyers": 79,
-        "repeat_rate": 0.3892
+        "repeat_rate": 0.3854
       }
     ],
     "diagnostics": {
-      "customers_total": 393,
-      "excluded_too_recent": 190,
+      "customers_total": 394,
+      "excluded_too_recent": 189,
       "excluded_before_lookback": 0,
-      "cohort_members": 203,
+      "cohort_members": 205,
       "repeat_via_pull": 24,
       "repeat_via_lifetime_only": 55
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 13.3,
-    "ltv_1y": 22977,
-    "new_orders_7d": 42,
-    "repeat_orders_7d": 5,
+    "avg_purchase_interval_days": 13.0,
+    "ltv_1y": 23081,
+    "new_orders_7d": 43,
+    "repeat_orders_7d": 7,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.6383
+    "free_ship_rate_7d": 0.64
   }
 }
