@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7297
+      "count": 8035
     },
     {
       "name": "view_item",
-      "count": 7132
+      "count": 7903
     },
     {
       "name": "add_to_cart",
-      "count": 168
+      "count": 184
     },
     {
       "name": "begin_checkout",
-      "count": 66
+      "count": 75
     },
     {
       "name": "purchase",
-      "count": 35
+      "count": 41
     }
   ],
   "weeks": [
@@ -86,40 +86,46 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 167,
-      "pdp_reached": 69,
-      "pdp_reach": 41.31736526946108
+      "sessions": 191,
+      "pdp_reached": 75,
+      "pdp_reach": 39.26701570680628
     },
     {
       "path": "/collections/new",
-      "sessions": 41,
-      "pdp_reached": 15,
-      "pdp_reach": 36.58536585365854
-    },
-    {
-      "path": "/collections/setup",
-      "sessions": 39,
-      "pdp_reached": 13,
-      "pdp_reach": 33.333333333333336
+      "sessions": 50,
+      "pdp_reached": 18,
+      "pdp_reach": 36.0
     },
     {
       "path": "/collections/pants",
-      "sessions": 35,
-      "pdp_reached": 10,
+      "sessions": 42,
+      "pdp_reached": 12,
       "pdp_reach": 28.571428571428573
     },
     {
+      "path": "/collections/setup",
+      "sessions": 40,
+      "pdp_reached": 14,
+      "pdp_reach": 35.0
+    },
+    {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 34,
+      "sessions": 37,
       "pdp_reached": 13,
-      "pdp_reach": 38.23529411764706
+      "pdp_reach": 35.13513513513514
+    },
+    {
+      "path": "/collections/tops",
+      "sessions": 30,
+      "pdp_reached": 9,
+      "pdp_reach": 30.0
     }
   ],
   "products_top5": [
     {
       "name": "【限定30着】CALL YUKATA",
-      "qty": 4,
-      "revenue": 118800
+      "qty": 5,
+      "revenue": 148500
     },
     {
       "name": "KAITEKI/テーパードパンツ",
@@ -132,14 +138,14 @@
       "revenue": 41250
     },
     {
+      "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
+      "qty": 2,
+      "revenue": 39600
+    },
+    {
       "name": "無地半袖Tシャツ",
       "qty": 6,
       "revenue": 33000
-    },
-    {
-      "name": "メランジクルー半袖Tシャツ",
-      "qty": 5,
-      "revenue": 29700
     }
   ]
 }

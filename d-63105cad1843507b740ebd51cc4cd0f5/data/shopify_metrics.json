@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-27 09:03 JST",
+    "fetched_at": "2026-06-27 11:54 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 201,
+    "total_customers": 202,
     "returning_customers": 63,
-    "returning_customer_rate": 0.31343283582089554,
-    "new_customers": 138
+    "returning_customer_rate": 0.3118811881188119,
+    "new_customers": 139
   },
   "top_products_28d": [
     {
@@ -25,8 +25,8 @@
     },
     {
       "name": "【限定30着】CALL YUKATA",
-      "gross_sales": 207900,
-      "orders": 7
+      "gross_sales": 237600,
+      "orders": 8
     },
     {
       "name": "メランジクルー半袖Tシャツ",
@@ -65,39 +65,39 @@
     }
   ],
   "totals_28d": {
-    "orders": 215,
-    "sales": 4586010
+    "orders": 216,
+    "sales": 4615710
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 202,
-    "second_purchase_buyers": 79,
-    "second_purchase_rate": 0.3911,
+    "first_time_buyers": 203,
+    "second_purchase_buyers": 80,
+    "second_purchase_rate": 0.3941,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 202,
-        "repeat_buyers": 79,
-        "repeat_rate": 0.3911
+        "first_buyers": 203,
+        "repeat_buyers": 80,
+        "repeat_rate": 0.3941
       }
     ],
     "diagnostics": {
-      "customers_total": 393,
+      "customers_total": 394,
       "excluded_too_recent": 191,
       "excluded_before_lookback": 0,
-      "cohort_members": 202,
+      "cohort_members": 203,
       "repeat_via_pull": 26,
-      "repeat_via_lifetime_only": 53
+      "repeat_via_lifetime_only": 54
     }
   },
   "crm": {
     "avg_purchase_interval_days": 14.3,
-    "ltv_1y": 23462,
-    "new_orders_7d": 46,
+    "ltv_1y": 23478,
+    "new_orders_7d": 47,
     "repeat_orders_7d": 9,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.6545
+    "free_ship_rate_7d": 0.6607
   }
 }
