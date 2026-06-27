@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8605
+      "count": 7297
     },
     {
       "name": "view_item",
-      "count": 8240
+      "count": 7132
     },
     {
       "name": "add_to_cart",
-      "count": 190
+      "count": 168
     },
     {
       "name": "begin_checkout",
-      "count": 70
+      "count": 66
     },
     {
       "name": "purchase",
-      "count": 37
+      "count": 35
     }
   ],
   "weeks": [
@@ -86,39 +86,33 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 196,
-      "pdp_reached": 77,
-      "pdp_reach": 39.285714285714285
+      "sessions": 167,
+      "pdp_reached": 69,
+      "pdp_reach": 41.31736526946108
     },
     {
       "path": "/collections/new",
-      "sessions": 47,
-      "pdp_reached": 18,
-      "pdp_reach": 38.297872340425535
+      "sessions": 41,
+      "pdp_reached": 15,
+      "pdp_reach": 36.58536585365854
     },
     {
       "path": "/collections/setup",
-      "sessions": 47,
-      "pdp_reached": 15,
-      "pdp_reach": 31.914893617021278
+      "sessions": 39,
+      "pdp_reached": 13,
+      "pdp_reach": 33.333333333333336
     },
     {
       "path": "/collections/pants",
-      "sessions": 42,
-      "pdp_reached": 11,
-      "pdp_reach": 26.19047619047619
+      "sessions": 35,
+      "pdp_reached": 10,
+      "pdp_reach": 28.571428571428573
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 37,
-      "pdp_reached": 14,
-      "pdp_reach": 37.83783783783784
-    },
-    {
-      "path": "/collections/tailored-jacket",
-      "sessions": 30,
-      "pdp_reached": 1,
-      "pdp_reach": 3.3333333333333335
+      "sessions": 34,
+      "pdp_reached": 13,
+      "pdp_reach": 38.23529411764706
     }
   ],
   "products_top5": [
