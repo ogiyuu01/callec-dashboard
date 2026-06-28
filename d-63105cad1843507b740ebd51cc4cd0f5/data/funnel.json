@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8035
+      "count": 8049
     },
     {
       "name": "view_item",
-      "count": 7903
+      "count": 8045
     },
     {
       "name": "add_to_cart",
-      "count": 184
+      "count": 188
     },
     {
       "name": "begin_checkout",
-      "count": 75
+      "count": 69
     },
     {
       "name": "purchase",
-      "count": 41
+      "count": 42
     }
   ],
   "weeks": [
@@ -86,51 +86,56 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 191,
-      "pdp_reached": 75,
-      "pdp_reach": 39.26701570680628
+      "sessions": 181,
+      "pdp_reached": 73,
+      "pdp_reach": 40.331491712707184
     },
     {
       "path": "/collections/new",
-      "sessions": 50,
-      "pdp_reached": 18,
-      "pdp_reach": 36.0
+      "sessions": 59,
+      "pdp_reached": 17,
+      "pdp_reach": 28.8135593220339
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 49,
+      "pdp_reached": 17,
+      "pdp_reach": 34.69387755102041
+    },
+    {
+      "path": "/collections/setup",
+      "sessions": 47,
+      "pdp_reached": 15,
+      "pdp_reach": 31.914893617021278
     },
     {
       "path": "/collections/pants",
       "sessions": 42,
-      "pdp_reached": 12,
-      "pdp_reach": 28.571428571428573
-    },
-    {
-      "path": "/collections/setup",
-      "sessions": 40,
-      "pdp_reached": 14,
-      "pdp_reach": 35.0
-    },
-    {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 37,
-      "pdp_reached": 13,
-      "pdp_reach": 35.13513513513514
+      "pdp_reached": 11,
+      "pdp_reach": 26.19047619047619
     },
     {
       "path": "/collections/tops",
-      "sessions": 30,
-      "pdp_reached": 9,
-      "pdp_reach": 30.0
+      "sessions": 34,
+      "pdp_reached": 10,
+      "pdp_reach": 29.41176470588235
     }
   ],
   "products_top5": [
     {
       "name": "【限定30着】CALL YUKATA",
-      "qty": 5,
-      "revenue": 148500
+      "qty": 6,
+      "revenue": 178200
     },
     {
       "name": "KAITEKI/テーパードパンツ",
-      "qty": 3,
-      "revenue": 59400
+      "qty": 4,
+      "revenue": 79200
+    },
+    {
+      "name": "KAITEKI/テーラードジャケット",
+      "qty": 2,
+      "revenue": 58300
     },
     {
       "name": "ソフトツイル刺繍半袖シャツ",
@@ -141,11 +146,6 @@
       "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
       "qty": 2,
       "revenue": 39600
-    },
-    {
-      "name": "無地半袖Tシャツ",
-      "qty": 6,
-      "revenue": 33000
     }
   ]
 }
