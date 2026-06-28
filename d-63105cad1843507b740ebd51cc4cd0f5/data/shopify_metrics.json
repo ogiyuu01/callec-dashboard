@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-28 09:03 JST",
+    "fetched_at": "2026-06-28 12:37 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 197,
+    "total_customers": 198,
     "returning_customers": 63,
-    "returning_customer_rate": 0.3197969543147208,
-    "new_customers": 134
+    "returning_customer_rate": 0.3181818181818182,
+    "new_customers": 135
   },
   "top_products_28d": [
     {
@@ -65,39 +65,39 @@
     }
   ],
   "totals_28d": {
-    "orders": 212,
-    "sales": 4535080
+    "orders": 213,
+    "sales": 4543110
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 202,
-    "second_purchase_buyers": 80,
-    "second_purchase_rate": 0.396,
+    "first_time_buyers": 203,
+    "second_purchase_buyers": 81,
+    "second_purchase_rate": 0.399,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 202,
-        "repeat_buyers": 80,
-        "repeat_rate": 0.396
+        "first_buyers": 203,
+        "repeat_buyers": 81,
+        "repeat_rate": 0.399
       }
     ],
     "diagnostics": {
       "customers_total": 394,
-      "excluded_too_recent": 192,
+      "excluded_too_recent": 191,
       "excluded_before_lookback": 0,
-      "cohort_members": 202,
-      "repeat_via_pull": 26,
-      "repeat_via_lifetime_only": 54
+      "cohort_members": 203,
+      "repeat_via_pull": 25,
+      "repeat_via_lifetime_only": 56
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 14.0,
-    "ltv_1y": 23505,
-    "new_orders_7d": 47,
+    "avg_purchase_interval_days": 14.3,
+    "ltv_1y": 23476,
+    "new_orders_7d": 45,
     "repeat_orders_7d": 8,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.6727
+    "free_ship_rate_7d": 0.6604
   }
 }

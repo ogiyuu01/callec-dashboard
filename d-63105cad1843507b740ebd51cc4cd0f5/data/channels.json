@@ -2,10 +2,10 @@
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 4226,
+      "sessions": 4227,
       "orders": 16,
       "sales": 352880,
-      "cvr": 0.003786086133459536
+      "cvr": 0.003785190442394133
     },
     {
       "channel": "Organic Search",
@@ -16,10 +16,10 @@
     },
     {
       "channel": "Paid Search",
-      "sessions": 1285,
+      "sessions": 1284,
       "orders": 8,
       "sales": 159940,
-      "cvr": 0.0062256809338521405
+      "cvr": 0.006230529595015576
     },
     {
       "channel": "Referral",
