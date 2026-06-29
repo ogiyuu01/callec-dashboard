@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8049
+      "count": 7090
     },
     {
       "name": "view_item",
-      "count": 8045
+      "count": 6536
     },
     {
       "name": "add_to_cart",
-      "count": 188
+      "count": 154
     },
     {
       "name": "begin_checkout",
-      "count": 69
+      "count": 51
     },
     {
       "name": "purchase",
-      "count": 42
+      "count": 32
     }
   ],
   "weeks": [
@@ -86,39 +86,33 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 181,
-      "pdp_reached": 73,
-      "pdp_reach": 40.331491712707184
+      "sessions": 148,
+      "pdp_reached": 60,
+      "pdp_reach": 40.54054054054054
     },
     {
       "path": "/collections/new",
-      "sessions": 59,
-      "pdp_reached": 17,
-      "pdp_reach": 28.8135593220339
+      "sessions": 50,
+      "pdp_reached": 12,
+      "pdp_reach": 24.0
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 49,
-      "pdp_reached": 17,
-      "pdp_reach": 34.69387755102041
-    },
-    {
-      "path": "/collections/setup",
       "sessions": 47,
       "pdp_reached": 15,
       "pdp_reach": 31.914893617021278
     },
     {
-      "path": "/collections/pants",
-      "sessions": 42,
-      "pdp_reached": 11,
-      "pdp_reach": 26.19047619047619
+      "path": "/collections/setup",
+      "sessions": 40,
+      "pdp_reached": 12,
+      "pdp_reach": 30.0
     },
     {
-      "path": "/collections/tops",
-      "sessions": 34,
-      "pdp_reached": 10,
-      "pdp_reach": 29.41176470588235
+      "path": "/collections/pants",
+      "sessions": 30,
+      "pdp_reached": 8,
+      "pdp_reach": 26.666666666666668
     }
   ],
   "products_top5": [
@@ -138,14 +132,14 @@
       "revenue": 58300
     },
     {
-      "name": "ソフトツイル刺繍半袖シャツ",
-      "qty": 3,
-      "revenue": 41250
-    },
-    {
       "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
       "qty": 2,
       "revenue": 39600
+    },
+    {
+      "name": "メランジクルー半袖Tシャツ",
+      "qty": 5,
+      "revenue": 29700
     }
   ]
 }
