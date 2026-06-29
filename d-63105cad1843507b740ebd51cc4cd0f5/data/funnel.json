@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7090
+      "count": 7973
     },
     {
       "name": "view_item",
-      "count": 6536
+      "count": 7788
     },
     {
       "name": "add_to_cart",
-      "count": 154
+      "count": 184
     },
     {
       "name": "begin_checkout",
-      "count": 51
+      "count": 60
     },
     {
       "name": "purchase",
-      "count": 32
+      "count": 37
     }
   ],
   "weeks": [
@@ -86,33 +86,39 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 148,
-      "pdp_reached": 60,
-      "pdp_reach": 40.54054054054054
+      "sessions": 173,
+      "pdp_reached": 71,
+      "pdp_reach": 41.040462427745666
     },
     {
       "path": "/collections/new",
-      "sessions": 50,
-      "pdp_reached": 12,
-      "pdp_reach": 24.0
+      "sessions": 62,
+      "pdp_reached": 15,
+      "pdp_reach": 24.193548387096776
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 47,
-      "pdp_reached": 15,
-      "pdp_reach": 31.914893617021278
+      "sessions": 53,
+      "pdp_reached": 17,
+      "pdp_reach": 32.075471698113205
     },
     {
       "path": "/collections/setup",
-      "sessions": 40,
-      "pdp_reached": 12,
-      "pdp_reach": 30.0
+      "sessions": 49,
+      "pdp_reached": 16,
+      "pdp_reach": 32.6530612244898
     },
     {
       "path": "/collections/pants",
-      "sessions": 30,
-      "pdp_reached": 8,
-      "pdp_reach": 26.666666666666668
+      "sessions": 36,
+      "pdp_reached": 10,
+      "pdp_reach": 27.77777777777778
+    },
+    {
+      "path": "/collections/tops",
+      "sessions": 33,
+      "pdp_reached": 7,
+      "pdp_reach": 21.21212121212121
     }
   ],
   "products_top5": [
@@ -137,9 +143,9 @@
       "revenue": 39600
     },
     {
-      "name": "メランジクルー半袖Tシャツ",
-      "qty": 5,
-      "revenue": 29700
+      "name": "無地半袖Tシャツ",
+      "qty": 7,
+      "revenue": 38500
     }
   ]
 }

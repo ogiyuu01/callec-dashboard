@@ -1,15 +1,15 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-06-29 09:03 JST",
+    "fetched_at": "2026-06-29 12:42 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 191,
-    "returning_customers": 60,
-    "returning_customer_rate": 0.31413612565445026,
+    "total_customers": 193,
+    "returning_customers": 62,
+    "returning_customer_rate": 0.32124352331606215,
     "new_customers": 131
   },
   "top_products_28d": [
@@ -44,6 +44,11 @@
       "orders": 8
     },
     {
+      "name": "TOBIKIRI STRIPE/テーラードジャケット",
+      "gross_sales": 96250,
+      "orders": 5
+    },
+    {
       "name": "TOBIKIRI STRIPE/開襟半袖シャツ",
       "gross_sales": 92400,
       "orders": 7
@@ -57,47 +62,42 @@
       "name": "ソフトツイル刺繍半袖シャツ",
       "gross_sales": 82500,
       "orders": 6
-    },
-    {
-      "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "gross_sales": 82500,
-      "orders": 15
     }
   ],
   "totals_28d": {
-    "orders": 205,
-    "sales": 4326080
+    "orders": 209,
+    "sales": 4415510
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 207,
+    "first_time_buyers": 208,
     "second_purchase_buyers": 83,
-    "second_purchase_rate": 0.401,
+    "second_purchase_rate": 0.399,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 207,
+        "first_buyers": 208,
         "repeat_buyers": 83,
-        "repeat_rate": 0.401
+        "repeat_rate": 0.399
       }
     ],
     "diagnostics": {
-      "customers_total": 395,
-      "excluded_too_recent": 188,
+      "customers_total": 397,
+      "excluded_too_recent": 189,
       "excluded_before_lookback": 0,
-      "cohort_members": 207,
+      "cohort_members": 208,
       "repeat_via_pull": 24,
       "repeat_via_lifetime_only": 59
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 14.3,
-    "ltv_1y": 23360,
-    "new_orders_7d": 39,
-    "repeat_orders_7d": 8,
+    "avg_purchase_interval_days": 14.1,
+    "ltv_1y": 23467,
+    "new_orders_7d": 41,
+    "repeat_orders_7d": 9,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.6596
+    "free_ship_rate_7d": 0.68
   }
 }
