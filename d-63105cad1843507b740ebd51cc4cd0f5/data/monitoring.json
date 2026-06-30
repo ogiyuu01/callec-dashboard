@@ -12,7 +12,7 @@
       "decision": "MONITORING",
       "verdict": "YELLOW",
       "before_rate": 0.31798382078406967,
-      "after_rate": 0.30272596843615496,
+      "after_rate": 0.3026988636363636,
       "before_counts": {
         "num": 1533,
         "den": 4821,
@@ -20,8 +20,8 @@
         "den_label": "コレクション着地セッション"
       },
       "after_counts": {
-        "num": 2110,
-        "den": 6970,
+        "num": 2131,
+        "den": 7040,
         "num_label": "PDP到達セッション",
         "den_label": "コレクション着地セッション"
       },
@@ -74,7 +74,7 @@
       "decision": "MONITORING",
       "verdict": "RED",
       "before_rate": 0.02934065934065934,
-      "after_rate": 0.03180658804037409,
+      "after_rate": 0.031613480465254994,
       "before_counts": {
         "num": 534,
         "den": 18200,
@@ -82,14 +82,14 @@
         "den_label": "商品閲覧"
       },
       "after_counts": {
-        "num": 1459,
-        "den": 45871,
+        "num": 1484,
+        "den": 46942,
         "num_label": "カート投入",
         "den_label": "商品閲覧"
       },
       "after_window": "7d",
       "after_taken_at": "2026-05-26 11:16",
-      "lift_pct": 8.4,
+      "lift_pct": 7.7,
       "summary": "PDP CRO bundle (案II rollback後): 案III 関連商品折りたたみタブ(同シリーズ名 prefix マッチ) + 案V ソーシャルプルーフ表示(直近24h ATC数) + 付帯: ハンバーガーメニュー chevron 再設計(site-nav.css)",
       "notes": "案II (Sticky ATC バリアント内蔵) は value drop 互換性問題で 2026-05-19 17:18 rollback。元の単一 combined select に戻した。案IV(サイズチャート)は既存モーダルがあるためスキップ。案III は同シリーズ名 (商品タイトル / 前半) prefix マッチ。案V は BQ直近24h ATC>=3 で表示。期待 view→ATC 3.71%→4.3% (+15%)。出典: pdp_cro_research_20260519.md。本番 push: 2026-05-20 (R003 7d baseline: sessions=6074 cvr=0.91% items/sess=1.376)。付帯改修としてハンバーガーメニュー +/- アイコンを chevron > / 90°rotate ∨ に再設計 (site-nav.c"
     },
@@ -116,7 +116,7 @@
     }
   ],
   "_meta": {
-    "generated_at": "2026-06-30T09:02:10+09:00",
+    "generated_at": "2026-06-30T12:28:08+09:00",
     "source": "release_log.csv + kpi_snapshots.csv",
     "note": "collection_to_pdp_rate / view_to_atc_rate は snapshot 列直接対応がないため代理列または欠損。完全値は BQ 直撃 by snapshot_kpi.py を参照"
   }

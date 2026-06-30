@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7129
+      "count": 7771
     },
     {
       "name": "view_item",
-      "count": 6695
+      "count": 7763
     },
     {
       "name": "add_to_cart",
-      "count": 161
+      "count": 186
     },
     {
       "name": "begin_checkout",
-      "count": 53
+      "count": 66
     },
     {
       "name": "purchase",
-      "count": 33
+      "count": 42
     }
   ],
   "weeks": [
@@ -86,39 +86,39 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 132,
-      "pdp_reached": 51,
-      "pdp_reach": 38.63636363636363
+      "sessions": 147,
+      "pdp_reached": 58,
+      "pdp_reach": 39.45578231292517
     },
     {
       "path": "/collections/new",
-      "sessions": 56,
-      "pdp_reached": 13,
-      "pdp_reach": 23.214285714285715
+      "sessions": 65,
+      "pdp_reached": 15,
+      "pdp_reach": 23.076923076923077
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 44,
-      "pdp_reached": 14,
-      "pdp_reach": 31.818181818181817
+      "sessions": 46,
+      "pdp_reached": 15,
+      "pdp_reach": 32.608695652173914
     },
     {
       "path": "/collections/setup",
-      "sessions": 39,
+      "sessions": 42,
       "pdp_reached": 13,
-      "pdp_reach": 33.333333333333336
+      "pdp_reach": 30.952380952380953
     },
     {
       "path": "/collections/pants",
-      "sessions": 33,
+      "sessions": 38,
       "pdp_reached": 9,
-      "pdp_reach": 27.272727272727273
+      "pdp_reach": 23.68421052631579
     },
     {
       "path": "/collections/tops",
-      "sessions": 33,
-      "pdp_reached": 7,
-      "pdp_reach": 21.21212121212121
+      "sessions": 38,
+      "pdp_reached": 8,
+      "pdp_reach": 21.05263157894737
     }
   ],
   "products_top5": [
@@ -133,19 +133,19 @@
       "revenue": 39600
     },
     {
-      "name": "メランジクルー半袖Tシャツ",
-      "qty": 5,
-      "revenue": 29700
+      "name": "TOBIKIRI STRIPE/テーラードジャケット",
+      "qty": 2,
+      "revenue": 38500
     },
     {
-      "name": "KAITEKI/テーラードジャケット",
-      "qty": 1,
-      "revenue": 29150
+      "name": "ハイストレッチ半袖ポロシャツ",
+      "qty": 3,
+      "revenue": 31350
     },
     {
-      "name": "無地半袖Tシャツ",
-      "qty": 5,
-      "revenue": 27500
+      "name": "NOBIRU360°PREMIUM/半袖ポロシャツ",
+      "qty": 2,
+      "revenue": 30800
     }
   ]
 }
