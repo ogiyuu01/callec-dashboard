@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7973
+      "count": 7129
     },
     {
       "name": "view_item",
-      "count": 7788
+      "count": 6695
     },
     {
       "name": "add_to_cart",
-      "count": 184
+      "count": 161
     },
     {
       "name": "begin_checkout",
-      "count": 60
+      "count": 53
     },
     {
       "name": "purchase",
-      "count": 37
+      "count": 33
     }
   ],
   "weeks": [
@@ -86,33 +86,33 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 173,
-      "pdp_reached": 71,
-      "pdp_reach": 41.040462427745666
+      "sessions": 132,
+      "pdp_reached": 51,
+      "pdp_reach": 38.63636363636363
     },
     {
       "path": "/collections/new",
-      "sessions": 62,
-      "pdp_reached": 15,
-      "pdp_reach": 24.193548387096776
+      "sessions": 56,
+      "pdp_reached": 13,
+      "pdp_reach": 23.214285714285715
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 53,
-      "pdp_reached": 17,
-      "pdp_reach": 32.075471698113205
+      "sessions": 44,
+      "pdp_reached": 14,
+      "pdp_reach": 31.818181818181817
     },
     {
       "path": "/collections/setup",
-      "sessions": 49,
-      "pdp_reached": 16,
-      "pdp_reach": 32.6530612244898
+      "sessions": 39,
+      "pdp_reached": 13,
+      "pdp_reach": 33.333333333333336
     },
     {
       "path": "/collections/pants",
-      "sessions": 36,
-      "pdp_reached": 10,
-      "pdp_reach": 27.77777777777778
+      "sessions": 33,
+      "pdp_reached": 9,
+      "pdp_reach": 27.272727272727273
     },
     {
       "path": "/collections/tops",
@@ -128,24 +128,24 @@
       "revenue": 178200
     },
     {
-      "name": "KAITEKI/テーパードパンツ",
-      "qty": 4,
-      "revenue": 79200
-    },
-    {
-      "name": "KAITEKI/テーラードジャケット",
-      "qty": 2,
-      "revenue": 58300
-    },
-    {
       "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
       "qty": 2,
       "revenue": 39600
     },
     {
+      "name": "メランジクルー半袖Tシャツ",
+      "qty": 5,
+      "revenue": 29700
+    },
+    {
+      "name": "KAITEKI/テーラードジャケット",
+      "qty": 1,
+      "revenue": 29150
+    },
+    {
       "name": "無地半袖Tシャツ",
-      "qty": 7,
-      "revenue": 38500
+      "qty": 5,
+      "revenue": 27500
     }
   ]
 }
