@@ -3,7 +3,7 @@
     {
       "release_id": "R001",
       "deployed_at": "2026-05-12",
-      "days_elapsed": 49,
+      "days_elapsed": 50,
       "eval_window_days": 21,
       "progress_pct": 100,
       "hypothesis_metric": "collection_to_pdp_rate",
@@ -12,7 +12,7 @@
       "decision": "MONITORING",
       "verdict": "YELLOW",
       "before_rate": 0.31798382078406967,
-      "after_rate": 0.3026988636363636,
+      "after_rate": 0.3240959783710713,
       "before_counts": {
         "num": 1533,
         "den": 4821,
@@ -20,21 +20,21 @@
         "den_label": "コレクション着地セッション"
       },
       "after_counts": {
-        "num": 2131,
-        "den": 7040,
+        "num": 2877,
+        "den": 8877,
         "num_label": "PDP到達セッション",
         "den_label": "コレクション着地セッション"
       },
       "after_window": "14d",
       "after_taken_at": "2026-05-26 11:06",
-      "lift_pct": -4.8,
+      "lift_pct": 1.9,
       "summary": "コレクションページの商品カード情報密度向上+ファーストビュー改善(販売開始日告知バナーの縮小・商品見え優先)",
       "notes": "2026-W19時点コレクション着地のPDP到達率29.7%。5月6日販売開始(1927sess/28.4%)とshortsleeve-t-shirts-2(62sess/16.1%)とtailored-jacket(38sess/10.5%)が特に低い。R002と段分離で併走 (R001=collection→PDP, R002=ATC→checkout) [2026-05-26 +14d 中間測定: collection_to_pdp_rate 29.71%→32.00% +7.7% lift 🟡 (GREEN 38%未達/RED 27%圏外) BQ直接計測 by snapshot_kpi.py BQ移行版 S010 補完]"
     },
     {
       "release_id": "R002",
       "deployed_at": "2026-05-19",
-      "days_elapsed": 42,
+      "days_elapsed": 43,
       "eval_window_days": 14,
       "progress_pct": 100,
       "hypothesis_metric": "atc_to_checkout_rate",
@@ -65,7 +65,7 @@
     {
       "release_id": "R003",
       "deployed_at": "2026-05-20",
-      "days_elapsed": 41,
+      "days_elapsed": 42,
       "eval_window_days": 14,
       "progress_pct": 100,
       "hypothesis_metric": "view_to_atc_rate",
@@ -74,7 +74,7 @@
       "decision": "MONITORING",
       "verdict": "RED",
       "before_rate": 0.02934065934065934,
-      "after_rate": 0.031613480465254994,
+      "after_rate": 0.03201584127357566,
       "before_counts": {
         "num": 534,
         "den": 18200,
@@ -82,21 +82,21 @@
         "den_label": "商品閲覧"
       },
       "after_counts": {
-        "num": 1484,
-        "den": 46942,
+        "num": 1633,
+        "den": 51006,
         "num_label": "カート投入",
         "den_label": "商品閲覧"
       },
       "after_window": "7d",
       "after_taken_at": "2026-05-26 11:16",
-      "lift_pct": 7.7,
+      "lift_pct": 9.1,
       "summary": "PDP CRO bundle (案II rollback後): 案III 関連商品折りたたみタブ(同シリーズ名 prefix マッチ) + 案V ソーシャルプルーフ表示(直近24h ATC数) + 付帯: ハンバーガーメニュー chevron 再設計(site-nav.css)",
       "notes": "案II (Sticky ATC バリアント内蔵) は value drop 互換性問題で 2026-05-19 17:18 rollback。元の単一 combined select に戻した。案IV(サイズチャート)は既存モーダルがあるためスキップ。案III は同シリーズ名 (商品タイトル / 前半) prefix マッチ。案V は BQ直近24h ATC>=3 で表示。期待 view→ATC 3.71%→4.3% (+15%)。出典: pdp_cro_research_20260519.md。本番 push: 2026-05-20 (R003 7d baseline: sessions=6074 cvr=0.91% items/sess=1.376)。付帯改修としてハンバーガーメニュー +/- アイコンを chevron > / 90°rotate ∨ に再設計 (site-nav.c"
     },
     {
       "release_id": "R004_line_link",
       "deployed_at": "2026-05-20",
-      "days_elapsed": 41,
+      "days_elapsed": 42,
       "eval_window_days": 14,
       "progress_pct": 100,
       "hypothesis_metric": "line_link_rate",
@@ -116,7 +116,7 @@
     }
   ],
   "_meta": {
-    "generated_at": "2026-06-30T12:28:08+09:00",
+    "generated_at": "2026-07-01T09:02:32+09:00",
     "source": "release_log.csv + kpi_snapshots.csv",
     "note": "collection_to_pdp_rate / view_to_atc_rate は snapshot 列直接対応がないため代理列または欠損。完全値は BQ 直撃 by snapshot_kpi.py を参照"
   }

@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7771
+      "count": 9855
     },
     {
       "name": "view_item",
-      "count": 7763
+      "count": 11126
     },
     {
       "name": "add_to_cart",
-      "count": 186
+      "count": 320
     },
     {
       "name": "begin_checkout",
-      "count": 66
+      "count": 110
     },
     {
       "name": "purchase",
-      "count": 42
+      "count": 70
     }
   ],
   "weeks": [
@@ -85,40 +85,46 @@
   ],
   "collections": [
     {
+      "path": "/collections/24ss",
+      "sessions": 1735,
+      "pdp_reached": 727,
+      "pdp_reach": 41.90201729106628
+    },
+    {
       "path": "/collections/all",
-      "sessions": 147,
-      "pdp_reached": 58,
-      "pdp_reach": 39.45578231292517
+      "sessions": 144,
+      "pdp_reached": 51,
+      "pdp_reach": 35.416666666666664
     },
     {
       "path": "/collections/new",
-      "sessions": 65,
+      "sessions": 71,
       "pdp_reached": 15,
-      "pdp_reach": 23.076923076923077
+      "pdp_reach": 21.12676056338028
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 46,
-      "pdp_reached": 15,
-      "pdp_reach": 32.608695652173914
+      "sessions": 44,
+      "pdp_reached": 13,
+      "pdp_reach": 29.545454545454547
     },
     {
       "path": "/collections/setup",
       "sessions": 42,
-      "pdp_reached": 13,
-      "pdp_reach": 30.952380952380953
+      "pdp_reached": 15,
+      "pdp_reach": 35.714285714285715
+    },
+    {
+      "path": "/collections/tops",
+      "sessions": 40,
+      "pdp_reached": 9,
+      "pdp_reach": 22.5
     },
     {
       "path": "/collections/pants",
       "sessions": 38,
       "pdp_reached": 9,
       "pdp_reach": 23.68421052631579
-    },
-    {
-      "path": "/collections/tops",
-      "sessions": 38,
-      "pdp_reached": 8,
-      "pdp_reach": 21.05263157894737
     }
   ],
   "products_top5": [
@@ -128,24 +134,24 @@
       "revenue": 178200
     },
     {
-      "name": "NOBIRU360°PREMIUM/アジャスターパンツ",
-      "qty": 2,
-      "revenue": 39600
+      "name": "無地半袖Tシャツ",
+      "qty": 11,
+      "revenue": 60500
     },
     {
-      "name": "TOBIKIRI STRIPE/テーラードジャケット",
-      "qty": 2,
-      "revenue": 38500
-    },
-    {
-      "name": "ハイストレッチ半袖ポロシャツ",
+      "name": "NOBIRU360°PREMIUM/ジョガーパンツ",
       "qty": 3,
-      "revenue": 31350
+      "revenue": 56100
     },
     {
-      "name": "NOBIRU360°PREMIUM/半袖ポロシャツ",
+      "name": "無重力リュック(第5世代)",
       "qty": 2,
-      "revenue": 30800
+      "revenue": 55000
+    },
+    {
+      "name": "KOKAGE/ホリゾンタルカラー半袖シャツ",
+      "qty": 8,
+      "revenue": 50600
     }
   ]
 }
