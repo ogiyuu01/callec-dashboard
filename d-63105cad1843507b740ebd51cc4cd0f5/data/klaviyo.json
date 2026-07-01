@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-01 09:03 JST",
+  "last_updated": "2026-07-01 12:38 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -68,11 +68,11 @@
         "recipients": 42.0,
         "opens": 16.0,
         "clicks": 3.0,
-        "convs": 0,
-        "rev": 0.0,
+        "convs": 1.0,
+        "rev": 7205.0,
         "open_rate": 0.38095238095238093,
         "click_rate": 0.07142857142857142,
-        "conv_rate": 0.0
+        "conv_rate": 0.023809523809523808
       },
       "previous_7d": {
         "recipients": 89.0,
@@ -88,11 +88,11 @@
         "recipients": 396.0,
         "opens": 93.0,
         "clicks": 15.0,
-        "convs": 8.0,
-        "rev": 275660.0,
+        "convs": 9.0,
+        "rev": 282865.0,
         "open_rate": 0.23484848484848486,
         "click_rate": 0.03787878787878788,
-        "conv_rate": 0.020202020202020204
+        "conv_rate": 0.022727272727272728
       },
       "previous_30d": {
         "recipients": 361.0,
@@ -108,18 +108,18 @@
         "recipients": 1403.0,
         "opens": 318.0,
         "clicks": 61.0,
-        "convs": 30.0,
-        "rev": 661540.0,
+        "convs": 31.0,
+        "rev": 668745.0,
         "open_rate": 0.22665716322166785,
         "click_rate": 0.043478260869565216,
-        "conv_rate": 0.021382751247327157
+        "conv_rate": 0.022095509622238062
       },
-      "wow_pct": -100.0,
-      "mom_pct": 76.85250529287227,
+      "wow_pct": -85.76086956521739,
+      "mom_pct": 81.47494707127734,
       "open_alert": "yellow",
       "wow_alert": "red",
       "mom_alert": "green",
-      "rpr_30d": 696.1111111111111
+      "rpr_30d": 714.3055555555555
     },
     {
       "flow_id": "VLMvyW",
@@ -183,13 +183,13 @@
     }
   ],
   "totals": {
-    "rev_7d": 0.0,
+    "rev_7d": 7205.0,
     "rev_7d_prev": 78870.0,
-    "rev_30d": 346280.0,
+    "rev_30d": 353485.0,
     "rev_30d_prev": 242770.0,
-    "rev_365d": 819060.0,
-    "wow_pct": -100.0,
-    "mom_pct": 42.63706388763027,
+    "rev_365d": 826265.0,
+    "wow_pct": -90.86471408647141,
+    "mom_pct": 45.604893520616216,
     "wow_alert": "red",
     "mom_alert": "green"
   },
@@ -205,8 +205,8 @@
       "level": "red",
       "flow": "カゴ落ちメール",
       "kind": "wow_drop",
-      "value": -100.0,
-      "msg": "売上 WoW -100.0% (前週比 -20% 以下) — リスト健全性 / 件名変更 / 配信時刻を確認"
+      "value": -85.76086956521739,
+      "msg": "売上 WoW -85.8% (前週比 -20% 以下) — リスト健全性 / 件名変更 / 配信時刻を確認"
     }
   ],
   "legend": {
