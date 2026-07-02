@@ -1,28 +1,28 @@
 {
-  "last_updated": "2026-07-01 12:36 JST",
+  "last_updated": "2026-07-02 09:02 JST",
   "last_7d": {
-    "sessions": 9855,
-    "item_views": 11126,
-    "orders": 70,
-    "sales": 1258125,
-    "cvr": 0.007102993404363267,
-    "aov": 17973.214285714286,
-    "items_per_session": 1.1289700659563673,
-    "new_sessions": 6285,
-    "returning_sessions": 3570,
-    "units": 130
+    "sessions": 8225,
+    "item_views": 10876,
+    "orders": 72,
+    "sales": 1211430,
+    "cvr": 0.008753799392097264,
+    "aov": 16825.416666666668,
+    "items_per_session": 1.3223100303951367,
+    "new_sessions": 4925,
+    "returning_sessions": 3300,
+    "units": 132
   },
   "prev_7d": {
-    "sessions": 6081,
-    "item_views": 7484,
+    "sessions": 8071,
+    "item_views": 8198,
     "orders": 39,
-    "sales": 758560,
-    "cvr": 0.006413418845584608,
-    "aov": 19450.25641025641,
-    "items_per_session": 1.2307186318039796,
-    "new_sessions": 4132,
-    "returning_sessions": 1949,
-    "units": 79
+    "sales": 779680,
+    "cvr": 0.004832114979556437,
+    "aov": 19991.79487179487,
+    "items_per_session": 1.0157353487795813,
+    "new_sessions": 5331,
+    "returning_sessions": 2740,
+    "units": 75
   },
   "yoy": {
     "sessions": 10288,
@@ -132,26 +132,26 @@
   ],
   "signals": [
     {
-      "level": "red",
+      "level": "yellow",
       "metric": "items/session",
-      "value": "1.13",
+      "value": "1.32",
       "target": "≥ 1.40 (R001目標)",
       "note": "R001 反映後の改善を測る最重要指標"
     },
     {
       "level": "green",
       "metric": "CVR",
-      "value": "0.71%",
+      "value": "0.88%",
       "target": "≥ 0.70%",
       "note": "前年同期 0.91%。回復目標は 0.7% 以上"
     }
   ],
   "narrative": {
     "lines": [
-      "📈 今週の売上 ¥1,258,125（先週より +66%）",
-      "   注文は 70 件 / 先週は 39 件",
-      "📊 買ってくれる人の割合（CVR）は前年並みです（0.71%）",
-      "🔴 1セッションあたりの商品閲覧数 1.13 は低めです。商品ページにたどり着けていない人が多い状態です。"
+      "📈 今週の売上 ¥1,211,430（先週より +55%）",
+      "   注文は 72 件 / 先週は 39 件",
+      "📊 買ってくれる人の割合（CVR）は前年並みです（0.88%）",
+      "🟡 1セッションあたりの商品閲覧数 1.32 は平均的。R001 反映でこれを 1.40 以上に上げるのが目標です。"
     ],
     "actions": [
       "R001（コレクションページ改善）を本番に反映する",
@@ -160,21 +160,10 @@
     ]
   },
   "spam": {
-    "excluded_sessions_7d": 439,
+    "excluded_sessions_7d": 478,
     "pattern": "t.co / sunpark"
   },
   "daily": [
-    {
-      "date": "20260603",
-      "sessions": 845,
-      "item_views": 1060,
-      "atcs": 30,
-      "orders": 4,
-      "sales": 88220,
-      "cvr": 0.004733727810650888,
-      "aov": 22055.0,
-      "items_per_session": 1.2544378698224852
-    },
     {
       "date": "20260604",
       "sessions": 691,
@@ -471,6 +460,17 @@
       "cvr": 0.012364181341326339,
       "aov": 16086.666666666666,
       "items_per_session": 1.5215436493068566
+    },
+    {
+      "date": "20260701",
+      "sessions": 1127,
+      "item_views": 1466,
+      "atcs": 31,
+      "orders": 11,
+      "sales": 152625,
+      "cvr": 0.009760425909494233,
+      "aov": 13875.0,
+      "items_per_session": 1.300798580301686
     }
   ],
   "anomalies": [
@@ -534,32 +534,32 @@
   "goal": {
     "month": "2026-07",
     "days_in_month": 31,
-    "days_passed": 1,
-    "days_remaining": 30,
+    "days_passed": 2,
+    "days_remaining": 29,
     "target": {
       "sales": 8000000,
       "orders": 200,
       "note": ""
     },
     "actual": {
-      "sales": 0,
-      "orders": 0
+      "sales": 152625,
+      "orders": 11
     },
     "projected": {
-      "sales": 0,
-      "orders": 0
+      "sales": 4731375,
+      "orders": 341
     },
     "progress": {
-      "sales_pct": 0.0,
-      "orders_pct": 0.0,
-      "projected_sales_pct": 0.0,
-      "projected_orders_pct": 0.0
+      "sales_pct": 1.9,
+      "orders_pct": 5.5,
+      "projected_sales_pct": 59.1,
+      "projected_orders_pct": 170.5
     },
     "remaining": {
-      "sales": 8000000,
-      "orders": 200,
-      "daily_needed_sales": 266666,
-      "daily_needed_orders": 6.666666666666667
+      "sales": 7847375,
+      "orders": 189,
+      "daily_needed_sales": 270599,
+      "daily_needed_orders": 6.517241379310345
     }
   }
 }
