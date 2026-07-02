@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-07-02 09:04 JST",
+    "generated_at": "2026-07-02 12:24 JST",
     "sources": [
       "Shopify",
       "GA4",
@@ -9,7 +9,7 @@
     ],
     "version": 1
   },
-  "last_updated": "2026-07-02 09:04 JST",
+  "last_updated": "2026-07-02 12:24 JST",
   "alerts": [
     {
       "level": "critical",
@@ -47,7 +47,7 @@
         "name": "配信ヘルス (Klaviyo)",
         "status": "green",
         "score": 100,
-        "note": "平均開封率 38.3% (tgt ≥25%)",
+        "note": "平均開封率 38.2% (tgt ≥25%)",
         "weight": 20
       },
       {
@@ -119,28 +119,28 @@
     {
       "source": "GA4",
       "status": "green",
-      "last_run": "2026-07-02 09:02",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "last_run": "2026-07-02 12:21",
+      "lag_hours": 0.1,
+      "note": "0.1h前 (今朝以降)"
     },
     {
       "source": "Shopify",
       "status": "green",
-      "last_run": "2026-07-02 09:04",
+      "last_run": "2026-07-02 12:24",
       "lag_hours": 0.0,
       "note": "0.0h前 (今朝以降)"
     },
     {
       "source": "GDrive",
       "status": "green",
-      "last_run": "2026-07-02 09:01",
+      "last_run": "2026-07-02 12:21",
       "lag_hours": 0.1,
       "note": "0.1h前 (今朝以降)"
     },
     {
       "source": "Klaviyo",
       "status": "green",
-      "last_run": "2026-07-02 09:04",
+      "last_run": "2026-07-02 12:24",
       "lag_hours": 0.0,
       "note": "0.0h前 (今朝以降)"
     }
@@ -176,7 +176,7 @@
     },
     {
       "metric": "Klaviyo 平均 open率 (30d)",
-      "value": "38.3%",
+      "value": "38.2%",
       "target": "≥25% (alert <15%)",
       "status": "green",
       "source": "Klaviyo"
@@ -204,7 +204,7 @@
     },
     {
       "metric": "2回目転換率 (成熟コホート·API)",
-      "value": "40.6%",
+      "value": "40.1%",
       "target": "≥30% green / ≥22.5% yellow (課題ライン22.5%)",
       "status": "green",
       "source": "Shopify 注文履歴コホート(1年)"
@@ -212,60 +212,60 @@
   ],
   "activity": [
     {
-      "ts": "2026-07-02 09:04",
-      "ts_iso": "2026-07-02T09:04:00+09:00",
+      "ts": "2026-07-02 12:24",
+      "ts_iso": "2026-07-02T12:24:00+09:00",
       "source": "Shopify",
       "type": "snapshot",
       "title": "Shopify 28日メトリクス更新 (Repeat率 33.6%)",
       "level": "info"
     },
     {
-      "ts": "2026-07-02 09:04",
-      "ts_iso": "2026-07-02T09:04:00+09:00",
+      "ts": "2026-07-02 12:24",
+      "ts_iso": "2026-07-02T12:24:00+09:00",
       "source": "Klaviyo",
       "type": "refresh",
       "title": "flows 3 件 (寄与売上 ¥353,485/30d)",
       "level": "info"
     },
     {
-      "ts": "2026-07-02 09:04",
-      "ts_iso": "2026-07-02T09:04:00+09:00",
+      "ts": "2026-07-02 12:24",
+      "ts_iso": "2026-07-02T12:24:00+09:00",
       "source": "Klaviyo",
       "type": "alert",
       "title": "{'level': 'red', 'flow': 'レビューリクエスト', 'kind': 'wow_drop', 'value': -100.0, 'msg': '売上 WoW -100.0% (前週比 -20% 以下) — リスト健全性 / 件名変更 / 配信時刻を確認'}",
       "level": "warning"
     },
     {
-      "ts": "2026-07-02 09:04",
-      "ts_iso": "2026-07-02T09:04:00+09:00",
+      "ts": "2026-07-02 12:24",
+      "ts_iso": "2026-07-02T12:24:00+09:00",
       "source": "Klaviyo",
       "type": "alert",
       "title": "{'level': 'red', 'flow': 'カゴ落ちメール', 'kind': 'wow_drop', 'value': -85.76086956521739, 'msg': '売上 WoW -85.8% (前週比 -20% 以下) — リスト健全性 / 件名変更 / 配信時刻を確認'}",
       "level": "warning"
     },
     {
-      "ts": "2026-07-02 09:02",
-      "ts_iso": "2026-07-02T09:02:00+09:00",
+      "ts": "2026-07-02 12:21",
+      "ts_iso": "2026-07-02T12:21:17+09:00",
+      "source": "GDrive",
+      "type": "sync",
+      "title": "年間計画シート fetched",
+      "level": "info"
+    },
+    {
+      "ts": "2026-07-02 12:21",
+      "ts_iso": "2026-07-02T12:21:00+09:00",
       "source": "GA4",
       "type": "snapshot",
       "title": "GA4 weekly snapshot 取得 (sessions 8225)",
       "level": "info"
     },
     {
-      "ts": "2026-07-02 09:02",
-      "ts_iso": "2026-07-02T09:02:00+09:00",
+      "ts": "2026-07-02 12:21",
+      "ts_iso": "2026-07-02T12:21:00+09:00",
       "source": "GA4",
       "type": "signal",
       "title": "items/session=1.32 (tgt ≥ 1.40 (R001目標))",
       "level": "warning"
-    },
-    {
-      "ts": "2026-07-02 09:01",
-      "ts_iso": "2026-07-02T09:01:33+09:00",
-      "source": "GDrive",
-      "type": "sync",
-      "title": "年間計画シート fetched",
-      "level": "info"
     }
   ]
 }
