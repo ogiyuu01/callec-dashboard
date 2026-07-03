@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8225
+      "count": 7010
     },
     {
       "name": "view_item",
-      "count": 10876
+      "count": 9865
     },
     {
       "name": "add_to_cart",
-      "count": 300
+      "count": 275
     },
     {
       "name": "begin_checkout",
-      "count": 122
+      "count": 109
     },
     {
       "name": "purchase",
-      "count": 72
+      "count": 69
     }
   ],
   "weeks": [
@@ -92,46 +92,40 @@
     },
     {
       "path": "/collections/all",
-      "sessions": 163,
-      "pdp_reached": 59,
-      "pdp_reach": 36.19631901840491
+      "sessions": 147,
+      "pdp_reached": 53,
+      "pdp_reach": 36.054421768707485
     },
     {
       "path": "/collections/new",
-      "sessions": 72,
-      "pdp_reached": 15,
-      "pdp_reach": 20.833333333333332
+      "sessions": 63,
+      "pdp_reached": 14,
+      "pdp_reach": 22.22222222222222
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 45,
-      "pdp_reached": 14,
-      "pdp_reach": 31.11111111111111
-    },
-    {
-      "path": "/collections/setup",
-      "sessions": 40,
-      "pdp_reached": 15,
-      "pdp_reach": 37.5
+      "sessions": 38,
+      "pdp_reached": 11,
+      "pdp_reach": 28.94736842105263
     },
     {
       "path": "/collections/pants",
-      "sessions": 39,
-      "pdp_reached": 8,
-      "pdp_reach": 20.512820512820515
+      "sessions": 33,
+      "pdp_reached": 6,
+      "pdp_reach": 18.181818181818183
     },
     {
-      "path": "/collections/tops",
-      "sessions": 37,
-      "pdp_reached": 7,
-      "pdp_reach": 18.91891891891892
+      "path": "/collections/setup",
+      "sessions": 32,
+      "pdp_reached": 12,
+      "pdp_reach": 37.5
     }
   ],
   "products_top5": [
     {
       "name": "【限定30着】CALL YUKATA",
-      "qty": 4,
-      "revenue": 118800
+      "qty": 3,
+      "revenue": 89100
     },
     {
       "name": "KOKAGE/ホリゾンタルカラー半袖シャツ",
