@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-07-05 09:03 JST",
+    "fetched_at": "2026-07-05 11:52 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
@@ -84,8 +84,8 @@
       }
     ],
     "diagnostics": {
-      "customers_total": 462,
-      "excluded_too_recent": 253,
+      "customers_total": 464,
+      "excluded_too_recent": 255,
       "excluded_before_lookback": 0,
       "cohort_members": 209,
       "repeat_via_pull": 28,
@@ -94,10 +94,10 @@
   },
   "crm": {
     "avg_purchase_interval_days": 13.3,
-    "ltv_1y": 22651,
-    "new_orders_7d": 99,
+    "ltv_1y": 22627,
+    "new_orders_7d": 100,
     "repeat_orders_7d": 13,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.5625
+    "free_ship_rate_7d": 0.5664
   }
 }

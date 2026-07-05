@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-05 09:03 JST",
+  "last_updated": "2026-07-05 11:52 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -65,14 +65,14 @@
       "flow_id": "SufE4T",
       "name": "カゴ落ちメール",
       "current_7d": {
-        "recipients": 74.0,
+        "recipients": 75.0,
         "opens": 31.0,
         "clicks": 5.0,
         "convs": 2.0,
         "rev": 22825.0,
-        "open_rate": 0.4189189189189189,
-        "click_rate": 0.06756756756756757,
-        "conv_rate": 0.02702702702702703
+        "open_rate": 0.41333333333333333,
+        "click_rate": 0.06666666666666667,
+        "conv_rate": 0.02666666666666667
       },
       "previous_7d": {
         "recipients": 45.0,
@@ -85,14 +85,14 @@
         "conv_rate": 0.044444444444444446
       },
       "current_30d": {
-        "recipients": 369.0,
+        "recipients": 370.0,
         "opens": 96.0,
         "clicks": 15.0,
         "convs": 9.0,
         "rev": 261745.0,
-        "open_rate": 0.2601626016260163,
-        "click_rate": 0.04065040650406504,
-        "conv_rate": 0.024390243902439025
+        "open_rate": 0.2594594594594595,
+        "click_rate": 0.04054054054054054,
+        "conv_rate": 0.024324324324324326
       },
       "previous_30d": {
         "recipients": 395.0,
@@ -105,21 +105,21 @@
         "conv_rate": 0.02278481012658228
       },
       "annual": {
-        "recipients": 1448.0,
+        "recipients": 1449.0,
         "opens": 333.0,
         "clicks": 63.0,
         "convs": 32.0,
         "rev": 684365.0,
-        "open_rate": 0.22997237569060774,
-        "click_rate": 0.04350828729281768,
-        "conv_rate": 0.022099447513812154
+        "open_rate": 0.22981366459627328,
+        "click_rate": 0.043478260869565216,
+        "conv_rate": 0.022084195997239476
       },
       "wow_pct": -54.891304347826086,
       "mom_pct": 35.893774985722445,
       "open_alert": "green",
       "wow_alert": "red",
       "mom_alert": "green",
-      "rpr_30d": 709.3360433604336
+      "rpr_30d": 707.418918918919
     },
     {
       "flow_id": "VLMvyW",
