@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 9732
+      "count": 9884
     },
     {
       "name": "view_item",
-      "count": 11886
+      "count": 12121
     },
     {
       "name": "add_to_cart",
-      "count": 339
+      "count": 332
     },
     {
       "name": "begin_checkout",
-      "count": 131
+      "count": 139
     },
     {
       "name": "purchase",
-      "count": 80
+      "count": 81
     }
   ],
   "weeks": [
@@ -86,39 +86,33 @@
   "collections": [
     {
       "path": "/collections/24ss",
-      "sessions": 2328,
-      "pdp_reached": 925,
-      "pdp_reach": 39.733676975945016
+      "sessions": 2356,
+      "pdp_reached": 940,
+      "pdp_reach": 39.898132427843805
     },
     {
       "path": "/collections/all",
-      "sessions": 185,
-      "pdp_reached": 75,
-      "pdp_reach": 40.54054054054054
+      "sessions": 188,
+      "pdp_reached": 78,
+      "pdp_reach": 41.48936170212766
     },
     {
       "path": "/collections/new",
-      "sessions": 68,
-      "pdp_reached": 23,
-      "pdp_reach": 33.8235294117647
-    },
-    {
-      "path": "/collections/setup",
-      "sessions": 42,
-      "pdp_reached": 19,
-      "pdp_reach": 45.23809523809524
+      "sessions": 65,
+      "pdp_reached": 25,
+      "pdp_reach": 38.46153846153846
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 41,
-      "pdp_reached": 10,
-      "pdp_reach": 24.390243902439025
+      "sessions": 44,
+      "pdp_reached": 12,
+      "pdp_reach": 27.272727272727273
     },
     {
-      "path": "/collections/pants",
-      "sessions": 31,
-      "pdp_reached": 6,
-      "pdp_reach": 19.35483870967742
+      "path": "/collections/setup",
+      "sessions": 44,
+      "pdp_reached": 19,
+      "pdp_reach": 43.18181818181818
     }
   ],
   "products_top5": [
@@ -143,9 +137,9 @@
       "revenue": 61600
     },
     {
-      "name": "無地半袖Tシャツ",
-      "qty": 11,
-      "revenue": 60500
+      "name": "【限定30着】CALL YUKATA",
+      "qty": 2,
+      "revenue": 59400
     }
   ]
 }

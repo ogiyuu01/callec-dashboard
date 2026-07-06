@@ -1,22 +1,22 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-07-05 11:52 JST",
+    "fetched_at": "2026-07-06 09:03 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 231,
-    "returning_customers": 78,
-    "returning_customer_rate": 0.33766233766233766,
-    "new_customers": 153
+    "total_customers": 233,
+    "returning_customers": 77,
+    "returning_customer_rate": 0.33047210300429186,
+    "new_customers": 156
   },
   "top_products_28d": [
     {
       "name": "【限定30着】CALL YUKATA",
-      "gross_sales": 297000,
-      "orders": 10
+      "gross_sales": 326700,
+      "orders": 11
     },
     {
       "name": "無重力リュック(第5世代)",
@@ -25,33 +25,33 @@
     },
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 242000,
-      "orders": 44
-    },
-    {
-      "name": "KOKAGE/ジョガーパンツ",
-      "gross_sales": 144375,
-      "orders": 11
+      "gross_sales": 236500,
+      "orders": 43
     },
     {
       "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 144375,
-      "orders": 15
-    },
-    {
-      "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 124740,
-      "orders": 21
+      "gross_sales": 151250,
+      "orders": 16
     },
     {
       "name": "KOKAGE/ホリゾンタルカラー半袖シャツ",
-      "gross_sales": 107525,
-      "orders": 17
+      "gross_sales": 126500,
+      "orders": 20
     },
     {
-      "name": "TOBIKIRI STRIPE/テーラードジャケット",
-      "gross_sales": 96250,
-      "orders": 5
+      "name": "KOKAGE/ジョガーパンツ",
+      "gross_sales": 116875,
+      "orders": 9
+    },
+    {
+      "name": "KOKAGE/テーラードジャケット",
+      "gross_sales": 112200,
+      "orders": 11
+    },
+    {
+      "name": "メランジクルー半袖Tシャツ",
+      "gross_sales": 95040,
+      "orders": 16
     },
     {
       "name": "ハイストレッチ半袖ポロシャツ",
@@ -59,45 +59,45 @@
       "orders": 9
     },
     {
-      "name": "KOKAGE/テーラードジャケット",
-      "gross_sales": 93500,
-      "orders": 9
+      "name": "NOBIRU360°PREMIUM/半袖ポロシャツ",
+      "gross_sales": 92400,
+      "orders": 6
     }
   ],
   "totals_28d": {
     "orders": 250,
-    "sales": 4970680
+    "sales": 4823170
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 209,
-    "second_purchase_buyers": 84,
-    "second_purchase_rate": 0.4019,
+    "first_time_buyers": 210,
+    "second_purchase_buyers": 85,
+    "second_purchase_rate": 0.4048,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 209,
-        "repeat_buyers": 84,
-        "repeat_rate": 0.4019
+        "first_buyers": 210,
+        "repeat_buyers": 85,
+        "repeat_rate": 0.4048
       }
     ],
     "diagnostics": {
-      "customers_total": 464,
-      "excluded_too_recent": 255,
+      "customers_total": 463,
+      "excluded_too_recent": 253,
       "excluded_before_lookback": 0,
-      "cohort_members": 209,
+      "cohort_members": 210,
       "repeat_via_pull": 28,
-      "repeat_via_lifetime_only": 56
+      "repeat_via_lifetime_only": 57
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 13.3,
-    "ltv_1y": 22627,
-    "new_orders_7d": 100,
+    "avg_purchase_interval_days": 12.7,
+    "ltv_1y": 22562,
+    "new_orders_7d": 102,
     "repeat_orders_7d": 13,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.5664
+    "free_ship_rate_7d": 0.5739
   }
 }
