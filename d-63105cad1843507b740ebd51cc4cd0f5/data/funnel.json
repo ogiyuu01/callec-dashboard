@@ -103,16 +103,16 @@
       "pdp_reach": 38.46153846153846
     },
     {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 44,
-      "pdp_reached": 12,
-      "pdp_reach": 27.272727272727273
-    },
-    {
       "path": "/collections/setup",
       "sessions": 44,
       "pdp_reached": 19,
       "pdp_reach": 43.18181818181818
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 44,
+      "pdp_reached": 12,
+      "pdp_reach": 27.272727272727273
     }
   ],
   "products_top5": [
