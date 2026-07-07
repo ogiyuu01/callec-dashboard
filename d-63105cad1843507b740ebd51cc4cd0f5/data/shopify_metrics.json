@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-07-06 11:59 JST",
+    "fetched_at": "2026-07-07 09:04 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
     "total_customers": 233,
-    "returning_customers": 77,
-    "returning_customer_rate": 0.33047210300429186,
-    "new_customers": 156
+    "returning_customers": 74,
+    "returning_customer_rate": 0.31759656652360513,
+    "new_customers": 159
   },
   "top_products_28d": [
     {
@@ -25,18 +25,18 @@
     },
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 236500,
-      "orders": 43
+      "gross_sales": 209000,
+      "orders": 38
     },
     {
       "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 151250,
-      "orders": 16
+      "gross_sales": 137500,
+      "orders": 15
     },
     {
       "name": "KOKAGE/ホリゾンタルカラー半袖シャツ",
-      "gross_sales": 126500,
-      "orders": 20
+      "gross_sales": 132825,
+      "orders": 21
     },
     {
       "name": "KOKAGE/ジョガーパンツ",
@@ -50,8 +50,8 @@
     },
     {
       "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 95040,
-      "orders": 16
+      "gross_sales": 100980,
+      "orders": 17
     },
     {
       "name": "ハイストレッチ半袖ポロシャツ",
@@ -66,38 +66,38 @@
   ],
   "totals_28d": {
     "orders": 250,
-    "sales": 4823170
+    "sales": 4782305
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 210,
+    "first_time_buyers": 207,
     "second_purchase_buyers": 85,
-    "second_purchase_rate": 0.4048,
+    "second_purchase_rate": 0.4106,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 210,
+        "first_buyers": 207,
         "repeat_buyers": 85,
-        "repeat_rate": 0.4048
+        "repeat_rate": 0.4106
       }
     ],
     "diagnostics": {
       "customers_total": 466,
-      "excluded_too_recent": 256,
+      "excluded_too_recent": 259,
       "excluded_before_lookback": 0,
-      "cohort_members": 210,
-      "repeat_via_pull": 28,
-      "repeat_via_lifetime_only": 57
+      "cohort_members": 207,
+      "repeat_via_pull": 29,
+      "repeat_via_lifetime_only": 56
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 12.7,
-    "ltv_1y": 22522,
-    "new_orders_7d": 103,
-    "repeat_orders_7d": 11,
+    "avg_purchase_interval_days": 13.5,
+    "ltv_1y": 22528,
+    "new_orders_7d": 100,
+    "repeat_orders_7d": 12,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.5526
+    "free_ship_rate_7d": 0.5536
   }
 }

@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 9884
+      "count": 9242
     },
     {
       "name": "view_item",
-      "count": 12121
+      "count": 11069
     },
     {
       "name": "add_to_cart",
-      "count": 332
+      "count": 307
     },
     {
       "name": "begin_checkout",
-      "count": 139
+      "count": 126
     },
     {
       "name": "purchase",
-      "count": 81
+      "count": 72
     }
   ],
   "weeks": [
@@ -86,33 +86,33 @@
   "collections": [
     {
       "path": "/collections/24ss",
-      "sessions": 2356,
-      "pdp_reached": 940,
-      "pdp_reach": 39.898132427843805
+      "sessions": 2350,
+      "pdp_reached": 938,
+      "pdp_reach": 39.91489361702128
     },
     {
       "path": "/collections/all",
-      "sessions": 188,
-      "pdp_reached": 78,
-      "pdp_reach": 41.48936170212766
+      "sessions": 173,
+      "pdp_reached": 71,
+      "pdp_reach": 41.040462427745666
     },
     {
       "path": "/collections/new",
-      "sessions": 65,
-      "pdp_reached": 25,
-      "pdp_reach": 38.46153846153846
-    },
-    {
-      "path": "/collections/setup",
-      "sessions": 44,
-      "pdp_reached": 19,
-      "pdp_reach": 43.18181818181818
+      "sessions": 56,
+      "pdp_reached": 23,
+      "pdp_reach": 41.07142857142857
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 44,
-      "pdp_reached": 12,
-      "pdp_reach": 27.272727272727273
+      "sessions": 42,
+      "pdp_reached": 11,
+      "pdp_reach": 26.19047619047619
+    },
+    {
+      "path": "/collections/setup",
+      "sessions": 41,
+      "pdp_reached": 19,
+      "pdp_reach": 46.34146341463415
     }
   ],
   "products_top5": [
@@ -128,8 +128,8 @@
     },
     {
       "name": "KOKAGE/ホリゾンタルカラー半袖シャツ",
-      "qty": 12,
-      "revenue": 75900
+      "qty": 11,
+      "revenue": 69575
     },
     {
       "name": "KOKAGE/TOGARU/タックパンツ",
