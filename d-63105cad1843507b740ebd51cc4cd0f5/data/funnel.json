@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 10061
+      "count": 8052
     },
     {
       "name": "view_item",
-      "count": 12221
+      "count": 9188
     },
     {
       "name": "add_to_cart",
-      "count": 333
+      "count": 206
     },
     {
       "name": "begin_checkout",
-      "count": 135
+      "count": 104
     },
     {
       "name": "purchase",
-      "count": 78
+      "count": 51
     }
   ],
   "weeks": [
@@ -86,66 +86,66 @@
   "collections": [
     {
       "path": "/collections/24ss",
-      "sessions": 2375,
-      "pdp_reached": 947,
-      "pdp_reach": 39.873684210526314
+      "sessions": 656,
+      "pdp_reached": 228,
+      "pdp_reach": 34.75609756097561
     },
     {
       "path": "/collections/all",
-      "sessions": 220,
-      "pdp_reached": 94,
-      "pdp_reach": 42.72727272727273
+      "sessions": 223,
+      "pdp_reached": 103,
+      "pdp_reach": 46.18834080717489
     },
     {
       "path": "/collections/new",
-      "sessions": 58,
-      "pdp_reached": 23,
-      "pdp_reach": 39.6551724137931
+      "sessions": 57,
+      "pdp_reached": 24,
+      "pdp_reach": 42.10526315789474
     },
     {
       "path": "/collections/setup",
-      "sessions": 48,
-      "pdp_reached": 23,
-      "pdp_reach": 47.916666666666664
+      "sessions": 47,
+      "pdp_reached": 21,
+      "pdp_reach": 44.680851063829785
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 46,
-      "pdp_reached": 12,
-      "pdp_reach": 26.08695652173913
+      "sessions": 43,
+      "pdp_reached": 11,
+      "pdp_reach": 25.58139534883721
     },
     {
       "path": "/collections/pants",
-      "sessions": 30,
-      "pdp_reached": 4,
-      "pdp_reach": 13.333333333333334
+      "sessions": 31,
+      "pdp_reached": 3,
+      "pdp_reach": 9.67741935483871
     }
   ],
   "products_top5": [
     {
       "name": "KOKAGE/テーラードジャケット",
-      "qty": 9,
-      "revenue": 121550
+      "qty": 6,
+      "revenue": 93500
     },
     {
       "name": "無重力リュック(第5世代)",
-      "qty": 4,
-      "revenue": 110000
+      "qty": 3,
+      "revenue": 82500
     },
     {
-      "name": "KOKAGE/ホリゾンタルカラー半袖シャツ",
-      "qty": 12,
-      "revenue": 75900
+      "name": "【限定30着】CALL YUKATA",
+      "qty": 2,
+      "revenue": 59400
     },
     {
       "name": "KOKAGE/テーパードパンツ",
-      "qty": 8,
-      "revenue": 75625
+      "qty": 4,
+      "revenue": 48125
     },
     {
-      "name": "KOKAGE/TOGARU/タックパンツ",
-      "qty": 9,
-      "revenue": 69300
+      "name": "KOKAGE/タックパンツ",
+      "qty": 3,
+      "revenue": 46200
     }
   ]
 }
