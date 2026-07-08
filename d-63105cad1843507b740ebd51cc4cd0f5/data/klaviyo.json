@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-08 09:04 JST",
+  "last_updated": "2026-07-08 11:32 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -65,14 +65,14 @@
       "flow_id": "SufE4T",
       "name": "カゴ落ちメール",
       "current_7d": {
-        "recipients": 72.0,
+        "recipients": 73.0,
         "opens": 33.0,
         "clicks": 6.0,
         "convs": 1.0,
         "rev": 15620.0,
-        "open_rate": 0.4583333333333333,
-        "click_rate": 0.08333333333333333,
-        "conv_rate": 0.013888888888888888
+        "open_rate": 0.4520547945205479,
+        "click_rate": 0.0821917808219178,
+        "conv_rate": 0.0136986301369863
       },
       "previous_7d": {
         "recipients": 40.0,
@@ -85,14 +85,14 @@
         "conv_rate": 0.025
       },
       "current_30d": {
-        "recipients": 349.0,
+        "recipients": 350.0,
         "opens": 97.0,
         "clicks": 19.0,
         "convs": 7.0,
         "rev": 226545.0,
-        "open_rate": 0.27793696275071633,
-        "click_rate": 0.054441260744985676,
-        "conv_rate": 0.02005730659025788
+        "open_rate": 0.27714285714285714,
+        "click_rate": 0.054285714285714284,
+        "conv_rate": 0.02
       },
       "previous_30d": {
         "recipients": 402.0,
@@ -105,21 +105,21 @@
         "conv_rate": 0.02736318407960199
       },
       "annual": {
-        "recipients": 1473.0,
+        "recipients": 1474.0,
         "opens": 343.0,
         "clicks": 67.0,
         "convs": 32.0,
         "rev": 684365.0,
-        "open_rate": 0.2328581126951799,
-        "click_rate": 0.04548540393754243,
-        "conv_rate": 0.02172437202987101
+        "open_rate": 0.2327001356852103,
+        "click_rate": 0.045454545454545456,
+        "conv_rate": 0.021709633649932156
       },
       "wow_pct": 116.79389312977099,
       "mom_pct": 1.0053948013732221,
       "open_alert": "green",
       "wow_alert": "green",
       "mom_alert": "green",
-      "rpr_30d": 649.1260744985674
+      "rpr_30d": 647.2714285714286
     },
     {
       "flow_id": "VLMvyW",
