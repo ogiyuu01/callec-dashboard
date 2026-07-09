@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8052
+      "count": 7681
     },
     {
       "name": "view_item",
-      "count": 9188
+      "count": 8672
     },
     {
       "name": "add_to_cart",
-      "count": 206
+      "count": 198
     },
     {
       "name": "begin_checkout",
-      "count": 104
+      "count": 87
     },
     {
       "name": "purchase",
-      "count": 51
+      "count": 45
     }
   ],
   "weeks": [
@@ -86,66 +86,66 @@
   "collections": [
     {
       "path": "/collections/24ss",
-      "sessions": 656,
-      "pdp_reached": 228,
-      "pdp_reach": 34.75609756097561
+      "sessions": 365,
+      "pdp_reached": 139,
+      "pdp_reach": 38.082191780821915
     },
     {
       "path": "/collections/all",
-      "sessions": 223,
-      "pdp_reached": 103,
-      "pdp_reach": 46.18834080717489
+      "sessions": 237,
+      "pdp_reached": 116,
+      "pdp_reach": 48.9451476793249
     },
     {
       "path": "/collections/new",
-      "sessions": 57,
-      "pdp_reached": 24,
-      "pdp_reach": 42.10526315789474
+      "sessions": 55,
+      "pdp_reached": 25,
+      "pdp_reach": 45.45454545454545
     },
     {
       "path": "/collections/setup",
-      "sessions": 47,
-      "pdp_reached": 21,
-      "pdp_reach": 44.680851063829785
+      "sessions": 50,
+      "pdp_reached": 20,
+      "pdp_reach": 40.0
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 43,
-      "pdp_reached": 11,
-      "pdp_reach": 25.58139534883721
+      "sessions": 39,
+      "pdp_reached": 10,
+      "pdp_reach": 25.641025641025642
     },
     {
       "path": "/collections/pants",
-      "sessions": 31,
-      "pdp_reached": 3,
-      "pdp_reach": 9.67741935483871
+      "sessions": 35,
+      "pdp_reached": 6,
+      "pdp_reach": 17.142857142857142
     }
   ],
   "products_top5": [
     {
+      "name": "無重力リュック(第5世代)",
+      "qty": 4,
+      "revenue": 110000
+    },
+    {
       "name": "KOKAGE/テーラードジャケット",
       "qty": 6,
-      "revenue": 93500
-    },
-    {
-      "name": "無重力リュック(第5世代)",
-      "qty": 3,
-      "revenue": 82500
-    },
-    {
-      "name": "【限定30着】CALL YUKATA",
-      "qty": 2,
-      "revenue": 59400
+      "revenue": 102850
     },
     {
       "name": "KOKAGE/テーパードパンツ",
       "qty": 4,
-      "revenue": 48125
+      "revenue": 55000
     },
     {
       "name": "KOKAGE/タックパンツ",
       "qty": 3,
       "revenue": 46200
+    },
+    {
+      "name": "【限定30着】CALL YUKATA",
+      "qty": 1,
+      "revenue": 29700
     }
   ]
 }

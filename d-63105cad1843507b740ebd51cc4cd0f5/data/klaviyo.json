@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-08 11:32 JST",
+  "last_updated": "2026-07-09 09:04 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
@@ -25,24 +25,24 @@
         "conv_rate": 0.0
       },
       "current_30d": {
-        "recipients": 252.0,
-        "opens": 138.0,
+        "recipients": 248.0,
+        "opens": 136.0,
         "clicks": 18.0,
         "convs": 3.0,
         "rev": 70620.0,
-        "open_rate": 0.5476190476190477,
-        "click_rate": 0.07142857142857142,
-        "conv_rate": 0.011904761904761904
+        "open_rate": 0.5483870967741935,
+        "click_rate": 0.07258064516129033,
+        "conv_rate": 0.012096774193548387
       },
       "previous_30d": {
-        "recipients": 357.0,
-        "opens": 221.0,
-        "clicks": 28.0,
+        "recipients": 352.0,
+        "opens": 216.0,
+        "clicks": 27.0,
         "convs": 2.0,
         "rev": 49720.0,
-        "open_rate": 0.6190476190476191,
-        "click_rate": 0.0784313725490196,
-        "conv_rate": 0.0056022408963585435
+        "open_rate": 0.6136363636363636,
+        "click_rate": 0.07670454545454546,
+        "conv_rate": 0.005681818181818182
       },
       "annual": {
         "recipients": 1249.0,
@@ -59,7 +59,7 @@
       "open_alert": "green",
       "wow_alert": "neutral",
       "mom_alert": "green",
-      "rpr_30d": 280.23809523809524
+      "rpr_30d": 284.758064516129
     },
     {
       "flow_id": "SufE4T",
@@ -75,51 +75,51 @@
         "conv_rate": 0.0136986301369863
       },
       "previous_7d": {
-        "recipients": 40.0,
-        "opens": 17.0,
+        "recipients": 43.0,
+        "opens": 16.0,
         "clicks": 3.0,
         "convs": 1.0,
         "rev": 7205.0,
-        "open_rate": 0.425,
-        "click_rate": 0.075,
-        "conv_rate": 0.025
+        "open_rate": 0.37209302325581395,
+        "click_rate": 0.06976744186046512,
+        "conv_rate": 0.023255813953488372
       },
       "current_30d": {
-        "recipients": 350.0,
-        "opens": 97.0,
-        "clicks": 19.0,
-        "convs": 7.0,
-        "rev": 226545.0,
-        "open_rate": 0.27714285714285714,
-        "click_rate": 0.054285714285714284,
-        "conv_rate": 0.02
+        "recipients": 346.0,
+        "opens": 96.0,
+        "clicks": 16.0,
+        "convs": 6.0,
+        "rev": 202345.0,
+        "open_rate": 0.2774566473988439,
+        "click_rate": 0.046242774566473986,
+        "conv_rate": 0.017341040462427744
       },
       "previous_30d": {
-        "recipients": 402.0,
-        "opens": 99.0,
-        "clicks": 22.0,
+        "recipients": 397.0,
+        "opens": 96.0,
+        "clicks": 23.0,
         "convs": 11.0,
         "rev": 224290.0,
-        "open_rate": 0.2462686567164179,
-        "click_rate": 0.05472636815920398,
-        "conv_rate": 0.02736318407960199
+        "open_rate": 0.24181360201511334,
+        "click_rate": 0.05793450881612091,
+        "conv_rate": 0.027707808564231738
       },
       "annual": {
-        "recipients": 1474.0,
-        "opens": 343.0,
+        "recipients": 1478.0,
+        "opens": 344.0,
         "clicks": 67.0,
         "convs": 32.0,
         "rev": 684365.0,
-        "open_rate": 0.2327001356852103,
-        "click_rate": 0.045454545454545456,
-        "conv_rate": 0.021709633649932156
+        "open_rate": 0.2327469553450609,
+        "click_rate": 0.04533152909336942,
+        "conv_rate": 0.02165087956698241
       },
       "wow_pct": 116.79389312977099,
-      "mom_pct": 1.0053948013732221,
+      "mom_pct": -9.784207945071113,
       "open_alert": "green",
       "wow_alert": "green",
-      "mom_alert": "green",
-      "rpr_30d": 647.2714285714286
+      "mom_alert": "yellow",
+      "rpr_30d": 584.8121387283237
     },
     {
       "flow_id": "VLMvyW",
@@ -135,12 +135,12 @@
         "conv_rate": 0.0
       },
       "previous_7d": {
-        "recipients": 2.0,
+        "recipients": 1.0,
         "opens": 1.0,
         "clicks": 0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.5,
+        "open_rate": 1.0,
         "click_rate": 0.0,
         "conv_rate": 0.0
       },
@@ -185,11 +185,11 @@
   "totals": {
     "rev_7d": 15620.0,
     "rev_7d_prev": 7205.0,
-    "rev_30d": 297165.0,
+    "rev_30d": 272965.0,
     "rev_30d_prev": 274010.0,
     "rev_365d": 841885.0,
     "wow_pct": 116.79389312977099,
-    "mom_pct": 8.450421517462866,
+    "mom_pct": -0.38137294259333604,
     "wow_alert": "green",
     "mom_alert": "green"
   },
