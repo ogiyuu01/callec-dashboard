@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6922
+      "count": 7645
     },
     {
       "name": "view_item",
-      "count": 7640
+      "count": 8700
     },
     {
       "name": "add_to_cart",
-      "count": 167
+      "count": 200
     },
     {
       "name": "begin_checkout",
-      "count": 76
+      "count": 92
     },
     {
       "name": "purchase",
-      "count": 38
+      "count": 45
     }
   ],
   "weeks": [
@@ -86,39 +86,45 @@
   "collections": [
     {
       "path": "/collections/24ss",
-      "sessions": 256,
-      "pdp_reached": 102,
-      "pdp_reach": 39.84375
+      "sessions": 268,
+      "pdp_reached": 104,
+      "pdp_reach": 38.80597014925373
     },
     {
       "path": "/collections/all",
-      "sessions": 210,
-      "pdp_reached": 102,
+      "sessions": 245,
+      "pdp_reached": 119,
       "pdp_reach": 48.57142857142857
     },
     {
       "path": "/collections/setup",
-      "sessions": 45,
-      "pdp_reached": 17,
-      "pdp_reach": 37.77777777777778
+      "sessions": 52,
+      "pdp_reached": 20,
+      "pdp_reach": 38.46153846153846
     },
     {
       "path": "/collections/new",
-      "sessions": 43,
-      "pdp_reached": 20,
-      "pdp_reach": 46.51162790697674
-    },
-    {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 37,
-      "pdp_reached": 10,
-      "pdp_reach": 27.027027027027028
+      "sessions": 49,
+      "pdp_reached": 21,
+      "pdp_reach": 42.857142857142854
     },
     {
       "path": "/collections/pants",
+      "sessions": 41,
+      "pdp_reached": 7,
+      "pdp_reach": 17.073170731707318
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 40,
+      "pdp_reached": 10,
+      "pdp_reach": 25.0
+    },
+    {
+      "path": "/collections/t-shirts-pullovers",
       "sessions": 32,
-      "pdp_reached": 6,
-      "pdp_reach": 18.75
+      "pdp_reached": 1,
+      "pdp_reach": 3.125
     }
   ],
   "products_top5": [
@@ -138,14 +144,14 @@
       "revenue": 55000
     },
     {
+      "name": "スマートウォレット",
+      "qty": 3,
+      "revenue": 36300
+    },
+    {
       "name": "KOKAGE/タックパンツ",
       "qty": 2,
       "revenue": 30800
-    },
-    {
-      "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "qty": 5,
-      "revenue": 27500
     }
   ]
 }
