@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7681
+      "count": 6922
     },
     {
       "name": "view_item",
-      "count": 8672
+      "count": 7640
     },
     {
       "name": "add_to_cart",
-      "count": 198
+      "count": 167
     },
     {
       "name": "begin_checkout",
-      "count": 87
+      "count": 76
     },
     {
       "name": "purchase",
-      "count": 45
+      "count": 38
     }
   ],
   "weeks": [
@@ -86,39 +86,39 @@
   "collections": [
     {
       "path": "/collections/24ss",
-      "sessions": 365,
-      "pdp_reached": 139,
-      "pdp_reach": 38.082191780821915
+      "sessions": 256,
+      "pdp_reached": 102,
+      "pdp_reach": 39.84375
     },
     {
       "path": "/collections/all",
-      "sessions": 237,
-      "pdp_reached": 116,
-      "pdp_reach": 48.9451476793249
-    },
-    {
-      "path": "/collections/new",
-      "sessions": 55,
-      "pdp_reached": 25,
-      "pdp_reach": 45.45454545454545
+      "sessions": 210,
+      "pdp_reached": 102,
+      "pdp_reach": 48.57142857142857
     },
     {
       "path": "/collections/setup",
-      "sessions": 50,
+      "sessions": 45,
+      "pdp_reached": 17,
+      "pdp_reach": 37.77777777777778
+    },
+    {
+      "path": "/collections/new",
+      "sessions": 43,
       "pdp_reached": 20,
-      "pdp_reach": 40.0
+      "pdp_reach": 46.51162790697674
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 39,
+      "sessions": 37,
       "pdp_reached": 10,
-      "pdp_reach": 25.641025641025642
+      "pdp_reach": 27.027027027027028
     },
     {
       "path": "/collections/pants",
-      "sessions": 35,
+      "sessions": 32,
       "pdp_reached": 6,
-      "pdp_reach": 17.142857142857142
+      "pdp_reach": 18.75
     }
   ],
   "products_top5": [
@@ -129,8 +129,8 @@
     },
     {
       "name": "KOKAGE/テーラードジャケット",
-      "qty": 6,
-      "revenue": 102850
+      "qty": 5,
+      "revenue": 93500
     },
     {
       "name": "KOKAGE/テーパードパンツ",
@@ -139,13 +139,13 @@
     },
     {
       "name": "KOKAGE/タックパンツ",
-      "qty": 3,
-      "revenue": 46200
+      "qty": 2,
+      "revenue": 30800
     },
     {
-      "name": "【限定30着】CALL YUKATA",
-      "qty": 1,
-      "revenue": 29700
+      "name": "プリント半袖Tシャツ(アート/ウルフ)",
+      "qty": 5,
+      "revenue": 27500
     }
   ]
 }
