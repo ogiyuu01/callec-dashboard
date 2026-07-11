@@ -9,23 +9,23 @@
     "note": ""
   },
   "actual": {
-    "sales": 1139930,
-    "orders": 63
+    "sales": 1246080,
+    "orders": 68
   },
   "projected": {
-    "sales": 3533783,
-    "orders": 195
+    "sales": 3862848,
+    "orders": 210
   },
   "progress": {
-    "sales_pct": 14.2,
-    "orders_pct": 31.5,
-    "projected_sales_pct": 44.2,
-    "projected_orders_pct": 97.5
+    "sales_pct": 15.6,
+    "orders_pct": 34.0,
+    "projected_sales_pct": 48.3,
+    "projected_orders_pct": 105.0
   },
   "remaining": {
-    "sales": 6860070,
-    "orders": 137,
-    "daily_needed_sales": 343003,
-    "daily_needed_orders": 6.85
+    "sales": 6753920,
+    "orders": 132,
+    "daily_needed_sales": 337696,
+    "daily_needed_orders": 6.6
   }
 }
