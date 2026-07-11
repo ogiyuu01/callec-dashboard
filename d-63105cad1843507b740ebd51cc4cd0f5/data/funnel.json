@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7645
+      "count": 5319
     },
     {
       "name": "view_item",
-      "count": 8700
+      "count": 7191
     },
     {
       "name": "add_to_cart",
-      "count": 200
+      "count": 159
     },
     {
       "name": "begin_checkout",
-      "count": 92
+      "count": 79
     },
     {
       "name": "purchase",
-      "count": 45
+      "count": 37
     }
   ],
   "weeks": [
@@ -85,46 +85,46 @@
   ],
   "collections": [
     {
-      "path": "/collections/24ss",
-      "sessions": 268,
-      "pdp_reached": 104,
-      "pdp_reach": 38.80597014925373
+      "path": "/collections/all",
+      "sessions": 222,
+      "pdp_reached": 111,
+      "pdp_reach": 50.0
     },
     {
-      "path": "/collections/all",
-      "sessions": 245,
-      "pdp_reached": 119,
-      "pdp_reach": 48.57142857142857
+      "path": "/collections/24ss",
+      "sessions": 139,
+      "pdp_reached": 58,
+      "pdp_reach": 41.726618705035975
     },
     {
       "path": "/collections/setup",
-      "sessions": 52,
-      "pdp_reached": 20,
-      "pdp_reach": 38.46153846153846
+      "sessions": 44,
+      "pdp_reached": 16,
+      "pdp_reach": 36.36363636363637
     },
     {
       "path": "/collections/new",
-      "sessions": 49,
-      "pdp_reached": 21,
-      "pdp_reach": 42.857142857142854
+      "sessions": 39,
+      "pdp_reached": 15,
+      "pdp_reach": 38.46153846153846
     },
     {
       "path": "/collections/pants",
-      "sessions": 41,
-      "pdp_reached": 7,
-      "pdp_reach": 17.073170731707318
-    },
-    {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 40,
-      "pdp_reached": 10,
-      "pdp_reach": 25.0
+      "sessions": 36,
+      "pdp_reached": 5,
+      "pdp_reach": 13.88888888888889
     },
     {
       "path": "/collections/t-shirts-pullovers",
-      "sessions": 32,
+      "sessions": 31,
       "pdp_reached": 1,
-      "pdp_reach": 3.125
+      "pdp_reach": 3.225806451612903
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 30,
+      "pdp_reached": 9,
+      "pdp_reach": 30.0
     }
   ],
   "products_top5": [
@@ -149,9 +149,9 @@
       "revenue": 36300
     },
     {
-      "name": "KOKAGE/タックパンツ",
+      "name": "トビキリ/ジョガーパンツ",
       "qty": 2,
-      "revenue": 30800
+      "revenue": 26400
     }
   ]
 }
