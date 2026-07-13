@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-07-13 09:06 JST",
+    "fetched_at": "2026-07-13 11:47 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
@@ -72,32 +72,32 @@
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 214,
-    "second_purchase_buyers": 83,
-    "second_purchase_rate": 0.3879,
+    "first_time_buyers": 213,
+    "second_purchase_buyers": 82,
+    "second_purchase_rate": 0.385,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 214,
-        "repeat_buyers": 83,
-        "repeat_rate": 0.3879
+        "first_buyers": 213,
+        "repeat_buyers": 82,
+        "repeat_rate": 0.385
       }
     ],
     "diagnostics": {
       "customers_total": 479,
-      "excluded_too_recent": 265,
+      "excluded_too_recent": 266,
       "excluded_before_lookback": 0,
-      "cohort_members": 214,
+      "cohort_members": 213,
       "repeat_via_pull": 30,
-      "repeat_via_lifetime_only": 53
+      "repeat_via_lifetime_only": 52
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 12.6,
-    "ltv_1y": 22194,
-    "new_orders_7d": 56,
+    "avg_purchase_interval_days": 12.7,
+    "ltv_1y": 22136,
+    "new_orders_7d": 54,
     "repeat_orders_7d": 10,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.5303
+    "free_ship_rate_7d": 0.5312
   }
 }
