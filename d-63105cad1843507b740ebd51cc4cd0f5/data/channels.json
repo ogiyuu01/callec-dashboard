@@ -2,56 +2,56 @@
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 3203,
-      "orders": 15,
-      "sales": 312840,
-      "cvr": 0.004683109584764283
+      "sessions": 3204,
+      "orders": 16,
+      "sales": 274890,
+      "cvr": 0.004993757802746567
     },
     {
       "channel": "Paid Search",
-      "sessions": 1369,
-      "orders": 12,
-      "sales": 242660,
-      "cvr": 0.008765522279035792
+      "sessions": 1360,
+      "orders": 15,
+      "sales": 275000,
+      "cvr": 0.011029411764705883
     },
     {
       "channel": "Organic Search",
-      "sessions": 1362,
+      "sessions": 1354,
       "orders": 13,
-      "sales": 206415,
-      "cvr": 0.009544787077826725
+      "sales": 211915,
+      "cvr": 0.009601181683899557
     },
     {
       "channel": "Other",
-      "sessions": 525,
-      "orders": 4,
-      "sales": 83490,
-      "cvr": 0.007619047619047619
+      "sessions": 580,
+      "orders": 3,
+      "sales": 75790,
+      "cvr": 0.005172413793103448
     },
     {
       "channel": "Referral",
-      "sessions": 401,
-      "orders": 4,
-      "sales": 52525,
-      "cvr": 0.00997506234413965
-    },
-    {
-      "channel": "Email",
-      "sessions": 180,
-      "orders": 1,
-      "sales": 26950,
-      "cvr": 0.005555555555555556
-    },
-    {
-      "channel": "LINE",
-      "sessions": 126,
-      "orders": 1,
-      "sales": 13200,
+      "sessions": 378,
+      "orders": 3,
+      "sales": 46200,
       "cvr": 0.007936507936507936
     },
     {
+      "channel": "Email",
+      "sessions": 182,
+      "orders": 1,
+      "sales": 26950,
+      "cvr": 0.005494505494505495
+    },
+    {
+      "channel": "LINE",
+      "sessions": 123,
+      "orders": 1,
+      "sales": 13200,
+      "cvr": 0.008130081300813009
+    },
+    {
       "channel": "Social",
-      "sessions": 52,
+      "sessions": 46,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
@@ -69,7 +69,8 @@
       "2026-W25",
       "2026-W26",
       "2026-W27",
-      "2026-W28"
+      "2026-W28",
+      "2026-W29"
     ],
     "series": [
       {
@@ -85,7 +86,8 @@
           2491,
           4165,
           5598,
-          3203
+          3203,
+          296
         ]
       },
       {
@@ -101,7 +103,8 @@
           1372,
           1261,
           1383,
-          1369
+          1369,
+          156
         ]
       },
       {
@@ -117,7 +120,8 @@
           1415,
           1334,
           1338,
-          1362
+          1362,
+          157
         ]
       },
       {
@@ -133,7 +137,8 @@
           560,
           527,
           410,
-          401
+          401,
+          38
         ]
       },
       {
@@ -149,7 +154,8 @@
           234,
           302,
           645,
-          525
+          525,
+          125
         ]
       }
     ]
