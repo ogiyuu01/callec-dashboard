@@ -1,8 +1,8 @@
 {
   "month": "2026-07",
   "days_in_month": 31,
-  "days_passed": 14,
-  "days_remaining": 17,
+  "days_passed": 15,
+  "days_remaining": 16,
   "target": {
     "sales": 8000000,
     "orders": 200,
@@ -13,19 +13,19 @@
     "orders": 97
   },
   "projected": {
-    "sales": 4053834,
-    "orders": 231
+    "sales": 3764274,
+    "orders": 214
   },
   "progress": {
     "sales_pct": 21.2,
     "orders_pct": 48.5,
-    "projected_sales_pct": 50.7,
-    "projected_orders_pct": 115.5
+    "projected_sales_pct": 47.1,
+    "projected_orders_pct": 107.0
   },
   "remaining": {
     "sales": 6300005,
     "orders": 103,
-    "daily_needed_sales": 370588,
-    "daily_needed_orders": 6.0588235294117645
+    "daily_needed_sales": 393750,
+    "daily_needed_orders": 6.4375
   }
 }
