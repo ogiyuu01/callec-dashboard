@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-07-15 11:13 JST",
+    "fetched_at": "2026-07-16 09:03 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 237,
-    "returning_customers": 90,
-    "returning_customer_rate": 0.379746835443038,
-    "new_customers": 147
+    "total_customers": 234,
+    "returning_customers": 88,
+    "returning_customer_rate": 0.37606837606837606,
+    "new_customers": 146
   },
   "top_products_28d": [
     {
@@ -25,8 +25,8 @@
     },
     {
       "name": "KOKAGE/テーラードジャケット",
-      "gross_sales": 252450,
-      "orders": 20
+      "gross_sales": 261800,
+      "orders": 21
     },
     {
       "name": "KOKAGE/テーパードパンツ",
@@ -49,55 +49,55 @@
       "orders": 7
     },
     {
+      "name": "メランジクルー半袖Tシャツ",
+      "gross_sales": 112860,
+      "orders": 19
+    },
+    {
       "name": "KOKAGE/TOGARU/タックパンツ",
-      "gross_sales": 100100,
-      "orders": 13
+      "gross_sales": 107800,
+      "orders": 14
     },
     {
       "name": "ソフトツイル刺繍半袖シャツ",
       "gross_sales": 96250,
       "orders": 7
-    },
-    {
-      "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 83160,
-      "orders": 14
     }
   ],
   "totals_28d": {
     "orders": 250,
-    "sales": 4597395
+    "sales": 4584745
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 219,
-    "second_purchase_buyers": 81,
-    "second_purchase_rate": 0.3699,
+    "first_time_buyers": 214,
+    "second_purchase_buyers": 82,
+    "second_purchase_rate": 0.3832,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 219,
-        "repeat_buyers": 81,
-        "repeat_rate": 0.3699
+        "first_buyers": 214,
+        "repeat_buyers": 82,
+        "repeat_rate": 0.3832
       }
     ],
     "diagnostics": {
-      "customers_total": 471,
-      "excluded_too_recent": 252,
+      "customers_total": 464,
+      "excluded_too_recent": 250,
       "excluded_before_lookback": 0,
-      "cohort_members": 219,
-      "repeat_via_pull": 29,
-      "repeat_via_lifetime_only": 52
+      "cohort_members": 214,
+      "repeat_via_pull": 28,
+      "repeat_via_lifetime_only": 54
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 11.8,
-    "ltv_1y": 22151,
-    "new_orders_7d": 50,
+    "avg_purchase_interval_days": 11.6,
+    "ltv_1y": 22083,
+    "new_orders_7d": 49,
     "repeat_orders_7d": 12,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.5323
+    "free_ship_rate_7d": 0.5246
   }
 }
