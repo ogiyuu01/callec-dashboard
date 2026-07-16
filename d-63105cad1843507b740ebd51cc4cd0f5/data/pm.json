@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-07-16 09:03 JST",
+    "generated_at": "2026-07-16 11:27 JST",
     "sources": [
       "Shopify",
       "GA4",
@@ -9,19 +9,19 @@
     ],
     "version": 1
   },
-  "last_updated": "2026-07-16 09:03 JST",
+  "last_updated": "2026-07-16 11:27 JST",
   "alerts": [
     {
       "level": "critical",
       "title": "items / session",
-      "value": "1.15",
+      "value": "1.17",
       "target": "≥1.40 (R001)",
       "source": "GA4"
     },
     {
       "level": "critical",
       "title": "AOV",
-      "value": "¥16,971",
+      "value": "¥16,978",
       "target": "WoW -12.5%",
       "source": "Shopify"
     },
@@ -31,44 +31,37 @@
       "value": "0.4%",
       "target": "≥30% (R002目標)",
       "source": "LINE Customer Link"
-    },
-    {
-      "level": "critical",
-      "title": "Klaviyo データ未取得",
-      "value": "96.0h前 (>48h)",
-      "target": "<26h",
-      "source": "Klaviyo"
     }
   ],
   "scorecard": {
-    "overall_score": 72,
+    "overall_score": 77,
     "pillars": [
       {
         "name": "着地予測",
         "status": "red",
-        "score": 46,
-        "note": "46% 着地見込み",
+        "score": 48,
+        "note": "48% 着地見込み",
         "weight": 40
       },
       {
         "name": "トラフィック品質",
         "status": "green",
-        "score": 88,
-        "note": "CVR 0.66% / items/session 1.15",
+        "score": 90,
+        "note": "CVR 0.67% / items/session 1.17",
         "weight": 20
       },
       {
         "name": "配信ヘルス (Klaviyo)",
         "status": "green",
         "score": 100,
-        "note": "平均開封率 37.0% (tgt ≥25%)",
+        "note": "平均開封率 51.9% (tgt ≥25%)",
         "weight": 20
       },
       {
         "name": "データ鮮度",
         "status": "green",
-        "score": 80,
-        "note": "4ソース平均 80/100",
+        "score": 100,
+        "note": "4ソース平均 100/100",
         "weight": 20
       }
     ]
@@ -76,18 +69,18 @@
   "kpis": [
     {
       "label": "月次売上",
-      "value": "¥1,772,045",
+      "value": "¥1,874,235",
       "sub": "目標 ¥8,000,000 (2026-07)",
-      "progress": 22.2,
+      "progress": 23.4,
       "status": "red",
       "source": "Shopify",
       "target_meta": "2026-07 月次目標"
     },
     {
       "label": "着地予測",
-      "value": "¥3,662,226",
-      "sub": "進捗 46% / 残15日 / 日販 ¥415,197 必要",
-      "progress": 45.8,
+      "value": "¥3,873,419",
+      "sub": "進捗 48% / 残15日 / 日販 ¥408,384 必要",
+      "progress": 48.4,
       "status": "red",
       "source": "Shopify + GDrive",
       "target_meta": "2026-07 着地予測"
@@ -103,19 +96,19 @@
     },
     {
       "label": "CVR (直近7日)",
-      "value": "0.66%",
+      "value": "0.67%",
       "sub": "目標 ≥0.70% (R001目標)",
-      "progress": 94.5,
+      "progress": 96.3,
       "status": "yellow",
       "source": "GA4 × Shopify",
       "target_meta": "R001 改善目標"
     },
     {
       "label": "Klaviyo 寄与売上 (30d)",
-      "value": "¥247,115",
-      "sub": "月次売上比 13.9%",
-      "progress": 13.9,
-      "status": "green",
+      "value": "¥117,645",
+      "sub": "月次売上比 6.3%",
+      "progress": 6.3,
+      "status": "yellow",
       "source": "Klaviyo",
       "target_meta": "目安 月¥150k+"
     },
@@ -133,71 +126,71 @@
     {
       "source": "GA4",
       "status": "green",
-      "last_run": "2026-07-16 09:01",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "last_run": "2026-07-16 11:24",
+      "lag_hours": 0.1,
+      "note": "0.1h前 (今朝以降)"
     },
     {
       "source": "Shopify",
       "status": "green",
-      "last_run": "2026-07-16 09:03",
+      "last_run": "2026-07-16 11:27",
       "lag_hours": 0.0,
       "note": "0.0h前 (今朝以降)"
     },
     {
       "source": "GDrive",
       "status": "green",
-      "last_run": "2026-07-16 09:00",
+      "last_run": "2026-07-16 11:23",
       "lag_hours": 0.1,
       "note": "0.1h前 (今朝以降)"
     },
     {
       "source": "Klaviyo",
-      "status": "red",
-      "last_run": "2026-07-12 09:04",
-      "lag_hours": 96.0,
-      "note": "96.0h前 (>48h)"
+      "status": "green",
+      "last_run": "2026-07-16 11:27",
+      "lag_hours": 0.0,
+      "note": "0.0h前 (今朝以降)"
     }
   ],
   "signals": [
     {
       "metric": "CVR (7d)",
-      "value": "0.66%",
+      "value": "0.67%",
       "target": "≥0.70%",
       "status": "yellow",
       "source": "GA4 × Shopify"
     },
     {
       "metric": "items / session",
-      "value": "1.15",
+      "value": "1.17",
       "target": "≥1.40 (R001)",
       "status": "red",
       "source": "GA4"
     },
     {
       "metric": "AOV",
-      "value": "¥16,971",
+      "value": "¥16,978",
       "target": "WoW -12.5%",
       "status": "red",
       "source": "Shopify"
     },
     {
       "metric": "Cart Abandonment",
-      "value": "76.5%",
+      "value": "76.6%",
       "target": "≤75% (業界 70-80%)",
       "status": "yellow",
       "source": "GA4 funnel"
     },
     {
       "metric": "Klaviyo 平均 open率 (30d)",
-      "value": "37.0%",
+      "value": "51.9%",
       "target": "≥25% (alert <15%)",
       "status": "green",
       "source": "Klaviyo"
     },
     {
       "metric": "改善対象 SKU (PV高ATC低)",
-      "value": "108 SKU",
+      "value": "111 SKU",
       "target": "≤60 green / ≤120 yellow (PDP/コピー改善優先)",
       "status": "yellow",
       "source": "GA4 funnel × Shopify products"
@@ -218,7 +211,7 @@
     },
     {
       "metric": "2回目転換率 (成熟コホート·API)",
-      "value": "38.3%",
+      "value": "37.9%",
       "target": "≥30% green / ≥22.5% yellow (課題ライン22.5%)",
       "status": "green",
       "source": "Shopify 注文履歴コホート(1年)"
@@ -226,60 +219,52 @@
   ],
   "activity": [
     {
-      "ts": "2026-07-16 09:03",
-      "ts_iso": "2026-07-16T09:03:00+09:00",
+      "ts": "2026-07-16 11:27",
+      "ts_iso": "2026-07-16T11:27:00+09:00",
       "source": "Shopify",
       "type": "snapshot",
       "title": "Shopify 28日メトリクス更新 (Repeat率 37.6%)",
       "level": "info"
     },
     {
-      "ts": "2026-07-16 09:01",
-      "ts_iso": "2026-07-16T09:01:00+09:00",
-      "source": "GA4",
-      "type": "snapshot",
-      "title": "GA4 weekly snapshot 取得 (sessions 6655)",
+      "ts": "2026-07-16 11:27",
+      "ts_iso": "2026-07-16T11:27:00+09:00",
+      "source": "Klaviyo",
+      "type": "refresh",
+      "title": "flows 3 件 (寄与売上 ¥117,645/30d)",
       "level": "info"
     },
     {
-      "ts": "2026-07-16 09:01",
-      "ts_iso": "2026-07-16T09:01:00+09:00",
+      "ts": "2026-07-16 11:24",
+      "ts_iso": "2026-07-16T11:24:00+09:00",
+      "source": "GA4",
+      "type": "snapshot",
+      "title": "GA4 weekly snapshot 取得 (sessions 7414)",
+      "level": "info"
+    },
+    {
+      "ts": "2026-07-16 11:24",
+      "ts_iso": "2026-07-16T11:24:00+09:00",
       "source": "GA4",
       "type": "signal",
-      "title": "items/session=1.15 (tgt ≥ 1.40 (R001目標))",
+      "title": "items/session=1.17 (tgt ≥ 1.40 (R001目標))",
       "level": "critical"
     },
     {
-      "ts": "2026-07-16 09:01",
-      "ts_iso": "2026-07-16T09:01:00+09:00",
+      "ts": "2026-07-16 11:24",
+      "ts_iso": "2026-07-16T11:24:00+09:00",
       "source": "GA4",
       "type": "signal",
-      "title": "CVR=0.66% (tgt ≥ 0.70%)",
+      "title": "CVR=0.67% (tgt ≥ 0.70%)",
       "level": "warning"
     },
     {
-      "ts": "2026-07-16 09:00",
-      "ts_iso": "2026-07-16T09:00:28+09:00",
+      "ts": "2026-07-16 11:23",
+      "ts_iso": "2026-07-16T11:23:25+09:00",
       "source": "GDrive",
       "type": "sync",
       "title": "年間計画シート fetched",
       "level": "info"
-    },
-    {
-      "ts": "2026-07-12 09:04",
-      "ts_iso": "2026-07-12T09:04:00+09:00",
-      "source": "Klaviyo",
-      "type": "refresh",
-      "title": "flows 3 件 (寄与売上 ¥247,115/30d)",
-      "level": "info"
-    },
-    {
-      "ts": "2026-07-12 09:04",
-      "ts_iso": "2026-07-12T09:04:00+09:00",
-      "source": "Klaviyo",
-      "type": "alert",
-      "title": "{'level': 'red', 'flow': 'カゴ落ちメール', 'kind': 'wow_drop', 'value': -100.0, 'msg': '売上 WoW -100.0% (前週比 -20% 以下) — リスト健全性 / 件名変更 / 配信時刻を確認'}",
-      "level": "warning"
     }
   ]
 }
