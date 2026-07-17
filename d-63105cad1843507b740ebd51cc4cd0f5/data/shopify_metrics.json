@@ -1,15 +1,15 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-07-16 11:27 JST",
+    "fetched_at": "2026-07-17 09:03 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 234,
-    "returning_customers": 88,
-    "returning_customer_rate": 0.37606837606837606,
+    "total_customers": 233,
+    "returning_customers": 87,
+    "returning_customer_rate": 0.37339055793991416,
     "new_customers": 146
   },
   "top_products_28d": [
@@ -25,23 +25,23 @@
     },
     {
       "name": "KOKAGE/テーラードジャケット",
-      "gross_sales": 261800,
-      "orders": 21
+      "gross_sales": 280500,
+      "orders": 22
     },
     {
       "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 213125,
-      "orders": 21
+      "gross_sales": 226875,
+      "orders": 22
+    },
+    {
+      "name": "無地半袖Tシャツ",
+      "gross_sales": 148500,
+      "orders": 27
     },
     {
       "name": "KOKAGE/ホリゾンタルカラー半袖シャツ",
       "gross_sales": 139150,
       "orders": 22
-    },
-    {
-      "name": "無地半袖Tシャツ",
-      "gross_sales": 137500,
-      "orders": 25
     },
     {
       "name": "TOBIKIRI STRIPE/テーラードジャケット",
@@ -60,44 +60,44 @@
     },
     {
       "name": "ソフトツイル刺繍半袖シャツ",
-      "gross_sales": 96250,
-      "orders": 7
+      "gross_sales": 82500,
+      "orders": 6
     }
   ],
   "totals_28d": {
     "orders": 250,
-    "sales": 4584745
+    "sales": 4552075
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 211,
-    "second_purchase_buyers": 80,
-    "second_purchase_rate": 0.3791,
+    "first_time_buyers": 203,
+    "second_purchase_buyers": 73,
+    "second_purchase_rate": 0.3596,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 211,
-        "repeat_buyers": 80,
-        "repeat_rate": 0.3791
+        "first_buyers": 203,
+        "repeat_buyers": 73,
+        "repeat_rate": 0.3596
       }
     ],
     "diagnostics": {
-      "customers_total": 462,
-      "excluded_too_recent": 251,
+      "customers_total": 456,
+      "excluded_too_recent": 253,
       "excluded_before_lookback": 0,
-      "cohort_members": 211,
+      "cohort_members": 203,
       "repeat_via_pull": 28,
-      "repeat_via_lifetime_only": 52
+      "repeat_via_lifetime_only": 45
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 11.6,
-    "ltv_1y": 21967,
+    "avg_purchase_interval_days": 12.1,
+    "ltv_1y": 22029,
     "new_orders_7d": 47,
     "repeat_orders_7d": 12,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.5254
+    "free_ship_rate_7d": 0.5593
   }
 }
