@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 5180
+      "count": 5814
     },
     {
       "name": "view_item",
-      "count": 6939
+      "count": 7807
     },
     {
       "name": "add_to_cart",
-      "count": 180
+      "count": 201
     },
     {
       "name": "begin_checkout",
-      "count": 83
+      "count": 92
     },
     {
       "name": "purchase",
-      "count": 45
+      "count": 50
     }
   ],
   "weeks": [
@@ -86,51 +86,51 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 195,
-      "pdp_reached": 87,
-      "pdp_reach": 44.61538461538461
-    },
-    {
-      "path": "/collections/t-shirts-pullovers",
-      "sessions": 53,
-      "pdp_reached": 4,
-      "pdp_reach": 7.547169811320755
+      "sessions": 219,
+      "pdp_reached": 97,
+      "pdp_reach": 44.29223744292238
     },
     {
       "path": "/collections/new",
-      "sessions": 51,
-      "pdp_reached": 13,
-      "pdp_reach": 25.49019607843137
+      "sessions": 57,
+      "pdp_reached": 15,
+      "pdp_reach": 26.31578947368421
+    },
+    {
+      "path": "/collections/t-shirts-pullovers",
+      "sessions": 56,
+      "pdp_reached": 5,
+      "pdp_reach": 8.928571428571429
     },
     {
       "path": "/collections/setup",
-      "sessions": 50,
-      "pdp_reached": 25,
-      "pdp_reach": 50.0
+      "sessions": 54,
+      "pdp_reached": 28,
+      "pdp_reach": 51.851851851851855
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 46,
-      "pdp_reached": 17,
-      "pdp_reach": 36.95652173913044
+      "sessions": 54,
+      "pdp_reached": 20,
+      "pdp_reach": 37.03703703703704
     },
     {
       "path": "/collections/shortsleeve-shirts-2",
-      "sessions": 44,
-      "pdp_reached": 7,
-      "pdp_reach": 15.909090909090908
+      "sessions": 48,
+      "pdp_reached": 8,
+      "pdp_reach": 16.666666666666668
     },
     {
       "path": "/collections/24ss",
-      "sessions": 41,
-      "pdp_reached": 13,
-      "pdp_reach": 31.70731707317073
+      "sessions": 46,
+      "pdp_reached": 14,
+      "pdp_reach": 30.434782608695652
     },
     {
       "path": "/collections/pants",
-      "sessions": 30,
+      "sessions": 32,
       "pdp_reached": 5,
-      "pdp_reach": 16.666666666666668
+      "pdp_reach": 15.625
     }
   ],
   "products_top5": [
@@ -150,13 +150,13 @@
       "revenue": 48125
     },
     {
-      "name": "TOBIKIRI STRIPE/テーラードジャケット",
-      "qty": 2,
-      "revenue": 38500
+      "name": "無地半袖Tシャツ",
+      "qty": 8,
+      "revenue": 44000
     },
     {
-      "name": "プリント半袖Tシャツ(フレンチブル)",
-      "qty": 7,
+      "name": "TOBIKIRI STRIPE/テーラードジャケット",
+      "qty": 2,
       "revenue": 38500
     }
   ]
