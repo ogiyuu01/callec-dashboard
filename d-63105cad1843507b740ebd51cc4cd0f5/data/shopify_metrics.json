@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-07-18 11:14 JST",
+    "fetched_at": "2026-07-19 09:04 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 234,
-    "returning_customers": 87,
-    "returning_customer_rate": 0.3717948717948718,
-    "new_customers": 147
+    "total_customers": 233,
+    "returning_customers": 88,
+    "returning_customer_rate": 0.3776824034334764,
+    "new_customers": 145
   },
   "top_products_28d": [
     {
@@ -30,18 +30,18 @@
     },
     {
       "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 213125,
-      "orders": 21
+      "gross_sales": 226875,
+      "orders": 22
+    },
+    {
+      "name": "無地半袖Tシャツ",
+      "gross_sales": 154000,
+      "orders": 28
     },
     {
       "name": "TOBIKIRI STRIPE/テーラードジャケット",
       "gross_sales": 154000,
       "orders": 8
-    },
-    {
-      "name": "無地半袖Tシャツ",
-      "gross_sales": 148500,
-      "orders": 27
     },
     {
       "name": "KOKAGE/ホリゾンタルカラー半袖シャツ",
@@ -66,38 +66,38 @@
   ],
   "totals_28d": {
     "orders": 250,
-    "sales": 4562525
+    "sales": 4594095
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 204,
-    "second_purchase_buyers": 74,
-    "second_purchase_rate": 0.3627,
+    "first_time_buyers": 211,
+    "second_purchase_buyers": 77,
+    "second_purchase_rate": 0.3649,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 204,
-        "repeat_buyers": 74,
-        "repeat_rate": 0.3627
+        "first_buyers": 211,
+        "repeat_buyers": 77,
+        "repeat_rate": 0.3649
       }
     ],
     "diagnostics": {
-      "customers_total": 455,
-      "excluded_too_recent": 251,
+      "customers_total": 459,
+      "excluded_too_recent": 248,
       "excluded_before_lookback": 0,
-      "cohort_members": 204,
-      "repeat_via_pull": 28,
-      "repeat_via_lifetime_only": 46
+      "cohort_members": 211,
+      "repeat_via_pull": 29,
+      "repeat_via_lifetime_only": 48
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 11.4,
-    "ltv_1y": 22006,
-    "new_orders_7d": 43,
-    "repeat_orders_7d": 12,
+    "avg_purchase_interval_days": 11.5,
+    "ltv_1y": 22109,
+    "new_orders_7d": 39,
+    "repeat_orders_7d": 13,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.4909
+    "free_ship_rate_7d": 0.5385
   }
 }

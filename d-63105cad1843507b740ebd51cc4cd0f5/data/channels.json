@@ -2,59 +2,59 @@
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 2013,
-      "orders": 15,
-      "sales": 246290,
-      "cvr": 0.007451564828614009
-    },
-    {
-      "channel": "Organic Search",
-      "sessions": 1280,
-      "orders": 12,
-      "sales": 222585,
-      "cvr": 0.009375
+      "sessions": 1836,
+      "orders": 14,
+      "sales": 232100,
+      "cvr": 0.007625272331154684
     },
     {
       "channel": "Paid Search",
-      "sessions": 1269,
+      "sessions": 1257,
       "orders": 17,
-      "sales": 314875,
-      "cvr": 0.013396375098502758
+      "sales": 300685,
+      "cvr": 0.013524264120922832
+    },
+    {
+      "channel": "Organic Search",
+      "sessions": 1227,
+      "orders": 12,
+      "sales": 224620,
+      "cvr": 0.009779951100244499
     },
     {
       "channel": "Other",
-      "sessions": 621,
+      "sessions": 536,
       "orders": 1,
-      "sales": 13200,
-      "cvr": 0.001610305958132045
+      "sales": 39600,
+      "cvr": 0.0018656716417910447
     },
     {
       "channel": "Referral",
-      "sessions": 372,
-      "orders": 3,
-      "sales": 46200,
-      "cvr": 0.008064516129032258
+      "sessions": 334,
+      "orders": 2,
+      "sales": 34100,
+      "cvr": 0.005988023952095809
     },
     {
       "channel": "Email",
-      "sessions": 142,
-      "orders": 1,
-      "sales": 26950,
-      "cvr": 0.007042253521126761
+      "sessions": 151,
+      "orders": 0,
+      "sales": 0,
+      "cvr": 0.0
     },
     {
       "channel": "Social",
-      "sessions": 59,
+      "sessions": 66,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
     },
     {
       "channel": "LINE",
-      "sessions": 58,
+      "sessions": 48,
       "orders": 1,
       "sales": 13200,
-      "cvr": 0.017241379310344827
+      "cvr": 0.020833333333333332
     }
   ],
   "trend": {
@@ -87,7 +87,7 @@
           4165,
           5598,
           3203,
-          1256
+          1506
         ]
       },
       {
@@ -104,7 +104,7 @@
           1261,
           1383,
           1369,
-          842
+          1052
         ]
       },
       {
@@ -121,7 +121,7 @@
           1334,
           1338,
           1362,
-          796
+          984
         ]
       },
       {
@@ -138,7 +138,7 @@
           527,
           410,
           401,
-          197
+          258
         ]
       },
       {
@@ -155,7 +155,7 @@
           302,
           645,
           525,
-          418
+          456
         ]
       }
     ]
