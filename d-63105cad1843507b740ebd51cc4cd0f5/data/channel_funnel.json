@@ -1,94 +1,94 @@
 {
   "period": {
-    "start": "2026-07-05",
-    "end": "2026-07-18"
+    "start": "2026-07-06",
+    "end": "2026-07-19"
   },
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 5104,
-      "pdp": 1849,
-      "atc": 72,
+      "sessions": 4999,
+      "pdp": 1803,
+      "atc": 73,
       "co": 43,
-      "buy": 26,
-      "pdp_rate": 36.2,
-      "atc_rate": 1.41,
-      "cvr": 0.509
+      "buy": 27,
+      "pdp_rate": 36.1,
+      "atc_rate": 1.46,
+      "cvr": 0.54
     },
     {
       "channel": "Paid Search",
-      "sessions": 2696,
-      "pdp": 1213,
-      "atc": 53,
-      "co": 29,
+      "sessions": 2633,
+      "pdp": 1192,
+      "atc": 51,
+      "co": 28,
       "buy": 27,
-      "pdp_rate": 45.0,
-      "atc_rate": 1.97,
-      "cvr": 1.001
+      "pdp_rate": 45.3,
+      "atc_rate": 1.94,
+      "cvr": 1.025
     },
     {
       "channel": "Organic Search",
-      "sessions": 2561,
-      "pdp": 1239,
-      "atc": 47,
+      "sessions": 2575,
+      "pdp": 1271,
+      "atc": 48,
       "co": 35,
-      "buy": 24,
-      "pdp_rate": 48.4,
-      "atc_rate": 1.84,
-      "cvr": 0.937
+      "buy": 23,
+      "pdp_rate": 49.4,
+      "atc_rate": 1.86,
+      "cvr": 0.893
     },
     {
       "channel": "Other",
-      "sessions": 1026,
-      "pdp": 407,
-      "atc": 12,
-      "co": 3,
-      "buy": 6,
-      "pdp_rate": 39.7,
-      "atc_rate": 1.17,
-      "cvr": 0.585
+      "sessions": 1049,
+      "pdp": 405,
+      "atc": 11,
+      "co": 2,
+      "buy": 5,
+      "pdp_rate": 38.6,
+      "atc_rate": 1.05,
+      "cvr": 0.477
     },
     {
       "channel": "Referral",
-      "sessions": 738,
-      "pdp": 266,
-      "atc": 11,
-      "co": 6,
-      "buy": 5,
-      "pdp_rate": 36.0,
-      "atc_rate": 1.49,
-      "cvr": 0.678
+      "sessions": 725,
+      "pdp": 250,
+      "atc": 8,
+      "co": 3,
+      "buy": 4,
+      "pdp_rate": 34.5,
+      "atc_rate": 1.1,
+      "cvr": 0.552
     },
     {
       "channel": "Email",
-      "sessions": 338,
-      "pdp": 139,
-      "atc": 6,
+      "sessions": 359,
+      "pdp": 146,
+      "atc": 5,
       "co": 2,
       "buy": 1,
-      "pdp_rate": 41.1,
-      "atc_rate": 1.78,
-      "cvr": 0.296
+      "pdp_rate": 40.7,
+      "atc_rate": 1.39,
+      "cvr": 0.279
     },
     {
       "channel": "LINE",
-      "sessions": 174,
-      "pdp": 66,
+      "sessions": 172,
+      "pdp": 65,
       "atc": 1,
       "co": 1,
       "buy": 1,
-      "pdp_rate": 37.9,
-      "atc_rate": 0.57,
-      "cvr": 0.575
+      "pdp_rate": 37.8,
+      "atc_rate": 0.58,
+      "cvr": 0.581
     },
     {
       "channel": "Social",
-      "sessions": 111,
-      "pdp": 45,
+      "sessions": 119,
+      "pdp": 49,
       "atc": 0,
       "co": 0,
       "buy": 0,
-      "pdp_rate": 40.5,
+      "pdp_rate": 41.2,
       "atc_rate": 0.0,
       "cvr": 0.0
     }
