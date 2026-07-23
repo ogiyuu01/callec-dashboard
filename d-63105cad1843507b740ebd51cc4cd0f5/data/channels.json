@@ -2,56 +2,56 @@
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 1482,
-      "orders": 12,
-      "sales": 291170,
-      "cvr": 0.008097165991902834
-    },
-    {
-      "channel": "Organic Search",
-      "sessions": 1169,
-      "orders": 8,
-      "sales": 164780,
-      "cvr": 0.006843455945252352
+      "sessions": 1739,
+      "orders": 14,
+      "sales": 326920,
+      "cvr": 0.008050603795284647
     },
     {
       "channel": "Paid Search",
-      "sessions": 1160,
-      "orders": 7,
-      "sales": 131505,
-      "cvr": 0.00603448275862069
+      "sessions": 1326,
+      "orders": 10,
+      "sales": 218185,
+      "cvr": 0.007541478129713424
+    },
+    {
+      "channel": "Organic Search",
+      "sessions": 1325,
+      "orders": 10,
+      "sales": 203170,
+      "cvr": 0.007547169811320755
     },
     {
       "channel": "Referral",
-      "sessions": 388,
+      "sessions": 462,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
     },
     {
       "channel": "Other",
-      "sessions": 238,
+      "sessions": 288,
       "orders": 1,
       "sales": 39600,
-      "cvr": 0.004201680672268907
+      "cvr": 0.003472222222222222
     },
     {
       "channel": "Email",
-      "sessions": 114,
+      "sessions": 138,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
     },
     {
       "channel": "Social",
-      "sessions": 55,
+      "sessions": 63,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
     },
     {
       "channel": "LINE",
-      "sessions": 28,
+      "sessions": 35,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
@@ -89,7 +89,7 @@
           5598,
           3203,
           1796,
-          484
+          741
         ]
       },
       {
@@ -107,7 +107,7 @@
           1383,
           1369,
           1264,
-          389
+          555
         ]
       },
       {
@@ -125,7 +125,7 @@
           1338,
           1362,
           1213,
-          439
+          595
         ]
       },
       {
@@ -143,7 +143,7 @@
           410,
           401,
           324,
-          196
+          270
         ]
       },
       {
@@ -161,7 +161,7 @@
           645,
           525,
           524,
-          78
+          128
         ]
       }
     ]
