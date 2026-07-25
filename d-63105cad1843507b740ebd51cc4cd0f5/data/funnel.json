@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7219
+      "count": 6585
     },
     {
       "name": "view_item",
-      "count": 9946
+      "count": 9077
     },
     {
       "name": "add_to_cart",
-      "count": 181
+      "count": 160
     },
     {
       "name": "begin_checkout",
-      "count": 62
+      "count": 53
     },
     {
       "name": "purchase",
-      "count": 37
+      "count": 32
     }
   ],
   "weeks": [
@@ -92,9 +92,9 @@
     },
     {
       "path": "/collections/all",
-      "sessions": 225,
-      "pdp_reached": 91,
-      "pdp_reach": 40.44444444444444
+      "sessions": 201,
+      "pdp_reached": 81,
+      "pdp_reach": 40.298507462686565
     },
     {
       "path": "/collections/2026aw-s",
@@ -104,45 +104,39 @@
     },
     {
       "path": "/collections/new",
-      "sessions": 60,
-      "pdp_reached": 20,
+      "sessions": 54,
+      "pdp_reached": 18,
       "pdp_reach": 33.333333333333336
     },
     {
       "path": "/collections/pants",
-      "sessions": 38,
-      "pdp_reached": 14,
-      "pdp_reach": 36.8421052631579
-    },
-    {
-      "path": "/collections/setup",
       "sessions": 36,
       "pdp_reached": 14,
       "pdp_reach": 38.888888888888886
     },
     {
-      "path": "/collections/shortsleeve-shirts-2",
-      "sessions": 36,
-      "pdp_reached": 5,
-      "pdp_reach": 13.88888888888889
+      "path": "/collections/setup",
+      "sessions": 32,
+      "pdp_reached": 11,
+      "pdp_reach": 34.375
     },
     {
-      "path": "/collections/tops",
-      "sessions": 31,
-      "pdp_reached": 12,
-      "pdp_reach": 38.70967741935484
+      "path": "/collections/shortsleeve-shirts-2",
+      "sessions": 32,
+      "pdp_reached": 4,
+      "pdp_reach": 12.5
     }
   ],
   "products_top5": [
     {
-      "name": "無地半袖Tシャツ",
-      "qty": 14,
-      "revenue": 77000
-    },
-    {
       "name": "KOKAGE/テーパードパンツ",
       "qty": 5,
       "revenue": 68750
+    },
+    {
+      "name": "無地半袖Tシャツ",
+      "qty": 12,
+      "revenue": 66000
     },
     {
       "name": "無地長袖Tシャツ",
@@ -155,8 +149,8 @@
       "revenue": 33000
     },
     {
-      "name": "KOKAGE/オーバー半袖プルオーバー",
-      "qty": 3,
+      "name": "【残り10着】CALL YUKATA",
+      "qty": 1,
       "revenue": 29700
     }
   ]

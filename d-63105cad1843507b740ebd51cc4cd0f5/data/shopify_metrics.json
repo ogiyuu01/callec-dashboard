@@ -1,22 +1,27 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-07-24 11:29 JST",
+    "fetched_at": "2026-07-25 09:05 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 231,
+    "total_customers": 233,
     "returning_customers": 92,
-    "returning_customer_rate": 0.39826839826839827,
-    "new_customers": 139
+    "returning_customer_rate": 0.3948497854077253,
+    "new_customers": 141
   },
   "top_products_28d": [
     {
       "name": "KOKAGE/テーラードジャケット",
-      "gross_sales": 317900,
-      "orders": 24
+      "gross_sales": 336600,
+      "orders": 25
+    },
+    {
+      "name": "KOKAGE/テーパードパンツ",
+      "gross_sales": 281875,
+      "orders": 26
     },
     {
       "name": "無重力リュック(第5世代)",
@@ -24,19 +29,14 @@
       "orders": 10
     },
     {
-      "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 226875,
-      "orders": 22
+      "name": "無地半袖Tシャツ",
+      "gross_sales": 198000,
+      "orders": 36
     },
     {
       "name": "【限定30着】CALL YUKATA",
-      "gross_sales": 207900,
-      "orders": 7
-    },
-    {
-      "name": "無地半袖Tシャツ",
-      "gross_sales": 165000,
-      "orders": 30
+      "gross_sales": 148500,
+      "orders": 5
     },
     {
       "name": "KOKAGE/ホリゾンタルカラー半袖シャツ",
@@ -55,49 +55,49 @@
     },
     {
       "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 100980,
-      "orders": 17
+      "gross_sales": 106920,
+      "orders": 18
     },
     {
       "name": "無地長袖Tシャツ",
-      "gross_sales": 100980,
-      "orders": 17
+      "gross_sales": 106920,
+      "orders": 18
     }
   ],
   "totals_28d": {
     "orders": 250,
-    "sales": 4571270
+    "sales": 4559390
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 204,
-    "second_purchase_buyers": 70,
-    "second_purchase_rate": 0.3431,
+    "first_time_buyers": 213,
+    "second_purchase_buyers": 74,
+    "second_purchase_rate": 0.3474,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 204,
-        "repeat_buyers": 70,
-        "repeat_rate": 0.3431
+        "first_buyers": 213,
+        "repeat_buyers": 74,
+        "repeat_rate": 0.3474
       }
     ],
     "diagnostics": {
-      "customers_total": 457,
-      "excluded_too_recent": 253,
+      "customers_total": 460,
+      "excluded_too_recent": 247,
       "excluded_before_lookback": 0,
-      "cohort_members": 204,
-      "repeat_via_pull": 22,
-      "repeat_via_lifetime_only": 48
+      "cohort_members": 213,
+      "repeat_via_pull": 23,
+      "repeat_via_lifetime_only": 51
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 10.5,
-    "ltv_1y": 21657,
-    "new_orders_7d": 41,
+    "avg_purchase_interval_days": 10.2,
+    "ltv_1y": 21587,
+    "new_orders_7d": 40,
     "repeat_orders_7d": 5,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.6087
+    "free_ship_rate_7d": 0.6667
   }
 }
