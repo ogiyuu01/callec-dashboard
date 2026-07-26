@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8468
+      "count": 8676
     },
     {
       "name": "view_item",
-      "count": 10993
+      "count": 11611
     },
     {
       "name": "add_to_cart",
-      "count": 203
+      "count": 202
     },
     {
       "name": "begin_checkout",
-      "count": 59
+      "count": 55
     },
     {
       "name": "purchase",
-      "count": 38
+      "count": 36
     }
   ],
   "weeks": [
@@ -86,15 +86,15 @@
   "collections": [
     {
       "path": "/collections/2026aw",
-      "sessions": 1384,
-      "pdp_reached": 612,
-      "pdp_reach": 44.21965317919075
+      "sessions": 1461,
+      "pdp_reached": 644,
+      "pdp_reach": 44.07939767282683
     },
     {
       "path": "/collections/all",
-      "sessions": 230,
-      "pdp_reached": 94,
-      "pdp_reach": 40.869565217391305
+      "sessions": 229,
+      "pdp_reached": 97,
+      "pdp_reach": 42.35807860262009
     },
     {
       "path": "/collections/2026aw-s",
@@ -104,44 +104,45 @@
     },
     {
       "path": "/collections/new",
-      "sessions": 57,
-      "pdp_reached": 21,
-      "pdp_reach": 36.8421052631579
-    },
-    {
-      "path": "/collections/pants",
-      "sessions": 39,
-      "pdp_reached": 14,
-      "pdp_reach": 35.8974358974359
+      "sessions": 50,
+      "pdp_reached": 19,
+      "pdp_reach": 38.0
     },
     {
       "path": "/collections/setup",
-      "sessions": 38,
-      "pdp_reached": 12,
-      "pdp_reach": 31.57894736842105
+      "sessions": 40,
+      "pdp_reached": 14,
+      "pdp_reach": 35.0
     },
     {
       "path": "/collections/shortsleeve-shirts-2",
-      "sessions": 34,
-      "pdp_reached": 5,
-      "pdp_reach": 14.705882352941176
+      "sessions": 37,
+      "pdp_reached": 6,
+      "pdp_reach": 16.216216216216218
+    },
+    {
+      "path": "/collections/pants",
+      "sessions": 37,
+      "pdp_reached": 12,
+      "pdp_reach": 32.432432432432435
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 31,
+      "pdp_reached": 13,
+      "pdp_reach": 41.935483870967744
     }
   ],
   "products_top5": [
     {
-      "name": "無地半袖Tシャツ",
-      "qty": 13,
-      "revenue": 71500
-    },
-    {
       "name": "KOKAGE/テーパードパンツ",
-      "qty": 5,
-      "revenue": 68750
+      "qty": 6,
+      "revenue": 82500
     },
     {
-      "name": "【残り10着】CALL YUKATA",
-      "qty": 2,
-      "revenue": 59400
+      "name": "無地半袖Tシャツ",
+      "qty": 11,
+      "revenue": 60500
     },
     {
       "name": "メランジクルー半袖Tシャツ",
@@ -149,9 +150,14 @@
       "revenue": 35640
     },
     {
-      "name": "無地長袖Tシャツ",
-      "qty": 6,
-      "revenue": 35640
+      "name": "ハイストレッチホリゾンタル半袖シャツ",
+      "qty": 3,
+      "revenue": 33000
+    },
+    {
+      "name": "【残り10着】CALL YUKATA",
+      "qty": 1,
+      "revenue": 29700
     }
   ]
 }

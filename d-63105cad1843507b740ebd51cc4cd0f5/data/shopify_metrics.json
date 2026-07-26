@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-07-25 11:27 JST",
+    "fetched_at": "2026-07-26 09:03 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 233,
+    "total_customers": 234,
     "returning_customers": 92,
-    "returning_customer_rate": 0.3948497854077253,
-    "new_customers": 141
+    "returning_customer_rate": 0.39316239316239315,
+    "new_customers": 142
   },
   "top_products_28d": [
     {
@@ -30,13 +30,8 @@
     },
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 198000,
-      "orders": 36
-    },
-    {
-      "name": "【限定30着】CALL YUKATA",
-      "gross_sales": 148500,
-      "orders": 5
+      "gross_sales": 203500,
+      "orders": 37
     },
     {
       "name": "KOKAGE/ホリゾンタルカラー半袖シャツ",
@@ -49,55 +44,60 @@
       "orders": 7
     },
     {
+      "name": "メランジクルー半袖Tシャツ",
+      "gross_sales": 112860,
+      "orders": 19
+    },
+    {
       "name": "KOKAGE/TOGARU/タックパンツ",
       "gross_sales": 107800,
       "orders": 14
     },
     {
-      "name": "メランジクルー半袖Tシャツ",
+      "name": "無地長袖Tシャツ",
       "gross_sales": 106920,
       "orders": 18
     },
     {
-      "name": "無地長袖Tシャツ",
-      "gross_sales": 106920,
-      "orders": 18
+      "name": "TOBIKIRI STRIPE/開襟半袖シャツ",
+      "gross_sales": 92400,
+      "orders": 7
     }
   ],
   "totals_28d": {
     "orders": 250,
-    "sales": 4559390
+    "sales": 4523310
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 213,
-    "second_purchase_buyers": 74,
-    "second_purchase_rate": 0.3474,
+    "first_time_buyers": 209,
+    "second_purchase_buyers": 72,
+    "second_purchase_rate": 0.3445,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 213,
-        "repeat_buyers": 74,
-        "repeat_rate": 0.3474
+        "first_buyers": 209,
+        "repeat_buyers": 72,
+        "repeat_rate": 0.3445
       }
     ],
     "diagnostics": {
-      "customers_total": 460,
-      "excluded_too_recent": 247,
+      "customers_total": 458,
+      "excluded_too_recent": 249,
       "excluded_before_lookback": 0,
-      "cohort_members": 213,
+      "cohort_members": 209,
       "repeat_via_pull": 23,
-      "repeat_via_lifetime_only": 51
+      "repeat_via_lifetime_only": 49
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 10.2,
-    "ltv_1y": 21574,
-    "new_orders_7d": 41,
+    "avg_purchase_interval_days": 10.3,
+    "ltv_1y": 21582,
+    "new_orders_7d": 42,
     "repeat_orders_7d": 4,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.6889
+    "free_ship_rate_7d": 0.6739
   }
 }
