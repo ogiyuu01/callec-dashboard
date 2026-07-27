@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-07-26 11:34 JST",
+    "fetched_at": "2026-07-27 09:02 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
     "total_customers": 234,
-    "returning_customers": 92,
-    "returning_customer_rate": 0.39316239316239315,
-    "new_customers": 142
+    "returning_customers": 91,
+    "returning_customer_rate": 0.3888888888888889,
+    "new_customers": 143
   },
   "top_products_28d": [
     {
@@ -30,8 +30,8 @@
     },
     {
       "name": "無地半袖Tシャツ",
-      "gross_sales": 203500,
-      "orders": 37
+      "gross_sales": 187000,
+      "orders": 34
     },
     {
       "name": "KOKAGE/ホリゾンタルカラー半袖シャツ",
@@ -66,38 +66,38 @@
   ],
   "totals_28d": {
     "orders": 250,
-    "sales": 4523310
+    "sales": 4557410
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 208,
-    "second_purchase_buyers": 73,
-    "second_purchase_rate": 0.351,
+    "first_time_buyers": 210,
+    "second_purchase_buyers": 72,
+    "second_purchase_rate": 0.3429,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 208,
-        "repeat_buyers": 73,
-        "repeat_rate": 0.351
+        "first_buyers": 210,
+        "repeat_buyers": 72,
+        "repeat_rate": 0.3429
       }
     ],
     "diagnostics": {
-      "customers_total": 457,
+      "customers_total": 459,
       "excluded_too_recent": 249,
       "excluded_before_lookback": 0,
-      "cohort_members": 208,
-      "repeat_via_pull": 24,
-      "repeat_via_lifetime_only": 49
+      "cohort_members": 210,
+      "repeat_via_pull": 25,
+      "repeat_via_lifetime_only": 47
     }
   },
   "crm": {
     "avg_purchase_interval_days": 10.3,
-    "ltv_1y": 21589,
-    "new_orders_7d": 43,
-    "repeat_orders_7d": 4,
+    "ltv_1y": 21564,
+    "new_orders_7d": 44,
+    "repeat_orders_7d": 3,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.6596
+    "free_ship_rate_7d": 0.6809
   }
 }
