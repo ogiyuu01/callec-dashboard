@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8555
+      "count": 7850
     },
     {
       "name": "view_item",
-      "count": 11626
+      "count": 10774
     },
     {
       "name": "add_to_cart",
-      "count": 199
+      "count": 180
     },
     {
       "name": "begin_checkout",
-      "count": 57
+      "count": 53
     },
     {
       "name": "purchase",
-      "count": 40
+      "count": 37
     }
   ],
   "weeks": [
@@ -92,9 +92,9 @@
     },
     {
       "path": "/collections/all",
-      "sessions": 250,
-      "pdp_reached": 114,
-      "pdp_reach": 45.6
+      "sessions": 224,
+      "pdp_reached": 101,
+      "pdp_reach": 45.089285714285715
     },
     {
       "path": "/collections/2026aw-s",
@@ -104,39 +104,33 @@
     },
     {
       "path": "/collections/setup",
-      "sessions": 56,
-      "pdp_reached": 18,
-      "pdp_reach": 32.142857142857146
-    },
-    {
-      "path": "/collections/shortsleeve-shirts-2",
-      "sessions": 36,
-      "pdp_reached": 5,
-      "pdp_reach": 13.88888888888889
+      "sessions": 54,
+      "pdp_reached": 17,
+      "pdp_reach": 31.48148148148148
     },
     {
       "path": "/collections/t-shirts-pullovers",
-      "sessions": 35,
+      "sessions": 30,
       "pdp_reached": 3,
-      "pdp_reach": 8.571428571428571
+      "pdp_reach": 10.0
     },
     {
-      "path": "/collections/shortsleeve-t-shirts-2",
+      "path": "/collections/shortsleeve-shirts-2",
       "sessions": 30,
-      "pdp_reached": 11,
-      "pdp_reach": 36.666666666666664
+      "pdp_reached": 5,
+      "pdp_reach": 16.666666666666668
     }
   ],
   "products_top5": [
     {
-      "name": "KOKAGE/テーパードパンツ",
-      "qty": 6,
-      "revenue": 82500
-    },
-    {
       "name": "無地半袖Tシャツ",
       "qty": 13,
       "revenue": 71500
+    },
+    {
+      "name": "KOKAGE/テーパードパンツ",
+      "qty": 5,
+      "revenue": 68750
     },
     {
       "name": "【残り10着】CALL YUKATA",
