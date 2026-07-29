@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7850
+      "count": 8453
     },
     {
       "name": "view_item",
-      "count": 10774
+      "count": 11638
     },
     {
       "name": "add_to_cart",
-      "count": 180
+      "count": 198
     },
     {
       "name": "begin_checkout",
-      "count": 53
+      "count": 58
     },
     {
       "name": "purchase",
-      "count": 37
+      "count": 41
     }
   ],
   "weeks": [
@@ -86,39 +86,39 @@
   "collections": [
     {
       "path": "/collections/2026aw",
-      "sessions": 1546,
-      "pdp_reached": 676,
-      "pdp_reach": 43.72574385510996
+      "sessions": 1581,
+      "pdp_reached": 689,
+      "pdp_reach": 43.58001265022138
     },
     {
       "path": "/collections/all",
-      "sessions": 224,
-      "pdp_reached": 101,
-      "pdp_reach": 45.089285714285715
+      "sessions": 238,
+      "pdp_reached": 110,
+      "pdp_reach": 46.21848739495798
     },
     {
       "path": "/collections/2026aw-s",
-      "sessions": 118,
-      "pdp_reached": 47,
-      "pdp_reach": 39.83050847457627
+      "sessions": 119,
+      "pdp_reached": 48,
+      "pdp_reach": 40.33613445378151
     },
     {
       "path": "/collections/setup",
-      "sessions": 54,
+      "sessions": 55,
       "pdp_reached": 17,
-      "pdp_reach": 31.48148148148148
+      "pdp_reach": 30.90909090909091
     },
     {
       "path": "/collections/t-shirts-pullovers",
-      "sessions": 30,
+      "sessions": 35,
       "pdp_reached": 3,
-      "pdp_reach": 10.0
+      "pdp_reach": 8.571428571428571
     },
     {
       "path": "/collections/shortsleeve-shirts-2",
-      "sessions": 30,
+      "sessions": 33,
       "pdp_reached": 5,
-      "pdp_reach": 16.666666666666668
+      "pdp_reach": 15.151515151515152
     }
   ],
   "products_top5": [
@@ -138,14 +138,14 @@
       "revenue": 59400
     },
     {
+      "name": "KOKAGE/切り替えハーフパンツ",
+      "qty": 4,
+      "revenue": 52800
+    },
+    {
       "name": "メランジクルー半袖Tシャツ",
       "qty": 6,
       "revenue": 35640
-    },
-    {
-      "name": "KOKAGE/オーバー半袖プルオーバー",
-      "qty": 3,
-      "revenue": 29700
     }
   ]
 }
