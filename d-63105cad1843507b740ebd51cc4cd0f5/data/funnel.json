@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8453
+      "count": 7711
     },
     {
       "name": "view_item",
-      "count": 11638
+      "count": 10625
     },
     {
       "name": "add_to_cart",
-      "count": 198
+      "count": 174
     },
     {
       "name": "begin_checkout",
-      "count": 58
+      "count": 47
     },
     {
       "name": "purchase",
-      "count": 41
+      "count": 34
     }
   ],
   "weeks": [
@@ -86,15 +86,15 @@
   "collections": [
     {
       "path": "/collections/2026aw",
-      "sessions": 1581,
-      "pdp_reached": 689,
-      "pdp_reach": 43.58001265022138
+      "sessions": 1579,
+      "pdp_reached": 688,
+      "pdp_reach": 43.57188093730209
     },
     {
       "path": "/collections/all",
-      "sessions": 238,
-      "pdp_reached": 110,
-      "pdp_reach": 46.21848739495798
+      "sessions": 203,
+      "pdp_reached": 96,
+      "pdp_reach": 47.29064039408867
     },
     {
       "path": "/collections/2026aw-s",
@@ -104,34 +104,12 @@
     },
     {
       "path": "/collections/setup",
-      "sessions": 55,
-      "pdp_reached": 17,
-      "pdp_reach": 30.90909090909091
-    },
-    {
-      "path": "/collections/t-shirts-pullovers",
-      "sessions": 35,
-      "pdp_reached": 3,
-      "pdp_reach": 8.571428571428571
-    },
-    {
-      "path": "/collections/shortsleeve-shirts-2",
-      "sessions": 33,
-      "pdp_reached": 5,
-      "pdp_reach": 15.151515151515152
+      "sessions": 50,
+      "pdp_reached": 15,
+      "pdp_reach": 30.0
     }
   ],
   "products_top5": [
-    {
-      "name": "無地半袖Tシャツ",
-      "qty": 13,
-      "revenue": 71500
-    },
-    {
-      "name": "KOKAGE/テーパードパンツ",
-      "qty": 5,
-      "revenue": 68750
-    },
     {
       "name": "【残り10着】CALL YUKATA",
       "qty": 2,
@@ -143,9 +121,19 @@
       "revenue": 52800
     },
     {
-      "name": "メランジクルー半袖Tシャツ",
+      "name": "無地半袖Tシャツ",
       "qty": 6,
-      "revenue": 35640
+      "revenue": 33000
+    },
+    {
+      "name": "SAISENTAKU/7ゲージ中綿ニットジャケット",
+      "qty": 1,
+      "revenue": 28600
+    },
+    {
+      "name": "KOKAGE/テーパードパンツ",
+      "qty": 2,
+      "revenue": 27500
     }
   ]
 }
