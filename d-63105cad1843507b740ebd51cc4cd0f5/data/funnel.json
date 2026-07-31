@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 9480
+      "count": 6987
     },
     {
       "name": "view_item",
-      "count": 12218
+      "count": 8642
     },
     {
       "name": "add_to_cart",
-      "count": 204
+      "count": 168
     },
     {
       "name": "begin_checkout",
-      "count": 63
+      "count": 49
     },
     {
       "name": "purchase",
-      "count": 39
+      "count": 30
     }
   ],
   "weeks": [
@@ -85,46 +85,46 @@
   ],
   "collections": [
     {
-      "path": "/collections/2026aw",
-      "sessions": 1613,
-      "pdp_reached": 694,
-      "pdp_reach": 43.02541847489151
-    },
-    {
       "path": "/collections/2026-07-29",
       "sessions": 721,
       "pdp_reached": 251,
       "pdp_reach": 34.8127600554785
     },
     {
-      "path": "/collections/all",
-      "sessions": 262,
-      "pdp_reached": 115,
-      "pdp_reach": 43.89312977099237
+      "path": "/collections/2026aw",
+      "sessions": 472,
+      "pdp_reached": 179,
+      "pdp_reach": 37.92372881355932
     },
     {
-      "path": "/collections/2026aw-s",
-      "sessions": 120,
-      "pdp_reached": 48,
-      "pdp_reach": 40.0
+      "path": "/collections/all",
+      "sessions": 217,
+      "pdp_reached": 99,
+      "pdp_reach": 45.6221198156682
     },
     {
       "path": "/collections/setup",
-      "sessions": 58,
+      "sessions": 53,
       "pdp_reached": 18,
-      "pdp_reach": 31.03448275862069
+      "pdp_reach": 33.9622641509434
     },
     {
       "path": "/collections/t-shirts-pullovers",
-      "sessions": 35,
+      "sessions": 33,
       "pdp_reached": 3,
-      "pdp_reach": 8.571428571428571
+      "pdp_reach": 9.090909090909092
+    },
+    {
+      "path": "/collections/2026aw-s",
+      "sessions": 31,
+      "pdp_reached": 12,
+      "pdp_reach": 38.70967741935484
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 31,
-      "pdp_reached": 11,
-      "pdp_reach": 35.483870967741936
+      "sessions": 30,
+      "pdp_reached": 10,
+      "pdp_reach": 33.333333333333336
     }
   ],
   "products_top5": [
@@ -144,14 +144,14 @@
       "revenue": 33000
     },
     {
-      "name": "TOBIKIRI STRIPE/切り替え五分袖プルオーバー",
-      "qty": 3,
-      "revenue": 31350
+      "name": "プリント半袖Tシャツ(フレンチブル)",
+      "qty": 5,
+      "revenue": 27500
     },
     {
-      "name": "SAISENTAKU/7ゲージ中綿ニットジャケット",
-      "qty": 1,
-      "revenue": 28600
+      "name": "KOKAGE/テーパードパンツ",
+      "qty": 2,
+      "revenue": 27500
     }
   ]
 }
