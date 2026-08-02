@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 5878
+      "count": 6210
     },
     {
       "name": "view_item",
-      "count": 7524
+      "count": 7109
     },
     {
       "name": "add_to_cart",
-      "count": 148
+      "count": 154
     },
     {
       "name": "begin_checkout",
-      "count": 55
+      "count": 56
     },
     {
       "name": "purchase",
-      "count": 32
+      "count": 37
     }
   ],
   "weeks": [
@@ -86,42 +86,47 @@
   "collections": [
     {
       "path": "/collections/2026-07-29",
-      "sessions": 861,
-      "pdp_reached": 294,
-      "pdp_reach": 34.146341463414636
-    },
-    {
-      "path": "/collections/2026aw",
-      "sessions": 257,
-      "pdp_reached": 89,
-      "pdp_reach": 34.63035019455253
+      "sessions": 983,
+      "pdp_reached": 331,
+      "pdp_reach": 33.67243133265514
     },
     {
       "path": "/collections/all",
-      "sessions": 219,
-      "pdp_reached": 95,
-      "pdp_reach": 43.37899543378995
+      "sessions": 233,
+      "pdp_reached": 93,
+      "pdp_reach": 39.91416309012875
+    },
+    {
+      "path": "/collections/2026aw",
+      "sessions": 192,
+      "pdp_reached": 59,
+      "pdp_reach": 30.729166666666668
     },
     {
       "path": "/collections/setup",
       "sessions": 54,
-      "pdp_reached": 21,
-      "pdp_reach": 38.888888888888886
+      "pdp_reached": 24,
+      "pdp_reach": 44.44444444444444
     },
     {
       "path": "/collections/t-shirts-pullovers",
-      "sessions": 34,
-      "pdp_reached": 4,
-      "pdp_reach": 11.764705882352942
+      "sessions": 33,
+      "pdp_reached": 5,
+      "pdp_reach": 15.151515151515152
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 30,
+      "sessions": 31,
       "pdp_reached": 8,
-      "pdp_reach": 26.666666666666668
+      "pdp_reach": 25.806451612903224
     }
   ],
   "products_top5": [
+    {
+      "name": "無重力リュック(第5世代)",
+      "qty": 3,
+      "revenue": 82500
+    },
     {
       "name": "KOKAGE/切り替えハーフパンツ",
       "qty": 4,
@@ -134,18 +139,13 @@
     },
     {
       "name": "TOBIKIRI STRIPE/切り替え五分袖プルオーバー",
+      "qty": 4,
+      "revenue": 41800
+    },
+    {
+      "name": "サマーベロア半袖ポロシャツ",
       "qty": 3,
-      "revenue": 31350
-    },
-    {
-      "name": "TOBIKIRI STRIPE/テーパードパンツ",
-      "qty": 2,
-      "revenue": 29700
-    },
-    {
-      "name": "【残り10着】CALL YUKATA",
-      "qty": 1,
-      "revenue": 29700
+      "revenue": 39600
     }
   ]
 }

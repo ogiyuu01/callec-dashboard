@@ -2,59 +2,59 @@
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 2697,
-      "orders": 16,
-      "sales": 356620,
-      "cvr": 0.005932517612161661
+      "sessions": 3054,
+      "orders": 18,
+      "sales": 431695,
+      "cvr": 0.005893909626719057
     },
     {
       "channel": "Paid Search",
-      "sessions": 1103,
-      "orders": 6,
-      "sales": 123420,
-      "cvr": 0.005439709882139619
+      "sessions": 1060,
+      "orders": 7,
+      "sales": 159720,
+      "cvr": 0.006603773584905661
     },
     {
       "channel": "Organic Search",
-      "sessions": 1079,
-      "orders": 5,
-      "sales": 60500,
-      "cvr": 0.004633920296570899
+      "sessions": 1055,
+      "orders": 8,
+      "sales": 142890,
+      "cvr": 0.007582938388625593
     },
     {
       "channel": "Referral",
-      "sessions": 350,
+      "sessions": 316,
       "orders": 1,
-      "sales": 13750,
-      "cvr": 0.002857142857142857
+      "sales": 5500,
+      "cvr": 0.0031645569620253164
     },
     {
       "channel": "Email",
-      "sessions": 280,
+      "sessions": 299,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
     },
     {
       "channel": "Other",
-      "sessions": 215,
-      "orders": 3,
-      "sales": 55880,
-      "cvr": 0.013953488372093023
+      "sessions": 260,
+      "orders": 2,
+      "sales": 38060,
+      "cvr": 0.007692307692307693
     },
     {
       "channel": "LINE",
-      "sessions": 102,
+      "sessions": 115,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
     },
     {
       "channel": "Social",
-      "sessions": 52,
+      "sessions": 51,
       "orders": 1,
       "sales": 31790,
-      "cvr": 0.019230769230769232
+      "cvr": 0.0196078431372549
     }
   ],
   "trend": {
@@ -77,7 +77,7 @@
       {
         "channel": "Direct",
         "sessions": [
-          2270,
+          460,
           2311,
           3473,
           3059,
@@ -89,13 +89,13 @@
           3203,
           1796,
           4389,
-          1887
+          2682
         ]
       },
       {
         "channel": "Organic Search",
         "sessions": [
-          494,
+          242,
           1275,
           1708,
           1635,
@@ -107,13 +107,13 @@
           1362,
           1213,
           1359,
-          649
+          818
         ]
       },
       {
         "channel": "Paid Search",
         "sessions": [
-          577,
+          325,
           1495,
           1686,
           1442,
@@ -125,13 +125,13 @@
           1369,
           1264,
           1357,
-          683
+          845
         ]
       },
       {
         "channel": "Referral",
         "sessions": [
-          131,
+          63,
           421,
           479,
           423,
@@ -143,13 +143,13 @@
           401,
           324,
           741,
-          205
+          249
         ]
       },
       {
         "channel": "Other",
         "sessions": [
-          201,
+          60,
           370,
           426,
           350,
@@ -161,7 +161,7 @@
           525,
           524,
           366,
-          135
+          209
         ]
       }
     ]

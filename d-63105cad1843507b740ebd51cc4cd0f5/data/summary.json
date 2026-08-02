@@ -1,28 +1,28 @@
 {
-  "last_updated": "2026-08-01 11:34 JST",
+  "last_updated": "2026-08-02 09:02 JST",
   "last_7d": {
-    "sessions": 5878,
-    "item_views": 7524,
-    "orders": 32,
-    "sales": 641960,
-    "cvr": 0.005444028581150051,
-    "aov": 20061.25,
-    "items_per_session": 1.2800272201429057,
-    "new_sessions": 3456,
-    "returning_sessions": 2422,
-    "units": 66
+    "sessions": 6210,
+    "item_views": 7109,
+    "orders": 37,
+    "sales": 809655,
+    "cvr": 0.005958132045088567,
+    "aov": 21882.567567567567,
+    "items_per_session": 1.144766505636071,
+    "new_sessions": 3656,
+    "returning_sessions": 2554,
+    "units": 75
   },
   "prev_7d": {
-    "sessions": 8468,
-    "item_views": 11021,
-    "orders": 38,
-    "sales": 826760,
-    "cvr": 0.004487482286254133,
-    "aov": 21756.842105263157,
-    "items_per_session": 1.3014879546528106,
-    "new_sessions": 5270,
-    "returning_sessions": 3198,
-    "units": 85
+    "sessions": 8676,
+    "item_views": 11617,
+    "orders": 36,
+    "sales": 794255,
+    "cvr": 0.004149377593360996,
+    "aov": 22062.63888888889,
+    "items_per_session": 1.3389810972798524,
+    "new_sessions": 5352,
+    "returning_sessions": 3324,
+    "units": 83
   },
   "yoy": {
     "sessions": 7932,
@@ -132,26 +132,26 @@
   ],
   "signals": [
     {
-      "level": "yellow",
+      "level": "red",
       "metric": "items/session",
-      "value": "1.28",
+      "value": "1.14",
       "target": "≥ 1.40 (R001目標)",
       "note": "R001 反映後の改善を測る最重要指標"
     },
     {
       "level": "yellow",
       "metric": "CVR",
-      "value": "0.54%",
+      "value": "0.60%",
       "target": "≥ 0.70%",
       "note": "前年同期 0.91%。回復目標は 0.7% 以上"
     }
   ],
   "narrative": {
     "lines": [
-      "📉 今週の売上 ¥641,960（先週より -22%）",
-      "   注文は 32 件 / 先週は 38 件",
-      "⚠️ 買ってくれる人の割合（CVR）が前年より大きく低下しています（0.54% vs 前年 0.73%）",
-      "🟡 1セッションあたりの商品閲覧数 1.28 は平均的。R001 反映でこれを 1.40 以上に上げるのが目標です。"
+      "→ 今週の売上 ¥809,655（先週より +2%）",
+      "   注文は 37 件 / 先週は 36 件",
+      "📊 買ってくれる人の割合（CVR）は前年並みです（0.60%）",
+      "🔴 1セッションあたりの商品閲覧数 1.14 は低めです。商品ページにたどり着けていない人が多い状態です。"
     ],
     "actions": [
       "R001（コレクションページ改善）を本番に反映する",
@@ -160,21 +160,10 @@
     ]
   },
   "spam": {
-    "excluded_sessions_7d": 196,
+    "excluded_sessions_7d": 167,
     "pattern": "t.co / sunpark"
   },
   "daily": [
-    {
-      "date": "20260704",
-      "sessions": 1326,
-      "item_views": 1503,
-      "atcs": 32,
-      "orders": 7,
-      "sales": 130350,
-      "cvr": 0.005279034690799397,
-      "aov": 18621.428571428572,
-      "items_per_session": 1.1334841628959276
-    },
     {
       "date": "20260705",
       "sessions": 1035,
@@ -453,16 +442,34 @@
     {
       "date": "20260730",
       "sessions": 774,
-      "item_views": 800,
+      "item_views": 801,
       "atcs": 23,
       "orders": 7,
       "sales": 193820,
       "cvr": 0.00904392764857881,
       "aov": 27688.571428571428,
-      "items_per_session": 1.0335917312661498
+      "items_per_session": 1.0348837209302326
+    },
+    {
+      "date": "20260731",
+      "sessions": 1321,
+      "item_views": 1228,
+      "atcs": 33,
+      "orders": 8,
+      "sales": 224840,
+      "cvr": 0.006056018168054504,
+      "aov": 28105.0,
+      "items_per_session": 0.9295987887963664
     }
   ],
   "anomalies": [
+    {
+      "date": "07/31",
+      "iso_date": "20260731",
+      "desc": "売上 が 224,840 (+104%・7日平均比)",
+      "direction": "up",
+      "delta_text": "+104%"
+    },
     {
       "date": "07/30",
       "iso_date": "20260730",
@@ -509,8 +516,8 @@
   "goal": {
     "month": "2026-08",
     "days_in_month": 31,
-    "days_passed": 1,
-    "days_remaining": 30,
+    "days_passed": 2,
+    "days_remaining": 29,
     "target": {
       "sales": 5600000,
       "orders": 200,
@@ -533,8 +540,8 @@
     "remaining": {
       "sales": 5600000,
       "orders": 200,
-      "daily_needed_sales": 186666,
-      "daily_needed_orders": 6.666666666666667
+      "daily_needed_sales": 193103,
+      "daily_needed_orders": 6.896551724137931
     }
   }
 }
