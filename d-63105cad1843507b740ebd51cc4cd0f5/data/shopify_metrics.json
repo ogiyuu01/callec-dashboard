@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-08-02 09:05 JST",
+    "fetched_at": "2026-08-02 11:34 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 201,
+    "total_customers": 203,
     "returning_customers": 80,
-    "returning_customer_rate": 0.39800995024875624,
-    "new_customers": 121
+    "returning_customer_rate": 0.39408866995073893,
+    "new_customers": 123
   },
   "top_products_28d": [
     {
@@ -34,14 +34,14 @@
       "orders": 34
     },
     {
+      "name": "メランジクルー半袖Tシャツ",
+      "gross_sales": 124740,
+      "orders": 21
+    },
+    {
       "name": "【残り10着】CALL YUKATA",
       "gross_sales": 118800,
       "orders": 4
-    },
-    {
-      "name": "メランジクルー半袖Tシャツ",
-      "gross_sales": 112860,
-      "orders": 19
     },
     {
       "name": "TOBIKIRI STRIPE/テーラードジャケット",
@@ -65,8 +65,8 @@
     }
   ],
   "totals_28d": {
-    "orders": 208,
-    "sales": 4132645
+    "orders": 210,
+    "sales": 4183025
   },
   "cohort": {
     "method": "mature",
@@ -84,20 +84,20 @@
       }
     ],
     "diagnostics": {
-      "customers_total": 459,
-      "excluded_too_recent": 195,
+      "customers_total": 461,
+      "excluded_too_recent": 197,
       "excluded_before_lookback": 0,
       "cohort_members": 264,
-      "repeat_via_pull": 38,
-      "repeat_via_lifetime_only": 59
+      "repeat_via_pull": 37,
+      "repeat_via_lifetime_only": 60
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 12.6,
-    "ltv_1y": 21896,
-    "new_orders_7d": 44,
+    "avg_purchase_interval_days": 12.8,
+    "ltv_1y": 21848,
+    "new_orders_7d": 45,
     "repeat_orders_7d": 6,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.68
+    "free_ship_rate_7d": 0.7059
   }
 }
