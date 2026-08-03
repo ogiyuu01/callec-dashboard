@@ -1,8 +1,8 @@
 {
   "month": "2026-08",
   "days_in_month": 31,
-  "days_passed": 2,
-  "days_remaining": 29,
+  "days_passed": 3,
+  "days_remaining": 28,
   "target": {
     "sales": 5600000,
     "orders": 200,
@@ -25,7 +25,7 @@
   "remaining": {
     "sales": 5600000,
     "orders": 200,
-    "daily_needed_sales": 193103,
-    "daily_needed_orders": 6.896551724137931
+    "daily_needed_sales": 200000,
+    "daily_needed_orders": 7.142857142857143
   }
 }
