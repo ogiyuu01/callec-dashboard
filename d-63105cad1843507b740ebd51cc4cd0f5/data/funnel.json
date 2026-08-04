@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 5184
+      "count": 7391
     },
     {
       "name": "view_item",
-      "count": 5440
+      "count": 7902
     },
     {
       "name": "add_to_cart",
-      "count": 126
+      "count": 163
     },
     {
       "name": "begin_checkout",
-      "count": 53
+      "count": 70
     },
     {
       "name": "purchase",
-      "count": 30
+      "count": 39
     }
   ],
   "weeks": [
@@ -86,39 +86,56 @@
   "collections": [
     {
       "path": "/collections/2026-07-29",
-      "sessions": 983,
-      "pdp_reached": 331,
-      "pdp_reach": 33.67243133265514
+      "sessions": 1039,
+      "pdp_reached": 350,
+      "pdp_reach": 33.68623676612127
     },
     {
       "path": "/collections/all",
-      "sessions": 163,
-      "pdp_reached": 54,
-      "pdp_reach": 33.12883435582822
+      "sessions": 250,
+      "pdp_reached": 74,
+      "pdp_reach": 29.6
     },
     {
       "path": "/collections/2026aw",
       "sessions": 150,
-      "pdp_reached": 48,
-      "pdp_reach": 32.0
+      "pdp_reached": 36,
+      "pdp_reach": 24.0
+    },
+    {
+      "path": "/collections/26ss",
+      "sessions": 39,
+      "pdp_reached": 6,
+      "pdp_reach": 15.384615384615385
     },
     {
       "path": "/collections/setup",
-      "sessions": 35,
+      "sessions": 37,
       "pdp_reached": 18,
-      "pdp_reach": 51.42857142857143
+      "pdp_reach": 48.648648648648646
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 31,
+      "pdp_reached": 9,
+      "pdp_reach": 29.032258064516128
     }
   ],
   "products_top5": [
     {
       "name": "無重力リュック(第5世代)",
-      "qty": 3,
-      "revenue": 82500
+      "qty": 5,
+      "revenue": 137500
     },
     {
-      "name": "KOKAGE/切り替えハーフパンツ",
+      "name": "NOBIRU360°PREMIUM/半袖ポロシャツ",
       "qty": 4,
-      "revenue": 52800
+      "revenue": 61600
+    },
+    {
+      "name": "KOKAGE/テーラードジャケット",
+      "qty": 3,
+      "revenue": 56100
     },
     {
       "name": "無重力シューズ",
@@ -126,14 +143,9 @@
       "revenue": 42900
     },
     {
-      "name": "サマーベロア半袖ポロシャツ",
+      "name": "TOBIKIRI STRIPE/ハーフカーゴパンツ",
       "qty": 3,
-      "revenue": 39600
-    },
-    {
-      "name": "TOBIKIRI STRIPE/切り替え五分袖プルオーバー",
-      "qty": 3,
-      "revenue": 31350
+      "revenue": 41250
     }
   ]
 }
