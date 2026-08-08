@@ -1,27 +1,27 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-08-07 11:35 JST",
+    "fetched_at": "2026-08-08 09:04 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 195,
-    "returning_customers": 78,
-    "returning_customer_rate": 0.4,
-    "new_customers": 117
+    "total_customers": 189,
+    "returning_customers": 75,
+    "returning_customer_rate": 0.3968253968253968,
+    "new_customers": 114
   },
   "top_products_28d": [
     {
       "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 240625,
-      "orders": 18
+      "gross_sales": 226875,
+      "orders": 17
     },
     {
       "name": "無重力リュック(第5世代)",
-      "gross_sales": 220000,
-      "orders": 8
+      "gross_sales": 192500,
+      "orders": 7
     },
     {
       "name": "無地半袖Tシャツ",
@@ -65,39 +65,39 @@
     }
   ],
   "totals_28d": {
-    "orders": 201,
-    "sales": 4180660
+    "orders": 195,
+    "sales": 4067250
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 270,
+    "first_time_buyers": 271,
     "second_purchase_buyers": 99,
-    "second_purchase_rate": 0.3667,
+    "second_purchase_rate": 0.3653,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 270,
+        "first_buyers": 271,
         "repeat_buyers": 99,
-        "repeat_rate": 0.3667
+        "repeat_rate": 0.3653
       }
     ],
     "diagnostics": {
-      "customers_total": 461,
-      "excluded_too_recent": 191,
+      "customers_total": 456,
+      "excluded_too_recent": 185,
       "excluded_before_lookback": 0,
-      "cohort_members": 270,
+      "cohort_members": 271,
       "repeat_via_pull": 35,
       "repeat_via_lifetime_only": 64
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 11.7,
-    "ltv_1y": 21789,
-    "new_orders_7d": 45,
-    "repeat_orders_7d": 6,
+    "avg_purchase_interval_days": 11.4,
+    "ltv_1y": 21735,
+    "new_orders_7d": 37,
+    "repeat_orders_7d": 4,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.6863
+    "free_ship_rate_7d": 0.7073
   }
 }
