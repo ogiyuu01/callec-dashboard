@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6636
+      "count": 8165
     },
     {
       "name": "view_item",
-      "count": 7993
+      "count": 9176
     },
     {
       "name": "add_to_cart",
-      "count": 162
+      "count": 181
     },
     {
       "name": "begin_checkout",
-      "count": 50
+      "count": 55
     },
     {
       "name": "purchase",
-      "count": 34
+      "count": 35
     }
   ],
   "weeks": [
@@ -86,45 +86,51 @@
   "collections": [
     {
       "path": "/collections/2026-08-05",
-      "sessions": 750,
-      "pdp_reached": 329,
-      "pdp_reach": 43.86666666666667
+      "sessions": 824,
+      "pdp_reached": 346,
+      "pdp_reach": 41.99029126213592
     },
     {
       "path": "/collections/all",
-      "sessions": 217,
-      "pdp_reached": 71,
-      "pdp_reach": 32.71889400921659
+      "sessions": 248,
+      "pdp_reached": 88,
+      "pdp_reach": 35.483870967741936
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 107,
-      "pdp_reached": 27,
-      "pdp_reach": 25.233644859813083
+      "sessions": 119,
+      "pdp_reached": 33,
+      "pdp_reach": 27.73109243697479
     },
     {
       "path": "/collections/2026-07-29",
-      "sessions": 105,
-      "pdp_reached": 37,
-      "pdp_reach": 35.23809523809524
-    },
-    {
-      "path": "/collections/26ss",
-      "sessions": 41,
-      "pdp_reached": 6,
-      "pdp_reach": 14.634146341463415
+      "sessions": 117,
+      "pdp_reached": 40,
+      "pdp_reach": 34.18803418803419
     },
     {
       "path": "/collections/setup",
-      "sessions": 36,
-      "pdp_reached": 16,
-      "pdp_reach": 44.44444444444444
+      "sessions": 47,
+      "pdp_reached": 19,
+      "pdp_reach": 40.42553191489362
+    },
+    {
+      "path": "/collections/26ss",
+      "sessions": 44,
+      "pdp_reached": 6,
+      "pdp_reach": 13.636363636363637
     },
     {
       "path": "/collections/pants",
-      "sessions": 31,
+      "sessions": 35,
       "pdp_reached": 5,
-      "pdp_reach": 16.129032258064516
+      "pdp_reach": 14.285714285714286
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 32,
+      "pdp_reached": 11,
+      "pdp_reach": 34.375
     }
   ],
   "products_top5": [
