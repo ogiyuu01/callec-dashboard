@@ -115,16 +115,16 @@
       "pdp_reach": 43.24324324324324
     },
     {
-      "path": "/collections/26ss",
-      "sessions": 31,
-      "pdp_reached": 5,
-      "pdp_reach": 16.129032258064516
-    },
-    {
       "path": "/collections/pants",
       "sessions": 31,
       "pdp_reached": 4,
       "pdp_reach": 12.903225806451612
+    },
+    {
+      "path": "/collections/26ss",
+      "sessions": 31,
+      "pdp_reached": 5,
+      "pdp_reach": 16.129032258064516
     }
   ],
   "products_top5": [
