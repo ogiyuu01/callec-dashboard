@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 8165
+      "count": 6375
     },
     {
       "name": "view_item",
-      "count": 9176
+      "count": 7317
     },
     {
       "name": "add_to_cart",
-      "count": 181
+      "count": 152
     },
     {
       "name": "begin_checkout",
-      "count": 55
+      "count": 41
     },
     {
       "name": "purchase",
-      "count": 35
+      "count": 28
     }
   ],
   "weeks": [
@@ -92,53 +92,42 @@
     },
     {
       "path": "/collections/all",
-      "sessions": 248,
-      "pdp_reached": 88,
-      "pdp_reach": 35.483870967741936
+      "sessions": 180,
+      "pdp_reached": 69,
+      "pdp_reach": 38.333333333333336
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 119,
-      "pdp_reached": 33,
-      "pdp_reach": 27.73109243697479
+      "sessions": 97,
+      "pdp_reached": 28,
+      "pdp_reach": 28.8659793814433
     },
     {
       "path": "/collections/2026-07-29",
-      "sessions": 117,
-      "pdp_reached": 40,
-      "pdp_reach": 34.18803418803419
+      "sessions": 85,
+      "pdp_reached": 35,
+      "pdp_reach": 41.1764705882353
     },
     {
       "path": "/collections/setup",
-      "sessions": 47,
-      "pdp_reached": 19,
-      "pdp_reach": 40.42553191489362
+      "sessions": 37,
+      "pdp_reached": 16,
+      "pdp_reach": 43.24324324324324
     },
     {
       "path": "/collections/26ss",
-      "sessions": 44,
-      "pdp_reached": 6,
-      "pdp_reach": 13.636363636363637
+      "sessions": 31,
+      "pdp_reached": 5,
+      "pdp_reach": 16.129032258064516
     },
     {
       "path": "/collections/pants",
-      "sessions": 35,
-      "pdp_reached": 5,
-      "pdp_reach": 14.285714285714286
-    },
-    {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 32,
-      "pdp_reached": 11,
-      "pdp_reach": 34.375
+      "sessions": 31,
+      "pdp_reached": 4,
+      "pdp_reach": 12.903225806451612
     }
   ],
   "products_top5": [
-    {
-      "name": "無重力リュック(第5世代)",
-      "qty": 2,
-      "revenue": 55000
-    },
     {
       "name": "KOKAGE/テーパードパンツ",
       "qty": 4,
@@ -158,6 +147,11 @@
       "name": "ほぼジャージ/裏起毛ZIPパーカー",
       "qty": 2,
       "revenue": 33000
+    },
+    {
+      "name": "ほぼジャージ/裏起毛ジョガーパンツ",
+      "qty": 2,
+      "revenue": 28600
     }
   ]
 }
