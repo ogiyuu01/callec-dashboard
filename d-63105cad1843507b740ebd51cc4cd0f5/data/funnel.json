@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6375
+      "count": 6187
     },
     {
       "name": "view_item",
-      "count": 7317
+      "count": 6876
     },
     {
       "name": "add_to_cart",
-      "count": 152
+      "count": 138
     },
     {
       "name": "begin_checkout",
-      "count": 41
+      "count": 39
     },
     {
       "name": "purchase",
-      "count": 28
+      "count": 25
     }
   ],
   "weeks": [
@@ -86,62 +86,45 @@
   "collections": [
     {
       "path": "/collections/2026-08-05",
-      "sessions": 824,
-      "pdp_reached": 346,
-      "pdp_reach": 41.99029126213592
+      "sessions": 842,
+      "pdp_reached": 350,
+      "pdp_reach": 41.56769596199525
     },
     {
       "path": "/collections/all",
-      "sessions": 180,
-      "pdp_reached": 69,
-      "pdp_reach": 38.333333333333336
+      "sessions": 160,
+      "pdp_reached": 71,
+      "pdp_reach": 44.375
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 97,
-      "pdp_reached": 28,
-      "pdp_reach": 28.8659793814433
+      "sessions": 83,
+      "pdp_reached": 29,
+      "pdp_reach": 34.93975903614458
     },
     {
       "path": "/collections/2026-07-29",
-      "sessions": 85,
-      "pdp_reached": 35,
-      "pdp_reach": 41.1764705882353
+      "sessions": 67,
+      "pdp_reached": 23,
+      "pdp_reach": 34.32835820895522
     },
     {
       "path": "/collections/setup",
-      "sessions": 37,
+      "sessions": 38,
       "pdp_reached": 16,
-      "pdp_reach": 43.24324324324324
-    },
-    {
-      "path": "/collections/pants",
-      "sessions": 31,
-      "pdp_reached": 4,
-      "pdp_reach": 12.903225806451612
-    },
-    {
-      "path": "/collections/26ss",
-      "sessions": 31,
-      "pdp_reached": 5,
-      "pdp_reach": 16.129032258064516
+      "pdp_reach": 42.10526315789474
     }
   ],
   "products_top5": [
-    {
-      "name": "KOKAGE/テーパードパンツ",
-      "qty": 4,
-      "revenue": 55000
-    },
     {
       "name": "無重力シューズ",
       "qty": 3,
       "revenue": 42900
     },
     {
-      "name": "KOKAGE/テーラードジャケット",
-      "qty": 2,
-      "revenue": 37400
+      "name": "KOKAGE/テーパードパンツ",
+      "qty": 3,
+      "revenue": 41250
     },
     {
       "name": "ほぼジャージ/裏起毛ZIPパーカー",
@@ -152,6 +135,11 @@
       "name": "ほぼジャージ/裏起毛ジョガーパンツ",
       "qty": 2,
       "revenue": 28600
+    },
+    {
+      "name": "ソフトツイル刺繍半袖シャツ",
+      "qty": 2,
+      "revenue": 27500
     }
   ]
 }
