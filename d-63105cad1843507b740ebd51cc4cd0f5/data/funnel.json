@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 5492
+      "count": 6368
     },
     {
       "name": "view_item",
-      "count": 5975
+      "count": 7426
     },
     {
       "name": "add_to_cart",
-      "count": 103
+      "count": 145
     },
     {
       "name": "begin_checkout",
-      "count": 31
+      "count": 45
     },
     {
       "name": "purchase",
-      "count": 19
+      "count": 25
     }
   ],
   "weeks": [
@@ -86,30 +86,41 @@
   "collections": [
     {
       "path": "/collections/2026-08-05",
-      "sessions": 842,
-      "pdp_reached": 350,
-      "pdp_reach": 41.56769596199525
+      "sessions": 856,
+      "pdp_reached": 354,
+      "pdp_reach": 41.35514018691589
     },
     {
       "path": "/collections/all",
-      "sessions": 135,
-      "pdp_reached": 60,
-      "pdp_reach": 44.44444444444444
+      "sessions": 160,
+      "pdp_reached": 74,
+      "pdp_reach": 46.25
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 67,
-      "pdp_reached": 26,
-      "pdp_reach": 38.80597014925373
+      "sessions": 76,
+      "pdp_reached": 30,
+      "pdp_reach": 39.473684210526315
     },
     {
       "path": "/collections/2026-07-29",
-      "sessions": 53,
-      "pdp_reached": 18,
-      "pdp_reach": 33.9622641509434
+      "sessions": 56,
+      "pdp_reached": 19,
+      "pdp_reach": 33.92857142857143
+    },
+    {
+      "path": "/collections/setup",
+      "sessions": 32,
+      "pdp_reached": 13,
+      "pdp_reach": 40.625
     }
   ],
   "products_top5": [
+    {
+      "name": "無重力リュック(第5世代)",
+      "qty": 1,
+      "revenue": 27500
+    },
     {
       "name": "KOKAGE/テーパードパンツ",
       "qty": 2,
@@ -126,14 +137,9 @@
       "revenue": 26400
     },
     {
-      "name": "KOKAGE/オーバー半袖プルオーバー",
+      "name": "オーバー半袖プルオーバー(CALLチーム)",
       "qty": 2,
-      "revenue": 19800
-    },
-    {
-      "name": "デニムパイルテーラードジャケット",
-      "qty": 1,
-      "revenue": 19800
+      "revenue": 22000
     }
   ]
 }
