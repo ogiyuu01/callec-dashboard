@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6187
+      "count": 5492
     },
     {
       "name": "view_item",
-      "count": 6876
+      "count": 5975
     },
     {
       "name": "add_to_cart",
-      "count": 138
+      "count": 103
     },
     {
       "name": "begin_checkout",
-      "count": 39
+      "count": 31
     },
     {
       "name": "purchase",
-      "count": 25
+      "count": 19
     }
   ],
   "weeks": [
@@ -92,54 +92,48 @@
     },
     {
       "path": "/collections/all",
-      "sessions": 160,
-      "pdp_reached": 71,
-      "pdp_reach": 44.375
+      "sessions": 135,
+      "pdp_reached": 60,
+      "pdp_reach": 44.44444444444444
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 83,
-      "pdp_reached": 29,
-      "pdp_reach": 34.93975903614458
+      "sessions": 67,
+      "pdp_reached": 26,
+      "pdp_reach": 38.80597014925373
     },
     {
       "path": "/collections/2026-07-29",
-      "sessions": 67,
-      "pdp_reached": 23,
-      "pdp_reach": 34.32835820895522
-    },
-    {
-      "path": "/collections/setup",
-      "sessions": 38,
-      "pdp_reached": 16,
-      "pdp_reach": 42.10526315789474
+      "sessions": 53,
+      "pdp_reached": 18,
+      "pdp_reach": 33.9622641509434
     }
   ],
   "products_top5": [
     {
-      "name": "無重力シューズ",
-      "qty": 3,
-      "revenue": 42900
-    },
-    {
       "name": "KOKAGE/テーパードパンツ",
-      "qty": 3,
-      "revenue": 41250
-    },
-    {
-      "name": "ほぼジャージ/裏起毛ZIPパーカー",
       "qty": 2,
-      "revenue": 33000
-    },
-    {
-      "name": "ほぼジャージ/裏起毛ジョガーパンツ",
-      "qty": 2,
-      "revenue": 28600
+      "revenue": 27500
     },
     {
       "name": "ソフトツイル刺繍半袖シャツ",
       "qty": 2,
       "revenue": 27500
+    },
+    {
+      "name": "袖ニットドッキングジャケット(ヘリンボーン柄)",
+      "qty": 1,
+      "revenue": 26400
+    },
+    {
+      "name": "KOKAGE/オーバー半袖プルオーバー",
+      "qty": 2,
+      "revenue": 19800
+    },
+    {
+      "name": "デニムパイルテーラードジャケット",
+      "qty": 1,
+      "revenue": 19800
     }
   ]
 }

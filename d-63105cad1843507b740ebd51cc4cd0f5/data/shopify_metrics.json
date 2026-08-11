@@ -1,47 +1,47 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-08-10 10:30 JST",
+    "fetched_at": "2026-08-11 09:04 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
-    "total_customers": 174,
-    "returning_customers": 68,
-    "returning_customer_rate": 0.39080459770114945,
-    "new_customers": 106
+    "total_customers": 172,
+    "returning_customers": 67,
+    "returning_customer_rate": 0.38953488372093026,
+    "new_customers": 105
   },
   "top_products_28d": [
-    {
-      "name": "KOKAGE/テーパードパンツ",
-      "gross_sales": 220000,
-      "orders": 16
-    },
     {
       "name": "無重力リュック(第5世代)",
       "gross_sales": 220000,
       "orders": 8
     },
     {
-      "name": "無地半袖Tシャツ",
-      "gross_sales": 176000,
-      "orders": 32
+      "name": "KOKAGE/テーパードパンツ",
+      "gross_sales": 206250,
+      "orders": 15
     },
     {
-      "name": "KOKAGE/テーラードジャケット",
-      "gross_sales": 130900,
-      "orders": 7
+      "name": "無地半袖Tシャツ",
+      "gross_sales": 187000,
+      "orders": 34
     },
     {
       "name": "無重力シューズ",
-      "gross_sales": 128700,
-      "orders": 9
+      "gross_sales": 143000,
+      "orders": 10
     },
     {
       "name": "【残り10着】CALL YUKATA",
       "gross_sales": 118800,
       "orders": 4
+    },
+    {
+      "name": "KOKAGE/テーラードジャケット",
+      "gross_sales": 112200,
+      "orders": 6
     },
     {
       "name": "KOKAGE/アロハシャツ(フレンチブル)",
@@ -65,8 +65,8 @@
     }
   ],
   "totals_28d": {
-    "orders": 181,
-    "sales": 3868315
+    "orders": 179,
+    "sales": 3912095
   },
   "cohort": {
     "method": "mature",
@@ -84,20 +84,20 @@
       }
     ],
     "diagnostics": {
-      "customers_total": 456,
-      "excluded_too_recent": 178,
+      "customers_total": 455,
+      "excluded_too_recent": 177,
       "excluded_before_lookback": 0,
       "cohort_members": 278,
-      "repeat_via_pull": 31,
-      "repeat_via_lifetime_only": 73
+      "repeat_via_pull": 29,
+      "repeat_via_lifetime_only": 75
     }
   },
   "crm": {
-    "avg_purchase_interval_days": 11.2,
-    "ltv_1y": 21632,
-    "new_orders_7d": 31,
+    "avg_purchase_interval_days": 11.3,
+    "ltv_1y": 21576,
+    "new_orders_7d": 32,
     "repeat_orders_7d": 4,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.7143
+    "free_ship_rate_7d": 0.7778
   }
 }
