@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6368
+      "count": 7468
     },
     {
       "name": "view_item",
-      "count": 7426
+      "count": 9196
     },
     {
       "name": "add_to_cart",
-      "count": 145
+      "count": 197
     },
     {
       "name": "begin_checkout",
-      "count": 45
+      "count": 63
     },
     {
       "name": "purchase",
-      "count": 25
+      "count": 34
     }
   ],
   "weeks": [
@@ -86,36 +86,47 @@
   "collections": [
     {
       "path": "/collections/2026-08-05",
-      "sessions": 856,
-      "pdp_reached": 354,
-      "pdp_reach": 41.35514018691589
+      "sessions": 863,
+      "pdp_reached": 356,
+      "pdp_reach": 41.251448435689454
     },
     {
       "path": "/collections/all",
-      "sessions": 160,
-      "pdp_reached": 74,
-      "pdp_reach": 46.25
+      "sessions": 205,
+      "pdp_reached": 100,
+      "pdp_reach": 48.78048780487805
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 76,
-      "pdp_reached": 30,
-      "pdp_reach": 39.473684210526315
+      "sessions": 80,
+      "pdp_reached": 34,
+      "pdp_reach": 42.5
     },
     {
       "path": "/collections/2026-07-29",
-      "sessions": 56,
-      "pdp_reached": 19,
-      "pdp_reach": 33.92857142857143
+      "sessions": 47,
+      "pdp_reached": 15,
+      "pdp_reach": 31.914893617021278
     },
     {
       "path": "/collections/setup",
-      "sessions": 32,
-      "pdp_reached": 13,
-      "pdp_reach": 40.625
+      "sessions": 45,
+      "pdp_reached": 17,
+      "pdp_reach": 37.77777777777778
+    },
+    {
+      "path": "/collections/pants",
+      "sessions": 34,
+      "pdp_reached": 7,
+      "pdp_reach": 20.58823529411765
     }
   ],
   "products_top5": [
+    {
+      "name": "無地半袖Tシャツ",
+      "qty": 6,
+      "revenue": 33000
+    },
     {
       "name": "無重力リュック(第5世代)",
       "qty": 1,
@@ -123,11 +134,6 @@
     },
     {
       "name": "KOKAGE/テーパードパンツ",
-      "qty": 2,
-      "revenue": 27500
-    },
-    {
-      "name": "ソフトツイル刺繍半袖シャツ",
       "qty": 2,
       "revenue": 27500
     },
