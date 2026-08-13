@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 5884
+      "count": 7576
     },
     {
       "name": "view_item",
-      "count": 7644
+      "count": 9228
     },
     {
       "name": "add_to_cart",
-      "count": 171
+      "count": 204
     },
     {
       "name": "begin_checkout",
-      "count": 56
+      "count": 65
     },
     {
       "name": "purchase",
-      "count": 31
+      "count": 38
     }
   ],
   "weeks": [
@@ -86,60 +86,72 @@
   "collections": [
     {
       "path": "/collections/2026-08-05",
-      "sessions": 232,
-      "pdp_reached": 79,
-      "pdp_reach": 34.05172413793103
+      "sessions": 246,
+      "pdp_reached": 83,
+      "pdp_reach": 33.739837398373986
     },
     {
       "path": "/collections/all",
-      "sessions": 170,
-      "pdp_reached": 87,
-      "pdp_reach": 51.1764705882353
+      "sessions": 211,
+      "pdp_reached": 110,
+      "pdp_reach": 52.132701421800945
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 64,
-      "pdp_reached": 29,
-      "pdp_reach": 45.3125
+      "sessions": 76,
+      "pdp_reached": 33,
+      "pdp_reach": 43.421052631578945
     },
     {
       "path": "/collections/setup",
-      "sessions": 39,
-      "pdp_reached": 13,
-      "pdp_reach": 33.333333333333336
+      "sessions": 44,
+      "pdp_reached": 14,
+      "pdp_reach": 31.818181818181817
+    },
+    {
+      "path": "/collections/shortsleeve-t-shirts-2",
+      "sessions": 33,
+      "pdp_reached": 17,
+      "pdp_reach": 51.515151515151516
     },
     {
       "path": "/collections/2026-07-29",
-      "sessions": 30,
-      "pdp_reached": 9,
-      "pdp_reach": 30.0
+      "sessions": 31,
+      "pdp_reached": 10,
+      "pdp_reach": 32.25806451612903
+    },
+    {
+      "path": "/collections/pants",
+      "sessions": 31,
+      "pdp_reached": 7,
+      "pdp_reach": 22.580645161290324
     }
   ],
   "products_top5": [
     {
-      "name": "無地半袖Tシャツ",
-      "qty": 6,
-      "revenue": 33000
+      "name": "無重力リュック(第5世代)",
+      "qty": 2,
+      "revenue": 55000
     },
     {
-      "name": "無重力リュック(第5世代)",
+      "name": "無地半袖Tシャツ",
+      "qty": 8,
+      "revenue": 44000
+    },
+    {
+      "name": "【残り8着】CALL YUKATA",
       "qty": 1,
+      "revenue": 29700
+    },
+    {
+      "name": "プリント半袖Tシャツ(アート/ウルフ)",
+      "qty": 5,
       "revenue": 27500
     },
     {
       "name": "袖ニットドッキングジャケット(ヘリンボーン柄)",
       "qty": 1,
       "revenue": 26400
-    },
-    {
-      "name": "オーバー半袖プルオーバー(CALLチーム)",
-      "qty": 2,
-      "revenue": 22000
-    },
-    {
-      "name": "TOBIKIRI STRIPE/切り替え五分袖プルオーバー",
-      "qty": 2,
-      "revenue": 20900
     }
   ]
 }

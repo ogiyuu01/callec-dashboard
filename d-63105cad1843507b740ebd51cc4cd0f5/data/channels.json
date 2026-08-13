@@ -2,56 +2,56 @@
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 2555,
-      "orders": 9,
-      "sales": 189970,
-      "cvr": 0.0035225048923679062
+      "sessions": 3574,
+      "orders": 13,
+      "sales": 281050,
+      "cvr": 0.0036373810856183547
     },
     {
       "channel": "Paid Search",
-      "sessions": 1139,
-      "orders": 10,
-      "sales": 257070,
-      "cvr": 0.00877963125548727
+      "sessions": 1357,
+      "orders": 12,
+      "sales": 293920,
+      "cvr": 0.008843036109064112
     },
     {
       "channel": "Organic Search",
-      "sessions": 1138,
+      "sessions": 1355,
       "orders": 8,
       "sales": 149930,
-      "cvr": 0.007029876977152899
+      "cvr": 0.005904059040590406
     },
     {
       "channel": "Referral",
-      "sessions": 335,
+      "sessions": 398,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
     },
     {
       "channel": "Email",
-      "sessions": 313,
-      "orders": 2,
-      "sales": 46200,
-      "cvr": 0.006389776357827476
+      "sessions": 367,
+      "orders": 3,
+      "sales": 75460,
+      "cvr": 0.008174386920980926
     },
     {
       "channel": "Other",
-      "sessions": 263,
+      "sessions": 332,
       "orders": 2,
       "sales": 36300,
-      "cvr": 0.0076045627376425855
+      "cvr": 0.006024096385542169
     },
     {
       "channel": "LINE",
-      "sessions": 90,
+      "sessions": 138,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
     },
     {
       "channel": "Social",
-      "sessions": 51,
+      "sessions": 55,
       "orders": 0,
       "sales": 0,
       "cvr": 0.0
@@ -82,14 +82,14 @@
           3482,
           2990,
           2491,
-          4165,
+          4164,
           5598,
           3203,
           1796,
           4389,
           3467,
           3410,
-          537
+          1556
         ]
       },
       {
@@ -107,7 +107,7 @@
           1359,
           1802,
           1281,
-          403
+          620
         ]
       },
       {
@@ -118,14 +118,14 @@
           1370,
           1367,
           1372,
-          1261,
+          1262,
           1383,
           1369,
           1264,
           1357,
           1634,
           1205,
-          418
+          636
         ]
       },
       {
@@ -143,7 +143,7 @@
           741,
           422,
           416,
-          101
+          164
         ]
       },
       {
@@ -161,7 +161,7 @@
           366,
           306,
           276,
-          107
+          176
         ]
       }
     ]
