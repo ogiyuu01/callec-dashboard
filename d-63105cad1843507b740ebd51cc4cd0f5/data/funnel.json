@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7468
+      "count": 5884
     },
     {
       "name": "view_item",
-      "count": 9196
+      "count": 7644
     },
     {
       "name": "add_to_cart",
-      "count": 197
+      "count": 171
     },
     {
       "name": "begin_checkout",
-      "count": 63
+      "count": 56
     },
     {
       "name": "purchase",
-      "count": 34
+      "count": 31
     }
   ],
   "weeks": [
@@ -86,39 +86,33 @@
   "collections": [
     {
       "path": "/collections/2026-08-05",
-      "sessions": 863,
-      "pdp_reached": 356,
-      "pdp_reach": 41.251448435689454
+      "sessions": 232,
+      "pdp_reached": 79,
+      "pdp_reach": 34.05172413793103
     },
     {
       "path": "/collections/all",
-      "sessions": 205,
-      "pdp_reached": 100,
-      "pdp_reach": 48.78048780487805
+      "sessions": 170,
+      "pdp_reached": 87,
+      "pdp_reach": 51.1764705882353
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 80,
-      "pdp_reached": 34,
-      "pdp_reach": 42.5
-    },
-    {
-      "path": "/collections/2026-07-29",
-      "sessions": 47,
-      "pdp_reached": 15,
-      "pdp_reach": 31.914893617021278
+      "sessions": 64,
+      "pdp_reached": 29,
+      "pdp_reach": 45.3125
     },
     {
       "path": "/collections/setup",
-      "sessions": 45,
-      "pdp_reached": 17,
-      "pdp_reach": 37.77777777777778
+      "sessions": 39,
+      "pdp_reached": 13,
+      "pdp_reach": 33.333333333333336
     },
     {
-      "path": "/collections/pants",
-      "sessions": 34,
-      "pdp_reached": 7,
-      "pdp_reach": 20.58823529411765
+      "path": "/collections/2026-07-29",
+      "sessions": 30,
+      "pdp_reached": 9,
+      "pdp_reach": 30.0
     }
   ],
   "products_top5": [
@@ -133,11 +127,6 @@
       "revenue": 27500
     },
     {
-      "name": "KOKAGE/テーパードパンツ",
-      "qty": 2,
-      "revenue": 27500
-    },
-    {
       "name": "袖ニットドッキングジャケット(ヘリンボーン柄)",
       "qty": 1,
       "revenue": 26400
@@ -146,6 +135,11 @@
       "name": "オーバー半袖プルオーバー(CALLチーム)",
       "qty": 2,
       "revenue": 22000
+    },
+    {
+      "name": "TOBIKIRI STRIPE/切り替え五分袖プルオーバー",
+      "qty": 2,
+      "revenue": 20900
     }
   ]
 }
