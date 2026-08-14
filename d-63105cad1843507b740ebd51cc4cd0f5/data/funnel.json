@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7576
+      "count": 6784
     },
     {
       "name": "view_item",
-      "count": 9228
+      "count": 7999
     },
     {
       "name": "add_to_cart",
-      "count": 204
+      "count": 171
     },
     {
       "name": "begin_checkout",
-      "count": 65
+      "count": 59
     },
     {
       "name": "purchase",
-      "count": 38
+      "count": 32
     }
   ],
   "weeks": [
@@ -85,46 +85,34 @@
   ],
   "collections": [
     {
-      "path": "/collections/2026-08-05",
-      "sessions": 246,
-      "pdp_reached": 83,
-      "pdp_reach": 33.739837398373986
+      "path": "/collections/all",
+      "sessions": 185,
+      "pdp_reached": 100,
+      "pdp_reach": 54.054054054054056
     },
     {
-      "path": "/collections/all",
-      "sessions": 211,
-      "pdp_reached": 110,
-      "pdp_reach": 52.132701421800945
+      "path": "/collections/2026-08-05",
+      "sessions": 127,
+      "pdp_reached": 31,
+      "pdp_reach": 24.409448818897637
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 76,
-      "pdp_reached": 33,
-      "pdp_reach": 43.421052631578945
+      "sessions": 61,
+      "pdp_reached": 25,
+      "pdp_reach": 40.98360655737705
     },
     {
       "path": "/collections/setup",
-      "sessions": 44,
-      "pdp_reached": 14,
-      "pdp_reach": 31.818181818181817
+      "sessions": 39,
+      "pdp_reached": 12,
+      "pdp_reach": 30.76923076923077
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 33,
+      "sessions": 31,
       "pdp_reached": 17,
-      "pdp_reach": 51.515151515151516
-    },
-    {
-      "path": "/collections/2026-07-29",
-      "sessions": 31,
-      "pdp_reached": 10,
-      "pdp_reach": 32.25806451612903
-    },
-    {
-      "path": "/collections/pants",
-      "sessions": 31,
-      "pdp_reached": 7,
-      "pdp_reach": 22.580645161290324
+      "pdp_reach": 54.83870967741935
     }
   ],
   "products_top5": [
@@ -135,8 +123,8 @@
     },
     {
       "name": "無地半袖Tシャツ",
-      "qty": 8,
-      "revenue": 44000
+      "qty": 7,
+      "revenue": 38500
     },
     {
       "name": "【残り8着】CALL YUKATA",
@@ -149,9 +137,9 @@
       "revenue": 27500
     },
     {
-      "name": "袖ニットドッキングジャケット(ヘリンボーン柄)",
-      "qty": 1,
-      "revenue": 26400
+      "name": "メランジクルー半袖Tシャツ",
+      "qty": 4,
+      "revenue": 23760
     }
   ]
 }
