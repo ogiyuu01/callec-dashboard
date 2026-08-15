@@ -1,16 +1,16 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-08-14 10:47 JST",
+    "fetched_at": "2026-08-15 09:05 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
   },
   "customers_28d": {
     "total_customers": 178,
-    "returning_customers": 67,
-    "returning_customer_rate": 0.37640449438202245,
-    "new_customers": 111
+    "returning_customers": 65,
+    "returning_customer_rate": 0.3651685393258427,
+    "new_customers": 113
   },
   "top_products_28d": [
     {
@@ -34,11 +34,6 @@
       "orders": 11
     },
     {
-      "name": "KOKAGE/アロハシャツ(フレンチブル)",
-      "gross_sales": 92400,
-      "orders": 7
-    },
-    {
       "name": "【残り10着】CALL YUKATA",
       "gross_sales": 89100,
       "orders": 3
@@ -54,6 +49,11 @@
       "orders": 16
     },
     {
+      "name": "KOKAGE/アロハシャツ(フレンチブル)",
+      "gross_sales": 79200,
+      "orders": 6
+    },
+    {
       "name": "NOBIRU360°PREMIUM/半袖ポロシャツ",
       "gross_sales": 77000,
       "orders": 5
@@ -66,38 +66,38 @@
   ],
   "totals_28d": {
     "orders": 183,
-    "sales": 3956370
+    "sales": 3990250
   },
   "cohort": {
     "method": "mature",
     "maturity_days": 30,
     "lookback_days": 365,
-    "first_time_buyers": 266,
-    "second_purchase_buyers": 100,
-    "second_purchase_rate": 0.3759,
+    "first_time_buyers": 264,
+    "second_purchase_buyers": 98,
+    "second_purchase_rate": 0.3712,
     "by_category": [
       {
         "category": "未分類",
-        "first_buyers": 266,
-        "repeat_buyers": 100,
-        "repeat_rate": 0.3759
+        "first_buyers": 264,
+        "repeat_buyers": 98,
+        "repeat_rate": 0.3712
       }
     ],
     "diagnostics": {
-      "customers_total": 447,
+      "customers_total": 445,
       "excluded_too_recent": 181,
       "excluded_before_lookback": 0,
-      "cohort_members": 266,
+      "cohort_members": 264,
       "repeat_via_pull": 27,
-      "repeat_via_lifetime_only": 73
+      "repeat_via_lifetime_only": 71
     }
   },
   "crm": {
     "avg_purchase_interval_days": 10.0,
-    "ltv_1y": 21235,
-    "new_orders_7d": 40,
+    "ltv_1y": 21249,
+    "new_orders_7d": 45,
     "repeat_orders_7d": 1,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.7561
+    "free_ship_rate_7d": 0.7826
   }
 }

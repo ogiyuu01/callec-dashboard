@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7683
+      "count": 6154
     },
     {
       "name": "view_item",
-      "count": 9172
+      "count": 8008
     },
     {
       "name": "add_to_cart",
-      "count": 195
+      "count": 176
     },
     {
       "name": "begin_checkout",
-      "count": 66
+      "count": 61
     },
     {
       "name": "purchase",
-      "count": 39
+      "count": 38
     }
   ],
   "weeks": [
@@ -86,45 +86,33 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 210,
-      "pdp_reached": 106,
-      "pdp_reach": 50.476190476190474
+      "sessions": 179,
+      "pdp_reached": 89,
+      "pdp_reach": 49.720670391061454
     },
     {
       "path": "/collections/2026-08-05",
-      "sessions": 134,
-      "pdp_reached": 32,
-      "pdp_reach": 23.880597014925375
+      "sessions": 60,
+      "pdp_reached": 15,
+      "pdp_reach": 25.0
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 70,
-      "pdp_reached": 27,
-      "pdp_reach": 38.57142857142857
+      "sessions": 58,
+      "pdp_reached": 21,
+      "pdp_reach": 36.206896551724135
     },
     {
       "path": "/collections/setup",
-      "sessions": 49,
-      "pdp_reached": 17,
-      "pdp_reach": 34.69387755102041
+      "sessions": 38,
+      "pdp_reached": 14,
+      "pdp_reach": 36.8421052631579
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 39,
-      "pdp_reached": 18,
-      "pdp_reach": 46.15384615384615
-    },
-    {
-      "path": "/collections/pants",
-      "sessions": 33,
-      "pdp_reached": 8,
-      "pdp_reach": 24.242424242424242
-    },
-    {
-      "path": "/collections/2026-07-29",
-      "sessions": 32,
-      "pdp_reached": 9,
-      "pdp_reach": 28.125
+      "sessions": 34,
+      "pdp_reached": 15,
+      "pdp_reach": 44.11764705882353
     }
   ],
   "products_top5": [
