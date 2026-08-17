@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "Shopify Admin API (Client Credentials Grant)",
-    "fetched_at": "2026-08-17 09:03 JST",
+    "fetched_at": "2026-08-17 10:09 JST",
     "period_days": 28,
     "shop_domain": "r0ehyb-1a.myshopify.com",
     "note": "refresh_shopify.py 自動更新。client_credentials grant + GraphQL 2025-01。"
@@ -95,9 +95,9 @@
   "crm": {
     "avg_purchase_interval_days": 9.9,
     "ltv_1y": 21381,
-    "new_orders_7d": 43,
+    "new_orders_7d": 42,
     "repeat_orders_7d": 4,
     "free_ship_threshold": 15000,
-    "free_ship_rate_7d": 0.7447
+    "free_ship_rate_7d": 0.7391
   }
 }

@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6302
+      "count": 7765
     },
     {
       "name": "view_item",
-      "count": 7837
+      "count": 9695
     },
     {
       "name": "add_to_cart",
-      "count": 169
+      "count": 212
     },
     {
       "name": "begin_checkout",
-      "count": 61
+      "count": 78
     },
     {
       "name": "purchase",
-      "count": 34
+      "count": 42
     }
   ],
   "weeks": [
@@ -86,33 +86,39 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 200,
-      "pdp_reached": 89,
-      "pdp_reach": 44.5
+      "sessions": 259,
+      "pdp_reached": 121,
+      "pdp_reach": 46.71814671814672
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 57,
-      "pdp_reached": 16,
-      "pdp_reach": 28.07017543859649
+      "sessions": 66,
+      "pdp_reached": 18,
+      "pdp_reach": 27.272727272727273
     },
     {
       "path": "/collections/2026-08-05",
-      "sessions": 48,
-      "pdp_reached": 16,
-      "pdp_reach": 33.333333333333336
+      "sessions": 55,
+      "pdp_reached": 17,
+      "pdp_reach": 30.90909090909091
     },
     {
       "path": "/collections/setup",
-      "sessions": 41,
-      "pdp_reached": 16,
-      "pdp_reach": 39.02439024390244
+      "sessions": 50,
+      "pdp_reached": 21,
+      "pdp_reach": 42.0
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 34,
-      "pdp_reached": 11,
-      "pdp_reach": 32.35294117647059
+      "sessions": 38,
+      "pdp_reached": 12,
+      "pdp_reach": 31.57894736842105
+    },
+    {
+      "path": "/collections/pants",
+      "sessions": 31,
+      "pdp_reached": 8,
+      "pdp_reach": 25.806451612903224
     }
   ],
   "products_top5": [
@@ -122,9 +128,9 @@
       "revenue": 44000
     },
     {
-      "name": "NOBIRU360°PREMIUM/切り替えハーフパンツ",
-      "qty": 2,
-      "revenue": 30800
+      "name": "プリント半袖Tシャツ(アート/ウルフ)",
+      "qty": 6,
+      "revenue": 33000
     },
     {
       "name": "NOBIRU360°PREMIUM/刺繍半袖プルオーバー",
@@ -132,14 +138,14 @@
       "revenue": 30800
     },
     {
+      "name": "NOBIRU360°PREMIUM/切り替えハーフパンツ",
+      "qty": 2,
+      "revenue": 30800
+    },
+    {
       "name": "【残り8着】CALL YUKATA",
       "qty": 1,
       "revenue": 29700
-    },
-    {
-      "name": "無重力シューズ",
-      "qty": 2,
-      "revenue": 28600
     }
   ]
 }

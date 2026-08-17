@@ -1,58 +1,58 @@
 {
-  "last_updated": "2026-08-16 10:11 JST",
+  "last_updated": "2026-08-17 10:09 JST",
   "flows": [
     {
       "flow_id": "RRZXcL",
       "name": "レビューリクエスト",
       "current_7d": {
         "recipients": 30.0,
-        "opens": 17.0,
-        "clicks": 4.0,
-        "convs": 0,
-        "rev": 0.0,
-        "open_rate": 0.5666666666666667,
-        "click_rate": 0.13333333333333333,
-        "conv_rate": 0.0
-      },
-      "previous_7d": {
-        "recipients": 36.0,
-        "opens": 19.0,
+        "opens": 18.0,
         "clicks": 3.0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.5277777777777778,
-        "click_rate": 0.08333333333333333,
+        "open_rate": 0.6,
+        "click_rate": 0.1,
+        "conv_rate": 0.0
+      },
+      "previous_7d": {
+        "recipients": 34.0,
+        "opens": 16.0,
+        "clicks": 4.0,
+        "convs": 0,
+        "rev": 0.0,
+        "open_rate": 0.47058823529411764,
+        "click_rate": 0.11764705882352941,
         "conv_rate": 0.0
       },
       "current_30d": {
-        "recipients": 203.0,
-        "opens": 122.0,
+        "recipients": 199.0,
+        "opens": 120.0,
         "clicks": 18.0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.6009852216748769,
-        "click_rate": 0.08866995073891626,
+        "open_rate": 0.6030150753768844,
+        "click_rate": 0.09045226130653267,
         "conv_rate": 0.0
       },
       "previous_30d": {
-        "recipients": 192.0,
-        "opens": 116.0,
+        "recipients": 200.0,
+        "opens": 121.0,
         "clicks": 22.0,
         "convs": 2.0,
         "rev": 40150.0,
-        "open_rate": 0.6041666666666666,
-        "click_rate": 0.11458333333333333,
-        "conv_rate": 0.010416666666666666
+        "open_rate": 0.605,
+        "click_rate": 0.11,
+        "conv_rate": 0.01
       },
       "annual": {
-        "recipients": 1499.0,
-        "opens": 809.0,
+        "recipients": 1503.0,
+        "opens": 812.0,
         "clicks": 127.0,
         "convs": 8.0,
         "rev": 169400.0,
-        "open_rate": 0.5396931287525016,
-        "click_rate": 0.0847231487658439,
-        "conv_rate": 0.00533689126084056
+        "open_rate": 0.5402528276779773,
+        "click_rate": 0.08449767132401863,
+        "conv_rate": 0.0053226879574184965
       },
       "wow_pct": null,
       "mom_pct": -100.0,
@@ -65,83 +65,83 @@
       "flow_id": "SufE4T",
       "name": "カゴ落ちメール",
       "current_7d": {
-        "recipients": 38.0,
-        "opens": 9.0,
+        "recipients": 39.0,
+        "opens": 8.0,
         "clicks": 2.0,
         "convs": 1.0,
         "rev": 29260.0,
-        "open_rate": 0.23684210526315788,
-        "click_rate": 0.05263157894736842,
-        "conv_rate": 0.02631578947368421
+        "open_rate": 0.20512820512820512,
+        "click_rate": 0.05128205128205128,
+        "conv_rate": 0.02564102564102564
       },
       "previous_7d": {
-        "recipients": 26.0,
-        "opens": 5.0,
+        "recipients": 25.0,
+        "opens": 4.0,
         "clicks": 0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.19230769230769232,
+        "open_rate": 0.16,
         "click_rate": 0.0,
         "conv_rate": 0.0
       },
       "current_30d": {
-        "recipients": 150.0,
-        "opens": 26.0,
+        "recipients": 152.0,
+        "opens": 25.0,
         "clicks": 4.0,
         "convs": 2.0,
         "rev": 50600.0,
-        "open_rate": 0.17333333333333334,
-        "click_rate": 0.02666666666666667,
-        "conv_rate": 0.013333333333333334
+        "open_rate": 0.16447368421052633,
+        "click_rate": 0.02631578947368421,
+        "conv_rate": 0.013157894736842105
       },
       "previous_30d": {
-        "recipients": 242.0,
-        "opens": 73.0,
+        "recipients": 226.0,
+        "opens": 70.0,
         "clicks": 13.0,
         "convs": 5.0,
         "rev": 89375.0,
-        "open_rate": 0.30165289256198347,
-        "click_rate": 0.05371900826446281,
-        "conv_rate": 0.02066115702479339
+        "open_rate": 0.30973451327433627,
+        "click_rate": 0.05752212389380531,
+        "conv_rate": 0.022123893805309734
       },
       "annual": {
-        "recipients": 1664.0,
+        "recipients": 1668.0,
         "opens": 371.0,
         "clicks": 73.0,
         "convs": 35.0,
         "rev": 750915.0,
-        "open_rate": 0.22295673076923078,
-        "click_rate": 0.043870192307692304,
-        "conv_rate": 0.021033653846153848
+        "open_rate": 0.2224220623501199,
+        "click_rate": 0.043764988009592325,
+        "conv_rate": 0.020983213429256596
       },
       "wow_pct": null,
       "mom_pct": -43.38461538461538,
       "open_alert": "yellow",
       "wow_alert": "neutral",
       "mom_alert": "red",
-      "rpr_30d": 337.3333333333333
+      "rpr_30d": 332.89473684210526
     },
     {
       "flow_id": "VLMvyW",
       "name": "Review follow-up - Klaviyo Reviews",
       "current_7d": {
-        "recipients": 3.0,
-        "opens": 2.0,
-        "clicks": 2.0,
+        "recipients": 2.0,
+        "opens": 1.0,
+        "clicks": 1.0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.6666666666666666,
-        "click_rate": 0.6666666666666666,
+        "open_rate": 0.5,
+        "click_rate": 0.5,
         "conv_rate": 0.0
       },
       "previous_7d": {
-        "recipients": 5.0,
-        "opens": 2.0,
-        "clicks": 0,
+        "recipients": 6.0,
+        "opens": 3.0,
+        "clicks": 1.0,
         "convs": 0,
         "rev": 0.0,
-        "open_rate": 0.4,
-        "click_rate": 0.0,
+        "open_rate": 0.5,
+        "click_rate": 0.16666666666666666,
         "conv_rate": 0.0
       },
       "current_30d": {
