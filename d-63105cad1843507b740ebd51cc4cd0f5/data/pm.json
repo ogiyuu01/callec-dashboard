@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-08-16 10:11 JST",
+    "generated_at": "2026-08-17 09:03 JST",
     "sources": [
       "Shopify",
       "GA4",
@@ -9,19 +9,19 @@
     ],
     "version": 1
   },
-  "last_updated": "2026-08-16 10:11 JST",
+  "last_updated": "2026-08-17 09:03 JST",
   "alerts": [
     {
       "level": "critical",
       "title": "AOV",
-      "value": "¥21,384",
-      "target": "WoW -12.4%",
+      "value": "¥21,081",
+      "target": "WoW -8.3%",
       "source": "Shopify"
     },
     {
       "level": "critical",
       "title": "改善対象 SKU (PV高ATC低)",
-      "value": "138 SKU",
+      "value": "134 SKU",
       "target": "≤60 green / ≤120 yellow (PDP/コピー改善優先)",
       "source": "GA4 funnel × Shopify products"
     },
@@ -34,20 +34,20 @@
     }
   ],
   "scorecard": {
-    "overall_score": 83,
+    "overall_score": 79,
     "pillars": [
       {
         "name": "着地予測",
         "status": "yellow",
-        "score": 66,
-        "note": "66% 着地見込み",
+        "score": 61,
+        "note": "61% 着地見込み",
         "weight": 40
       },
       {
         "name": "トラフィック品質",
         "status": "green",
-        "score": 86,
-        "note": "CVR 0.56% / items/session 1.30",
+        "score": 83,
+        "note": "CVR 0.54% / items/session 1.24",
         "weight": 20
       },
       {
@@ -60,8 +60,8 @@
       {
         "name": "データ鮮度",
         "status": "green",
-        "score": 100,
-        "note": "4ソース平均 100/100",
+        "score": 90,
+        "note": "4ソース平均 90/100",
         "weight": 20
       }
     ]
@@ -78,27 +78,27 @@
     },
     {
       "label": "着地予測",
-      "value": "¥3,668,932",
-      "sub": "進捗 66% / 残15日 / 日販 ¥254,980 必要",
-      "progress": 65.5,
+      "value": "¥3,439,624",
+      "sub": "進捗 61% / 残14日 / 日販 ¥273,193 必要",
+      "progress": 61.4,
       "status": "yellow",
       "source": "Shopify + GDrive",
       "target_meta": "2026-08 着地予測"
     },
     {
       "label": "Repeat率 (28日)",
-      "value": "36.0%",
+      "value": "36.9%",
       "sub": "目標 ≥30.0% (FY26)",
-      "progress": 120.0,
+      "progress": 123.1,
       "status": "green",
       "source": "Shopify",
       "target_meta": "FY26 通年目標"
     },
     {
       "label": "CVR (直近7日)",
-      "value": "0.56%",
+      "value": "0.54%",
       "sub": "目標 ≥0.70% (R001目標)",
-      "progress": 79.6,
+      "progress": 77.1,
       "status": "yellow",
       "source": "GA4 × Shopify",
       "target_meta": "R001 改善目標"
@@ -126,57 +126,57 @@
     {
       "source": "GA4",
       "status": "green",
-      "last_run": "2026-08-16 10:08",
-      "lag_hours": 0.1,
-      "note": "0.1h前 (今朝以降)"
+      "last_run": "2026-08-17 09:01",
+      "lag_hours": 0.0,
+      "note": "0.0h前 (今朝以降)"
     },
     {
       "source": "Shopify",
       "status": "green",
-      "last_run": "2026-08-16 10:11",
+      "last_run": "2026-08-17 09:03",
       "lag_hours": 0.0,
       "note": "0.0h前 (今朝以降)"
     },
     {
       "source": "GDrive",
       "status": "green",
-      "last_run": "2026-08-16 10:07",
-      "lag_hours": 0.1,
-      "note": "0.1h前 (今朝以降)"
+      "last_run": "2026-08-17 09:00",
+      "lag_hours": 0.0,
+      "note": "0.0h前 (今朝以降)"
     },
     {
       "source": "Klaviyo",
-      "status": "green",
+      "status": "yellow",
       "last_run": "2026-08-16 10:11",
-      "lag_hours": 0.0,
-      "note": "0.0h前 (今朝以降)"
+      "lag_hours": 22.9,
+      "note": "22.9h前 (昨日)"
     }
   ],
   "signals": [
     {
       "metric": "CVR (7d)",
-      "value": "0.56%",
+      "value": "0.54%",
       "target": "≥0.70%",
       "status": "yellow",
       "source": "GA4 × Shopify"
     },
     {
       "metric": "items / session",
-      "value": "1.30",
+      "value": "1.24",
       "target": "≥1.40 (R001)",
       "status": "yellow",
       "source": "GA4"
     },
     {
       "metric": "AOV",
-      "value": "¥21,384",
-      "target": "WoW -12.4%",
+      "value": "¥21,081",
+      "target": "WoW -8.3%",
       "status": "red",
       "source": "Shopify"
     },
     {
       "metric": "Cart Abandonment",
-      "value": "81.0%",
+      "value": "79.9%",
       "target": "≤75% (業界 70-80%)",
       "status": "yellow",
       "source": "GA4 funnel"
@@ -190,7 +190,7 @@
     },
     {
       "metric": "改善対象 SKU (PV高ATC低)",
-      "value": "138 SKU",
+      "value": "134 SKU",
       "target": "≤60 green / ≤120 yellow (PDP/コピー改善優先)",
       "status": "red",
       "source": "GA4 funnel × Shopify products"
@@ -211,7 +211,7 @@
     },
     {
       "metric": "2回目転換率 (成熟コホート·API)",
-      "value": "37.5%",
+      "value": "37.7%",
       "target": "≥30% green / ≥22.5% yellow (課題ライン22.5%)",
       "status": "green",
       "source": "Shopify 注文履歴コホート(1年)"
@@ -219,11 +219,43 @@
   ],
   "activity": [
     {
-      "ts": "2026-08-16 10:11",
-      "ts_iso": "2026-08-16T10:11:00+09:00",
+      "ts": "2026-08-17 09:03",
+      "ts_iso": "2026-08-17T09:03:00+09:00",
       "source": "Shopify",
       "type": "snapshot",
-      "title": "Shopify 28日メトリクス更新 (Repeat率 36.0%)",
+      "title": "Shopify 28日メトリクス更新 (Repeat率 36.9%)",
+      "level": "info"
+    },
+    {
+      "ts": "2026-08-17 09:01",
+      "ts_iso": "2026-08-17T09:01:00+09:00",
+      "source": "GA4",
+      "type": "snapshot",
+      "title": "GA4 weekly snapshot 取得 (sessions 6302)",
+      "level": "info"
+    },
+    {
+      "ts": "2026-08-17 09:01",
+      "ts_iso": "2026-08-17T09:01:00+09:00",
+      "source": "GA4",
+      "type": "signal",
+      "title": "items/session=1.24 (tgt ≥ 1.40 (R001目標))",
+      "level": "warning"
+    },
+    {
+      "ts": "2026-08-17 09:01",
+      "ts_iso": "2026-08-17T09:01:00+09:00",
+      "source": "GA4",
+      "type": "signal",
+      "title": "CVR=0.54% (tgt ≥ 0.70%)",
+      "level": "warning"
+    },
+    {
+      "ts": "2026-08-17 09:00",
+      "ts_iso": "2026-08-17T09:00:54+09:00",
+      "source": "GDrive",
+      "type": "sync",
+      "title": "年間計画シート fetched",
       "level": "info"
     },
     {
@@ -232,38 +264,6 @@
       "source": "Klaviyo",
       "type": "refresh",
       "title": "flows 3 件 (寄与売上 ¥50,600/30d)",
-      "level": "info"
-    },
-    {
-      "ts": "2026-08-16 10:08",
-      "ts_iso": "2026-08-16T10:08:00+09:00",
-      "source": "GA4",
-      "type": "snapshot",
-      "title": "GA4 weekly snapshot 取得 (sessions 7178)",
-      "level": "info"
-    },
-    {
-      "ts": "2026-08-16 10:08",
-      "ts_iso": "2026-08-16T10:08:00+09:00",
-      "source": "GA4",
-      "type": "signal",
-      "title": "items/session=1.30 (tgt ≥ 1.40 (R001目標))",
-      "level": "warning"
-    },
-    {
-      "ts": "2026-08-16 10:08",
-      "ts_iso": "2026-08-16T10:08:00+09:00",
-      "source": "GA4",
-      "type": "signal",
-      "title": "CVR=0.56% (tgt ≥ 0.70%)",
-      "level": "warning"
-    },
-    {
-      "ts": "2026-08-16 10:07",
-      "ts_iso": "2026-08-16T10:07:44+09:00",
-      "source": "GDrive",
-      "type": "sync",
-      "title": "年間計画シート fetched",
       "level": "info"
     }
   ]

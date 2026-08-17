@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7178
+      "count": 6302
     },
     {
       "name": "view_item",
-      "count": 9317
+      "count": 7837
     },
     {
       "name": "add_to_cart",
-      "count": 211
+      "count": 169
     },
     {
       "name": "begin_checkout",
-      "count": 75
+      "count": 61
     },
     {
       "name": "purchase",
-      "count": 40
+      "count": 34
     }
   ],
   "weeks": [
@@ -86,56 +86,45 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 225,
-      "pdp_reached": 103,
-      "pdp_reach": 45.77777777777778
+      "sessions": 200,
+      "pdp_reached": 89,
+      "pdp_reach": 44.5
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 66,
-      "pdp_reached": 20,
-      "pdp_reach": 30.303030303030305
+      "sessions": 57,
+      "pdp_reached": 16,
+      "pdp_reach": 28.07017543859649
     },
     {
       "path": "/collections/2026-08-05",
-      "sessions": 62,
-      "pdp_reached": 19,
-      "pdp_reach": 30.64516129032258
+      "sessions": 48,
+      "pdp_reached": 16,
+      "pdp_reach": 33.333333333333336
     },
     {
       "path": "/collections/setup",
-      "sessions": 44,
-      "pdp_reached": 17,
-      "pdp_reach": 38.63636363636363
+      "sessions": 41,
+      "pdp_reached": 16,
+      "pdp_reach": 39.02439024390244
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 41,
-      "pdp_reached": 15,
-      "pdp_reach": 36.58536585365854
-    },
-    {
-      "path": "/collections/pants",
-      "sessions": 37,
-      "pdp_reached": 9,
-      "pdp_reach": 24.324324324324323
+      "sessions": 34,
+      "pdp_reached": 11,
+      "pdp_reach": 32.35294117647059
     }
   ],
   "products_top5": [
     {
-      "name": "無重力リュック(第5世代)",
-      "qty": 2,
-      "revenue": 55000
-    },
-    {
       "name": "無地半袖Tシャツ",
-      "qty": 9,
-      "revenue": 49500
+      "qty": 8,
+      "revenue": 44000
     },
     {
-      "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "qty": 6,
-      "revenue": 33000
+      "name": "NOBIRU360°PREMIUM/切り替えハーフパンツ",
+      "qty": 2,
+      "revenue": 30800
     },
     {
       "name": "NOBIRU360°PREMIUM/刺繍半袖プルオーバー",
@@ -143,9 +132,14 @@
       "revenue": 30800
     },
     {
-      "name": "NOBIRU360°PREMIUM/切り替えハーフパンツ",
+      "name": "【残り8着】CALL YUKATA",
+      "qty": 1,
+      "revenue": 29700
+    },
+    {
+      "name": "無重力シューズ",
       "qty": 2,
-      "revenue": 30800
+      "revenue": 28600
     }
   ]
 }
