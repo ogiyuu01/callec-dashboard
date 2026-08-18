@@ -2,15 +2,15 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6924
+      "count": 7566
     },
     {
       "name": "view_item",
-      "count": 8642
+      "count": 9418
     },
     {
       "name": "add_to_cart",
-      "count": 194
+      "count": 201
     },
     {
       "name": "begin_checkout",
@@ -86,33 +86,33 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 235,
-      "pdp_reached": 109,
-      "pdp_reach": 46.38297872340426
+      "sessions": 268,
+      "pdp_reached": 122,
+      "pdp_reach": 45.52238805970149
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 55,
-      "pdp_reached": 16,
-      "pdp_reach": 29.09090909090909
+      "sessions": 58,
+      "pdp_reached": 17,
+      "pdp_reach": 29.310344827586206
     },
     {
       "path": "/collections/2026-08-05",
-      "sessions": 50,
+      "sessions": 51,
       "pdp_reached": 15,
-      "pdp_reach": 30.0
+      "pdp_reach": 29.41176470588235
     },
     {
       "path": "/collections/setup",
-      "sessions": 43,
-      "pdp_reached": 19,
-      "pdp_reach": 44.18604651162791
+      "sessions": 48,
+      "pdp_reached": 21,
+      "pdp_reach": 43.75
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 33,
-      "pdp_reached": 10,
-      "pdp_reach": 30.303030303030305
+      "sessions": 36,
+      "pdp_reached": 11,
+      "pdp_reach": 30.555555555555557
     }
   ],
   "products_top5": [
