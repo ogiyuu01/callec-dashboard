@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7566
+      "count": 6666
     },
     {
       "name": "view_item",
-      "count": 9418
+      "count": 7796
     },
     {
       "name": "add_to_cart",
-      "count": 201
+      "count": 157
     },
     {
       "name": "begin_checkout",
-      "count": 68
+      "count": 55
     },
     {
       "name": "purchase",
-      "count": 35
+      "count": 28
     }
   ],
   "weeks": [
@@ -86,46 +86,36 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 268,
-      "pdp_reached": 122,
-      "pdp_reach": 45.52238805970149
-    },
-    {
-      "path": "/collections/2026aw",
-      "sessions": 58,
-      "pdp_reached": 17,
-      "pdp_reach": 29.310344827586206
+      "sessions": 226,
+      "pdp_reached": 100,
+      "pdp_reach": 44.24778761061947
     },
     {
       "path": "/collections/2026-08-05",
-      "sessions": 51,
+      "sessions": 49,
       "pdp_reached": 15,
-      "pdp_reach": 29.41176470588235
+      "pdp_reach": 30.612244897959183
+    },
+    {
+      "path": "/collections/2026aw",
+      "sessions": 48,
+      "pdp_reached": 13,
+      "pdp_reach": 27.083333333333332
     },
     {
       "path": "/collections/setup",
-      "sessions": 48,
-      "pdp_reached": 21,
-      "pdp_reach": 43.75
+      "sessions": 39,
+      "pdp_reached": 18,
+      "pdp_reach": 46.15384615384615
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 36,
-      "pdp_reached": 11,
-      "pdp_reach": 30.555555555555557
+      "sessions": 32,
+      "pdp_reached": 9,
+      "pdp_reach": 28.125
     }
   ],
   "products_top5": [
-    {
-      "name": "無地半袖Tシャツ",
-      "qty": 7,
-      "revenue": 38500
-    },
-    {
-      "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "qty": 6,
-      "revenue": 33000
-    },
     {
       "name": "NOBIRU360°PREMIUM/切り替えハーフパンツ",
       "qty": 2,
@@ -140,6 +130,16 @@
       "name": "SAISENTAKU/7ゲージ中綿ニットジャケット",
       "qty": 1,
       "revenue": 28600
+    },
+    {
+      "name": "無重力リュック(第5世代)",
+      "qty": 1,
+      "revenue": 27500
+    },
+    {
+      "name": "プリント半袖Tシャツ(アート/ウルフ)",
+      "qty": 5,
+      "revenue": 27500
     }
   ]
 }
