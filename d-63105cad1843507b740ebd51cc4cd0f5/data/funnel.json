@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6666
+      "count": 7292
     },
     {
       "name": "view_item",
-      "count": 7796
+      "count": 8648
     },
     {
       "name": "add_to_cart",
-      "count": 157
+      "count": 166
     },
     {
       "name": "begin_checkout",
-      "count": 55
+      "count": 61
     },
     {
       "name": "purchase",
-      "count": 28
+      "count": 29
     }
   ],
   "weeks": [
@@ -86,9 +86,15 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 226,
-      "pdp_reached": 100,
-      "pdp_reach": 44.24778761061947
+      "sessions": 252,
+      "pdp_reached": 111,
+      "pdp_reach": 44.04761904761905
+    },
+    {
+      "path": "/collections/2026aw",
+      "sessions": 64,
+      "pdp_reached": 17,
+      "pdp_reach": 26.5625
     },
     {
       "path": "/collections/2026-08-05",
@@ -97,22 +103,22 @@
       "pdp_reach": 30.612244897959183
     },
     {
-      "path": "/collections/2026aw",
-      "sessions": 48,
-      "pdp_reached": 13,
-      "pdp_reach": 27.083333333333332
-    },
-    {
       "path": "/collections/setup",
-      "sessions": 39,
+      "sessions": 44,
       "pdp_reached": 18,
-      "pdp_reach": 46.15384615384615
+      "pdp_reach": 40.90909090909091
     },
     {
       "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 32,
+      "sessions": 34,
       "pdp_reached": 9,
-      "pdp_reach": 28.125
+      "pdp_reach": 26.470588235294116
+    },
+    {
+      "path": "/collections/tops",
+      "sessions": 31,
+      "pdp_reached": 8,
+      "pdp_reach": 25.806451612903224
     }
   ],
   "products_top5": [
@@ -132,8 +138,8 @@
       "revenue": 28600
     },
     {
-      "name": "無重力リュック(第5世代)",
-      "qty": 1,
+      "name": "無地半袖Tシャツ",
+      "qty": 5,
       "revenue": 27500
     },
     {
