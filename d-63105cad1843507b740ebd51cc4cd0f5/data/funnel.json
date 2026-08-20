@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 5600
+      "count": 7325
     },
     {
       "name": "view_item",
-      "count": 7061
+      "count": 8561
     },
     {
       "name": "add_to_cart",
-      "count": 131
+      "count": 161
     },
     {
       "name": "begin_checkout",
-      "count": 51
+      "count": 61
     },
     {
       "name": "purchase",
-      "count": 21
+      "count": 28
     }
   ],
   "weeks": [
@@ -85,28 +85,46 @@
   ],
   "collections": [
     {
+      "path": "/collections/2026-08-19",
+      "sessions": 826,
+      "pdp_reached": 271,
+      "pdp_reach": 32.808716707021794
+    },
+    {
       "path": "/collections/all",
-      "sessions": 211,
-      "pdp_reached": 88,
-      "pdp_reach": 41.70616113744076
+      "sessions": 248,
+      "pdp_reached": 106,
+      "pdp_reach": 42.74193548387097
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 52,
-      "pdp_reached": 13,
-      "pdp_reach": 25.0
+      "sessions": 66,
+      "pdp_reached": 15,
+      "pdp_reach": 22.727272727272727
     },
     {
       "path": "/collections/setup",
-      "sessions": 39,
-      "pdp_reached": 17,
-      "pdp_reach": 43.58974358974359
+      "sessions": 44,
+      "pdp_reached": 19,
+      "pdp_reach": 43.18181818181818
     },
     {
       "path": "/collections/2026-08-05",
       "sessions": 35,
       "pdp_reached": 11,
       "pdp_reach": 31.428571428571427
+    },
+    {
+      "path": "/collections/2026aw-p",
+      "sessions": 31,
+      "pdp_reached": 6,
+      "pdp_reach": 19.35483870967742
+    },
+    {
+      "path": "/collections/tops",
+      "sessions": 31,
+      "pdp_reached": 8,
+      "pdp_reach": 25.806451612903224
     }
   ],
   "products_top5": [
