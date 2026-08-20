@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7292
+      "count": 5600
     },
     {
       "name": "view_item",
-      "count": 8648
+      "count": 7061
     },
     {
       "name": "add_to_cart",
-      "count": 166
+      "count": 131
     },
     {
       "name": "begin_checkout",
-      "count": 61
+      "count": 51
     },
     {
       "name": "purchase",
-      "count": 29
+      "count": 21
     }
   ],
   "weeks": [
@@ -86,39 +86,27 @@
   "collections": [
     {
       "path": "/collections/all",
-      "sessions": 252,
-      "pdp_reached": 111,
-      "pdp_reach": 44.04761904761905
+      "sessions": 211,
+      "pdp_reached": 88,
+      "pdp_reach": 41.70616113744076
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 64,
-      "pdp_reached": 17,
-      "pdp_reach": 26.5625
-    },
-    {
-      "path": "/collections/2026-08-05",
-      "sessions": 49,
-      "pdp_reached": 15,
-      "pdp_reach": 30.612244897959183
+      "sessions": 52,
+      "pdp_reached": 13,
+      "pdp_reach": 25.0
     },
     {
       "path": "/collections/setup",
-      "sessions": 44,
-      "pdp_reached": 18,
-      "pdp_reach": 40.90909090909091
+      "sessions": 39,
+      "pdp_reached": 17,
+      "pdp_reach": 43.58974358974359
     },
     {
-      "path": "/collections/shortsleeve-t-shirts-2",
-      "sessions": 34,
-      "pdp_reached": 9,
-      "pdp_reach": 26.470588235294116
-    },
-    {
-      "path": "/collections/tops",
-      "sessions": 31,
-      "pdp_reached": 8,
-      "pdp_reach": 25.806451612903224
+      "path": "/collections/2026-08-05",
+      "sessions": 35,
+      "pdp_reached": 11,
+      "pdp_reach": 31.428571428571427
     }
   ],
   "products_top5": [
@@ -128,24 +116,24 @@
       "revenue": 30800
     },
     {
-      "name": "【残り8着】CALL YUKATA",
-      "qty": 1,
-      "revenue": 29700
-    },
-    {
       "name": "SAISENTAKU/7ゲージ中綿ニットジャケット",
       "qty": 1,
       "revenue": 28600
     },
     {
-      "name": "無地半袖Tシャツ",
-      "qty": 5,
-      "revenue": 27500
+      "name": "SAISENTAKU/ざっくりニットジャケット",
+      "qty": 1,
+      "revenue": 19800
     },
     {
-      "name": "プリント半袖Tシャツ(アート/ウルフ)",
-      "qty": 5,
-      "revenue": 27500
+      "name": "NOBIRU360°PREMIUM/ジョガーパンツ",
+      "qty": 1,
+      "revenue": 18700
+    },
+    {
+      "name": "無地半袖Tシャツ",
+      "qty": 3,
+      "revenue": 16500
     }
   ]
 }
