@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 7325
+      "count": 6426
     },
     {
       "name": "view_item",
-      "count": 8561
+      "count": 7389
     },
     {
       "name": "add_to_cart",
-      "count": 161
+      "count": 139
     },
     {
       "name": "begin_checkout",
-      "count": 61
+      "count": 55
     },
     {
       "name": "purchase",
-      "count": 28
+      "count": 22
     }
   ],
   "weeks": [
@@ -92,47 +92,24 @@
     },
     {
       "path": "/collections/all",
-      "sessions": 248,
-      "pdp_reached": 106,
-      "pdp_reach": 42.74193548387097
+      "sessions": 223,
+      "pdp_reached": 100,
+      "pdp_reach": 44.84304932735426
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 66,
-      "pdp_reached": 15,
-      "pdp_reach": 22.727272727272727
+      "sessions": 57,
+      "pdp_reached": 13,
+      "pdp_reach": 22.80701754385965
     },
     {
       "path": "/collections/setup",
-      "sessions": 44,
-      "pdp_reached": 19,
-      "pdp_reach": 43.18181818181818
-    },
-    {
-      "path": "/collections/2026-08-05",
-      "sessions": 35,
-      "pdp_reached": 11,
-      "pdp_reach": 31.428571428571427
-    },
-    {
-      "path": "/collections/2026aw-p",
-      "sessions": 31,
-      "pdp_reached": 6,
-      "pdp_reach": 19.35483870967742
-    },
-    {
-      "path": "/collections/tops",
-      "sessions": 31,
-      "pdp_reached": 8,
-      "pdp_reach": 25.806451612903224
+      "sessions": 34,
+      "pdp_reached": 14,
+      "pdp_reach": 41.1764705882353
     }
   ],
   "products_top5": [
-    {
-      "name": "NOBIRU360°PREMIUM/切り替えハーフパンツ",
-      "qty": 2,
-      "revenue": 30800
-    },
     {
       "name": "SAISENTAKU/7ゲージ中綿ニットジャケット",
       "qty": 1,
@@ -149,9 +126,14 @@
       "revenue": 18700
     },
     {
-      "name": "無地半袖Tシャツ",
-      "qty": 3,
+      "name": "切り替えジョガーパンツ(裏起毛)",
+      "qty": 1,
       "revenue": 16500
+    },
+    {
+      "name": "サイセンタク/ニットパーカー(ヘリンボーン)",
+      "qty": 1,
+      "revenue": 15400
     }
   ]
 }
