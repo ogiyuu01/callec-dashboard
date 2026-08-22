@@ -2,23 +2,23 @@
   "steps": [
     {
       "name": "Sessions",
-      "count": 6426
+      "count": 5934
     },
     {
       "name": "view_item",
-      "count": 7389
+      "count": 7071
     },
     {
       "name": "add_to_cart",
-      "count": 139
+      "count": 130
     },
     {
       "name": "begin_checkout",
-      "count": 55
+      "count": 49
     },
     {
       "name": "purchase",
-      "count": 22
+      "count": 24
     }
   ],
   "weeks": [
@@ -86,54 +86,54 @@
   "collections": [
     {
       "path": "/collections/2026-08-19",
-      "sessions": 826,
-      "pdp_reached": 271,
-      "pdp_reach": 32.808716707021794
+      "sessions": 966,
+      "pdp_reached": 313,
+      "pdp_reach": 32.40165631469979
     },
     {
       "path": "/collections/all",
-      "sessions": 223,
-      "pdp_reached": 100,
-      "pdp_reach": 44.84304932735426
+      "sessions": 208,
+      "pdp_reached": 95,
+      "pdp_reach": 45.67307692307692
     },
     {
       "path": "/collections/2026aw",
-      "sessions": 57,
-      "pdp_reached": 13,
-      "pdp_reach": 22.80701754385965
+      "sessions": 60,
+      "pdp_reached": 14,
+      "pdp_reach": 23.333333333333332
     },
     {
       "path": "/collections/setup",
       "sessions": 34,
-      "pdp_reached": 14,
-      "pdp_reach": 41.1764705882353
+      "pdp_reached": 16,
+      "pdp_reach": 47.05882352941177
     }
   ],
   "products_top5": [
     {
-      "name": "SAISENTAKU/7ゲージ中綿ニットジャケット",
+      "name": "KAITEKI/テーラードジャケット",
       "qty": 1,
-      "revenue": 28600
+      "revenue": 29150
     },
     {
-      "name": "SAISENTAKU/ざっくりニットジャケット",
+      "name": "KOKAGE/ジョガーパンツ",
+      "qty": 2,
+      "revenue": 27500
+    },
+    {
+      "name": "SAISENTAKU/ルーム半袖プルオーバー",
+      "qty": 2,
+      "revenue": 23100
+    },
+    {
+      "name": "SAISENTAKU/ルームハーフパンツ",
+      "qty": 2,
+      "revenue": 23100
+    },
+    {
+      "name": "KAITEKI/テーパードパンツ",
       "qty": 1,
       "revenue": 19800
-    },
-    {
-      "name": "NOBIRU360°PREMIUM/ジョガーパンツ",
-      "qty": 1,
-      "revenue": 18700
-    },
-    {
-      "name": "切り替えジョガーパンツ(裏起毛)",
-      "qty": 1,
-      "revenue": 16500
-    },
-    {
-      "name": "サイセンタク/ニットパーカー(ヘリンボーン)",
-      "qty": 1,
-      "revenue": 15400
     }
   ]
 }
